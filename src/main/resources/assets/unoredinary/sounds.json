@@ -1,0 +1,99 @@
+{
+  "block.hemocrylic_block.break": {
+    "subtitle": "sounds.unoredinary.block.hemocrylic_block.break",
+    "sounds": [
+      "unoredinary:block/hemocrylic_block/break_1",
+      "unoredinary:block/hemocrylic_block/break_2",
+      "unoredinary:block/hemocrylic_block/break_3"
+    ]
+  },
+  "block.hemocrylic_block.step": {
+    "subtitle": "sounds.unoredinary.block.hemocrylic_block.step",
+    "sounds": [
+      "unoredinary:block/hemocrylic_block/step_1",
+      "unoredinary:block/hemocrylic_block/step_2",
+      "unoredinary:block/hemocrylic_block/step_3",
+      "unoredinary:block/hemocrylic_block/step_4",
+      "unoredinary:block/hemocrylic_block/step_5"
+    ]
+  },
+  "block.hemocrylic_block.place": {
+    "subtitle": "sounds.unoredinary.block.hemocrylic_block.place",
+    "sounds": [
+      "unoredinary:block/hemocrylic_block/place_1",
+      "unoredinary:block/hemocrylic_block/place_2",
+      "unoredinary:block/hemocrylic_block/place_3",
+      "unoredinary:block/hemocrylic_block/place_4"
+    ]
+  },
+  "block.hemocrylic_block.hit": {
+    "subtitle": "sounds.unoredinary.block.hemocrylic_block.hit",
+    "sounds": [
+      "unoredinary:block/hemocrylic_block/hit_1",
+      "unoredinary:block/hemocrylic_block/hit_2",
+      "unoredinary:block/hemocrylic_block/hit_3",
+      "unoredinary:block/hemocrylic_block/hit_4",
+      "unoredinary:block/hemocrylic_block/hit_5",
+      "unoredinary:block/hemocrylic_block/hit_6"
+    ]
+  },
+  "block.hemocrylic_block.fall": {
+    "subtitle": "sounds.unoredinary.block.hemocrylic_block.fall",
+    "sounds": [
+      "unoredinary:block/hemocrylic_block/fall_1",
+      "unoredinary:block/hemocrylic_block/fall_2",
+      "unoredinary:block/hemocrylic_block/fall_3"
+    ]
+  },
+  "block.hemocrylic_block.evaporate": {
+    "subtitle": "sounds.unoredinary.block.hemocrylic_block.evaporate",
+    "sounds": [
+      "unoredinary:block/hemocrylic_block/evaporate"
+    ]
+  },
+
+  "entity.frost_zombie.ambient": {
+    "subtitle": "sounds.unoredinary.entity.frost_zombie.ambient",
+    "sounds": [
+      "unoredinary:entity/frost_zombie/idle_1",
+      "unoredinary:entity/frost_zombie/idle_2",
+      "unoredinary:entity/frost_zombie/idle_3"
+    ]
+  },
+  "entity.frost_zombie.hurt": {
+    "subtitle": "sounds.unoredinary.entity.frost_zombie.hurt",
+    "sounds": [
+      "unoredinary:entity/frost_zombie/hurt_1",
+      "unoredinary:entity/frost_zombie/hurt_2",
+      "unoredinary:entity/frost_zombie/hurt_3"
+    ]
+  },
+  "entity.frost_zombie.death": {
+    "subtitle": "sounds.unoredinary.entity.frost_zombie.death",
+    "sounds": [
+      "unoredinary:entity/frost_zombie/death_1",
+      "unoredinary:entity/frost_zombie/death_2"
+    ]
+  },
+  "entity.frost_zombie.step": {
+    "subtitle": "sounds.unoredinary.entity.frost_zombie.step",
+    "sounds": [
+      "unoredinary:entity/frost_zombie/step_1",
+      "unoredinary:entity/frost_zombie/step_2",
+      "unoredinary:entity/frost_zombie/step_3",
+      "unoredinary:entity/frost_zombie/step_4",
+      "unoredinary:entity/frost_zombie/step_5"
+    ]
+  },
+
+  "item.armor.equip_frosteel": {
+    "subtitle": "sounds.unoredinary.item.armor.equip_frosteel",
+    "sounds": [
+      "unoredinary:item/armor/equip_frosteel_1",
+      "unoredinary:item/armor/equip_frosteel_2",
+      "unoredinary:item/armor/equip_frosteel_3",
+      "unoredinary:item/armor/equip_frosteel_4",
+      "unoredinary:item/armor/equip_frosteel_5"
+    ]
+  }
+}

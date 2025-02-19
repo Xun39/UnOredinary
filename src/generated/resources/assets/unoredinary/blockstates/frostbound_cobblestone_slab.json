@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "unoredinary:block/frostbound_cobblestone_slab"
+    },
+    "type=double": {
+      "model": "unoredinary:block/frostbound_cobblestone"
+    },
+    "type=top": {
+      "model": "unoredinary:block/frostbound_cobblestone_slab_top"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "item.unoredinary.hemocrylic_shard": "寒髓晶碎片",
+  "item.unoredinary.hemocrylic_crystal": "寒髓晶",
+
+  "item.unoredinary.cryostone_dust": "冰魄尘",
+
+  "item.unoredinary.frosteel_ingot": "凛钢锭",
+
+  "item.unoredinary.frosteel_upgrade_smithing_template": "锻造模板",
+
+  "item.unoredinary.frosteel_sword": "凛钢剑",
+  "item.unoredinary.frosteel_pickaxe": "凛钢镐",
+  "item.unoredinary.frosteel_axe": "凛钢斧",
+  "item.unoredinary.frosteel_hoe": "凛钢锄",
+  "item.unoredinary.frosteel_shovel": "凛钢锹",
+
+  "item.unoredinary.frosteel_helmet": "凛钢头盔",
+  "item.unoredinary.frosteel_chestplate": "凛钢胸甲",
+  "item.unoredinary.frosteel_leggings": "凛钢护腿",
+  "item.unoredinary.frosteel_boots": "凛钢靴子",
+
+  "item.unoredinary.ice_shard": "冰碎片",
+  "item.unoredinary.ice_brick": "冰砖",
+
+  "item.unoredinary.frostbitten_phalanges": "冻伤指骨",
+
+  "item.unoredinary.frost_zombie_spawn_egg": "霜冻僵尸刷怪蛋",
+
+  "block.unoredinary.hemocrylic_ore": "寒血髓",
+  "block.unoredinary.hemocrylic_block": "寒髓块",
+
+  "block.unoredinary.cryostone_ore": "冰魄石",
+  "block.unoredinary.deepslate_cryostone_ore": "深层冰魄石",
+
+  "block.unoredinary.frostbound_stone": "霜缚石",
+  "block.unoredinary.frostbound_stone_stairs": "霜缚石楼梯",
+  "block.unoredinary.frostbound_stone_slab": "霜缚石台阶",
+
+  "block.unoredinary.frostbound_cobblestone": "霜缚圆石",
+  "block.unoredinary.frostbound_cobblestone_stairs": "霜缚圆石楼梯",
+  "block.unoredinary.frostbound_cobblestone_slab": "霜缚圆石台阶",
+  "block.unoredinary.frostbound_cobblestone_wall": "霜缚圆石墙",
+
+  "block.unoredinary.cryobound_cobblestone": "霜锁圆石",
+  "block.unoredinary.cryobound_cobblestone_stairs": "霜锁圆石楼梯",
+  "block.unoredinary.cryobound_cobblestone_slab": "霜锁圆石台阶",
+  "block.unoredinary.cryobound_cobblestone_wall": "霜锁圆石墙",
+
+  "block.unoredinary.frostbound_stone_bricks": "寒缚石砖",
+  "block.unoredinary.frostbound_stone_brick_stairs": "寒缚石砖楼梯",
+  "block.unoredinary.frostbound_stone_brick_slab": "寒缚石砖台阶",
+  "block.unoredinary.frostbound_stone_brick_wall": "寒缚石砖墙",
+
+  "block.unoredinary.ice_bricks": "冰砖块",
+  "block.unoredinary.ice_brick_stairs": "冰砖楼梯",
+  "block.unoredinary.ice_brick_slab": "冰砖台阶",
+  "block.unoredinary.ice_brick_wall": "冰砖墙",
+
+  "entity.unoredinary.frost_zombie": "霜冻僵尸",
+
+  "creativemodetab.unoredinary.item": "矿海寻奇：物品",
+  "creativemodetab.unoredinary.block": "矿海寻奇：方块",
+
+  "upgrade.unoredinary.frosteel_upgrade": "凛钢升级",
+  "item.unoredinary.smithing_template.frosteel_upgrade.applies_to": "铁装备",
+  "item.unoredinary.smithing_template.frosteel_upgrade.ingredients": "凛钢锭",
+  "item.unoredinary.smithing_template.frosteel_upgrade.base_slot_description": "放入铁盔甲、武器或工具",
+  "item.unoredinary.smithing_template.frosteel_upgrade.additions_slot_description": "放入凛钢锭"
+}

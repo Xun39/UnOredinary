@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "unoredinary:frostbound_stone"
+  },
+  "result": {
+    "count": 1,
+    "id": "unoredinary:frostbound_stone_stairs"
+  }
+}

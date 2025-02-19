@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "unoredinary:block/frostbound_cobblestone",
+    "side": "unoredinary:block/frostbound_cobblestone",
+    "top": "unoredinary:block/frostbound_cobblestone"
+  }
+}

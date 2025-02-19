@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "unoredinary:hemocrylic_crystal"
+    },
+    {
+      "item": "unoredinary:hemocrylic_crystal"
+    },
+    {
+      "item": "unoredinary:hemocrylic_crystal"
+    },
+    {
+      "item": "unoredinary:hemocrylic_crystal"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "unoredinary:frosteel_ingot"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "unoredinary:block/frostbound_stone_brick_slab"
+    },
+    "type=double": {
+      "model": "unoredinary:block/frostbound_stone_bricks"
+    },
+    "type=top": {
+      "model": "unoredinary:block/frostbound_stone_brick_slab_top"
+    }
+  }
+}

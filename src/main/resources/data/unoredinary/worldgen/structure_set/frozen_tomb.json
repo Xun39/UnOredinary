@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "unoredinary:frozen_tomb",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 4625816248,
+    "separation": 10,
+    "spacing": 24,
+    "exclusion_zone": {
+      "chunk_count": 10,
+      "other_set": "minecraft:ocean_monuments"
+    }
+  }
+}

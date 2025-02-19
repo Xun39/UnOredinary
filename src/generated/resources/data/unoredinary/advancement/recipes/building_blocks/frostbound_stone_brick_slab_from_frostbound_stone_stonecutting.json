@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_frostbound_stone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:frostbound_stone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unoredinary:frostbound_stone_brick_slab_from_frostbound_stone_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_frostbound_stone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unoredinary:frostbound_stone_brick_slab_from_frostbound_stone_stonecutting"
+    ]
+  }
+}

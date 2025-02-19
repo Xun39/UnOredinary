@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "unoredinary:block/frostbound_stone_bricks"
+  }
+}

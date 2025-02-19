@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hemocrylic_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:hemocrylic_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unoredinary:frosteel_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hemocrylic_crystal"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unoredinary:frosteel_ingot"
+    ]
+  }
+}

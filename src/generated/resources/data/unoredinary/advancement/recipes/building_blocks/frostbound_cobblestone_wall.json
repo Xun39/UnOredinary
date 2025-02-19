@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_frostbound_cobblestone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:frostbound_cobblestone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unoredinary:frostbound_cobblestone_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_frostbound_cobblestone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unoredinary:frostbound_cobblestone_wall"
+    ]
+  }
+}

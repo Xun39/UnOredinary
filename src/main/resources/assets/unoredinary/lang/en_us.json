@@ -1,0 +1,69 @@
+{
+  "item.unoredinary.hemocrylic_shard": "Hemocrylic Shard",
+  "item.unoredinary.hemocrylic_crystal": "Hemocrylic Crystal",
+
+  "item.unoredinary.cryostone_dust": "Cryostone Dust",
+
+  "item.unoredinary.frosteel_ingot": "Frosteel Ingot",
+
+  "item.unoredinary.frosteel_upgrade_smithing_template": "Smithing Template",
+
+  "item.unoredinary.frosteel_sword": "Frosteel Sword",
+  "item.unoredinary.frosteel_pickaxe": "Frosteel Pickaxe",
+  "item.unoredinary.frosteel_axe": "Frosteel Axe",
+  "item.unoredinary.frosteel_hoe": "Frosteel Hoe",
+  "item.unoredinary.frosteel_shovel": "Frosteel Shovel",
+
+  "item.unoredinary.frosteel_helmet": "Frosteel Helmet",
+  "item.unoredinary.frosteel_chestplate": "Frosteel Chestplate",
+  "item.unoredinary.frosteel_leggings": "Frosteel Leggings",
+  "item.unoredinary.frosteel_boots": "Frosteel Boots",
+
+  "item.unoredinary.ice_shard": "Ice Shard",
+  "item.unoredinary.ice_brick": "Ice Brick",
+
+  "item.unoredinary.frostbitten_phalanges": "Frostbitten Phalanges",
+
+  "item.unoredinary.frost_zombie_spawn_egg": "Frost Zombie Spawn Egg",
+
+  "block.unoredinary.hemocrylic_ore": "Hemocrylic",
+  "block.unoredinary.hemocrylic_block": "Block of Hemocrylic",
+
+  "block.unoredinary.cryostone_ore": "Cryostone Ore",
+  "block.unoredinary.deepslate_cryostone_ore": "Deepslate Cryostone Ore",
+
+  "block.unoredinary.frostbound_stone": "Frostbound Stone",
+  "block.unoredinary.frostbound_stone_stairs": "Frostbound Stone Stairs",
+  "block.unoredinary.frostbound_stone_slab": "Frostbound Stone Slab",
+
+  "block.unoredinary.frostbound_cobblestone": "Frostbound Cobblestone",
+  "block.unoredinary.frostbound_cobblestone_stairs": "Frostbound Cobblestone Stairs",
+  "block.unoredinary.frostbound_cobblestone_slab": "Frostbound Cobblestone Slab",
+  "block.unoredinary.frostbound_cobblestone_wall": "Frostbound Cobblestone Wall",
+
+  "block.unoredinary.cryobound_cobblestone": "Cryobound Cobblestone",
+  "block.unoredinary.cryobound_cobblestone_stairs": "Cryobound Cobblestone Stairs",
+  "block.unoredinary.cryobound_cobblestone_slab": "Cryobound Cobblestone Slab",
+  "block.unoredinary.cryobound_cobblestone_wall": "Cryobound Cobblestone Wall",
+
+  "block.unoredinary.frostbound_stone_bricks": "Frostbound Stone Bricks",
+  "block.unoredinary.frostbound_stone_brick_stairs": "Frostbound Stone Brick Stairs",
+  "block.unoredinary.frostbound_stone_brick_slab": "Frostbound Stone Brick Slab",
+  "block.unoredinary.frostbound_stone_brick_wall": "Frostbound Stone Brick Wall",
+
+  "block.unoredinary.ice_bricks": "Ice Bricks",
+  "block.unoredinary.ice_brick_stairs": "Ice Brick Stairs",
+  "block.unoredinary.ice_brick_slab": "Ice Brick Slab",
+  "block.unoredinary.ice_brick_wall": "Ice Brick Wall",
+
+  "entity.unoredinary.frost_zombie": "Frost Zombie",
+
+  "creativemodetab.unoredinary.item": "UnOredinary: Items",
+  "creativemodetab.unoredinary.block": "UnOredinary: Blocks",
+
+  "upgrade.unoredinary.frosteel_upgrade": "Frosteel Upgrade",
+  "item.unoredinary.smithing_template.frosteel_upgrade.applies_to": "Iron Equipment",
+  "item.unoredinary.smithing_template.frosteel_upgrade.ingredients": "Frosteel Ingot",
+  "item.unoredinary.smithing_template.frosteel_upgrade.base_slot_description": "Add iron armor, weapon, or tool",
+  "item.unoredinary.smithing_template.frosteel_upgrade.additions_slot_description": "Add Frosteel Inogt"
+}

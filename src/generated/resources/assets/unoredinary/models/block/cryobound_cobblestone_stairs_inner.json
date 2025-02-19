@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "unoredinary:block/cryobound_cobblestone",
+    "side": "unoredinary:block/cryobound_cobblestone",
+    "top": "unoredinary:block/cryobound_cobblestone"
+  }
+}

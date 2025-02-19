@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "unoredinary:cryostone_dust"
+    },
+    {
+      "item": "unoredinary:frostbound_cobblestone"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "unoredinary:cryobound_cobblestone"
+  }
+}

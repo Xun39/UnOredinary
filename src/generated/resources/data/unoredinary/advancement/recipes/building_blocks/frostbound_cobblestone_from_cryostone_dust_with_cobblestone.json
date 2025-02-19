@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cryostone_dust": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:cryostone_dust"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unoredinary:frostbound_cobblestone_from_cryostone_dust_with_cobblestone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cryostone_dust"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unoredinary:frostbound_cobblestone_from_cryostone_dust_with_cobblestone"
+    ]
+  }
+}
