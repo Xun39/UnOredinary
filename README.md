@@ -1,6 +1,8 @@
 # UnOredinary Mod
 
-*Minecraft Mod | Version 1.21+ | Forge/Neoforge*
+<a href="https://www.curseforge.com/minecraft/mc-mods/unoredinary">
+  <img alt="Curseforge" src="https://img.shields.io/badge/-CurseForge-black?style=flat-square&logo=curseforge&labelColor=black">
+</a>
 
 *(note: this mod is still in developpement)*
 ## Overview
