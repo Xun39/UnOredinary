@@ -1,7 +1,11 @@
 {
   "structures": [
     {
-      "structure": "unoredinary:frozen_tomb",
+      "structure": "unoredinary:frozen_tomb_ice",
+      "weight": 1
+    },
+    {
+      "structure": "unoredinary:frozen_tomb_taiga",
       "weight": 1
     }
   ],

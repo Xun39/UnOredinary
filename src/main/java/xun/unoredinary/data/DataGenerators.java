@@ -38,6 +38,7 @@ public class DataGenerators {
         generator.addProvider(server, blockTagsProvider);
         generator.addProvider(server, new ModItemTags(output, registries, blockTagsProvider.contentsGetter(), helper));
         generator.addProvider(server, new ModEntityTypeTags(output, registries, helper));
+        generator.addProvider(server, new ModBiomeTags(output, registries, helper));
         generator.addProvider(server, new ModDatapacks(output, registries));
 
     }

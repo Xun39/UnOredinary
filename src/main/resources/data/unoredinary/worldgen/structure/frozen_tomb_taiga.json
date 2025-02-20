@@ -1,6 +1,6 @@
 {
   "type": "unoredinary:frozen_tomb_structures",
-  "biomes": "#unoredinary:has_structure/frozen_tomb",
+  "biomes": "#unoredinary:has_structure/frozen_tomb_taiga",
 
   "start_pool": "unoredinary:frozen_tomb",
   "size": 1,

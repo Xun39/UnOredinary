@@ -8,7 +8,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import xun.unoredinary.UnOredinary;
-import xun.unoredinary.content.structure.FrozenTombStructures;
+import xun.unoredinary.world.structure.FrozenTombStructures;
 
 public class ModStructureTypes {
 

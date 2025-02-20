@@ -1,12 +1,21 @@
 {
   "name": "unoredinary:frozen_tomb",
-  "fallback": "minecraft:village/taiga/houses",
+  "fallback": "minecraft:empty",
 
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "unoredinary:frozen_tomb",
+        "location": "unoredinary:frozen_tomb_ice",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "unoredinary:frozen_tomb_taiga",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

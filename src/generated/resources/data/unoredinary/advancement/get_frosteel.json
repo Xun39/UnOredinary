@@ -1,0 +1,33 @@
+{
+  "parent": "unoredinary:has_hemocrylic_shards",
+  "criteria": {
+    "get_frosteel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:frosteel_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.unoredinary.fp/get_frosteel.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "unoredinary:frosteel_ingot"
+    },
+    "title": {
+      "translate": "advancement.unoredinary.fp/get_frosteel"
+    }
+  },
+  "requirements": [
+    [
+      "get_frosteel"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
