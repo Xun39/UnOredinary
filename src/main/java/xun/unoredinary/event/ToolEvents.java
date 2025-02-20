@@ -33,7 +33,7 @@ public class ToolEvents {
 
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
 
-    private static final float FROSTEEL_DAMAGE_FACTOR = 0.8F;
+    private static final float FROSTEEL_DAMAGE_FACTOR = 0.65F;
     private static final Logger LOGGER = LogUtils.getLogger();
 
     @SubscribeEvent
@@ -89,10 +89,6 @@ public class ToolEvents {
             finalDamage += bonus;
             LOGGER.info("[Snow Biomes Bonus] Temp: {} | Boost: {} | Final Damage: {}", temperature, bonus, finalDamage);
 
-        } else if (BiomeUtils.isInHotBiome(level, playerPos)) {
-            float penalty = FROSTEEL_DAMAGE_FACTOR * temperature;
-            finalDamage = Math.max(0, finalDamage - penalty);
-            LOGGER.warn("[Hot Biomes Penalty] Temp: {} | Penalty: {} | Final Damage: {}", temperature, penalty, finalDamage);
         }
 
         if (finalDamage != baseDamage) {

@@ -21,8 +21,8 @@ public class FrostZombieEntity extends Zombie {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 22.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.21F)
+                .add(Attributes.MAX_HEALTH, 24.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.22F)
                 .add(Attributes.ATTACK_DAMAGE, 3.25D)
                 .add(Attributes.ARMOR, 3.0D)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);

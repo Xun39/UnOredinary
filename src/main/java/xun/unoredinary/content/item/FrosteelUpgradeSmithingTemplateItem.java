@@ -20,11 +20,11 @@ public class FrosteelUpgradeSmithingTemplateItem extends SmithingTemplateItem {
     ).withStyle(TITLE_FORMAT);
 
     private static final Component FROSTEEL_UPGRADE_APPLIES_TO = Component.translatable(
-                    Util.makeDescriptionId("item", UnOredinary.modLoc("smithing_template.frosteel_upgrade.applies_to"))
+            Util.makeDescriptionId("item", UnOredinary.modLoc("smithing_template.frosteel_upgrade.applies_to"))
     ).withStyle(DESCRIPTION_FORMAT);
 
     private static final Component FROSTEEL_UPGRADE_INGREDIENTS = Component.translatable(
-                    Util.makeDescriptionId("item", UnOredinary.modLoc("smithing_template.frosteel_upgrade.ingredients"))
+            Util.makeDescriptionId("item", UnOredinary.modLoc("smithing_template.frosteel_upgrade.ingredients"))
     ).withStyle(DESCRIPTION_FORMAT);
 
     private static final Component FROSTEEL_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable(

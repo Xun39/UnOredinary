@@ -65,5 +65,14 @@
   "item.unoredinary.smithing_template.frosteel_upgrade.applies_to": "Iron Equipment",
   "item.unoredinary.smithing_template.frosteel_upgrade.ingredients": "Frosteel Ingot",
   "item.unoredinary.smithing_template.frosteel_upgrade.base_slot_description": "Add iron armor, weapon, or tool",
-  "item.unoredinary.smithing_template.frosteel_upgrade.additions_slot_description": "Add Frosteel Inogt"
+  "item.unoredinary.smithing_template.frosteel_upgrade.additions_slot_description": "Add Frosteel Inogt",
+
+  "advancement.unoredinary.fp/root": "Frost Prospector",
+  "advancement.unoredinary.fp/root.desc": "Hidden within the frigid biomes, snow-covered veins await your discovery.",
+  "advancement.unoredinary.fp/get_frosteel": "Frosteel Artisan",
+  "advancement.unoredinary.fp/get_frosteel.desc": "Get Frosteel Ingot",
+  "advancement.unoredinary.fp/kill_frost_zombie": "Frost Hunter",
+  "advancement.unoredinary.fp/kill_frost_zombie.desc": "Kill a Frost Zombie",
+
+  "tooltip.unoredinary.frosteel_sword": "A sharp blade forged from Frosteel, its power amplified in frigid biomes."
 }

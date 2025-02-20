@@ -31,6 +31,8 @@ public class DataGenerators {
         generator.addProvider(client, new ModBlockStates(output, helper));
         generator.addProvider(client, new ModItemModels(output, helper));
 
+        generator.addProvider(server, new ModAdvancements(output, registries, helper));
+
         generator.addProvider(server, new ModLootTables(output, registries));
         generator.addProvider(server, new ModRecipes(output, registries));
         generator.addProvider(server, blockTagsProvider);

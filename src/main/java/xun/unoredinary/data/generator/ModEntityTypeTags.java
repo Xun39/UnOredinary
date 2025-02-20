@@ -19,6 +19,7 @@ public class ModEntityTypeTags extends EntityTypeTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+
         tag(EntityTypeTags.ZOMBIES).add(
                 ModEntityTypes.FROST_ZOMBIE.get());
     }
