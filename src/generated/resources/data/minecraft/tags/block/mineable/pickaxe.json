@@ -22,6 +22,8 @@
     "unoredinary:ice_bricks",
     "unoredinary:ice_brick_stairs",
     "unoredinary:ice_brick_slab",
-    "unoredinary:ice_brick_wall"
+    "unoredinary:ice_brick_wall",
+    "unoredinary:luminite_ore",
+    "unoredinary:deepslate_luminite_ore"
   ]
 }

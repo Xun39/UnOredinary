@@ -20,6 +20,9 @@ public class ModBlockStates extends ModBlockStateProvider {
         blockWithItem(ModBlocks.CRYOSTONE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_CRYOSTONE_ORE);
 
+        blockWithItem(ModBlocks.LUMINITE_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_LUMINITE_ORE);
+
         blockWithItem(ModBlocks.FROSTBOUND_STONE);
         stairBlockWithItem(ModBlocks.FROSTBOUND_STONE_STAIRS, ModBlocks.FROSTBOUND_STONE);
         slabBlockWithItem(ModBlocks.FROSTBOUND_STONE_SLAB, ModBlocks.FROSTBOUND_STONE);
@@ -43,5 +46,8 @@ public class ModBlockStates extends ModBlockStateProvider {
         stairBlockWithItem(ModBlocks.ICE_BRICK_STAIRS, ModBlocks.ICE_BRICKS);
         slabBlockWithItem(ModBlocks.ICE_BRICK_SLAB, ModBlocks.ICE_BRICKS);
         wallBlock(ModBlocks.ICE_BRICK_WALL, ModBlocks.ICE_BRICKS);
+
+        torchBlock(ModBlocks.LUMINITE_TORCH);
+        wallTorchBlock(ModBlocks.LUMINITE_WALL_TORCH, ModBlocks.LUMINITE_TORCH);
     }
 }

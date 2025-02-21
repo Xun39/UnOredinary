@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "unoredinary:block/luminite_wall_torch"
+    },
+    "facing=north": {
+      "model": "unoredinary:block/luminite_wall_torch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "unoredinary:block/luminite_wall_torch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "unoredinary:block/luminite_wall_torch",
+      "y": 180
+    }
+  }
+}

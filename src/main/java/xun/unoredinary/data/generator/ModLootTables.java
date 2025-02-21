@@ -1,13 +1,10 @@
 package xun.unoredinary.data.generator;
 
-import com.google.common.base.Supplier;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -56,6 +53,9 @@ public class ModLootTables extends LootTableProvider {
             multipleDrops(ModBlocks.CRYOSTONE_ORE, ModItems.CRYOSTONE_DUST.get(), 3.0F, 4.0F);
             multipleDrops(ModBlocks.DEEPSLATE_CRYOSTONE_ORE, ModItems.CRYOSTONE_DUST.get(), 3.0F, 4.0F);
 
+            dropOtherWithoutSilkTouch(ModBlocks.LUMINITE_ORE, ModItems.LUMINITE_CRYSTAL.get());
+            dropOtherWithoutSilkTouch(ModBlocks.DEEPSLATE_LUMINITE_ORE, ModItems.LUMINITE_CRYSTAL.get());
+
             dropOtherWithoutSilkTouch(ModBlocks.FROSTBOUND_STONE, ModBlocks.FROSTBOUND_COBBLESTONE);
             dropSelf(ModBlocks.FROSTBOUND_STONE_STAIRS.get());
             slabDrop(ModBlocks.FROSTBOUND_STONE_SLAB);
@@ -79,6 +79,8 @@ public class ModLootTables extends LootTableProvider {
             dropSelf(ModBlocks.ICE_BRICK_STAIRS.get());
             slabDrop(ModBlocks.ICE_BRICK_SLAB);
             dropSelf(ModBlocks.ICE_BRICK_WALL.get());
+
+            dropOther(ModBlocks.LUMINITE_TORCH.get(), ModItems.LUMINITE_TORCH_ITEM);
         }
 
         @Override

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:torch"
+    },
+    {
+      "item": "unoredinary:luminite_crystal"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "unoredinary:luminite_torch_item"
+  }
+}

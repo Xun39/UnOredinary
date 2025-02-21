@@ -1,9 +1,13 @@
 package xun.unoredinary.registry;
 
+import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -75,6 +79,32 @@ public class ModBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BRICK_SLAB)));
     public static final DeferredBlock<WallBlock> ICE_BRICK_WALL = registerBlock("ice_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BRICK_WALL)));
+
+
+    public static final DeferredBlock<Block> LUMINITE_ORE = registerBlock("luminite_ore",
+            () -> new DropExperienceBlock(UniformInt.of(2, 6),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)
+                            .strength(4.5F, 3.0F)
+                            .lightLevel((state) -> 7)));
+
+    public static final DeferredBlock<Block> DEEPSLATE_LUMINITE_ORE = registerBlock("deepslate_luminite_ore",
+            () -> new DropExperienceBlock(UniformInt.of(2, 6),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)
+                            .strength(4.5F, 3.0F)
+                            .lightLevel((state) -> 7)));
+
+    public static final DeferredBlock<TorchBlock> LUMINITE_TORCH = registerBlock("luminite_torch",
+            () -> new TorchBlock(
+                    ParticleTypes.FLAME,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH)
+                            .lightLevel((state) -> 15)));
+
+    public static final DeferredBlock<WallTorchBlock> LUMINITE_WALL_TORCH = registerBlock("luminite_wall_torch",
+            () -> new WallTorchBlock(
+                    ParticleTypes.FLAME,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WALL_TORCH)
+                            .lootFrom(ModBlocks.LUMINITE_TORCH)
+                            .lightLevel((state) -> 15)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

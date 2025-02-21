@@ -50,34 +50,48 @@ public class ModBlockTags extends BlockTagsProvider {
                 ModBlocks.ICE_BRICKS.get(),
                 ModBlocks.ICE_BRICK_STAIRS.get(),
                 ModBlocks.ICE_BRICK_SLAB.get(),
-                ModBlocks.ICE_BRICK_WALL.get());
+                ModBlocks.ICE_BRICK_WALL.get(),
 
+
+                ModBlocks.LUMINITE_ORE.get(),
+                ModBlocks.DEEPSLATE_LUMINITE_ORE.get()
+        );
+
+
+        tag(BlockTags.NEEDS_STONE_TOOL).add(
+                ModBlocks.LUMINITE_ORE.get(),
+                ModBlocks.DEEPSLATE_LUMINITE_ORE.get()
+        );
 
         tag(BlockTags.NEEDS_IRON_TOOL).add(
                 ModBlocks.HEMOCRYLIC_BLOCK.get(),
                 ModBlocks.HEMOCRYLIC_ORE.get(),
 
                 ModBlocks.CRYOSTONE_ORE.get(),
-                ModBlocks.DEEPSLATE_CRYOSTONE_ORE.get());
+                ModBlocks.DEEPSLATE_CRYOSTONE_ORE.get()
+        );
 
         tag(BlockTags.WALLS).add(
                 ModBlocks.FROSTBOUND_COBBLESTONE_WALL.get(),
                 ModBlocks.CRYOBOUND_COBBLESTONE_WALL.get(),
                 ModBlocks.FROSTBOUND_STONE_BRICK_WALL.get(),
-                ModBlocks.ICE_BRICK_WALL.get());
+                ModBlocks.ICE_BRICK_WALL.get()
+        );
 
         tag(BlockTags.SLABS).add(
                 ModBlocks.FROSTBOUND_STONE_SLAB.get(),
                 ModBlocks.FROSTBOUND_COBBLESTONE_SLAB.get(),
                 ModBlocks.CRYOBOUND_COBBLESTONE_SLAB.get(),
                 ModBlocks.FROSTBOUND_STONE_BRICK_SLAB.get(),
-                ModBlocks.ICE_BRICK_SLAB.get());
+                ModBlocks.ICE_BRICK_SLAB.get()
+        );
 
         tag(BlockTags.STAIRS).add(
                 ModBlocks.FROSTBOUND_STONE_STAIRS.get(),
                 ModBlocks.FROSTBOUND_COBBLESTONE_STAIRS.get(),
                 ModBlocks.CRYOBOUND_COBBLESTONE_STAIRS.get(),
                 ModBlocks.FROSTBOUND_STONE_BRICK_STAIRS.get(),
-                ModBlocks.ICE_BRICK_STAIRS.get());
+                ModBlocks.ICE_BRICK_STAIRS.get()
+        );
     }
 }

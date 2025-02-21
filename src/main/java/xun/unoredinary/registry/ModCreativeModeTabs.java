@@ -25,6 +25,9 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.CRYOSTONE_DUST);
 
+                        output.accept(ModItems.LUMINITE_CRYSTAL);
+                        output.accept(ModItems.LUMINITE_TORCH_ITEM);
+
                         output.accept(ModItems.FROSTBITTEN_PHALANGES);
 
                         output.accept(ModItems.ICE_SHARD);
@@ -54,6 +57,9 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.CRYOSTONE_ORE);
                         output.accept(ModBlocks.DEEPSLATE_CRYOSTONE_ORE);
+
+                        output.accept(ModBlocks.LUMINITE_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_LUMINITE_ORE);
 
                         output.accept(ModBlocks.FROSTBOUND_STONE);
 

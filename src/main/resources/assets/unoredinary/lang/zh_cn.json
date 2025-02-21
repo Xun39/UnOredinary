@@ -4,6 +4,8 @@
 
   "item.unoredinary.cryostone_dust": "冰魄尘",
 
+  "item.unoredinary.luminite_crystal": "辉光晶体",
+
   "item.unoredinary.frosteel_ingot": "凛钢锭",
 
   "item.unoredinary.frosteel_upgrade_smithing_template": "锻造模板",
@@ -26,11 +28,16 @@
 
   "item.unoredinary.frost_zombie_spawn_egg": "霜冻僵尸刷怪蛋",
 
+  "block.unoredinary.luminite_torch": "辉光火把",
+
   "block.unoredinary.hemocrylic_ore": "寒血髓",
   "block.unoredinary.hemocrylic_block": "寒髓块",
 
   "block.unoredinary.cryostone_ore": "冰魄石矿石",
   "block.unoredinary.deepslate_cryostone_ore": "深层冰魄石矿石",
+
+  "block.unoredinary.luminite_ore": "辉光矿石",
+  "block.unoredinary.deepslate_luminite_ore": "深层辉光矿石",
 
   "block.unoredinary.frostbound_stone": "霜缚石",
   "block.unoredinary.frostbound_stone_stairs": "霜缚石楼梯",

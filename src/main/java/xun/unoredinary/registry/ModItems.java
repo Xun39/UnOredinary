@@ -1,6 +1,8 @@
 package xun.unoredinary.registry;
 
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -17,6 +19,11 @@ public class ModItems {
     public static final DeferredItem<Item> HEMOCRYLIC_CRYSTAL = ITEMS.register("hemocrylic_crystal", () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> CRYOSTONE_DUST = ITEMS.register("cryostone_dust", () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> LUMINITE_CRYSTAL = ITEMS.register("luminite_crystal", () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> LUMINITE_TORCH_ITEM = ITEMS.register("luminite_torch_item",
+            () -> new StandingAndWallBlockItem(ModBlocks.LUMINITE_TORCH.get(), ModBlocks.LUMINITE_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
 
     public static final DeferredItem<Item> ICE_SHARD = ITEMS.register("ice_shard", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> ICE_BRICK = ITEMS.register("ice_brick", () -> new Item(new Item.Properties()));

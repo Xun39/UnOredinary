@@ -1,4 +1,4 @@
-// 1.21	2025-02-18T19:55:13.0582614	Item Models: unoredinary
+// 1.21	2025-02-20T20:34:37.2619545	Item Models: unoredinary
 4015ba89de0971e89fe76dfb4a55127d3a8edca2 assets/unoredinary/models/item/cryobound_cobblestone_wall.json
 2a7920508c8b56687fb67716b24a0dc51bfb2746 assets/unoredinary/models/item/cryostone_dust.json
 340acbece5a32439230b0ce9ba7da0cafb3cec4f assets/unoredinary/models/item/frostbitten_phalanges.json
@@ -17,3 +17,5 @@ ca04d70cfc984f7cb851db547e4767bdfa28ab34 assets/unoredinary/models/item/hemocryl
 b9aae6e35c606984dd51eb319dd2517415d797a5 assets/unoredinary/models/item/ice_brick.json
 c6d5d6061148c5f7d6b55c4d5a6c3a5839973a13 assets/unoredinary/models/item/ice_brick_wall.json
 dbcb1e04a7fe3cec304e03ecc671c901485fa4bf assets/unoredinary/models/item/ice_shard.json
+92e3339a79c1b876b2d3b7bd693e7d18a7ca9d33 assets/unoredinary/models/item/luminite_crystal.json
+6056030d6fd437f1d30a1bf582a0fa20f967e81d assets/unoredinary/models/item/luminite_torch_item.json

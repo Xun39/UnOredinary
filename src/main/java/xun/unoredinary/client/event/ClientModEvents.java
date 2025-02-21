@@ -4,6 +4,8 @@ import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -13,6 +15,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import xun.unoredinary.UnOredinary;
 import xun.unoredinary.client.entity.model.FrostZombieModel;
 import xun.unoredinary.client.entity.renderer.FrostZombieRenderer;
+import xun.unoredinary.registry.ModBlocks;
 import xun.unoredinary.registry.ModEntityTypes;
 import xun.unoredinary.util.ModModelLayers;
 

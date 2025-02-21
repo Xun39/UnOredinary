@@ -4,7 +4,6 @@ import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.neoforged.neoforge.common.Tags;
@@ -25,7 +24,9 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_ORE_CRYOSTONE = registerKey("add_ore_cryostone");
     public static final ResourceKey<BiomeModifier> ADD_ORE_CRYOSTONE_LOWER = registerKey("add_ore_cryostone_lower");
 
-    public static final ResourceKey<BiomeModifier> SPAWN_FROST_ZOMBIE = registerKey("spawn_entity_frost_zombie");
+    public static final ResourceKey<BiomeModifier> ADD_ORE_LUMINITE = registerKey("add_ore_luminite");
+
+    public static final ResourceKey<BiomeModifier> ADD_FROST_ZOMBIE = registerKey("add_entity_frost_zombie");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
 
@@ -52,8 +53,15 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.LOWER_CRYOSTONE_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
+        // Luminite Ores
+        context.register(ADD_ORE_LUMINITE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_LUSH),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.LUMINITE_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+
+
         // Frost Zombies
-        context.register(SPAWN_FROST_ZOMBIE, new BiomeModifiers.AddSpawnsBiomeModifier(
+        context.register(ADD_FROST_ZOMBIE, new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_COLD),
                 List.of(new MobSpawnSettings.SpawnerData(ModEntityTypes.FROST_ZOMBIE.get(), 20, 2, 4))));
     }

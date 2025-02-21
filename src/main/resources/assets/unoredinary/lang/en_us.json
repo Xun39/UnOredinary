@@ -4,6 +4,8 @@
 
   "item.unoredinary.cryostone_dust": "Cryostone Dust",
 
+  "item.unoredinary.luminite_crystal": "Luminite Crystal",
+
   "item.unoredinary.frosteel_ingot": "Frosteel Ingot",
 
   "item.unoredinary.frosteel_upgrade_smithing_template": "Smithing Template",
@@ -26,11 +28,16 @@
 
   "item.unoredinary.frost_zombie_spawn_egg": "Frost Zombie Spawn Egg",
 
-  "block.unoredinary.hemocrylic_ore": "Hemocrylic",
+  "block.unoredinary.luminite_torch": "Luminite Torch",
+
+  "block.unoredinary.hemocrylic_ore": "Hemocrylic Ore",
   "block.unoredinary.hemocrylic_block": "Block of Hemocrylic",
 
   "block.unoredinary.cryostone_ore": "Cryostone Ore",
   "block.unoredinary.deepslate_cryostone_ore": "Deepslate Cryostone Ore",
+
+  "block.unoredinary.luminite_ore": "Luminite Ore",
+  "block.unoredinary.deepslate_luminite_ore": "Deepslate Luminite Ore",
 
   "block.unoredinary.frostbound_stone": "Frostbound Stone",
   "block.unoredinary.frostbound_stone_stairs": "Frostbound Stone Stairs",

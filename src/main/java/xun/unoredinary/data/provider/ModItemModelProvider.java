@@ -35,4 +35,5 @@ public abstract class ModItemModelProvider extends ItemModelProvider {
     protected static String getItemRegistryName(DeferredItem<?> deferredItem) {
         return deferredItem.getId().getPath();
     }
+    protected static String getBlockRegistryName(DeferredBlock<?> deferredBlock) { return deferredBlock.getId().getPath(); }
 }

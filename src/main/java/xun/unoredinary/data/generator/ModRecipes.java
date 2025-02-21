@@ -132,5 +132,9 @@ public class ModRecipes extends ModRecipeProvider {
         stoneCuttingRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ICE_BRICK_STAIRS, ModBlocks.ICE_BRICKS, 1);
         stoneCuttingRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ICE_BRICK_SLAB, ModBlocks.ICE_BRICKS, 2);
         stoneCuttingRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ICE_BRICK_WALL, ModBlocks.ICE_BRICKS, 1);
+
+
+        // Luminite Ores
+        onePlusOther(recipeOutput, RecipeCategory.DECORATIONS, Items.TORCH, ModItems.LUMINITE_CRYSTAL, ModItems.LUMINITE_TORCH_ITEM);
     }
 }

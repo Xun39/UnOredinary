@@ -22,6 +22,8 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> CRYOSTONE_ORE_KEY = registerKey("ore_cryostone");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LUMINITE_ORE_KEY = registerKey("ore_luminite");
+
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
         RuleTest iceReplaceables = new TagMatchTest(BlockTags.ICE);
@@ -32,12 +34,18 @@ public class ModConfiguredFeatures {
                 OreConfiguration.target(stoneReplaceables, ModBlocks.CRYOSTONE_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_CRYOSTONE_ORE.get().defaultBlockState()));
 
+        List<OreConfiguration.TargetBlockState> overworldLuminiteOres = List.of(
+                OreConfiguration.target(stoneReplaceables, ModBlocks.LUMINITE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_LUMINITE_ORE.get().defaultBlockState()));
+
         register(context, HEMOCRYLIC_ORE_KEY, Feature.ORE, new OreConfiguration(iceReplaceables,
                 ModBlocks.HEMOCRYLIC_ORE.get().defaultBlockState(), 3));
         register(context, LARGE_HEMOCRYLIC_ORE_KEY, Feature.ORE, new OreConfiguration(iceReplaceables,
                 ModBlocks.HEMOCRYLIC_ORE.get().defaultBlockState(), 7));
 
         register(context, CRYOSTONE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldCryostoneOres, 8));
+
+        register(context, LUMINITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldLuminiteOres, 5));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

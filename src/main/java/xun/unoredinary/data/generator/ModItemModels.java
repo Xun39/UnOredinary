@@ -2,6 +2,7 @@ package xun.unoredinary.data.generator;
 
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import xun.unoredinary.UnOredinary;
 import xun.unoredinary.data.provider.ModItemModelProvider;
 import xun.unoredinary.registry.ModBlocks;
 import xun.unoredinary.registry.ModItems;
@@ -39,6 +40,12 @@ public class ModItemModels extends ModItemModelProvider {
         handheldItem(ModItems.FROSTEEL_AXE);
         handheldItem(ModItems.FROSTEEL_HOE);
         handheldItem(ModItems.FROSTEEL_SHOVEL);
+
+
+        basicItem(ModItems.LUMINITE_CRYSTAL.get());
+
+        withExistingParent(getItemRegistryName(ModItems.LUMINITE_TORCH_ITEM), mcLoc("item/generated"))
+                .texture("layer0",  UnOredinary.modLoc("block/" + getBlockRegistryName(ModBlocks.LUMINITE_TORCH)));
 
         withExistingParent(getItemRegistryName(ModItems.FROST_ZOMBIE_SPAWN_EGG), mcLoc("item/template_spawn_egg"));
     }
