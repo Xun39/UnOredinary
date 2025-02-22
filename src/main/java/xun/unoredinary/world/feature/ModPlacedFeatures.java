@@ -24,29 +24,47 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> LUMINITE_ORE_PLACED_KEY = registerKey("ore_luminite");
 
+    public static final ResourceKey<PlacedFeature> RUBY_ORE_PLACED_KEY = registerKey("ore_ruby");
+    public static final ResourceKey<PlacedFeature> MEDIUM_RUBY_ORE_PLACED_KEY = registerKey("ore_ruby_medium");
+    public static final ResourceKey<PlacedFeature> LARGE_RUBY_ORE_PLACED_KEY = registerKey("ore_ruby_large");
+    public static final ResourceKey<PlacedFeature> BURIED_RUBY_ORE_PLACED_KEY = registerKey("ore_ruby_buried");
+
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, HEMOCRYLIC_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.HEMOCRYLIC_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(82,
+                ModOrePlacement.oreCountPlacement(82,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(360))));
-
         register(context, LARGE_HEMOCRYLIC_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_HEMOCRYLIC_ORE_KEY),
-                ModOrePlacement.rareOrePlacement(48,
+                ModOrePlacement.oreChancePlacement(48,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(360))));
 
 
         register(context, CRYOSTONE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CRYOSTONE_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(4,
+                ModOrePlacement.oreCountPlacement(4,
                         HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(0), VerticalAnchor.absolute(15))));
-
         register(context, LOWER_CRYOSTONE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CRYOSTONE_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(8,
+                ModOrePlacement.oreCountPlacement(8,
                         HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-32), VerticalAnchor.aboveBottom(32))));
 
+
         register(context, LUMINITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUMINITE_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(6,
+                ModOrePlacement.oreCountPlacement(6,
                         HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-48), VerticalAnchor.belowTop(36))));
+
+
+        register(context, RUBY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SMALL_RUBY_ORE_KEY),
+                ModOrePlacement.oreCountPlacement(7,
+                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+        register(context, MEDIUM_RUBY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MEDIUM_RUBY_ORE_KEY),
+                ModOrePlacement.oreCountPlacement(2,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-8))));
+        register(context, LARGE_RUBY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_RUBY_ORE_KEY),
+                ModOrePlacement.oreChancePlacement(11,
+                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+        register(context, BURIED_RUBY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SMALL_RUBY_ORE_KEY),
+                ModOrePlacement.oreCountPlacement(5,
+                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

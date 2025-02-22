@@ -14,14 +14,14 @@ import xun.unoredinary.world.modifier.ModBiomeModifiers;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
-public class ModDatapacks extends DatapackBuiltinEntriesProvider {
+public class ModDatapackEntries extends DatapackBuiltinEntriesProvider {
 
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap);
 
-    public ModDatapacks(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+    public ModDatapackEntries(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(UnOredinary.MOD_ID));
     }
 }

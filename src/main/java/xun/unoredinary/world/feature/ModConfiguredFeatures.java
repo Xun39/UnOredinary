@@ -24,6 +24,11 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> LUMINITE_ORE_KEY = registerKey("ore_luminite");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SMALL_RUBY_ORE_KEY = registerKey("ore_ruby_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEDIUM_RUBY_ORE_KEY = registerKey("ore_ruby_medium");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_RUBY_ORE_KEY = registerKey("ore_ruby_large");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BURIED_RUBY_ORE_KEY = registerKey("ore_ruby_buried");
+
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
         RuleTest iceReplaceables = new TagMatchTest(BlockTags.ICE);
@@ -38,6 +43,10 @@ public class ModConfiguredFeatures {
                 OreConfiguration.target(stoneReplaceables, ModBlocks.LUMINITE_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_LUMINITE_ORE.get().defaultBlockState()));
 
+        List<OreConfiguration.TargetBlockState> overworldRubyOres = List.of(
+                OreConfiguration.target(stoneReplaceables, ModBlocks.RUBY_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_RUBY_ORE.get().defaultBlockState()));
+
         register(context, HEMOCRYLIC_ORE_KEY, Feature.ORE, new OreConfiguration(iceReplaceables,
                 ModBlocks.HEMOCRYLIC_ORE.get().defaultBlockState(), 3));
         register(context, LARGE_HEMOCRYLIC_ORE_KEY, Feature.ORE, new OreConfiguration(iceReplaceables,
@@ -46,6 +55,11 @@ public class ModConfiguredFeatures {
         register(context, CRYOSTONE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldCryostoneOres, 8));
 
         register(context, LUMINITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldLuminiteOres, 5));
+
+        register(context, SMALL_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 3,0.5F));
+        register(context, MEDIUM_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 7,0.6F));
+        register(context, LARGE_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 13,0.8F));
+        register(context, BURIED_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 8,1.0F));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

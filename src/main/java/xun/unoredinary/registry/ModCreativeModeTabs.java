@@ -15,6 +15,77 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(BuiltInRegistries.CREATIVE_MODE_TAB, UnOredinary.MOD_ID);
     public static void register(IEventBus eventBus) { CREATIVE_MODE_TABS.register(eventBus); }
 
+    public static final Supplier<CreativeModeTab> UNOREDINARY_BLOCK_TAB = CREATIVE_MODE_TABS.register("unoredinary_block_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.HEMOCRYLIC_ORE.get()))
+                    .title(Component.translatable("creativemodetab.unoredinary.block"))
+                    .displayItems((itemDisplayParameters, output) -> {
+
+                        output.accept(ModBlocks.HEMOCRYLIC_ORE);
+                        output.accept(ModBlocks.HEMOCRYLIC_BLOCK);
+
+                        output.accept(ModBlocks.CRYOSTONE_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_CRYOSTONE_ORE);
+
+                        output.accept(ModBlocks.LUMINITE_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_LUMINITE_ORE);
+
+                        output.accept(ModBlocks.RUBY_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_RUBY_ORE);
+
+                        output.accept(ModBlocks.FROSTBOUND_STONE);
+
+                        output.accept(ModBlocks.FROSTBOUND_STONE_STAIRS);
+                        output.accept(ModBlocks.FROSTBOUND_STONE_SLAB);
+
+                        output.accept(ModBlocks.FROSTBOUND_COBBLESTONE);
+
+                        output.accept(ModBlocks.FROSTBOUND_COBBLESTONE_STAIRS);
+                        output.accept(ModBlocks.FROSTBOUND_COBBLESTONE_SLAB);
+                        output.accept(ModBlocks.FROSTBOUND_COBBLESTONE_WALL);
+
+                        output.accept(ModBlocks.CRYOBOUND_COBBLESTONE);
+
+                        output.accept(ModBlocks.CRYOBOUND_COBBLESTONE_STAIRS);
+                        output.accept(ModBlocks.CRYOBOUND_COBBLESTONE_SLAB);
+                        output.accept(ModBlocks.CRYOBOUND_COBBLESTONE_WALL);
+
+                        output.accept(ModBlocks.FROSTBOUND_STONE_BRICKS);
+
+                        output.accept(ModBlocks.FROSTBOUND_STONE_BRICK_STAIRS);
+                        output.accept(ModBlocks.FROSTBOUND_STONE_BRICK_SLAB);
+                        output.accept(ModBlocks.FROSTBOUND_STONE_BRICK_WALL);
+
+                        output.accept(ModBlocks.ICE_BRICKS);
+
+                        output.accept(ModBlocks.ICE_BRICK_STAIRS);
+                        output.accept(ModBlocks.ICE_BRICK_SLAB);
+                        output.accept(ModBlocks.ICE_BRICK_WALL);
+
+                        output.accept(ModBlocks.FROSTEEL_BLOCK);
+                        output.accept(ModBlocks.CRYOSTONE_BLOCK);
+                        output.accept(ModBlocks.LUMINITE_BLOCK);
+                        output.accept(ModBlocks.RUBY_BLOCK);
+
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> UNOREDINARY_EQUIPMENT_TAB = CREATIVE_MODE_TABS.register("unoredinary_equipment_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.FROSTEEL_HOE.get()))
+                    .title(Component.translatable("creativemodetab.unoredinary.equipment"))
+                    .displayItems((itemDisplayParameters, output) -> {
+
+                        output.accept(ModItems.FROSTEEL_HELMET);
+                        output.accept(ModItems.FROSTEEL_CHESTPLATE);
+                        output.accept(ModItems.FROSTEEL_LEGGINGS);
+                        output.accept(ModItems.FROSTEEL_BOOTS);
+
+                        output.accept(ModItems.FROSTEEL_SWORD);
+                        output.accept(ModItems.FROSTEEL_PICKAXE);
+                        output.accept(ModItems.FROSTEEL_AXE);
+                        output.accept(ModItems.FROSTEEL_HOE);
+                        output.accept(ModItems.FROSTEEL_SHOVEL);
+
+                    }).build());
+
     public static final Supplier<CreativeModeTab> UNOREDINARY_ITEM_TAB = CREATIVE_MODE_TABS.register("unoredinary_item_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.HEMOCRYLIC_SHARD.get()))
                     .title(Component.translatable("creativemodetab.unoredinary.item"))
@@ -34,72 +105,13 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.FROSTEEL_INGOT);
 
-                        output.accept(ModItems.FROSTEEL_SWORD);
-                        output.accept(ModItems.FROSTEEL_PICKAXE);
-                        output.accept(ModItems.FROSTEEL_AXE);
-                        output.accept(ModItems.FROSTEEL_HOE);
-                        output.accept(ModItems.FROSTEEL_SHOVEL);
-
-                        output.accept(ModItems.FROSTEEL_HELMET);
-                        output.accept(ModItems.FROSTEEL_CHESTPLATE);
-                        output.accept(ModItems.FROSTEEL_LEGGINGS);
-                        output.accept(ModItems.FROSTEEL_BOOTS);
-
-
                         output.accept(ModItems.LUMINITE_CRYSTAL);
                         output.accept(ModItems.LUMINITE_TORCH);
 
+                        output.accept(ModItems.RUBY);
+                        output.accept(ModItems.RUBY_ROD);
 
                         output.accept(ModItems.FROST_ZOMBIE_SPAWN_EGG);
-
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> UNOREDINARY_BLOCK_TAB = CREATIVE_MODE_TABS.register("unoredinary_block_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.HEMOCRYLIC_ORE.get()))
-                    .title(Component.translatable("creativemodetab.unoredinary.block"))
-                    .displayItems((itemDisplayParameters, output) -> {
-
-                        output.accept(ModBlocks.HEMOCRYLIC_ORE);
-                        output.accept(ModBlocks.HEMOCRYLIC_BLOCK);
-
-                        output.accept(ModBlocks.CRYOSTONE_ORE);
-                        output.accept(ModBlocks.DEEPSLATE_CRYOSTONE_ORE);
-
-                        output.accept(ModBlocks.LUMINITE_ORE);
-                        output.accept(ModBlocks.DEEPSLATE_LUMINITE_ORE);
-
-                        output.accept(ModBlocks.FROSTBOUND_STONE);
-
-                        output.accept(ModBlocks.FROSTBOUND_STONE_STAIRS);
-                        output.accept(ModBlocks.FROSTBOUND_STONE_SLAB);
-
-
-                        output.accept(ModBlocks.FROSTBOUND_COBBLESTONE);
-
-                        output.accept(ModBlocks.FROSTBOUND_COBBLESTONE_STAIRS);
-                        output.accept(ModBlocks.FROSTBOUND_COBBLESTONE_SLAB);
-                        output.accept(ModBlocks.FROSTBOUND_COBBLESTONE_WALL);
-
-
-                        output.accept(ModBlocks.CRYOBOUND_COBBLESTONE);
-
-                        output.accept(ModBlocks.CRYOBOUND_COBBLESTONE_STAIRS);
-                        output.accept(ModBlocks.CRYOBOUND_COBBLESTONE_SLAB);
-                        output.accept(ModBlocks.CRYOBOUND_COBBLESTONE_WALL);
-
-
-                        output.accept(ModBlocks.FROSTBOUND_STONE_BRICKS);
-
-                        output.accept(ModBlocks.FROSTBOUND_STONE_BRICK_STAIRS);
-                        output.accept(ModBlocks.FROSTBOUND_STONE_BRICK_SLAB);
-                        output.accept(ModBlocks.FROSTBOUND_STONE_BRICK_WALL);
-
-
-                        output.accept(ModBlocks.ICE_BRICKS);
-
-                        output.accept(ModBlocks.ICE_BRICK_STAIRS);
-                        output.accept(ModBlocks.ICE_BRICK_SLAB);
-                        output.accept(ModBlocks.ICE_BRICK_WALL);
 
                     }).build());
 }

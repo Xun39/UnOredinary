@@ -36,6 +36,8 @@ public class ModRecipes extends ModRecipeProvider {
                 .unlockedBy(getHasName(ModItems.HEMOCRYLIC_CRYSTAL), has(ModItems.HEMOCRYLIC_CRYSTAL))
                 .save(recipeOutput);
 
+        threeByThreeConvertible(recipeOutput, ModItems.FROSTEEL_INGOT, ModBlocks.FROSTEEL_BLOCK, RecipeCategory.MISC, RecipeCategory.BUILDING_BLOCKS);
+
         // Template Upgrade Recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE, 2)
                 .pattern("#P#")
@@ -145,5 +147,15 @@ public class ModRecipes extends ModRecipeProvider {
 
         // Luminite Ores
         onePlusOther(recipeOutput, RecipeCategory.DECORATIONS, ModItems.LUMINITE_CRYSTAL, Items.TORCH, ModItems.LUMINITE_TORCH);
+        threeByThreeConvertible(recipeOutput, ModItems.LUMINITE_CRYSTAL, ModBlocks.LUMINITE_BLOCK, RecipeCategory.MISC, RecipeCategory.BUILDING_BLOCKS);
+
+        // Ruby Ores
+        threeByThreeConvertible(recipeOutput, ModItems.RUBY, ModBlocks.RUBY_BLOCK, RecipeCategory.MISC, RecipeCategory.BUILDING_BLOCKS);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_ROD)
+                .pattern("#")
+                .pattern("#")
+                .define('#', ModItems.RUBY)
+                .unlockedBy(getHasName(ModItems.RUBY), has(ModItems.RUBY))
+                .save(recipeOutput);
     }
 }

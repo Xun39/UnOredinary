@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "unoredinary:luminite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "unoredinary:luminite_crystal"
+  }
+}

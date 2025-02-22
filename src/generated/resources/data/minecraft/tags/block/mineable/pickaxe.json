@@ -2,8 +2,16 @@
   "values": [
     "unoredinary:hemocrylic_block",
     "unoredinary:hemocrylic_ore",
+    "unoredinary:frosteel_block",
     "unoredinary:cryostone_ore",
     "unoredinary:deepslate_cryostone_ore",
+    "unoredinary:cryostone_block",
+    "unoredinary:luminite_ore",
+    "unoredinary:deepslate_luminite_ore",
+    "unoredinary:luminite_block",
+    "unoredinary:ruby_ore",
+    "unoredinary:deepslate_ruby_ore",
+    "unoredinary:ruby_block",
     "unoredinary:frostbound_stone",
     "unoredinary:frostbound_stone_stairs",
     "unoredinary:frostbound_stone_slab",
@@ -22,8 +30,6 @@
     "unoredinary:ice_bricks",
     "unoredinary:ice_brick_stairs",
     "unoredinary:ice_brick_slab",
-    "unoredinary:ice_brick_wall",
-    "unoredinary:luminite_ore",
-    "unoredinary:deepslate_luminite_ore"
+    "unoredinary:ice_brick_wall"
   ]
 }

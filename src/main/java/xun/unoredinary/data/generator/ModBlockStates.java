@@ -16,12 +16,19 @@ public class ModBlockStates extends ModBlockStateProvider {
 
         blockWithItem(ModBlocks.HEMOCRYLIC_BLOCK);
         blockWithItem(ModBlocks.HEMOCRYLIC_ORE);
+        blockWithItem(ModBlocks.FROSTEEL_BLOCK);
 
         blockWithItem(ModBlocks.CRYOSTONE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_CRYOSTONE_ORE);
+        blockWithItem(ModBlocks.CRYOSTONE_BLOCK);
 
         blockWithItem(ModBlocks.LUMINITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_LUMINITE_ORE);
+        blockWithItem(ModBlocks.LUMINITE_BLOCK);
+
+        blockWithItem(ModBlocks.RUBY_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_RUBY_ORE);
+        blockWithItem(ModBlocks.RUBY_BLOCK);
 
         blockWithItem(ModBlocks.FROSTBOUND_STONE);
         stairBlockWithItem(ModBlocks.FROSTBOUND_STONE_STAIRS, ModBlocks.FROSTBOUND_STONE);

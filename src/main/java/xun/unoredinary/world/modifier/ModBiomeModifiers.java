@@ -14,6 +14,7 @@ import xun.unoredinary.UnOredinary;
 import xun.unoredinary.registry.ModEntityTypes;
 import xun.unoredinary.world.feature.ModPlacedFeatures;
 
+import java.lang.ref.Reference;
 import java.util.List;
 
 public class ModBiomeModifiers {
@@ -25,6 +26,12 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_ORE_CRYOSTONE_LOWER = registerKey("add_ore_cryostone_lower");
 
     public static final ResourceKey<BiomeModifier> ADD_ORE_LUMINITE = registerKey("add_ore_luminite");
+
+    public static final ResourceKey<BiomeModifier> ADD_ORE_RUBY = registerKey("add_ore_ruby");
+    public static final ResourceKey<BiomeModifier> ADD_ORE_RUBY_MEDIUM = registerKey("add_ore_ruby_medium");
+    public static final ResourceKey<BiomeModifier> ADD_ORE_RUBY_LARGE= registerKey("add_ore_ruby_large");
+    public static final ResourceKey<BiomeModifier> ADD_ORE_RUBY_BURIED = registerKey("add_ore_ruby_buried");
+
 
     public static final ResourceKey<BiomeModifier> ADD_FROST_ZOMBIE = registerKey("add_entity_frost_zombie");
 
@@ -59,6 +66,23 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.LUMINITE_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
+        // Ruby Ores
+        context.register(ADD_ORE_RUBY, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.RUBY_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_ORE_RUBY_MEDIUM, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.MEDIUM_RUBY_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_ORE_RUBY_LARGE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.LARGE_RUBY_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_ORE_RUBY_BURIED, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BURIED_RUBY_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
 
         // Frost Zombies
         context.register(ADD_FROST_ZOMBIE, new BiomeModifiers.AddSpawnsBiomeModifier(

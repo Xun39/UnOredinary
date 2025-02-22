@@ -21,6 +21,11 @@ public class ModItemModels extends ModItemModelProvider {
 
         basicItem(ModItems.CRYOSTONE_DUST.get());
 
+        basicItem(ModItems.LUMINITE_CRYSTAL.get());
+
+        basicItem(ModItems.RUBY.get());
+        basicItem(ModItems.RUBY_ROD.get());
+
         basicItem(ModItems.ICE_SHARD.get());
         basicItem(ModItems.ICE_BRICK.get());
 
@@ -45,9 +50,6 @@ public class ModItemModels extends ModItemModelProvider {
         trimmedArmorItem(ModItems.FROSTEEL_CHESTPLATE);
         trimmedArmorItem(ModItems.FROSTEEL_LEGGINGS);
         trimmedArmorItem(ModItems.FROSTEEL_BOOTS);
-
-
-        basicItem(ModItems.LUMINITE_CRYSTAL.get());
 
         withExistingParent(getItemRegistryName(ModItems.LUMINITE_TORCH), mcLoc("item/generated"))
                 .texture("layer0",  UnOredinary.modLoc("block/" + getBlockRegistryName(ModBlocks.LUMINITE_TORCH)));

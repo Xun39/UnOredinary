@@ -23,9 +23,19 @@ public class ModBlockTags extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 ModBlocks.HEMOCRYLIC_BLOCK.get(),
                 ModBlocks.HEMOCRYLIC_ORE.get(),
+                ModBlocks.FROSTEEL_BLOCK.get(),
 
                 ModBlocks.CRYOSTONE_ORE.get(),
                 ModBlocks.DEEPSLATE_CRYOSTONE_ORE.get(),
+                ModBlocks.CRYOSTONE_BLOCK.get(),
+
+                ModBlocks.LUMINITE_ORE.get(),
+                ModBlocks.DEEPSLATE_LUMINITE_ORE.get(),
+                ModBlocks.LUMINITE_BLOCK.get(),
+
+                ModBlocks.RUBY_ORE.get(),
+                ModBlocks.DEEPSLATE_RUBY_ORE.get(),
+                ModBlocks.RUBY_BLOCK.get(),
 
                 ModBlocks.FROSTBOUND_STONE.get(),
 
@@ -50,11 +60,7 @@ public class ModBlockTags extends BlockTagsProvider {
                 ModBlocks.ICE_BRICKS.get(),
                 ModBlocks.ICE_BRICK_STAIRS.get(),
                 ModBlocks.ICE_BRICK_SLAB.get(),
-                ModBlocks.ICE_BRICK_WALL.get(),
-
-
-                ModBlocks.LUMINITE_ORE.get(),
-                ModBlocks.DEEPSLATE_LUMINITE_ORE.get()
+                ModBlocks.ICE_BRICK_WALL.get()
         );
 
 
@@ -68,7 +74,10 @@ public class ModBlockTags extends BlockTagsProvider {
                 ModBlocks.HEMOCRYLIC_ORE.get(),
 
                 ModBlocks.CRYOSTONE_ORE.get(),
-                ModBlocks.DEEPSLATE_CRYOSTONE_ORE.get()
+                ModBlocks.DEEPSLATE_CRYOSTONE_ORE.get(),
+
+                ModBlocks.RUBY_ORE.get(),
+                ModBlocks.DEEPSLATE_RUBY_ORE.get()
         );
 
         tag(BlockTags.WALLS).add(

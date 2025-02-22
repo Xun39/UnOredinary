@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_frosteel_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:frosteel_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unoredinary:frosteel_ingot_from_frosteel_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_frosteel_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unoredinary:frosteel_ingot_from_frosteel_block"
+    ]
+  }
+}

@@ -4,6 +4,9 @@
 
   "item.unoredinary.cryostone_dust": "冰魄尘",
 
+  "item.unoredinary.ruby": "红宝石",
+  "item.unoredinary.ruby_rod": "红宝石棒",
+
   "item.unoredinary.luminite_crystal": "辉光晶体",
 
   "item.unoredinary.frosteel_ingot": "凛钢锭",
@@ -32,12 +35,19 @@
 
   "block.unoredinary.hemocrylic_ore": "寒血髓",
   "block.unoredinary.hemocrylic_block": "寒髓块",
+  "block.unoredinary.frosteel_block": "凛钢块",
 
   "block.unoredinary.cryostone_ore": "冰魄石矿石",
   "block.unoredinary.deepslate_cryostone_ore": "深层冰魄石矿石",
+  "block.unoredinary.cryostone_block": "冰魄石块",
 
   "block.unoredinary.luminite_ore": "辉光矿石",
   "block.unoredinary.deepslate_luminite_ore": "深层辉光矿石",
+  "block.unoredinary.luminite_block": "辉光块",
+
+  "block.unoredinary.ruby_ore": "红宝石矿石",
+  "block.unoredinary.deepslate_ruby_ore": "深层红宝石矿石",
+  "block.unoredinary.ruby_block": "红宝石块",
 
   "block.unoredinary.frostbound_stone": "霜缚石",
   "block.unoredinary.frostbound_stone_stairs": "霜缚石楼梯",
@@ -67,6 +77,7 @@
 
   "creativemodetab.unoredinary.item": "矿海寻奇：物品",
   "creativemodetab.unoredinary.block": "矿海寻奇：方块",
+  "creativemodetab.unoredinary.equipment": "矿海寻奇：装备",
 
   "upgrade.unoredinary.frosteel_upgrade": "凛钢升级",
   "item.unoredinary.smithing_template.frosteel_upgrade.applies_to": "铁装备",
@@ -75,7 +86,7 @@
   "item.unoredinary.smithing_template.frosteel_upgrade.additions_slot_description": "放入凛钢锭",
 
   "advancement.unoredinary.root": "矿海寻奇",
-  "advancement.unoredinary.root.desc": "你奇特冒险的开始……",
+  "advancement.unoredinary.root.desc": "你神奇冒险的开始……",
 
   "advancement.unoredinary.fp/root": "冰霜勘探者",
   "advancement.unoredinary.fp/root.desc": "在寒冷群系中，积雪下隐藏着等待发现的矿脉。",
@@ -85,7 +96,9 @@
   "advancement.unoredinary.fp/kill_frost_zombie.desc": "杀死一个霜冻僵尸",
 
   "tooltip.unoredinary.shift_hold_extend": "§8按住Shift查看更多信息",
-  "tooltip.unoredinary.frosteel_sword": "一把由凛钢锻造的利剑，在寒冷群系中威力倍增。",
+
+  "info.unoredinary.frosteel_sword": "一把由凛钢锻造的利剑，在寒冷群系中威力倍增。",
+  "info.unoredinary.ice_brick": "通过潜行并右键点击蓝冰获得的坚固冰块。它光滑如镜的表面使其成为高级建筑的理想材料。",
 
   "pack.unoredinary.description": "矿海寻奇模组资源"
 }

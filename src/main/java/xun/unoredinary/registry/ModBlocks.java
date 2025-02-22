@@ -20,20 +20,27 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(UnOredinary.MOD_ID);
     public static void register(IEventBus eventBus) { BLOCKS.register(eventBus); }
 
+    // Hemocrylic
     public static final DeferredBlock<Block> HEMOCRYLIC_BLOCK = registerBlock("hemocrylic_block",
             () -> new HemocrylicBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ICE)
                     .strength(5.0F, 64.0F)
                     .requiresCorrectToolForDrops(), false));
-
     public static final DeferredBlock<Block> HEMOCRYLIC_ORE = registerBlock("hemocrylic_ore",
             () -> new HemocrylicBlock(BlockBehaviour.Properties.ofFullCopy(ModBlocks.HEMOCRYLIC_BLOCK.get())
                     .strength(3.0F, 2.0F)
                     .lightLevel((state) -> 1), true));
 
+    public static final DeferredBlock<Block> FROSTEEL_BLOCK = registerBlock("frosteel_block",
+            () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
+                    .strength(5.0F, 6.0F).sound(SoundType.METAL)));
+
     public static final DeferredBlock<Block> CRYOSTONE_ORE = registerBlock("cryostone_ore",
             () -> new CryoStoneOreBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_ORE)));
     public static final DeferredBlock<Block> DEEPSLATE_CRYOSTONE_ORE = registerBlock("deepslate_cryostone_ore",
             () -> new CryoStoneOreBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_REDSTONE_ORE)));
+    public static final DeferredBlock<Block> CRYOSTONE_BLOCK = registerBlock("cryostone_block",
+            () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
+                    .strength(5.0F, 6.0F).sound(SoundType.METAL)));
 
     public static final DeferredBlock<Block> FROSTBOUND_STONE = registerBlock("frostbound_stone",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).strength(1.0F, 5.0F)));
@@ -79,6 +86,7 @@ public class ModBlocks {
             () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BRICK_WALL)));
 
 
+    // Luminite
     public static final DeferredBlock<Block> LUMINITE_ORE = registerBlock("luminite_ore",
             () -> new DropExperienceBlock(UniformInt.of(2, 6),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)
@@ -90,6 +98,11 @@ public class ModBlocks {
                     BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)
                             .strength(4.5F, 3.0F)
                             .lightLevel((state) -> 9)));
+
+    public static final DeferredBlock<Block> LUMINITE_BLOCK = registerBlock("luminite_block",
+            () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
+                    .strength(5.0F, 6.0F).sound(SoundType.METAL)
+                    .lightLevel((state) -> 9)));
 
     public static final DeferredBlock<TorchBlock> LUMINITE_TORCH = registerBlock("luminite_torch",
             () -> new TorchBlock(
@@ -104,8 +117,21 @@ public class ModBlocks {
                             .lootFrom(ModBlocks.LUMINITE_TORCH)
                             .lightLevel((state) -> 15)));
 
-    public static final DeferredBlock<LanternBlock> LUMINITE_LANTERN = registerBlock("luminite_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN)));
+
+    // Ruby
+    public static final DeferredBlock<Block> RUBY_ORE = registerBlock("ruby_ore",
+            () -> new DropExperienceBlock(UniformInt.of(4, 8),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)
+                            .strength(4.5F, 3.0F)));
+
+    public static final DeferredBlock<Block> DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore",
+            () -> new DropExperienceBlock(UniformInt.of(4, 8),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)
+                            .strength(4.5F, 3.0F)));
+
+    public static final DeferredBlock<Block> RUBY_BLOCK = registerBlock("ruby_block",
+            () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
+                    .strength(5.0F, 6.0F).sound(SoundType.METAL)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

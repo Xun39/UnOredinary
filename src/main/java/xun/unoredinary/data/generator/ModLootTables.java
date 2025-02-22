@@ -49,12 +49,19 @@ public class ModLootTables extends LootTableProvider {
 
             multipleDrops(ModBlocks.HEMOCRYLIC_ORE, ModItems.HEMOCRYLIC_SHARD.get(), 1.0F, 5.0F);
             dropSelf(ModBlocks.HEMOCRYLIC_BLOCK.get());
+            dropSelf(ModBlocks.FROSTEEL_BLOCK.get());
 
             multipleDrops(ModBlocks.CRYOSTONE_ORE, ModItems.CRYOSTONE_DUST.get(), 3.0F, 4.0F);
             multipleDrops(ModBlocks.DEEPSLATE_CRYOSTONE_ORE, ModItems.CRYOSTONE_DUST.get(), 3.0F, 4.0F);
+            dropSelf(ModBlocks.CRYOSTONE_BLOCK.get());
 
             dropOtherWithoutSilkTouch(ModBlocks.LUMINITE_ORE, ModItems.LUMINITE_CRYSTAL.get());
             dropOtherWithoutSilkTouch(ModBlocks.DEEPSLATE_LUMINITE_ORE, ModItems.LUMINITE_CRYSTAL.get());
+            dropSelf(ModBlocks.LUMINITE_BLOCK.get());
+
+            dropOtherWithoutSilkTouch(ModBlocks.RUBY_ORE, ModItems.RUBY.get());
+            dropOtherWithoutSilkTouch(ModBlocks.DEEPSLATE_RUBY_ORE, ModItems.RUBY.get());
+            dropSelf(ModBlocks.RUBY_BLOCK.get());
 
             dropOtherWithoutSilkTouch(ModBlocks.FROSTBOUND_STONE, ModBlocks.FROSTBOUND_COBBLESTONE);
             dropSelf(ModBlocks.FROSTBOUND_STONE_STAIRS.get());
