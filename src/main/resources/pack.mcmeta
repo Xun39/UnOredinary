@@ -1,6 +1,8 @@
 {
   "pack": {
-    "description": "${mod_id} resources",
-    "pack_format": 34
+    "description": {
+      "translate": "pack.unoredinary.description"
+    },
+    "pack_format": 15
   }
 }

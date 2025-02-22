@@ -1,8 +1,9 @@
-// 1.21	2025-02-18T14:57:44.3611737	Tags for minecraft:item mod id unoredinary
+// 1.21	2025-02-21T17:08:28.686624	Tags for minecraft:item mod id unoredinary
 c283da0aa2ad16a2b5a62b0535b0c42d8f3ef0bb data/minecraft/tags/item/axes.json
 e7c3f843477d18897cd4dc365509a91f9391dc7c data/minecraft/tags/item/hoes.json
 359db3395d625d3c7eafb647213580f599c10138 data/minecraft/tags/item/pickaxes.json
 d0aa8b58e26b7b1362656b0ba6b6383c6630e6ef data/minecraft/tags/item/shovels.json
 115d25ee94ee9d165318075faa4397306b03f4d3 data/minecraft/tags/item/swords.json
+f8b51a75d50aef04f44ca07ced9ea130e8bbeef3 data/minecraft/tags/item/trimmable_armor.json
 c15eef5ef2621b65df542c2fe3b94f25cf3f6ee6 data/minecraft/tags/item/trim_templates.json
 a5a702a8d8df629c43c6c03f639c7a872def6b7d data/unoredinary/tags/item/frosteel_tool.json

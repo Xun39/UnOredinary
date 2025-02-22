@@ -58,6 +58,15 @@ public class ModRecipes extends ModRecipeProvider {
         smithingUpgrade(recipeOutput, Items.IRON_SHOVEL, ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.FROSTEEL_INGOT.get(),
                 ModItems.FROSTEEL_SHOVEL.get(), RecipeCategory.TOOLS);
 
+        smithingUpgrade(recipeOutput, Items.IRON_HELMET, ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.FROSTEEL_INGOT.get(),
+                ModItems.FROSTEEL_HELMET.get(), RecipeCategory.COMBAT);
+        smithingUpgrade(recipeOutput, Items.IRON_CHESTPLATE, ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.FROSTEEL_INGOT.get(),
+                ModItems.FROSTEEL_CHESTPLATE.get(), RecipeCategory.COMBAT);
+        smithingUpgrade(recipeOutput, Items.IRON_LEGGINGS, ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.FROSTEEL_INGOT.get(),
+                ModItems.FROSTEEL_LEGGINGS.get(), RecipeCategory.COMBAT);
+        smithingUpgrade(recipeOutput, Items.IRON_BOOTS, ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.FROSTEEL_INGOT.get(),
+                ModItems.FROSTEEL_BOOTS.get(), RecipeCategory.COMBAT);
+
 
         // Frostbound Stone
         onePlusOther(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModItems.CRYOSTONE_DUST, Blocks.STONE, ModBlocks.FROSTBOUND_STONE);
@@ -135,6 +144,6 @@ public class ModRecipes extends ModRecipeProvider {
 
 
         // Luminite Ores
-        onePlusOther(recipeOutput, RecipeCategory.DECORATIONS, Items.TORCH, ModItems.LUMINITE_CRYSTAL, ModItems.LUMINITE_TORCH_ITEM);
+        onePlusOther(recipeOutput, RecipeCategory.DECORATIONS, ModItems.LUMINITE_CRYSTAL, Items.TORCH, ModItems.LUMINITE_TORCH);
     }
 }

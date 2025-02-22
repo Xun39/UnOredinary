@@ -74,6 +74,9 @@
   "item.unoredinary.smithing_template.frosteel_upgrade.base_slot_description": "Add iron armor, weapon, or tool",
   "item.unoredinary.smithing_template.frosteel_upgrade.additions_slot_description": "Add Frosteel Inogt",
 
+  "advancement.unoredinary.root": "UnOredinary",
+  "advancement.unoredinary.root.desc": "The starting point of your \"unoredinary\" story...",
+
   "advancement.unoredinary.fp/root": "Frost Prospector",
   "advancement.unoredinary.fp/root.desc": "Hidden within the frigid biomes, snow-covered veins await your discovery.",
   "advancement.unoredinary.fp/get_frosteel": "Frosteel Artisan",
@@ -81,5 +84,8 @@
   "advancement.unoredinary.fp/kill_frost_zombie": "Frost Hunter",
   "advancement.unoredinary.fp/kill_frost_zombie.desc": "Kill a Frost Zombie",
 
-  "tooltip.unoredinary.frosteel_sword": "A sharp blade forged from Frosteel, its power amplified in frigid biomes."
+  "tooltip.unoredinary.shift_hold_extend": "§8Hold Shift for more information",
+  "tooltip.unoredinary.frosteel_sword": "A sharp blade forged from Frosteel, its power amplified in frigid biomes.",
+
+  "pack.unoredinary.description": "UnOredinary Mod resources"
 }

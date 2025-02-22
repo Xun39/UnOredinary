@@ -10,7 +10,9 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
+import xun.unoredinary.UnOredinary;
 import xun.unoredinary.registry.ModItems;
+import xun.unoredinary.registry.ModSounds;
 
 import java.util.EnumMap;
 import java.util.List;
@@ -25,7 +27,7 @@ public class ModArmorMaterials {
         attribute.put(ArmorItem.Type.HELMET, 3);
         attribute.put(ArmorItem.Type.BODY, 9);
 
-    }), 16, SoundEvents.ARMOR_EQUIP_IRON, 0.1F, 0.0F, () -> Ingredient.of(ModItems.FROSTEEL_INGOT));
+    }), 16, ModSounds.ARMOR_EQUIP_FROSTEEL, 1.0F, 0.0F, () -> Ingredient.of(ModItems.FROSTEEL_INGOT));
 
 
     private static Holder<ArmorMaterial> register(
@@ -35,22 +37,10 @@ public class ModArmorMaterials {
             Holder<SoundEvent> equipSound,
             float toughness,
             float knockbackResistance,
-            Supplier<Ingredient> repairIngredient
+            Supplier<Ingredient> repairIngridient
     ) {
-        List<ArmorMaterial.Layer> list = List.of(new ArmorMaterial.Layer(ResourceLocation.withDefaultNamespace(name)));
-        return register(name, defense, enchantmentValue, equipSound, toughness, knockbackResistance, repairIngredient, list);
-    }
-
-    private static Holder<ArmorMaterial> register(
-            String name,
-            EnumMap<ArmorItem.Type, Integer> defense,
-            int enchantmentValue,
-            Holder<SoundEvent> equipSound,
-            float toughness,
-            float knockbackResistance,
-            Supplier<Ingredient> repairIngridient,
-            List<ArmorMaterial.Layer> layers
-    ) {
+        ResourceLocation location = UnOredinary.modLoc(name);
+        List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(location));
         EnumMap<ArmorItem.Type, Integer> enummap = new EnumMap<>(ArmorItem.Type.class);
 
         for (ArmorItem.Type armoritem$type : ArmorItem.Type.values()) {
@@ -58,8 +48,7 @@ public class ModArmorMaterials {
         }
 
         return Registry.registerForHolder(
-                BuiltInRegistries.ARMOR_MATERIAL,
-                ResourceLocation.withDefaultNamespace(name),
+                BuiltInRegistries.ARMOR_MATERIAL, location,
                 new ArmorMaterial(enummap, enchantmentValue, equipSound, repairIngridient, layers, toughness, knockbackResistance)
         );
     }

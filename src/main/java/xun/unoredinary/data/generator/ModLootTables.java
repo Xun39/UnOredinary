@@ -80,7 +80,7 @@ public class ModLootTables extends LootTableProvider {
             slabDrop(ModBlocks.ICE_BRICK_SLAB);
             dropSelf(ModBlocks.ICE_BRICK_WALL.get());
 
-            dropOther(ModBlocks.LUMINITE_TORCH.get(), ModItems.LUMINITE_TORCH_ITEM);
+            dropOther(ModBlocks.LUMINITE_TORCH.get(), ModItems.LUMINITE_TORCH);
         }
 
         @Override

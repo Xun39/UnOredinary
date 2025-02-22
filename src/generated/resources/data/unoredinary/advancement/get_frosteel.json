@@ -1,5 +1,5 @@
 {
-  "parent": "unoredinary:has_hemocrylic_shards",
+  "parent": "unoredinary:root_fp",
   "criteria": {
     "get_frosteel": {
       "conditions": {

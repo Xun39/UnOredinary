@@ -3,10 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "minecraft:torch"
+      "item": "unoredinary:luminite_crystal"
     },
     {
-      "item": "unoredinary:luminite_crystal"
+      "item": "minecraft:torch"
     }
   ],
   "result": {

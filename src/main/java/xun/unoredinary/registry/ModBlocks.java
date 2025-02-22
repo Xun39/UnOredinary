@@ -1,13 +1,11 @@
 package xun.unoredinary.registry;
 
-import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -85,13 +83,13 @@ public class ModBlocks {
             () -> new DropExperienceBlock(UniformInt.of(2, 6),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)
                             .strength(4.5F, 3.0F)
-                            .lightLevel((state) -> 7)));
+                            .lightLevel((state) -> 9)));
 
     public static final DeferredBlock<Block> DEEPSLATE_LUMINITE_ORE = registerBlock("deepslate_luminite_ore",
             () -> new DropExperienceBlock(UniformInt.of(2, 6),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)
                             .strength(4.5F, 3.0F)
-                            .lightLevel((state) -> 7)));
+                            .lightLevel((state) -> 9)));
 
     public static final DeferredBlock<TorchBlock> LUMINITE_TORCH = registerBlock("luminite_torch",
             () -> new TorchBlock(
@@ -105,6 +103,9 @@ public class ModBlocks {
                     BlockBehaviour.Properties.ofFullCopy(Blocks.WALL_TORCH)
                             .lootFrom(ModBlocks.LUMINITE_TORCH)
                             .lightLevel((state) -> 15)));
+
+    public static final DeferredBlock<LanternBlock> LUMINITE_LANTERN = registerBlock("luminite_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

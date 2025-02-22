@@ -50,10 +50,10 @@ public abstract class ModBlockStateProvider extends BlockStateProvider {
 
     protected void torchBlock(DeferredBlock<?> deferredBlock) {
         simpleBlock(deferredBlock.get(), models().torch(getBlockRegistryName(deferredBlock),
-                UnOredinary.modLoc("block/" + getBlockRegistryName(deferredBlock))).renderType("cutout"));
+                resourceBlock(getBlockRegistryName(deferredBlock))).renderType("cutout"));
     }
 
-    public void wallTorchBlock(DeferredBlock<WallTorchBlock> torchBlockDeferredBlock, DeferredBlock<?> textureBlock) {
+    protected void wallTorchBlock(DeferredBlock<WallTorchBlock> torchBlockDeferredBlock, DeferredBlock<?> textureBlock) {
         getVariantBuilder(torchBlockDeferredBlock.get())
                 .forAllStatesExcept(state -> {
                     Direction facing = state.getValue(WallTorchBlock.FACING);
@@ -67,11 +67,14 @@ public abstract class ModBlockStateProvider extends BlockStateProvider {
 
                     return ConfiguredModel.builder()
                             .modelFile(models().torchWall(getBlockRegistryName(torchBlockDeferredBlock),
-                                    UnOredinary.modLoc("block/" + getBlockRegistryName(textureBlock))).renderType("cutout"))
+                                    resourceBlock(getBlockRegistryName(textureBlock))).renderType("cutout"))
                             .rotationY(yRot)
                             .build();
                 });
     }
+
+    // TODO: luminite lantern.
+    protected void lanternBlock() {}
 
     public ResourceLocation resourceBlock(String path) {
         return UnOredinary.modLoc("block/" + path );

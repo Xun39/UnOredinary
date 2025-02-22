@@ -41,10 +41,15 @@ public class ModItemModels extends ModItemModelProvider {
         handheldItem(ModItems.FROSTEEL_HOE);
         handheldItem(ModItems.FROSTEEL_SHOVEL);
 
+        trimmedArmorItem(ModItems.FROSTEEL_HELMET);
+        trimmedArmorItem(ModItems.FROSTEEL_CHESTPLATE);
+        trimmedArmorItem(ModItems.FROSTEEL_LEGGINGS);
+        trimmedArmorItem(ModItems.FROSTEEL_BOOTS);
+
 
         basicItem(ModItems.LUMINITE_CRYSTAL.get());
 
-        withExistingParent(getItemRegistryName(ModItems.LUMINITE_TORCH_ITEM), mcLoc("item/generated"))
+        withExistingParent(getItemRegistryName(ModItems.LUMINITE_TORCH), mcLoc("item/generated"))
                 .texture("layer0",  UnOredinary.modLoc("block/" + getBlockRegistryName(ModBlocks.LUMINITE_TORCH)));
 
         withExistingParent(getItemRegistryName(ModItems.FROST_ZOMBIE_SPAWN_EGG), mcLoc("item/template_spawn_egg"));

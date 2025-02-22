@@ -23,28 +23,42 @@ public class ModItemTags extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
 
         tag(ItemTags.SWORDS).add(
-                ModItems.FROSTEEL_SWORD.get());
+                ModItems.FROSTEEL_SWORD.get()
+        );
 
         tag(ItemTags.PICKAXES).add(
-                ModItems.FROSTEEL_PICKAXE.get());
+                ModItems.FROSTEEL_PICKAXE.get()
+        );
 
         tag(ItemTags.AXES).add(
-                ModItems.FROSTEEL_AXE.get());
+                ModItems.FROSTEEL_AXE.get()
+        );
 
         tag(ItemTags.HOES).add(
-                ModItems.FROSTEEL_HOE.get());
+                ModItems.FROSTEEL_HOE.get()
+        );
 
         tag(ItemTags.SHOVELS).add(
-                ModItems.FROSTEEL_SHOVEL.get());
+                ModItems.FROSTEEL_SHOVEL.get()
+        );
 
         tag(ItemTags.TRIM_TEMPLATES).add(
-                ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get());
+                ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get()
+        );
+
+        tag(ItemTags.TRIMMABLE_ARMOR).add(
+                ModItems.FROSTEEL_HELMET.get(),
+                ModItems.FROSTEEL_CHESTPLATE.get(),
+                ModItems.FROSTEEL_LEGGINGS.get(),
+                ModItems.FROSTEEL_BOOTS.get()
+        );
 
         tag(ModTags.Items.FROSTEEL_TOOL).add(
                 ModItems.FROSTEEL_SWORD.get(),
                 ModItems.FROSTEEL_PICKAXE.get(),
                 ModItems.FROSTEEL_AXE.get(),
                 ModItems.FROSTEEL_HOE.get(),
-                ModItems.FROSTEEL_SHOVEL.get());
+                ModItems.FROSTEEL_SHOVEL.get()
+        );
     }
 }

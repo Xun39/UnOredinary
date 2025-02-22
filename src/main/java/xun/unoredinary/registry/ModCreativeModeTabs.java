@@ -25,9 +25,6 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.CRYOSTONE_DUST);
 
-                        output.accept(ModItems.LUMINITE_CRYSTAL);
-                        output.accept(ModItems.LUMINITE_TORCH_ITEM);
-
                         output.accept(ModItems.FROSTBITTEN_PHALANGES);
 
                         output.accept(ModItems.ICE_SHARD);
@@ -42,6 +39,16 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FROSTEEL_AXE);
                         output.accept(ModItems.FROSTEEL_HOE);
                         output.accept(ModItems.FROSTEEL_SHOVEL);
+
+                        output.accept(ModItems.FROSTEEL_HELMET);
+                        output.accept(ModItems.FROSTEEL_CHESTPLATE);
+                        output.accept(ModItems.FROSTEEL_LEGGINGS);
+                        output.accept(ModItems.FROSTEEL_BOOTS);
+
+
+                        output.accept(ModItems.LUMINITE_CRYSTAL);
+                        output.accept(ModItems.LUMINITE_TORCH);
+
 
                         output.accept(ModItems.FROST_ZOMBIE_SPAWN_EGG);
 

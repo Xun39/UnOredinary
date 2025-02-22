@@ -6,10 +6,11 @@ import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementType;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import xun.unoredinary.registry.ModBlocks;
@@ -31,7 +32,20 @@ public class ModAdvancements extends AdvancementProvider {
         @Override
         public void generate(HolderLookup.Provider provider, Consumer<AdvancementHolder> consumer, ExistingFileHelper existingFileHelper) {
 
-            AdvancementHolder rootFrost = Advancement.Builder.advancement().display(
+            AdvancementHolder root = Advancement.Builder.advancement().display(
+                            Blocks.IRON_ORE,
+                            Component.translatable("advancement.unoredinary.root"),
+                            Component.translatable("advancement.unoredinary.root.desc"),
+                            ResourceLocation.withDefaultNamespace("textures/block/deepslate.png"),
+                            AdvancementType.TASK,
+                            false, false, true)
+                    .requirements(AdvancementRequirements.Strategy.OR)
+                    .addCriterion("in_overworld",
+                            PlayerTrigger.TriggerInstance.located(
+                                    LocationPredicate.Builder.inDimension(Level.OVERWORLD)))
+                    .save(consumer, "unoredinary:root");
+
+            AdvancementHolder rootFrost = Advancement.Builder.advancement().parent(root).display(
                             ModBlocks.HEMOCRYLIC_ORE,
                             Component.translatable("advancement.unoredinary.fp/root"),
                             Component.translatable("advancement.unoredinary.fp/root.desc"),
@@ -41,7 +55,7 @@ public class ModAdvancements extends AdvancementProvider {
                     .requirements(AdvancementRequirements.Strategy.OR)
                     .addCriterion("has_hemocrylic_shards",
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HEMOCRYLIC_SHARD))
-                    .save(consumer, "unoredinary:has_hemocrylic_shards");
+                    .save(consumer, "unoredinary:root_fp");
 
             AdvancementHolder getFrosteel = Advancement.Builder.advancement().parent(rootFrost).display(
                             ModItems.FROSTEEL_INGOT,

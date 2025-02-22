@@ -1,12 +1,11 @@
 package xun.unoredinary.registry;
 
-import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.util.DeferredSoundType;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import xun.unoredinary.UnOredinary;
 
@@ -29,14 +28,14 @@ public class ModSounds {
             ModSounds.HEMOCRYLIC_BLOCK_BREAK, ModSounds.HEMOCRYLIC_BLOCK_STEP, ModSounds.HEMOCRYLIC_BLOCK_PLACE,
             ModSounds.HEMOCRYLIC_BLOCK_HIT, ModSounds.HEMOCRYLIC_BLOCK_FALL);
 
+    public static final DeferredHolder<SoundEvent, SoundEvent> ARMOR_EQUIP_FROSTEEL = registerSoundEvent("item.armor.equip_frosteel");
 
     public static final Supplier<SoundEvent> FROST_ZOMBIE_AMBIENT = registerSoundEvent("entity.frost_zombie.ambient");
     public static final Supplier<SoundEvent> FROST_ZOMBIE_HURT = registerSoundEvent("entity.frost_zombie.hurt");
     public static final Supplier<SoundEvent> FROST_ZOMBIE_DEATH = registerSoundEvent("entity.frost_zombie.death");
     public static final Supplier<SoundEvent> FROST_ZOMBIE_STEP = registerSoundEvent("entity.frost_zombie.step");
 
-    private static Supplier<SoundEvent> registerSoundEvent(String name) {
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(UnOredinary.MOD_ID, name);
-        return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));
+    private static DeferredHolder<SoundEvent, SoundEvent> registerSoundEvent(String name) {
+        return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(UnOredinary.modLoc(name)));
     }
 }

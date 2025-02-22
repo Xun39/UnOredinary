@@ -74,6 +74,9 @@
   "item.unoredinary.smithing_template.frosteel_upgrade.base_slot_description": "放入铁盔甲、武器或工具",
   "item.unoredinary.smithing_template.frosteel_upgrade.additions_slot_description": "放入凛钢锭",
 
+  "advancement.unoredinary.root": "矿海寻奇",
+  "advancement.unoredinary.root.desc": "你奇特冒险的开始……",
+
   "advancement.unoredinary.fp/root": "冰霜勘探者",
   "advancement.unoredinary.fp/root.desc": "在寒冷群系中，积雪下隐藏着等待发现的矿脉。",
   "advancement.unoredinary.fp/get_frosteel": "凛钢工匠",
@@ -81,5 +84,8 @@
   "advancement.unoredinary.fp/kill_frost_zombie": "霜冻猎手",
   "advancement.unoredinary.fp/kill_frost_zombie.desc": "杀死一个霜冻僵尸",
 
-  "tooltip.unoredinary.frosteel_sword": "一把由凛钢锻造的利剑，在寒冷群系中威力倍增。"
+  "tooltip.unoredinary.shift_hold_extend": "§8按住Shift查看更多信息",
+  "tooltip.unoredinary.frosteel_sword": "一把由凛钢锻造的利剑，在寒冷群系中威力倍增。",
+
+  "pack.unoredinary.description": "矿海寻奇模组资源"
 }

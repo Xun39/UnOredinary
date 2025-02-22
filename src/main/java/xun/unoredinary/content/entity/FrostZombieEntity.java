@@ -2,6 +2,8 @@ package xun.unoredinary.content.entity;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -61,6 +63,11 @@ public class FrostZombieEntity extends Zombie {
             ((LivingEntity)entity).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 120 * (int)f, 1), this);
         }
         return flag;
+    }
+
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+        return super.hurt(source, amount);
     }
 
     @Override
