@@ -3,13 +3,13 @@ package xun.unoredinary.data.provider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import xun.unoredinary.UnOredinary;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 public abstract class ModRecipeProvider extends RecipeProvider {
 
@@ -79,6 +79,71 @@ public abstract class ModRecipeProvider extends RecipeProvider {
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(smithingTemplateItem), Ingredient.of(ingredientItem), Ingredient.of(materialItem), category, resultItem)
                 .unlocks(getHasName(materialItem), has(materialItem))
                 .save(recipeOutput, UnOredinary.modLoc(getRegistryName(resultItem) + "_from_" + "smithing"));
+    }
+
+    protected static void sword(RecipeOutput recipeOutput, Supplier<Item> ingredient, Supplier<SwordItem> result) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result.get())
+                .pattern("#").pattern("#").pattern("!")
+                .define('#', ingredient.get()).define('!', Items.STICK)
+                .unlockedBy(getHasName(ingredient.get()), has(ingredient.get()))
+                .save(recipeOutput);
+    }
+    protected static void pickaxe(RecipeOutput recipeOutput, Supplier<Item> ingredient, Supplier<PickaxeItem> result) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result.get())
+                .pattern("###").pattern(" ! ").pattern(" ! ")
+                .define('#', ingredient.get()).define('!', Items.STICK)
+                .unlockedBy(getHasName(ingredient.get()), has(ingredient.get()))
+                .save(recipeOutput);
+    }
+    protected static void axe(RecipeOutput recipeOutput, Supplier<Item> ingredient, Supplier<AxeItem> result) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result.get())
+                .pattern("##").pattern("#!").pattern(" !")
+                .define('#', ingredient.get()).define('!', Items.STICK)
+                .unlockedBy(getHasName(ingredient.get()), has(ingredient.get()))
+                .save(recipeOutput);
+    }
+    protected static void hoe(RecipeOutput recipeOutput, Supplier<Item> ingredient, Supplier<HoeItem> result) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result.get())
+                .pattern("##").pattern(" !").pattern(" !")
+                .define('#', ingredient.get()).define('!', Items.STICK)
+                .unlockedBy(getHasName(ingredient.get()), has(ingredient.get()))
+                .save(recipeOutput);
+    }
+    protected static void shovel(RecipeOutput recipeOutput, Supplier<Item> ingredient, Supplier<ShovelItem> result) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result.get())
+                .pattern("#").pattern("!").pattern("!")
+                .define('#', ingredient.get()).define('!', Items.STICK)
+                .unlockedBy(getHasName(ingredient.get()), has(ingredient.get()))
+                .save(recipeOutput);
+    }
+
+    protected static void helmet(RecipeOutput recipeOutput, Supplier<Item> ingredient, Supplier<ArmorItem> result) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result.get())
+                .pattern("###").pattern("# #")
+                .define('#', ingredient.get())
+                .unlockedBy(getHasName(ingredient.get()), has(ingredient.get()))
+                .save(recipeOutput);
+    }
+    protected static void chestplate(RecipeOutput recipeOutput, Supplier<Item> ingredient, Supplier<ArmorItem> result) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result.get())
+                .pattern("# #").pattern("###").pattern("###")
+                .define('#', ingredient.get())
+                .unlockedBy(getHasName(ingredient.get()), has(ingredient.get()))
+                .save(recipeOutput);
+    }
+    protected static void leggings(RecipeOutput recipeOutput, Supplier<Item> ingredient, Supplier<ArmorItem> result) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result.get())
+                .pattern("###").pattern("# #").pattern("# #")
+                .define('#', ingredient.get())
+                .unlockedBy(getHasName(ingredient.get()), has(ingredient.get()))
+                .save(recipeOutput);
+    }
+    protected static void boots(RecipeOutput recipeOutput, Supplier<Item> ingredient, Supplier<ArmorItem> result) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result.get())
+                .pattern("# #").pattern("# #")
+                .define('#', ingredient.get())
+                .unlockedBy(getHasName(ingredient.get()), has(ingredient.get()))
+                .save(recipeOutput);
     }
 
     private static String getRegistryName(ItemLike itemLike) {

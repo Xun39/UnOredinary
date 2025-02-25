@@ -84,6 +84,17 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FROSTEEL_HOE);
                         output.accept(ModItems.FROSTEEL_SHOVEL);
 
+                        output.accept(ModItems.RUBY_HELMET);
+                        output.accept(ModItems.RUBY_CHESTPLATE);
+                        output.accept(ModItems.RUBY_LEGGINGS);
+                        output.accept(ModItems.RUBY_BOOTS);
+
+                        output.accept(ModItems.RUBY_SWORD);
+                        output.accept(ModItems.RUBY_PICKAXE);
+                        output.accept(ModItems.RUBY_AXE);
+                        output.accept(ModItems.RUBY_HOE);
+                        output.accept(ModItems.RUBY_SHOVEL);
+
                     }).build());
 
     public static final Supplier<CreativeModeTab> UNOREDINARY_ITEM_TAB = CREATIVE_MODE_TABS.register("unoredinary_item_tab",
@@ -109,7 +120,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LUMINITE_TORCH);
 
                         output.accept(ModItems.RUBY);
-                        output.accept(ModItems.RUBY_ROD);
 
                         output.accept(ModItems.FROST_ZOMBIE_SPAWN_EGG);
 

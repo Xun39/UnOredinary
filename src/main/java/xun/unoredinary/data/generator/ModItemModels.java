@@ -24,7 +24,6 @@ public class ModItemModels extends ModItemModelProvider {
         basicItem(ModItems.LUMINITE_CRYSTAL.get());
 
         basicItem(ModItems.RUBY.get());
-        basicItem(ModItems.RUBY_ROD.get());
 
         basicItem(ModItems.ICE_SHARD.get());
         basicItem(ModItems.ICE_BRICK.get());
@@ -46,10 +45,21 @@ public class ModItemModels extends ModItemModelProvider {
         handheldItem(ModItems.FROSTEEL_HOE);
         handheldItem(ModItems.FROSTEEL_SHOVEL);
 
+        handheldItem(ModItems.RUBY_SWORD);
+        handheldItem(ModItems.RUBY_PICKAXE);
+        handheldItem(ModItems.RUBY_AXE);
+        handheldItem(ModItems.RUBY_HOE);
+        handheldItem(ModItems.RUBY_SHOVEL);
+
         trimmedArmorItem(ModItems.FROSTEEL_HELMET);
         trimmedArmorItem(ModItems.FROSTEEL_CHESTPLATE);
         trimmedArmorItem(ModItems.FROSTEEL_LEGGINGS);
         trimmedArmorItem(ModItems.FROSTEEL_BOOTS);
+
+        trimmedArmorItem(ModItems.RUBY_HELMET);
+        trimmedArmorItem(ModItems.RUBY_CHESTPLATE);
+        trimmedArmorItem(ModItems.RUBY_LEGGINGS);
+        trimmedArmorItem(ModItems.RUBY_BOOTS);
 
         withExistingParent(getItemRegistryName(ModItems.LUMINITE_TORCH), mcLoc("item/generated"))
                 .texture("layer0",  UnOredinary.modLoc("block/" + getBlockRegistryName(ModBlocks.LUMINITE_TORCH)));

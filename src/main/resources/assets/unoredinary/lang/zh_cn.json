@@ -5,7 +5,6 @@
   "item.unoredinary.cryostone_dust": "冰魄尘",
 
   "item.unoredinary.ruby": "红宝石",
-  "item.unoredinary.ruby_rod": "红宝石棒",
 
   "item.unoredinary.luminite_crystal": "辉光晶体",
 
@@ -18,6 +17,12 @@
   "item.unoredinary.frosteel_axe": "凛钢斧",
   "item.unoredinary.frosteel_hoe": "凛钢锄",
   "item.unoredinary.frosteel_shovel": "凛钢锹",
+
+  "item.unoredinary.ruby_sword": "红宝石剑",
+  "item.unoredinary.ruby_pickaxe": "红宝石镐",
+  "item.unoredinary.ruby_axe": "红宝石斧",
+  "item.unoredinary.ruby_hoe": "红宝石锄",
+  "item.unoredinary.ruby_shovel": "红宝石锹",
 
   "item.unoredinary.frosteel_helmet": "凛钢头盔",
   "item.unoredinary.frosteel_chestplate": "凛钢胸甲",
@@ -33,7 +38,7 @@
 
   "block.unoredinary.luminite_torch": "辉光火把",
 
-  "block.unoredinary.hemocrylic_ore": "寒血髓",
+  "block.unoredinary.hemocrylic_ore": "寒血髓矿石",
   "block.unoredinary.hemocrylic_block": "寒髓块",
   "block.unoredinary.frosteel_block": "凛钢块",
 
@@ -78,6 +83,12 @@
   "creativemodetab.unoredinary.item": "矿海寻奇：物品",
   "creativemodetab.unoredinary.block": "矿海寻奇：方块",
   "creativemodetab.unoredinary.equipment": "矿海寻奇：装备",
+
+  "trim_material.unoredinary.hemocrylic": "寒髓质",
+  "trim_material.unoredinary.frosteel": "凛钢质",
+  "trim_material.unoredinary.cryostone": "冰魄石质",
+  "trim_material.unoredinary.luminite": "辉光石质",
+  "trim_material.unoredinary.ruby": "红宝石质",
 
   "upgrade.unoredinary.frosteel_upgrade": "凛钢升级",
   "item.unoredinary.smithing_template.frosteel_upgrade.applies_to": "铁装备",

@@ -95,5 +95,20 @@
       "unoredinary:item/armor/equip_frosteel_4",
       "unoredinary:item/armor/equip_frosteel_5"
     ]
+  },
+  "item.ruby_lightsaber.swing": {
+    "subtitle": "sounds.unoredinary.item.ruby_lightsaber.swing",
+    "sounds": [
+      "unoredinary:item/ruby_lightsaber/swing_1",
+      "unoredinary:item/ruby_lightsaber/swing_2",
+      "unoredinary:item/ruby_lightsaber/swing_3"
+      ]
+  },
+  "item.ruby_lightsaber.break": {
+    "subtitle": "sounds.unoredinary.item.ruby_lightsaber.break",
+    "sounds": [
+      "unoredinary:item/ruby_lightsaber/break_1",
+      "unoredinary:item/ruby_lightsaber/break_2"
+    ]
   }
 }

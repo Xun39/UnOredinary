@@ -20,7 +20,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import org.slf4j.Logger;
 import xun.unoredinary.UnOredinary;
-import xun.unoredinary.content.item.FrosteelPickaxeItem;
+import xun.unoredinary.content.item.tool.FrosteelPickaxeItem;
 import xun.unoredinary.registry.ModItems;
 import xun.unoredinary.util.BiomeUtils;
 import xun.unoredinary.util.ModTags;
@@ -63,13 +63,13 @@ public class ToolEvents {
     }
 
     @SubscribeEvent
-    public static void onFrosteelToolHurt(LivingDamageEvent.Pre event) {
+    public static void onFrosteelToolDamage(LivingDamageEvent.Pre event) {
 
         if (event.getEntity().level().isClientSide) return;
-
         if (!(event.getSource().getDirectEntity() instanceof Player player)) return;
 
         ItemStack weapon = player.getMainHandItem();
+
         if (weapon.isEmpty() || !weapon.is(ModTags.Items.FROSTEEL_TOOL)) {
             LOGGER.debug("[Fail] Invalid Weapon: {}", weapon);
             return;

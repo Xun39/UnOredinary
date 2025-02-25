@@ -7,7 +7,6 @@
   "item.unoredinary.luminite_crystal": "Luminite Crystal",
 
   "item.unoredinary.ruby": "Ruby",
-  "item.unoredinary.ruby_rod": "Ruby Rod",
 
   "item.unoredinary.frosteel_ingot": "Frosteel Ingot",
 
@@ -19,10 +18,21 @@
   "item.unoredinary.frosteel_hoe": "Frosteel Hoe",
   "item.unoredinary.frosteel_shovel": "Frosteel Shovel",
 
+  "item.unoredinary.ruby_sword": "Ruby Sword",
+  "item.unoredinary.ruby_pickaxe": "Ruby Pickaxe",
+  "item.unoredinary.ruby_axe": "Ruby Axe",
+  "item.unoredinary.ruby_hoe": "Ruby Hoe",
+  "item.unoredinary.ruby_shovel": "Ruby Shovel",
+
   "item.unoredinary.frosteel_helmet": "Frosteel Helmet",
   "item.unoredinary.frosteel_chestplate": "Frosteel Chestplate",
   "item.unoredinary.frosteel_leggings": "Frosteel Leggings",
   "item.unoredinary.frosteel_boots": "Frosteel Boots",
+
+  "item.unoredinary.ruby_helmet": "Ruby Helmet",
+  "item.unoredinary.ruby_chestplate": "Ruby Chestplate",
+  "item.unoredinary.ruby_leggings": "Ruby Leggings",
+  "item.unoredinary.ruby_boots": "Ruby Boots",
 
   "item.unoredinary.ice_shard": "Ice Shard",
   "item.unoredinary.ice_brick": "Ice Brick",
@@ -78,6 +88,12 @@
   "creativemodetab.unoredinary.item": "UnOredinary: Items",
   "creativemodetab.unoredinary.block": "UnOredinary: Blocks",
   "creativemodetab.unoredinary.equipment": "UnOredinary: Equipments",
+
+  "trim_material.unoredinary.hemocrylic": "Hemocrylic Material",
+  "trim_material.unoredinary.frosteel": "Frosteel Material",
+  "trim_material.unoredinary.cryostone": "Cryostone Material",
+  "trim_material.unoredinary.luminite": "Luminite Material",
+  "trim_material.unoredinary.ruby": "Ruby Material",
 
   "upgrade.unoredinary.frosteel_upgrade": "Frosteel Upgrade",
   "item.unoredinary.smithing_template.frosteel_upgrade.applies_to": "Iron Equipment",

@@ -24,6 +24,7 @@ public class ModRecipes extends ModRecipeProvider {
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
 
+        // Hemocrylic
         twoByTwoConvertible(recipeOutput, ModItems.HEMOCRYLIC_SHARD, ModItems.HEMOCRYLIC_CRYSTAL, RecipeCategory.MISC, RecipeCategory.MISC);
         threeByThreeConvertible(recipeOutput, ModItems.HEMOCRYLIC_CRYSTAL, ModBlocks.HEMOCRYLIC_BLOCK, RecipeCategory.MISC, RecipeCategory.BUILDING_BLOCKS);
 
@@ -149,13 +150,19 @@ public class ModRecipes extends ModRecipeProvider {
         onePlusOther(recipeOutput, RecipeCategory.DECORATIONS, ModItems.LUMINITE_CRYSTAL, Items.TORCH, ModItems.LUMINITE_TORCH);
         threeByThreeConvertible(recipeOutput, ModItems.LUMINITE_CRYSTAL, ModBlocks.LUMINITE_BLOCK, RecipeCategory.MISC, RecipeCategory.BUILDING_BLOCKS);
 
+
         // Ruby Ores
         threeByThreeConvertible(recipeOutput, ModItems.RUBY, ModBlocks.RUBY_BLOCK, RecipeCategory.MISC, RecipeCategory.BUILDING_BLOCKS);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_ROD)
-                .pattern("#")
-                .pattern("#")
-                .define('#', ModItems.RUBY)
-                .unlockedBy(getHasName(ModItems.RUBY), has(ModItems.RUBY))
-                .save(recipeOutput);
+
+        sword(recipeOutput, ModItems.RUBY, ModItems.RUBY_SWORD);
+        pickaxe(recipeOutput, ModItems.RUBY, ModItems.RUBY_PICKAXE);
+        axe(recipeOutput, ModItems.RUBY, ModItems.RUBY_AXE);
+        hoe(recipeOutput, ModItems.RUBY, ModItems.RUBY_HOE);
+        shovel(recipeOutput, ModItems.RUBY, ModItems.RUBY_SHOVEL);
+
+        helmet(recipeOutput, ModItems.RUBY, ModItems.RUBY_HELMET);
+        chestplate(recipeOutput, ModItems.RUBY, ModItems.RUBY_CHESTPLATE);
+        leggings(recipeOutput, ModItems.RUBY, ModItems.RUBY_LEGGINGS);
+        boots(recipeOutput, ModItems.RUBY, ModItems.RUBY_BOOTS);
     }
 }

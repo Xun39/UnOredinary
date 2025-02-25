@@ -1,0 +1,9 @@
+{
+  "asset_name": "hemocrylic",
+  "description": {
+    "color": "#A8D4F7",
+    "translate": "trim_material.unoredinary.hemocrylic"
+  },
+  "ingredient": "unoredinary:hemocrylic_crystal",
+  "item_model_index": 0.1
+}

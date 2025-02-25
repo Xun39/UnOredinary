@@ -7,6 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import xun.unoredinary.UnOredinary;
+import xun.unoredinary.content.item.ModTrimMaterials;
 import xun.unoredinary.world.feature.ModConfiguredFeatures;
 import xun.unoredinary.world.feature.ModPlacedFeatures;
 import xun.unoredinary.world.modifier.ModBiomeModifiers;
@@ -17,6 +18,7 @@ import java.util.concurrent.CompletableFuture;
 public class ModDatapackEntries extends DatapackBuiltinEntriesProvider {
 
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
+            .add(Registries.TRIM_MATERIAL, ModTrimMaterials::bootstrap)
             .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap);

@@ -1,9 +1,15 @@
-// 1.21	2025-02-21T17:08:28.686624	Tags for minecraft:item mod id unoredinary
-c283da0aa2ad16a2b5a62b0535b0c42d8f3ef0bb data/minecraft/tags/item/axes.json
-e7c3f843477d18897cd4dc365509a91f9391dc7c data/minecraft/tags/item/hoes.json
-359db3395d625d3c7eafb647213580f599c10138 data/minecraft/tags/item/pickaxes.json
-d0aa8b58e26b7b1362656b0ba6b6383c6630e6ef data/minecraft/tags/item/shovels.json
-115d25ee94ee9d165318075faa4397306b03f4d3 data/minecraft/tags/item/swords.json
-f8b51a75d50aef04f44ca07ced9ea130e8bbeef3 data/minecraft/tags/item/trimmable_armor.json
+// 1.21	2025-02-24T19:56:33.714191	Tags for minecraft:item mod id unoredinary
+ae96759650e39031d9b9855fdea0bd1ebbdaea4e data/minecraft/tags/item/axes.json
+0fe63ae61aea96518e3d45c05728b48dbdeaa354 data/minecraft/tags/item/chest_armor.json
+16c4adafc7c81896328f227aa331ab9ed8148e6e data/minecraft/tags/item/foot_armor.json
+f8b51a75d50aef04f44ca07ced9ea130e8bbeef3 data/minecraft/tags/item/freeze_immune_wearables.json
+04cf0424c72cca4b4a56827e691849e66ec2b164 data/minecraft/tags/item/head_armor.json
+f8716517ee80ffb283d04be3abd582ea317430ff data/minecraft/tags/item/hoes.json
+7ca5507a76850e53052f622ed7304d2f9ca71368 data/minecraft/tags/item/leg_armor.json
+3be30395d709f45fab27d82ec2c3c2251ada8d57 data/minecraft/tags/item/pickaxes.json
+6cab7620ee0b7541970b3c460a4303e906292cbe data/minecraft/tags/item/shovels.json
+cb72ebedb2c83bef214cf1b49e921fabae6ae8dc data/minecraft/tags/item/swords.json
+444e9aa59a93a35e45cd904597d7c2532e12fbc7 data/minecraft/tags/item/trimmable_armor.json
+e9cf5bdc4ed99f2d7601e7c7700e535506284f14 data/minecraft/tags/item/trim_materials.json
 c15eef5ef2621b65df542c2fe3b94f25cf3f6ee6 data/minecraft/tags/item/trim_templates.json
 a5a702a8d8df629c43c6c03f639c7a872def6b7d data/unoredinary/tags/item/frosteel_tool.json

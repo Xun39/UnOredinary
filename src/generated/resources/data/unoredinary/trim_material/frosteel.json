@@ -1,0 +1,9 @@
+{
+  "asset_name": "frosteel",
+  "description": {
+    "color": "#0B40E7",
+    "translate": "trim_material.unoredinary.frosteel"
+  },
+  "ingredient": "unoredinary:frosteel_ingot",
+  "item_model_index": 0.9
+}

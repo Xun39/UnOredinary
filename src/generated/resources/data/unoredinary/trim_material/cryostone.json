@@ -1,0 +1,9 @@
+{
+  "asset_name": "cryostone",
+  "description": {
+    "color": "#0158FF",
+    "translate": "trim_material.unoredinary.cryostone"
+  },
+  "ingredient": "unoredinary:cryostone_dust",
+  "item_model_index": 0.9
+}

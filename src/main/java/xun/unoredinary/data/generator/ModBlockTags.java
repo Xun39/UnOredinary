@@ -3,11 +3,14 @@ package xun.unoredinary.data.generator;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagEntry;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import xun.unoredinary.UnOredinary;
 import xun.unoredinary.registry.ModBlocks;
+import xun.unoredinary.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -79,6 +82,26 @@ public class ModBlockTags extends BlockTagsProvider {
                 ModBlocks.RUBY_ORE.get(),
                 ModBlocks.DEEPSLATE_RUBY_ORE.get()
         );
+
+        // Don't need this for now
+        /*tag(ModTags.Blocks.NEEDS_FROSTEEL_TOOL).addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
+        tag(ModTags.Blocks.NEEDS_RUBY_TOOL).addTag(BlockTags.NEEDS_DIAMOND_TOOL);
+
+        tag(BlockTags.INCORRECT_FOR_WOODEN_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_FROSTEEL_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL);
+
+        tag(BlockTags.INCORRECT_FOR_STONE_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_FROSTEEL_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL);
+
+        tag(BlockTags.INCORRECT_FOR_IRON_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_FROSTEEL_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL);
+
+        tag(BlockTags.INCORRECT_FOR_GOLD_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_FROSTEEL_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL);*/
 
         tag(BlockTags.WALLS).add(
                 ModBlocks.FROSTBOUND_COBBLESTONE_WALL.get(),
