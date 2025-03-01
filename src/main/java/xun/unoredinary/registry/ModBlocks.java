@@ -6,14 +6,16 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import xun.unoredinary.UnOredinary;
-import xun.unoredinary.content.block.CryoStoneOreBlock;
-import xun.unoredinary.content.block.HemocrylicBlock;
+import xun.unoredinary.content.block.*;
 
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
 public class ModBlocks {
 
@@ -23,12 +25,12 @@ public class ModBlocks {
     // Hemocrylic
     public static final DeferredBlock<Block> HEMOCRYLIC_BLOCK = registerBlock("hemocrylic_block",
             () -> new HemocrylicBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ICE)
-                    .strength(5.0F, 64.0F)
+                    .strength(5.0F, 6.0F)
                     .requiresCorrectToolForDrops(), false));
     public static final DeferredBlock<Block> HEMOCRYLIC_ORE = registerBlock("hemocrylic_ore",
             () -> new HemocrylicBlock(BlockBehaviour.Properties.ofFullCopy(ModBlocks.HEMOCRYLIC_BLOCK.get())
                     .strength(3.0F, 2.0F)
-                    .lightLevel((state) -> 1), true));
+                    .lightLevel((state) -> 2), true));
 
     public static final DeferredBlock<Block> FROSTEEL_BLOCK = registerBlock("frosteel_block",
             () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
@@ -41,6 +43,20 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CRYOSTONE_BLOCK = registerBlock("cryostone_block",
             () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
                     .strength(5.0F, 6.0F).sound(SoundType.METAL)));
+
+    public static final DeferredBlock<CryostoneTorchBlock> CRYOSTONE_TORCH = registerBlock("cryostone_torch",
+            () -> new CryostoneTorchBlock(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_TORCH)
+                            .lightLevel(litBlockEmission(6))));
+
+    public static final DeferredBlock<CryostoneWallTorchBlock> CRYOSTONE_WALL_TORCH = registerBlock("cryostone_wall_torch",
+            () -> new CryostoneWallTorchBlock(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_WALL_TORCH)
+                            .lootFrom(ModBlocks.CRYOSTONE_TORCH)
+                            .lightLevel(litBlockEmission(6))));
+
+    public static final DeferredBlock<CryostoneWireBlock> CRYOSTONE_WIRE = registerBlock("cryostone_wire",
+            () -> new CryostoneWireBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_WIRE)));
 
     public static final DeferredBlock<Block> FROSTBOUND_STONE = registerBlock("frostbound_stone",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).strength(1.0F, 5.0F)));
@@ -101,8 +117,13 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> LUMINITE_BLOCK = registerBlock("luminite_block",
             () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
-                    .strength(5.0F, 6.0F).sound(SoundType.METAL)
+                    .strength(5.0F, 6.0F).sound(SoundType.AMETHYST)
                     .lightLevel((state) -> 9)));
+
+    public static final DeferredBlock<Block> LUMINTHIUM_BLOCK = registerBlock("luminthium_block",
+            () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
+                    .strength(5.0F, 6.0F).sound(SoundType.METAL)
+                    .lightLevel((state) -> 12)));
 
     public static final DeferredBlock<TorchBlock> LUMINITE_TORCH = registerBlock("luminite_torch",
             () -> new TorchBlock(
@@ -141,5 +162,9 @@ public class ModBlocks {
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+
+    private static ToIntFunction<BlockState> litBlockEmission(int lightValue) {
+        return state -> state.getValue(BlockStateProperties.LIT) ? lightValue : 0;
     }
 }

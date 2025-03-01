@@ -25,6 +25,7 @@ public class ModBlockStates extends ModBlockStateProvider {
         blockWithItem(ModBlocks.LUMINITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_LUMINITE_ORE);
         blockWithItem(ModBlocks.LUMINITE_BLOCK);
+        blockWithItem(ModBlocks.LUMINTHIUM_BLOCK);
 
         blockWithItem(ModBlocks.RUBY_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_RUBY_ORE);
@@ -55,6 +56,9 @@ public class ModBlockStates extends ModBlockStateProvider {
         wallBlock(ModBlocks.ICE_BRICK_WALL, ModBlocks.ICE_BRICKS);
 
         torchBlock(ModBlocks.LUMINITE_TORCH);
-        wallTorchBlock(ModBlocks.LUMINITE_WALL_TORCH, ModBlocks.LUMINITE_TORCH);
+        wallTorchBlock(ModBlocks.LUMINITE_WALL_TORCH.get(), ModBlocks.LUMINITE_TORCH);
+
+        torchBlock(ModBlocks.CRYOSTONE_TORCH);
+        wallTorchBlock(ModBlocks.CRYOSTONE_WALL_TORCH.get(), ModBlocks.CRYOSTONE_TORCH);
     }
 }

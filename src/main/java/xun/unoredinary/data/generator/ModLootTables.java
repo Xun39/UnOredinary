@@ -58,6 +58,7 @@ public class ModLootTables extends LootTableProvider {
             dropOther(ModBlocks.LUMINITE_ORE, ModItems.LUMINITE_CRYSTAL.get());
             dropOther(ModBlocks.DEEPSLATE_LUMINITE_ORE, ModItems.LUMINITE_CRYSTAL.get());
             dropSelf(ModBlocks.LUMINITE_BLOCK.get());
+            dropSelf(ModBlocks.LUMINTHIUM_BLOCK.get());
 
             dropOther(ModBlocks.RUBY_ORE, ModItems.RUBY.get());
             dropOther(ModBlocks.DEEPSLATE_RUBY_ORE, ModItems.RUBY.get());
@@ -88,6 +89,9 @@ public class ModLootTables extends LootTableProvider {
             dropSelf(ModBlocks.ICE_BRICK_WALL.get());
 
             dropOther(ModBlocks.LUMINITE_TORCH.get(), ModItems.LUMINITE_TORCH);
+            dropOther(ModBlocks.CRYOSTONE_TORCH.get(), ModItems.CRYOSTONE_TORCH);
+
+            dropOther(ModBlocks.CRYOSTONE_WIRE.get(), ModItems.CRYOSTONE_DUST);
         }
 
         @Override

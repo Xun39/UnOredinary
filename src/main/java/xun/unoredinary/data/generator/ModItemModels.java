@@ -20,8 +20,12 @@ public class ModItemModels extends ModItemModelProvider {
         basicItem(ModItems.HEMOCRYLIC_CRYSTAL.get());
 
         basicItem(ModItems.CRYOSTONE_DUST.get());
+        withExistingParent(getItemRegistryName(ModItems.CRYOSTONE_TORCH), mcLoc("item/generated"))
+                .texture("layer0",  UnOredinary.modLoc("block/" + getBlockRegistryName(ModBlocks.CRYOSTONE_TORCH)));
 
         basicItem(ModItems.LUMINITE_CRYSTAL.get());
+        withExistingParent(getItemRegistryName(ModItems.LUMINITE_TORCH), mcLoc("item/generated"))
+                .texture("layer0",  UnOredinary.modLoc("block/" + getBlockRegistryName(ModBlocks.LUMINITE_TORCH)));
 
         basicItem(ModItems.RUBY.get());
 
@@ -38,6 +42,7 @@ public class ModItemModels extends ModItemModelProvider {
         basicItem(ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get());
 
         basicItem(ModItems.FROSTEEL_INGOT.get());
+        basicItem(ModItems.LUMINTHIUM_INGOT.get());
 
         handheldItem(ModItems.FROSTEEL_SWORD);
         handheldItem(ModItems.FROSTEEL_PICKAXE);
@@ -51,6 +56,12 @@ public class ModItemModels extends ModItemModelProvider {
         handheldItem(ModItems.RUBY_HOE);
         handheldItem(ModItems.RUBY_SHOVEL);
 
+        handheldItem(ModItems.LUMINTHIUM_SWORD);
+        handheldItem(ModItems.LUMINTHIUM_PICKAXE);
+        handheldItem(ModItems.LUMINTHIUM_AXE);
+        handheldItem(ModItems.LUMINTHIUM_HOE);
+        handheldItem(ModItems.LUMINTHIUM_SHOVEL);
+
         trimmedArmorItem(ModItems.FROSTEEL_HELMET);
         trimmedArmorItem(ModItems.FROSTEEL_CHESTPLATE);
         trimmedArmorItem(ModItems.FROSTEEL_LEGGINGS);
@@ -60,9 +71,13 @@ public class ModItemModels extends ModItemModelProvider {
         trimmedArmorItem(ModItems.RUBY_CHESTPLATE);
         trimmedArmorItem(ModItems.RUBY_LEGGINGS);
         trimmedArmorItem(ModItems.RUBY_BOOTS);
+        basicItem(ModItems.RUBY_HORSE_ARMOR.get());
 
-        withExistingParent(getItemRegistryName(ModItems.LUMINITE_TORCH), mcLoc("item/generated"))
-                .texture("layer0",  UnOredinary.modLoc("block/" + getBlockRegistryName(ModBlocks.LUMINITE_TORCH)));
+        trimmedArmorItem(ModItems.LUMINTHIUM_HELMET);
+        trimmedArmorItem(ModItems.LUMINTHIUM_CHESTPLATE);
+        trimmedArmorItem(ModItems.LUMINTHIUM_LEGGINGS);
+        trimmedArmorItem(ModItems.LUMINTHIUM_BOOTS);
+
 
         withExistingParent(getItemRegistryName(ModItems.FROST_ZOMBIE_SPAWN_EGG), mcLoc("item/template_spawn_egg"));
     }

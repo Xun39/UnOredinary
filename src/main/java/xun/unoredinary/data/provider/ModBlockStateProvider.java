@@ -1,12 +1,11 @@
 package xun.unoredinary.data.provider;
 
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.WallBlock;
-import net.minecraft.world.level.block.WallTorchBlock;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.block.state.properties.StairsShape;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
@@ -53,8 +52,8 @@ public abstract class ModBlockStateProvider extends BlockStateProvider {
                 resourceBlock(getBlockRegistryName(deferredBlock))).renderType("cutout"));
     }
 
-    protected void wallTorchBlock(DeferredBlock<WallTorchBlock> torchBlockDeferredBlock, DeferredBlock<?> textureBlock) {
-        getVariantBuilder(torchBlockDeferredBlock.get())
+    protected void wallTorchBlock(Block torchBlock, DeferredBlock<?> textureBlock) {
+        getVariantBuilder(torchBlock)
                 .forAllStatesExcept(state -> {
                     Direction facing = state.getValue(WallTorchBlock.FACING);
                     int yRot = (int) facing.getClockWise().toYRot();
@@ -66,7 +65,7 @@ public abstract class ModBlockStateProvider extends BlockStateProvider {
                     yRot %= 360;
 
                     return ConfiguredModel.builder()
-                            .modelFile(models().torchWall(getBlockRegistryName(torchBlockDeferredBlock),
+                            .modelFile(models().torchWall(getRegistryName(torchBlock),
                                     resourceBlock(getBlockRegistryName(textureBlock))).renderType("cutout"))
                             .rotationY(yRot)
                             .build();
@@ -78,6 +77,10 @@ public abstract class ModBlockStateProvider extends BlockStateProvider {
 
     public ResourceLocation resourceBlock(String path) {
         return UnOredinary.modLoc("block/" + path );
+    }
+
+    protected static String getRegistryName(ItemLike itemLike) {
+        return BuiltInRegistries.ITEM.getKey(itemLike.asItem()).getPath();
     }
 
     protected static String getBlockRegistryName(DeferredBlock<?> deferredBlock) {

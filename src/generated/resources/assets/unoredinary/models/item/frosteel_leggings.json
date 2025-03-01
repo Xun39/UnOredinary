@@ -63,6 +63,6 @@
     }
   ],
   "textures": {
-    "layer0": "unoredinary:item/frosteel_leggings"
+    "layer0": "unoredinary:item/armors/frosteel_leggings"
   }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "unoredinary:item/ruby_leggings",
+    "layer0": "unoredinary:item/armors/ruby_leggings",
     "layer1": "minecraft:trims/items/leggings_trim_lapis"
   }
 }

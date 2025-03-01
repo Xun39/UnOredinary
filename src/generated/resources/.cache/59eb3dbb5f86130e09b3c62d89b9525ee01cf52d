@@ -1,10 +1,12 @@
-// 1.21	2025-02-22T12:38:46.2966217	Loot Tables
+// 1.21	2025-02-27T19:46:40.8692165	Loot Tables
 6d2451704780f6384624c76a0abb069628cee8b5 data/unoredinary/loot_table/blocks/cryobound_cobblestone.json
 fdc4bb03cc36a3ecfbe3a3cb709895e5d295256e data/unoredinary/loot_table/blocks/cryobound_cobblestone_slab.json
 e51865e587fea191f3e60381f5b60f59b1d9aa10 data/unoredinary/loot_table/blocks/cryobound_cobblestone_stairs.json
 387ff8c4057ff1adb7b6493c0a714b8c813e7070 data/unoredinary/loot_table/blocks/cryobound_cobblestone_wall.json
 4d41ac9bface7c3d8e9a47115e3817438d10cfce data/unoredinary/loot_table/blocks/cryostone_block.json
 7e7b1496eff3603701987a070ca85956c734a723 data/unoredinary/loot_table/blocks/cryostone_ore.json
+26e83a23928e80e3a99bf883932ff013045f9ac2 data/unoredinary/loot_table/blocks/cryostone_torch.json
+717a10a8b44066407c7a11e260f506c2df6fe585 data/unoredinary/loot_table/blocks/cryostone_wire.json
 66fac43e73a64c0ad1cb8acf06bb11aba8063fa8 data/unoredinary/loot_table/blocks/deepslate_cryostone_ore.json
 7e8ed2659dff681de47eb3151efdeeedc8161407 data/unoredinary/loot_table/blocks/deepslate_luminite_ore.json
 6768fa6c89a0b620531b7e5f3f0a7f3bcaec8b3b data/unoredinary/loot_table/blocks/deepslate_ruby_ore.json
@@ -29,6 +31,7 @@ dee71d6219e6ca5cc8c9ae3f28778a9a67fe2a79 data/unoredinary/loot_table/blocks/ice_
 ddfdb01b8ff61f4ca9044c63d059ee70a8eb8834 data/unoredinary/loot_table/blocks/luminite_block.json
 b69948e6de900ba7df13fb9ee1da160841a02937 data/unoredinary/loot_table/blocks/luminite_ore.json
 86bb93c6363759ffc07927fb592086f130a1ebb0 data/unoredinary/loot_table/blocks/luminite_torch.json
+0b505f7613b51bde6cf57a0b63b1088745d0b0e6 data/unoredinary/loot_table/blocks/luminthium_block.json
 2af205258857f73369f298b1a1c41244e8e097f1 data/unoredinary/loot_table/blocks/ruby_block.json
 fae666503de5fc407f1e1a999ca20a67171ee74d data/unoredinary/loot_table/blocks/ruby_ore.json
 c40ce879c920ff5bd2acd546ccd4397d134a20ed data/unoredinary/loot_table/entities/frost_zombie.json

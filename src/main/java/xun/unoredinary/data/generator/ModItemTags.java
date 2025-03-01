@@ -3,8 +3,10 @@ package xun.unoredinary.data.generator;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import xun.unoredinary.UnOredinary;
@@ -24,23 +26,28 @@ public class ModItemTags extends ItemTagsProvider {
 
         tag(ItemTags.SWORDS).add(
                 ModItems.FROSTEEL_SWORD.get(),
-                ModItems.RUBY_SWORD.get()
+                ModItems.RUBY_SWORD.get(),
+                ModItems.LUMINTHIUM_SWORD.get()
         );
         tag(ItemTags.PICKAXES).add(
                 ModItems.FROSTEEL_PICKAXE.get(),
-                ModItems.RUBY_PICKAXE.get()
+                ModItems.RUBY_PICKAXE.get(),
+                ModItems.LUMINTHIUM_PICKAXE.get()
         );
         tag(ItemTags.AXES).add(
                 ModItems.FROSTEEL_AXE.get(),
-                ModItems.RUBY_AXE.get()
+                ModItems.RUBY_AXE.get(),
+                ModItems.LUMINTHIUM_AXE.get()
         );
         tag(ItemTags.HOES).add(
                 ModItems.FROSTEEL_HOE.get(),
-                ModItems.RUBY_HOE.get()
+                ModItems.RUBY_HOE.get(),
+                ModItems.LUMINTHIUM_HOE.get()
         );
         tag(ItemTags.SHOVELS).add(
                 ModItems.FROSTEEL_SHOVEL.get(),
-                ModItems.RUBY_SHOVEL.get()
+                ModItems.RUBY_SHOVEL.get(),
+                ModItems.LUMINTHIUM_SHOVEL.get()
         );
 
         tag(ItemTags.TRIM_TEMPLATES).add(
@@ -52,24 +59,29 @@ public class ModItemTags extends ItemTagsProvider {
                 ModItems.FROSTEEL_INGOT.get(),
                 ModItems.CRYOSTONE_DUST.get(),
                 ModItems.LUMINITE_CRYSTAL.get(),
+                ModItems.LUMINTHIUM_INGOT.get(),
                 ModItems.RUBY.get()
         );
 
         tag(ItemTags.HEAD_ARMOR).add(
                 ModItems.FROSTEEL_HELMET.get(),
-                ModItems.RUBY_HELMET.get()
+                ModItems.RUBY_HELMET.get(),
+                ModItems.LUMINTHIUM_HELMET.get()
         );
         tag(ItemTags.CHEST_ARMOR).add(
                 ModItems.FROSTEEL_CHESTPLATE.get(),
-                ModItems.RUBY_CHESTPLATE.get()
+                ModItems.RUBY_CHESTPLATE.get(),
+                ModItems.LUMINTHIUM_CHESTPLATE.get()
         );
         tag(ItemTags.LEG_ARMOR).add(
                 ModItems.FROSTEEL_LEGGINGS.get(),
-                ModItems.RUBY_LEGGINGS.get()
+                ModItems.RUBY_LEGGINGS.get(),
+                ModItems.LUMINTHIUM_LEGGINGS.get()
         );
         tag(ItemTags.FOOT_ARMOR).add(
                 ModItems.FROSTEEL_BOOTS.get(),
-                ModItems.RUBY_BOOTS.get()
+                ModItems.RUBY_BOOTS.get(),
+                ModItems.LUMINTHIUM_BOOTS.get()
         );
 
         tag(ItemTags.FREEZE_IMMUNE_WEARABLES).add(
@@ -88,7 +100,12 @@ public class ModItemTags extends ItemTagsProvider {
                 ModItems.RUBY_HELMET.get(),
                 ModItems.RUBY_CHESTPLATE.get(),
                 ModItems.RUBY_LEGGINGS.get(),
-                ModItems.RUBY_BOOTS.get()
+                ModItems.RUBY_BOOTS.get(),
+
+                ModItems.LUMINTHIUM_HELMET.get(),
+                ModItems.LUMINTHIUM_CHESTPLATE.get(),
+                ModItems.LUMINTHIUM_LEGGINGS.get(),
+                ModItems.LUMINTHIUM_BOOTS.get()
         );
 
         tag(ModTags.Items.FROSTEEL_TOOL).add(

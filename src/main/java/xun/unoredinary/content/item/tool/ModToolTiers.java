@@ -12,5 +12,8 @@ public class ModToolTiers {
             739, 7.0F, 2.5F, 16, () -> Ingredient.of(ModItems.FROSTEEL_INGOT));
 
     public static final Tier RUBY = new SimpleTier(ModTags.Blocks.INCORRECT_FOR_RUBY_TOOL,
-            1267, 8.0F, 3.0F, 11, () -> Ingredient.of(ModItems.RUBY));
+            1267, 8.5F, 3.5F, 11, () -> Ingredient.of(ModItems.RUBY));
+
+    public static final Tier LUMINTHIUM = new SimpleTier(ModTags.Blocks.INCORRECT_FOR_LUMINTHIUM_TOOL,
+            923, 6.5F, 2.0F, 20, () -> Ingredient.of(ModItems.LUMINTHIUM_INGOT));
 }

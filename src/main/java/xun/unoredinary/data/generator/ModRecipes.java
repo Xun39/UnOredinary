@@ -147,9 +147,28 @@ public class ModRecipes extends ModRecipeProvider {
 
 
         // Luminite Ores
-        onePlusOther(recipeOutput, RecipeCategory.DECORATIONS, ModItems.LUMINITE_CRYSTAL, Items.TORCH, ModItems.LUMINITE_TORCH);
+        onePlusOther(recipeOutput, RecipeCategory.DECORATIONS, ModItems.LUMINITE_CRYSTAL, Items.STICK, ModItems.LUMINITE_TORCH);
         threeByThreeConvertible(recipeOutput, ModItems.LUMINITE_CRYSTAL, ModBlocks.LUMINITE_BLOCK, RecipeCategory.MISC, RecipeCategory.BUILDING_BLOCKS);
 
+        // Luminthium
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.LUMINTHIUM_INGOT)
+                .requires(ModItems.LUMINITE_CRYSTAL.get(), 4)
+                .requires(Items.COPPER_INGOT, 4)
+                .unlockedBy(getHasName(ModItems.LUMINITE_CRYSTAL), has(ModItems.LUMINITE_CRYSTAL))
+                .save(recipeOutput);
+
+        threeByThreeConvertible(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModBlocks.LUMINTHIUM_BLOCK, RecipeCategory.MISC, RecipeCategory.BUILDING_BLOCKS);
+
+        sword(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_SWORD);
+        pickaxe(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_PICKAXE);
+        axe(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_AXE);
+        hoe(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_HOE);
+        shovel(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_SHOVEL);
+
+        helmet(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_HELMET);
+        chestplate(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_CHESTPLATE);
+        leggings(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_LEGGINGS);
+        boots(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_BOOTS);
 
         // Ruby Ores
         threeByThreeConvertible(recipeOutput, ModItems.RUBY, ModBlocks.RUBY_BLOCK, RecipeCategory.MISC, RecipeCategory.BUILDING_BLOCKS);

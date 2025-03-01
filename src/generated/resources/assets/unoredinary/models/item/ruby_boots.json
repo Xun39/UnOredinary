@@ -63,6 +63,6 @@
     }
   ],
   "textures": {
-    "layer0": "unoredinary:item/ruby_boots"
+    "layer0": "unoredinary:item/armors/ruby_boots"
   }
 }

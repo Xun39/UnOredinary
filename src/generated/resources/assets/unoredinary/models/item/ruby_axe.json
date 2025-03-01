@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "unoredinary:item/ruby_axe"
+    "layer0": "unoredinary:item/tools/ruby_axe"
   }
 }

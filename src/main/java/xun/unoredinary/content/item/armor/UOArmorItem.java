@@ -8,6 +8,11 @@ import net.minecraft.world.item.ItemStack;
 
 public class UOArmorItem extends ArmorItem {
 
+    protected static final int HEAD_SLOT = 3;
+    protected static final int CHEST_SLOT = 2;
+    protected static final int LEG_SLOT = 1;
+    protected static final int FEET_SLOT = 0;
+
     public UOArmorItem(Holder<ArmorMaterial> material, Type type, Properties properties) {
         super(material, type, properties);
     }
@@ -17,10 +22,10 @@ public class UOArmorItem extends ArmorItem {
     }
 
     protected boolean hasFullSuitOfArmorOn(Player player) {
-        ItemStack boots = getWearingArmorInSlot(player, 0);
-        ItemStack leggings = getWearingArmorInSlot(player, 1);
-        ItemStack chestplate = getWearingArmorInSlot(player, 2);
-        ItemStack helmet = getWearingArmorInSlot(player, 3);
+        ItemStack boots = getWearingArmorInSlot(player, FEET_SLOT);
+        ItemStack leggings = getWearingArmorInSlot(player, LEG_SLOT);
+        ItemStack chestplate = getWearingArmorInSlot(player, CHEST_SLOT);
+        ItemStack helmet = getWearingArmorInSlot(player, HEAD_SLOT);
 
         return !boots.isEmpty() && !leggings.isEmpty() && !chestplate.isEmpty() && !helmet.isEmpty();
     }

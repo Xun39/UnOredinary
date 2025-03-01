@@ -21,7 +21,6 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
 
                         output.accept(ModBlocks.HEMOCRYLIC_ORE);
-                        output.accept(ModBlocks.HEMOCRYLIC_BLOCK);
 
                         output.accept(ModBlocks.CRYOSTONE_ORE);
                         output.accept(ModBlocks.DEEPSLATE_CRYOSTONE_ORE);
@@ -61,9 +60,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.ICE_BRICK_SLAB);
                         output.accept(ModBlocks.ICE_BRICK_WALL);
 
+                        output.accept(ModBlocks.HEMOCRYLIC_BLOCK);
                         output.accept(ModBlocks.FROSTEEL_BLOCK);
                         output.accept(ModBlocks.CRYOSTONE_BLOCK);
                         output.accept(ModBlocks.LUMINITE_BLOCK);
+                        output.accept(ModBlocks.LUMINTHIUM_BLOCK);
                         output.accept(ModBlocks.RUBY_BLOCK);
 
                     }).build());
@@ -95,6 +96,19 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RUBY_HOE);
                         output.accept(ModItems.RUBY_SHOVEL);
 
+                        output.accept(ModItems.LUMINTHIUM_HELMET);
+                        output.accept(ModItems.LUMINTHIUM_CHESTPLATE);
+                        output.accept(ModItems.LUMINTHIUM_LEGGINGS);
+                        output.accept(ModItems.LUMINTHIUM_BOOTS);
+
+                        output.accept(ModItems.LUMINTHIUM_SWORD);
+                        output.accept(ModItems.LUMINTHIUM_PICKAXE);
+                        output.accept(ModItems.LUMINTHIUM_AXE);
+                        output.accept(ModItems.LUMINTHIUM_HOE);
+                        output.accept(ModItems.LUMINTHIUM_SHOVEL);
+
+                        output.accept(ModItems.RUBY_HORSE_ARMOR);
+
                     }).build());
 
     public static final Supplier<CreativeModeTab> UNOREDINARY_ITEM_TAB = CREATIVE_MODE_TABS.register("unoredinary_item_tab",
@@ -106,6 +120,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.HEMOCRYLIC_CRYSTAL);
 
                         output.accept(ModItems.CRYOSTONE_DUST);
+                        output.accept(ModItems.CRYOSTONE_TORCH);
 
                         output.accept(ModItems.FROSTBITTEN_PHALANGES);
 
@@ -115,6 +130,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE);
 
                         output.accept(ModItems.FROSTEEL_INGOT);
+                        output.accept(ModItems.LUMINTHIUM_INGOT);
+
 
                         output.accept(ModItems.LUMINITE_CRYSTAL);
                         output.accept(ModItems.LUMINITE_TORCH);

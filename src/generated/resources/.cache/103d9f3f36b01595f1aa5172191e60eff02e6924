@@ -1,4 +1,4 @@
-// 1.21	2025-02-24T19:56:05.0651416	Registries
+// 1.21	2025-02-27T21:47:35.2364202	Registries
 f7351c6bc4e6bae40c1899d6d6d758c314cd92ac data/unoredinary/neoforge/biome_modifier/add_entity_frost_zombie.json
 7fddb32eca75c69ddefec3028c95a495d0dad9e8 data/unoredinary/neoforge/biome_modifier/add_ore_cryostone.json
 7ef1787ffeb189c014cd6139b0411773c006579e data/unoredinary/neoforge/biome_modifier/add_ore_cryostone_lower.json
@@ -13,6 +13,7 @@ aa6358fe58a3e37a8c4442390e7cb7c4d5468674 data/unoredinary/trim_material/cryoston
 1d09ddbff5b6f827e713ee06130b2cb35f93f18d data/unoredinary/trim_material/frosteel.json
 fd3a8a62332d551475c0b0ecefccf941e7fa3534 data/unoredinary/trim_material/hemocrylic.json
 786f5536abfe608ca80ee5ec3e0775acc8202b8c data/unoredinary/trim_material/luminite.json
+015592007915be74adf589aceb35b0fec56edd9e data/unoredinary/trim_material/luminthium.json
 bb04869a7d7da6e20f1c110b999e4ff12cd0414e data/unoredinary/trim_material/ruby.json
 0f3d4c25860c9fd545d576d75b0aa9f7171ec634 data/unoredinary/worldgen/configured_feature/ore_cryostone.json
 5a7b70c5589b3233ba2a7c10544b47a3f596b146 data/unoredinary/worldgen/configured_feature/ore_hemocrylic.json

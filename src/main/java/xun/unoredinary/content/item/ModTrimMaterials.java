@@ -20,6 +20,7 @@ public class ModTrimMaterials {
     public static final ResourceKey<TrimMaterial> FROSTEEL = ResourceKey.create(Registries.TRIM_MATERIAL, UnOredinary.modLoc("frosteel"));
     public static final ResourceKey<TrimMaterial> CRYOSTONE = ResourceKey.create(Registries.TRIM_MATERIAL, UnOredinary.modLoc("cryostone"));
     public static final ResourceKey<TrimMaterial> LUMINITE = ResourceKey.create(Registries.TRIM_MATERIAL, UnOredinary.modLoc("luminite"));
+    public static final ResourceKey<TrimMaterial> LUMINTHIUM = ResourceKey.create(Registries.TRIM_MATERIAL, UnOredinary.modLoc("luminthium"));
     public static final ResourceKey<TrimMaterial> RUBY = ResourceKey.create(Registries.TRIM_MATERIAL, UnOredinary.modLoc("ruby"));
 
     public static void bootstrap(BootstrapContext<TrimMaterial> context) {
@@ -27,6 +28,7 @@ public class ModTrimMaterials {
         register(context, FROSTEEL, ModItems.FROSTEEL_INGOT.get(), Style.EMPTY.withColor(TextColor.parseColor("#0b40e7").getOrThrow()), 0.9F);
         register(context, CRYOSTONE, ModItems.CRYOSTONE_DUST.get(), Style.EMPTY.withColor(TextColor.parseColor("#0158ff").getOrThrow()), 0.9F);
         register(context, LUMINITE, ModItems.LUMINITE_CRYSTAL.get(), Style.EMPTY.withColor(TextColor.parseColor("#ffe689").getOrThrow()), 0.6F);
+        register(context, LUMINTHIUM, ModItems.LUMINTHIUM_INGOT.get(), Style.EMPTY.withColor(TextColor.parseColor("#fe9d0d").getOrThrow()), 0.6F);
         register(context, RUBY, ModItems.RUBY.get(), Style.EMPTY.withColor(TextColor.parseColor("#e20f0f").getOrThrow()), 0.4F);
     }
 

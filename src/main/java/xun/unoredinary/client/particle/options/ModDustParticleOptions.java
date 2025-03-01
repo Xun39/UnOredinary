@@ -12,14 +12,14 @@ import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3f;
 
-public class DustParticles extends ScalableParticleOptionsBase {
+public class ModDustParticleOptions extends ScalableParticleOptionsBase {
 
     public static final Vector3f CRYOSTONE_PARTICLE_COLOR = Vec3.fromRGB24(2308090).toVector3f();
     public static final DustParticleOptions CRYOSTONE;
     public static final MapCodec<DustParticleOptions> CODEC;
     public static final StreamCodec<RegistryFriendlyByteBuf, DustParticleOptions> STREAM_CODEC;
 
-    public DustParticles(float scale) {
+    public ModDustParticleOptions(float scale) {
         super(scale);
     }
 

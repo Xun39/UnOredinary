@@ -38,6 +38,15 @@ public class ModArmorMaterials {
 
     }), 11, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.5F, 0.0F, () -> Ingredient.of(ModItems.RUBY));
 
+    public static final Holder<ArmorMaterial> LUMINTHIUM = register("luminthium", Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+        attribute.put(ArmorItem.Type.BOOTS, 2);
+        attribute.put(ArmorItem.Type.LEGGINGS, 4);
+        attribute.put(ArmorItem.Type.CHESTPLATE, 5);
+        attribute.put(ArmorItem.Type.HELMET, 3);
+        attribute.put(ArmorItem.Type.BODY, 7);
+
+    }), 20, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Ingredient.of(ModItems.LUMINTHIUM_INGOT));
+
 
     private static Holder<ArmorMaterial> register(
             String name,

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "unoredinary:item/frosteel_sword"
+    "layer0": "unoredinary:item/tools/frosteel_sword"
   }
 }

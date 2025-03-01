@@ -1,14 +1,14 @@
 {
   "item.unoredinary.hemocrylic_shard": "Hemocrylic Shard",
   "item.unoredinary.hemocrylic_crystal": "Hemocrylic Crystal",
+  "item.unoredinary.frosteel_ingot": "Frosteel Ingot",
 
   "item.unoredinary.cryostone_dust": "Cryostone Dust",
 
   "item.unoredinary.luminite_crystal": "Luminite Crystal",
+  "item.unoredinary.luminthium_ingot": "Luminthium Ingot",
 
   "item.unoredinary.ruby": "Ruby",
-
-  "item.unoredinary.frosteel_ingot": "Frosteel Ingot",
 
   "item.unoredinary.frosteel_upgrade_smithing_template": "Smithing Template",
 
@@ -24,6 +24,12 @@
   "item.unoredinary.ruby_hoe": "Ruby Hoe",
   "item.unoredinary.ruby_shovel": "Ruby Shovel",
 
+  "item.unoredinary.luminthium_sword": "Luminthium Sword",
+  "item.unoredinary.luminthium_pickaxe": "Luminthium Pickaxe",
+  "item.unoredinary.luminthium_axe": "Luminthium Axe",
+  "item.unoredinary.luminthium_hoe": "Luminthium Hoe",
+  "item.unoredinary.luminthium_shovel": "Luminthium Shovel",
+
   "item.unoredinary.frosteel_helmet": "Frosteel Helmet",
   "item.unoredinary.frosteel_chestplate": "Frosteel Chestplate",
   "item.unoredinary.frosteel_leggings": "Frosteel Leggings",
@@ -34,6 +40,13 @@
   "item.unoredinary.ruby_leggings": "Ruby Leggings",
   "item.unoredinary.ruby_boots": "Ruby Boots",
 
+  "item.unoredinary.ruby_horse_armor": "Ruby Horse Armor",
+
+  "item.unoredinary.luminthium_helmet": "Luminthium Helmet",
+  "item.unoredinary.luminthium_chestplate": "Luminthium Chestplate",
+  "item.unoredinary.luminthium_leggings": "Luminthium Leggings",
+  "item.unoredinary.luminthium_boots": "Luminthium Boots",
+
   "item.unoredinary.ice_shard": "Ice Shard",
   "item.unoredinary.ice_brick": "Ice Brick",
 
@@ -42,6 +55,7 @@
   "item.unoredinary.frost_zombie_spawn_egg": "Frost Zombie Spawn Egg",
 
   "block.unoredinary.luminite_torch": "Luminite Torch",
+  "block.unoredinary.cryostone_torch": "Cryostone Torch",
 
   "block.unoredinary.hemocrylic_ore": "Hemocrylic Ore",
   "block.unoredinary.hemocrylic_block": "Block of Hemocrylic",
@@ -54,6 +68,7 @@
   "block.unoredinary.luminite_ore": "Luminite Ore",
   "block.unoredinary.deepslate_luminite_ore": "Deepslate Luminite Ore",
   "block.unoredinary.luminite_block": "Block of Luminite",
+  "block.unoredinary.luminthium_block": "Block of Luminthium",
 
   "block.unoredinary.ruby_ore": "Ruby Ore",
   "block.unoredinary.deepslate_ruby_ore": "Deepslate Ruby Ore",
@@ -93,6 +108,7 @@
   "trim_material.unoredinary.frosteel": "Frosteel Material",
   "trim_material.unoredinary.cryostone": "Cryostone Material",
   "trim_material.unoredinary.luminite": "Luminite Material",
+  "trim_material.unoredinary.luminthium": "Luminthium Material",
   "trim_material.unoredinary.ruby": "Ruby Material",
 
   "upgrade.unoredinary.frosteel_upgrade": "Frosteel Upgrade",
@@ -101,15 +117,13 @@
   "item.unoredinary.smithing_template.frosteel_upgrade.base_slot_description": "Add iron armor, weapon, or tool",
   "item.unoredinary.smithing_template.frosteel_upgrade.additions_slot_description": "Add Frosteel Inogt",
 
-  "advancement.unoredinary.root": "UnOredinary",
-  "advancement.unoredinary.root.desc": "The starting point of your \"unoredinary\" story...",
+  "advancement.unoredinary.get_ruby": "Further than diamonds",
+  "advancement.unoredinary.get_ruby.desc": "Acquire rubies",
 
-  "advancement.unoredinary.fp/root": "Frost Prospector",
-  "advancement.unoredinary.fp/root.desc": "Hidden within the frigid biomes, snow-covered veins await your discovery.",
-  "advancement.unoredinary.fp/get_frosteel": "Frosteel Artisan",
-  "advancement.unoredinary.fp/get_frosteel.desc": "Get Frosteel Ingot",
-  "advancement.unoredinary.fp/kill_frost_zombie": "Frost Hunter",
-  "advancement.unoredinary.fp/kill_frost_zombie.desc": "Kill a Frost Zombie",
+  "advancement.unoredinary.get_hemocrylic": "Frost Prospector",
+  "advancement.unoredinary.get_hemocrylic.desc": "Hidden within the frigid biomes, snow-covered veins await your discovery.",
+  "advancement.unoredinary.get_frosteel": "Frosteel Artisan",
+  "advancement.unoredinary.get_frosteel.desc": "Get a Frosteel Ingot",
 
   "tooltip.unoredinary.shift_hold_extend": "§8Hold Shift for more information",
 

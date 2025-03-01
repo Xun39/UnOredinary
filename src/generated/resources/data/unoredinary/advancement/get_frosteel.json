@@ -14,14 +14,14 @@
   },
   "display": {
     "description": {
-      "translate": "advancement.unoredinary.fp/get_frosteel.desc"
+      "translate": "advancement.unoredinary.get_frosteel.desc"
     },
     "icon": {
       "count": 1,
       "id": "unoredinary:frosteel_ingot"
     },
     "title": {
-      "translate": "advancement.unoredinary.fp/get_frosteel"
+      "translate": "advancement.unoredinary.get_frosteel"
     }
   },
   "requirements": [

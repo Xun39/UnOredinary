@@ -1,14 +1,14 @@
 {
   "item.unoredinary.hemocrylic_shard": "寒髓晶碎片",
   "item.unoredinary.hemocrylic_crystal": "寒髓晶",
+  "item.unoredinary.frosteel_ingot": "凛钢锭",
 
   "item.unoredinary.cryostone_dust": "冰魄尘",
 
   "item.unoredinary.ruby": "红宝石",
 
   "item.unoredinary.luminite_crystal": "辉光晶体",
-
-  "item.unoredinary.frosteel_ingot": "凛钢锭",
+  "item.unoredinary.luminthium_ingot": "耀铜合金锭",
 
   "item.unoredinary.frosteel_upgrade_smithing_template": "锻造模板",
 
@@ -24,10 +24,28 @@
   "item.unoredinary.ruby_hoe": "红宝石锄",
   "item.unoredinary.ruby_shovel": "红宝石锹",
 
+  "item.unoredinary.luminthium_sword": "耀铜合金剑",
+  "item.unoredinary.luminthium_pickaxe": "耀铜合金镐",
+  "item.unoredinary.luminthium_axe": "耀铜合金斧",
+  "item.unoredinary.luminthium_hoe": "耀铜合金锄",
+  "item.unoredinary.luminthium_shovel": "耀铜合金锹",
+
   "item.unoredinary.frosteel_helmet": "凛钢头盔",
   "item.unoredinary.frosteel_chestplate": "凛钢胸甲",
   "item.unoredinary.frosteel_leggings": "凛钢护腿",
   "item.unoredinary.frosteel_boots": "凛钢靴子",
+
+  "item.unoredinary.ruby_helmet": "红宝石头盔",
+  "item.unoredinary.ruby_chestplate": "红宝石胸甲",
+  "item.unoredinary.ruby_leggings": "红宝石护腿",
+  "item.unoredinary.ruby_boots": "红宝石靴子",
+
+  "item.unoredinary.ruby_horse_armor": "红宝石马铠",
+
+  "item.unoredinary.luminthium_helmet": "耀铜合金头盔",
+  "item.unoredinary.luminthium_chestplate": "耀铜合金胸甲",
+  "item.unoredinary.luminthium_leggings": "耀铜合金护腿",
+  "item.unoredinary.luminthium_boots": "耀铜合金靴子",
 
   "item.unoredinary.ice_shard": "冰碎片",
   "item.unoredinary.ice_brick": "冰砖",
@@ -37,6 +55,7 @@
   "item.unoredinary.frost_zombie_spawn_egg": "霜冻僵尸刷怪蛋",
 
   "block.unoredinary.luminite_torch": "辉光火把",
+  "block.unoredinary.cryostone_torch": "冰魄石火把",
 
   "block.unoredinary.hemocrylic_ore": "寒血髓矿石",
   "block.unoredinary.hemocrylic_block": "寒髓块",
@@ -49,6 +68,7 @@
   "block.unoredinary.luminite_ore": "辉光矿石",
   "block.unoredinary.deepslate_luminite_ore": "深层辉光矿石",
   "block.unoredinary.luminite_block": "辉光块",
+  "block.unoredinary.luminthium_block": "耀铜合金块",
 
   "block.unoredinary.ruby_ore": "红宝石矿石",
   "block.unoredinary.deepslate_ruby_ore": "深层红宝石矿石",
@@ -88,6 +108,7 @@
   "trim_material.unoredinary.frosteel": "凛钢质",
   "trim_material.unoredinary.cryostone": "冰魄石质",
   "trim_material.unoredinary.luminite": "辉光石质",
+  "trim_material.unoredinary.luminthium": "耀铜质",
   "trim_material.unoredinary.ruby": "红宝石质",
 
   "upgrade.unoredinary.frosteel_upgrade": "凛钢升级",
@@ -96,15 +117,13 @@
   "item.unoredinary.smithing_template.frosteel_upgrade.base_slot_description": "放入铁盔甲、武器或工具",
   "item.unoredinary.smithing_template.frosteel_upgrade.additions_slot_description": "放入凛钢锭",
 
-  "advancement.unoredinary.root": "矿海寻奇",
-  "advancement.unoredinary.root.desc": "你神奇冒险的开始……",
+  "advancement.unoredinary.get_ruby": "超越钻石",
+  "advancement.unoredinary.get_ruby.desc": "获得红宝石",
 
-  "advancement.unoredinary.fp/root": "冰霜勘探者",
-  "advancement.unoredinary.fp/root.desc": "在寒冷群系中，积雪下隐藏着等待发现的矿脉。",
-  "advancement.unoredinary.fp/get_frosteel": "凛钢工匠",
-  "advancement.unoredinary.fp/get_frosteel.desc": "获得凛钢锭",
-  "advancement.unoredinary.fp/kill_frost_zombie": "霜冻猎手",
-  "advancement.unoredinary.fp/kill_frost_zombie.desc": "杀死一个霜冻僵尸",
+  "advancement.unoredinary.get_hemocrylic": "冰霜勘探者",
+  "advancement.unoredinary.get_hemocrylic.desc": "在寒冷群系中，积雪下隐藏着等待发现的矿脉。",
+  "advancement.unoredinary.get_frosteel": "凛钢工匠",
+  "advancement.unoredinary.get_frosteel.desc": "获得凛钢锭",
 
   "tooltip.unoredinary.shift_hold_extend": "§8按住Shift查看更多信息",
 

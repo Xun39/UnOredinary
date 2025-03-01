@@ -14,6 +14,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import xun.unoredinary.registry.*;
+import xun.unoredinary.registry.ModGlobalLootModifierSerializers;
 
 @Mod(UnOredinary.MOD_ID)
 public class UnOredinary {
@@ -37,6 +38,8 @@ public class UnOredinary {
 
         ModStructureTypes.register(modEventBus);
         ModEntityTypes.register(modEventBus);
+
+        ModGlobalLootModifierSerializers.register(modEventBus);
 
         neoforgeEventBus.register(this);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

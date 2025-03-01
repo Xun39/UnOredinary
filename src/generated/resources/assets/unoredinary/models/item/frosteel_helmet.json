@@ -63,6 +63,6 @@
     }
   ],
   "textures": {
-    "layer0": "unoredinary:item/frosteel_helmet"
+    "layer0": "unoredinary:item/armors/frosteel_helmet"
   }
 }

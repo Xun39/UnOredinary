@@ -42,7 +42,7 @@ public abstract class ModItemModelProvider extends ItemModelProvider {
     protected ItemModelBuilder handheldItem(DeferredItem<?> item) {
         return withExistingParent(getItemRegistryName(item),
                 ResourceLocation.parse("item/handheld")).texture("layer0",
-                UnOredinary.modLoc("item/" + getItemRegistryName(item)));
+                UnOredinary.modLoc("item/tools/" + getItemRegistryName(item)));
     }
 
     public void wallItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
@@ -75,14 +75,14 @@ public abstract class ModItemModelProvider extends ItemModelProvider {
 
                 getBuilder(currentTrimName)
                         .parent(new ModelFile.UncheckedModelFile("item/generated"))
-                        .texture("layer0", armorItemResLoc.getNamespace() + ":item/" + armorItemResLoc.getPath())
+                        .texture("layer0", armorItemResLoc.getNamespace() + ":item/armors/" + armorItemResLoc.getPath())
                         .texture("layer1", trimResLoc);
 
                 this.withExistingParent(deferredItem.getId().getPath(), mcLoc("item/generated"))
                         .override()
                         .model(new ModelFile.UncheckedModelFile(trimNameResLoc.getNamespace()  + ":item/" + trimNameResLoc.getPath()))
                         .predicate(mcLoc("trim_type"), trimValue).end()
-                        .texture("layer0", UnOredinary.modLoc("item/" + getItemRegistryName(deferredItem)));
+                        .texture("layer0", UnOredinary.modLoc("item/armors/" + getItemRegistryName(deferredItem)));
             });
         }
     }
