@@ -55,16 +55,18 @@ public class ModLootTables extends LootTableProvider {
             multipleDrops(ModBlocks.DEEPSLATE_CRYOSTONE_ORE, ModItems.CRYOSTONE_DUST.get(), 3.0F, 4.0F);
             dropSelf(ModBlocks.CRYOSTONE_BLOCK.get());
 
-            dropOther(ModBlocks.LUMINITE_ORE, ModItems.LUMINITE_CRYSTAL.get());
-            dropOther(ModBlocks.DEEPSLATE_LUMINITE_ORE, ModItems.LUMINITE_CRYSTAL.get());
+            dropOtherWithoutSilkTouch(ModBlocks.LUMINITE_ORE, ModItems.LUMINITE_CRYSTAL.get());
+            dropOtherWithoutSilkTouch(ModBlocks.DEEPSLATE_LUMINITE_ORE, ModItems.LUMINITE_CRYSTAL.get());
             dropSelf(ModBlocks.LUMINITE_BLOCK.get());
             dropSelf(ModBlocks.LUMINTHIUM_BLOCK.get());
 
-            dropOther(ModBlocks.RUBY_ORE, ModItems.RUBY.get());
-            dropOther(ModBlocks.DEEPSLATE_RUBY_ORE, ModItems.RUBY.get());
+            dropOtherWithoutSilkTouch(ModBlocks.RUBY_ORE, ModItems.RUBY.get());
+            dropOtherWithoutSilkTouch(ModBlocks.DEEPSLATE_RUBY_ORE, ModItems.RUBY.get());
             dropSelf(ModBlocks.RUBY_BLOCK.get());
 
-            dropOther(ModBlocks.FROSTBOUND_STONE, ModBlocks.FROSTBOUND_COBBLESTONE);
+            dropOther(ModBlocks.SOLARITE_ORE.get(), ModItems.SOLARITE_GEM);
+
+            dropOtherWithoutSilkTouch(ModBlocks.FROSTBOUND_STONE, ModBlocks.FROSTBOUND_COBBLESTONE);
             dropSelf(ModBlocks.FROSTBOUND_STONE_STAIRS.get());
             slabDrop(ModBlocks.FROSTBOUND_STONE_SLAB);
 

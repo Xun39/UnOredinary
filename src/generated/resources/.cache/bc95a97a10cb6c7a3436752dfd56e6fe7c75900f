@@ -1,4 +1,4 @@
-// 1.21	2025-02-27T21:11:13.5287856	Item Models: unoredinary
+// 1.21	2025-03-01T22:57:15.2078774	Item Models: unoredinary
 4015ba89de0971e89fe76dfb4a55127d3a8edca2 assets/unoredinary/models/item/cryobound_cobblestone_wall.json
 2a7920508c8b56687fb67716b24a0dc51bfb2746 assets/unoredinary/models/item/cryostone_dust.json
 1e7fcbff6a6e7354ef322dbe4be4996e362420a7 assets/unoredinary/models/item/cryostone_torch_item.json
@@ -165,3 +165,9 @@ f18423978dbc5e99321f30907889e0a4a1857538 assets/unoredinary/models/item/ruby_leg
 5e9352f1832e64af2fca11a744c9b367c3b62a3d assets/unoredinary/models/item/ruby_pickaxe.json
 45690b83a7454049c5b5eb4632f999e674206d76 assets/unoredinary/models/item/ruby_shovel.json
 d0e16b1eb699ecc48352259aacaf70f04be56f7b assets/unoredinary/models/item/ruby_sword.json
+fdddd2a56df013ab8e43742b3cf1df91e84d4275 assets/unoredinary/models/item/solarite_axe.json
+0c39f4466480d6eaf6b437cf0ec1d19f8ddb9128 assets/unoredinary/models/item/solarite_gem.json
+39d9b8b29d0978a14a4508b959d0b9f70be7ecd5 assets/unoredinary/models/item/solarite_hoe.json
+d5799602e797b698cc6350761e6e0a3cf9901fdb assets/unoredinary/models/item/solarite_pickaxe.json
+5d755f7fb71b331e6f15f16010f191614ea84d1f assets/unoredinary/models/item/solarite_shovel.json
+66c7b3dd09c4942aee5914dcf1176135b9cd7f85 assets/unoredinary/models/item/solarite_sword.json

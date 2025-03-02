@@ -28,5 +28,12 @@ public class ModGlobalLootModifiers extends GlobalLootModifierProvider {
                         LootItemRandomChanceCondition.randomChance(0.5F).build()
                 }, ModItems.RUBY_HORSE_ARMOR.get())
         );
+
+        this.add("ruby_horse_armor_in_ancient_city",
+                new AddItemModifier(new LootItemCondition[] {
+                        new LootTableIdCondition.Builder(ResourceLocation.withDefaultNamespace("chests/ancient_city")).build(),
+                        LootItemRandomChanceCondition.randomChance(0.75F).build()
+                }, ModItems.RUBY_HORSE_ARMOR.get())
+        );
     }
 }

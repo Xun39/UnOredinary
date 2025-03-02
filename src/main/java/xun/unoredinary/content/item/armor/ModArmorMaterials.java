@@ -45,7 +45,7 @@ public class ModArmorMaterials {
         attribute.put(ArmorItem.Type.HELMET, 3);
         attribute.put(ArmorItem.Type.BODY, 7);
 
-    }), 20, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Ingredient.of(ModItems.LUMINTHIUM_INGOT));
+    }), 20, SoundEvents.ARMOR_EQUIP_IRON, 0.5F, 0.0F, () -> Ingredient.of(ModItems.LUMINTHIUM_INGOT));
 
 
     private static Holder<ArmorMaterial> register(

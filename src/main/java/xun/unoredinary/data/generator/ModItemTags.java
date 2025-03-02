@@ -26,28 +26,33 @@ public class ModItemTags extends ItemTagsProvider {
 
         tag(ItemTags.SWORDS).add(
                 ModItems.FROSTEEL_SWORD.get(),
-                ModItems.RUBY_SWORD.get(),
-                ModItems.LUMINTHIUM_SWORD.get()
+                ModItems.LUMINTHIUM_SWORD.get(),
+                ModItems.SOLARITE_SWORD.get(),
+                ModItems.RUBY_SWORD.get()
         );
         tag(ItemTags.PICKAXES).add(
                 ModItems.FROSTEEL_PICKAXE.get(),
-                ModItems.RUBY_PICKAXE.get(),
-                ModItems.LUMINTHIUM_PICKAXE.get()
+                ModItems.LUMINTHIUM_PICKAXE.get(),
+                ModItems.SOLARITE_PICKAXE.get(),
+                ModItems.RUBY_PICKAXE.get()
         );
         tag(ItemTags.AXES).add(
                 ModItems.FROSTEEL_AXE.get(),
-                ModItems.RUBY_AXE.get(),
-                ModItems.LUMINTHIUM_AXE.get()
+                ModItems.LUMINTHIUM_AXE.get(),
+                ModItems.SOLARITE_PICKAXE.get(),
+                ModItems.RUBY_AXE.get()
         );
         tag(ItemTags.HOES).add(
                 ModItems.FROSTEEL_HOE.get(),
-                ModItems.RUBY_HOE.get(),
-                ModItems.LUMINTHIUM_HOE.get()
+                ModItems.LUMINTHIUM_HOE.get(),
+                ModItems.SOLARITE_HOE.get(),
+                ModItems.RUBY_HOE.get()
         );
         tag(ItemTags.SHOVELS).add(
                 ModItems.FROSTEEL_SHOVEL.get(),
-                ModItems.RUBY_SHOVEL.get(),
-                ModItems.LUMINTHIUM_SHOVEL.get()
+                ModItems.LUMINTHIUM_SHOVEL.get(),
+                ModItems.SOLARITE_SHOVEL.get(),
+                ModItems.RUBY_SHOVEL.get()
         );
 
         tag(ItemTags.TRIM_TEMPLATES).add(

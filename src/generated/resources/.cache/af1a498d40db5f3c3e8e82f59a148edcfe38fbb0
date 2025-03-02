@@ -1,4 +1,4 @@
-// 1.21	2025-02-25T20:13:21.9482931	Block States: unoredinary
+// 1.21	2025-03-01T10:33:42.0879125	Block States: unoredinary
 b52f6bd23065cef791259fd6681f6786773c3d9a assets/unoredinary/blockstates/cryobound_cobblestone.json
 f8f4466c07f8368412c5359601dcd4add33d94e8 assets/unoredinary/blockstates/cryobound_cobblestone_slab.json
 fcf0ab8309b7b7fdf7282388c0730900a4a2551d assets/unoredinary/blockstates/cryobound_cobblestone_stairs.json
@@ -35,6 +35,7 @@ ba2e3fd7f3af1cb090cb5b3ee75e740792d13d83 assets/unoredinary/blockstates/luminite
 93f9d238d52075a5bdb9fffb0921a48dbfdeb2ae assets/unoredinary/blockstates/luminthium_block.json
 8ce676d14a154c715856869b96d264cef6a39d0c assets/unoredinary/blockstates/ruby_block.json
 481b0deedaf6061a184f07fb1874d8df77754928 assets/unoredinary/blockstates/ruby_ore.json
+538c4c400b7a39c43da0ac6e1b42d0eb7e21d135 assets/unoredinary/blockstates/solarite_ore.json
 9fa204432a5cab29674d60ca4c55b0dcb9cf7d05 assets/unoredinary/models/block/cryobound_cobblestone.json
 1984b098e6b8ab1be7e6347a2f446e19aade8d50 assets/unoredinary/models/block/cryobound_cobblestone_slab.json
 63511cb63ac943482db580e1cffd489a1912138e assets/unoredinary/models/block/cryobound_cobblestone_slab_top.json
@@ -94,6 +95,7 @@ e2041c922826b9e6c48e0abb0f21c61531886bac assets/unoredinary/models/block/luminit
 bf4ceae80b8b0b83fee5200ad6d0ba49008c4339 assets/unoredinary/models/block/luminthium_block.json
 f07d9661a9e9b2bb38e64ee80409767aa24eea16 assets/unoredinary/models/block/ruby_block.json
 f253272f34f9915d4eeebbc3d10c2d5f8c1c4e31 assets/unoredinary/models/block/ruby_ore.json
+bc7a2999a08f9b7752f077dd6ccd5a1d2bde8a34 assets/unoredinary/models/block/solarite_ore.json
 5587270bc5754f3271947a174fb1d91016d33ec8 assets/unoredinary/models/item/cryobound_cobblestone.json
 ad97a828f643439f3371b77afb78a539fffd0e9a assets/unoredinary/models/item/cryobound_cobblestone_slab.json
 df2d1edc51ac4ea6d7e169a99af7c0cb44055e77 assets/unoredinary/models/item/cryobound_cobblestone_stairs.json
@@ -122,3 +124,4 @@ cc068c1f6f8f4ae64d925cd4fefee4cbfccc27b7 assets/unoredinary/models/item/luminite
 f737c9a2846146d3385ba74b3205f8ffec5c2b5f assets/unoredinary/models/item/luminthium_block.json
 ae952cc450c79fe9e13d4c51d477abda7a91c731 assets/unoredinary/models/item/ruby_block.json
 7ca7263e55f385b4300a52b4f14e790f85789ccd assets/unoredinary/models/item/ruby_ore.json
+c57d51d2945fa34c8aba201a7cf3295beeae6506 assets/unoredinary/models/item/solarite_ore.json

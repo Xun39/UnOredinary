@@ -7,6 +7,8 @@
 
   "item.unoredinary.ruby": "红宝石",
 
+  "item.unoredinary.solarite_gem": "曦辉玉",
+
   "item.unoredinary.luminite_crystal": "辉光晶体",
   "item.unoredinary.luminthium_ingot": "耀铜合金锭",
 
@@ -18,17 +20,23 @@
   "item.unoredinary.frosteel_hoe": "凛钢锄",
   "item.unoredinary.frosteel_shovel": "凛钢锹",
 
-  "item.unoredinary.ruby_sword": "红宝石剑",
-  "item.unoredinary.ruby_pickaxe": "红宝石镐",
-  "item.unoredinary.ruby_axe": "红宝石斧",
-  "item.unoredinary.ruby_hoe": "红宝石锄",
-  "item.unoredinary.ruby_shovel": "红宝石锹",
-
   "item.unoredinary.luminthium_sword": "耀铜合金剑",
   "item.unoredinary.luminthium_pickaxe": "耀铜合金镐",
   "item.unoredinary.luminthium_axe": "耀铜合金斧",
   "item.unoredinary.luminthium_hoe": "耀铜合金锄",
   "item.unoredinary.luminthium_shovel": "耀铜合金锹",
+
+  "item.unoredinary.solarite_sword": "炎阳剑",
+  "item.unoredinary.solarite_pickaxe": "炎阳镐",
+  "item.unoredinary.solarite_axe": "炎阳斧",
+  "item.unoredinary.solarite_hoe": "炎阳锄",
+  "item.unoredinary.solarite_shovel": "炎阳锹",
+
+  "item.unoredinary.ruby_sword": "红宝石剑",
+  "item.unoredinary.ruby_pickaxe": "红宝石镐",
+  "item.unoredinary.ruby_axe": "红宝石斧",
+  "item.unoredinary.ruby_hoe": "红宝石锄",
+  "item.unoredinary.ruby_shovel": "红宝石锹",
 
   "item.unoredinary.frosteel_helmet": "凛钢头盔",
   "item.unoredinary.frosteel_chestplate": "凛钢胸甲",
@@ -73,6 +81,8 @@
   "block.unoredinary.ruby_ore": "红宝石矿石",
   "block.unoredinary.deepslate_ruby_ore": "深层红宝石矿石",
   "block.unoredinary.ruby_block": "红宝石块",
+
+  "block.unoredinary.solarite_ore": "日耀矿石",
 
   "block.unoredinary.frostbound_stone": "霜缚石",
   "block.unoredinary.frostbound_stone_stairs": "霜缚石楼梯",

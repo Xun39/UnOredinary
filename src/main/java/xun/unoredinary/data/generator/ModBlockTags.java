@@ -40,6 +40,8 @@ public class ModBlockTags extends BlockTagsProvider {
                 ModBlocks.DEEPSLATE_RUBY_ORE.get(),
                 ModBlocks.RUBY_BLOCK.get(),
 
+                ModBlocks.SOLARITE_ORE.get(),
+
                 ModBlocks.FROSTBOUND_STONE.get(),
 
                 ModBlocks.FROSTBOUND_STONE_STAIRS.get(),
@@ -83,25 +85,41 @@ public class ModBlockTags extends BlockTagsProvider {
                 ModBlocks.DEEPSLATE_RUBY_ORE.get()
         );
 
-        // Don't need this for now
-        /*tag(ModTags.Blocks.NEEDS_FROSTEEL_TOOL).addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
+        tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(
+                ModBlocks.SOLARITE_ORE.get()
+        );
+
+        tag(ModTags.Blocks.NEEDS_FROSTEEL_TOOL).addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
+        tag(ModTags.Blocks.NEEDS_LUMINTHIUM_TOOL).addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
+        tag(ModTags.Blocks.NEEDS_SOLARITE_TOOL).addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
+
         tag(ModTags.Blocks.NEEDS_RUBY_TOOL).addTag(BlockTags.NEEDS_DIAMOND_TOOL);
+
+        tag(ModTags.Blocks.INCORRECT_FOR_RUBY_TOOL).addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL);
 
         tag(BlockTags.INCORRECT_FOR_WOODEN_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_FROSTEEL_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_LUMINTHIUM_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_SOLARITE_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL);
 
         tag(BlockTags.INCORRECT_FOR_STONE_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_FROSTEEL_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_LUMINTHIUM_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_SOLARITE_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL);
 
         tag(BlockTags.INCORRECT_FOR_IRON_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_FROSTEEL_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_LUMINTHIUM_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_SOLARITE_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL);
 
         tag(BlockTags.INCORRECT_FOR_GOLD_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_FROSTEEL_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL);*/
+                .addTag(ModTags.Blocks.NEEDS_LUMINTHIUM_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_SOLARITE_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL);
 
         tag(BlockTags.WALLS).add(
                 ModBlocks.FROSTBOUND_COBBLESTONE_WALL.get(),

@@ -19,7 +19,7 @@ public class LuminthiumArmorItem extends UOArmorItem{
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
         if (entity instanceof Player player) {
 
-            if (hasFullSuitOfArmorOn(player)) {
+            if (hasWearingArmorInSlot(player, HEAD_SLOT)) {
                 player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION));
             }
         }

@@ -11,6 +11,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -20,7 +21,8 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import org.slf4j.Logger;
 import xun.unoredinary.UnOredinary;
-import xun.unoredinary.content.item.tool.FrosteelPickaxeItem;
+import xun.unoredinary.content.item.tool.FrosteelPickItem;
+import xun.unoredinary.content.item.tool.SolaritePickItem;
 import xun.unoredinary.registry.ModItems;
 import xun.unoredinary.util.BiomeUtils;
 import xun.unoredinary.util.ModTags;
@@ -44,20 +46,45 @@ public class ToolEvents {
 
         if (!event.getState().is(BlockTags.ICE)) return;
 
-        if(mainHandItem.getItem() instanceof FrosteelPickaxeItem pickaxe && player instanceof ServerPlayer serverPlayer) {
+        if(mainHandItem.getItem() instanceof FrosteelPickItem pickItem && player instanceof ServerPlayer serverPlayer) {
             BlockPos initialBlockPos = event.getPos();
             if(HARVESTED_BLOCKS.contains(initialBlockPos)) {
                 return;
             }
 
-            for(BlockPos pos : FrosteelPickaxeItem.getBlocksToBeDestroyed(1, initialBlockPos, serverPlayer)) {
-                if(pos == initialBlockPos || !pickaxe.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
+            for(BlockPos pos : FrosteelPickItem.getBlocksToBeDestroyed(1, initialBlockPos, serverPlayer)) {
+                if(pos == initialBlockPos || !pickItem.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
                     continue;
                 }
 
                 HARVESTED_BLOCKS.add(pos);
                 serverPlayer.gameMode.destroyBlock(pos);
                 HARVESTED_BLOCKS.remove(pos);
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onSolaritePickaxeUsage(BlockEvent.BreakEvent event) {
+
+        Player player = event.getPlayer();
+        BlockPos pos = event.getPos();
+        BlockState state = event.getState();
+        ItemStack mainHandItem = player.getMainHandItem();
+
+        if (mainHandItem.getItem() instanceof SolaritePickItem pickItem && player instanceof ServerPlayer serverPlayer) {
+
+            if (SolaritePickItem.SMELT_ORE_MAP.containsKey(state.getBlock())) {
+
+                player.level().destroyBlock(pos, false);
+
+                if (state.getBlock() == Blocks.COPPER_ORE || state.getBlock() == Blocks.DEEPSLATE_COPPER_ORE) {
+                    ItemStack result = new ItemStack(SolaritePickItem.SMELT_ORE_MAP.get(state.getBlock()), (int) (Math.random() * 4) + 2);
+                    Block.popResource(player.level(), pos, result);
+                } else {
+                    ItemStack result = new ItemStack(SolaritePickItem.SMELT_ORE_MAP.get(state.getBlock()));
+                    Block.popResource(player.level(), pos, result);
+                }
             }
         }
     }
@@ -71,7 +98,6 @@ public class ToolEvents {
         ItemStack weapon = player.getMainHandItem();
 
         if (weapon.isEmpty() || !weapon.is(ModTags.Items.FROSTEEL_TOOL)) {
-            LOGGER.debug("[Fail] Invalid Weapon: {}", weapon);
             return;
         }
 
@@ -87,13 +113,9 @@ public class ToolEvents {
         if (BiomeUtils.isInColdBiome(level, playerPos)) {
             float bonus = FROSTEEL_DAMAGE_FACTOR / temperature;
             finalDamage += bonus;
-            LOGGER.info("[Snow Biomes Bonus] Temp: {} | Boost: {} | Final Damage: {}", temperature, bonus, finalDamage);
-
         }
-
         if (finalDamage != baseDamage) {
             event.setNewDamage(finalDamage);
-            LOGGER.debug("Damage Adjustment Success: {} → {}", baseDamage, finalDamage);
         }
     }
 

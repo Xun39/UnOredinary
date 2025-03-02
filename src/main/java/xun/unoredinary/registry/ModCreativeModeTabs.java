@@ -31,6 +31,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.RUBY_ORE);
                         output.accept(ModBlocks.DEEPSLATE_RUBY_ORE);
 
+                        output.accept(ModBlocks.SOLARITE_ORE);
+
                         output.accept(ModBlocks.FROSTBOUND_STONE);
 
                         output.accept(ModBlocks.FROSTBOUND_STONE_STAIRS);
@@ -85,17 +87,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FROSTEEL_HOE);
                         output.accept(ModItems.FROSTEEL_SHOVEL);
 
-                        output.accept(ModItems.RUBY_HELMET);
-                        output.accept(ModItems.RUBY_CHESTPLATE);
-                        output.accept(ModItems.RUBY_LEGGINGS);
-                        output.accept(ModItems.RUBY_BOOTS);
-
-                        output.accept(ModItems.RUBY_SWORD);
-                        output.accept(ModItems.RUBY_PICKAXE);
-                        output.accept(ModItems.RUBY_AXE);
-                        output.accept(ModItems.RUBY_HOE);
-                        output.accept(ModItems.RUBY_SHOVEL);
-
                         output.accept(ModItems.LUMINTHIUM_HELMET);
                         output.accept(ModItems.LUMINTHIUM_CHESTPLATE);
                         output.accept(ModItems.LUMINTHIUM_LEGGINGS);
@@ -106,6 +97,23 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LUMINTHIUM_AXE);
                         output.accept(ModItems.LUMINTHIUM_HOE);
                         output.accept(ModItems.LUMINTHIUM_SHOVEL);
+
+                        output.accept(ModItems.SOLARITE_SWORD);
+                        output.accept(ModItems.SOLARITE_PICKAXE);
+                        output.accept(ModItems.SOLARITE_AXE);
+                        output.accept(ModItems.SOLARITE_HOE);
+                        output.accept(ModItems.SOLARITE_SHOVEL);
+
+                        output.accept(ModItems.RUBY_HELMET);
+                        output.accept(ModItems.RUBY_CHESTPLATE);
+                        output.accept(ModItems.RUBY_LEGGINGS);
+                        output.accept(ModItems.RUBY_BOOTS);
+
+                        output.accept(ModItems.RUBY_SWORD);
+                        output.accept(ModItems.RUBY_PICKAXE);
+                        output.accept(ModItems.RUBY_AXE);
+                        output.accept(ModItems.RUBY_HOE);
+                        output.accept(ModItems.RUBY_SHOVEL);
 
                         output.accept(ModItems.RUBY_HORSE_ARMOR);
 
@@ -137,6 +145,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LUMINITE_TORCH);
 
                         output.accept(ModItems.RUBY);
+
+                        output.accept(ModItems.SOLARITE_GEM);
 
                         output.accept(ModItems.FROST_ZOMBIE_SPAWN_EGG);
 

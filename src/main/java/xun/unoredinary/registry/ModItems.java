@@ -12,9 +12,7 @@ import xun.unoredinary.content.item.*;
 import xun.unoredinary.content.item.armor.FrosteelArmorItem;
 import xun.unoredinary.content.item.armor.LuminthiumArmorItem;
 import xun.unoredinary.content.item.armor.ModArmorMaterials;
-import xun.unoredinary.content.item.tool.FrosteelPickaxeItem;
-import xun.unoredinary.content.item.tool.FrosteelSwordItem;
-import xun.unoredinary.content.item.tool.ModToolTiers;
+import xun.unoredinary.content.item.tool.*;
 
 public class ModItems {
 
@@ -46,12 +44,15 @@ public class ModItems {
     public static final DeferredItem<Item> FROSTEEL_INGOT = ITEMS.register("frosteel_ingot", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> LUMINTHIUM_INGOT = ITEMS.register("luminthium_ingot", () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> SOLARITE_GEM = ITEMS.register("solarite_gem", () -> new Item(new Item.Properties().fireResistant()));
+
+    // Frosteel tools
     public static final DeferredItem<SwordItem> FROSTEEL_SWORD = ITEMS.register("frosteel_sword",
             () -> new FrosteelSwordItem(ModToolTiers.FROSTEEL, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.FROSTEEL, 3, -2.4F)))
     );
     public static final DeferredItem<PickaxeItem> FROSTEEL_PICKAXE = ITEMS.register("frosteel_pickaxe",
-            () -> new FrosteelPickaxeItem(ModToolTiers.FROSTEEL, new Item.Properties()
+            () -> new FrosteelPickItem(ModToolTiers.FROSTEEL, new Item.Properties()
                     .attributes(PickaxeItem.createAttributes(ModToolTiers.FROSTEEL, 1.0F, -2.8F)))
     );
     public static final DeferredItem<AxeItem> FROSTEEL_AXE = ITEMS.register("frosteel_axe",
@@ -67,29 +68,7 @@ public class ModItems {
                     .attributes(ShovelItem.createAttributes(ModToolTiers.FROSTEEL, 1.5F, -3.0F)))
     );
 
-
-    public static final DeferredItem<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword",
-            () -> new SwordItem(ModToolTiers.RUBY, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.RUBY, 3, -2.4F)))
-    );
-    public static final DeferredItem<PickaxeItem> RUBY_PICKAXE = ITEMS.register("ruby_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.RUBY, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModToolTiers.RUBY, 1.0F, -2.8F)))
-    );
-    public static final DeferredItem<AxeItem> RUBY_AXE = ITEMS.register("ruby_axe",
-            () -> new AxeItem(ModToolTiers.RUBY, new Item.Properties()
-                    .attributes(AxeItem.createAttributes(ModToolTiers.RUBY, 5.5F, -3.0F)))
-    );
-    public static final DeferredItem<HoeItem> RUBY_HOE = ITEMS.register("ruby_hoe",
-            () -> new HoeItem(ModToolTiers.RUBY, new Item.Properties()
-                    .attributes(HoeItem.createAttributes(ModToolTiers.RUBY, -2.5F, 0.5F)))
-    );
-    public static final DeferredItem<ShovelItem> RUBY_SHOVEL = ITEMS.register("ruby_shovel",
-            () -> new ShovelItem(ModToolTiers.RUBY, new Item.Properties()
-                    .attributes(ShovelItem.createAttributes(ModToolTiers.RUBY, 1.5F, -3.0F)))
-    );
-
-
+    // Luminthium tools
     public static final DeferredItem<SwordItem> LUMINTHIUM_SWORD = ITEMS.register("luminthium_sword",
             () -> new SwordItem(ModToolTiers.LUMINTHIUM, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.LUMINTHIUM, 3, -2.4F)))
@@ -111,25 +90,87 @@ public class ModItems {
                     .attributes(ShovelItem.createAttributes(ModToolTiers.LUMINTHIUM, 1.5F, -3.0F)))
     );
 
+    // Solarite tools
+    public static final DeferredItem<SwordItem> SOLARITE_SWORD = ITEMS.register("solarite_sword",
+            () -> new SolariteSwordItem(ModToolTiers.SOLARITE, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.SOLARITE, 3, -2.4F)))
+    );
+    public static final DeferredItem<PickaxeItem> SOLARITE_PICKAXE = ITEMS.register("solarite_pickaxe",
+            () -> new SolaritePickItem(ModToolTiers.SOLARITE, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.SOLARITE, 1.0F, -2.8F)))
+    );
+    public static final DeferredItem<AxeItem> SOLARITE_AXE = ITEMS.register("solarite_axe",
+            () -> new SolariteAxeItem(ModToolTiers.SOLARITE, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.SOLARITE, 5.5F, -3.0F)))
+    );
+    public static final DeferredItem<HoeItem> SOLARITE_HOE = ITEMS.register("solarite_hoe",
+            () -> new SolariteHoeItem(ModToolTiers.SOLARITE, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.SOLARITE, -2.5F, 0.5F)))
+    );
+    public static final DeferredItem<ShovelItem> SOLARITE_SHOVEL = ITEMS.register("solarite_shovel",
+            () -> new SolariteShovelItem(ModToolTiers.SOLARITE, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.SOLARITE, 1.5F, -3.0F)))
+    );
 
+    // Ruby tools
+    public static final DeferredItem<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword",
+            () -> new SwordItem(ModToolTiers.RUBY, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.RUBY, 3, -2.4F)))
+    );
+    public static final DeferredItem<PickaxeItem> RUBY_PICKAXE = ITEMS.register("ruby_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.RUBY, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.RUBY, 1.0F, -2.8F)))
+    );
+    public static final DeferredItem<AxeItem> RUBY_AXE = ITEMS.register("ruby_axe",
+            () -> new AxeItem(ModToolTiers.RUBY, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.RUBY, 5.5F, -3.0F)))
+    );
+    public static final DeferredItem<HoeItem> RUBY_HOE = ITEMS.register("ruby_hoe",
+            () -> new HoeItem(ModToolTiers.RUBY, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.RUBY, -2.5F, 0.5F)))
+    );
+    public static final DeferredItem<ShovelItem> RUBY_SHOVEL = ITEMS.register("ruby_shovel",
+            () -> new ShovelItem(ModToolTiers.RUBY, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.RUBY, 1.5F, -3.0F)))
+    );
+
+    // Frosteel armors
     public static final DeferredItem<ArmorItem> FROSTEEL_HELMET = ITEMS.register("frosteel_helmet",
             () -> new FrosteelArmorItem(ModArmorMaterials.FROSTEEL, ArmorItem.Type.HELMET,
-                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(23)))
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(35)))
     );
     public static final DeferredItem<ArmorItem> FROSTEEL_CHESTPLATE = ITEMS.register("frosteel_chestplate",
             () -> new FrosteelArmorItem(ModArmorMaterials.FROSTEEL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(23)))
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(35)))
     );
     public static final DeferredItem<ArmorItem> FROSTEEL_LEGGINGS = ITEMS.register("frosteel_leggings",
             () -> new FrosteelArmorItem(ModArmorMaterials.FROSTEEL, ArmorItem.Type.LEGGINGS,
-                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(23)))
+                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(35)))
     );
     public static final DeferredItem<ArmorItem> FROSTEEL_BOOTS = ITEMS.register("frosteel_boots",
             () -> new FrosteelArmorItem(ModArmorMaterials.FROSTEEL, ArmorItem.Type.BOOTS,
-                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(23)))
+                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(35)))
     );
 
+    // Luminthium armors
+    public static final DeferredItem<ArmorItem> LUMINTHIUM_HELMET = ITEMS.register("luminthium_helmet",
+            () -> new LuminthiumArmorItem(ModArmorMaterials.LUMINTHIUM, ArmorItem.Type.HELMET,
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(31)))
+    );
+    public static final DeferredItem<ArmorItem> LUMINTHIUM_CHESTPLATE = ITEMS.register("luminthium_chestplate",
+            () -> new LuminthiumArmorItem(ModArmorMaterials.LUMINTHIUM, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(313)))
+    );
+    public static final DeferredItem<ArmorItem> LUMINTHIUM_LEGGINGS = ITEMS.register("luminthium_leggings",
+            () -> new LuminthiumArmorItem(ModArmorMaterials.LUMINTHIUM, ArmorItem.Type.LEGGINGS,
+                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(31)))
+    );
+    public static final DeferredItem<ArmorItem> LUMINTHIUM_BOOTS = ITEMS.register("luminthium_boots",
+            () -> new LuminthiumArmorItem(ModArmorMaterials.LUMINTHIUM, ArmorItem.Type.BOOTS,
+                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(31)))
+    );
 
+    // Ruby armors
     public static final DeferredItem<ArmorItem> RUBY_HELMET = ITEMS.register("ruby_helmet",
             () -> new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(29)))
@@ -146,28 +187,9 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(29)))
     );
-
     public static final DeferredItem<AnimalArmorItem> RUBY_HORSE_ARMOR = ITEMS.register("ruby_horse_armor",
             () -> new AnimalArmorItem(ModArmorMaterials.RUBY, AnimalArmorItem.BodyType.EQUESTRIAN, false,
                     new Item.Properties().stacksTo(1))
-    );
-
-
-    public static final DeferredItem<ArmorItem> LUMINTHIUM_HELMET = ITEMS.register("luminthium_helmet",
-            () -> new LuminthiumArmorItem(ModArmorMaterials.LUMINTHIUM, ArmorItem.Type.HELMET,
-                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(25)))
-    );
-    public static final DeferredItem<ArmorItem> LUMINTHIUM_CHESTPLATE = ITEMS.register("luminthium_chestplate",
-            () -> new LuminthiumArmorItem(ModArmorMaterials.LUMINTHIUM, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(25)))
-    );
-    public static final DeferredItem<ArmorItem> LUMINTHIUM_LEGGINGS = ITEMS.register("luminthium_leggings",
-            () -> new LuminthiumArmorItem(ModArmorMaterials.LUMINTHIUM, ArmorItem.Type.LEGGINGS,
-                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(25)))
-    );
-    public static final DeferredItem<ArmorItem> LUMINTHIUM_BOOTS = ITEMS.register("luminthium_boots",
-            () -> new LuminthiumArmorItem(ModArmorMaterials.LUMINTHIUM, ArmorItem.Type.BOOTS,
-                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(25)))
     );
 
 

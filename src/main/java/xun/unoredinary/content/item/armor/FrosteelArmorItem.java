@@ -28,7 +28,7 @@ public class FrosteelArmorItem extends UOArmorItem {
                 int radius = 3;
                 int radiusSquared = radius * radius;
 
-                if (!getWearingArmorInSlot(player, FEET_SLOT).isEmpty()) {
+                if (hasWearingArmorInSlot(player, FEET_SLOT)) {
 
                     BlockPos.betweenClosed(playerPos.offset(-radius, 0, -radius), playerPos.offset(radius, 0, radius)).forEach(pos -> {
 

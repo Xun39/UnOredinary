@@ -12,9 +12,9 @@ import net.minecraft.world.phys.HitResult;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FrosteelPickaxeItem extends PickaxeItem {
+public class FrosteelPickItem extends PickaxeItem {
 
-    public FrosteelPickaxeItem(Tier tier, Properties properties) {
+    public FrosteelPickItem(Tier tier, Properties properties) {
         super(tier, properties);
     }
 

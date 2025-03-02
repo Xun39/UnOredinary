@@ -32,7 +32,7 @@ public abstract class ModBlockLootProvider extends BlockLootSubProvider {
         super.add(block, (result) -> createMultipleOreDrops(result, drop, minDropAmount, maxDropAmount));
     }
 
-    public void dropOther(Supplier<? extends Block> block, ItemLike drop) {
+    public void dropOtherWithoutSilkTouch(Supplier<? extends Block> block, ItemLike drop) {
         super.add(block.get(), (result) -> createDropOther(result, drop));
     }
 

@@ -1,14 +1,14 @@
 {
-  "block.hemocrylic_block.break": {
-    "subtitle": "sounds.unoredinary.block.hemocrylic_block.break",
+  "block.hemocrylic.break": {
+    "subtitle": "sounds.unoredinary.block.hemocrylic.break",
     "sounds": [
       "unoredinary:block/hemocrylic_block/break_1",
       "unoredinary:block/hemocrylic_block/break_2",
       "unoredinary:block/hemocrylic_block/break_3"
     ]
   },
-  "block.hemocrylic_block.step": {
-    "subtitle": "sounds.unoredinary.block.hemocrylic_block.step",
+  "block.hemocrylic.step": {
+    "subtitle": "sounds.unoredinary.block.hemocrylic.step",
     "sounds": [
       "unoredinary:block/hemocrylic_block/step_1",
       "unoredinary:block/hemocrylic_block/step_2",
@@ -17,8 +17,8 @@
       "unoredinary:block/hemocrylic_block/step_5"
     ]
   },
-  "block.hemocrylic_block.place": {
-    "subtitle": "sounds.unoredinary.block.hemocrylic_block.place",
+  "block.hemocrylic.place": {
+    "subtitle": "sounds.unoredinary.block.hemocrylic.place",
     "sounds": [
       "unoredinary:block/hemocrylic_block/place_1",
       "unoredinary:block/hemocrylic_block/place_2",
@@ -26,8 +26,8 @@
       "unoredinary:block/hemocrylic_block/place_4"
     ]
   },
-  "block.hemocrylic_block.hit": {
-    "subtitle": "sounds.unoredinary.block.hemocrylic_block.hit",
+  "block.hemocrylic.hit": {
+    "subtitle": "sounds.unoredinary.block.hemocrylic.hit",
     "sounds": [
       "unoredinary:block/hemocrylic_block/hit_1",
       "unoredinary:block/hemocrylic_block/hit_2",
@@ -37,18 +37,63 @@
       "unoredinary:block/hemocrylic_block/hit_6"
     ]
   },
-  "block.hemocrylic_block.fall": {
-    "subtitle": "sounds.unoredinary.block.hemocrylic_block.fall",
+  "block.hemocrylic.fall": {
+    "subtitle": "sounds.unoredinary.block.hemocrylic.fall",
     "sounds": [
       "unoredinary:block/hemocrylic_block/fall_1",
       "unoredinary:block/hemocrylic_block/fall_2",
       "unoredinary:block/hemocrylic_block/fall_3"
     ]
   },
-  "block.hemocrylic_block.evaporate": {
-    "subtitle": "sounds.unoredinary.block.hemocrylic_block.evaporate",
+  "block.hemocrylic.evaporate": {
+    "subtitle": "sounds.unoredinary.block.hemocrylic.evaporate",
     "sounds": [
       "unoredinary:block/hemocrylic_block/evaporate"
+    ]
+  },
+
+  "block.solarite.break": {
+    "subtitle": "sounds.unoredinary.block.solarite.break",
+    "sounds": [
+      "unoredinary:block/solarite/break_1",
+      "unoredinary:block/solarite/break_2",
+      "unoredinary:block/solarite/break_3",
+      "unoredinary:block/solarite/break_4"
+    ]
+  },
+  "block.solarite.step": {
+    "subtitle": "sounds.unoredinary.block.solarite.step",
+    "sounds": [
+      "unoredinary:block/solarite/step_1",
+      "unoredinary:block/solarite/step_2",
+      "unoredinary:block/solarite/step_3",
+      "unoredinary:block/solarite/step_4",
+      "unoredinary:block/solarite/step_5"
+    ]
+  },
+  "block.solarite.place": {
+    "subtitle": "sounds.unoredinary.block.solarite.place",
+    "sounds": [
+      "unoredinary:block/solarite/place_1",
+      "unoredinary:block/solarite/place_2",
+      "unoredinary:block/solarite/place_3"
+    ]
+  },
+  "block.solarite.hit": {
+    "subtitle": "sounds.unoredinary.block.solarite.hit",
+    "sounds": [
+      "unoredinary:block/solarite/hit_1",
+      "unoredinary:block/solarite/hit_2",
+      "unoredinary:block/solarite/hit_3",
+      "unoredinary:block/solarite/hit_4",
+      "unoredinary:block/solarite/hit_5",
+      "unoredinary:block/solarite/hit_6"
+    ]
+  },
+  "block.solarite.fall": {
+    "subtitle": "sounds.unoredinary.block.solarite.fall",
+    "sounds": [
+      "unoredinary:block/solarite/fall"
     ]
   },
 
@@ -94,21 +139,6 @@
       "unoredinary:item/armor/equip_frosteel_3",
       "unoredinary:item/armor/equip_frosteel_4",
       "unoredinary:item/armor/equip_frosteel_5"
-    ]
-  },
-  "item.ruby_lightsaber.swing": {
-    "subtitle": "sounds.unoredinary.item.ruby_lightsaber.swing",
-    "sounds": [
-      "unoredinary:item/ruby_lightsaber/swing_1",
-      "unoredinary:item/ruby_lightsaber/swing_2",
-      "unoredinary:item/ruby_lightsaber/swing_3"
-      ]
-  },
-  "item.ruby_lightsaber.break": {
-    "subtitle": "sounds.unoredinary.item.ruby_lightsaber.break",
-    "sounds": [
-      "unoredinary:item/ruby_lightsaber/break_1",
-      "unoredinary:item/ruby_lightsaber/break_2"
     ]
   }
 }

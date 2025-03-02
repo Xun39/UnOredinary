@@ -29,6 +29,8 @@ public class ModItemModels extends ModItemModelProvider {
 
         basicItem(ModItems.RUBY.get());
 
+        basicItem(ModItems.SOLARITE_GEM.get());
+
         basicItem(ModItems.ICE_SHARD.get());
         basicItem(ModItems.ICE_BRICK.get());
 
@@ -50,17 +52,23 @@ public class ModItemModels extends ModItemModelProvider {
         handheldItem(ModItems.FROSTEEL_HOE);
         handheldItem(ModItems.FROSTEEL_SHOVEL);
 
-        handheldItem(ModItems.RUBY_SWORD);
-        handheldItem(ModItems.RUBY_PICKAXE);
-        handheldItem(ModItems.RUBY_AXE);
-        handheldItem(ModItems.RUBY_HOE);
-        handheldItem(ModItems.RUBY_SHOVEL);
-
         handheldItem(ModItems.LUMINTHIUM_SWORD);
         handheldItem(ModItems.LUMINTHIUM_PICKAXE);
         handheldItem(ModItems.LUMINTHIUM_AXE);
         handheldItem(ModItems.LUMINTHIUM_HOE);
         handheldItem(ModItems.LUMINTHIUM_SHOVEL);
+
+        handheldItem(ModItems.SOLARITE_SWORD);
+        handheldItem(ModItems.SOLARITE_PICKAXE);
+        handheldItem(ModItems.SOLARITE_AXE);
+        handheldItem(ModItems.SOLARITE_HOE);
+        handheldItem(ModItems.SOLARITE_SHOVEL);
+
+        handheldItem(ModItems.RUBY_SWORD);
+        handheldItem(ModItems.RUBY_PICKAXE);
+        handheldItem(ModItems.RUBY_AXE);
+        handheldItem(ModItems.RUBY_HOE);
+        handheldItem(ModItems.RUBY_SHOVEL);
 
         trimmedArmorItem(ModItems.FROSTEEL_HELMET);
         trimmedArmorItem(ModItems.FROSTEEL_CHESTPLATE);

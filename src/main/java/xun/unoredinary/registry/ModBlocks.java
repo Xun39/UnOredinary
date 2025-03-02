@@ -36,6 +36,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
                     .strength(5.0F, 6.0F).sound(SoundType.METAL)));
 
+    // Cryostone
     public static final DeferredBlock<Block> CRYOSTONE_ORE = registerBlock("cryostone_ore",
             () -> new CryoStoneOreBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_ORE)));
     public static final DeferredBlock<Block> DEEPSLATE_CRYOSTONE_ORE = registerBlock("deepslate_cryostone_ore",
@@ -58,6 +59,7 @@ public class ModBlocks {
     public static final DeferredBlock<CryostoneWireBlock> CRYOSTONE_WIRE = registerBlock("cryostone_wire",
             () -> new CryostoneWireBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_WIRE)));
 
+    // Related Building Blocks
     public static final DeferredBlock<Block> FROSTBOUND_STONE = registerBlock("frostbound_stone",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).strength(1.0F, 5.0F)));
     public static final DeferredBlock<StairBlock> FROSTBOUND_STONE_STAIRS = registerBlock("frostbound_stone_stairs",
@@ -153,6 +155,12 @@ public class ModBlocks {
     public static final DeferredBlock<Block> RUBY_BLOCK = registerBlock("ruby_block",
             () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
                     .strength(5.0F, 6.0F).sound(SoundType.METAL)));
+
+    // Solarite
+    public static final DeferredBlock<Block> SOLARITE_ORE = registerBlock("solarite_ore",
+            () -> new SolariteOreBlock(UniformInt.of(10, 15),
+                    BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
+                    .strength(100.0F, 1600.0F)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

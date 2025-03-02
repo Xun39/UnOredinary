@@ -17,11 +17,14 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_FROSTEEL_TOOL = createTag("needs_frosteel_tool");
         public static final TagKey<Block> INCORRECT_FOR_FROSTEEL_TOOL = createTag("incorrect_for_frosteel_tool");
 
-        public static final TagKey<Block> NEEDS_RUBY_TOOL = createTag("needs_ruby_tool");
-        public static final TagKey<Block> INCORRECT_FOR_RUBY_TOOL = createTag("incorrect_for_ruby_tool");
-
         public static final TagKey<Block> NEEDS_LUMINTHIUM_TOOL = createTag("needs_luminthium_tool");
         public static final TagKey<Block> INCORRECT_FOR_LUMINTHIUM_TOOL = createTag("incorrect_for_luminthium_tool");
+
+        public static final TagKey<Block> NEEDS_SOLARITE_TOOL = createTag("needs_solarite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_SOLARITE_TOOL = createTag("incorrect_for_solarite_tool");
+
+        public static final TagKey<Block> NEEDS_RUBY_TOOL = createTag("needs_ruby_tool");
+        public static final TagKey<Block> INCORRECT_FOR_RUBY_TOOL = createTag("incorrect_for_ruby_tool");
 
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(UnOredinary.modLoc(name));

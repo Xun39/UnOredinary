@@ -1,4 +1,4 @@
-// 1.21	2025-02-27T19:46:40.8692165	Loot Tables
+// 1.21	2025-03-01T21:21:07.7965284	Loot Tables
 6d2451704780f6384624c76a0abb069628cee8b5 data/unoredinary/loot_table/blocks/cryobound_cobblestone.json
 fdc4bb03cc36a3ecfbe3a3cb709895e5d295256e data/unoredinary/loot_table/blocks/cryobound_cobblestone_slab.json
 e51865e587fea191f3e60381f5b60f59b1d9aa10 data/unoredinary/loot_table/blocks/cryobound_cobblestone_stairs.json
@@ -34,4 +34,5 @@ b69948e6de900ba7df13fb9ee1da160841a02937 data/unoredinary/loot_table/blocks/lumi
 0b505f7613b51bde6cf57a0b63b1088745d0b0e6 data/unoredinary/loot_table/blocks/luminthium_block.json
 2af205258857f73369f298b1a1c41244e8e097f1 data/unoredinary/loot_table/blocks/ruby_block.json
 fae666503de5fc407f1e1a999ca20a67171ee74d data/unoredinary/loot_table/blocks/ruby_ore.json
+be0ca8875900376f8506ccd061bb52e9f38b58cc data/unoredinary/loot_table/blocks/solarite_ore.json
 c40ce879c920ff5bd2acd546ccd4397d134a20ed data/unoredinary/loot_table/entities/frost_zombie.json

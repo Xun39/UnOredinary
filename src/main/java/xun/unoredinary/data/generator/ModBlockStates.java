@@ -31,6 +31,8 @@ public class ModBlockStates extends ModBlockStateProvider {
         blockWithItem(ModBlocks.DEEPSLATE_RUBY_ORE);
         blockWithItem(ModBlocks.RUBY_BLOCK);
 
+        blockWithItem(ModBlocks.SOLARITE_ORE);
+
         blockWithItem(ModBlocks.FROSTBOUND_STONE);
         stairBlockWithItem(ModBlocks.FROSTBOUND_STONE_STAIRS, ModBlocks.FROSTBOUND_STONE);
         slabBlockWithItem(ModBlocks.FROSTBOUND_STONE_SLAB, ModBlocks.FROSTBOUND_STONE);

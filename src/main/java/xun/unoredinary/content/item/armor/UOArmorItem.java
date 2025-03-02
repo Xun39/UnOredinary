@@ -17,7 +17,11 @@ public class UOArmorItem extends ArmorItem {
         super(material, type, properties);
     }
 
-    protected ItemStack getWearingArmorInSlot(Player player, int slotIndex) {
+    protected boolean hasWearingArmorInSlot(Player player, int slotIndex) {
+        return !getWearingArmorInSlot(player, slotIndex).isEmpty();
+    }
+
+    private ItemStack getWearingArmorInSlot(Player player, int slotIndex) {
         return player.getInventory().getArmor(slotIndex);
     }
 
