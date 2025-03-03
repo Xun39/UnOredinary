@@ -34,8 +34,18 @@ public abstract class ModRecipeProvider extends RecipeProvider {
                 );
     }
 
+
     protected static void onePlusOther(RecipeOutput output, RecipeCategory recipeCategory, ItemLike unlockRecipeIngredient, ItemLike secondIngredient, ItemLike result) {
         ShapelessRecipeBuilder.shapeless(recipeCategory, result, 1)
+                .requires(unlockRecipeIngredient, 1)
+                .requires(secondIngredient, 1)
+                .unlockedBy(getHasName(unlockRecipeIngredient), has(unlockRecipeIngredient))
+                .save(output, UnOredinary.modLoc(
+                        getRegistryName(result) + "_from_" + getRegistryName(unlockRecipeIngredient) + "_with_" + getRegistryName(secondIngredient)));
+    }
+
+    protected static void onePlusOther(RecipeOutput output, RecipeCategory recipeCategory, ItemLike unlockRecipeIngredient, ItemLike secondIngredient, ItemLike result, int count) {
+        ShapelessRecipeBuilder.shapeless(recipeCategory, result, count)
                 .requires(unlockRecipeIngredient, 1)
                 .requires(secondIngredient, 1)
                 .unlockedBy(getHasName(unlockRecipeIngredient), has(unlockRecipeIngredient))

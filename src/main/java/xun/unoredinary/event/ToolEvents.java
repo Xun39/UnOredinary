@@ -23,6 +23,7 @@ import org.slf4j.Logger;
 import xun.unoredinary.UnOredinary;
 import xun.unoredinary.content.item.tool.FrosteelPickItem;
 import xun.unoredinary.content.item.tool.SolaritePickItem;
+import xun.unoredinary.content.item.tool.SolariteShovelItem;
 import xun.unoredinary.registry.ModItems;
 import xun.unoredinary.util.BiomeUtils;
 import xun.unoredinary.util.ModTags;
@@ -65,7 +66,7 @@ public class ToolEvents {
     }
 
     @SubscribeEvent
-    public static void onSolaritePickaxeUsage(BlockEvent.BreakEvent event) {
+    public static void onSolariteToolUsage(BlockEvent.BreakEvent event) {
 
         Player player = event.getPlayer();
         BlockPos pos = event.getPos();
@@ -86,6 +87,11 @@ public class ToolEvents {
                     Block.popResource(player.level(), pos, result);
                 }
             }
+        } else if (mainHandItem.getItem() instanceof SolariteShovelItem shovelItem && player instanceof ServerPlayer serverPlayer) {
+            player.level().destroyBlock(pos, false);
+
+            ItemStack result = new ItemStack(SolariteShovelItem.SMELT_MAP.get(state.getBlock()));
+            Block.popResource(player.level(), pos, result);
         }
     }
 

@@ -75,16 +75,21 @@ public class ModItemModels extends ModItemModelProvider {
         trimmedArmorItem(ModItems.FROSTEEL_LEGGINGS);
         trimmedArmorItem(ModItems.FROSTEEL_BOOTS);
 
+        trimmedArmorItem(ModItems.LUMINTHIUM_HELMET);
+        trimmedArmorItem(ModItems.LUMINTHIUM_CHESTPLATE);
+        trimmedArmorItem(ModItems.LUMINTHIUM_LEGGINGS);
+        trimmedArmorItem(ModItems.LUMINTHIUM_BOOTS);
+
+        trimmedArmorItem(ModItems.SOLARITE_HELMET);
+        trimmedArmorItem(ModItems.SOLARITE_CHESTPLATE);
+        trimmedArmorItem(ModItems.SOLARITE_LEGGINGS);
+        trimmedArmorItem(ModItems.SOLARITE_BOOTS);
+
         trimmedArmorItem(ModItems.RUBY_HELMET);
         trimmedArmorItem(ModItems.RUBY_CHESTPLATE);
         trimmedArmorItem(ModItems.RUBY_LEGGINGS);
         trimmedArmorItem(ModItems.RUBY_BOOTS);
         basicItem(ModItems.RUBY_HORSE_ARMOR.get());
-
-        trimmedArmorItem(ModItems.LUMINTHIUM_HELMET);
-        trimmedArmorItem(ModItems.LUMINTHIUM_CHESTPLATE);
-        trimmedArmorItem(ModItems.LUMINTHIUM_LEGGINGS);
-        trimmedArmorItem(ModItems.LUMINTHIUM_BOOTS);
 
 
         withExistingParent(getItemRegistryName(ModItems.FROST_ZOMBIE_SPAWN_EGG), mcLoc("item/template_spawn_egg"));

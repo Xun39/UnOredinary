@@ -18,5 +18,5 @@ public class ModToolTiers {
             1413, 6.5F, 2.0F, 20, () -> Ingredient.of(ModItems.LUMINTHIUM_INGOT));
 
     public static final Tier SOLARITE = new SimpleTier(ModTags.Blocks.INCORRECT_FOR_SOLARITE_TOOL,
-            2478, 10.0F, 5.0F, 13, () -> Ingredient.of(ModItems.SOLARITE_GEM));
+            2478, 12.0F, 6.0F, 12, () -> Ingredient.of(ModItems.SOLARITE_GEM));
 }

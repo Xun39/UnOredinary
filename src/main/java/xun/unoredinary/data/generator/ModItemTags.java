@@ -70,30 +70,39 @@ public class ModItemTags extends ItemTagsProvider {
 
         tag(ItemTags.HEAD_ARMOR).add(
                 ModItems.FROSTEEL_HELMET.get(),
-                ModItems.RUBY_HELMET.get(),
-                ModItems.LUMINTHIUM_HELMET.get()
+                ModItems.LUMINTHIUM_HELMET.get(),
+                ModItems.SOLARITE_HELMET.get(),
+                ModItems.RUBY_HELMET.get()
         );
         tag(ItemTags.CHEST_ARMOR).add(
                 ModItems.FROSTEEL_CHESTPLATE.get(),
-                ModItems.RUBY_CHESTPLATE.get(),
-                ModItems.LUMINTHIUM_CHESTPLATE.get()
+                ModItems.LUMINTHIUM_CHESTPLATE.get(),
+                ModItems.SOLARITE_CHESTPLATE.get(),
+                ModItems.RUBY_CHESTPLATE.get()
         );
         tag(ItemTags.LEG_ARMOR).add(
                 ModItems.FROSTEEL_LEGGINGS.get(),
-                ModItems.RUBY_LEGGINGS.get(),
-                ModItems.LUMINTHIUM_LEGGINGS.get()
+                ModItems.LUMINTHIUM_LEGGINGS.get(),
+                ModItems.SOLARITE_LEGGINGS.get(),
+                ModItems.RUBY_LEGGINGS.get()
         );
         tag(ItemTags.FOOT_ARMOR).add(
                 ModItems.FROSTEEL_BOOTS.get(),
-                ModItems.RUBY_BOOTS.get(),
-                ModItems.LUMINTHIUM_BOOTS.get()
+                ModItems.LUMINTHIUM_BOOTS.get(),
+                ModItems.SOLARITE_BOOTS.get(),
+                ModItems.RUBY_BOOTS.get()
         );
 
         tag(ItemTags.FREEZE_IMMUNE_WEARABLES).add(
                 ModItems.FROSTEEL_HELMET.get(),
                 ModItems.FROSTEEL_CHESTPLATE.get(),
                 ModItems.FROSTEEL_LEGGINGS.get(),
-                ModItems.FROSTEEL_BOOTS.get()
+                ModItems.FROSTEEL_BOOTS.get(),
+
+                ModItems.SOLARITE_HELMET.get(),
+                ModItems.SOLARITE_CHESTPLATE.get(),
+                ModItems.SOLARITE_LEGGINGS.get(),
+                ModItems.SOLARITE_BOOTS.get()
         );
 
         tag(ItemTags.TRIMMABLE_ARMOR).add(
@@ -102,15 +111,20 @@ public class ModItemTags extends ItemTagsProvider {
                 ModItems.FROSTEEL_LEGGINGS.get(),
                 ModItems.FROSTEEL_BOOTS.get(),
 
-                ModItems.RUBY_HELMET.get(),
-                ModItems.RUBY_CHESTPLATE.get(),
-                ModItems.RUBY_LEGGINGS.get(),
-                ModItems.RUBY_BOOTS.get(),
-
                 ModItems.LUMINTHIUM_HELMET.get(),
                 ModItems.LUMINTHIUM_CHESTPLATE.get(),
                 ModItems.LUMINTHIUM_LEGGINGS.get(),
-                ModItems.LUMINTHIUM_BOOTS.get()
+                ModItems.LUMINTHIUM_BOOTS.get(),
+
+                ModItems.SOLARITE_HELMET.get(),
+                ModItems.SOLARITE_CHESTPLATE.get(),
+                ModItems.SOLARITE_LEGGINGS.get(),
+                ModItems.SOLARITE_BOOTS.get(),
+
+                ModItems.RUBY_HELMET.get(),
+                ModItems.RUBY_CHESTPLATE.get(),
+                ModItems.RUBY_LEGGINGS.get(),
+                ModItems.RUBY_BOOTS.get()
         );
 
         tag(ModTags.Items.FROSTEEL_TOOL).add(

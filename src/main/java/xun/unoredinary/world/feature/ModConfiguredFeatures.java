@@ -4,10 +4,12 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import xun.unoredinary.UnOredinary;
@@ -24,6 +26,8 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> LUMINITE_ORE_KEY = registerKey("ore_luminite");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SOLARITE_ORE_KEY = registerKey("ore_solarite");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> SMALL_RUBY_ORE_KEY = registerKey("ore_ruby_small");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEDIUM_RUBY_ORE_KEY = registerKey("ore_ruby_medium");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_RUBY_ORE_KEY = registerKey("ore_ruby_large");
@@ -32,6 +36,7 @@ public class ModConfiguredFeatures {
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
         RuleTest iceReplaceables = new TagMatchTest(BlockTags.ICE);
+        RuleTest lavaReplaceables = new BlockMatchTest(Blocks.LAVA);
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
 
@@ -47,14 +52,14 @@ public class ModConfiguredFeatures {
                 OreConfiguration.target(stoneReplaceables, ModBlocks.RUBY_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_RUBY_ORE.get().defaultBlockState()));
 
-        register(context, HEMOCRYLIC_ORE_KEY, Feature.ORE, new OreConfiguration(iceReplaceables,
-                ModBlocks.HEMOCRYLIC_ORE.get().defaultBlockState(), 3));
-        register(context, LARGE_HEMOCRYLIC_ORE_KEY, Feature.ORE, new OreConfiguration(iceReplaceables,
-                ModBlocks.HEMOCRYLIC_ORE.get().defaultBlockState(), 7));
+        register(context, HEMOCRYLIC_ORE_KEY, Feature.ORE, new OreConfiguration(iceReplaceables, ModBlocks.HEMOCRYLIC_ORE.get().defaultBlockState(), 3));
+        register(context, LARGE_HEMOCRYLIC_ORE_KEY, Feature.ORE, new OreConfiguration(iceReplaceables, ModBlocks.HEMOCRYLIC_ORE.get().defaultBlockState(), 7));
 
         register(context, CRYOSTONE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldCryostoneOres, 8));
 
         register(context, LUMINITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldLuminiteOres, 5));
+
+        register(context, SOLARITE_ORE_KEY, Feature.ORE, new OreConfiguration(lavaReplaceables, ModBlocks.SOLARITE_ORE.get().defaultBlockState(), 4));
 
         register(context, SMALL_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 3,0.5F));
         register(context, MEDIUM_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 7,0.6F));

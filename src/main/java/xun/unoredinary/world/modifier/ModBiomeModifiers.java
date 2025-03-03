@@ -27,6 +27,8 @@ public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> ADD_ORE_LUMINITE = registerKey("add_ore_luminite");
 
+    public static final ResourceKey<BiomeModifier> ADD_ORE_SOLARITE = registerKey("add_ore_solarite");
+
     public static final ResourceKey<BiomeModifier> ADD_ORE_RUBY = registerKey("add_ore_ruby");
     public static final ResourceKey<BiomeModifier> ADD_ORE_RUBY_MEDIUM = registerKey("add_ore_ruby_medium");
     public static final ResourceKey<BiomeModifier> ADD_ORE_RUBY_LARGE= registerKey("add_ore_ruby_large");
@@ -64,6 +66,12 @@ public class ModBiomeModifiers {
         context.register(ADD_ORE_LUMINITE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_LUSH),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.LUMINITE_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+
+        // Solarite Ores
+        context.register(ADD_ORE_SOLARITE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SOLARITE_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
         // Ruby Ores

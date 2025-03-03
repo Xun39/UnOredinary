@@ -5,8 +5,18 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+
+import java.util.Map;
 
 public class SolariteShovelItem extends ShovelItem {
+
+    public static final Map<Block, ItemLike> SMELT_MAP =
+            Map.of(
+                    Blocks.SAND, Blocks.GLASS
+            );
 
     public SolariteShovelItem(Tier tier, Properties properties) {
         super(tier, properties);

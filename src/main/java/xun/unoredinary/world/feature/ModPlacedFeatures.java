@@ -24,6 +24,8 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> LUMINITE_ORE_PLACED_KEY = registerKey("ore_luminite");
 
+    public static final ResourceKey<PlacedFeature> SOLARITE_ORE_PLACED_KEY = registerKey("ore_solarite");
+
     public static final ResourceKey<PlacedFeature> RUBY_ORE_PLACED_KEY = registerKey("ore_ruby");
     public static final ResourceKey<PlacedFeature> MEDIUM_RUBY_ORE_PLACED_KEY = registerKey("ore_ruby_medium");
     public static final ResourceKey<PlacedFeature> LARGE_RUBY_ORE_PLACED_KEY = registerKey("ore_ruby_large");
@@ -52,6 +54,9 @@ public class ModPlacedFeatures {
                 ModOrePlacement.oreCountPlacement(6,
                         HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-48), VerticalAnchor.belowTop(36))));
 
+        register(context, SOLARITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SOLARITE_ORE_KEY),
+                ModOrePlacement.oreCountPlacement(24,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(0))));
 
         register(context, RUBY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SMALL_RUBY_ORE_KEY),
                 ModOrePlacement.oreCountPlacement(7,

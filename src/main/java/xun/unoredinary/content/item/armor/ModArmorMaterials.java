@@ -29,15 +29,6 @@ public class ModArmorMaterials {
 
     }), 16, ModSounds.ARMOR_EQUIP_FROSTEEL, 1.0F, 0.0F, () -> Ingredient.of(ModItems.FROSTEEL_INGOT));
 
-    public static final Holder<ArmorMaterial> RUBY = register("ruby", Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
-        attribute.put(ArmorItem.Type.BOOTS, 3);
-        attribute.put(ArmorItem.Type.LEGGINGS, 7);
-        attribute.put(ArmorItem.Type.CHESTPLATE, 7);
-        attribute.put(ArmorItem.Type.HELMET, 3);
-        attribute.put(ArmorItem.Type.BODY, 12);
-
-    }), 11, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.5F, 0.0F, () -> Ingredient.of(ModItems.RUBY));
-
     public static final Holder<ArmorMaterial> LUMINTHIUM = register("luminthium", Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
         attribute.put(ArmorItem.Type.BOOTS, 2);
         attribute.put(ArmorItem.Type.LEGGINGS, 4);
@@ -46,6 +37,24 @@ public class ModArmorMaterials {
         attribute.put(ArmorItem.Type.BODY, 7);
 
     }), 20, SoundEvents.ARMOR_EQUIP_IRON, 0.5F, 0.0F, () -> Ingredient.of(ModItems.LUMINTHIUM_INGOT));
+
+    public static final Holder<ArmorMaterial> SOLARITE = register("solarite", Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+        attribute.put(ArmorItem.Type.BOOTS, 4);
+        attribute.put(ArmorItem.Type.LEGGINGS, 7);
+        attribute.put(ArmorItem.Type.CHESTPLATE, 9);
+        attribute.put(ArmorItem.Type.HELMET, 4);
+        attribute.put(ArmorItem.Type.BODY, 12);
+
+    }), 12, SoundEvents.ARMOR_EQUIP_NETHERITE, 5.0F, 0.2F, () -> Ingredient.of(ModItems.SOLARITE_GEM));
+
+    public static final Holder<ArmorMaterial> RUBY = register("ruby", Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+        attribute.put(ArmorItem.Type.BOOTS, 3);
+        attribute.put(ArmorItem.Type.LEGGINGS, 7);
+        attribute.put(ArmorItem.Type.CHESTPLATE, 7);
+        attribute.put(ArmorItem.Type.HELMET, 3);
+        attribute.put(ArmorItem.Type.BODY, 12);
+
+    }), 11, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.5F, 0.0F, () -> Ingredient.of(ModItems.RUBY));
 
 
     private static Holder<ArmorMaterial> register(

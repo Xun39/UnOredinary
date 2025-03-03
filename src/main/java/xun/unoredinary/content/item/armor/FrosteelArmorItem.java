@@ -13,8 +13,9 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class FrosteelArmorItem extends UOArmorItem {
 
-    public FrosteelArmorItem(Holder<ArmorMaterial> material, Type type, Properties properties) {
-        super(material, type, properties);
+    public FrosteelArmorItem(Type type) {
+        super(ModArmorMaterials.FROSTEEL, type,
+                new Properties().durability(type.getDurability(35)));
     }
 
     @Override
@@ -28,16 +29,14 @@ public class FrosteelArmorItem extends UOArmorItem {
                 int radius = 3;
                 int radiusSquared = radius * radius;
 
-                if (hasWearingArmorInSlot(player, FEET_SLOT)) {
+                if (hasCorrectArmorInSlot(player, FEET_SLOT, ModArmorMaterials.FROSTEEL)) {
 
                     BlockPos.betweenClosed(playerPos.offset(-radius, 0, -radius), playerPos.offset(radius, 0, radius)).forEach(pos -> {
 
                         double distanceSquared = pos.distSqr(playerPos);
-
                         if (distanceSquared <= radiusSquared) {
 
                             BlockState adjacentState = level.getBlockState(pos);
-
                             if (adjacentState.is(Blocks.WATER)) {
                                 level.setBlock(pos, Blocks.FROSTED_ICE.defaultBlockState(), 3);
                             }

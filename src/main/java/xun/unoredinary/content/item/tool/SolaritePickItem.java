@@ -3,6 +3,7 @@ package xun.unoredinary.content.item.tool;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
@@ -10,14 +11,17 @@ import java.util.Map;
 
 public class SolaritePickItem extends PickaxeItem {
 
-    public static final Map<Block, Item> SMELT_ORE_MAP =
+    public static final Map<Block, ItemLike> SMELT_ORE_MAP =
             Map.of(
                     Blocks.COPPER_ORE, Items.COPPER_INGOT,
                     Blocks.DEEPSLATE_COPPER_ORE, Items.COPPER_INGOT,
+                    Blocks.RAW_COPPER_BLOCK, Blocks.COPPER_BLOCK,
                     Blocks.IRON_ORE, Items.IRON_INGOT,
                     Blocks.DEEPSLATE_IRON_ORE, Items.IRON_INGOT,
+                    Blocks.RAW_IRON_BLOCK, Blocks.IRON_BLOCK,
                     Blocks.GOLD_ORE, Items.GOLD_INGOT,
-                    Blocks.DEEPSLATE_GOLD_ORE, Items.GOLD_INGOT
+                    Blocks.DEEPSLATE_GOLD_ORE, Items.GOLD_INGOT,
+                    Blocks.RAW_GOLD_BLOCK, Blocks.GOLD_BLOCK
             );
 
     public SolaritePickItem(Tier tier, Properties properties) {

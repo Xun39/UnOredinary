@@ -11,7 +11,6 @@ import xun.unoredinary.registry.ModSounds;
 
 public class SolariteOreBlock extends DropExperienceBlock {
 
-
     public SolariteOreBlock(IntProvider xpRange, Properties properties) {
         super(xpRange, properties.sound(ModSounds.SOLARITE)
                 .lightLevel((state) -> 13));
@@ -19,7 +18,8 @@ public class SolariteOreBlock extends DropExperienceBlock {
 
     @Override
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
-        if (entity instanceof LivingEntity) {
+
+        if (!entity.isSteppingCarefully() && entity instanceof LivingEntity) {
             entity.hurt(level.damageSources().hotFloor(), 2.0F);
             entity.setDeltaMovement(-0.5 + Math.random(), -0.5 + Math.random(), -0.5 + Math.random());
         }

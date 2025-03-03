@@ -9,9 +9,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import xun.unoredinary.UnOredinary;
 import xun.unoredinary.content.item.*;
-import xun.unoredinary.content.item.armor.FrosteelArmorItem;
-import xun.unoredinary.content.item.armor.LuminthiumArmorItem;
-import xun.unoredinary.content.item.armor.ModArmorMaterials;
+import xun.unoredinary.content.item.armor.*;
 import xun.unoredinary.content.item.tool.*;
 
 public class ModItems {
@@ -135,58 +133,29 @@ public class ModItems {
     );
 
     // Frosteel armors
-    public static final DeferredItem<ArmorItem> FROSTEEL_HELMET = ITEMS.register("frosteel_helmet",
-            () -> new FrosteelArmorItem(ModArmorMaterials.FROSTEEL, ArmorItem.Type.HELMET,
-                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(35)))
-    );
-    public static final DeferredItem<ArmorItem> FROSTEEL_CHESTPLATE = ITEMS.register("frosteel_chestplate",
-            () -> new FrosteelArmorItem(ModArmorMaterials.FROSTEEL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(35)))
-    );
-    public static final DeferredItem<ArmorItem> FROSTEEL_LEGGINGS = ITEMS.register("frosteel_leggings",
-            () -> new FrosteelArmorItem(ModArmorMaterials.FROSTEEL, ArmorItem.Type.LEGGINGS,
-                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(35)))
-    );
-    public static final DeferredItem<ArmorItem> FROSTEEL_BOOTS = ITEMS.register("frosteel_boots",
-            () -> new FrosteelArmorItem(ModArmorMaterials.FROSTEEL, ArmorItem.Type.BOOTS,
-                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(35)))
-    );
+    public static final DeferredItem<ArmorItem> FROSTEEL_HELMET = ITEMS.register("frosteel_helmet", () -> new FrosteelArmorItem(ArmorItem.Type.HELMET));
+    public static final DeferredItem<ArmorItem> FROSTEEL_CHESTPLATE = ITEMS.register("frosteel_chestplate", () -> new FrosteelArmorItem(ArmorItem.Type.CHESTPLATE));
+    public static final DeferredItem<ArmorItem> FROSTEEL_LEGGINGS = ITEMS.register("frosteel_leggings", () -> new FrosteelArmorItem(ArmorItem.Type.LEGGINGS));
+    public static final DeferredItem<ArmorItem> FROSTEEL_BOOTS = ITEMS.register("frosteel_boots", () -> new FrosteelArmorItem(ArmorItem.Type.BOOTS));
 
     // Luminthium armors
-    public static final DeferredItem<ArmorItem> LUMINTHIUM_HELMET = ITEMS.register("luminthium_helmet",
-            () -> new LuminthiumArmorItem(ModArmorMaterials.LUMINTHIUM, ArmorItem.Type.HELMET,
-                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(31)))
-    );
-    public static final DeferredItem<ArmorItem> LUMINTHIUM_CHESTPLATE = ITEMS.register("luminthium_chestplate",
-            () -> new LuminthiumArmorItem(ModArmorMaterials.LUMINTHIUM, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(313)))
-    );
-    public static final DeferredItem<ArmorItem> LUMINTHIUM_LEGGINGS = ITEMS.register("luminthium_leggings",
-            () -> new LuminthiumArmorItem(ModArmorMaterials.LUMINTHIUM, ArmorItem.Type.LEGGINGS,
-                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(31)))
-    );
-    public static final DeferredItem<ArmorItem> LUMINTHIUM_BOOTS = ITEMS.register("luminthium_boots",
-            () -> new LuminthiumArmorItem(ModArmorMaterials.LUMINTHIUM, ArmorItem.Type.BOOTS,
-                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(31)))
-    );
+    public static final DeferredItem<ArmorItem> LUMINTHIUM_HELMET = ITEMS.register("luminthium_helmet", () -> new LuminthiumArmorItem(ArmorItem.Type.HELMET));
+    public static final DeferredItem<ArmorItem> LUMINTHIUM_CHESTPLATE = ITEMS.register("luminthium_chestplate", () -> new LuminthiumArmorItem(ArmorItem.Type.CHESTPLATE));
+    public static final DeferredItem<ArmorItem> LUMINTHIUM_LEGGINGS = ITEMS.register("luminthium_leggings", () -> new LuminthiumArmorItem(ArmorItem.Type.LEGGINGS));
+    public static final DeferredItem<ArmorItem> LUMINTHIUM_BOOTS = ITEMS.register("luminthium_boots", () -> new LuminthiumArmorItem(ArmorItem.Type.BOOTS));
+
+    // Solarite armors
+    public static final DeferredItem<ArmorItem> SOLARITE_HELMET = ITEMS.register("solarite_helmet", () -> new SolariteArmorItem(ArmorItem.Type.HELMET));
+    public static final DeferredItem<ArmorItem> SOLARITE_CHESTPLATE = ITEMS.register("solarite_chestplate", () -> new SolariteArmorItem(ArmorItem.Type.CHESTPLATE));
+    public static final DeferredItem<ArmorItem> SOLARITE_LEGGINGS = ITEMS.register("solarite_leggings", () -> new SolariteArmorItem(ArmorItem.Type.LEGGINGS));
+    public static final DeferredItem<ArmorItem> SOLARITE_BOOTS = ITEMS.register("solarite_boots", () -> new SolariteArmorItem(ArmorItem.Type.BOOTS));
 
     // Ruby armors
-    public static final DeferredItem<ArmorItem> RUBY_HELMET = ITEMS.register("ruby_helmet",
-            () -> new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.HELMET,
-                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(29)))
-    );
-    public static final DeferredItem<ArmorItem> RUBY_CHESTPLATE = ITEMS.register("ruby_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(29)))
-    );
-    public static final DeferredItem<ArmorItem> RUBY_LEGGINGS = ITEMS.register("ruby_leggings",
-            () -> new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS,
-                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(29)))
-    );
-    public static final DeferredItem<ArmorItem> RUBY_BOOTS = ITEMS.register("ruby_boots",
-            () -> new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.BOOTS,
-                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(29)))
-    );
+    public static final DeferredItem<ArmorItem> RUBY_HELMET = ITEMS.register("ruby_helmet", () -> new UOArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.HELMET, 29));
+    public static final DeferredItem<ArmorItem> RUBY_CHESTPLATE = ITEMS.register("ruby_chestplate", () -> new UOArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, 29));
+    public static final DeferredItem<ArmorItem> RUBY_LEGGINGS = ITEMS.register("ruby_leggings", () -> new UOArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, 29));
+    public static final DeferredItem<ArmorItem> RUBY_BOOTS = ITEMS.register("ruby_boots", () -> new UOArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.BOOTS, 29));
+
     public static final DeferredItem<AnimalArmorItem> RUBY_HORSE_ARMOR = ITEMS.register("ruby_horse_armor",
             () -> new AnimalArmorItem(ModArmorMaterials.RUBY, AnimalArmorItem.BodyType.EQUESTRIAN, false,
                     new Item.Properties().stacksTo(1))

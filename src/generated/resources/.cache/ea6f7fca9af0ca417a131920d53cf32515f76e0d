@@ -1,15 +1,15 @@
-// 1.21	2025-02-27T21:47:35.2344205	Tags for minecraft:item mod id unoredinary
-06e81d10a545a864482b5310abfe08ba6c9e7dee data/minecraft/tags/item/axes.json
-f2ba32c089fdd5c711a21639049f8a356407ce76 data/minecraft/tags/item/chest_armor.json
-2898eea80873c718c9ca0428675a7facf46a1ddf data/minecraft/tags/item/foot_armor.json
+// 1.21	2025-03-02T21:14:34.2971508	Tags for minecraft:item mod id unoredinary
+610b4465a5e41b51e82164a2acb7e2bd7b741561 data/minecraft/tags/item/axes.json
+e63f3a8a0032aef0d4737db37af9547bd2d6a537 data/minecraft/tags/item/chest_armor.json
+2df4c56743fcbae5d265cd72ae697fc6f1cfa4e6 data/minecraft/tags/item/foot_armor.json
 f8b51a75d50aef04f44ca07ced9ea130e8bbeef3 data/minecraft/tags/item/freeze_immune_wearables.json
-ed0cf0a5fb911ff42fe29c617aa1c0b4a220033d data/minecraft/tags/item/head_armor.json
-478279f484412ccb079681527386523ebafbcaaa data/minecraft/tags/item/hoes.json
-d3fda2e9fa57296eb28898339928130000acda0a data/minecraft/tags/item/leg_armor.json
-efb1c157db537ea239754610eeec69497a0b6dd8 data/minecraft/tags/item/pickaxes.json
-08955ca1ed7dd5515b738aa76f2b7be893836fcd data/minecraft/tags/item/shovels.json
-023cd5bdb6f9c8a07ff6b084e0f7f9be7a8a64de data/minecraft/tags/item/swords.json
-017c69a4bc5d14a7275d186506c4faffd931d05b data/minecraft/tags/item/trimmable_armor.json
+36461a89e7ab73c73ca46ccdb0cb18f1d6932f32 data/minecraft/tags/item/head_armor.json
+6f1a83d461255b71f648115644fc8fefcbb1aab0 data/minecraft/tags/item/hoes.json
+3eb36a4ec8db4bf6da1a66bbb56b9685b67c9ae9 data/minecraft/tags/item/leg_armor.json
+5479503c9c670e68701623da68ecf2c2ef36d77f data/minecraft/tags/item/pickaxes.json
+84739bd43073dbb29ece59721210f24bbe7e32c6 data/minecraft/tags/item/shovels.json
+859c3f254db659c9c004d64ba5720361d37b52c1 data/minecraft/tags/item/swords.json
+3fba7efaeba4001246c5b5493847bf20f47cc875 data/minecraft/tags/item/trimmable_armor.json
 55eb9e887a4c59e73292cc259a75b57947a88145 data/minecraft/tags/item/trim_materials.json
 c15eef5ef2621b65df542c2fe3b94f25cf3f6ee6 data/minecraft/tags/item/trim_templates.json
 a5a702a8d8df629c43c6c03f639c7a872def6b7d data/unoredinary/tags/item/frosteel_tool.json

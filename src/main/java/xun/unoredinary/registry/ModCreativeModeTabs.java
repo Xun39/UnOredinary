@@ -98,6 +98,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LUMINTHIUM_HOE);
                         output.accept(ModItems.LUMINTHIUM_SHOVEL);
 
+                        output.accept(ModItems.SOLARITE_HELMET);
+                        output.accept(ModItems.SOLARITE_CHESTPLATE);
+                        output.accept(ModItems.SOLARITE_LEGGINGS);
+                        output.accept(ModItems.SOLARITE_BOOTS);
+
                         output.accept(ModItems.SOLARITE_SWORD);
                         output.accept(ModItems.SOLARITE_PICKAXE);
                         output.accept(ModItems.SOLARITE_AXE);
