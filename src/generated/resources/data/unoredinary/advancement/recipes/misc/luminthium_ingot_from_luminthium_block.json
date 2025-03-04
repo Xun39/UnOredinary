@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_luminthium_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:luminthium_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unoredinary:luminthium_ingot_from_luminthium_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_luminthium_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unoredinary:luminthium_ingot_from_luminthium_block"
+    ]
+  }
+}

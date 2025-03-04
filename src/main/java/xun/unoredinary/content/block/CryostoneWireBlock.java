@@ -33,6 +33,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import xun.unoredinary.client.particle.options.ModDustParticleOptions;
 
 public class CryostoneWireBlock extends Block {
 
@@ -80,9 +81,9 @@ public class CryostoneWireBlock extends Block {
     private static final Vec3[] COLORS = Util.make(new Vec3[16], vec3s -> {
         for (int i = 0; i <= 15; i++) {
             float f = (float)i / 15.0F;
-            float f1 = f * 0.6F + (f > 0.0F ? 0.4F : 0.3F);
-            float f2 = Mth.clamp(f * f * 0.7F - 0.5F, 0.0F, 1.0F);
-            float f3 = Mth.clamp(f * f * 0.6F - 0.7F, 0.0F, 1.0F);
+            float f1 = f * 0.2F;
+            float f2 = f * 0.2F;
+            float f3 = Mth.clamp(f * 0.8F + 0.2F, 0.0F, 1.0F);
             vec3s[i] = new Vec3((double)f1, (double)f2, (double)f3);
         }
     });
@@ -189,11 +190,6 @@ public class CryostoneWireBlock extends Block {
         return state;
     }
 
-    /**
-     * Update the provided state given the provided neighbor direction and neighbor state, returning a new state.
-     * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately returns its solidified counterpart.
-     * Note that this method should ideally consider only the specific direction passed in.
-     */
     @Override
     protected BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
         if (facing == Direction.DOWN) {

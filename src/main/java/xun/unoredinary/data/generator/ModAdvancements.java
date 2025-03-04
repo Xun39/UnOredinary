@@ -30,7 +30,7 @@ public class ModAdvancements extends AdvancementProvider {
         @Override
         public void generate(HolderLookup.Provider provider, Consumer<AdvancementHolder> consumer, ExistingFileHelper existingFileHelper) {
 
-            AdvancementHolder getRuby = Advancement.Builder.advancement().parent(getAdv(storyLoc("mine_diamond"))).display(
+            AdvancementHolder getRuby = Advancement.Builder.advancement().parent(getAdv(storyLoc("iron_tools"))).display(
                             ModItems.RUBY,
                             Component.translatable("advancement.unoredinary.get_ruby"),
                             Component.translatable("advancement.unoredinary.get_ruby.desc"),

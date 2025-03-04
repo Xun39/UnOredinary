@@ -6,8 +6,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.properties.Half;
-import net.minecraft.world.level.block.state.properties.StairsShape;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -67,6 +65,40 @@ public abstract class ModBlockStateProvider extends BlockStateProvider {
                     return ConfiguredModel.builder()
                             .modelFile(models().torchWall(getRegistryName(torchBlock),
                                     resourceBlock(getBlockRegistryName(textureBlock))).renderType("cutout"))
+                            .rotationY(yRot)
+                            .build();
+                });
+    }
+
+    protected void torchBlockWithLitProperty(DeferredBlock<?> torchblock) {
+        getVariantBuilder(torchblock.get())
+                .forAllStatesExcept(state -> {
+                    boolean lit = state.getValue(RedstoneWallTorchBlock.LIT);
+
+                    return ConfiguredModel.builder()
+                            .modelFile(lit == true ? models().torch(getRegistryName(torchblock), resourceBlock(getBlockRegistryName(torchblock))).renderType("cutout")
+                                    : models().torch(getRegistryName(torchblock) + "_off", resourceBlock(getBlockRegistryName(torchblock) + "_off")))
+                            .build();
+                });
+    }
+
+    protected void wallTorchBlockWithLitProperty(Block torchBlock, DeferredBlock<?> textureBlock) {
+        getVariantBuilder(torchBlock)
+                .forAllStatesExcept(state -> {
+                    Direction facing = state.getValue(RedstoneWallTorchBlock.FACING);
+                    boolean lit = state.getValue(RedstoneWallTorchBlock.LIT);
+
+                    int yRot = (int) facing.getClockWise().toYRot();
+
+                    if (facing == Direction.SOUTH) {
+                        yRot += 360;
+                    }
+
+                    yRot %= 360;
+
+                    return ConfiguredModel.builder()
+                            .modelFile(lit == true ? models().torchWall(getRegistryName(torchBlock), resourceBlock(getBlockRegistryName(textureBlock))).renderType("cutout")
+                            : models().torchWall(getRegistryName(torchBlock) + "_off", resourceBlock(getBlockRegistryName(textureBlock) + "_off")).renderType("cutout"))
                             .rotationY(yRot)
                             .build();
                 });

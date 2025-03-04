@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_torch",
+  "textures": {
+    "torch": "unoredinary:block/cryostone_torch_off"
+  }
+}

@@ -1,8 +1,8 @@
-// 1.21	2025-03-02T21:14:34.2971508	Tags for minecraft:item mod id unoredinary
+// 1.21	2025-03-03T10:32:38.6265452	Tags for minecraft:item mod id unoredinary
 610b4465a5e41b51e82164a2acb7e2bd7b741561 data/minecraft/tags/item/axes.json
 e63f3a8a0032aef0d4737db37af9547bd2d6a537 data/minecraft/tags/item/chest_armor.json
 2df4c56743fcbae5d265cd72ae697fc6f1cfa4e6 data/minecraft/tags/item/foot_armor.json
-f8b51a75d50aef04f44ca07ced9ea130e8bbeef3 data/minecraft/tags/item/freeze_immune_wearables.json
+e8c220e68cfc62b1f2f7c1b99cbfbb46461d45d9 data/minecraft/tags/item/freeze_immune_wearables.json
 36461a89e7ab73c73ca46ccdb0cb18f1d6932f32 data/minecraft/tags/item/head_armor.json
 6f1a83d461255b71f648115644fc8fefcbb1aab0 data/minecraft/tags/item/hoes.json
 3eb36a4ec8db4bf6da1a66bbb56b9685b67c9ae9 data/minecraft/tags/item/leg_armor.json

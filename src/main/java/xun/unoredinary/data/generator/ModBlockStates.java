@@ -60,7 +60,7 @@ public class ModBlockStates extends ModBlockStateProvider {
         torchBlock(ModBlocks.LUMINITE_TORCH);
         wallTorchBlock(ModBlocks.LUMINITE_WALL_TORCH.get(), ModBlocks.LUMINITE_TORCH);
 
-        torchBlock(ModBlocks.CRYOSTONE_TORCH);
-        wallTorchBlock(ModBlocks.CRYOSTONE_WALL_TORCH.get(), ModBlocks.CRYOSTONE_TORCH);
+        torchBlockWithLitProperty(ModBlocks.CRYOSTONE_TORCH);
+        wallTorchBlockWithLitProperty(ModBlocks.CRYOSTONE_WALL_TORCH.get(), ModBlocks.CRYOSTONE_TORCH);
     }
 }

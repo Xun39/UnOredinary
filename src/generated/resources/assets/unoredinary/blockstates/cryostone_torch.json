@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "unoredinary:block/cryostone_torch_off"
+    },
+    "lit=true": {
+      "model": "unoredinary:block/cryostone_torch"
+    }
+  }
+}

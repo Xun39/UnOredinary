@@ -1,6 +1,7 @@
 {
   "parent": "unoredinary:block/cryostone_dust_side",
+  "render_type": "minecraft:cutout",
   "textures": {
-    "line": "block/redstone_dust_line1"
+    "line": "unoredinary:block/cryostone_dust_line1"
   }
 }

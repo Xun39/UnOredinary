@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "unoredinary:luminite_crystal"
+    },
+    {
+      "item": "unoredinary:luminite_crystal"
+    },
+    {
+      "item": "unoredinary:luminite_crystal"
+    },
+    {
+      "item": "unoredinary:luminite_crystal"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "unoredinary:luminthium_ingot"
+  }
+}

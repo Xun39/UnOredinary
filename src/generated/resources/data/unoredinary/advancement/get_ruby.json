@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:story/iron_tools",
+  "criteria": {
+    "get_ruby": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:ruby"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.unoredinary.get_ruby.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "unoredinary:ruby"
+    },
+    "title": {
+      "translate": "advancement.unoredinary.get_ruby"
+    }
+  },
+  "requirements": [
+    [
+      "get_ruby"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

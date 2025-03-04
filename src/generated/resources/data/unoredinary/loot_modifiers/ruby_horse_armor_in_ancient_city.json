@@ -1,0 +1,14 @@
+{
+  "type": "unoredinary:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/ancient_city"
+    },
+    {
+      "chance": 0.75,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "unoredinary:ruby_horse_armor"
+}

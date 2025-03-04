@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_luminthium_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:luminthium_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unoredinary:luminthium_chestplate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_luminthium_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unoredinary:luminthium_chestplate"
+    ]
+  }
+}

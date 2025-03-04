@@ -1,0 +1,4 @@
+// 1.21	2025-03-01T21:29:53.1299255	Global Loot Modifiers : unoredinary
+01dca62a25d855a204b6a152391df8fe3e661186 data/neoforge/loot_modifiers/global_loot_modifiers.json
+b60c92c50933f3a67c93d68aa8c4d2fdea4dc8f9 data/unoredinary/loot_modifiers/ruby_horse_armor_in_ancient_city.json
+c6ff26071c7c2e5c49b4745aa66c0c1031d16f6b data/unoredinary/loot_modifiers/ruby_horse_armor_in_fortress.json

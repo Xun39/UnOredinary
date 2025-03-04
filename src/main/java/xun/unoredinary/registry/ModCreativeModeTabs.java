@@ -82,10 +82,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FROSTEEL_BOOTS);
 
                         output.accept(ModItems.FROSTEEL_SWORD);
+                        output.accept(ModItems.FROSTEEL_SHOVEL);
                         output.accept(ModItems.FROSTEEL_PICKAXE);
                         output.accept(ModItems.FROSTEEL_AXE);
                         output.accept(ModItems.FROSTEEL_HOE);
-                        output.accept(ModItems.FROSTEEL_SHOVEL);
 
                         output.accept(ModItems.LUMINTHIUM_HELMET);
                         output.accept(ModItems.LUMINTHIUM_CHESTPLATE);
@@ -93,10 +93,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LUMINTHIUM_BOOTS);
 
                         output.accept(ModItems.LUMINTHIUM_SWORD);
+                        output.accept(ModItems.LUMINTHIUM_SHOVEL);
                         output.accept(ModItems.LUMINTHIUM_PICKAXE);
                         output.accept(ModItems.LUMINTHIUM_AXE);
                         output.accept(ModItems.LUMINTHIUM_HOE);
-                        output.accept(ModItems.LUMINTHIUM_SHOVEL);
 
                         output.accept(ModItems.SOLARITE_HELMET);
                         output.accept(ModItems.SOLARITE_CHESTPLATE);
@@ -104,10 +104,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SOLARITE_BOOTS);
 
                         output.accept(ModItems.SOLARITE_SWORD);
+                        output.accept(ModItems.SOLARITE_SHOVEL);
                         output.accept(ModItems.SOLARITE_PICKAXE);
                         output.accept(ModItems.SOLARITE_AXE);
                         output.accept(ModItems.SOLARITE_HOE);
-                        output.accept(ModItems.SOLARITE_SHOVEL);
 
                         output.accept(ModItems.RUBY_HELMET);
                         output.accept(ModItems.RUBY_CHESTPLATE);
@@ -115,10 +115,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RUBY_BOOTS);
 
                         output.accept(ModItems.RUBY_SWORD);
+                        output.accept(ModItems.RUBY_SHOVEL);
                         output.accept(ModItems.RUBY_PICKAXE);
                         output.accept(ModItems.RUBY_AXE);
                         output.accept(ModItems.RUBY_HOE);
-                        output.accept(ModItems.RUBY_SHOVEL);
 
                         output.accept(ModItems.RUBY_HORSE_ARMOR);
 

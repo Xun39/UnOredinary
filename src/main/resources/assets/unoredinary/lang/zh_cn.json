@@ -20,11 +20,11 @@
   "item.unoredinary.frosteel_hoe": "凛钢锄",
   "item.unoredinary.frosteel_shovel": "凛钢锹",
 
-  "item.unoredinary.luminthium_sword": "耀铜合金剑",
-  "item.unoredinary.luminthium_pickaxe": "耀铜合金镐",
-  "item.unoredinary.luminthium_axe": "耀铜合金斧",
-  "item.unoredinary.luminthium_hoe": "耀铜合金锄",
-  "item.unoredinary.luminthium_shovel": "耀铜合金锹",
+  "item.unoredinary.luminthium_sword": "熠铜合金剑",
+  "item.unoredinary.luminthium_pickaxe": "熠铜合金镐",
+  "item.unoredinary.luminthium_axe": "熠铜合金斧",
+  "item.unoredinary.luminthium_hoe": "熠铜合金锄",
+  "item.unoredinary.luminthium_shovel": "熠铜合金锹",
 
   "item.unoredinary.solarite_sword": "炎阳剑",
   "item.unoredinary.solarite_pickaxe": "炎阳镐",
@@ -43,10 +43,10 @@
   "item.unoredinary.frosteel_leggings": "凛钢护腿",
   "item.unoredinary.frosteel_boots": "凛钢靴子",
 
-  "item.unoredinary.luminthium_helmet": "耀铜合金头盔",
-  "item.unoredinary.luminthium_chestplate": "耀铜合金胸甲",
-  "item.unoredinary.luminthium_leggings": "耀铜合金护腿",
-  "item.unoredinary.luminthium_boots": "耀铜合金靴子",
+  "item.unoredinary.luminthium_helmet": "熠铜合金头盔",
+  "item.unoredinary.luminthium_chestplate": "熠铜合金胸甲",
+  "item.unoredinary.luminthium_leggings": "熠铜合金护腿",
+  "item.unoredinary.luminthium_boots": "熠铜合金靴子",
 
   "item.unoredinary.solarite_helmet": "炎阳头盔",
   "item.unoredinary.solarite_chestplate": "炎阳胸甲",
@@ -132,7 +132,7 @@
   "item.unoredinary.smithing_template.frosteel_upgrade.base_slot_description": "放入铁盔甲、武器或工具",
   "item.unoredinary.smithing_template.frosteel_upgrade.additions_slot_description": "放入凛钢锭",
 
-  "advancement.unoredinary.get_ruby": "超越钻石",
+  "advancement.unoredinary.get_ruby": "绯红之钻？",
   "advancement.unoredinary.get_ruby.desc": "获得红宝石",
 
   "advancement.unoredinary.get_hemocrylic": "冰霜勘探者",

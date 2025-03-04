@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "unoredinary:luminthium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "unoredinary:luminthium_ingot"
+  }
+}

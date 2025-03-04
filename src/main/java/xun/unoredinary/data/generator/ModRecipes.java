@@ -94,6 +94,44 @@ public class ModRecipes extends ModRecipeProvider {
         leggings(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_LEGGINGS);
         boots(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_BOOTS);
 
+        // Solarite
+        sword(recipeOutput, ModItems.SOLARITE_GEM, ModItems.SOLARITE_SWORD);
+        pickaxe(recipeOutput, ModItems.SOLARITE_GEM, ModItems.SOLARITE_PICKAXE);
+        axe(recipeOutput, ModItems.SOLARITE_GEM, ModItems.SOLARITE_AXE);
+        hoe(recipeOutput, ModItems.SOLARITE_GEM, ModItems.SOLARITE_HOE);
+        shovel(recipeOutput, ModItems.SOLARITE_GEM, ModItems.SOLARITE_SHOVEL);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SOLARITE_HELMET)
+                .pattern("-#-").pattern("! !")
+                .define('#', ModItems.SOLARITE_GEM)
+                .define('-', Items.IRON_INGOT)
+                .define('!', Blocks.STONE)
+                .unlockedBy(getHasName(ModItems.SOLARITE_GEM.get()), has(ModItems.SOLARITE_GEM.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SOLARITE_CHESTPLATE)
+                .pattern("! !").pattern("-#-").pattern("-!-")
+                .define('#', ModItems.SOLARITE_GEM)
+                .define('-', Items.IRON_INGOT)
+                .define('!', Blocks.STONE)
+                .unlockedBy(getHasName(ModItems.SOLARITE_GEM.get()), has(ModItems.SOLARITE_GEM.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SOLARITE_LEGGINGS)
+                .pattern("-#-").pattern("! !").pattern("! !")
+                .define('#', ModItems.SOLARITE_GEM)
+                .define('-', Items.IRON_INGOT)
+                .define('!', Blocks.STONE)
+                .unlockedBy(getHasName(ModItems.SOLARITE_GEM.get()), has(ModItems.SOLARITE_GEM.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SOLARITE_BOOTS)
+                .pattern("# #").pattern("! !")
+                .define('#', ModItems.SOLARITE_GEM)
+                .define('!', Blocks.STONE)
+                .unlockedBy(getHasName(ModItems.SOLARITE_GEM.get()), has(ModItems.SOLARITE_GEM.get()))
+                .save(recipeOutput);
+
         // Ruby Ores
         threeByThreeConvertible(recipeOutput, ModItems.RUBY, ModBlocks.RUBY_BLOCK, RecipeCategory.MISC, RecipeCategory.BUILDING_BLOCKS);
 

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": {
+      "item": "minecraft:stone"
+    },
+    "#": {
+      "item": "unoredinary:solarite_gem"
+    },
+    "-": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "-#-",
+    "! !"
+  ],
+  "result": {
+    "count": 1,
+    "id": "unoredinary:solarite_helmet"
+  }
+}

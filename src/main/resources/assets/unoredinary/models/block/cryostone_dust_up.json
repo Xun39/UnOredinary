@@ -1,8 +1,9 @@
 {
   "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
   "textures": {
-    "particle": "block/redstone_dust_dot",
-    "line": "block/redstone_dust_line0",
+    "particle": "unoredinary:block/cryostone_dust_dot",
+    "line": "unoredinary:block/cryostone_dust_line0",
     "overlay": "block/redstone_dust_overlay"
   },
   "elements": [

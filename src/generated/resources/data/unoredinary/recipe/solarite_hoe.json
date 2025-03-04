@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "item": "unoredinary:solarite_gem"
+    }
+  },
+  "pattern": [
+    "##",
+    " !",
+    " !"
+  ],
+  "result": {
+    "count": 1,
+    "id": "unoredinary:solarite_hoe"
+  }
+}
