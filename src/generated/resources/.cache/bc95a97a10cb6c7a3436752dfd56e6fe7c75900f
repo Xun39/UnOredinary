@@ -1,4 +1,4 @@
-// 1.21	2025-03-02T10:09:50.8029183	Item Models: unoredinary
+// 1.21	2025-03-04T14:22:57.2516189	Item Models: unoredinary
 4015ba89de0971e89fe76dfb4a55127d3a8edca2 assets/unoredinary/models/item/cryobound_cobblestone_wall.json
 2a7920508c8b56687fb67716b24a0dc51bfb2746 assets/unoredinary/models/item/cryostone_dust.json
 1e7fcbff6a6e7354ef322dbe4be4996e362420a7 assets/unoredinary/models/item/cryostone_torch_item.json
@@ -165,6 +165,12 @@ f18423978dbc5e99321f30907889e0a4a1857538 assets/unoredinary/models/item/ruby_leg
 5e9352f1832e64af2fca11a744c9b367c3b62a3d assets/unoredinary/models/item/ruby_pickaxe.json
 45690b83a7454049c5b5eb4632f999e674206d76 assets/unoredinary/models/item/ruby_shovel.json
 d0e16b1eb699ecc48352259aacaf70f04be56f7b assets/unoredinary/models/item/ruby_sword.json
+c9d9e0b221975c248e3f0c6e022cbebf3fcbb7e2 assets/unoredinary/models/item/sapphire.json
+edb6ab7754008fa9ec361ad3522887a398567655 assets/unoredinary/models/item/sapphire_axe.json
+f2303361c0fe29f7797359fce7174fd98ffa5259 assets/unoredinary/models/item/sapphire_hoe.json
+3fa5a6a3ff2008c9f1a394f00f2350c488932df7 assets/unoredinary/models/item/sapphire_pickaxe.json
+8656cbc54ae7d22f29c91666186368dd9437965d assets/unoredinary/models/item/sapphire_shovel.json
+19c499d1877e914dcaea3e1c14e034920b301ff9 assets/unoredinary/models/item/sapphire_sword.json
 fdddd2a56df013ab8e43742b3cf1df91e84d4275 assets/unoredinary/models/item/solarite_axe.json
 a9556984d8a216c1921f9d5f4a66fcaf49b85f35 assets/unoredinary/models/item/solarite_boots.json
 3dfc1b6f97528938475b9dd40a6e28e65266d458 assets/unoredinary/models/item/solarite_boots_amethyst_trim.json

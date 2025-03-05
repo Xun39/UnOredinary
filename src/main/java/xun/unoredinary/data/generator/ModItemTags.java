@@ -3,13 +3,12 @@ package xun.unoredinary.data.generator;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import xun.unoredinary.UnOredinary;
+import xun.unoredinary.content.item.tool.ModTools;
 import xun.unoredinary.registry.ModItems;
 import xun.unoredinary.util.ModTags;
 
@@ -25,34 +24,39 @@ public class ModItemTags extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
 
         tag(ItemTags.SWORDS).add(
-                ModItems.FROSTEEL_SWORD.get(),
-                ModItems.LUMINTHIUM_SWORD.get(),
-                ModItems.SOLARITE_SWORD.get(),
-                ModItems.RUBY_SWORD.get()
+                ModTools.FROSTEEL_TOOLS.sword().get(),
+                ModTools.LUMINTHIUM_TOOLS.sword().get(),
+                ModTools.SOLARITE_TOOLS.sword().get(),
+                ModTools.RUBY_TOOLS.sword().get(),
+                ModTools.SAPPHIRE_TOOLS.sword().get()
         );
         tag(ItemTags.PICKAXES).add(
-                ModItems.FROSTEEL_PICKAXE.get(),
-                ModItems.LUMINTHIUM_PICKAXE.get(),
-                ModItems.SOLARITE_PICKAXE.get(),
-                ModItems.RUBY_PICKAXE.get()
+                ModTools.FROSTEEL_TOOLS.pickaxe().get(),
+                ModTools.LUMINTHIUM_TOOLS.pickaxe().get(),
+                ModTools.SOLARITE_TOOLS.pickaxe().get(),
+                ModTools.RUBY_TOOLS.pickaxe().get(),
+                ModTools.SAPPHIRE_TOOLS.pickaxe().get()
         );
         tag(ItemTags.AXES).add(
-                ModItems.FROSTEEL_AXE.get(),
-                ModItems.LUMINTHIUM_AXE.get(),
-                ModItems.SOLARITE_PICKAXE.get(),
-                ModItems.RUBY_AXE.get()
+                ModTools.FROSTEEL_TOOLS.axe().get(),
+                ModTools.LUMINTHIUM_TOOLS.axe().get(),
+                ModTools.SOLARITE_TOOLS.axe().get(),
+                ModTools.RUBY_TOOLS.axe().get(),
+                ModTools.SAPPHIRE_TOOLS.axe().get()
         );
         tag(ItemTags.HOES).add(
-                ModItems.FROSTEEL_HOE.get(),
-                ModItems.LUMINTHIUM_HOE.get(),
-                ModItems.SOLARITE_HOE.get(),
-                ModItems.RUBY_HOE.get()
+                ModTools.FROSTEEL_TOOLS.hoe().get(),
+                ModTools.LUMINTHIUM_TOOLS.hoe().get(),
+                ModTools.SOLARITE_TOOLS.hoe().get(),
+                ModTools.RUBY_TOOLS.hoe().get(),
+                ModTools.SAPPHIRE_TOOLS.hoe().get()
         );
         tag(ItemTags.SHOVELS).add(
-                ModItems.FROSTEEL_SHOVEL.get(),
-                ModItems.LUMINTHIUM_SHOVEL.get(),
-                ModItems.SOLARITE_SHOVEL.get(),
-                ModItems.RUBY_SHOVEL.get()
+                ModTools.FROSTEEL_TOOLS.shovel().get(),
+                ModTools.LUMINTHIUM_TOOLS.shovel().get(),
+                ModTools.SOLARITE_TOOLS.shovel().get(),
+                ModTools.RUBY_TOOLS.shovel().get(),
+                ModTools.SAPPHIRE_TOOLS.shovel().get()
         );
 
         tag(ItemTags.TRIM_TEMPLATES).add(
@@ -73,24 +77,28 @@ public class ModItemTags extends ItemTagsProvider {
                 ModItems.LUMINTHIUM_HELMET.get(),
                 ModItems.SOLARITE_HELMET.get(),
                 ModItems.RUBY_HELMET.get()
+                //ModItems.SAPPHIRE_ARMORS.helmet().get()
         );
         tag(ItemTags.CHEST_ARMOR).add(
                 ModItems.FROSTEEL_CHESTPLATE.get(),
                 ModItems.LUMINTHIUM_CHESTPLATE.get(),
                 ModItems.SOLARITE_CHESTPLATE.get(),
                 ModItems.RUBY_CHESTPLATE.get()
+                //ModItems.SAPPHIRE_ARMORS.chestplate().get()
         );
         tag(ItemTags.LEG_ARMOR).add(
                 ModItems.FROSTEEL_LEGGINGS.get(),
                 ModItems.LUMINTHIUM_LEGGINGS.get(),
                 ModItems.SOLARITE_LEGGINGS.get(),
                 ModItems.RUBY_LEGGINGS.get()
+                //ModItems.SAPPHIRE_ARMORS.leggings().get()
         );
         tag(ItemTags.FOOT_ARMOR).add(
                 ModItems.FROSTEEL_BOOTS.get(),
                 ModItems.LUMINTHIUM_BOOTS.get(),
                 ModItems.SOLARITE_BOOTS.get(),
                 ModItems.RUBY_BOOTS.get()
+                //ModItems.SAPPHIRE_ARMORS.boots().get()
         );
 
         tag(ItemTags.FREEZE_IMMUNE_WEARABLES).add(
@@ -125,14 +133,27 @@ public class ModItemTags extends ItemTagsProvider {
                 ModItems.RUBY_CHESTPLATE.get(),
                 ModItems.RUBY_LEGGINGS.get(),
                 ModItems.RUBY_BOOTS.get()
+
+                /*ModItems.SAPPHIRE_ARMORS.helmet().get(),
+                ModItems.SAPPHIRE_ARMORS.chestplate().get(),
+                ModItems.SAPPHIRE_ARMORS.leggings().get(),
+                ModItems.SAPPHIRE_ARMORS.boots().get()*/
         );
 
         tag(ModTags.Items.FROSTEEL_TOOL).add(
-                ModItems.FROSTEEL_SWORD.get(),
-                ModItems.FROSTEEL_PICKAXE.get(),
-                ModItems.FROSTEEL_AXE.get(),
-                ModItems.FROSTEEL_HOE.get(),
-                ModItems.FROSTEEL_SHOVEL.get()
+                ModTools.FROSTEEL_TOOLS.sword().get(),
+                ModTools.FROSTEEL_TOOLS.pickaxe().get(),
+                ModTools.FROSTEEL_TOOLS.axe().get(),
+                ModTools.FROSTEEL_TOOLS.hoe().get(),
+                ModTools.FROSTEEL_TOOLS.shovel().get()
+        );
+
+        tag(ModTags.Items.SOLARITE_TOOL).add(
+                ModTools.SOLARITE_TOOLS.sword().get(),
+                ModTools.SOLARITE_TOOLS.pickaxe().get(),
+                ModTools.SOLARITE_TOOLS.axe().get(),
+                ModTools.SOLARITE_TOOLS.hoe().get(),
+                ModTools.SOLARITE_TOOLS.shovel().get()
         );
     }
 }

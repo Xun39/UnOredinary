@@ -38,6 +38,12 @@
   "item.unoredinary.ruby_hoe": "红宝石锄",
   "item.unoredinary.ruby_shovel": "红宝石锹",
 
+  "item.unoredinary.sapphire_sword": "蓝宝石剑",
+  "item.unoredinary.sapphire_pickaxe": "蓝宝石镐",
+  "item.unoredinary.sapphire_axe": "蓝宝石斧",
+  "item.unoredinary.sapphire_hoe": "蓝宝石锄",
+  "item.unoredinary.sapphire_shovel": "蓝宝石锹",
+
   "item.unoredinary.frosteel_helmet": "凛钢头盔",
   "item.unoredinary.frosteel_chestplate": "凛钢胸甲",
   "item.unoredinary.frosteel_leggings": "凛钢护腿",
@@ -57,6 +63,11 @@
   "item.unoredinary.ruby_chestplate": "红宝石胸甲",
   "item.unoredinary.ruby_leggings": "红宝石护腿",
   "item.unoredinary.ruby_boots": "红宝石靴子",
+
+  "item.unoredinary.sapphire_helmet": "蓝宝石头盔",
+  "item.unoredinary.sapphire_chestplate": "蓝宝石胸甲",
+  "item.unoredinary.sapphire_leggings": "蓝宝石护腿",
+  "item.unoredinary.sapphire_boots": "蓝宝石靴子",
 
   "item.unoredinary.ruby_horse_armor": "红宝石马铠",
 

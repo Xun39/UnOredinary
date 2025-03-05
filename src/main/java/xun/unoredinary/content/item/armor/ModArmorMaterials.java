@@ -56,6 +56,15 @@ public class ModArmorMaterials {
 
     }), 11, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.5F, 0.0F, () -> Ingredient.of(ModItems.RUBY));
 
+    public static final Holder<ArmorMaterial> SAPPHIRE = register("sapphire", Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+        attribute.put(ArmorItem.Type.BOOTS, 3);
+        attribute.put(ArmorItem.Type.LEGGINGS, 6);
+        attribute.put(ArmorItem.Type.CHESTPLATE, 8);
+        attribute.put(ArmorItem.Type.HELMET, 3);
+        attribute.put(ArmorItem.Type.BODY, 11);
+
+    }), 12, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.0F, () -> Ingredient.of(ModItems.SAPPHIRE));
+
 
     private static Holder<ArmorMaterial> register(
             String name,

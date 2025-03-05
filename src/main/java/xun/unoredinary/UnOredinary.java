@@ -28,9 +28,6 @@ public class UnOredinary {
 
         IEventBus neoforgeEventBus = NeoForge.EVENT_BUS;
 
-        modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(this::addCreative);
-
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModSounds.register(modEventBus);
@@ -40,6 +37,9 @@ public class UnOredinary {
         ModEntityTypes.register(modEventBus);
 
         ModGlobalLootModifierSerializers.register(modEventBus);
+
+        modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::addCreative);
 
         neoforgeEventBus.register(this);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

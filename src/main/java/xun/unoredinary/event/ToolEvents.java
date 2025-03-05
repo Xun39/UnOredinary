@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -21,9 +22,8 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import org.slf4j.Logger;
 import xun.unoredinary.UnOredinary;
+import xun.unoredinary.content.item.tool.SolariteToolSet;
 import xun.unoredinary.content.item.tool.pickaxe.FrosteelPickItem;
-import xun.unoredinary.content.item.tool.pickaxe.SolaritePickItem;
-import xun.unoredinary.content.item.tool.shovel.SolariteShovelItem;
 import xun.unoredinary.registry.ModItems;
 import xun.unoredinary.util.BiomeUtils;
 import xun.unoredinary.util.ModTags;
@@ -73,25 +73,23 @@ public class ToolEvents {
         BlockState state = event.getState();
         ItemStack mainHandItem = player.getMainHandItem();
 
-        if (mainHandItem.getItem() instanceof SolaritePickItem pickItem && player instanceof ServerPlayer serverPlayer) {
+        if (mainHandItem.is(ModTags.Items.SOLARITE_TOOL) && player instanceof ServerPlayer) {
 
-            if (SolaritePickItem.SMELT_ORE_MAP.containsKey(state.getBlock())) {
+            if (isCorrectToolForBlock(state, mainHandItem)) {
 
-                player.level().destroyBlock(pos, false);
+                if (SolariteToolSet.SMELT_ORE_MAP.containsKey(state.getBlock())) {
 
-                if (state.getBlock() == Blocks.COPPER_ORE || state.getBlock() == Blocks.DEEPSLATE_COPPER_ORE) {
-                    ItemStack result = new ItemStack(SolaritePickItem.SMELT_ORE_MAP.get(state.getBlock()), (int) (Math.random() * 4) + 2);
-                    Block.popResource(player.level(), pos, result);
-                } else {
-                    ItemStack result = new ItemStack(SolaritePickItem.SMELT_ORE_MAP.get(state.getBlock()));
-                    Block.popResource(player.level(), pos, result);
+                    player.level().destroyBlock(pos, false);
+
+                    if (state.getBlock() == Blocks.COPPER_ORE || state.getBlock() == Blocks.DEEPSLATE_COPPER_ORE) {
+                        ItemStack result = new ItemStack(SolariteToolSet.SMELT_ORE_MAP.get(state.getBlock()), (int) (Math.random() * 4) + 2);
+                        Block.popResource(player.level(), pos, result);
+                    } else {
+                        ItemStack result = new ItemStack(SolariteToolSet.SMELT_ORE_MAP.get(state.getBlock()));
+                        Block.popResource(player.level(), pos, result);
+                    }
                 }
             }
-        } else if (mainHandItem.getItem() instanceof SolariteShovelItem shovelItem && player instanceof ServerPlayer serverPlayer) {
-            player.level().destroyBlock(pos, false);
-
-            ItemStack result = new ItemStack(SolariteShovelItem.SMELT_MAP.get(state.getBlock()));
-            Block.popResource(player.level(), pos, result);
         }
     }
 
@@ -156,5 +154,18 @@ public class ToolEvents {
                 event.setCancellationResult(InteractionResult.SUCCESS);
             }
         }
+    }
+
+    private static boolean isCorrectToolForBlock(BlockState state, ItemStack tool) {
+        if (state.is(BlockTags.MINEABLE_WITH_AXE)) {
+            return tool.is(ItemTags.AXES);
+        } else if (state.is(BlockTags.MINEABLE_WITH_PICKAXE)) {
+            return tool.is(ItemTags.PICKAXES);
+        } else if (state.is(BlockTags.MINEABLE_WITH_SHOVEL)) {
+            return tool.is(ItemTags.SHOVELS);
+        } else if (state.is(BlockTags.MINEABLE_WITH_HOE)) {
+            return tool.is(ItemTags.HOES);
+        }
+        return false;
     }
 }

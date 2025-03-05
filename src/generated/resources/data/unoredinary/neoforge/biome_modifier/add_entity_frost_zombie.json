@@ -3,8 +3,8 @@
   "biomes": "#c:is_cold",
   "spawners": {
     "type": "unoredinary:frost_zombie",
-    "maxCount": 4,
-    "minCount": 2,
-    "weight": 20
+    "maxCount": 5,
+    "minCount": 3,
+    "weight": 24
   }
 }

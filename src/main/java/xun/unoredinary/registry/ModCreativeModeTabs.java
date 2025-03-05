@@ -7,6 +7,7 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import xun.unoredinary.UnOredinary;
+import xun.unoredinary.content.item.tool.ModTools;
 
 import java.util.function.Supplier;
 
@@ -72,7 +73,7 @@ public class ModCreativeModeTabs {
                     }).build());
 
     public static final Supplier<CreativeModeTab> UNOREDINARY_EQUIPMENT_TAB = CREATIVE_MODE_TABS.register("unoredinary_equipment_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.FROSTEEL_HOE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModTools.FROSTEEL_TOOLS.hoe().get()))
                     .title(Component.translatable("creativemodetab.unoredinary.equipment"))
                     .displayItems((itemDisplayParameters, output) -> {
 
@@ -81,44 +82,51 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FROSTEEL_LEGGINGS);
                         output.accept(ModItems.FROSTEEL_BOOTS);
 
-                        output.accept(ModItems.FROSTEEL_SWORD);
-                        output.accept(ModItems.FROSTEEL_SHOVEL);
-                        output.accept(ModItems.FROSTEEL_PICKAXE);
-                        output.accept(ModItems.FROSTEEL_AXE);
-                        output.accept(ModItems.FROSTEEL_HOE);
-
-                        output.accept(ModItems.LUMINTHIUM_HELMET);
-                        output.accept(ModItems.LUMINTHIUM_CHESTPLATE);
-                        output.accept(ModItems.LUMINTHIUM_LEGGINGS);
-                        output.accept(ModItems.LUMINTHIUM_BOOTS);
-
-                        output.accept(ModItems.LUMINTHIUM_SWORD);
-                        output.accept(ModItems.LUMINTHIUM_SHOVEL);
-                        output.accept(ModItems.LUMINTHIUM_PICKAXE);
-                        output.accept(ModItems.LUMINTHIUM_AXE);
-                        output.accept(ModItems.LUMINTHIUM_HOE);
+                        output.accept(ModTools.FROSTEEL_TOOLS.sword());
+                        output.accept(ModTools.FROSTEEL_TOOLS.shovel());
+                        output.accept(ModTools.FROSTEEL_TOOLS.pickaxe());
+                        output.accept(ModTools.FROSTEEL_TOOLS.axe());
+                        output.accept(ModTools.FROSTEEL_TOOLS.hoe());
 
                         output.accept(ModItems.SOLARITE_HELMET);
                         output.accept(ModItems.SOLARITE_CHESTPLATE);
                         output.accept(ModItems.SOLARITE_LEGGINGS);
                         output.accept(ModItems.SOLARITE_BOOTS);
 
-                        output.accept(ModItems.SOLARITE_SWORD);
-                        output.accept(ModItems.SOLARITE_SHOVEL);
-                        output.accept(ModItems.SOLARITE_PICKAXE);
-                        output.accept(ModItems.SOLARITE_AXE);
-                        output.accept(ModItems.SOLARITE_HOE);
+                        output.accept(ModTools.SOLARITE_TOOLS.sword());
+                        output.accept(ModTools.SOLARITE_TOOLS.shovel());
+                        output.accept(ModTools.SOLARITE_TOOLS.pickaxe());
+                        output.accept(ModTools.SOLARITE_TOOLS.axe());
+                        output.accept(ModTools.SOLARITE_TOOLS.hoe());
+
+                        output.accept(ModItems.LUMINTHIUM_HELMET);
+                        output.accept(ModItems.LUMINTHIUM_CHESTPLATE);
+                        output.accept(ModItems.LUMINTHIUM_LEGGINGS);
+                        output.accept(ModItems.LUMINTHIUM_BOOTS);
+
+                        output.accept(ModTools.LUMINTHIUM_TOOLS.sword());
+                        output.accept(ModTools.LUMINTHIUM_TOOLS.shovel());
+                        output.accept(ModTools.LUMINTHIUM_TOOLS.pickaxe());
+                        output.accept(ModTools.LUMINTHIUM_TOOLS.axe());
+                        output.accept(ModTools.LUMINTHIUM_TOOLS.hoe());
 
                         output.accept(ModItems.RUBY_HELMET);
                         output.accept(ModItems.RUBY_CHESTPLATE);
                         output.accept(ModItems.RUBY_LEGGINGS);
                         output.accept(ModItems.RUBY_BOOTS);
 
-                        output.accept(ModItems.RUBY_SWORD);
-                        output.accept(ModItems.RUBY_SHOVEL);
-                        output.accept(ModItems.RUBY_PICKAXE);
-                        output.accept(ModItems.RUBY_AXE);
-                        output.accept(ModItems.RUBY_HOE);
+                        output.accept(ModTools.RUBY_TOOLS.sword());
+                        output.accept(ModTools.RUBY_TOOLS.shovel());
+                        output.accept(ModTools.RUBY_TOOLS.pickaxe());
+                        output.accept(ModTools.RUBY_TOOLS.axe());
+                        output.accept(ModTools.RUBY_TOOLS.hoe());
+
+                        output.accept(ModTools.SAPPHIRE_TOOLS.sword());
+                        output.accept(ModTools.SAPPHIRE_TOOLS.shovel());
+                        output.accept(ModTools.SAPPHIRE_TOOLS.pickaxe());
+                        output.accept(ModTools.SAPPHIRE_TOOLS.axe());
+                        output.accept(ModTools.SAPPHIRE_TOOLS.hoe());
+
 
                         output.accept(ModItems.RUBY_HORSE_ARMOR);
 
@@ -150,6 +158,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LUMINITE_TORCH);
 
                         output.accept(ModItems.RUBY);
+                        output.accept(ModItems.SAPPHIRE);
 
                         output.accept(ModItems.SOLARITE_GEM);
 

@@ -7,6 +7,7 @@ import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import xun.unoredinary.UnOredinary;
+import xun.unoredinary.content.item.tool.ModTools;
 import xun.unoredinary.registry.ModItems;
 import xun.unoredinary.util.TextUtils;
 
@@ -16,7 +17,7 @@ public class JEIPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
 
-        registration.addIngredientInfo(new ItemStack(ModItems.FROSTEEL_SWORD.get()), VanillaTypes.ITEM_STACK, TextUtils.translatable("info", "frosteel_sword"));
+        registration.addIngredientInfo(new ItemStack(ModTools.FROSTEEL_TOOLS.sword().get()), VanillaTypes.ITEM_STACK, TextUtils.translatable("info", "frosteel_sword"));
         registration.addIngredientInfo(new ItemStack(ModItems.ICE_BRICK.get()), VanillaTypes.ITEM_STACK, TextUtils.translatable("info", "ice_brick"));
     }
 

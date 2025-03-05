@@ -35,31 +35,31 @@ public class ModConfiguredFeatures {
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
-        RuleTest iceReplaceables = new TagMatchTest(BlockTags.ICE);
-        RuleTest lavaReplaceables = new BlockMatchTest(Blocks.LAVA);
-        RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
-        RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+        RuleTest iceReplaceable = new TagMatchTest(BlockTags.ICE);
+        RuleTest lavaReplaceable = new BlockMatchTest(Blocks.LAVA);
+        RuleTest stoneReplaceable = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
+        RuleTest deepslateReplaceable = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
 
         List<OreConfiguration.TargetBlockState> overworldCryostoneOres = List.of(
-                OreConfiguration.target(stoneReplaceables, ModBlocks.CRYOSTONE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_CRYOSTONE_ORE.get().defaultBlockState()));
+                OreConfiguration.target(stoneReplaceable, ModBlocks.CRYOSTONE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceable, ModBlocks.DEEPSLATE_CRYOSTONE_ORE.get().defaultBlockState()));
 
         List<OreConfiguration.TargetBlockState> overworldLuminiteOres = List.of(
-                OreConfiguration.target(stoneReplaceables, ModBlocks.LUMINITE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_LUMINITE_ORE.get().defaultBlockState()));
+                OreConfiguration.target(stoneReplaceable, ModBlocks.LUMINITE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceable, ModBlocks.DEEPSLATE_LUMINITE_ORE.get().defaultBlockState()));
 
         List<OreConfiguration.TargetBlockState> overworldRubyOres = List.of(
-                OreConfiguration.target(stoneReplaceables, ModBlocks.RUBY_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_RUBY_ORE.get().defaultBlockState()));
+                OreConfiguration.target(stoneReplaceable, ModBlocks.RUBY_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceable, ModBlocks.DEEPSLATE_RUBY_ORE.get().defaultBlockState()));
 
-        register(context, HEMOCRYLIC_ORE_KEY, Feature.ORE, new OreConfiguration(iceReplaceables, ModBlocks.HEMOCRYLIC_ORE.get().defaultBlockState(), 3));
-        register(context, LARGE_HEMOCRYLIC_ORE_KEY, Feature.ORE, new OreConfiguration(iceReplaceables, ModBlocks.HEMOCRYLIC_ORE.get().defaultBlockState(), 7));
+        register(context, HEMOCRYLIC_ORE_KEY, Feature.ORE, new OreConfiguration(iceReplaceable, ModBlocks.HEMOCRYLIC_ORE.get().defaultBlockState(), 3));
+        register(context, LARGE_HEMOCRYLIC_ORE_KEY, Feature.ORE, new OreConfiguration(iceReplaceable, ModBlocks.HEMOCRYLIC_ORE.get().defaultBlockState(), 7));
 
         register(context, CRYOSTONE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldCryostoneOres, 8));
 
         register(context, LUMINITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldLuminiteOres, 5));
 
-        register(context, SOLARITE_ORE_KEY, Feature.ORE, new OreConfiguration(lavaReplaceables, ModBlocks.SOLARITE_ORE.get().defaultBlockState(), 4));
+        register(context, SOLARITE_ORE_KEY, Feature.ORE, new OreConfiguration(lavaReplaceable, ModBlocks.SOLARITE_ORE.get().defaultBlockState(), 3));
 
         register(context, SMALL_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 3,0.5F));
         register(context, MEDIUM_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 7,0.6F));

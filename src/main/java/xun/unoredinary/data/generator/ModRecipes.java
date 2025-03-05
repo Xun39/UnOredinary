@@ -9,6 +9,7 @@ import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
+import xun.unoredinary.content.item.tool.ModTools;
 import xun.unoredinary.data.provider.ModRecipeProvider;
 import xun.unoredinary.registry.ModBlocks;
 import xun.unoredinary.registry.ModItems;
@@ -51,15 +52,15 @@ public class ModRecipes extends ModRecipeProvider {
                 .save(recipeOutput);
 
         smithingUpgrade(recipeOutput, Items.IRON_SWORD, ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.FROSTEEL_INGOT.get(),
-                ModItems.FROSTEEL_SWORD.get(), RecipeCategory.COMBAT);
+                ModTools.FROSTEEL_TOOLS.sword().get(), RecipeCategory.COMBAT);
         smithingUpgrade(recipeOutput, Items.IRON_PICKAXE, ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.FROSTEEL_INGOT.get(),
-                ModItems.FROSTEEL_PICKAXE.get(), RecipeCategory.TOOLS);
+                ModTools.FROSTEEL_TOOLS.pickaxe().get(), RecipeCategory.TOOLS);
         smithingUpgrade(recipeOutput, Items.IRON_AXE, ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.FROSTEEL_INGOT.get(),
-                ModItems.FROSTEEL_AXE.get(), RecipeCategory.TOOLS);
+                ModTools.FROSTEEL_TOOLS.axe().get(), RecipeCategory.TOOLS);
         smithingUpgrade(recipeOutput, Items.IRON_HOE, ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.FROSTEEL_INGOT.get(),
-                ModItems.FROSTEEL_HOE.get(), RecipeCategory.TOOLS);
+                ModTools.FROSTEEL_TOOLS.hoe().get(), RecipeCategory.TOOLS);
         smithingUpgrade(recipeOutput, Items.IRON_SHOVEL, ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.FROSTEEL_INGOT.get(),
-                ModItems.FROSTEEL_SHOVEL.get(), RecipeCategory.TOOLS);
+                ModTools.FROSTEEL_TOOLS.shovel().get(), RecipeCategory.TOOLS);
 
         smithingUpgrade(recipeOutput, Items.IRON_HELMET, ModItems.FROSTEEL_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.FROSTEEL_INGOT.get(),
                 ModItems.FROSTEEL_HELMET.get(), RecipeCategory.COMBAT);
@@ -83,11 +84,11 @@ public class ModRecipes extends ModRecipeProvider {
 
         threeByThreeConvertible(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModBlocks.LUMINTHIUM_BLOCK, RecipeCategory.MISC, RecipeCategory.BUILDING_BLOCKS);
 
-        sword(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_SWORD);
-        pickaxe(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_PICKAXE);
-        axe(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_AXE);
-        hoe(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_HOE);
-        shovel(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_SHOVEL);
+        sword(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModTools.LUMINTHIUM_TOOLS.sword());
+        pickaxe(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModTools.LUMINTHIUM_TOOLS.pickaxe());
+        axe(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModTools.LUMINTHIUM_TOOLS.axe());
+        hoe(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModTools.LUMINTHIUM_TOOLS.hoe());
+        shovel(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModTools.LUMINTHIUM_TOOLS.shovel());
 
         helmet(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_HELMET);
         chestplate(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_CHESTPLATE);
@@ -95,11 +96,11 @@ public class ModRecipes extends ModRecipeProvider {
         boots(recipeOutput, ModItems.LUMINTHIUM_INGOT, ModItems.LUMINTHIUM_BOOTS);
 
         // Solarite
-        sword(recipeOutput, ModItems.SOLARITE_GEM, ModItems.SOLARITE_SWORD);
-        pickaxe(recipeOutput, ModItems.SOLARITE_GEM, ModItems.SOLARITE_PICKAXE);
-        axe(recipeOutput, ModItems.SOLARITE_GEM, ModItems.SOLARITE_AXE);
-        hoe(recipeOutput, ModItems.SOLARITE_GEM, ModItems.SOLARITE_HOE);
-        shovel(recipeOutput, ModItems.SOLARITE_GEM, ModItems.SOLARITE_SHOVEL);
+        sword(recipeOutput, ModItems.SOLARITE_GEM, ModTools.SOLARITE_TOOLS.sword());
+        pickaxe(recipeOutput, ModItems.SOLARITE_GEM, ModTools.SOLARITE_TOOLS.pickaxe());
+        axe(recipeOutput, ModItems.SOLARITE_GEM, ModTools.SOLARITE_TOOLS.axe());
+        hoe(recipeOutput, ModItems.SOLARITE_GEM, ModTools.SOLARITE_TOOLS.hoe());
+        shovel(recipeOutput, ModItems.SOLARITE_GEM, ModTools.SOLARITE_TOOLS.shovel());
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SOLARITE_HELMET)
                 .pattern("-#-").pattern("! !")
@@ -135,16 +136,24 @@ public class ModRecipes extends ModRecipeProvider {
         // Ruby Ores
         threeByThreeConvertible(recipeOutput, ModItems.RUBY, ModBlocks.RUBY_BLOCK, RecipeCategory.MISC, RecipeCategory.BUILDING_BLOCKS);
 
-        sword(recipeOutput, ModItems.RUBY, ModItems.RUBY_SWORD);
-        pickaxe(recipeOutput, ModItems.RUBY, ModItems.RUBY_PICKAXE);
-        axe(recipeOutput, ModItems.RUBY, ModItems.RUBY_AXE);
-        hoe(recipeOutput, ModItems.RUBY, ModItems.RUBY_HOE);
-        shovel(recipeOutput, ModItems.RUBY, ModItems.RUBY_SHOVEL);
+        sword(recipeOutput, ModItems.RUBY, ModTools.RUBY_TOOLS.sword());
+        pickaxe(recipeOutput, ModItems.RUBY, ModTools.RUBY_TOOLS.pickaxe());
+        axe(recipeOutput, ModItems.RUBY, ModTools.RUBY_TOOLS.axe());
+        hoe(recipeOutput, ModItems.RUBY, ModTools.RUBY_TOOLS.hoe());
+        shovel(recipeOutput, ModItems.RUBY, ModTools.RUBY_TOOLS.shovel());
 
         helmet(recipeOutput, ModItems.RUBY, ModItems.RUBY_HELMET);
         chestplate(recipeOutput, ModItems.RUBY, ModItems.RUBY_CHESTPLATE);
         leggings(recipeOutput, ModItems.RUBY, ModItems.RUBY_LEGGINGS);
         boots(recipeOutput, ModItems.RUBY, ModItems.RUBY_BOOTS);
+
+        // Sapphire
+
+        sword(recipeOutput, ModItems.SAPPHIRE, ModTools.SAPPHIRE_TOOLS.sword());
+        pickaxe(recipeOutput, ModItems.SAPPHIRE, ModTools.SAPPHIRE_TOOLS.pickaxe());
+        axe(recipeOutput, ModItems.SAPPHIRE, ModTools.SAPPHIRE_TOOLS.axe());
+        hoe(recipeOutput, ModItems.SAPPHIRE, ModTools.SAPPHIRE_TOOLS.hoe());
+        shovel(recipeOutput, ModItems.SAPPHIRE, ModTools.SAPPHIRE_TOOLS.shovel());
 
 
         // Frostbound Stone

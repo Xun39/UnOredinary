@@ -55,7 +55,7 @@ public class ModPlacedFeatures {
                         HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-48), VerticalAnchor.belowTop(36))));
 
         register(context, SOLARITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SOLARITE_ORE_KEY),
-                ModOrePlacement.oreCountPlacement(24,
+                ModOrePlacement.oreCountPlacement(20,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(0))));
 
         register(context, RUBY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SMALL_RUBY_ORE_KEY),

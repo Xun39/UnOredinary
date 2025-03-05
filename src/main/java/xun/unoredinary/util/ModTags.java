@@ -26,6 +26,9 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_RUBY_TOOL = createTag("needs_ruby_tool");
         public static final TagKey<Block> INCORRECT_FOR_RUBY_TOOL = createTag("incorrect_for_ruby_tool");
 
+        public static final TagKey<Block> NEEDS_SAPPHIRE_TOOL = createTag("needs_sapphire_tool");
+        public static final TagKey<Block> INCORRECT_FOR_SAPPHIRE_TOOL = createTag("incorrect_for_sapphire_tool");
+
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(UnOredinary.modLoc(name));
         }
@@ -34,6 +37,7 @@ public class ModTags {
     public static class Items {
 
         public static final TagKey<Item> FROSTEEL_TOOL = createTag("frosteel_tool");
+        public static final TagKey<Item> SOLARITE_TOOL = createTag("solarite_tool");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(UnOredinary.modLoc(name));

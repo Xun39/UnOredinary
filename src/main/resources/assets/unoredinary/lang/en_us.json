@@ -38,6 +38,12 @@
   "item.unoredinary.ruby_hoe": "Ruby Hoe",
   "item.unoredinary.ruby_shovel": "Ruby Shovel",
 
+  "item.unoredinary.sapphire_sword": "Sapphire Sword",
+  "item.unoredinary.sapphire_pickaxe": "Sapphire Pickaxe",
+  "item.unoredinary.sapphire_axe": "Sapphire Axe",
+  "item.unoredinary.sapphire_hoe": "Sapphire Hoe",
+  "item.unoredinary.sapphire_shovel": "Sapphire Shovel",
+
   "item.unoredinary.frosteel_helmet": "Frosteel Helmet",
   "item.unoredinary.frosteel_chestplate": "Frosteel Chestplate",
   "item.unoredinary.frosteel_leggings": "Frosteel Leggings",
@@ -57,6 +63,11 @@
   "item.unoredinary.ruby_chestplate": "Ruby Chestplate",
   "item.unoredinary.ruby_leggings": "Ruby Leggings",
   "item.unoredinary.ruby_boots": "Ruby Boots",
+
+  "item.unoredinary.sapphire_helmet": "Sapphire Helmet",
+  "item.unoredinary.sapphire_chestplate": "Sapphire Chestplate",
+  "item.unoredinary.sapphire_leggings": "Sapphire Leggings",
+  "item.unoredinary.sapphire_boots": "Sapphire Boots",
 
   "item.unoredinary.ruby_horse_armor": "Ruby Horse Armor",
   "item.unoredinary.ice_shard": "Ice Shard",

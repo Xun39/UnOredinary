@@ -3,13 +3,14 @@ package xun.unoredinary.content.item.armor;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 
 public class SolariteArmorItem extends UOArmorItem{
 
     public SolariteArmorItem(Type type) {
         super(ModArmorMaterials.SOLARITE, type,
-                new Properties().durability(type.getDurability(42)).fireResistant());
+                new Properties().durability(type.getDurability(42)).fireResistant().rarity(Rarity.UNCOMMON));
     }
 
     @Override

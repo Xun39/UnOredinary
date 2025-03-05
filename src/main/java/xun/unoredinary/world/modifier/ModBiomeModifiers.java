@@ -4,6 +4,8 @@ import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.neoforged.neoforge.common.Tags;
@@ -36,10 +38,12 @@ public class ModBiomeModifiers {
 
 
     public static final ResourceKey<BiomeModifier> ADD_FROST_ZOMBIE = registerKey("add_entity_frost_zombie");
+    public static final ResourceKey<BiomeModifier> REMOVE_ZOMBIE_IN_COLD = registerKey("remove_entity_zombie_in_cold_biome");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
 
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
+        var entityTypes = context.lookup(Registries.ENTITY_TYPE);
         var biomes = context.lookup(Registries.BIOME);
 
         // Hemocrylic Ores
@@ -95,7 +99,11 @@ public class ModBiomeModifiers {
         // Frost Zombies
         context.register(ADD_FROST_ZOMBIE, new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_COLD),
-                List.of(new MobSpawnSettings.SpawnerData(ModEntityTypes.FROST_ZOMBIE.get(), 20, 2, 4))));
+                List.of(new MobSpawnSettings.SpawnerData(ModEntityTypes.FROST_ZOMBIE.get(), 24, 3, 5))));
+
+        /*context.register(REMOVE_ZOMBIE_IN_COLD, new BiomeModifiers.RemoveSpawnsBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_COLD),
+                HolderSet.direct(entityTypes.getOrThrow())));*/
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {

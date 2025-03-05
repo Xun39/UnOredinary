@@ -7,6 +7,10 @@ import xun.unoredinary.UnOredinary;
 
 public class TextUtils {
 
+    public static String getModId(String suffix) {
+        return UnOredinary.MOD_ID + suffix;
+    }
+
     public static Component translatable(String type, String key) {
         return Component.translatable(type + '.' + UnOredinary.MOD_ID + '.' + key);
     }

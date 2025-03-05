@@ -18,23 +18,11 @@ import xun.unoredinary.util.BiomeUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FrosteelPickItem extends UOPickItem {
+public class FrosteelPickItem extends PickaxeItem {
 
-    public FrosteelPickItem() {
-        super(ModToolTiers.FROSTEEL);
-    }
 
-    @Override
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-
-        if (BiomeUtils.isInColdBiome(attacker.level(), attacker.getOnPos())) {
-            target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 1));
-            target.hurt(target.damageSources().freeze(), 1.0F);
-        } else {
-            target.hurt(target.damageSources().freeze(), 0.5F);
-        }
-
-        return super.hurtEnemy(stack, target, attacker);
+    public FrosteelPickItem(Tier tier, Properties properties) {
+        super(tier, properties);
     }
 
     public static List<BlockPos> getBlocksToBeDestroyed(int range, BlockPos initalBlockPos, ServerPlayer player) {
