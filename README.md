@@ -4,7 +4,7 @@
   <img alt="Curseforge" src="https://img.shields.io/badge/-CurseForge-black?style=flat-square&logo=curseforge&labelColor=black">
 </a>
 <a href="https://www.modrinth.com/mod/unoredinary">
-  <img alt="Modrinth" src="https://img.shields.io/badge/-Modrinth-gray?style=flat-square&logo=modrinth&logoColor=green&labelColor=black">
+  <img alt="Modrinth" src="https://img.shields.io/badge/-Modrinth-gray?style=flat-square&logo=modrinth&logoColor=lightgreencyan&labelColor=black">
 </a>
 
 *(note: this mod is still in developpement)*
