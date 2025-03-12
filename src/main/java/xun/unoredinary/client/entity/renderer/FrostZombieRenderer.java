@@ -7,7 +7,7 @@ import net.minecraft.world.entity.monster.Zombie;
 import xun.unoredinary.UnOredinary;
 import xun.unoredinary.client.entity.model.FrostZombieModel;
 import xun.unoredinary.content.entity.FrostZombieEntity;
-import xun.unoredinary.util.ModModelLayers;
+import xun.unoredinary.util.UOModelLayers;
 
 public class FrostZombieRenderer extends AbstractZombieRenderer<FrostZombieEntity, FrostZombieModel> {
 
@@ -15,9 +15,9 @@ public class FrostZombieRenderer extends AbstractZombieRenderer<FrostZombieEntit
 
     public FrostZombieRenderer(EntityRendererProvider.Context context) {
         super(context,
-                new FrostZombieModel(context.bakeLayer(ModModelLayers.FROST_ZOMBIE)),
-                new FrostZombieModel(context.bakeLayer(ModModelLayers.FROST_ZOMBIE_INNER_ARMOR)),
-                new FrostZombieModel(context.bakeLayer(ModModelLayers.FROST_ZOMBIE_OUTER_ARMOR))
+                new FrostZombieModel(context.bakeLayer(UOModelLayers.FROST_ZOMBIE)),
+                new FrostZombieModel(context.bakeLayer(UOModelLayers.FROST_ZOMBIE_INNER_ARMOR)),
+                new FrostZombieModel(context.bakeLayer(UOModelLayers.FROST_ZOMBIE_OUTER_ARMOR))
         );
 
         this.addLayer(new FrostZombieOuterLayer(this, context.getModelSet()));

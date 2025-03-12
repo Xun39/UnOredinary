@@ -9,7 +9,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import xun.unoredinary.registry.ModSounds;
+import xun.unoredinary.registry.UOSounds;
 import xun.unoredinary.util.BiomeUtils;
 
 public class HemocrylicBlock extends Block {
@@ -19,7 +19,7 @@ public class HemocrylicBlock extends Block {
     private final boolean canMelt;
 
     public HemocrylicBlock(Properties properties, boolean canMelt) {
-        super(properties.sound(ModSounds.HEMOCRYLIC_BLOCK_SOUNDS));
+        super(properties.sound(UOSounds.HEMOCRYLIC_BLOCK_SOUNDS));
         this.canMelt = canMelt;
     }
 
@@ -30,7 +30,7 @@ public class HemocrylicBlock extends Block {
         if (isInNether(level)) {
             ((ServerLevel) level).sendParticles(ParticleTypes.CLOUD, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 20, 0.5, 0.5, 0.5, 0.0);
 
-            level.playSound(null, pos, ModSounds.HEMOCRYLIC_BLOCK_EVAPORATE.get(), SoundSource.BLOCKS, 1f, 1f);
+            level.playSound(null, pos, UOSounds.HEMOCRYLIC_BLOCK_EVAPORATE.get(), SoundSource.BLOCKS, 1f, 1f);
             level.removeBlock(pos, false);
 
         } else {

@@ -1,24 +1,65 @@
 package xun.unoredinary;
 
-import net.fabricmc.api.ModInitializer;
-
+import com.mojang.logging.LogUtils;
+import net.minecraft.resources.ResourceLocation;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import xun.unoredinary.content.item.armor.UOArmors;
+import xun.unoredinary.content.item.tool.UOTools;
+import xun.unoredinary.registry.*;
 
-public class UnOredinary implements ModInitializer {
+@Mod(UnOredinary.MOD_ID)
+public class UnOredinary {
+
 	public static final String MOD_ID = "unoredinary";
+	private static final Logger LOGGER = LogUtils.getLogger();
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static ResourceLocation modLoc(String path) { return ResourceLocation.fromNamespaceAndPath(MOD_ID, path); }
 
-	@Override
-	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+	public UnOredinary(IEventBus modEventBus, ModContainer modContainer) {
 
-		LOGGER.info("Hello Fabric world!");
+		IEventBus neoforgeEventBus = NeoForge.EVENT_BUS;
+
+		UOTools.register();
+		UOArmors.register();
+
+		UOItems.register(modEventBus);
+		UOBlocks.register(modEventBus);
+		UOSounds.register(modEventBus);
+		UOCreativeModeTabs.register(modEventBus);
+
+		UOArmorMaterials.register(modEventBus);
+
+		UOStructureTypes.register(modEventBus);
+		UOEntityTypes.register(modEventBus);
+
+		UOGlobalLootModifierSerializers.register(modEventBus);
+
+		modEventBus.addListener(this::commonSetup);
+		modEventBus.addListener(this::addCreative);
+
+		neoforgeEventBus.register(this);
+		modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+	}
+
+	private void commonSetup(final FMLCommonSetupEvent event) {
+
+	}
+
+	private void addCreative(BuildCreativeModeTabContentsEvent event) {
+
+	}
+
+	@SubscribeEvent
+	public void onServerStarting(ServerStartingEvent event) {
+
 	}
 }

@@ -26,22 +26,22 @@ public class DataGenerators {
         boolean client = event.includeClient();
         boolean server = event.includeServer();
 
-        BlockTagsProvider blockTagsProvider = new ModBlockTags(output, registries, helper);
+        BlockTagsProvider blockTagsProvider = new UOBlockTags(output, registries, helper);
 
-        generator.addProvider(client, new ModBlockStates(output, helper));
-        generator.addProvider(client, new ModItemModels(output, helper));
+        generator.addProvider(client, new UOBlockStates(output, helper));
+        generator.addProvider(client, new UOItemModels(output, helper));
 
-        generator.addProvider(server, new ModAdvancements(output, registries, helper));
+        generator.addProvider(server, new UOAdvancements(output, registries, helper));
 
-        generator.addProvider(server, new ModLootTables(output, registries));
-        generator.addProvider(server, new ModRecipes(output, registries));
+        generator.addProvider(server, new UOLootTables(output, registries));
+        generator.addProvider(server, new UORecipes(output, registries));
         generator.addProvider(server, blockTagsProvider);
-        generator.addProvider(server, new ModItemTags(output, registries, blockTagsProvider.contentsGetter(), helper));
-        generator.addProvider(server, new ModEntityTypeTags(output, registries, helper));
-        generator.addProvider(server, new ModBiomeTags(output, registries, helper));
+        generator.addProvider(server, new UOItemTags(output, registries, blockTagsProvider.contentsGetter(), helper));
+        generator.addProvider(server, new UOEntityTypeTags(output, registries, helper));
+        generator.addProvider(server, new UOBiomeTags(output, registries, helper));
 
-        generator.addProvider(server, new ModGlobalLootModifiers(output, registries));
-        generator.addProvider(server, new ModDatapackEntries(output, registries));
+        generator.addProvider(server, new UOGlobalLootModifiers(output, registries));
+        generator.addProvider(server, new UODatapackEntries(output, registries));
 
     }
 }

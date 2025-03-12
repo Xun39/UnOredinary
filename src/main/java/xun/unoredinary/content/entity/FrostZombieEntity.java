@@ -2,8 +2,6 @@ package xun.unoredinary.content.entity;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageType;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -13,7 +11,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import xun.unoredinary.registry.ModSounds;
+import xun.unoredinary.registry.UOSounds;
 
 public class FrostZombieEntity extends Zombie {
 
@@ -37,22 +35,22 @@ public class FrostZombieEntity extends Zombie {
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return ModSounds.FROST_ZOMBIE_AMBIENT.get();
+        return UOSounds.FROST_ZOMBIE_AMBIENT.get();
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSource) {
-        return ModSounds.FROST_ZOMBIE_HURT.get();
+        return UOSounds.FROST_ZOMBIE_HURT.get();
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return ModSounds.FROST_ZOMBIE_DEATH.get();
+        return UOSounds.FROST_ZOMBIE_DEATH.get();
     }
 
     @Override
     protected SoundEvent getStepSound() {
-        return ModSounds.FROST_ZOMBIE_STEP.get();
+        return UOSounds.FROST_ZOMBIE_STEP.get();
     }
 
     @Override

@@ -96,4 +96,8 @@ public class ToolSet {
     public DeferredItem<AxeItem> axe() { return axe; }
     public DeferredItem<HoeItem> hoe() { return hoe; }
     public DeferredItem<ShovelItem> shovel() { return shovel; }
+
+    public List<Item> get() {
+        return List.of(sword.get(), pickaxe.get(), axe.get(), hoe.get(), shovel.get());
+    }
 }

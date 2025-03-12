@@ -7,12 +7,12 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import xun.unoredinary.registry.ModSounds;
+import xun.unoredinary.registry.UOSounds;
 
 public class SolariteOreBlock extends DropExperienceBlock {
 
     public SolariteOreBlock(IntProvider xpRange, Properties properties) {
-        super(xpRange, properties.sound(ModSounds.SOLARITE)
+        super(xpRange, properties.sound(UOSounds.SOLARITE)
                 .lightLevel((state) -> 13));
     }
 

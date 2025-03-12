@@ -24,9 +24,9 @@ import org.slf4j.Logger;
 import xun.unoredinary.UnOredinary;
 import xun.unoredinary.content.item.tool.SolariteToolSet;
 import xun.unoredinary.content.item.tool.pickaxe.FrosteelPickItem;
-import xun.unoredinary.registry.ModItems;
+import xun.unoredinary.registry.UOItems;
 import xun.unoredinary.util.BiomeUtils;
-import xun.unoredinary.util.ModTags;
+import xun.unoredinary.util.UOTags;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -73,7 +73,7 @@ public class ToolEvents {
         BlockState state = event.getState();
         ItemStack mainHandItem = player.getMainHandItem();
 
-        if (mainHandItem.is(ModTags.Items.SOLARITE_TOOL) && player instanceof ServerPlayer) {
+        if (mainHandItem.is(UOTags.Items.SOLARITE_TOOL) && player instanceof ServerPlayer) {
 
             if (isCorrectToolForBlock(state, mainHandItem)) {
 
@@ -101,7 +101,7 @@ public class ToolEvents {
 
         ItemStack weapon = player.getMainHandItem();
 
-        if (weapon.isEmpty() || !weapon.is(ModTags.Items.FROSTEEL_TOOL)) {
+        if (weapon.isEmpty() || !weapon.is(UOTags.Items.FROSTEEL_TOOL)) {
             return;
         }
 
@@ -137,7 +137,7 @@ public class ToolEvents {
             if (player.isShiftKeyDown() && player instanceof ServerPlayer) {
                 event.setCanceled(true);
 
-                ItemStack iceBrick = new ItemStack(ModItems.ICE_BRICK.get());
+                ItemStack iceBrick = new ItemStack(UOItems.ICE_BRICK.get());
                 ItemEntity itemEntity = new ItemEntity(level,
                         pos.getX() + 0.5,
                         pos.getY() + 0.5,

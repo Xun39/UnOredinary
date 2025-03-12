@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "item": "unoredinary:luminite_crystal"
+    }
+  },
+  "pattern": [
+    "#",
+    "!"
+  ],
+  "result": {
+    "count": 4,
+    "id": "unoredinary:luminite_torch_item"
+  }
+}

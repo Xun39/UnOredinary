@@ -7,6 +7,8 @@ import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.List;
+
 public class ArmorSet {
 
     private final String name;
@@ -34,7 +36,7 @@ public class ArmorSet {
     }
 
     protected ArmorItem createArmorItem(Holder<ArmorMaterial> armorMaterial, ArmorItem.Type type, Item.Properties properties) {
-        return new ArmorItem(armorMaterial, type, properties.durability(getDurabilityFactor()));
+        return new ArmorItem(armorMaterial, type, properties.durability(type.getDurability(getDurabilityFactor())));
     }
 
     protected int getDurabilityFactor() {
@@ -45,4 +47,8 @@ public class ArmorSet {
     public DeferredItem<ArmorItem> chestplate() { return chestplate; }
     public DeferredItem<ArmorItem> leggings() { return leggings; }
     public DeferredItem<ArmorItem> boots() { return boots; }
+
+    public List<Item> get() {
+        return List.of(helmet.get(), chestplate.get(), leggings.get(), boots.get());
+    }
 }

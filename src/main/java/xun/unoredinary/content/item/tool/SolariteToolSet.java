@@ -65,23 +65,6 @@ public class SolariteToolSet extends ToolSet {
         super(name, toolTier, toolProperties);
     }
 
-    private static void handleHitEffect(boolean result, LivingEntity target, float extraDamage) {
-        if (result && !target.level().isClientSide() && !target.fireImmune()) {
-            target.igniteForSeconds(15);
-            if (extraDamage > 0) {
-                target.hurt(target.damageSources().lava(), extraDamage);
-            }
-        } else {
-            Level level = target.level();
-            for (int i = 0; i < 20; ++i) {
-                double px = target.getX() + level.getRandom().nextFloat() * target.getBbWidth() * 2.0F - target.getBbWidth();
-                double py = target.getY() + level.getRandom().nextFloat() * target.getBbHeight();
-                double pz = target.getZ() + level.getRandom().nextFloat() * target.getBbWidth() * 2.0F - target.getBbWidth();
-                level.addParticle(ParticleTypes.FLAME, px, py, pz, 0.02, 0.02, 0.02);
-            }
-        }
-    }
-
     @Override
     protected SwordItem createSword(Tier toolTier, Item.Properties properties) {
         return new SwordItem(toolTier, properties
@@ -136,8 +119,8 @@ public class SolariteToolSet extends ToolSet {
 
     @Override
     protected ShovelItem createShovel(Tier toolTier, Item.Properties properties) {
-        return new ShovelItem(ModToolTiers.SOLARITE, properties
-                .attributes(ShovelItem.createAttributes(ModToolTiers.SOLARITE, getAttackDamage().getLast(), getAttackSpeed().getLast()))) {
+        return new ShovelItem(UOTiers.SOLARITE, properties
+                .attributes(ShovelItem.createAttributes(UOTiers.SOLARITE, getAttackDamage().getLast(), getAttackSpeed().getLast()))) {
             @Override
             public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
                 boolean result = super.hurtEnemy(stack, target, attacker);
@@ -145,5 +128,22 @@ public class SolariteToolSet extends ToolSet {
                 return result;
             }
         };
+    }
+
+    private static void handleHitEffect(boolean result, LivingEntity target, float extraDamage) {
+        if (result && !target.level().isClientSide() && !target.fireImmune()) {
+            target.igniteForSeconds(15);
+            if (extraDamage > 0) {
+                target.hurt(target.damageSources().lava(), extraDamage);
+            }
+        } else {
+            Level level = target.level();
+            for (int i = 0; i < 20; ++i) {
+                double px = target.getX() + level.getRandom().nextFloat() * target.getBbWidth() * 2.0F - target.getBbWidth();
+                double py = target.getY() + level.getRandom().nextFloat() * target.getBbHeight();
+                double pz = target.getZ() + level.getRandom().nextFloat() * target.getBbWidth() * 2.0F - target.getBbWidth();
+                level.addParticle(ParticleTypes.FLAME, px, py, pz, 0.02, 0.02, 0.02);
+            }
+        }
     }
 }

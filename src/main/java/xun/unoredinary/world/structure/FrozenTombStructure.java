@@ -18,7 +18,7 @@ import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.pools.alias.PoolAliasLookup;
 import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
 import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSettings;
-import xun.unoredinary.registry.ModStructureTypes;
+import xun.unoredinary.registry.UOStructureTypes;
 
 import java.util.Optional;
 
@@ -109,6 +109,6 @@ public class FrozenTombStructure extends Structure {
 
     @Override
     public StructureType<?> type() {
-        return ModStructureTypes.FROZEN_TOMB_STRUCTURES.get(); // Helps the game know how to turn this structure back to json to save to chunks
+        return UOStructureTypes.FROZEN_TOMB_STRUCTURES.get(); // Helps the game know how to turn this structure back to json to save to chunks
     }
 }

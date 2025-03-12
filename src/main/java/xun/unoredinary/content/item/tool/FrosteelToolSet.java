@@ -13,15 +13,6 @@ public class FrosteelToolSet extends ToolSet {
         super(name, toolTier, toolProperties);
     }
 
-    private static void handleHitEffect(LivingEntity target, LivingEntity attacker, float extraDamage) {
-        if (BiomeUtils.isInColdBiome(attacker.level(), attacker.getOnPos())) {
-            target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 1));
-            target.hurt(target.damageSources().freeze(), extraDamage);
-        } else {
-            target.hurt(target.damageSources().freeze(), extraDamage / 2);
-        }
-    }
-
     @Override
     protected SwordItem createSword(Tier toolTier, Item.Properties properties) {
         return new SwordItem(toolTier, properties
@@ -85,5 +76,14 @@ public class FrosteelToolSet extends ToolSet {
                 return result;
             }
         };
+    }
+
+    private static void handleHitEffect(LivingEntity target, LivingEntity attacker, float extraDamage) {
+        if (BiomeUtils.isInColdBiome(attacker.level(), attacker.getOnPos())) {
+            target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 120, 1));
+            target.hurt(target.damageSources().freeze(), extraDamage);
+        } else {
+            target.hurt(target.damageSources().freeze(), extraDamage / 2);
+        }
     }
 }

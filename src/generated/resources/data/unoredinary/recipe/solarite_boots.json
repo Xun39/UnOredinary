@@ -2,16 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "!": {
-      "item": "minecraft:stone"
-    },
     "#": {
       "item": "unoredinary:solarite_gem"
     }
   },
   "pattern": [
     "# #",
-    "! !"
+    "# #"
   ],
   "result": {
     "count": 1,

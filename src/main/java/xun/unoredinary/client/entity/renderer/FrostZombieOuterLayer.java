@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import xun.unoredinary.UnOredinary;
 import xun.unoredinary.client.entity.model.FrostZombieModel;
 import xun.unoredinary.content.entity.FrostZombieEntity;
-import xun.unoredinary.util.ModModelLayers;
+import xun.unoredinary.util.UOModelLayers;
 
 public class FrostZombieOuterLayer extends RenderLayer<FrostZombieEntity, FrostZombieModel> {
 
@@ -20,7 +20,7 @@ public class FrostZombieOuterLayer extends RenderLayer<FrostZombieEntity, FrostZ
 
     public FrostZombieOuterLayer(RenderLayerParent<FrostZombieEntity, FrostZombieModel> renderer, EntityModelSet modelSet) {
         super(renderer);
-        this.model = new FrostZombieModel(modelSet.bakeLayer(ModModelLayers.FROST_ZOMBIE_OUTER_LAYER));
+        this.model = new FrostZombieModel(modelSet.bakeLayer(UOModelLayers.FROST_ZOMBIE_OUTER_LAYER));
     }
 
     @Override
