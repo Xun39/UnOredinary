@@ -1,0 +1,54 @@
+{
+  "block.glacium.break": {
+    "subtitle": "sounds.unoredinary.block.glacium.break",
+    "sounds": [
+      "unoredinary:block/glacium/break_1",
+      "unoredinary:block/glacium/break_2",
+      "unoredinary:block/glacium/break_3"
+    ]
+  },
+  "block.glacium.step": {
+    "subtitle": "sounds.unoredinary.block.glacium.step",
+    "sounds": [
+      "unoredinary:block/glacium/step_1",
+      "unoredinary:block/glacium/step_2",
+      "unoredinary:block/glacium/step_3",
+      "unoredinary:block/glacium/step_4",
+      "unoredinary:block/glacium/step_5"
+    ]
+  },
+  "block.glacium.place": {
+    "subtitle": "sounds.unoredinary.block.glacium.place",
+    "sounds": [
+      "unoredinary:block/glacium/place_1",
+      "unoredinary:block/glacium/place_2",
+      "unoredinary:block/glacium/place_3",
+      "unoredinary:block/glacium/place_4"
+    ]
+  },
+  "block.glacium.hit": {
+    "subtitle": "sounds.unoredinary.block.glacium.hit",
+    "sounds": [
+      "unoredinary:block/glacium/hit_1",
+      "unoredinary:block/glacium/hit_2",
+      "unoredinary:block/glacium/hit_3",
+      "unoredinary:block/glacium/hit_4",
+      "unoredinary:block/glacium/hit_5",
+      "unoredinary:block/glacium/hit_6"
+    ]
+  },
+  "block.glacium.fall": {
+    "subtitle": "sounds.unoredinary.block.glacium.fall",
+    "sounds": [
+      "unoredinary:block/glacium/fall_1",
+      "unoredinary:block/glacium/fall_2",
+      "unoredinary:block/glacium/fall_3"
+    ]
+  },
+  "block.glacium.evaporate": {
+    "subtitle": "sounds.unoredinary.block.glacium.evaporate",
+    "sounds": [
+      "unoredinary:block/glacium/evaporate"
+    ]
+  }
+}

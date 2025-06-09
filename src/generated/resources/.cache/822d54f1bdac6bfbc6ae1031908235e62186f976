@@ -1,0 +1,5 @@
+// 1.21.1	2025-06-08T18:14:41.7062399	Tags for minecraft:block mod id unoredinary
+fbee23faabaee6d8072c866b19d95148416db98b data/c/tags/block/ores.json
+fbee23faabaee6d8072c866b19d95148416db98b data/c/tags/block/ores/glacium.json
+61dbcdab587871e7677bc9c68128dba7ff0e2789 data/minecraft/tags/block/mineable/pickaxe.json
+61dbcdab587871e7677bc9c68128dba7ff0e2789 data/minecraft/tags/block/needs_iron_tool.json

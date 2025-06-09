@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "c:nuggets/glacium"
+    },
+    {
+      "tag": "c:nuggets/glacium"
+    },
+    {
+      "tag": "c:nuggets/glacium"
+    },
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:snowball"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:blue_ice"
+  }
+}

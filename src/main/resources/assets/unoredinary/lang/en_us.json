@@ -1,5 +1,10 @@
 {
-  "itemGroup.unoredinary": "Example Mod Tab",
-  "block.unoredinary.example_block": "Example Block",
-  "item.unoredinary.example_item": "Example Item"
+  "block.unoredinary.glacium_ore": "Glacium Ore",
+  "block.unoredinary.glacial_core": "Glacial Core",
+
+  "item.unoredinary.glacium_shards": "Glacium Shards",
+  "item.unoredinary.glacium_crystal": "Glacium Crystal",
+
+  "creative_mode_tab.unoredinary.block": "UnOredinary: Blocks",
+  "creative_mode_tab.unoredinary.item": "UnOredinary: Items"
 }
