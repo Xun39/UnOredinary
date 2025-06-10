@@ -24,10 +24,12 @@ public class UnOredinary {
         ModSetup.setModId(MOD_ID);
 
         UOArmorMaterials.ARMOR_MATERIALS.register(modEventBus);
+        UOArmors.registerArmors();
         UOBlocks.BLOCKS.register(modEventBus);
         UOCreativeModeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         UOItems.ITEMS.register(modEventBus);
         UOSounds.SOUND_EVENTS.register(modEventBus);
+        UOTools.registerTools();
 
         NeoForge.EVENT_BUS.register(this);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

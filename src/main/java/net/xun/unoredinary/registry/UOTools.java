@@ -1,6 +1,5 @@
 package net.xun.unoredinary.registry;
 
-import net.minecraft.world.item.Item;
 import net.xun.lib.common.api.item.tools.GenericAttributeHelper;
 import net.xun.lib.common.api.item.tools.ToolSet;
 
@@ -11,7 +10,6 @@ public class UOTools {
     private static final List<ToolSet> TOOL_SETS = new ArrayList<>();
 
     public static final ToolSet FROSTSTEEL = register(new ToolSet.Builder("froststeel", UOToolTiers.FROSTSTEEL, new GenericAttributeHelper())
-            .withItemProperties(new Item.Properties())
             .withVanillaBalance()
             .build()
     );
@@ -22,11 +20,14 @@ public class UOTools {
 
     private static ToolSet register(ToolSet toolSet) {
         TOOL_SETS.add(toolSet);
-
-        toolSet.getItemsForRegistration().forEach((location, supplier) -> {
-            UOItems.ITEMS.register(location.getPath(), supplier);
-        });
-
         return toolSet;
+    }
+
+    public static void registerTools() {
+        getTools().forEach(toolSet -> {
+            toolSet.getItemsForRegistration().forEach((location, supplier) -> {
+                UOItems.ITEMS.register(location.getPath(), supplier);
+            });
+        });
     }
 }

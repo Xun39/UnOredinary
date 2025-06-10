@@ -13,8 +13,11 @@ import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.unoredinary.registry.UOSounds;
 
 public class GlaciumBlock extends Block {
-    public GlaciumBlock(Properties properties) {
+    private final boolean canMelt;
+
+    public GlaciumBlock(Properties properties, boolean canMelt) {
         super(properties);
+        this.canMelt = canMelt;
     }
 
     @Override
@@ -45,6 +48,9 @@ public class GlaciumBlock extends Block {
     @Override
     protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
         if (level.isClientSide)
+            return;
+
+        if (!canMelt)
             return;
 
         if (level.dimension() == Level.NETHER) {

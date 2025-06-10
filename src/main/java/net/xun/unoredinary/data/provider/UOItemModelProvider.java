@@ -1,5 +1,6 @@
 package net.xun.unoredinary.data.provider;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -71,14 +72,14 @@ public abstract class UOItemModelProvider extends ItemModelProvider {
 
                 getBuilder(currentTrimName)
                         .parent(new ModelFile.UncheckedModelFile("item/generated"))
-                        .texture("layer0", armorItemResLoc.getNamespace() + ":item/armors/" + armorItemResLoc.getPath())
+                        .texture("layer0", armorItemResLoc.getNamespace() + ":item/" + armorItemResLoc.getPath())
                         .texture("layer1", trimResLoc);
 
                 this.withExistingParent(CommonUtils.getRegistryID(item), mcLoc("item/generated"))
                         .override()
                         .model(new ModelFile.UncheckedModelFile(trimNameResLoc.getNamespace()  + ":item/" + trimNameResLoc.getPath()))
                         .predicate(mcLoc("trim_type"), trimValue).end()
-                        .texture("layer0", CommonUtils.modLoc("item/armors/" + CommonUtils.getRegistryID(item)));
+                        .texture("layer0", CommonUtils.modLoc("item/" + CommonUtils.getRegistryID(item)));
             });
         }
     }

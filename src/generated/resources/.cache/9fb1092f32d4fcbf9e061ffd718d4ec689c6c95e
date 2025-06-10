@@ -1,11 +1,13 @@
-// 1.21.1	2025-06-08T22:19:42.4423939	Recipes
+// 1.21.1	2025-06-09T22:13:22.7380984	Recipes
 4c3c590888d70231a0a7d60455e98dc85956730d data/minecraft/advancement/recipes/building_blocks/blue_ice.json
 b9d640d92ed58a396492e1ba7234e9d8edaa7f9b data/minecraft/advancement/recipes/building_blocks/ice.json
 f2cd24b876d3e99a4971951a4bf54e21e223d31a data/minecraft/advancement/recipes/building_blocks/packed_ice.json
 ea2c49ab47be048525869fd0c498593674ca1aef data/minecraft/recipe/blue_ice.json
 1da1a839ddef4406c7d32b38f509516057aba5c8 data/minecraft/recipe/ice.json
 db35a3c213c023ebbaf296f05c3aa38fe5586e20 data/minecraft/recipe/packed_ice.json
+f6ce64fb44605b6fdfba65f4a1eb4cc0e6e1099e data/unoredinary/advancement/recipes/combat/froststeel_sword.json
 7f61bbc6ce29029556bd9926840aa93511f3ae7b data/unoredinary/advancement/recipes/misc/froststeel_ingot.json
 0200ad4aa575c7e6a7f5f3234a3d70cbf16e0b6b data/unoredinary/advancement/recipes/misc/glacium_crystal.json
 089e0d149a3d508e3e6c5eec05e9d8577ed93a0c data/unoredinary/recipe/froststeel_ingot.json
+12c2dc376179c20599b0f5298966cb81b20f8ac3 data/unoredinary/recipe/froststeel_sword.json
 3d48dbada159412841dccf7d2419313b4284665a data/unoredinary/recipe/glacium_crystal.json

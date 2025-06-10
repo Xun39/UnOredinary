@@ -10,6 +10,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.xun.unoredinary.data.provider.UORecipeProvider;
 import net.xun.unoredinary.registry.UOItems;
+import net.xun.unoredinary.registry.UOTools;
 import net.xun.unoredinary.utils.UOTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -50,5 +51,7 @@ public class UORecipes extends UORecipeProvider {
                 .requires(Blocks.SNOW_BLOCK)
                 .unlockedBy(getHasName(Blocks.PACKED_ICE), has(Blocks.PACKED_ICE))
                 .save(recipeOutput);
+
+        swordRecipe(recipeOutput, Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), UOItems.FROSTSTEEL_INGOT, UOTools.FROSTSTEEL.getSword().get());
     }
 }

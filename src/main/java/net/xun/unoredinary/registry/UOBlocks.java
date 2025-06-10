@@ -24,14 +24,24 @@ public class UOBlocks {
                             .requiresCorrectToolForDrops()
                             .strength(3.0F, 2.0F)
                             .friction(0.98F)
-                            .sound(UOSoundTypes.GLACIUM)
+                            .sound(UOSoundTypes.GLACIUM),
+                    true
             )
     );
 
     public static final DeferredBlock<Block> GLACIAL_CORE = register("glacial_core",
             () -> new GlaciumBlock(
                     BlockBehaviour.Properties.ofFullCopy(UOBlocks.GLACIUM_ORE.get())
-                            .strength(4.0F, 3.0F)
+                            .strength(4.0F, 3.0F),
+                    true
+            )
+    );
+
+    public static final DeferredBlock<Block> GLACIUM_BLOCK = register("glacium_block",
+            () -> new GlaciumBlock(
+                    BlockBehaviour.Properties.ofFullCopy(UOBlocks.GLACIUM_ORE.get())
+                            .strength(5.0F, 6.0F),
+                    false
             )
     );
 

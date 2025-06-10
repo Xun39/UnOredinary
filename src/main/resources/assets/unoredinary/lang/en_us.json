@@ -5,6 +5,18 @@
   "item.unoredinary.glacium_shards": "Glacium Shards",
   "item.unoredinary.glacium_crystal": "Glacium Crystal",
 
+  "item.unoredinary.froststeel_sword": "Froststeel Sword",
+  "item.unoredinary.froststeel_axe": "Froststeel Axe",
+  "item.unoredinary.froststeel_pickaxe": "Froststeel Pickaxe",
+  "item.unoredinary.froststeel_hoe": "Froststeel Hoe",
+  "item.unoredinary.froststeel_shovel": "Froststeel Shovel",
+
+  "item.unoredinary.froststeel_helmet": "Froststeel Helmet",
+  "item.unoredinary.froststeel_chestplate": "Froststeel Chestplate",
+  "item.unoredinary.froststeel_leggings": "Froststeel Leggings",
+  "item.unoredinary.froststeel_boots": "Froststeel Boots",
+
   "creative_mode_tab.unoredinary.block": "UnOredinary: Blocks",
-  "creative_mode_tab.unoredinary.item": "UnOredinary: Items"
+  "creative_mode_tab.unoredinary.item": "UnOredinary: Items",
+  "creative_mode_tab.unoredinary.equipment": "UnOredinary: Equipments"
 }
