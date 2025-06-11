@@ -40,7 +40,7 @@ public class CryosteelArmorConfigurator implements ArmorConfigurator {
                 if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.CRYOSTEEL)) {
                     BlockPos groundPos = player.getBlockPosBelowThatAffectsMyMovement();
 
-                    BlockPosUtils.getDisc(groundPos, 5).forEach(pos -> {
+                    BlockPosUtils.getDisc(groundPos, 7).forEach(pos -> {
                         if (!level.getBlockState(pos).is(Blocks.WATER))
                             return;
 

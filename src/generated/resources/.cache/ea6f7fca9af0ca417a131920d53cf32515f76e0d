@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-11T16:23:31.790886	Tags for minecraft:item mod id unoredinary
+// 1.21.1	2025-06-11T17:14:31.4217323	Tags for minecraft:item mod id unoredinary
 470f14e69c0ebdf836b83b97df9ee3f2c86dd9e8 data/c/tags/item/gems.json
 470f14e69c0ebdf836b83b97df9ee3f2c86dd9e8 data/c/tags/item/gems/glacium.json
 007a67c1599b6ff046270ca9d9e7389935833e58 data/c/tags/item/ingots.json
@@ -6,3 +6,14 @@
 260131bb4bec1a134f69abc8d56802d1cee35bb3 data/c/tags/item/ingots/froststeel.json
 7e5f9cd230cec415042b36414fd9220b5bd3bf9d data/c/tags/item/nuggets.json
 7e5f9cd230cec415042b36414fd9220b5bd3bf9d data/c/tags/item/nuggets/glacium.json
+bed6ed53d3d771a25e705c192d33b2c819e84065 data/c/tags/item/tools/melee_weapon.json
+003e3197dcce6f256872375eb9808e3b71fc89af data/c/tags/item/tools/mining_tool.json
+e9987e4e50166b2143fca0e02d90fa1274b7a06b data/minecraft/tags/item/axes.json
+06d389c38384c0229e77864e8f6834c08f001fd8 data/minecraft/tags/item/chest_armor.json
+adc332d68db754d5078cc522480e91321f645195 data/minecraft/tags/item/foot_armor.json
+06858ee9a0cc3d3afa4957f146a38bf96ff4625b data/minecraft/tags/item/head_armor.json
+9441d10617e2c2cfe6c9eda02df442a1d4448582 data/minecraft/tags/item/hoes.json
+bebb9b1aa26f23848142bd065f60662968df98fe data/minecraft/tags/item/leg_armor.json
+003e3197dcce6f256872375eb9808e3b71fc89af data/minecraft/tags/item/pickaxes.json
+9763eb672db04a671af0c67a694c9d4605f8f5e6 data/minecraft/tags/item/shovels.json
+dd80c309b34de57a03fabbd189ed3736dcdf1aee data/minecraft/tags/item/swords.json

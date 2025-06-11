@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cryosteel_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:cryosteel_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unoredinary:cryosteel_hoe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cryosteel_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unoredinary:cryosteel_hoe"
+    ]
+  }
+}

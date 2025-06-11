@@ -65,5 +65,16 @@ public class UORecipes extends UORecipeProvider {
 
         toolsetRecipe(recipeOutput, UOTools.FROSTSTEEL, Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), UOItems.FROSTSTEEL_INGOT);
         armorsetRecipe(recipeOutput, UOArmors.FROSTSTEEL, Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), UOItems.FROSTSTEEL_INGOT);
+
+        // Cryosteel-related
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, UOItems.CRYOSTEEL_INGOT)
+                .requires(Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), 4)
+                .requires(Ingredient.of(UOTags.Items.GEMS_GLACIUM), 3)
+                .requires(Ingredient.of(Items.DIAMOND))
+                .unlockedBy(getHasName(UOItems.FROSTSTEEL_INGOT), has(UOItems.FROSTSTEEL_INGOT))
+                .save(recipeOutput); // TODO: Change the diamond to sapphire
+
+        toolsetRecipe(recipeOutput, UOTools.CRYOSTEEL, Ingredient.of(UOTags.Items.INGOTS_CRYOSTEEL), UOItems.CRYOSTEEL_INGOT);
+        armorsetRecipe(recipeOutput, UOArmors.CRYOSTEEL, Ingredient.of(UOTags.Items.INGOTS_CRYOSTEEL), UOItems.CRYOSTEEL_INGOT);
     }
 }

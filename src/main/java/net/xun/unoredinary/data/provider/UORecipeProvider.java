@@ -72,12 +72,12 @@ public abstract class UORecipeProvider extends RecipeProvider {
     }
 
     // Tools
-    protected static void toolsetRecipe(RecipeOutput recipeOutput, ToolSet toolSet, Ingredient ingredient, ItemLike unlockItem) {
-        swordRecipe(recipeOutput, ingredient, unlockItem, toolSet.getSword().get());
-        axeRecipe(recipeOutput, ingredient, unlockItem, toolSet.getAxe().get());
-        pickaxeRecipe(recipeOutput, ingredient, unlockItem, toolSet.getPickaxe().get());
-        hoeRecipe(recipeOutput, ingredient, unlockItem, toolSet.getHoe().get());
-        shovelRecipe(recipeOutput, ingredient, unlockItem, toolSet.getShovel().get());
+    protected static void toolsetRecipe(RecipeOutput recipeOutput, ToolSet toolSet, Ingredient ingredient, ItemLike ingredientAsItem) {
+        swordRecipe(recipeOutput, ingredient, ingredientAsItem, toolSet.getSword().get());
+        axeRecipe(recipeOutput, ingredient, ingredientAsItem, toolSet.getAxe().get());
+        pickaxeRecipe(recipeOutput, ingredient, ingredientAsItem, toolSet.getPickaxe().get());
+        hoeRecipe(recipeOutput, ingredient, ingredientAsItem, toolSet.getHoe().get());
+        shovelRecipe(recipeOutput, ingredient, ingredientAsItem, toolSet.getShovel().get());
     }
 
     protected static void swordRecipe(RecipeOutput recipeOutput, Ingredient ingredient, ItemLike unlockItem, Item result) {
@@ -131,11 +131,11 @@ public abstract class UORecipeProvider extends RecipeProvider {
     }
 
     // Armors
-    protected static void armorsetRecipe(RecipeOutput recipeOutput, ArmorSet armorSet, Ingredient ingredient, ItemLike unlockItem) {
-        helmetRecipe(recipeOutput, ingredient, unlockItem, armorSet.getHelmet().get());
-        chestplateRecipe(recipeOutput, ingredient, unlockItem, armorSet.getChestplate().get());
-        leggingsRecipe(recipeOutput, ingredient, unlockItem, armorSet.getLeggings().get());
-        bootsRecipe(recipeOutput, ingredient, unlockItem, armorSet.getBoots().get());
+    protected static void armorsetRecipe(RecipeOutput recipeOutput, ArmorSet armorSet, Ingredient ingredient, ItemLike ingredientAsItem) {
+        helmetRecipe(recipeOutput, ingredient, ingredientAsItem, armorSet.getHelmet().get());
+        chestplateRecipe(recipeOutput, ingredient, ingredientAsItem, armorSet.getChestplate().get());
+        leggingsRecipe(recipeOutput, ingredient, ingredientAsItem, armorSet.getLeggings().get());
+        bootsRecipe(recipeOutput, ingredient, ingredientAsItem, armorSet.getBoots().get());
     }
 
     protected static void helmetRecipe(RecipeOutput recipeOutput, Ingredient ingredient, ItemLike unlockItem, Item result) {

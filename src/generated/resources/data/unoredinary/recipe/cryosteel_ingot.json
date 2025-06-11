@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/froststeel"
+    },
+    {
+      "tag": "c:ingots/froststeel"
+    },
+    {
+      "tag": "c:ingots/froststeel"
+    },
+    {
+      "tag": "c:ingots/froststeel"
+    },
+    {
+      "tag": "c:gems/glacium"
+    },
+    {
+      "tag": "c:gems/glacium"
+    },
+    {
+      "tag": "c:gems/glacium"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "unoredinary:cryosteel_ingot"
+  }
+}

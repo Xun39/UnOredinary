@@ -18,6 +18,19 @@
   "item.unoredinary.froststeel_leggings": "Froststeel Leggings",
   "item.unoredinary.froststeel_boots": "Froststeel Boots",
 
+  "item.unoredinary.cryosteel_ingot": "Cryosteel Ingot",
+
+  "item.unoredinary.cryosteel_sword": "Cryosteel Sword",
+  "item.unoredinary.cryosteel_axe": "Cryosteel Axe",
+  "item.unoredinary.cryosteel_pickaxe": "Cryosteel Pickaxe",
+  "item.unoredinary.cryosteel_hoe": "Cryosteel Hoe",
+  "item.unoredinary.cryosteel_shovel": "Cryosteel Shovel",
+
+  "item.unoredinary.cryosteel_helmet": "Cryosteel Helmet",
+  "item.unoredinary.cryosteel_chestplate": "Cryosteel Chestplate",
+  "item.unoredinary.cryosteel_leggings": "Cryosteel Leggings",
+  "item.unoredinary.cryosteel_boots": "Cryosteel Boots",
+
   "creative_mode_tab.unoredinary.block": "UnOredinary: Blocks",
   "creative_mode_tab.unoredinary.item": "UnOredinary: Items",
   "creative_mode_tab.unoredinary.equipment": "UnOredinary: Equipments"

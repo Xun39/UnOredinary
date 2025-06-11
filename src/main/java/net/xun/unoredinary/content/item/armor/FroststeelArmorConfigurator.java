@@ -44,7 +44,7 @@ public class FroststeelArmorConfigurator implements ArmorConfigurator {
                 if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.FROSTSTEEL)) {
                     BlockPos groundPos = player.getBlockPosBelowThatAffectsMyMovement();
 
-                    BlockPosUtils.getDisc(groundPos, 2).forEach(pos -> {
+                    BlockPosUtils.getDisc(groundPos, 1).forEach(pos -> {
                         if (!level.getBlockState(pos).is(Blocks.WATER))
                             return;
 
