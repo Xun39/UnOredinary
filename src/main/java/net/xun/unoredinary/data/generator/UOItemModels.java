@@ -20,5 +20,9 @@ public class UOItemModels extends UOItemModelProvider {
         basicItem(UOItems.FROSTSTEEL_INGOT.get());
         toolSetModels(UOTools.FROSTSTEEL);
         armorSetModels(UOArmors.FROSTSTEEL);
+
+        basicItem(UOItems.CRYOSTEEL_INGOT.get());
+        toolSetModels(UOTools.CRYOSTEEL);
+        armorSetModels(UOArmors.CRYOSTEEL);
     }
 }

@@ -12,6 +12,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.UnOredinary;
+import net.xun.unoredinary.utils.UOTags;
 
 import java.util.EnumMap;
 import java.util.List;
@@ -23,12 +24,22 @@ public class UOArmorMaterials {
 
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> FROSTSTEEL = register("froststeel",
             Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
-                map.put(ArmorItem.Type.LEGGINGS, 5);
                 map.put(ArmorItem.Type.BOOTS, 2);
+                map.put(ArmorItem.Type.LEGGINGS, 5);
+                map.put(ArmorItem.Type.CHESTPLATE, 6);
+                map.put(ArmorItem.Type.HELMET, 2);
                 map.put(ArmorItem.Type.BODY, 5);
-            }), 16, 0.0F, 0.0F, () -> Ingredient.of(UOItems.FROSTSTEEL_INGOT), SoundEvents.ARMOR_EQUIP_IRON
+            }), 16, 0.0F, 0.0F, () -> Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), SoundEvents.ARMOR_EQUIP_IRON
+    );
+
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CRYOSTEEL = register("cryosteel",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+                map.put(ArmorItem.Type.BOOTS, 3);
+                map.put(ArmorItem.Type.LEGGINGS, 6);
+                map.put(ArmorItem.Type.CHESTPLATE, 8);
+                map.put(ArmorItem.Type.HELMET, 3);
+                map.put(ArmorItem.Type.BODY, 11);
+            }), 13, 3.0F, 0.1F, () -> Ingredient.of(UOTags.Items.INGOTS_CRYOSTEEL), SoundEvents.ARMOR_EQUIP_NETHERITE
     );
 
     private static DeferredHolder<ArmorMaterial, ArmorMaterial> register(String name,

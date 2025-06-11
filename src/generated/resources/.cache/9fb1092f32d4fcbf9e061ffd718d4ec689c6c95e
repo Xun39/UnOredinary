@@ -1,10 +1,11 @@
-// 1.21.1	2025-06-10T15:51:34.3989366	Recipes
+// 1.21.1	2025-06-11T16:23:31.7938867	Recipes
 4c3c590888d70231a0a7d60455e98dc85956730d data/minecraft/advancement/recipes/building_blocks/blue_ice.json
 b9d640d92ed58a396492e1ba7234e9d8edaa7f9b data/minecraft/advancement/recipes/building_blocks/ice.json
 f2cd24b876d3e99a4971951a4bf54e21e223d31a data/minecraft/advancement/recipes/building_blocks/packed_ice.json
 ea2c49ab47be048525869fd0c498593674ca1aef data/minecraft/recipe/blue_ice.json
 1da1a839ddef4406c7d32b38f509516057aba5c8 data/minecraft/recipe/ice.json
 db35a3c213c023ebbaf296f05c3aa38fe5586e20 data/minecraft/recipe/packed_ice.json
+44e52c1a1daec57551bc43444b37ae755f2b195f data/unoredinary/advancement/recipes/building_blocks/glacium_block.json
 26481658336310e00a254a41dd78b7d918e09341 data/unoredinary/advancement/recipes/combat/froststeel_boots.json
 02dec884eacf567eee4bc0f894d84841b034bcc8 data/unoredinary/advancement/recipes/combat/froststeel_chestplate.json
 e836c4ab9d97687ce8bb962acb8d592c59423621 data/unoredinary/advancement/recipes/combat/froststeel_helmet.json
@@ -12,6 +13,7 @@ a17d40a754f2354a681f36f11ad1e14b634ad2c1 data/unoredinary/advancement/recipes/co
 f6ce64fb44605b6fdfba65f4a1eb4cc0e6e1099e data/unoredinary/advancement/recipes/combat/froststeel_sword.json
 7f61bbc6ce29029556bd9926840aa93511f3ae7b data/unoredinary/advancement/recipes/misc/froststeel_ingot.json
 0200ad4aa575c7e6a7f5f3234a3d70cbf16e0b6b data/unoredinary/advancement/recipes/misc/glacium_crystal.json
+812fe18bb303e19fb7cac39900097b57a1e4db29 data/unoredinary/advancement/recipes/misc/unoredinaryglacium_crystal_from_glacium_block.json
 da15b678bcc204971365c7cbe9e1356dd3a9c202 data/unoredinary/advancement/recipes/tools/froststeel_axe.json
 667ee0091988b67f47584ec0116ae5050ce79788 data/unoredinary/advancement/recipes/tools/froststeel_hoe.json
 2af4763afe8ae259e5711625a1d6da4319fc4b9b data/unoredinary/advancement/recipes/tools/froststeel_pickaxe.json
@@ -26,4 +28,6 @@ a3e9a0d2ba8253db581dd73ac6bafcf74d301cfc data/unoredinary/recipe/froststeel_ingo
 b4ae1307791c6391cbaf7632325523e5a0b5f5c2 data/unoredinary/recipe/froststeel_pickaxe.json
 8d1a960d847f62d003990d35539cad81f1dd5cce data/unoredinary/recipe/froststeel_shovel.json
 12c2dc376179c20599b0f5298966cb81b20f8ac3 data/unoredinary/recipe/froststeel_sword.json
+f6fa9152b43be115c6a8fd3ef871d578aa32d044 data/unoredinary/recipe/glacium_block.json
 ad3de642928bb9ff1ed7d234db1514fb9e7c26db data/unoredinary/recipe/glacium_crystal.json
+992d7825eb0c33bc12e2a3008e4162c665b23dec data/unoredinary/recipe/unoredinaryglacium_crystal_from_glacium_block.json

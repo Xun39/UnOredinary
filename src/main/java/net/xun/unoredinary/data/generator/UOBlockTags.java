@@ -27,16 +27,19 @@ public class UOBlockTags extends BlockTagsProvider {
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 UOBlocks.GLACIUM_ORE.get(),
-                UOBlocks.GLACIAL_CORE.get()
+                UOBlocks.GLACIAL_CORE.get(),
+                UOBlocks.GLACIUM_BLOCK.get()
         );
 
         tag(BlockTags.NEEDS_IRON_TOOL).add(
                 UOBlocks.GLACIUM_ORE.get(),
-                UOBlocks.GLACIAL_CORE.get()
+                UOBlocks.GLACIAL_CORE.get(),
+                UOBlocks.GLACIUM_BLOCK.get()
         );
 
         // cTags: Ores
         addToTags(Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_GLACIUM), Set.of(UOBlocks.GLACIUM_ORE.get()));
+        addToTags(Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_GLACIUM), Set.of(UOBlocks.GLACIUM_BLOCK.get()));
     }
 
     private void addToTags(Collection<TagKey<Block>> tags, Collection<Block> entries) {

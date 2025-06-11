@@ -39,6 +39,7 @@ public class UOCreativeModeTabs {
                         output.accept(UOItems.GLACIUM_CRYSTAL);
 
                         output.accept(UOItems.FROSTSTEEL_INGOT);
+                        output.accept(UOItems.CRYOSTEEL_INGOT);
 
                     })
                     .build()

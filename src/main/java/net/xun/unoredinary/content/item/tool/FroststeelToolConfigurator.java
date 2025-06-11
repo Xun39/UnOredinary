@@ -76,7 +76,7 @@ public class FroststeelToolConfigurator implements ToolConfigurator {
                 target,
                 List.of(
                         MobEffectInstanceBuilder.of(MobEffects.MOVEMENT_SLOWDOWN)
-                                .withDuration(80)
+                                .withDuration(40)
                                 .withAmplifier(1)
                                 .build()
                 ),

@@ -28,14 +28,34 @@ public abstract class UORecipeProvider extends RecipeProvider {
                 .save(recipeOutput);
     }
 
-    protected static void threeByThreePacker(RecipeOutput recipeOutput, RecipeCategory category, ItemLike packed, Ingredient unpacked, ItemLike unlockItem) {
+    protected static void threeByThreePacker(RecipeOutput recipeOutput, RecipeCategory category, ItemLike packed, Ingredient unpacked, ItemLike unpackedItem) {
         ShapedRecipeBuilder.shaped(category, packed, 1)
                 .define('#', unpacked)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
-                .unlockedBy(getHasName(unlockItem), has(unlockItem))
+                .unlockedBy(getHasName(unpackedItem), has(unpackedItem))
                 .save(recipeOutput);
+    }
+
+    protected static void threeByThreePackerConvertible(RecipeOutput recipeOutput,
+                                                        RecipeCategory packedCategory,
+                                                        RecipeCategory unpackedCategory,
+                                                        Ingredient packed,
+                                                        ItemLike packedItem,
+                                                        Ingredient unpacked,
+                                                        ItemLike unpackedItem) {
+        ShapedRecipeBuilder.shaped(packedCategory, packedItem, 1)
+                .define('#', unpacked)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(unpackedItem), has(unpackedItem))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(unpackedCategory, unpackedItem, 9)
+                .requires(packed)
+                .unlockedBy(getHasName(packedItem), has(packedItem))
+                .save(recipeOutput, CommonUtils.modLoc(CommonUtils.namespacedID(getItemName(unpackedItem), "from", getItemName(packedItem))));
     }
 
     protected static void twoByTwoPackerConvertible(RecipeOutput recipeOutput, RecipeCategory packedCategory, RecipeCategory unpackedCategory, ItemLike packed, ItemLike unpacked) {

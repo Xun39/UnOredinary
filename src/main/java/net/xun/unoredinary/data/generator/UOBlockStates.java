@@ -14,5 +14,6 @@ public class UOBlockStates extends UOBlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(UOBlocks.GLACIUM_ORE);
         blockWithItem(UOBlocks.GLACIAL_CORE);
+        blockWithItem(UOBlocks.GLACIUM_BLOCK);
     }
 }

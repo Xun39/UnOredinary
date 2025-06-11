@@ -13,6 +13,7 @@ public class UOTags {
     public static class Blocks {
 
         public static final TagKey<Block> ORES_GLACIUM = createCommon("ores/glacium");
+        public static final TagKey<Block> STORAGE_BLOCKS_GLACIUM = createCommon("storage_blocks/glacium");
 
         private static TagKey<Block> create(String name) {
             return BlockTags.create(CommonUtils.modLoc(name));
@@ -28,6 +29,7 @@ public class UOTags {
         public static final TagKey<Item> GEMS_GLACIUM = createCommon("gems/glacium");
         public static final TagKey<Item> NUGGETS_GLACIUM = createCommon("nuggets/glacium");
         public static final TagKey<Item> INGOTS_FROSTSTEEL = createCommon("ingots/froststeel");
+        public static final TagKey<Item> INGOTS_CRYOSTEEL = createCommon("ingots/cryosteel");
 
         private static TagKey<Item> create(String name) {
             return ItemTags.create(CommonUtils.modLoc(name));

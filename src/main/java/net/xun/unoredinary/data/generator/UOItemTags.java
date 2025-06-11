@@ -33,6 +33,7 @@ public class UOItemTags extends ItemTagsProvider {
 
         // cTags: Ingots
         addToTags(Set.of(Tags.Items.INGOTS, UOTags.Items.INGOTS_FROSTSTEEL), Set.of(UOItems.FROSTSTEEL_INGOT.get()));
+        addToTags(Set.of(Tags.Items.INGOTS, UOTags.Items.INGOTS_CRYOSTEEL), Set.of(UOItems.CRYOSTEEL_INGOT.get()));
     }
 
     private void addToTags(Collection<TagKey<Item>> tags, Collection<Item> entries) {

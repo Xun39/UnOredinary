@@ -10,6 +10,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.xun.unoredinary.data.provider.UORecipeProvider;
 import net.xun.unoredinary.registry.UOArmors;
+import net.xun.unoredinary.registry.UOBlocks;
 import net.xun.unoredinary.registry.UOItems;
 import net.xun.unoredinary.registry.UOTools;
 import net.xun.unoredinary.utils.UOTags;
@@ -26,6 +27,15 @@ public class UORecipes extends UORecipeProvider {
 
         // Glacium crystal and ices
         threeByThreePacker(recipeOutput, RecipeCategory.MISC, UOItems.GLACIUM_CRYSTAL, Ingredient.of(UOTags.Items.NUGGETS_GLACIUM), UOItems.GLACIUM_SHARDS);
+        threeByThreePackerConvertible(
+                recipeOutput,
+                RecipeCategory.BUILDING_BLOCKS,
+                RecipeCategory.MISC,
+                Ingredient.of(UOBlocks.GLACIUM_BLOCK),
+                UOBlocks.GLACIUM_BLOCK,
+                Ingredient.of(UOTags.Items.GEMS_GLACIUM),
+                UOItems.GLACIUM_CRYSTAL
+        );
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.ICE)
                 .requires(Ingredient.of(UOTags.Items.NUGGETS_GLACIUM), 1)

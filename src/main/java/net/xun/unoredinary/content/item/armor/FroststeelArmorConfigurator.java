@@ -35,7 +35,6 @@ public class FroststeelArmorConfigurator implements ArmorConfigurator {
     @Override
     public ArmorItem createArmor(ArmorType type, Holder<ArmorMaterial> material, int durabilityFactor, Item.Properties props) {
         return new ArmorItem(material, type.getType(), props) {
-
             @Override
             public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
 
@@ -75,7 +74,7 @@ public class FroststeelArmorConfigurator implements ArmorConfigurator {
     }
 
     // TODO: Add attribute modifiers
-    private static ItemAttributeModifiers createAttributeModifiers() {
+    /* private static ItemAttributeModifiers createAttributeModifiers() {
         return ItemAttributeModifiers.builder()
                 .add(
                         Attributes.BURNING_TIME,
@@ -85,5 +84,5 @@ public class FroststeelArmorConfigurator implements ArmorConfigurator {
                                 AttributeModifier.Operation.ADD_VALUE
                         ), EquipmentSlotGroup.ARMOR)
                 .build();
-    }
+    } */
 }
