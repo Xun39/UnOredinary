@@ -3,12 +3,13 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "unoredinary:glacium_shards"
+      "tag": "c:nuggets/glacium"
     }
   },
   "pattern": [
-    "##",
-    "##"
+    "###",
+    "###",
+    "###"
   ],
   "result": {
     "count": 1,

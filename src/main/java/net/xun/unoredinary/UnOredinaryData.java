@@ -30,6 +30,7 @@ public class UnOredinaryData {
         generator.addProvider(client, new UOBlockStates(output, helper));
         generator.addProvider(client, new UOItemModels(output, helper));
 
+        generator.addProvider(server, new UOLootTables(output, registries));
         generator.addProvider(server, new UORecipes(output, registries));
         generator.addProvider(server, blockTagsProvider);
         generator.addProvider(server, new UOItemTags(output, registries, blockTagsProvider.contentsGetter(), helper));

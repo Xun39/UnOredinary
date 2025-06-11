@@ -1,6 +1,7 @@
 package net.xun.unoredinary.registry;
 
 import net.xun.lib.common.api.item.armor.ArmorSet;
+import net.xun.unoredinary.content.item.armor.FroststeelArmorConfigurator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +10,7 @@ public class UOArmors {
     private static final List<ArmorSet> ARMOR_SETS = new ArrayList<>();
 
     public static final ArmorSet FROSTSTEEL = register(new ArmorSet.Builder("froststeel", UOArmorMaterials.FROSTSTEEL)
+            .withConfiguration(new FroststeelArmorConfigurator())
             .withDurabilityFactor(27)
             .build()
     );

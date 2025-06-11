@@ -7,6 +7,6 @@ import net.neoforged.neoforge.common.SimpleTier;
 
 public class UOToolTiers {
     public static final Tier FROSTSTEEL = new SimpleTier(
-            BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1021, 6.0F, 2.0F, 16, () -> Ingredient.of(UOItems.FROSTSTEEL_INGOT)
+            BlockTags.INCORRECT_FOR_IRON_TOOL, 513, 6.5F, 2.0F, 16, () -> Ingredient.of(UOItems.FROSTSTEEL_INGOT)
     );
 }

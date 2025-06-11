@@ -2,6 +2,7 @@ package net.xun.unoredinary.registry;
 
 import net.xun.lib.common.api.item.tools.GenericAttributeHelper;
 import net.xun.lib.common.api.item.tools.ToolSet;
+import net.xun.unoredinary.content.item.tool.FroststeelToolConfigurator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ public class UOTools {
     private static final List<ToolSet> TOOL_SETS = new ArrayList<>();
 
     public static final ToolSet FROSTSTEEL = register(new ToolSet.Builder("froststeel", UOToolTiers.FROSTSTEEL, new GenericAttributeHelper())
+            .withConfiguration(new FroststeelToolConfigurator())
             .withVanillaBalance()
             .build()
     );

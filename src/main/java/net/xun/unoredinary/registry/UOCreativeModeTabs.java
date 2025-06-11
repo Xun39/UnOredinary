@@ -21,6 +21,9 @@ public class UOCreativeModeTabs {
                     .displayItems((parameters, output) ->  {
 
                         output.accept(UOBlocks.GLACIUM_ORE);
+                        output.accept(UOBlocks.GLACIAL_CORE);
+
+                        output.accept(UOBlocks.GLACIUM_BLOCK);
 
                     })
                     .build()
@@ -34,6 +37,8 @@ public class UOCreativeModeTabs {
 
                         output.accept(UOItems.GLACIUM_SHARDS);
                         output.accept(UOItems.GLACIUM_CRYSTAL);
+
+                        output.accept(UOItems.FROSTSTEEL_INGOT);
 
                     })
                     .build()

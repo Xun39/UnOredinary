@@ -3,6 +3,9 @@
   "category": "misc",
   "ingredients": [
     {
+      "tag": "c:nuggets/glacium"
+    },
+    {
       "item": "minecraft:iron_ingot"
     },
     {
@@ -16,9 +19,6 @@
     },
     {
       "item": "minecraft:packed_ice"
-    },
-    {
-      "item": "minecraft:snow_block"
     }
   ],
   "result": {
