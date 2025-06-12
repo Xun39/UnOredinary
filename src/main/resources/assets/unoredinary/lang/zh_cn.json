@@ -1,0 +1,39 @@
+{
+  "block.unoredinary.glacium_ore": "冰魄矿石",
+  "block.unoredinary.glacial_core": "极冰核心",
+
+  "block.unoredinary.glacium_block": "冰魄块",
+
+  "item.unoredinary.glacium_shards": "冰魄碎片",
+  "item.unoredinary.glacium_crystal": "冰魄晶体",
+
+  "item.unoredinary.froststeel_ingot": "霜铁锭",
+
+  "item.unoredinary.froststeel_sword": "霜铁剑",
+  "item.unoredinary.froststeel_axe": "霜铁斧",
+  "item.unoredinary.froststeel_pickaxe": "霜铁稿",
+  "item.unoredinary.froststeel_hoe": "霜铁锄",
+  "item.unoredinary.froststeel_shovel": "霜铁锹",
+
+  "item.unoredinary.froststeel_helmet": "霜铁头盔",
+  "item.unoredinary.froststeel_chestplate": "霜铁胸甲",
+  "item.unoredinary.froststeel_leggings": "霜铁护腿",
+  "item.unoredinary.froststeel_boots": "霜铁靴子",
+
+  "item.unoredinary.cryosteel_ingot": "凛钢锭",
+
+  "item.unoredinary.cryosteel_sword": "凛钢剑",
+  "item.unoredinary.cryosteel_axe": "凛钢斧",
+  "item.unoredinary.cryosteel_pickaxe": "凛钢镐",
+  "item.unoredinary.cryosteel_hoe": "凛钢锄",
+  "item.unoredinary.cryosteel_shovel": "凛钢锹",
+
+  "item.unoredinary.cryosteel_helmet": "凛钢头盔",
+  "item.unoredinary.cryosteel_chestplate": "凛钢胸甲",
+  "item.unoredinary.cryosteel_leggings": "凛钢护腿",
+  "item.unoredinary.cryosteel_boots": "凛钢靴子",
+
+  "creative_mode_tab.unoredinary.block": "玄矿录：方块",
+  "creative_mode_tab.unoredinary.item": "玄矿录：物品",
+  "creative_mode_tab.unoredinary.equipment": "玄矿录：装备"
+}

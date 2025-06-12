@@ -26,7 +26,7 @@ public class FroststeelToolConfigurator implements ToolConfigurator {
             }
 
             case AXE -> {
-                return new SwordItem(tier, properties) {
+                return new AxeItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
                         handleHitEffect(target);

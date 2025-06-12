@@ -2,6 +2,7 @@ package net.xun.unoredinary.registry;
 
 import net.xun.lib.common.api.item.tools.GenericAttributeHelper;
 import net.xun.lib.common.api.item.tools.ToolSet;
+import net.xun.lib.common.api.item.tools.ToolType;
 import net.xun.unoredinary.content.item.tool.CryosteelToolConfigurator;
 import net.xun.unoredinary.content.item.tool.FroststeelToolConfigurator;
 
@@ -20,6 +21,7 @@ public class UOTools {
     public static final ToolSet CRYOSTEEL = register(new ToolSet.Builder("cryosteel", UOToolTiers.CRYOSTEEL, new GenericAttributeHelper())
             .withConfiguration(new CryosteelToolConfigurator())
             .withVanillaBalance()
+            .withToolStats(ToolType.AXE, 5.0F, 1.0F)
             .build()
     );
 

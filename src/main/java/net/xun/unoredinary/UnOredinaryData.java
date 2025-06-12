@@ -35,6 +35,8 @@ public class UnOredinaryData {
         generator.addProvider(server, blockTagsProvider);
         generator.addProvider(server, new UOItemTags(output, registries, blockTagsProvider.contentsGetter(), helper));
 
+        generator.addProvider(server, new UODatapackEntries(output, registries));
+
         /*
         BlockTagsProvider blockTagsProvider = new UOBlockTags(output, registries, helper);
 
