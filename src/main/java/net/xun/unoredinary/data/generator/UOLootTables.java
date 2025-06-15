@@ -48,6 +48,8 @@ public class UOLootTables extends LootTableProvider {
             /* ------------------------------ STORAGE BLOCKS ------------------------------ */
             dropSelf(UOBlocks.CRYIC_BLOCK.get());
             dropSelf(UOBlocks.GLACIUM_BLOCK.get());
+            dropSelf(UOBlocks.FROSTSTEEL_BLOCK.get());
+            dropSelf(UOBlocks.CRYOSTEEL_BLOCK.get());
         }
 
         @Override

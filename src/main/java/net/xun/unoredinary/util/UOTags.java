@@ -15,7 +15,10 @@ public class UOTags {
         public static final TagKey<Block> ORES_FROSTBOUND = createCommon("ores/frostbound");
         public static final TagKey<Block> ORES_GLACIUM = createCommon("ores/glacium");
 
+        public static final TagKey<Block> STORAGE_BLOCKS_CRYIC = createCommon("storage_blocks/cryic");
         public static final TagKey<Block> STORAGE_BLOCKS_GLACIUM = createCommon("storage_blocks/glacium");
+        public static final TagKey<Block> STORAGE_BLOCKS_FROSTSTEEL = createCommon("storage_blocks/froststeel");
+        public static final TagKey<Block> STORAGE_BLOCKS_CRYOSTEEL = createCommon("storage_blocks/cryosteel");
 
         private static TagKey<Block> create(String name) {
             return BlockTags.create(CommonUtils.modLoc(name));

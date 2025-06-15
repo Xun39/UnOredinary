@@ -14,6 +14,7 @@ public class UOParticles extends ParticleDescriptionProvider {
 
     @Override
     protected void addDescriptions() {
-        this.spriteSet(UOParticleTypes.RIME.get(), CommonUtils.modLoc("rime"), 8, true);
+        spriteSet(UOParticleTypes.RIME.get(), CommonUtils.modLoc("rime"), 8, true);
+        spriteSet(UOParticleTypes.SUBZERO_FROST.get(), CommonUtils.modLoc("subzero_frost"), 5, true);
     }
 }

@@ -19,6 +19,9 @@ public class UOBlockStates extends UOBlockStateProvider {
         blockWithItem(UOBlocks.GLACIUM_ORE);
         blockWithItem(UOBlocks.PRIMAL_GLACIUM_ORE);
 
+        blockWithItem(UOBlocks.CRYIC_BLOCK);
         blockWithItem(UOBlocks.GLACIUM_BLOCK);
+        blockWithItem(UOBlocks.FROSTSTEEL_BLOCK);
+        blockWithItem(UOBlocks.CRYOSTEEL_BLOCK);
     }
 }

@@ -6,6 +6,7 @@ import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.*;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
@@ -25,6 +26,7 @@ import net.xun.lib.common.api.util.ArmorSlotsUtils;
 import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.registry.UOArmorMaterials;
+import net.xun.unoredinary.registry.UOArmors;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class CryosteelArmorConfigurator implements ArmorConfigurator {
@@ -58,19 +60,23 @@ public class CryosteelArmorConfigurator implements ArmorConfigurator {
 
     @SubscribeEvent
     public static void onHurt(LivingDamageEvent.Pre event) {
-        if (!(event.getEntity() instanceof Player player))
+        Entity attacker = event.getSource().getDirectEntity();
+        LivingEntity receiver = event.getEntity();
+
+        if (!(receiver instanceof Player player))
             return;
 
         if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.CRYOSTEEL)) {
-
             if (event.getSource().is(DamageTypeTags.BURN_FROM_STEPPING)) {
                 event.setNewDamage(0.0F);
             }
         }
 
-        if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.BODY.getIndex(), UOArmorMaterials.CRYOSTEEL)) {
+        if (!(attacker instanceof LivingEntity))
+            return;
 
-            event.getSource().getDirectEntity().hurt(event.getSource(), 2.0F);
+        if (ArmorSlotsUtils.hasFullArmorSetOfMaterial(player, UOArmorMaterials.CRYOSTEEL)) {
+            attacker.hurt(receiver.damageSources().freeze(), event.getOriginalDamage());
         }
     }
 }

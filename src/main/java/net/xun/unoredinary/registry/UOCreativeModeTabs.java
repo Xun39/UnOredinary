@@ -26,7 +26,10 @@ public class UOCreativeModeTabs {
                         output.accept(UOBlocks.GLACIUM_ORE);
                         output.accept(UOBlocks.PRIMAL_GLACIUM_ORE);
 
+                        output.accept(UOBlocks.CRYIC_BLOCK);
                         output.accept(UOBlocks.GLACIUM_BLOCK);
+                        output.accept(UOBlocks.FROSTSTEEL_BLOCK);
+                        output.accept(UOBlocks.CRYOSTEEL_BLOCK);
 
                     })
                     .build()

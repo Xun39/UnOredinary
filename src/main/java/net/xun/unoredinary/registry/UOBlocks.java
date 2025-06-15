@@ -53,6 +53,7 @@ public class UOBlocks {
     public static final DeferredBlock<Block> PRIMAL_GLACIUM_ORE = register("primal_glacium_ore",
             () -> new GlaciumBlock(
                     BlockBehaviour.Properties.ofFullCopy(UOBlocks.GLACIUM_ORE.get())
+                            .mapColor(MapColor.COLOR_LIGHT_BLUE)
                             .strength(20.0F, 1000.0F),
                     true
             )
@@ -75,6 +76,27 @@ public class UOBlocks {
                     BlockBehaviour.Properties.ofFullCopy(UOBlocks.PRIMAL_GLACIUM_ORE.get())
                             .strength(30.0F, 1000.0F),
                     false
+            )
+    );
+
+    public static final DeferredBlock<Block> FROSTSTEEL_BLOCK = register("froststeel_block",
+            () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.ICE)
+                            .instrument(NoteBlockInstrument.HARP)
+                            .requiresCorrectToolForDrops()
+                            .strength(5.0F, 6.0F)
+                            .sound(SoundType.METAL)
+            )
+    );
+
+    public static final DeferredBlock<Block> CRYOSTEEL_BLOCK = register("cryosteel_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BLUE)
+                    .instrument(NoteBlockInstrument.XYLOPHONE)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0F, 6.0F)
+                    .sound(SoundType.METAL)
             )
     );
 

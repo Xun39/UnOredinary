@@ -1,9 +1,11 @@
 package net.xun.unoredinary.content.item.tool;
 
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
@@ -89,18 +91,17 @@ public class CryosteelToolConfigurator implements ToolConfigurator {
     }
 
     private static void handleHitEffect(LivingEntity target, LivingEntity attacker, boolean applyFrostNova) {
-        if (!(attacker instanceof Player player))
+        if (!(attacker instanceof Player))
             return;
 
         Level level = target.level();
 
         if (applyFrostNova) {
-            level.getEntitiesOfClass(Mob.class, BlockPosUtils.createAABBFromCenter(
-                    player.getOnPos(), 5, 5, 2)
-            ).forEach(mob -> {
-
+            level.getEntitiesOfClass(Monster.class, BlockPosUtils.createAABBFromCenter(
+                    target.blockPosition(), 5, 2, 5)
+            ).forEach(monster -> {
                 MobEffectUtils.applyEffectsWithStrategy(
-                        mob,
+                        monster,
                         List.of(
                                 MobEffectInstanceBuilder.of(UOMobEffects.FROSTED_EFFECT)
                                         .withDuration(400)
@@ -109,6 +110,23 @@ public class CryosteelToolConfigurator implements ToolConfigurator {
                         ),
                         EffectStackingStrategy.FORCE_OVERRIDE
                 );
+
+                if (monster.level() instanceof ServerLevel serverLevel) {
+                    double centerX = monster.getX();
+                    double centerY = monster.getY() + monster.getBbHeight() / 2.0;
+                    double centerZ = monster.getZ();
+
+                    double halfWidth = monster.getBbWidth() / 2.0;
+                    double halfHeight = monster.getBbHeight() / 2.0;
+
+                    serverLevel.sendParticles(
+                            UOParticleTypes.SUBZERO_FROST.get(),
+                            centerX, centerY, centerZ,
+                            24,
+                            halfWidth, halfHeight, halfWidth,
+                            0.02
+                    );
+                }
             });
         }
 
@@ -128,24 +146,5 @@ public class CryosteelToolConfigurator implements ToolConfigurator {
                 ),
                 EffectStackingStrategy.UPGRADE_EXISTING
         );
-
-        // TODO: Add frost nova particles
-        /* if (level instanceof ServerLevel serverLevel) {
-
-            double centerX = target.getX();
-            double centerY = target.getY() + target.getBbHeight() / 2.0;
-            double centerZ = target.getZ();
-
-            double halfWidth = target.getBbWidth() / 2.0;
-            double halfHeight = target.getBbHeight() / 2.0;
-
-            serverLevel.sendParticles(
-                    UOParticleTypes.RIME.get(),
-                    centerX, centerY, centerZ,
-                    20,
-                    halfWidth, halfHeight, halfWidth,
-                    0.02
-            );
-        } */
     }
 }

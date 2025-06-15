@@ -32,7 +32,10 @@ public class UOBlockTags extends BlockTagsProvider {
                 UOBlocks.GLACIUM_ORE.get(),
                 UOBlocks.PRIMAL_GLACIUM_ORE.get(),
 
-                UOBlocks.GLACIUM_BLOCK.get()
+                UOBlocks.CRYIC_BLOCK.get(),
+                UOBlocks.GLACIUM_BLOCK.get(),
+                UOBlocks.FROSTSTEEL_BLOCK.get(),
+                UOBlocks.CRYOSTEEL_BLOCK.get()
         );
 
         tag(BlockTags.NEEDS_STONE_TOOL).add(
@@ -40,10 +43,16 @@ public class UOBlockTags extends BlockTagsProvider {
                 UOBlocks.DEEPSLATE_CRYIC_ORE.get()
         );
 
+        tag(BlockTags.NEEDS_IRON_TOOL).add(
+                UOBlocks.FROSTSTEEL_BLOCK.get()
+        );
+
         tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
                 UOBlocks.GLACIUM_ORE.get(),
                 UOBlocks.PRIMAL_GLACIUM_ORE.get(),
-                UOBlocks.GLACIUM_BLOCK.get()
+
+                UOBlocks.GLACIUM_BLOCK.get(),
+                UOBlocks.CRYOSTEEL_BLOCK.get()
         );
 
         // cTags: Ores
@@ -69,8 +78,23 @@ public class UOBlockTags extends BlockTagsProvider {
 
         // cTags: Storage Blocks
         addToTags(
+                Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_CRYIC),
+                Set.of(UOBlocks.CRYIC_BLOCK.get())
+        );
+
+        addToTags(
                 Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_GLACIUM),
                 Set.of(UOBlocks.GLACIUM_BLOCK.get())
+        );
+
+        addToTags(
+                Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_FROSTSTEEL),
+                Set.of(UOBlocks.FROSTSTEEL_BLOCK.get())
+        );
+
+        addToTags(
+                Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_CRYOSTEEL),
+                Set.of(UOBlocks.CRYOSTEEL_BLOCK.get())
         );
     }
 

@@ -79,12 +79,11 @@ public class UORecipes extends UORecipeProvider {
 
         copySmithingTemplate(recipeOutput, UOItems.CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE, Ingredient.of(Blocks.ICE, Blocks.PACKED_ICE, Blocks.BLUE_ICE));
 
+        cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOTools.FROSTSTEEL.getSword().get(), UOTools.CRYOSTEEL.getSword().get());
         cryosteelSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getAxe().get(), UOTools.CRYOSTEEL.getAxe().get());
         cryosteelSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getPickaxe().get(), UOTools.CRYOSTEEL.getPickaxe().get());
         cryosteelSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getHoe().get(), UOTools.CRYOSTEEL.getHoe().get());
         cryosteelSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getShovel().get(), UOTools.CRYOSTEEL.getShovel().get());
-
-        cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOTools.FROSTSTEEL.getSword().get(), UOTools.CRYOSTEEL.getSword().get());
 
         cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getHelmet().get(), UOArmors.CRYOSTEEL.getHelmet().get());
         cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getChestplate().get(), UOArmors.CRYOSTEEL.getChestplate().get());
