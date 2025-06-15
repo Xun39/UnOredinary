@@ -1,7 +1,9 @@
 {
   "values": [
+    "unoredinary:cryic_ore",
+    "unoredinary:deepslate_cryic_ore",
     "unoredinary:glacium_ore",
-    "unoredinary:glacial_core",
+    "unoredinary:primal_glacium_ore",
     "unoredinary:glacium_block"
   ]
 }

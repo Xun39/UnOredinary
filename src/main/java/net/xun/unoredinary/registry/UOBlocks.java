@@ -3,6 +3,7 @@ package net.xun.unoredinary.registry;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
@@ -16,31 +17,63 @@ import java.util.function.Supplier;
 public class UOBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(UnOredinary.MOD_ID);
 
+    // Ores
+    public static final DeferredBlock<Block> CRYIC_ORE = register("cryic_ore",
+            () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(3.0F, 3.0F)
+            )
+    );
+
+    public static final DeferredBlock<Block> DEEPSLATE_CRYIC_ORE = register("deepslate_cryic_ore",
+            () -> new Block(
+                    BlockBehaviour.Properties.ofFullCopy(UOBlocks.CRYIC_ORE.get())
+                            .mapColor(MapColor.DEEPSLATE)
+                            .strength(4.5F, 3.0F)
+                            .sound(SoundType.DEEPSLATE)
+            )
+    );
+
     public static final DeferredBlock<Block> GLACIUM_ORE = register("glacium_ore",
             () -> new GlaciumBlock(
                     BlockBehaviour.Properties.of()
                             .mapColor(MapColor.ICE)
                             .instrument(NoteBlockInstrument.FLUTE)
                             .requiresCorrectToolForDrops()
-                            .strength(3.0F, 2.0F)
+                            .strength(10.0F, 1000.0F)
                             .friction(0.98F)
                             .sound(UOSoundTypes.GLACIUM),
                     true
             )
     );
 
-    public static final DeferredBlock<Block> GLACIAL_CORE = register("glacial_core",
+    public static final DeferredBlock<Block> PRIMAL_GLACIUM_ORE = register("primal_glacium_ore",
             () -> new GlaciumBlock(
                     BlockBehaviour.Properties.ofFullCopy(UOBlocks.GLACIUM_ORE.get())
-                            .strength(4.0F, 3.0F),
+                            .strength(20.0F, 1000.0F),
                     true
+            )
+    );
+
+    // Storage Blocks
+    public static final DeferredBlock<Block> CRYIC_BLOCK = register("cryic_block",
+            () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.GLOW_LICHEN)
+                            .instrument(NoteBlockInstrument.CHIME)
+                            .requiresCorrectToolForDrops()
+                            .strength(5.0F, 6.0F)
+                            .sound(SoundType.METAL)
             )
     );
 
     public static final DeferredBlock<Block> GLACIUM_BLOCK = register("glacium_block",
             () -> new GlaciumBlock(
-                    BlockBehaviour.Properties.ofFullCopy(UOBlocks.GLACIUM_ORE.get())
-                            .strength(5.0F, 6.0F),
+                    BlockBehaviour.Properties.ofFullCopy(UOBlocks.PRIMAL_GLACIUM_ORE.get())
+                            .strength(30.0F, 1000.0F),
                     false
             )
     );

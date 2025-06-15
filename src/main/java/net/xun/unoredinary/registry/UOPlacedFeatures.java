@@ -13,6 +13,9 @@ import java.util.List;
 
 public class UOPlacedFeatures {
 
+    public static final ResourceKey<PlacedFeature> ORE_CRYIC = createKey("ore_cryic");
+    public static final ResourceKey<PlacedFeature> ORE_CRYIC_LOWER = createKey("ore_cryic_lower");
+
     public static final ResourceKey<PlacedFeature> ORE_GLACIUM = createKey("ore_glacium");
     public static final ResourceKey<PlacedFeature> ORE_GLACIUM_RARE = createKey("ore_glacium_rare");
     public static final ResourceKey<PlacedFeature> ORE_GLACIUM_LARGE = createKey("ore_glacium_large");
@@ -20,19 +23,31 @@ public class UOPlacedFeatures {
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        register(context, ORE_CRYIC, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_CRYIC),
+                List.of(CountPlacement.of(6), InSquarePlacement.spread(),
+                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(16), VerticalAnchor.absolute(54)),
+                        BiomeFilter.biome())
+        );
+
+        register(context, ORE_CRYIC_LOWER, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_CRYIC),
+                List.of(CountPlacement.of(8), InSquarePlacement.spread(),
+                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-32), VerticalAnchor.aboveBottom(32)),
+                        BiomeFilter.biome())
+        );
+
         register(context, ORE_GLACIUM, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_GLACIUM),
-                List.of(CountPlacement.of(82), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(360)),
+                List.of(CountPlacement.of(52), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(32), VerticalAnchor.absolute(360)),
                         BiomeFilter.biome())
         );
         register(context, ORE_GLACIUM_RARE, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_GLACIUM_RARE),
-                List.of(RarityFilter.onAverageOnceEvery(48), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(360)),
+                List.of(CountPlacement.of(36), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(32), VerticalAnchor.absolute(360)),
                         BiomeFilter.biome())
         );
         register(context, ORE_GLACIUM_LARGE, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_GLACIUM_LARGE),
-                List.of(CountPlacement.of(76), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(360)),
+                List.of(CountPlacement.of(48), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(32), VerticalAnchor.absolute(360)),
                         BiomeFilter.biome())
         );
     }

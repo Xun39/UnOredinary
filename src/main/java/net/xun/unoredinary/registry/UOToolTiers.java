@@ -4,7 +4,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.SimpleTier;
-import net.xun.unoredinary.utils.UOTags;
+import net.xun.unoredinary.util.UOTags;
 
 public class UOToolTiers {
 

@@ -1,4 +1,7 @@
-// 1.21.1	2025-06-10T15:51:34.397936	Loot Tables
-fe208c382a97e6849ac88b264b65dac54234149f data/unoredinary/loot_table/blocks/glacial_core.json
+// 1.21.1	2025-06-14T11:15:31.0211748	Loot Tables
+f9342a1cafd4aac1c5f6c0f17c81b38d6809531c data/unoredinary/loot_table/blocks/cryic_block.json
+fbc47daa029598d631a65d26a25c08672a2a43e9 data/unoredinary/loot_table/blocks/cryic_ore.json
+2daf7a02c40e4a024bf80b437b41c2d8136e9fb9 data/unoredinary/loot_table/blocks/deepslate_cryic_ore.json
 fda71217f6c042679719d8cc91945dcf86d804df data/unoredinary/loot_table/blocks/glacium_block.json
-b9685439acd02ba9f56bf6e7461966f9a92a1dfd data/unoredinary/loot_table/blocks/glacium_ore.json
+e0f5098d3744f7bcb79f9ae2d6952ca74bc8e64d data/unoredinary/loot_table/blocks/glacium_ore.json
+f3454c602ff87ceb5b3340b56f4dc357ba8d2309 data/unoredinary/loot_table/blocks/primal_glacium_ore.json

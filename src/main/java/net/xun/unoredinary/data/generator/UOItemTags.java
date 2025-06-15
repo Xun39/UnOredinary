@@ -9,12 +9,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.xun.lib.common.api.item.armor.ArmorSet;
 import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.registry.UOArmors;
 import net.xun.unoredinary.registry.UOItems;
 import net.xun.unoredinary.registry.UOTools;
-import net.xun.unoredinary.utils.UOTags;
+import net.xun.unoredinary.util.UOTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
@@ -59,6 +58,9 @@ public class UOItemTags extends ItemTagsProvider {
         addToTags(
                 Set.of(ItemTags.FOOT_ARMOR),
                 UOArmors.getArmors().stream().map(armorSet -> (Item) armorSet.getBoots().get()).toList());
+
+        addToTags(Set.of(ItemTags.FREEZE_IMMUNE_WEARABLES), UOArmors.FROSTSTEEL.getAll());
+        addToTags(Set.of(ItemTags.FREEZE_IMMUNE_WEARABLES), UOArmors.CRYOSTEEL.getAll());
 
         // cTags: Gems
         addToTags(Set.of(Tags.Items.GEMS, UOTags.Items.GEMS_GLACIUM), Set.of(UOItems.GLACIUM_CRYSTAL.get()));

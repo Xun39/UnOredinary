@@ -1,10 +1,15 @@
 {
+  "block.unoredinary.cryic_ore": "Cryic Ore",
+  "block.unoredinary.deepslate_cryic_ore": "Deepslate Cryic Ore",
+
   "block.unoredinary.glacium_ore": "Glacium Ore",
-  "block.unoredinary.glacial_core": "Glacial Core",
+  "block.unoredinary.primal_glacium_ore": "Primal Glacium Ore",
 
   "block.unoredinary.glacium_block": "Block of Glacium",
 
-  "item.unoredinary.glacium_shards": "Glacium Shards",
+  "item.unoredinary.cryic_powder": "Cryic Powder",
+
+  "item.unoredinary.glacium_shard": "Glacium Shard",
   "item.unoredinary.glacium_crystal": "Glacium Crystal",
 
   "item.unoredinary.froststeel_ingot": "Froststeel Ingot",
@@ -32,6 +37,17 @@
   "item.unoredinary.cryosteel_chestplate": "Cryosteel Chestplate",
   "item.unoredinary.cryosteel_leggings": "Cryosteel Leggings",
   "item.unoredinary.cryosteel_boots": "Cryosteel Boots",
+
+  "item.unoredinary.cryosteel_upgrade_smithing_template": "Smithing Template",
+
+  "upgrade.unoredinary.cryosteel_upgrade": "Cryosteel Upgrade",
+  "item.unoredinary.smithing_template.cryosteel_upgrade.applies_to": "Froststeel Equipment",
+  "item.unoredinary.smithing_template.cryosteel_upgrade.ingredients": "Cryosteel Ingot",
+  "item.unoredinary.smithing_template.cryosteel_upgrade.base_slot_description": "Add froststeel armor, weapon, or tool",
+  "item.unoredinary.smithing_template.cryosteel_upgrade.additions_slot_description": "Add Cryosteel Ingot",
+
+  "advancement.unoredinary.get_cryic_fragment": "Frozen Foundations",
+  "advancement.unoredinary.get_cryic_fragment.desc": "Mine Frostbound Ore in cold biomes",
 
   "creative_mode_tab.unoredinary.block": "UnOredinary: Blocks",
   "creative_mode_tab.unoredinary.item": "UnOredinary: Items",

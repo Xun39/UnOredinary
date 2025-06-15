@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_glacium_shards": {
+    "has_cryic_powder": {
       "conditions": {
         "items": [
           {
-            "items": "unoredinary:glacium_shards"
+            "items": "unoredinary:cryic_powder"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_glacium_shards"
+      "has_cryic_powder"
     ]
   ],
   "rewards": {

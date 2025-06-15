@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glacium_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:glacium_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unoredinary:glacium_block_from_glacium_crystal"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_glacium_crystal"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unoredinary:glacium_block_from_glacium_crystal"
+    ]
+  }
+}

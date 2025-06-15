@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "unoredinary:cryic_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "unoredinary:cryic_powder"
+  }
+}

@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_packed_ice": {
+    "has_cryic_powder": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:packed_ice"
+            "items": "unoredinary:cryic_powder"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_packed_ice"
+      "has_cryic_powder"
     ]
   ],
   "rewards": {

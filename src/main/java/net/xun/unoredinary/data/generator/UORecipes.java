@@ -13,7 +13,7 @@ import net.xun.unoredinary.registry.UOArmors;
 import net.xun.unoredinary.registry.UOBlocks;
 import net.xun.unoredinary.registry.UOItems;
 import net.xun.unoredinary.registry.UOTools;
-import net.xun.unoredinary.utils.UOTags;
+import net.xun.unoredinary.util.UOTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -25,7 +25,28 @@ public class UORecipes extends UORecipeProvider {
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
 
-        // Glacium crystal and ices
+        // Cryic-related
+        threeByThreePackerConvertible(recipeOutput, RecipeCategory.BUILDING_BLOCKS, RecipeCategory.MISC, UOBlocks.CRYIC_BLOCK, UOItems.CRYIC_POWDER);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.ICE)
+                .requires(UOItems.CRYIC_POWDER, 1)
+                .requires(Blocks.SNOW_BLOCK, 1)
+                .unlockedBy(getHasName(UOItems.CRYIC_POWDER), has(UOItems.CRYIC_POWDER))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.PACKED_ICE)
+                .requires(UOItems.CRYIC_POWDER, 2)
+                .requires(Blocks.SNOW_BLOCK, 2)
+                .unlockedBy(getHasName(UOItems.CRYIC_POWDER), has(UOItems.CRYIC_POWDER))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.BLUE_ICE)
+                .requires(UOItems.CRYIC_POWDER, 3)
+                .requires(Blocks.SNOW_BLOCK, 3)
+                .unlockedBy(getHasName(UOItems.CRYIC_POWDER), has(UOItems.CRYIC_POWDER))
+                .save(recipeOutput);
+
+        // Glacium-related
         threeByThreePacker(recipeOutput, RecipeCategory.MISC, UOItems.GLACIUM_CRYSTAL, Ingredient.of(UOTags.Items.NUGGETS_GLACIUM), UOItems.GLACIUM_SHARDS);
         threeByThreePackerConvertible(
                 recipeOutput,
@@ -37,30 +58,12 @@ public class UORecipes extends UORecipeProvider {
                 UOItems.GLACIUM_CRYSTAL
         );
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.ICE)
-                .requires(Ingredient.of(UOTags.Items.NUGGETS_GLACIUM), 1)
-                .requires(Items.SNOWBALL, 1)
-                .unlockedBy(getHasName(UOItems.GLACIUM_SHARDS), has(UOItems.GLACIUM_SHARDS))
-                .save(recipeOutput);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.PACKED_ICE)
-                .requires(Ingredient.of(UOTags.Items.NUGGETS_GLACIUM), 2)
-                .requires(Items.SNOWBALL, 2)
-                .unlockedBy(getHasName(UOItems.GLACIUM_SHARDS), has(UOItems.GLACIUM_SHARDS))
-                .save(recipeOutput);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.BLUE_ICE)
-                .requires(Ingredient.of(UOTags.Items.NUGGETS_GLACIUM), 3)
-                .requires(Items.SNOWBALL, 3)
-                .unlockedBy(getHasName(UOItems.GLACIUM_SHARDS), has(UOItems.GLACIUM_SHARDS))
-                .save(recipeOutput);
-
         // Froststeel-related
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, UOItems.FROSTSTEEL_INGOT)
-                .requires(Ingredient.of(UOTags.Items.NUGGETS_GLACIUM))
+                .requires(UOItems.CRYIC_POWDER, 2)
                 .requires(Items.IRON_INGOT, 3)
-                .requires(Blocks.PACKED_ICE, 2)
-                .unlockedBy(getHasName(Blocks.PACKED_ICE), has(Blocks.PACKED_ICE))
+                .requires(Blocks.PACKED_ICE)
+                .unlockedBy(getHasName(UOItems.CRYIC_POWDER), has(UOItems.CRYIC_POWDER))
                 .save(recipeOutput);
 
         toolsetRecipe(recipeOutput, UOTools.FROSTSTEEL, Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), UOItems.FROSTSTEEL_INGOT);
@@ -74,7 +77,18 @@ public class UORecipes extends UORecipeProvider {
                 .unlockedBy(getHasName(UOItems.FROSTSTEEL_INGOT), has(UOItems.FROSTSTEEL_INGOT))
                 .save(recipeOutput); // TODO: Change the diamond to sapphire
 
-        toolsetRecipe(recipeOutput, UOTools.CRYOSTEEL, Ingredient.of(UOTags.Items.INGOTS_CRYOSTEEL), UOItems.CRYOSTEEL_INGOT);
-        armorsetRecipe(recipeOutput, UOArmors.CRYOSTEEL, Ingredient.of(UOTags.Items.INGOTS_CRYOSTEEL), UOItems.CRYOSTEEL_INGOT);
+        copySmithingTemplate(recipeOutput, UOItems.CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE, Ingredient.of(Blocks.ICE, Blocks.PACKED_ICE, Blocks.BLUE_ICE));
+
+        cryosteelSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getAxe().get(), UOTools.CRYOSTEEL.getAxe().get());
+        cryosteelSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getPickaxe().get(), UOTools.CRYOSTEEL.getPickaxe().get());
+        cryosteelSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getHoe().get(), UOTools.CRYOSTEEL.getHoe().get());
+        cryosteelSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getShovel().get(), UOTools.CRYOSTEEL.getShovel().get());
+
+        cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOTools.FROSTSTEEL.getSword().get(), UOTools.CRYOSTEEL.getSword().get());
+
+        cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getHelmet().get(), UOArmors.CRYOSTEEL.getHelmet().get());
+        cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getChestplate().get(), UOArmors.CRYOSTEEL.getChestplate().get());
+        cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getLeggings().get(), UOArmors.CRYOSTEEL.getLeggings().get());
+        cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getBoots().get(), UOArmors.CRYOSTEEL.getBoots().get());
     }
 }

@@ -12,7 +12,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.UnOredinary;
-import net.xun.unoredinary.utils.UOTags;
+import net.xun.unoredinary.util.UOTags;
 
 import java.util.EnumMap;
 import java.util.List;

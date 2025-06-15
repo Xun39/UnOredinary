@@ -14,6 +14,9 @@ public class UOItemModels extends UOItemModelProvider {
 
     @Override
     protected void registerModels() {
+
+        basicItem(UOItems.CRYIC_POWDER.get());
+
         basicItem(UOItems.GLACIUM_SHARDS.get());
         basicItem(UOItems.GLACIUM_CRYSTAL.get());
 
@@ -24,5 +27,7 @@ public class UOItemModels extends UOItemModelProvider {
         basicItem(UOItems.CRYOSTEEL_INGOT.get());
         toolSetModels(UOTools.CRYOSTEEL);
         armorSetModels(UOArmors.CRYOSTEEL);
+
+        basicItem(UOItems.CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE.get());
     }
 }

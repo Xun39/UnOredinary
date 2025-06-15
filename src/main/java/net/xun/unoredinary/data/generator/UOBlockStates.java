@@ -12,8 +12,13 @@ public class UOBlockStates extends UOBlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+
+        blockWithItem(UOBlocks.CRYIC_ORE);
+        blockWithItem(UOBlocks.DEEPSLATE_CRYIC_ORE);
+
         blockWithItem(UOBlocks.GLACIUM_ORE);
-        blockWithItem(UOBlocks.GLACIAL_CORE);
+        blockWithItem(UOBlocks.PRIMAL_GLACIUM_ORE);
+
         blockWithItem(UOBlocks.GLACIUM_BLOCK);
     }
 }

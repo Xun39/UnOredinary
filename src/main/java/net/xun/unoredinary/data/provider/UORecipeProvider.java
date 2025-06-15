@@ -10,6 +10,8 @@ import net.minecraft.world.level.ItemLike;
 import net.xun.lib.common.api.item.armor.ArmorSet;
 import net.xun.lib.common.api.item.tools.ToolSet;
 import net.xun.lib.common.api.util.CommonUtils;
+import net.xun.unoredinary.registry.UOItems;
+import net.xun.unoredinary.util.UOTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -17,6 +19,8 @@ public abstract class UORecipeProvider extends RecipeProvider {
     public UORecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries);
     }
+
+    /* ---------------------------------------- Crafting ---------------------------------------- */
 
     // Common recipes
     protected static void twoByTwoPacker(RecipeOutput recipeOutput, RecipeCategory category, ItemLike packed, Ingredient unpacked, ItemLike unlockItem) {
@@ -28,6 +32,25 @@ public abstract class UORecipeProvider extends RecipeProvider {
                 .save(recipeOutput);
     }
 
+    protected static void twoByTwoPackerConvertible(RecipeOutput recipeOutput,
+                                                    RecipeCategory packedCategory,
+                                                    RecipeCategory unpackedCategory,
+                                                    Ingredient packed,
+                                                    ItemLike packedItem,
+                                                    Ingredient unpacked,
+                                                    ItemLike unpackedItem) {
+        ShapedRecipeBuilder.shaped(packedCategory, packedItem, 1)
+                .define('#', unpacked)
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy(getHasName(unpackedItem), has(unpackedItem))
+                .save(recipeOutput, CommonUtils.modLoc(getItemName(packedItem) + "_from_" + getItemName(unpackedItem)));
+        ShapelessRecipeBuilder.shapeless(unpackedCategory, unpackedItem, 9)
+                .requires(packed)
+                .unlockedBy(getHasName(packedItem), has(packedItem))
+                .save(recipeOutput, CommonUtils.modLoc(getItemName(unpackedItem) + "_from_" + getItemName(packedItem)));
+    }
+
     protected static void threeByThreePacker(RecipeOutput recipeOutput, RecipeCategory category, ItemLike packed, Ingredient unpacked, ItemLike unpackedItem) {
         ShapedRecipeBuilder.shaped(category, packed, 1)
                 .define('#', unpacked)
@@ -36,6 +59,10 @@ public abstract class UORecipeProvider extends RecipeProvider {
                 .pattern("###")
                 .unlockedBy(getHasName(unpackedItem), has(unpackedItem))
                 .save(recipeOutput);
+    }
+
+    protected static void threeByThreePackerConvertible(RecipeOutput recipeOutput, RecipeCategory packedCategory, RecipeCategory unpackedCategory, ItemLike packed, ItemLike unpacked) {
+        threeByThreePackerConvertible(recipeOutput, packedCategory, unpackedCategory, Ingredient.of(packed), packed, Ingredient.of(unpacked), unpacked);
     }
 
     protected static void threeByThreePackerConvertible(RecipeOutput recipeOutput,
@@ -51,24 +78,21 @@ public abstract class UORecipeProvider extends RecipeProvider {
                 .pattern("###")
                 .pattern("###")
                 .unlockedBy(getHasName(unpackedItem), has(unpackedItem))
-                .save(recipeOutput);
+                .save(recipeOutput, CommonUtils.modLoc(getItemName(packedItem) + "_from_" + getItemName(unpackedItem)));
         ShapelessRecipeBuilder.shapeless(unpackedCategory, unpackedItem, 9)
                 .requires(packed)
                 .unlockedBy(getHasName(packedItem), has(packedItem))
-                .save(recipeOutput, CommonUtils.modLoc(CommonUtils.namespacedID(getItemName(unpackedItem), "from", getItemName(packedItem))));
+                .save(recipeOutput, CommonUtils.modLoc(getItemName(unpackedItem) + "_from_" + getItemName(packedItem)));
     }
 
-    protected static void twoByTwoPackerConvertible(RecipeOutput recipeOutput, RecipeCategory packedCategory, RecipeCategory unpackedCategory, ItemLike packed, ItemLike unpacked) {
-        ShapedRecipeBuilder.shaped(packedCategory, packed, 1)
-                .define('#', unpacked)
-                .pattern("##")
-                .pattern("##")
-                .unlockedBy(getHasName(unpacked), has(unpacked))
-                .save(recipeOutput, CommonUtils.modLoc(CommonUtils.namespacedID(getItemName(packed), "from", getItemName(unpacked))));
-        ShapelessRecipeBuilder.shapeless(unpackedCategory, unpacked, 4)
-                .requires(packed)
-                .unlockedBy(getHasName(packed), has(packed))
-                .save(recipeOutput, CommonUtils.modLoc(CommonUtils.namespacedID(getItemName(unpacked), "from", getItemName(packed))));
+    protected static void surroundByEightRecipe(RecipeOutput recipeOutput, RecipeCategory category, Ingredient surrounds, Ingredient center, ItemLike surroundsAsItem, ItemLike result) {
+        ShapedRecipeBuilder.shaped(category, result)
+                .define('#', surrounds).define('*', center)
+                .pattern("###")
+                .pattern("#*#")
+                .pattern("###")
+                .unlockedBy(getHasName(surroundsAsItem), has(surroundsAsItem))
+                .save(recipeOutput);
     }
 
     // Tools
@@ -174,5 +198,16 @@ public abstract class UORecipeProvider extends RecipeProvider {
                 .pattern("# #")
                 .unlockedBy(getHasName(unlockItem), has(unlockItem))
                 .save(recipeOutput);
+    }
+
+    /* ---------------------------------------- Smithing ---------------------------------------- */
+
+    protected static void cryosteelSmithing(RecipeOutput recipeOutput, RecipeCategory category, Item ingredientItem, Item resultItem) {
+        SmithingTransformRecipeBuilder
+                .smithing(
+                        Ingredient.of(UOItems.CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ingredientItem), Ingredient.of(UOTags.Items.INGOTS_CRYOSTEEL), category, resultItem
+                )
+                .unlocks(getHasName(UOItems.CRYOSTEEL_INGOT), has(UOItems.CRYOSTEEL_INGOT))
+                .save(recipeOutput, CommonUtils.modLoc(getItemName(resultItem) + "_smithing"));
     }
 }

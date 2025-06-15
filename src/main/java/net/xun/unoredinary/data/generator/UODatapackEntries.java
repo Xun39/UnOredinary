@@ -7,7 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.xun.unoredinary.UnOredinary;
-import net.xun.unoredinary.registry.UOBiomeModifiers;
+import net.xun.unoredinary.world.UOBiomeModifiers;
 import net.xun.unoredinary.registry.UOConfiguredFeatures;
 import net.xun.unoredinary.registry.UOPlacedFeatures;
 

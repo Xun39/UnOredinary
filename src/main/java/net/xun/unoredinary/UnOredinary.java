@@ -23,16 +23,18 @@ public class UnOredinary {
 
         ModSetup.setModId(MOD_ID);
 
-        UOArmorMaterials.ARMOR_MATERIALS.register(modEventBus);
-        UOArmors.registerArmors();
-        UOBlocks.BLOCKS.register(modEventBus);
-        UOCreativeModeTabs.CREATIVE_MODE_TABS.register(modEventBus);
-        UOItems.ITEMS.register(modEventBus);
-        UOSounds.SOUND_EVENTS.register(modEventBus);
         UOTools.registerTools();
+        UOArmors.registerArmors();
+        UOItems.ITEMS.register(modEventBus);
+        UOBlocks.BLOCKS.register(modEventBus);
+        UOSounds.SOUND_EVENTS.register(modEventBus);
+        UOMobEffects.MOB_EFFECTS.register(modEventBus);
+        UOParticleTypes.PARTICLE_TYPES.register(modEventBus);
+        UOArmorMaterials.ARMOR_MATERIALS.register(modEventBus);
+        UOCreativeModeTabs.CREATIVE_MODE_TABS.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, UnOredinaryConfig.SPEC);
     }
 
     @SubscribeEvent

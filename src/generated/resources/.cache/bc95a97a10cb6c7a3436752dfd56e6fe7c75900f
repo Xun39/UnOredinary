@@ -1,4 +1,5 @@
-// 1.21.1	2025-06-11T16:23:31.790886	Item Models: unoredinary
+// 1.21.1	2025-06-14T11:15:31.0231735	Item Models: unoredinary
+15523e940bd324d971fa204348a02be68335f396 assets/unoredinary/models/item/cryic_powder.json
 905fc9a4e02fc1a31f4bc57ba2ad09852c165add assets/unoredinary/models/item/cryosteel_axe.json
 7acb2834dcbd7973bd81c5a40da19feb9e991e3e assets/unoredinary/models/item/cryosteel_boots.json
 82db059af24f69cd980c5f4aeeacea0a49f48701 assets/unoredinary/models/item/cryosteel_boots_amethyst_trim.json
@@ -49,6 +50,7 @@ d35f50f8136a1c76ec7620df19d0b6e7d23067f1 assets/unoredinary/models/item/cryostee
 b98334d810715cf2fbd9eb43db61a2c8e8d7b012 assets/unoredinary/models/item/cryosteel_pickaxe.json
 516e074abbcc36dc4220b0b83efd377af8d0143d assets/unoredinary/models/item/cryosteel_shovel.json
 63f9e3c51799d1de7292ea5c7b6aba9ed263ca7a assets/unoredinary/models/item/cryosteel_sword.json
+8bbca24774e81ded349ff43507563acc6aa2a9be assets/unoredinary/models/item/cryosteel_upgrade_smithing_template.json
 b358fa4aa481ccb95f7798874378a93ff97121fc assets/unoredinary/models/item/froststeel_axe.json
 c8ba747ad7d7d04b7f11fb60903a74e4a798295e assets/unoredinary/models/item/froststeel_boots.json
 f9f275d09a0e72458319232f5fb87b536799dd0f assets/unoredinary/models/item/froststeel_boots_amethyst_trim.json
@@ -100,4 +102,4 @@ a0011456a7595579248e0122cdfde6e177dc7af7 assets/unoredinary/models/item/frostste
 e537265283dd0831f1595cbb2f6abb3bccc2ece2 assets/unoredinary/models/item/froststeel_shovel.json
 7e5675f50b35294253a4e8b874e3dff3815b3391 assets/unoredinary/models/item/froststeel_sword.json
 836f79acee3c8825b830226cef4329c021bdc985 assets/unoredinary/models/item/glacium_crystal.json
-8eafbb1fbe0ec30d26f32948b503c8f6d4c1f169 assets/unoredinary/models/item/glacium_shards.json
+3b854e876472425b94a2a7dd51c5f96286465a4d assets/unoredinary/models/item/glacium_shard.json

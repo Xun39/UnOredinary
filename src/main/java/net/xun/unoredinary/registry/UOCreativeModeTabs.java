@@ -20,8 +20,11 @@ public class UOCreativeModeTabs {
                     .icon(UOBlocks.GLACIUM_ORE::toStack)
                     .displayItems((parameters, output) ->  {
 
+                        output.accept(UOBlocks.CRYIC_ORE);
+                        output.accept(UOBlocks.DEEPSLATE_CRYIC_ORE);
+
                         output.accept(UOBlocks.GLACIUM_ORE);
-                        output.accept(UOBlocks.GLACIAL_CORE);
+                        output.accept(UOBlocks.PRIMAL_GLACIUM_ORE);
 
                         output.accept(UOBlocks.GLACIUM_BLOCK);
 
@@ -35,11 +38,15 @@ public class UOCreativeModeTabs {
                     .icon(UOItems.GLACIUM_CRYSTAL::toStack)
                     .displayItems((parameters, output) ->  {
 
+                        output.accept(UOItems.CRYIC_POWDER);
+
                         output.accept(UOItems.GLACIUM_SHARDS);
                         output.accept(UOItems.GLACIUM_CRYSTAL);
 
                         output.accept(UOItems.FROSTSTEEL_INGOT);
                         output.accept(UOItems.CRYOSTEEL_INGOT);
+
+                        output.accept(UOItems.CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE);
 
                     })
                     .build()

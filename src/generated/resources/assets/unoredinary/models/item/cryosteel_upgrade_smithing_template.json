@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "unoredinary:item/cryosteel_upgrade_smithing_template"
+  }
+}

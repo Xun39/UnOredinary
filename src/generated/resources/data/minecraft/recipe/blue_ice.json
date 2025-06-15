@@ -3,22 +3,22 @@
   "category": "building",
   "ingredients": [
     {
-      "tag": "c:nuggets/glacium"
+      "item": "unoredinary:cryic_powder"
     },
     {
-      "tag": "c:nuggets/glacium"
+      "item": "unoredinary:cryic_powder"
     },
     {
-      "tag": "c:nuggets/glacium"
+      "item": "unoredinary:cryic_powder"
     },
     {
-      "item": "minecraft:snowball"
+      "item": "minecraft:snow_block"
     },
     {
-      "item": "minecraft:snowball"
+      "item": "minecraft:snow_block"
     },
     {
-      "item": "minecraft:snowball"
+      "item": "minecraft:snow_block"
     }
   ],
   "result": {

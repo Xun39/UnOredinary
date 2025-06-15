@@ -1,7 +1,11 @@
-// 1.21.1	2025-06-11T16:23:31.7898864	Tags for minecraft:block mod id unoredinary
-fbee23faabaee6d8072c866b19d95148416db98b data/c/tags/block/ores.json
-fbee23faabaee6d8072c866b19d95148416db98b data/c/tags/block/ores/glacium.json
+// 1.21.1	2025-06-15T12:33:45.3052915	Tags for minecraft:block mod id unoredinary
+e8a360dde7496ab0d99580e8c374b0278929e514 data/c/tags/block/ores.json
+19a3d8f65d1d921118ef1738b8bb68e7e599626e data/c/tags/block/ores/frostbound.json
+436d078a4667627382453d8413fbd19ad562cd02 data/c/tags/block/ores/glacium.json
+208733b8cd1b43200ff3119eb631778d2846a2d8 data/c/tags/block/ores_in_ground/deepslate.json
+d542c18556ab93fa2d7fb4973df79bf120bda433 data/c/tags/block/ores_in_ground/stone.json
 f0a2ac4be278e72426e3da6959a1c70f657acf24 data/c/tags/block/storage_blocks.json
 f0a2ac4be278e72426e3da6959a1c70f657acf24 data/c/tags/block/storage_blocks/glacium.json
-eaa0465211917407c3389099602a48a1f42920a3 data/minecraft/tags/block/mineable/pickaxe.json
-eaa0465211917407c3389099602a48a1f42920a3 data/minecraft/tags/block/needs_iron_tool.json
+7f9e7bf64da10fb55517b8e556075ae25903b1c2 data/minecraft/tags/block/mineable/pickaxe.json
+7c112efde86a9155c17a3cc680f92a41ea12ffbc data/minecraft/tags/block/needs_diamond_tool.json
+19a3d8f65d1d921118ef1738b8bb68e7e599626e data/minecraft/tags/block/needs_stone_tool.json

@@ -3,7 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "c:nuggets/glacium"
+      "item": "unoredinary:cryic_powder"
+    },
+    {
+      "item": "unoredinary:cryic_powder"
     },
     {
       "item": "minecraft:iron_ingot"
@@ -13,9 +16,6 @@
     },
     {
       "item": "minecraft:iron_ingot"
-    },
-    {
-      "item": "minecraft:packed_ice"
     },
     {
       "item": "minecraft:packed_ice"

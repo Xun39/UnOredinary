@@ -1,10 +1,13 @@
 {
+  "block.unoredinary.cryic_ore": "霜缚矿石",
+  "block.unoredinary.deepslate_cryic_ore": "深层霜缚矿石",
+
   "block.unoredinary.glacium_ore": "冰魄矿石",
-  "block.unoredinary.glacial_core": "极冰核心",
+  "block.unoredinary.primal_glacium_ore": "冰魄元石",
 
   "block.unoredinary.glacium_block": "冰魄块",
 
-  "item.unoredinary.glacium_shards": "冰魄碎片",
+  "item.unoredinary.glacium_shard": "冰魄碎片",
   "item.unoredinary.glacium_crystal": "冰魄晶体",
 
   "item.unoredinary.froststeel_ingot": "霜铁锭",
@@ -32,6 +35,14 @@
   "item.unoredinary.cryosteel_chestplate": "凛钢胸甲",
   "item.unoredinary.cryosteel_leggings": "凛钢护腿",
   "item.unoredinary.cryosteel_boots": "凛钢靴子",
+
+  "item.unoredinary.cryosteel_upgrade_smithing_template": "锻造模板",
+
+  "upgrade.unoredinary.cryosteel_upgrade": "凛钢升级",
+  "item.unoredinary.smithing_template.cryosteel_upgrade.applies_to": "霜铁装备",
+  "item.unoredinary.smithing_template.cryosteel_upgrade.ingredients": "凛钢锭",
+  "item.unoredinary.smithing_template.cryosteel_upgrade.base_slot_description": "放入霜铁盔甲、武器或工具",
+  "item.unoredinary.smithing_template.cryosteel_upgrade.additions_slot_description": "放入凛钢锭",
 
   "creative_mode_tab.unoredinary.block": "玄矿录：方块",
   "creative_mode_tab.unoredinary.item": "玄矿录：物品",

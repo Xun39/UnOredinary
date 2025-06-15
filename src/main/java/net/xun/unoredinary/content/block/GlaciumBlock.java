@@ -33,19 +33,6 @@ public class GlaciumBlock extends Block {
     }
 
     @Override
-    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        if (random.nextDouble() < 0.3) {
-            level.addParticle(
-                    ParticleTypes.SNOWFLAKE,
-                    pos.getX() + random.nextDouble(),
-                    pos.getY() + random.nextDouble(),
-                    pos.getZ() + random.nextDouble(),
-                    0.0, 0.1, 0.0
-            );
-        }
-    }
-
-    @Override
     protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
         if (level.isClientSide)
             return;
@@ -60,6 +47,19 @@ public class GlaciumBlock extends Block {
             level.removeBlock(pos, false);
         } else {
             level.scheduleTick(pos, this, 20);
+        }
+    }
+
+    @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        if (random.nextDouble() < 0.3) {
+            level.addParticle(
+                    ParticleTypes.SNOWFLAKE,
+                    pos.getX() + random.nextDouble(),
+                    pos.getY() + random.nextDouble(),
+                    pos.getZ() + random.nextDouble(),
+                    0.0, 0.1, 0.0
+            );
         }
     }
 }

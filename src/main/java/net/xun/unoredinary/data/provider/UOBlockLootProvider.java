@@ -28,8 +28,8 @@ public abstract class UOBlockLootProvider extends BlockLootSubProvider {
         super.add(block, (result) -> createMultipleOreDrops(result, drop, minDropAmount, maxDropAmount));
     }
 
-    public void dropOtherWithoutSilkTouch(Supplier<? extends Block> block, ItemLike drop) {
-        super.add(block.get(), (result) -> createDropOther(result, drop));
+    public void dropOtherWithoutSilkTouch(Block block, ItemLike drop) {
+        super.add(block, (result) -> createDropOther(result, drop));
     }
 
     public void slabDrop(Supplier<? extends Block> block) {

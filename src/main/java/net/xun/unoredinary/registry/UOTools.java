@@ -22,6 +22,7 @@ public class UOTools {
             .withConfiguration(new CryosteelToolConfigurator())
             .withVanillaBalance()
             .withToolStats(ToolType.AXE, 5.0F, 1.0F)
+            .withToolStats(ToolType.HOE, -4.0F, 0.0F)
             .build()
     );
 
