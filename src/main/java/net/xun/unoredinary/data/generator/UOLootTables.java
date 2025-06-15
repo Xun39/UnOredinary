@@ -42,7 +42,7 @@ public class UOLootTables extends LootTableProvider {
             multipleDrops(UOBlocks.DEEPSLATE_CRYIC_ORE.get(), UOItems.CRYIC_POWDER, 3.0F, 5.0F);
 
             // Glacium ores
-            multipleDrops(UOBlocks.GLACIUM_ORE.get(), UOItems.GLACIUM_SHARDS, 3.0F, 4.0F);
+            multipleDrops(UOBlocks.GLACIUM_ORE.get(), UOItems.GLACIUM_SHARD, 3.0F, 4.0F);
             dropOtherWithoutSilkTouch(UOBlocks.PRIMAL_GLACIUM_ORE.get(), UOItems.GLACIUM_CRYSTAL);
 
             /* ------------------------------ STORAGE BLOCKS ------------------------------ */

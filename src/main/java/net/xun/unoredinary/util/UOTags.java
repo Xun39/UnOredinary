@@ -12,7 +12,10 @@ public class UOTags {
 
     public static class Blocks {
 
-        public static final TagKey<Block> ORES_FROSTBOUND = createCommon("ores/frostbound");
+        public static final TagKey<Block> NEEDS_FROSTSTEEL_TOOL = create("needs_froststeel_tool");
+        public static final TagKey<Block> INCORRECT_FOR_FROSTSTEEL_TOOL = create("incorrect_for_froststeel_tool");
+
+        public static final TagKey<Block> ORES_CRYIC = createCommon("ores/frostbound");
         public static final TagKey<Block> ORES_GLACIUM = createCommon("ores/glacium");
 
         public static final TagKey<Block> STORAGE_BLOCKS_CRYIC = createCommon("storage_blocks/cryic");

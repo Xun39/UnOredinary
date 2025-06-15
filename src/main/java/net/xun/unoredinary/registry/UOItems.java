@@ -11,7 +11,7 @@ public class UOItems {
 
     public static final DeferredItem<Item> CRYIC_POWDER = ITEMS.register("cryic_powder", () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> GLACIUM_SHARDS = ITEMS.register("glacium_shard", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GLACIUM_SHARD = ITEMS.register("glacium_shard", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> GLACIUM_CRYSTAL = ITEMS.register("glacium_crystal", () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> FROSTSTEEL_INGOT = ITEMS.register("froststeel_ingot", () -> new Item(new Item.Properties()));

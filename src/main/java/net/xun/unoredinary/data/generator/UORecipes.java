@@ -47,7 +47,7 @@ public class UORecipes extends UORecipeProvider {
                 .save(recipeOutput);
 
         // Glacium-related
-        threeByThreePacker(recipeOutput, RecipeCategory.MISC, UOItems.GLACIUM_CRYSTAL, Ingredient.of(UOTags.Items.NUGGETS_GLACIUM), UOItems.GLACIUM_SHARDS);
+        threeByThreePacker(recipeOutput, RecipeCategory.MISC, UOItems.GLACIUM_CRYSTAL, Ingredient.of(UOTags.Items.NUGGETS_GLACIUM), UOItems.GLACIUM_SHARD);
         threeByThreePackerConvertible(
                 recipeOutput,
                 RecipeCategory.BUILDING_BLOCKS,
@@ -65,6 +65,14 @@ public class UORecipes extends UORecipeProvider {
                 .requires(Blocks.PACKED_ICE)
                 .unlockedBy(getHasName(UOItems.CRYIC_POWDER), has(UOItems.CRYIC_POWDER))
                 .save(recipeOutput);
+        threeByThreePackerConvertible(
+                recipeOutput,
+                RecipeCategory.BUILDING_BLOCKS,
+                RecipeCategory.MISC,
+                Ingredient.of(UOBlocks.FROSTSTEEL_BLOCK),
+                UOBlocks.FROSTSTEEL_BLOCK,
+                Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL),
+                UOItems.FROSTSTEEL_INGOT);
 
         toolsetRecipe(recipeOutput, UOTools.FROSTSTEEL, Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), UOItems.FROSTSTEEL_INGOT);
         armorsetRecipe(recipeOutput, UOArmors.FROSTSTEEL, Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), UOItems.FROSTSTEEL_INGOT);
@@ -76,6 +84,14 @@ public class UORecipes extends UORecipeProvider {
                 .requires(Ingredient.of(Items.DIAMOND))
                 .unlockedBy(getHasName(UOItems.FROSTSTEEL_INGOT), has(UOItems.FROSTSTEEL_INGOT))
                 .save(recipeOutput); // TODO: Change the diamond to sapphire
+        threeByThreePackerConvertible(
+                recipeOutput,
+                RecipeCategory.BUILDING_BLOCKS,
+                RecipeCategory.MISC,
+                Ingredient.of(UOBlocks.CRYOSTEEL_BLOCK),
+                UOBlocks.CRYOSTEEL_BLOCK,
+                Ingredient.of(UOTags.Items.INGOTS_CRYOSTEEL),
+                UOItems.CRYOSTEEL_INGOT);
 
         copySmithingTemplate(recipeOutput, UOItems.CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE, Ingredient.of(Blocks.ICE, Blocks.PACKED_ICE, Blocks.BLUE_ICE));
 

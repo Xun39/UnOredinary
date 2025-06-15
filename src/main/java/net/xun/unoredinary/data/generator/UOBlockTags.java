@@ -25,6 +25,7 @@ public class UOBlockTags extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
+        /* ------------------------------ MINEABLE ------------------------------ */
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 UOBlocks.CRYIC_ORE.get(),
                 UOBlocks.DEEPSLATE_CRYIC_ORE.get(),
@@ -47,7 +48,7 @@ public class UOBlockTags extends BlockTagsProvider {
                 UOBlocks.FROSTSTEEL_BLOCK.get()
         );
 
-        tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
+        tag(UOTags.Blocks.NEEDS_FROSTSTEEL_TOOL).add(
                 UOBlocks.GLACIUM_ORE.get(),
                 UOBlocks.PRIMAL_GLACIUM_ORE.get(),
 
@@ -55,9 +56,21 @@ public class UOBlockTags extends BlockTagsProvider {
                 UOBlocks.CRYOSTEEL_BLOCK.get()
         );
 
+        // Froststeel
+        tag(UOTags.Blocks.INCORRECT_FOR_FROSTSTEEL_TOOL)
+                .addTag(BlockTags.NEEDS_DIAMOND_TOOL)
+                .addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
+
+        tag(BlockTags.INCORRECT_FOR_WOODEN_TOOL).addTag(UOTags.Blocks.NEEDS_FROSTSTEEL_TOOL);
+        tag(BlockTags.INCORRECT_FOR_STONE_TOOL).addTag(UOTags.Blocks.NEEDS_FROSTSTEEL_TOOL);
+        tag(BlockTags.INCORRECT_FOR_IRON_TOOL).addTag(UOTags.Blocks.NEEDS_FROSTSTEEL_TOOL);
+        tag(BlockTags.INCORRECT_FOR_GOLD_TOOL).addTag(UOTags.Blocks.NEEDS_FROSTSTEEL_TOOL);
+
+        /* ------------------------------ COMMON ------------------------------ */
+
         // cTags: Ores
         addToTags(
-                Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_FROSTBOUND),
+                Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_CRYIC),
                 Set.of(UOBlocks.CRYIC_ORE.get(), UOBlocks.DEEPSLATE_CRYIC_ORE.get())
         );
 

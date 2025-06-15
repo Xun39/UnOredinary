@@ -43,7 +43,7 @@ public class UOCreativeModeTabs {
 
                         output.accept(UOItems.CRYIC_POWDER);
 
-                        output.accept(UOItems.GLACIUM_SHARDS);
+                        output.accept(UOItems.GLACIUM_SHARD);
                         output.accept(UOItems.GLACIUM_CRYSTAL);
 
                         output.accept(UOItems.FROSTSTEEL_INGOT);

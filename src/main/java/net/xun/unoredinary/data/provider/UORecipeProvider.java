@@ -20,7 +20,7 @@ public abstract class UORecipeProvider extends RecipeProvider {
         super(output, registries);
     }
 
-    /* ---------------------------------------- Crafting ---------------------------------------- */
+    /* ---------------------------------------- CRAFTING ---------------------------------------- */
 
     // Common recipes
     protected static void twoByTwoPacker(RecipeOutput recipeOutput, RecipeCategory category, ItemLike packed, Ingredient unpacked, ItemLike unlockItem) {
@@ -200,7 +200,7 @@ public abstract class UORecipeProvider extends RecipeProvider {
                 .save(recipeOutput);
     }
 
-    /* ---------------------------------------- Smithing ---------------------------------------- */
+    /* ---------------------------------------- SMITHING ---------------------------------------- */
 
     protected static void cryosteelSmithing(RecipeOutput recipeOutput, RecipeCategory category, Item ingredientItem, Item resultItem) {
         SmithingTransformRecipeBuilder

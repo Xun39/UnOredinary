@@ -1,0 +1,76 @@
+package net.xun.unoredinary.data.generator;
+
+import net.minecraft.data.PackOutput;
+import net.xun.unoredinary.data.provider.UOLanguageProvider;
+import net.xun.unoredinary.registry.*;
+import net.xun.unoredinary.util.UOTags;
+
+public class UOLanguage extends UOLanguageProvider {
+    public UOLanguage(PackOutput output) {
+        super(output);
+    }
+
+    @Override
+    protected void addTranslations() {
+
+        /* ------------------------------ ITEM GROUPS ------------------------------ */
+        add("creative_mode_tab.unoredinary.block", "UnOredinary: Blocks");
+        add("creative_mode_tab.unoredinary.item", "UnOredinary: Items");
+        add("creative_mode_tab.unoredinary.equipment", "UnOredinary: Equipments");
+
+        /* ------------------------------ BLOCKS ------------------------------ */
+
+        // Ores
+        addBlock(UOBlocks.CRYIC_ORE, "Cryic Ore");
+        addBlock(UOBlocks.DEEPSLATE_CRYIC_ORE, "Deepslate Cryic Ore");
+
+        addBlock(UOBlocks.GLACIUM_ORE, "Glacium Ore");
+        addBlock(UOBlocks.PRIMAL_GLACIUM_ORE, "Primal Glacium Ore");
+
+        // Storage Blocks
+        addBlock(UOBlocks.CRYIC_BLOCK, "Block of Cryic");
+        addBlock(UOBlocks.GLACIUM_BLOCK, "Block of Glacium");
+        addBlock(UOBlocks.FROSTSTEEL_BLOCK, "Block of Froststeel");
+        addBlock(UOBlocks.CRYOSTEEL_BLOCK, "Block of Cryosteel");
+
+        /* ------------------------------ MOB EFFECTS ------------------------------ */
+        addEffect(UOMobEffects.FROSTED_EFFECT, "Frostbitten");
+
+        /* ------------------------------ ITEMS ------------------------------ */
+        addItem(UOItems.CRYIC_POWDER, "Cryic Powder");
+
+        addItem(UOItems.GLACIUM_SHARD, "Glacium Shard");
+        addItem(UOItems.GLACIUM_CRYSTAL, "Glacium Crystal");
+
+        addItem(UOItems.FROSTSTEEL_INGOT, "Froststeel Ingot");
+        addItem(UOItems.CRYOSTEEL_INGOT, "Cryosteel Ingot");
+
+        addItem(UOItems.CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE, "Smithing Template");
+
+        addToolSet(UOTools.FROSTSTEEL);
+        addToolSet(UOTools.CRYOSTEEL);
+
+        addArmorSet(UOArmors.FROSTSTEEL);
+        addArmorSet(UOArmors.CRYOSTEEL);
+
+        /* ------------------------------ TOOLTIPS ------------------------------ */
+        add("upgrade.unoredinary.cryosteel_upgrade", "Cryosteel Upgrade");
+        add("item.unoredinary.smithing_template.cryosteel_upgrade.applies_to", "Froststeel Equipment");
+        add("item.unoredinary.smithing_template.cryosteel_upgrade.ingredients", "Cryosteel Ingot");
+        add("item.unoredinary.smithing_template.cryosteel_upgrade.base_slot_description", "Add froststeel armor, weapon, or tool");
+        add("item.unoredinary.smithing_template.cryosteel_upgrade.additions_slot_description", "Add Cryosteel Ingot");
+
+        /* ------------------------------ TAGS ------------------------------ */
+        translateTag(UOTags.Blocks.ORES_CRYIC, "Cryic Ores");
+        translateTag(UOTags.Blocks.ORES_GLACIUM, "Glacium Ores");
+        translateTag(UOTags.Blocks.STORAGE_BLOCKS_CRYIC, "Cryic Storage Blocks");
+        translateTag(UOTags.Blocks.STORAGE_BLOCKS_GLACIUM, "Glacium Storage Blocks");
+        translateTag(UOTags.Blocks.STORAGE_BLOCKS_FROSTSTEEL, "Froststeel Storage Blocks");
+        translateTag(UOTags.Blocks.STORAGE_BLOCKS_CRYOSTEEL, "Cryosteel Storage Blocks");
+
+        translateTag(UOTags.Items.NUGGETS_GLACIUM, "Glacium Nuggets (Shards)");
+        translateTag(UOTags.Items.GEMS_GLACIUM, "Glacium Gems");
+        translateTag(UOTags.Items.INGOTS_FROSTSTEEL, "Froststeel Ingots");
+        translateTag(UOTags.Items.INGOTS_CRYOSTEEL, "Cryosteel Ingots");
+    }
+}

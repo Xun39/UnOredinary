@@ -27,6 +27,7 @@ public class UnOredinaryData {
 
         BlockTagsProvider blockTagsProvider = new UOBlockTags(output, registries, helper);
 
+        generator.addProvider(client, new UOLanguage(output));
         generator.addProvider(client, new UOBlockStates(output, helper));
         generator.addProvider(client, new UOItemModels(output, helper));
         generator.addProvider(client, new UOParticles(output, helper));

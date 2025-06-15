@@ -9,7 +9,7 @@ import net.xun.unoredinary.util.UOTags;
 public class UOToolTiers {
 
     public static final Tier FROSTSTEEL = new SimpleTier(
-            BlockTags.INCORRECT_FOR_IRON_TOOL, 767, 6.5F, 2.0F, 16, () -> Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL)
+            UOTags.Blocks.INCORRECT_FOR_FROSTSTEEL_TOOL, 767, 6.5F, 2.0F, 16, () -> Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL)
     );
 
     public static final Tier CRYOSTEEL = new SimpleTier(

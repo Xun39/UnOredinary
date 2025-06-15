@@ -62,11 +62,13 @@ public class UOItemTags extends ItemTagsProvider {
         addToTags(Set.of(ItemTags.FREEZE_IMMUNE_WEARABLES), UOArmors.FROSTSTEEL.getAll());
         addToTags(Set.of(ItemTags.FREEZE_IMMUNE_WEARABLES), UOArmors.CRYOSTEEL.getAll());
 
+        /* ------------------------------ COMMON ------------------------------ */
+
         // cTags: Gems
         addToTags(Set.of(Tags.Items.GEMS, UOTags.Items.GEMS_GLACIUM), Set.of(UOItems.GLACIUM_CRYSTAL.get()));
 
         // cTags: Nuggets
-        addToTags(Set.of(Tags.Items.NUGGETS, UOTags.Items.NUGGETS_GLACIUM), Set.of(UOItems.GLACIUM_SHARDS.get()));
+        addToTags(Set.of(Tags.Items.NUGGETS, UOTags.Items.NUGGETS_GLACIUM), Set.of(UOItems.GLACIUM_SHARD.get()));
 
         // cTags: Ingots
         addToTags(Set.of(Tags.Items.INGOTS, UOTags.Items.INGOTS_FROSTSTEEL), Set.of(UOItems.FROSTSTEEL_INGOT.get()));

@@ -17,7 +17,7 @@ public class UOItemModels extends UOItemModelProvider {
 
         basicItem(UOItems.CRYIC_POWDER.get());
 
-        basicItem(UOItems.GLACIUM_SHARDS.get());
+        basicItem(UOItems.GLACIUM_SHARD.get());
         basicItem(UOItems.GLACIUM_CRYSTAL.get());
 
         basicItem(UOItems.FROSTSTEEL_INGOT.get());

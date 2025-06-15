@@ -1,11 +1,18 @@
 {
-  "block.unoredinary.cryic_ore": "霜缚矿石",
-  "block.unoredinary.deepslate_cryic_ore": "深层霜缚矿石",
+  "block.unoredinary.cryic_ore": "寒晶矿石",
+  "block.unoredinary.deepslate_cryic_ore": "深层寒晶矿石",
 
   "block.unoredinary.glacium_ore": "冰魄矿石",
   "block.unoredinary.primal_glacium_ore": "冰魄元石",
 
+  "block.unoredinary.cryic_block": "寒晶块",
   "block.unoredinary.glacium_block": "冰魄块",
+  "block.unoredinary.cryosteel_block": "凛钢块",
+  "block.unoredinary.froststeel_block": "霜铁块",
+
+  "effect.unoredinary.frostbitten": "冻伤",
+
+  "item.unoredinary.cryic_powder": "凝霜粉",
 
   "item.unoredinary.glacium_shard": "冰魄碎片",
   "item.unoredinary.glacium_crystal": "冰魄晶体",
