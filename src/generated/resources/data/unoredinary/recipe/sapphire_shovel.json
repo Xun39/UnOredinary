@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "tag": "c:gems/sapphire"
+    },
+    "$": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "#",
+    "$",
+    "$"
+  ],
+  "result": {
+    "count": 1,
+    "id": "unoredinary:sapphire_shovel"
+  }
+}

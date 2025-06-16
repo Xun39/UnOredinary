@@ -41,12 +41,17 @@ public class UOLootTables extends LootTableProvider {
             multipleDrops(UOBlocks.CRYIC_ORE.get(), UOItems.CRYIC_POWDER, 3.0F, 5.0F);
             multipleDrops(UOBlocks.DEEPSLATE_CRYIC_ORE.get(), UOItems.CRYIC_POWDER, 3.0F, 5.0F);
 
+            // Sapphire ores
+            dropOtherWithoutSilkTouch(UOBlocks.SAPPHIRE_ORE.get(), UOItems.SAPPHIRE);
+            dropOtherWithoutSilkTouch(UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), UOItems.SAPPHIRE);
+
             // Glacium ores
             multipleDrops(UOBlocks.GLACIUM_ORE.get(), UOItems.GLACIUM_SHARD, 3.0F, 4.0F);
             dropOtherWithoutSilkTouch(UOBlocks.PRIMAL_GLACIUM_ORE.get(), UOItems.GLACIUM_CRYSTAL);
 
             /* ------------------------------ STORAGE BLOCKS ------------------------------ */
             dropSelf(UOBlocks.CRYIC_BLOCK.get());
+            dropSelf(UOBlocks.SAPPHIRE_BLOCK.get());
             dropSelf(UOBlocks.GLACIUM_BLOCK.get());
             dropSelf(UOBlocks.FROSTSTEEL_BLOCK.get());
             dropSelf(UOBlocks.CRYOSTEEL_BLOCK.get());

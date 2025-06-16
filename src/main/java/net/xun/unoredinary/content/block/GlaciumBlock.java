@@ -5,18 +5,21 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.unoredinary.registry.UOSounds;
 
-public class GlaciumBlock extends Block {
+public class GlaciumBlock extends DropExperienceBlock {
     private final boolean canMelt;
 
-    public GlaciumBlock(Properties properties, boolean canMelt) {
-        super(properties);
+    public GlaciumBlock(IntProvider xpRange, Properties properties, boolean canMelt) {
+        super(xpRange, properties);
         this.canMelt = canMelt;
     }
 

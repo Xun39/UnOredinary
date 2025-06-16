@@ -30,10 +30,14 @@ public class UOBlockTags extends BlockTagsProvider {
                 UOBlocks.CRYIC_ORE.get(),
                 UOBlocks.DEEPSLATE_CRYIC_ORE.get(),
 
+                UOBlocks.SAPPHIRE_ORE.get(),
+                UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
+
                 UOBlocks.GLACIUM_ORE.get(),
                 UOBlocks.PRIMAL_GLACIUM_ORE.get(),
 
                 UOBlocks.CRYIC_BLOCK.get(),
+                UOBlocks.SAPPHIRE_BLOCK.get(),
                 UOBlocks.GLACIUM_BLOCK.get(),
                 UOBlocks.FROSTSTEEL_BLOCK.get(),
                 UOBlocks.CRYOSTEEL_BLOCK.get()
@@ -41,11 +45,14 @@ public class UOBlockTags extends BlockTagsProvider {
 
         tag(BlockTags.NEEDS_STONE_TOOL).add(
                 UOBlocks.CRYIC_ORE.get(),
-                UOBlocks.DEEPSLATE_CRYIC_ORE.get()
+                UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get()
         );
 
         tag(BlockTags.NEEDS_IRON_TOOL).add(
-                UOBlocks.FROSTSTEEL_BLOCK.get()
+                UOBlocks.SAPPHIRE_ORE.get(),
+                UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
+
+                UOBlocks.SAPPHIRE_BLOCK.get()
         );
 
         tag(UOTags.Blocks.NEEDS_FROSTSTEEL_TOOL).add(
@@ -53,6 +60,8 @@ public class UOBlockTags extends BlockTagsProvider {
                 UOBlocks.PRIMAL_GLACIUM_ORE.get(),
 
                 UOBlocks.GLACIUM_BLOCK.get(),
+
+                UOBlocks.FROSTSTEEL_BLOCK.get(),
                 UOBlocks.CRYOSTEEL_BLOCK.get()
         );
 
@@ -71,7 +80,12 @@ public class UOBlockTags extends BlockTagsProvider {
         // cTags: Ores
         addToTags(
                 Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_CRYIC),
-                Set.of(UOBlocks.CRYIC_ORE.get(), UOBlocks.DEEPSLATE_CRYIC_ORE.get())
+                Set.of(UOBlocks.CRYIC_ORE.get(), UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get())
+        );
+
+        addToTags(
+                Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_SAPPHIRE),
+                Set.of(UOBlocks.SAPPHIRE_ORE.get(), UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get())
         );
 
         addToTags(
@@ -86,13 +100,18 @@ public class UOBlockTags extends BlockTagsProvider {
 
         addToTags(
                 Set.of(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE),
-                Set.of(UOBlocks.DEEPSLATE_CRYIC_ORE.get())
+                Set.of(UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get())
         );
 
         // cTags: Storage Blocks
         addToTags(
                 Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_CRYIC),
                 Set.of(UOBlocks.CRYIC_BLOCK.get())
+        );
+
+        addToTags(
+                Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_SAPPHIRE),
+                Set.of(UOBlocks.SAPPHIRE_BLOCK.get())
         );
 
         addToTags(

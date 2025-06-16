@@ -19,16 +19,19 @@ public class UOLanguage extends UOLanguageProvider {
         add("creative_mode_tab.unoredinary.equipment", "UnOredinary: Equipments");
 
         /* ------------------------------ BLOCKS ------------------------------ */
-
         // Ores
         addBlock(UOBlocks.CRYIC_ORE, "Cryic Ore");
         addBlock(UOBlocks.DEEPSLATE_CRYIC_ORE, "Deepslate Cryic Ore");
+
+        addBlock(UOBlocks.SAPPHIRE_ORE, "Sapphire Ore");
+        addBlock(UOBlocks.DEEPSLATE_SAPPHIRE_ORE, "Deepslate Sapphire Ore");
 
         addBlock(UOBlocks.GLACIUM_ORE, "Glacium Ore");
         addBlock(UOBlocks.PRIMAL_GLACIUM_ORE, "Primal Glacium Ore");
 
         // Storage Blocks
         addBlock(UOBlocks.CRYIC_BLOCK, "Block of Cryic");
+        addBlock(UOBlocks.SAPPHIRE_BLOCK, "Block of Sapphire");
         addBlock(UOBlocks.GLACIUM_BLOCK, "Block of Glacium");
         addBlock(UOBlocks.FROSTSTEEL_BLOCK, "Block of Froststeel");
         addBlock(UOBlocks.CRYOSTEEL_BLOCK, "Block of Cryosteel");
@@ -38,6 +41,8 @@ public class UOLanguage extends UOLanguageProvider {
 
         /* ------------------------------ ITEMS ------------------------------ */
         addItem(UOItems.CRYIC_POWDER, "Cryic Powder");
+
+        addItem(UOItems.SAPPHIRE, "Sapphire");
 
         addItem(UOItems.GLACIUM_SHARD, "Glacium Shard");
         addItem(UOItems.GLACIUM_CRYSTAL, "Glacium Crystal");
@@ -49,9 +54,18 @@ public class UOLanguage extends UOLanguageProvider {
 
         addToolSet(UOTools.FROSTSTEEL);
         addToolSet(UOTools.CRYOSTEEL);
+        addToolSet(UOTools.SAPPHIRE);
 
         addArmorSet(UOArmors.FROSTSTEEL);
         addArmorSet(UOArmors.CRYOSTEEL);
+        addArmorSet(UOArmors.SAPPHIRE);
+
+        /* ------------------------------ TRIM MATERIALS ------------------------------ */
+        addTrimMaterial(UOTrimMaterials.CRYIC, "Cryic Material");
+        addTrimMaterial(UOTrimMaterials.GLACIUM, "Glacium Material");
+        addTrimMaterial(UOTrimMaterials.FROSTSTEEL, "Froststeel Material");
+        addTrimMaterial(UOTrimMaterials.CRYOSTEEL, "Cryosteel Material");
+        addTrimMaterial(UOTrimMaterials.SAPPHIRE, "Sapphire Material");
 
         /* ------------------------------ TOOLTIPS ------------------------------ */
         add("upgrade.unoredinary.cryosteel_upgrade", "Cryosteel Upgrade");

@@ -21,4 +21,6 @@ public class UOItems {
     public static final DeferredItem<Item> CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("cryosteel_upgrade_smithing_template",
             () -> new UpgradeSmithingTemplateItem("cryosteel_upgrade", UpgradeSmithingTemplateItem.createTemplateUpgradeIconList(), UpgradeSmithingTemplateItem.createTemplateUpgradeMaterialList())
     );
+
+    public static final DeferredItem<Item> SAPPHIRE = ITEMS.register("sapphire", () -> new Item(new Item.Properties()));
 }

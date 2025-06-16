@@ -21,12 +21,16 @@ public class UOCreativeModeTabs {
                     .displayItems((parameters, output) ->  {
 
                         output.accept(UOBlocks.CRYIC_ORE);
-                        output.accept(UOBlocks.DEEPSLATE_CRYIC_ORE);
+                        output.accept(UOBlocks.DEEPSLATE_SAPPHIRE_ORE);
+
+                        output.accept(UOBlocks.SAPPHIRE_ORE);
+                        output.accept(UOBlocks.DEEPSLATE_SAPPHIRE_ORE);
 
                         output.accept(UOBlocks.GLACIUM_ORE);
                         output.accept(UOBlocks.PRIMAL_GLACIUM_ORE);
 
                         output.accept(UOBlocks.CRYIC_BLOCK);
+                        output.accept(UOBlocks.SAPPHIRE_BLOCK);
                         output.accept(UOBlocks.GLACIUM_BLOCK);
                         output.accept(UOBlocks.FROSTSTEEL_BLOCK);
                         output.accept(UOBlocks.CRYOSTEEL_BLOCK);
@@ -42,6 +46,8 @@ public class UOCreativeModeTabs {
                     .displayItems((parameters, output) ->  {
 
                         output.accept(UOItems.CRYIC_POWDER);
+
+                        output.accept(UOItems.SAPPHIRE);
 
                         output.accept(UOItems.GLACIUM_SHARD);
                         output.accept(UOItems.GLACIUM_CRYSTAL);

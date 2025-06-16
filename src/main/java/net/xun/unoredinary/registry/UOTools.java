@@ -26,6 +26,11 @@ public class UOTools {
             .build()
     );
 
+    public static final ToolSet SAPPHIRE = register(new ToolSet.Builder("sapphire", UOToolTiers.SAPPHIRE, new GenericAttributeHelper())
+            .withVanillaBalance()
+            .build()
+    );
+
     public static List<ToolSet> getTools() {
         return new ArrayList<>(TOOL_SETS);
     }

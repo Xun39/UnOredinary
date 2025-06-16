@@ -22,6 +22,11 @@ public class UOArmors {
             .build()
     );
 
+    public static final ArmorSet SAPPHIRE = register(new ArmorSet.Builder("sapphire", UOArmorMaterials.SAPPHIRE)
+            .withDurabilityFactor(26)
+            .build()
+    );
+
     public static List<ArmorSet> getArmors() {
         return new ArrayList<>(ARMOR_SETS);
     }

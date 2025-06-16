@@ -1,7 +1,9 @@
 package net.xun.unoredinary.data.provider;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.xun.lib.common.api.item.armor.ArmorSet;
 import net.xun.lib.common.api.item.tools.ToolSet;
@@ -33,6 +35,10 @@ public abstract class UOLanguageProvider extends LanguageProvider {
         addItem(armorSet.getChestplate(), formattedName + " Chestplate");
         addItem(armorSet.getLeggings(), formattedName + " Leggings");
         addItem(armorSet.getBoots(), formattedName + " Boots");
+    }
+
+    public void addTrimMaterial(ResourceKey<TrimMaterial> material, String name) {
+        add("trim_material" + ".unoredinary." + material.location().getPath(), name);
     }
 
     public void translateTag(TagKey<?> tag, String name) {

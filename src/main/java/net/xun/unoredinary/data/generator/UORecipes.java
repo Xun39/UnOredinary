@@ -46,6 +46,20 @@ public class UORecipes extends UORecipeProvider {
                 .unlockedBy(getHasName(UOItems.CRYIC_POWDER), has(UOItems.CRYIC_POWDER))
                 .save(recipeOutput);
 
+        // Sapphire-related
+        threeByThreePackerConvertible(
+                recipeOutput,
+                RecipeCategory.BUILDING_BLOCKS,
+                RecipeCategory.MISC,
+                Ingredient.of(UOBlocks.SAPPHIRE_BLOCK),
+                UOBlocks.SAPPHIRE_BLOCK,
+                Ingredient.of(UOTags.Items.GEMS_SAPPHIRE),
+                UOItems.SAPPHIRE
+        );
+
+        toolsetRecipe(recipeOutput, UOTools.SAPPHIRE, Ingredient.of(UOTags.Items.GEMS_SAPPHIRE), UOItems.SAPPHIRE);
+        armorsetRecipe(recipeOutput, UOArmors.SAPPHIRE, Ingredient.of(UOTags.Items.GEMS_SAPPHIRE), UOItems.SAPPHIRE);
+
         // Glacium-related
         threeByThreePacker(recipeOutput, RecipeCategory.MISC, UOItems.GLACIUM_CRYSTAL, Ingredient.of(UOTags.Items.NUGGETS_GLACIUM), UOItems.GLACIUM_SHARD);
         threeByThreePackerConvertible(
@@ -81,9 +95,9 @@ public class UORecipes extends UORecipeProvider {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, UOItems.CRYOSTEEL_INGOT)
                 .requires(Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), 4)
                 .requires(Ingredient.of(UOTags.Items.GEMS_GLACIUM), 3)
-                .requires(Ingredient.of(Items.DIAMOND))
+                .requires(Ingredient.of(UOTags.Items.GEMS_SAPPHIRE))
                 .unlockedBy(getHasName(UOItems.FROSTSTEEL_INGOT), has(UOItems.FROSTSTEEL_INGOT))
-                .save(recipeOutput); // TODO: Change the diamond to sapphire
+                .save(recipeOutput);
         threeByThreePackerConvertible(
                 recipeOutput,
                 RecipeCategory.BUILDING_BLOCKS,

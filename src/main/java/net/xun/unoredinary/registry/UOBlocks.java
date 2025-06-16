@@ -1,8 +1,10 @@
 package net.xun.unoredinary.registry;
 
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -19,7 +21,8 @@ public class UOBlocks {
 
     // Ores
     public static final DeferredBlock<Block> CRYIC_ORE = register("cryic_ore",
-            () -> new Block(
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 4),
                     BlockBehaviour.Properties.of()
                             .mapColor(MapColor.STONE)
                             .instrument(NoteBlockInstrument.BASEDRUM)
@@ -29,8 +32,30 @@ public class UOBlocks {
     );
 
     public static final DeferredBlock<Block> DEEPSLATE_CRYIC_ORE = register("deepslate_cryic_ore",
-            () -> new Block(
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 4),
                     BlockBehaviour.Properties.ofFullCopy(UOBlocks.CRYIC_ORE.get())
+                            .mapColor(MapColor.DEEPSLATE)
+                            .strength(4.5F, 3.0F)
+                            .sound(SoundType.DEEPSLATE)
+            )
+    );
+
+    public static final DeferredBlock<Block> SAPPHIRE_ORE = register("sapphire_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(3, 8),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(3.0F, 3.0F)
+            )
+    );
+
+    public static final DeferredBlock<Block> DEEPSLATE_SAPPHIRE_ORE = register("deepslate_sapphire_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(3, 8),
+                    BlockBehaviour.Properties.ofFullCopy(UOBlocks.SAPPHIRE_ORE.get())
                             .mapColor(MapColor.DEEPSLATE)
                             .strength(4.5F, 3.0F)
                             .sound(SoundType.DEEPSLATE)
@@ -39,6 +64,7 @@ public class UOBlocks {
 
     public static final DeferredBlock<Block> GLACIUM_ORE = register("glacium_ore",
             () -> new GlaciumBlock(
+                    UniformInt.of(4, 9),
                     BlockBehaviour.Properties.of()
                             .mapColor(MapColor.ICE)
                             .instrument(NoteBlockInstrument.FLUTE)
@@ -52,6 +78,7 @@ public class UOBlocks {
 
     public static final DeferredBlock<Block> PRIMAL_GLACIUM_ORE = register("primal_glacium_ore",
             () -> new GlaciumBlock(
+                    UniformInt.of(4, 10),
                     BlockBehaviour.Properties.ofFullCopy(UOBlocks.GLACIUM_ORE.get())
                             .mapColor(MapColor.COLOR_LIGHT_BLUE)
                             .strength(20.0F, 1000.0F),
@@ -71,11 +98,22 @@ public class UOBlocks {
             )
     );
 
+    public static final DeferredBlock<Block> SAPPHIRE_BLOCK = register("sapphire_block",
+            () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                            .instrument(NoteBlockInstrument.XYLOPHONE)
+                            .requiresCorrectToolForDrops()
+                            .strength(5.0F, 6.0F)
+                            .sound(SoundType.METAL)
+            )
+    );
+
     public static final DeferredBlock<Block> GLACIUM_BLOCK = register("glacium_block",
-            () -> new GlaciumBlock(
+            () -> new Block(
                     BlockBehaviour.Properties.ofFullCopy(UOBlocks.PRIMAL_GLACIUM_ORE.get())
-                            .strength(30.0F, 1000.0F),
-                    false
+                            .strength(30.0F, 1000.0F)
+                            .sound(UOSoundTypes.GLACIUM)
             )
     );
 
@@ -83,7 +121,7 @@ public class UOBlocks {
             () -> new Block(
                     BlockBehaviour.Properties.of()
                             .mapColor(MapColor.ICE)
-                            .instrument(NoteBlockInstrument.HARP)
+                            .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
                             .requiresCorrectToolForDrops()
                             .strength(5.0F, 6.0F)
                             .sound(SoundType.METAL)
@@ -93,7 +131,7 @@ public class UOBlocks {
     public static final DeferredBlock<Block> CRYOSTEEL_BLOCK = register("cryosteel_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_BLUE)
-                    .instrument(NoteBlockInstrument.XYLOPHONE)
+                    .instrument(NoteBlockInstrument.HARP)
                     .requiresCorrectToolForDrops()
                     .strength(5.0F, 6.0F)
                     .sound(SoundType.METAL)
