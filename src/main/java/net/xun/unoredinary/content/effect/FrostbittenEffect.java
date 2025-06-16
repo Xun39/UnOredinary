@@ -13,7 +13,7 @@ public class FrostbittenEffect extends MobEffect {
     public static final double FROST_MULTIPLIER = -0.15D;
 
     public FrostbittenEffect() {
-        super(MobEffectCategory.HARMFUL, 0x56CBFD);
+        super(MobEffectCategory.HARMFUL, 0x33b2e7);
         this.addAttributeModifier(
                 Attributes.MOVEMENT_SPEED,
                 FrostbittenEffect.MOVEMENT_SPEED_MODIFIER,

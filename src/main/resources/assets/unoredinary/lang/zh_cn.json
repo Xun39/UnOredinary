@@ -2,10 +2,14 @@
   "block.unoredinary.cryic_ore": "寒晶矿石",
   "block.unoredinary.deepslate_cryic_ore": "深层寒晶矿石",
 
+  "block.unoredinary.sapphire_ore": "蓝宝石矿石",
+  "block.unoredinary.deepslate_sapphire_ore": "深层蓝宝石矿石",
+
   "block.unoredinary.glacium_ore": "冰魄矿石",
   "block.unoredinary.primal_glacium_ore": "冰魄元石",
 
   "block.unoredinary.cryic_block": "寒晶块",
+  "block.unoredinary.sapphire_block": "蓝宝石块",
   "block.unoredinary.glacium_block": "冰魄块",
   "block.unoredinary.cryosteel_block": "凛钢块",
   "block.unoredinary.froststeel_block": "霜铁块",
@@ -13,6 +17,8 @@
   "effect.unoredinary.frostbitten": "冻伤",
 
   "item.unoredinary.cryic_powder": "凝霜粉",
+
+  "item.unoredinary.sapphire": "蓝宝石",
 
   "item.unoredinary.glacium_shard": "冰魄碎片",
   "item.unoredinary.glacium_crystal": "冰魄晶体",
@@ -43,6 +49,17 @@
   "item.unoredinary.cryosteel_leggings": "凛钢护腿",
   "item.unoredinary.cryosteel_boots": "凛钢靴子",
 
+  "item.unoredinary.sapphire_sword": "蓝宝石剑",
+  "item.unoredinary.sapphire_axe": "蓝宝石斧",
+  "item.unoredinary.sapphire_pickaxe": "蓝宝石镐",
+  "item.unoredinary.sapphire_hoe": "蓝宝石锄",
+  "item.unoredinary.sapphire_shovel": "蓝宝石锹",
+
+  "item.unoredinary.sapphire_helmet": "蓝宝石头盔",
+  "item.unoredinary.sapphire_chestplate": "蓝宝石胸甲",
+  "item.unoredinary.sapphire_leggings": "蓝宝石护腿",
+  "item.unoredinary.sapphire_boots": "蓝宝石靴子",
+
   "item.unoredinary.cryosteel_upgrade_smithing_template": "锻造模板",
 
   "upgrade.unoredinary.cryosteel_upgrade": "凛钢升级",
@@ -53,5 +70,22 @@
 
   "creative_mode_tab.unoredinary.block": "玄矿录：方块",
   "creative_mode_tab.unoredinary.item": "玄矿录：物品",
-  "creative_mode_tab.unoredinary.equipment": "玄矿录：装备"
+  "creative_mode_tab.unoredinary.equipment": "玄矿录：装备",
+
+  "trim_material.unoredinary.cryic": "寒晶材料",
+  "trim_material.unoredinary.glacium": "冰魄材料",
+  "trim_material.unoredinary.froststeel": "霜铁材料",
+  "trim_material.unoredinary.cryosteel": "凛钢材料",
+  "trim_material.unoredinary.sapphire": "蓝宝石材料",
+
+  "tag.block.c.ores.cryic": "Cryic Ores",
+  "tag.block.c.ores.glacium": "Glacium Ores",
+  "tag.block.c.storage_blocks.cryic": "Cryic Storage Blocks",
+  "tag.block.c.storage_blocks.cryosteel": "Cryosteel Storage Blocks",
+  "tag.block.c.storage_blocks.froststeel": "Froststeel Storage Blocks",
+  "tag.block.c.storage_blocks.glacium": "Glacium Storage Blocks",
+  "tag.item.c.gems.glacium": "Glacium Gems",
+  "tag.item.c.ingots.cryosteel": "Cryosteel Ingots",
+  "tag.item.c.ingots.froststeel": "Froststeel Ingots",
+  "tag.item.c.nuggets.glacium": "Glacium Nuggets (Shards)"
 }
