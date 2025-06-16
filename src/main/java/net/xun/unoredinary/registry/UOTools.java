@@ -3,7 +3,7 @@ package net.xun.unoredinary.registry;
 import net.xun.lib.common.api.item.tools.GenericAttributeHelper;
 import net.xun.lib.common.api.item.tools.ToolSet;
 import net.xun.lib.common.api.item.tools.ToolType;
-import net.xun.unoredinary.content.item.tool.CryosteelToolConfigurator;
+import net.xun.unoredinary.content.item.tool.GlacialiteToolConfigurator;
 import net.xun.unoredinary.content.item.tool.FroststeelToolConfigurator;
 
 import java.util.ArrayList;
@@ -18,8 +18,8 @@ public class UOTools {
             .build()
     );
 
-    public static final ToolSet CRYOSTEEL = register(new ToolSet.Builder("cryosteel", UOToolTiers.CRYOSTEEL, new GenericAttributeHelper())
-            .withConfiguration(new CryosteelToolConfigurator())
+    public static final ToolSet GLACIALITE = register(new ToolSet.Builder("glacialite", UOToolTiers.GLACIALITE, new GenericAttributeHelper())
+            .withConfiguration(new GlacialiteToolConfigurator())
             .withVanillaBalance()
             .withToolStats(ToolType.AXE, 5.0F, 1.0F)
             .withToolStats(ToolType.HOE, -4.0F, 0.0F)

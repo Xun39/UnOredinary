@@ -1,7 +1,7 @@
 package net.xun.unoredinary.registry;
 
 import net.xun.lib.common.api.item.armor.ArmorSet;
-import net.xun.unoredinary.content.item.armor.CryosteelArmorConfigurator;
+import net.xun.unoredinary.content.item.armor.GlacialiteArmorConfigurator;
 import net.xun.unoredinary.content.item.armor.FroststeelArmorConfigurator;
 
 import java.util.ArrayList;
@@ -16,8 +16,8 @@ public class UOArmors {
             .build()
     );
 
-    public static final ArmorSet CRYOSTEEL = register(new ArmorSet.Builder("cryosteel", UOArmorMaterials.CRYOSTEEL)
-            .withConfiguration(new CryosteelArmorConfigurator())
+    public static final ArmorSet GLACIALITE = register(new ArmorSet.Builder("glacialite", UOArmorMaterials.GLACIALITE)
+            .withConfiguration(new GlacialiteArmorConfigurator())
             .withDurabilityFactor(35)
             .build()
     );

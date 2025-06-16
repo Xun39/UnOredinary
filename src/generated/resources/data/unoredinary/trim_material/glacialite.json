@@ -1,0 +1,9 @@
+{
+  "asset_name": "glacialite",
+  "description": {
+    "color": "#017ED8",
+    "translate": "trim_material.unoredinary.glacialite"
+  },
+  "ingredient": "unoredinary:glacialite_ingot",
+  "item_model_index": 0.8
+}

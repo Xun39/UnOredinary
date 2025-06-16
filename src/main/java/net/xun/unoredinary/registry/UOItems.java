@@ -16,10 +16,10 @@ public class UOItems {
 
     public static final DeferredItem<Item> FROSTSTEEL_INGOT = ITEMS.register("froststeel_ingot", () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> CRYOSTEEL_INGOT = ITEMS.register("cryosteel_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GLACIALITE_INGOT = ITEMS.register("glacialite_ingot", () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("cryosteel_upgrade_smithing_template",
-            () -> new UpgradeSmithingTemplateItem("cryosteel_upgrade", UpgradeSmithingTemplateItem.createTemplateUpgradeIconList(), UpgradeSmithingTemplateItem.createTemplateUpgradeMaterialList())
+    public static final DeferredItem<Item> GLACIALITE_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("glacialite_upgrade_smithing_template",
+            () -> new UpgradeSmithingTemplateItem("glacialite_upgrade", UpgradeSmithingTemplateItem.createTemplateUpgradeIconList(), UpgradeSmithingTemplateItem.createTemplateUpgradeMaterialList())
     );
 
     public static final DeferredItem<Item> SAPPHIRE = ITEMS.register("sapphire", () -> new Item(new Item.Properties()));

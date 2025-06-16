@@ -32,7 +32,7 @@ public class UOBlockLootTables extends UOBlockLootProvider {
         dropSelf(UOBlocks.SAPPHIRE_BLOCK.get());
         dropSelf(UOBlocks.GLACIUM_BLOCK.get());
         dropSelf(UOBlocks.FROSTSTEEL_BLOCK.get());
-        dropSelf(UOBlocks.CRYOSTEEL_BLOCK.get());
+        dropSelf(UOBlocks.GLACIALITE_BLOCK.get());
     }
 
     @Override

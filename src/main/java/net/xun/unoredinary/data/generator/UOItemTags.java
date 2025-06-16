@@ -60,7 +60,7 @@ public class UOItemTags extends ItemTagsProvider {
                 UOArmors.getArmors().stream().map(armorSet -> (Item) armorSet.getBoots().get()).toList());
 
         addToTags(Set.of(ItemTags.FREEZE_IMMUNE_WEARABLES), UOArmors.FROSTSTEEL.getAll());
-        addToTags(Set.of(ItemTags.FREEZE_IMMUNE_WEARABLES), UOArmors.CRYOSTEEL.getAll());
+        addToTags(Set.of(ItemTags.FREEZE_IMMUNE_WEARABLES), UOArmors.GLACIALITE.getAll());
 
         // Trim Materials
         addToTags(
@@ -70,7 +70,7 @@ public class UOItemTags extends ItemTagsProvider {
                         UOItems.SAPPHIRE.get(),
                         UOItems.GLACIUM_CRYSTAL.get(),
                         UOItems.FROSTSTEEL_INGOT.get(),
-                        UOItems.CRYOSTEEL_INGOT.get()
+                        UOItems.GLACIALITE_INGOT.get()
                 ));
 
         /* ------------------------------ COMMON ------------------------------ */
@@ -84,7 +84,7 @@ public class UOItemTags extends ItemTagsProvider {
 
         // cTags: Ingots
         addToTags(Set.of(Tags.Items.INGOTS, UOTags.Items.INGOTS_FROSTSTEEL), Set.of(UOItems.FROSTSTEEL_INGOT.get()));
-        addToTags(Set.of(Tags.Items.INGOTS, UOTags.Items.INGOTS_CRYOSTEEL), Set.of(UOItems.CRYOSTEEL_INGOT.get()));
+        addToTags(Set.of(Tags.Items.INGOTS, UOTags.Items.INGOTS_GLACIALITE), Set.of(UOItems.GLACIALITE_INGOT.get()));
     }
 
     private void addToTags(Collection<TagKey<Item>> tags, Collection<Item> entries) {

@@ -40,7 +40,7 @@ public class UOBlockTags extends BlockTagsProvider {
                 UOBlocks.SAPPHIRE_BLOCK.get(),
                 UOBlocks.GLACIUM_BLOCK.get(),
                 UOBlocks.FROSTSTEEL_BLOCK.get(),
-                UOBlocks.CRYOSTEEL_BLOCK.get()
+                UOBlocks.GLACIALITE_BLOCK.get()
         );
 
         tag(BlockTags.NEEDS_STONE_TOOL).add(
@@ -62,7 +62,7 @@ public class UOBlockTags extends BlockTagsProvider {
                 UOBlocks.GLACIUM_BLOCK.get(),
 
                 UOBlocks.FROSTSTEEL_BLOCK.get(),
-                UOBlocks.CRYOSTEEL_BLOCK.get()
+                UOBlocks.GLACIALITE_BLOCK.get()
         );
 
         // Froststeel
@@ -125,8 +125,8 @@ public class UOBlockTags extends BlockTagsProvider {
         );
 
         addToTags(
-                Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_CRYOSTEEL),
-                Set.of(UOBlocks.CRYOSTEEL_BLOCK.get())
+                Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_GLACIALITE),
+                Set.of(UOBlocks.GLACIALITE_BLOCK.get())
         );
     }
 

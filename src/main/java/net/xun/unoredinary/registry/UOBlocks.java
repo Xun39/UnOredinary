@@ -128,7 +128,7 @@ public class UOBlocks {
             )
     );
 
-    public static final DeferredBlock<Block> CRYOSTEEL_BLOCK = register("cryosteel_block",
+    public static final DeferredBlock<Block> GLACIALITE_BLOCK = register("glacialite_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_BLUE)
                     .instrument(NoteBlockInstrument.HARP)

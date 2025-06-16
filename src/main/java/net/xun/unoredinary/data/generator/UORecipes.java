@@ -91,8 +91,8 @@ public class UORecipes extends UORecipeProvider {
         toolsetRecipe(recipeOutput, UOTools.FROSTSTEEL, Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), UOItems.FROSTSTEEL_INGOT);
         armorsetRecipe(recipeOutput, UOArmors.FROSTSTEEL, Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), UOItems.FROSTSTEEL_INGOT);
 
-        // Cryosteel-related
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, UOItems.CRYOSTEEL_INGOT)
+        // Glacialite-related
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, UOItems.GLACIALITE_INGOT)
                 .requires(Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), 4)
                 .requires(Ingredient.of(UOTags.Items.GEMS_GLACIUM), 3)
                 .requires(Ingredient.of(UOTags.Items.GEMS_SAPPHIRE))
@@ -102,22 +102,22 @@ public class UORecipes extends UORecipeProvider {
                 recipeOutput,
                 RecipeCategory.BUILDING_BLOCKS,
                 RecipeCategory.MISC,
-                Ingredient.of(UOBlocks.CRYOSTEEL_BLOCK),
-                UOBlocks.CRYOSTEEL_BLOCK,
-                Ingredient.of(UOTags.Items.INGOTS_CRYOSTEEL),
-                UOItems.CRYOSTEEL_INGOT);
+                Ingredient.of(UOBlocks.GLACIALITE_BLOCK),
+                UOBlocks.GLACIALITE_BLOCK,
+                Ingredient.of(UOTags.Items.INGOTS_GLACIALITE),
+                UOItems.GLACIALITE_INGOT);
 
-        copySmithingTemplate(recipeOutput, UOItems.CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE, Ingredient.of(Blocks.ICE, Blocks.PACKED_ICE, Blocks.BLUE_ICE));
+        copySmithingTemplate(recipeOutput, UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE, Ingredient.of(Blocks.ICE, Blocks.PACKED_ICE, Blocks.BLUE_ICE));
 
-        cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOTools.FROSTSTEEL.getSword().get(), UOTools.CRYOSTEEL.getSword().get());
-        cryosteelSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getAxe().get(), UOTools.CRYOSTEEL.getAxe().get());
-        cryosteelSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getPickaxe().get(), UOTools.CRYOSTEEL.getPickaxe().get());
-        cryosteelSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getHoe().get(), UOTools.CRYOSTEEL.getHoe().get());
-        cryosteelSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getShovel().get(), UOTools.CRYOSTEEL.getShovel().get());
+        glacialiteSmithing(recipeOutput, RecipeCategory.COMBAT, UOTools.FROSTSTEEL.getSword().get(), UOTools.GLACIALITE.getSword().get());
+        glacialiteSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getAxe().get(), UOTools.GLACIALITE.getAxe().get());
+        glacialiteSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getPickaxe().get(), UOTools.GLACIALITE.getPickaxe().get());
+        glacialiteSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getHoe().get(), UOTools.GLACIALITE.getHoe().get());
+        glacialiteSmithing(recipeOutput, RecipeCategory.TOOLS, UOTools.FROSTSTEEL.getShovel().get(), UOTools.GLACIALITE.getShovel().get());
 
-        cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getHelmet().get(), UOArmors.CRYOSTEEL.getHelmet().get());
-        cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getChestplate().get(), UOArmors.CRYOSTEEL.getChestplate().get());
-        cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getLeggings().get(), UOArmors.CRYOSTEEL.getLeggings().get());
-        cryosteelSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getBoots().get(), UOArmors.CRYOSTEEL.getBoots().get());
+        glacialiteSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getHelmet().get(), UOArmors.GLACIALITE.getHelmet().get());
+        glacialiteSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getChestplate().get(), UOArmors.GLACIALITE.getChestplate().get());
+        glacialiteSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getLeggings().get(), UOArmors.GLACIALITE.getLeggings().get());
+        glacialiteSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getBoots().get(), UOArmors.GLACIALITE.getBoots().get());
     }
 }

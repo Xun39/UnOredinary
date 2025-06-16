@@ -26,6 +26,6 @@ public class UOBlockStates extends UOBlockStateProvider {
         blockWithItem(UOBlocks.SAPPHIRE_BLOCK);
         blockWithItem(UOBlocks.GLACIUM_BLOCK);
         blockWithItem(UOBlocks.FROSTSTEEL_BLOCK);
-        blockWithItem(UOBlocks.CRYOSTEEL_BLOCK);
+        blockWithItem(UOBlocks.GLACIALITE_BLOCK);
     }
 }

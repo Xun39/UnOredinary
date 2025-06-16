@@ -202,12 +202,12 @@ public abstract class UORecipeProvider extends RecipeProvider {
 
     /* ---------------------------------------- SMITHING ---------------------------------------- */
 
-    protected static void cryosteelSmithing(RecipeOutput recipeOutput, RecipeCategory category, Item ingredientItem, Item resultItem) {
+    protected static void glacialiteSmithing(RecipeOutput recipeOutput, RecipeCategory category, Item ingredientItem, Item resultItem) {
         SmithingTransformRecipeBuilder
                 .smithing(
-                        Ingredient.of(UOItems.CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ingredientItem), Ingredient.of(UOTags.Items.INGOTS_CRYOSTEEL), category, resultItem
+                        Ingredient.of(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ingredientItem), Ingredient.of(UOTags.Items.INGOTS_GLACIALITE), category, resultItem
                 )
-                .unlocks(getHasName(UOItems.CRYOSTEEL_INGOT), has(UOItems.CRYOSTEEL_INGOT))
+                .unlocks(getHasName(UOItems.GLACIALITE_INGOT), has(UOItems.GLACIALITE_INGOT))
                 .save(recipeOutput, CommonUtils.modLoc(getItemName(resultItem) + "_smithing"));
     }
 }

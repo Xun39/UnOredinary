@@ -32,14 +32,14 @@ public class UOArmorMaterials {
             }), 16, 0.0F, 0.0F, () -> Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), SoundEvents.ARMOR_EQUIP_IRON
     );
 
-    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CRYOSTEEL = register("cryosteel",
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> GLACIALITE = register("glacialite",
             Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                 map.put(ArmorItem.Type.BOOTS, 3);
                 map.put(ArmorItem.Type.LEGGINGS, 6);
                 map.put(ArmorItem.Type.CHESTPLATE, 8);
                 map.put(ArmorItem.Type.HELMET, 3);
                 map.put(ArmorItem.Type.BODY, 11);
-            }), 13, 3.0F, 0.1F, () -> Ingredient.of(UOTags.Items.INGOTS_CRYOSTEEL), UOSounds.ARMOR_EQUIP_CRYOSTEEL
+            }), 13, 3.0F, 0.1F, () -> Ingredient.of(UOTags.Items.INGOTS_GLACIALITE), UOSounds.ARMOR_EQUIP_CRYOSTEEL
     );
 
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> SAPPHIRE = register("sapphire",

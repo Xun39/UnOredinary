@@ -33,7 +33,7 @@ public class UOCreativeModeTabs {
                         output.accept(UOBlocks.SAPPHIRE_BLOCK);
                         output.accept(UOBlocks.GLACIUM_BLOCK);
                         output.accept(UOBlocks.FROSTSTEEL_BLOCK);
-                        output.accept(UOBlocks.CRYOSTEEL_BLOCK);
+                        output.accept(UOBlocks.GLACIALITE_BLOCK);
 
                     })
                     .build()
@@ -53,9 +53,9 @@ public class UOCreativeModeTabs {
                         output.accept(UOItems.GLACIUM_CRYSTAL);
 
                         output.accept(UOItems.FROSTSTEEL_INGOT);
-                        output.accept(UOItems.CRYOSTEEL_INGOT);
+                        output.accept(UOItems.GLACIALITE_INGOT);
 
-                        output.accept(UOItems.CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE);
+                        output.accept(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE);
 
                     })
                     .build()

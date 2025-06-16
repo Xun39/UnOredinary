@@ -16,16 +16,16 @@ import java.util.Map;
 public class UOTrimMaterials {
 
     public static final ResourceKey<TrimMaterial> CRYIC = createKey("cryic");
-    public static final ResourceKey<TrimMaterial> SAPPHIRE = createKey("sapphire");
     public static final ResourceKey<TrimMaterial> GLACIUM = createKey("glacium");
     public static final ResourceKey<TrimMaterial> FROSTSTEEL = createKey("froststeel");
-    public static final ResourceKey<TrimMaterial> CRYOSTEEL = createKey("cryosteel");
+    public static final ResourceKey<TrimMaterial> GLACIALITE = createKey("glacialite");
+    public static final ResourceKey<TrimMaterial> SAPPHIRE = createKey("sapphire");
 
     public static void bootstrap(BootstrapContext<TrimMaterial> context) {
         register(context, CRYIC, UOItems.CRYIC_POWDER.get(), Style.EMPTY.withColor(TextColor.parseColor("#a9c4db").getOrThrow()), 0.1F);
         register(context, GLACIUM, UOItems.GLACIUM_CRYSTAL.get(), Style.EMPTY.withColor(TextColor.parseColor("#017ed8").getOrThrow()), 0.1F);
         register(context, FROSTSTEEL, UOItems.FROSTSTEEL_INGOT.get(), Style.EMPTY.withColor(TextColor.parseColor("#017ed8").getOrThrow()), 0.1F);
-        register(context, CRYOSTEEL, UOItems.CRYOSTEEL_INGOT.get(), Style.EMPTY.withColor(TextColor.parseColor("#017ed8").getOrThrow()), 0.8F);
+        register(context, GLACIALITE, UOItems.GLACIALITE_INGOT.get(), Style.EMPTY.withColor(TextColor.parseColor("#017ed8").getOrThrow()), 0.8F);
         register(context, SAPPHIRE, UOItems.SAPPHIRE.get(), Style.EMPTY.withColor(TextColor.parseColor("#017ed8").getOrThrow()), 0.9F);
     }
 

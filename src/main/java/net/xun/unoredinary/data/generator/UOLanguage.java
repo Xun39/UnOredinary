@@ -34,7 +34,7 @@ public class UOLanguage extends UOLanguageProvider {
         addBlock(UOBlocks.SAPPHIRE_BLOCK, "Block of Sapphire");
         addBlock(UOBlocks.GLACIUM_BLOCK, "Block of Glacium");
         addBlock(UOBlocks.FROSTSTEEL_BLOCK, "Block of Froststeel");
-        addBlock(UOBlocks.CRYOSTEEL_BLOCK, "Block of Cryosteel");
+        addBlock(UOBlocks.GLACIALITE_BLOCK, "Block of Glacialite");
 
         /* ------------------------------ MOB EFFECTS ------------------------------ */
         addEffect(UOMobEffects.FROSTED_EFFECT, "Frostbitten");
@@ -48,31 +48,31 @@ public class UOLanguage extends UOLanguageProvider {
         addItem(UOItems.GLACIUM_CRYSTAL, "Glacium Crystal");
 
         addItem(UOItems.FROSTSTEEL_INGOT, "Froststeel Ingot");
-        addItem(UOItems.CRYOSTEEL_INGOT, "Cryosteel Ingot");
+        addItem(UOItems.GLACIALITE_INGOT, "Glacialite Ingot");
 
-        addItem(UOItems.CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE, "Smithing Template");
+        addItem(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE, "Smithing Template");
 
         addToolSet(UOTools.FROSTSTEEL);
-        addToolSet(UOTools.CRYOSTEEL);
+        addToolSet(UOTools.GLACIALITE);
         addToolSet(UOTools.SAPPHIRE);
 
         addArmorSet(UOArmors.FROSTSTEEL);
-        addArmorSet(UOArmors.CRYOSTEEL);
+        addArmorSet(UOArmors.GLACIALITE);
         addArmorSet(UOArmors.SAPPHIRE);
 
         /* ------------------------------ TRIM MATERIALS ------------------------------ */
         addTrimMaterial(UOTrimMaterials.CRYIC, "Cryic Material");
         addTrimMaterial(UOTrimMaterials.GLACIUM, "Glacium Material");
         addTrimMaterial(UOTrimMaterials.FROSTSTEEL, "Froststeel Material");
-        addTrimMaterial(UOTrimMaterials.CRYOSTEEL, "Cryosteel Material");
+        addTrimMaterial(UOTrimMaterials.GLACIALITE, "Glacialite Material");
         addTrimMaterial(UOTrimMaterials.SAPPHIRE, "Sapphire Material");
 
         /* ------------------------------ TOOLTIPS ------------------------------ */
-        add("upgrade.unoredinary.cryosteel_upgrade", "Cryosteel Upgrade");
-        add("item.unoredinary.smithing_template.cryosteel_upgrade.applies_to", "Froststeel Equipment");
-        add("item.unoredinary.smithing_template.cryosteel_upgrade.ingredients", "Cryosteel Ingot");
-        add("item.unoredinary.smithing_template.cryosteel_upgrade.base_slot_description", "Add froststeel armor, weapon, or tool");
-        add("item.unoredinary.smithing_template.cryosteel_upgrade.additions_slot_description", "Add Cryosteel Ingot");
+        add("upgrade.unoredinary.glacialite_upgrade", "Glacialite Upgrade");
+        add("item.unoredinary.smithing_template.glacialite_upgrade.applies_to", "Froststeel Equipment");
+        add("item.unoredinary.smithing_template.glacialite_upgrade.ingredients", "Glacialite Ingot");
+        add("item.unoredinary.smithing_template.glacialite_upgrade.base_slot_description", "Add froststeel armor, weapon, or tool");
+        add("item.unoredinary.smithing_template.glacialite_upgrade.additions_slot_description", "Add Glacialite Ingot");
 
         /* ------------------------------ TAGS ------------------------------ */
         translateTag(UOTags.Blocks.ORES_CRYIC, "Cryic Ores");
@@ -80,11 +80,11 @@ public class UOLanguage extends UOLanguageProvider {
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_CRYIC, "Cryic Storage Blocks");
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_GLACIUM, "Glacium Storage Blocks");
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_FROSTSTEEL, "Froststeel Storage Blocks");
-        translateTag(UOTags.Blocks.STORAGE_BLOCKS_CRYOSTEEL, "Cryosteel Storage Blocks");
+        translateTag(UOTags.Blocks.STORAGE_BLOCKS_GLACIALITE, "Glacialite Storage Blocks");
 
         translateTag(UOTags.Items.NUGGETS_GLACIUM, "Glacium Nuggets (Shards)");
         translateTag(UOTags.Items.GEMS_GLACIUM, "Glacium Gems");
         translateTag(UOTags.Items.INGOTS_FROSTSTEEL, "Froststeel Ingots");
-        translateTag(UOTags.Items.INGOTS_CRYOSTEEL, "Cryosteel Ingots");
+        translateTag(UOTags.Items.INGOTS_GLACIALITE, "Glacialite Ingots");
     }
 }

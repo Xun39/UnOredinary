@@ -28,10 +28,10 @@ public class UOItemModels extends UOItemModelProvider {
         toolSetModels(UOTools.FROSTSTEEL);
         armorSetModels(UOArmors.FROSTSTEEL);
 
-        basicItem(UOItems.CRYOSTEEL_INGOT.get());
-        toolSetModels(UOTools.CRYOSTEEL);
-        armorSetModels(UOArmors.CRYOSTEEL);
+        basicItem(UOItems.GLACIALITE_INGOT.get());
+        toolSetModels(UOTools.GLACIALITE);
+        armorSetModels(UOArmors.GLACIALITE);
 
-        basicItem(UOItems.CRYOSTEEL_UPGRADE_SMITHING_TEMPLATE.get());
+        basicItem(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE.get());
     }
 }

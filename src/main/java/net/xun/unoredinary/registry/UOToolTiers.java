@@ -12,8 +12,8 @@ public class UOToolTiers {
             UOTags.Blocks.INCORRECT_FOR_FROSTSTEEL_TOOL, 767, 6.5F, 2.0F, 16, () -> Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL)
     );
 
-    public static final Tier CRYOSTEEL = new SimpleTier(
-            BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1742, 9.0F, 4.0F, 13, () -> Ingredient.of(UOTags.Items.INGOTS_CRYOSTEEL)
+    public static final Tier GLACIALITE = new SimpleTier(
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1742, 9.0F, 4.0F, 13, () -> Ingredient.of(UOTags.Items.INGOTS_GLACIALITE)
     );
 
     public static final Tier SAPPHIRE = new SimpleTier(
