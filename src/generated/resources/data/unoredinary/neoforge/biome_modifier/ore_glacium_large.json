@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#c:is_cold",
+  "biomes": "#c:is_icy",
   "features": "unoredinary:ore_glacium_large",
   "step": "underground_ores"
 }

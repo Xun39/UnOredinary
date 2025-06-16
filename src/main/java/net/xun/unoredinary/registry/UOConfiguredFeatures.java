@@ -1,4 +1,4 @@
-package net.xun.unoredinary.world;
+package net.xun.unoredinary.registry;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -11,7 +11,6 @@ import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguratio
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.xun.lib.common.api.util.CommonUtils;
-import net.xun.unoredinary.registry.UOBlocks;
 
 import java.util.List;
 
@@ -46,9 +45,9 @@ public class UOConfiguredFeatures {
                 ), 7)
         );
 
-        register(context, ORE_SAPPHIRE_SMALL, Feature.ORE, new OreConfiguration(sapphireOres, 3, 0.4F));
-        register(context, ORE_SAPPHIRE_MEDIUM, Feature.ORE, new OreConfiguration(sapphireOres, 6, 0.4F));
-        register(context, ORE_SAPPHIRE_LARGE, Feature.ORE, new OreConfiguration(sapphireOres, 11, 0.6F));
+        register(context, ORE_SAPPHIRE_SMALL, Feature.ORE, new OreConfiguration(sapphireOres, 3, 0.5F));
+        register(context, ORE_SAPPHIRE_MEDIUM, Feature.ORE, new OreConfiguration(sapphireOres, 6, 0.6F));
+        register(context, ORE_SAPPHIRE_LARGE, Feature.ORE, new OreConfiguration(sapphireOres, 11, 0.7F));
         register(context, ORE_SAPPHIRE_BURIED, Feature.ORE, new OreConfiguration(sapphireOres, 6, 1.0F));
 
         register(context, ORE_GLACIUM, Feature.SCATTERED_ORE, new OreConfiguration(iceReplaceable, UOBlocks.GLACIUM_ORE.get().defaultBlockState(), 2, 0.3F));

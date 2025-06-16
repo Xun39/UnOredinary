@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1548653468,
+    "separation": 10,
+    "spacing": 24
+  },
+  "structures": [
+    {
+      "structure": "unoredinary:frozen_vault",
+      "weight": 1
+    }
+  ]
+}

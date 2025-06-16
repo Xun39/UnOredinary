@@ -32,6 +32,8 @@ public class UnOredinary {
         UOParticleTypes.PARTICLE_TYPES.register(modEventBus);
         UOArmorMaterials.ARMOR_MATERIALS.register(modEventBus);
         UOCreativeModeTabs.CREATIVE_MODE_TABS.register(modEventBus);
+        UOStructureTypes.STRUCTURE_TYPES.register(modEventBus);
+        UOStructurePieceTypes.STRUCTURE_PIECE_TYPES.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
         modContainer.registerConfig(ModConfig.Type.COMMON, UnOredinaryConfig.SPEC);

@@ -1,4 +1,4 @@
-package net.xun.unoredinary.world;
+package net.xun.unoredinary.registry;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -56,10 +56,10 @@ public class UOPlacedFeatures {
                 OrePlacementHelper.countPlacement(2, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-6)))
         );
         register(context, ORE_SAPPHIRE_LARGE, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_SAPPHIRE_MEDIUM),
-                OrePlacementHelper.rarityPlacement(8, HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80)))
+                OrePlacementHelper.rarityPlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80)))
         );
         register(context, ORE_SAPPHIRE_BURIED, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_SAPPHIRE_MEDIUM),
-                OrePlacementHelper.countPlacement(5, HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80)))
+                OrePlacementHelper.countPlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80)))
         );
     }
 
