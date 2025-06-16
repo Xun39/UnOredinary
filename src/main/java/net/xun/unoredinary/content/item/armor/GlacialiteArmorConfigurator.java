@@ -2,6 +2,7 @@ package net.xun.unoredinary.content.item.armor;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -28,6 +29,7 @@ import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.registry.UOArmorMaterials;
+import net.xun.unoredinary.registry.UOParticleTypes;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class GlacialiteArmorConfigurator implements ArmorConfigurator {
@@ -86,6 +88,28 @@ public class GlacialiteArmorConfigurator implements ArmorConfigurator {
 
         if (ArmorSlotsUtils.hasFullArmorSetOfMaterial(player, UOArmorMaterials.GLACIALITE)) {
             attacker.hurt(receiver.damageSources().freeze(), event.getOriginalDamage());
+            spawnHurtParticles(player);
+        }
+    }
+
+    private static void spawnHurtParticles(LivingEntity target) {
+        if (!(target.level() instanceof ServerLevel serverLevel)) return;
+
+        if (target.level().getRandom().nextFloat() < 0.3F) {
+            double centerX = target.getX() + target.level().getRandom().nextFloat();
+            double centerY = target.getY() + target.getBbHeight() / 2.0;
+            double centerZ = target.getZ() + target.level().getRandom().nextFloat();
+
+            double halfWidth = target.getBbWidth() / 2.0;
+            double halfHeight = target.getBbHeight() / 2.0;
+
+            serverLevel.sendParticles(
+                    UOParticleTypes.RIME.get(),
+                    centerX, centerY, centerZ,
+                    20,
+                    halfWidth, halfHeight, halfWidth,
+                    0.02
+            );
         }
     }
 }

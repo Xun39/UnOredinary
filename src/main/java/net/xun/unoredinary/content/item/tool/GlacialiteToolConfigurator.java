@@ -1,6 +1,9 @@
 package net.xun.unoredinary.content.item.tool;
 
+import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Monster;
@@ -19,6 +22,14 @@ import net.xun.unoredinary.registry.UOParticleTypes;
 import java.util.List;
 
 public class GlacialiteToolConfigurator implements ToolConfigurator {
+    private static final int FROSTED_DURATION = 400;
+    private static final int WEAKNESS_DURATION_NOVA = 60;
+    private static final int WEAKNESS_AMPLIFIER_NOVA = 2;
+    private static final int SLOW_DURATION = 60;
+    private static final int SLOW_AMPLIFIER = 2;
+    private static final int WEAKNESS_DURATION_SINGLE = 40;
+    private static final int WEAKNESS_AMPLIFIER_SINGLE = 1;
+
     @Override
     public Item createTool(ToolType type, Tier tier, Item.Properties properties) {
         switch (type) {
@@ -89,66 +100,73 @@ public class GlacialiteToolConfigurator implements ToolConfigurator {
     }
 
     private static void handleHitEffect(LivingEntity target, LivingEntity attacker, boolean applyFrostNova) {
-        if (!(attacker instanceof Player))
-            return;
-
-        Level level = target.level();
+        if (!(attacker instanceof Player)) return;
 
         if (applyFrostNova) {
-            level.getEntitiesOfClass(Monster.class, BlockPosUtils.createAABBFromCenter(
-                    target.blockPosition(), 5, 2, 5)
-            ).forEach(monster -> {
-                MobEffectUtils.applyEffectsWithStrategy(
-                        monster,
-                        List.of(
-                                MobEffectInstanceBuilder.of(UOMobEffects.FROSTED_EFFECT)
-                                        .withDuration(400)
-                                        .ambient()
-                                        .build(),
-                                MobEffectInstanceBuilder.of(MobEffects.WEAKNESS)
-                                        .withDuration(60)
-                                        .withAmplifier(2)
-                                        .ambient()
-                                        .build()
-                        ),
-                        EffectStackingStrategy.FORCE_OVERRIDE
-                );
-
-                if (monster.level() instanceof ServerLevel serverLevel) {
-                    double centerX = monster.getX();
-                    double centerY = monster.getY() + monster.getBbHeight() / 2.0;
-                    double centerZ = monster.getZ();
-
-                    double halfWidth = monster.getBbWidth() / 2.0;
-                    double halfHeight = monster.getBbHeight() / 2.0;
-
-                    serverLevel.sendParticles(
-                            UOParticleTypes.SUBZERO_FROST.get(),
-                            centerX, centerY, centerZ,
-                            24,
-                            halfWidth, halfHeight, halfWidth,
-                            0.02
-                    );
-                }
-            });
+            applyFrostNovaEffect(target);
         } else {
-
-            MobEffectUtils.applyEffectsWithStrategy(
-                    target,
-                    List.of(
-                            MobEffectInstanceBuilder.of(MobEffects.MOVEMENT_SLOWDOWN)
-                                    .withDuration(60)
-                                    .withAmplifier(2)
-                                    .ambient()
-                                    .build(),
-                            MobEffectInstanceBuilder.of(MobEffects.WEAKNESS)
-                                    .withDuration(40)
-                                    .withAmplifier(1)
-                                    .ambient()
-                                    .build()
-                    ),
-                    EffectStackingStrategy.UPGRADE_EXISTING
-            );
+            applySingleTargetEffects(target);
         }
+    }
+
+    private static void applyFrostNovaEffect(LivingEntity target) {
+        Level level = target.level();
+        List<Monster> monsters = level.getEntitiesOfClass(
+                Monster.class,
+                BlockPosUtils.createAABBFromCenter(target.blockPosition(), 5, 2, 5)
+        );
+
+        for (Monster monster : monsters) {
+            applyFrostEffects(monster);
+            spawnFrostParticles(monster);
+        }
+    }
+
+    private static void applyFrostEffects(LivingEntity target) {
+        List<MobEffectInstance> effects = List.of(
+                buildEffectInstance(UOMobEffects.FROSTED_EFFECT, FROSTED_DURATION, 0),
+                buildEffectInstance(MobEffects.WEAKNESS, WEAKNESS_DURATION_NOVA, WEAKNESS_AMPLIFIER_NOVA)
+        );
+
+        MobEffectUtils.applyEffectsWithStrategy(target, effects, EffectStackingStrategy.FORCE_OVERRIDE);
+    }
+
+    private static void spawnFrostParticles(LivingEntity target) {
+        if (!(target.level() instanceof ServerLevel serverLevel)) return;
+
+        double centerX = target.getX();
+        double centerY = target.getY() + target.getBbHeight() / 2.0;
+        double centerZ = target.getZ();
+
+        double halfWidth = target.getBbWidth() / 2.0;
+        double halfHeight = target.getBbHeight() / 2.0;
+
+        serverLevel.sendParticles(
+                UOParticleTypes.SUBZERO_FROST.get(),
+                centerX, centerY, centerZ,
+                24,
+                halfWidth, halfHeight, halfWidth,
+                0.03
+        );
+    }
+
+    private static void applySingleTargetEffects(LivingEntity target) {
+        List<MobEffectInstance> effects = List.of(
+                buildEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, SLOW_DURATION, SLOW_AMPLIFIER),
+                buildEffectInstance(MobEffects.WEAKNESS, WEAKNESS_DURATION_SINGLE, WEAKNESS_AMPLIFIER_SINGLE)
+        );
+        MobEffectUtils.applyEffectsWithStrategy(target, effects, EffectStackingStrategy.UPGRADE_EXISTING);
+    }
+
+    private static MobEffectInstance buildEffectInstance(
+            Holder<MobEffect> effect,
+            int duration,
+            int amplifier
+    ) {
+        return MobEffectInstanceBuilder.of(effect)
+                .withDuration(duration)
+                .withAmplifier(amplifier)
+                .ambient()
+                .build();
     }
 }

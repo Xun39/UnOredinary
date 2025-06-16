@@ -22,7 +22,7 @@ public class UOTools {
             .withConfiguration(new GlacialiteToolConfigurator())
             .withVanillaBalance()
             .withToolStats(ToolType.AXE, 5.0F, 1.0F)
-            .withToolStats(ToolType.HOE, -4.0F, 0.0F)
+            .withToolStats(ToolType.HOE, -4.0F, 4.0F)
             .build()
     );
 

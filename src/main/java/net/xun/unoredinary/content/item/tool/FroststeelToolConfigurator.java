@@ -1,23 +1,28 @@
 package net.xun.unoredinary.content.item.tool;
 
+import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.xun.lib.common.api.item.tools.ToolConfigurator;
 import net.xun.lib.common.api.item.tools.ToolType;
-import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategy;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
+import net.xun.unoredinary.registry.UOMobEffects;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
 import java.util.List;
 
 public class FroststeelToolConfigurator implements ToolConfigurator {
+    private static final int SLOW_DURATION = 40;
+    private static final int SLOW_AMPLIFIER = 1;
+
     @Override
     public Item createTool(ToolType type, Tier tier, Item.Properties properties) {
         switch (type) {
@@ -91,39 +96,46 @@ public class FroststeelToolConfigurator implements ToolConfigurator {
         if (!(attacker instanceof Player))
             return;
 
-        Level level = target.level();
+        applyHurtEffects(target);
+    }
 
-        MobEffectUtils.applyEffectsWithStrategy(
-                target,
-                List.of(
-                        MobEffectInstanceBuilder.of(MobEffects.MOVEMENT_SLOWDOWN)
-                                .withDuration(60)
-                                .withAmplifier(2)
-                                .ambient()
-                                .build(),
-                        MobEffectInstanceBuilder.of(MobEffects.WEAKNESS)
-                                .withDuration(40)
-                                .withAmplifier(1)
-                                .ambient()
-                                .build()
-                ),
-                EffectStackingStrategy.UPGRADE_EXISTING
+    private static void applyHurtEffects(LivingEntity target) {
+        List<MobEffectInstance> effects = List.of(
+                buildEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, SLOW_DURATION, SLOW_AMPLIFIER)
         );
 
-        if (level instanceof ServerLevel serverLevel) {
-            double centerX = target.getX();
-            double centerY = target.getY() + target.getBbHeight() / 2.0;
-            double centerZ = target.getZ();
-            double halfWidth = target.getBbWidth() / 2.0;
-            double halfHeight = target.getBbHeight() / 2.0;
+        MobEffectUtils.applyEffectsWithStrategy(target, effects, EffectStackingStrategy.FORCE_OVERRIDE);
+        spawnRimeParticles(target);
+    }
 
-            serverLevel.sendParticles(
-                    UOParticleTypes.RIME.get(),
-                    centerX, centerY, centerZ,
-                    20,
-                    halfWidth, halfHeight, halfWidth,
-                    0.02
-            );
-        }
+    private static void spawnRimeParticles(LivingEntity target) {
+        if (!(target.level() instanceof ServerLevel serverLevel)) return;
+
+        double centerX = target.getX();
+        double centerY = target.getY() + target.getBbHeight() / 2.0;
+        double centerZ = target.getZ();
+
+        double halfWidth = target.getBbWidth() / 2.0;
+        double halfHeight = target.getBbHeight() / 2.0;
+
+        serverLevel.sendParticles(
+                UOParticleTypes.RIME.get(),
+                centerX, centerY, centerZ,
+                20,
+                halfWidth, halfHeight, halfWidth,
+                0.02
+        );
+    }
+
+    private static MobEffectInstance buildEffectInstance(
+            Holder<MobEffect> effect,
+            int duration,
+            int amplifier
+    ) {
+        return MobEffectInstanceBuilder.of(effect)
+                .withDuration(duration)
+                .withAmplifier(amplifier)
+                .ambient()
+                .build();
     }
 }

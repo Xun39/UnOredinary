@@ -11,8 +11,8 @@
   "block.unoredinary.cryic_block": "寒晶块",
   "block.unoredinary.sapphire_block": "蓝宝石块",
   "block.unoredinary.glacium_block": "冰魄块",
-  "block.unoredinary.cryosteel_block": "凛钢块",
   "block.unoredinary.froststeel_block": "霜铁块",
+  "block.unoredinary.glacialite_block": "凛钢块",
 
   "effect.unoredinary.frostbitten": "冻伤",
 
@@ -36,18 +36,18 @@
   "item.unoredinary.froststeel_leggings": "霜铁护腿",
   "item.unoredinary.froststeel_boots": "霜铁靴子",
 
-  "item.unoredinary.cryosteel_ingot": "凛钢锭",
+  "item.unoredinary.glacialite_ingot": "凛钢锭",
 
-  "item.unoredinary.cryosteel_sword": "凛钢剑",
-  "item.unoredinary.cryosteel_axe": "凛钢斧",
-  "item.unoredinary.cryosteel_pickaxe": "凛钢镐",
-  "item.unoredinary.cryosteel_hoe": "凛钢锄",
-  "item.unoredinary.cryosteel_shovel": "凛钢锹",
+  "item.unoredinary.glacialite_sword": "凛钢剑",
+  "item.unoredinary.glacialite_axe": "凛钢斧",
+  "item.unoredinary.glacialite_pickaxe": "凛钢镐",
+  "item.unoredinary.glacialite_hoe": "凛钢锄",
+  "item.unoredinary.glacialite_shovel": "凛钢锹",
 
-  "item.unoredinary.cryosteel_helmet": "凛钢头盔",
-  "item.unoredinary.cryosteel_chestplate": "凛钢胸甲",
-  "item.unoredinary.cryosteel_leggings": "凛钢护腿",
-  "item.unoredinary.cryosteel_boots": "凛钢靴子",
+  "item.unoredinary.glacialite_helmet": "凛钢头盔",
+  "item.unoredinary.glacialite_chestplate": "凛钢胸甲",
+  "item.unoredinary.glacialite_leggings": "凛钢护腿",
+  "item.unoredinary.glacialite_boots": "凛钢靴子",
 
   "item.unoredinary.sapphire_sword": "蓝宝石剑",
   "item.unoredinary.sapphire_axe": "蓝宝石斧",
@@ -60,13 +60,14 @@
   "item.unoredinary.sapphire_leggings": "蓝宝石护腿",
   "item.unoredinary.sapphire_boots": "蓝宝石靴子",
 
-  "item.unoredinary.cryosteel_upgrade_smithing_template": "锻造模板",
+  "item.unoredinary.glacialite_upgrade_smithing_template": "锻造模板",
 
-  "upgrade.unoredinary.cryosteel_upgrade": "凛钢升级",
-  "item.unoredinary.smithing_template.cryosteel_upgrade.applies_to": "霜铁装备",
-  "item.unoredinary.smithing_template.cryosteel_upgrade.ingredients": "凛钢锭",
-  "item.unoredinary.smithing_template.cryosteel_upgrade.base_slot_description": "放入霜铁盔甲、武器或工具",
-  "item.unoredinary.smithing_template.cryosteel_upgrade.additions_slot_description": "放入凛钢锭",
+
+  "upgrade.unoredinary.glacialite_upgrade": "凛钢升级",
+  "item.unoredinary.smithing_template.glacialite_upgrade.applies_to": "霜铁装备",
+  "item.unoredinary.smithing_template.glacialite_upgrade.ingredients": "凛钢锭",
+  "item.unoredinary.smithing_template.glacialite_upgrade.base_slot_description": "放入霜铁盔甲、武器或工具",
+  "item.unoredinary.smithing_template.glacialite_upgrade.additions_slot_description": "放入凛钢锭",
 
   "creative_mode_tab.unoredinary.block": "玄矿录：方块",
   "creative_mode_tab.unoredinary.item": "玄矿录：物品",
@@ -75,17 +76,17 @@
   "trim_material.unoredinary.cryic": "寒晶材料",
   "trim_material.unoredinary.glacium": "冰魄材料",
   "trim_material.unoredinary.froststeel": "霜铁材料",
-  "trim_material.unoredinary.cryosteel": "凛钢材料",
+  "trim_material.unoredinary.glacialite": "凛钢材料",
   "trim_material.unoredinary.sapphire": "蓝宝石材料",
 
   "tag.block.c.ores.cryic": "Cryic Ores",
   "tag.block.c.ores.glacium": "Glacium Ores",
   "tag.block.c.storage_blocks.cryic": "Cryic Storage Blocks",
-  "tag.block.c.storage_blocks.cryosteel": "Cryosteel Storage Blocks",
   "tag.block.c.storage_blocks.froststeel": "Froststeel Storage Blocks",
+  "tag.block.c.storage_blocks.glacialite": "Glacialite Storage Blocks",
   "tag.block.c.storage_blocks.glacium": "Glacium Storage Blocks",
   "tag.item.c.gems.glacium": "Glacium Gems",
-  "tag.item.c.ingots.cryosteel": "Cryosteel Ingots",
   "tag.item.c.ingots.froststeel": "Froststeel Ingots",
+  "tag.item.c.ingots.glacialite": "Glacialite Ingots",
   "tag.item.c.nuggets.glacium": "Glacium Nuggets (Shards)"
 }

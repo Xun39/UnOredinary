@@ -71,7 +71,8 @@ public class UOItemTags extends ItemTagsProvider {
                         UOItems.GLACIUM_CRYSTAL.get(),
                         UOItems.FROSTSTEEL_INGOT.get(),
                         UOItems.GLACIALITE_INGOT.get()
-                ));
+                )
+        );
 
         /* ------------------------------ COMMON ------------------------------ */
 
