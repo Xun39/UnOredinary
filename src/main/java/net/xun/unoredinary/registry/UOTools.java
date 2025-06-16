@@ -28,6 +28,8 @@ public class UOTools {
 
     public static final ToolSet SAPPHIRE = register(new ToolSet.Builder("sapphire", UOToolTiers.SAPPHIRE, new GenericAttributeHelper())
             .withVanillaBalance()
+            .withToolStats(ToolType.AXE, 5.0F, 1.0F)
+            .withToolStats(ToolType.HOE, -3.0F, 4.0F)
             .build()
     );
 

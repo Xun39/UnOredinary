@@ -135,7 +135,6 @@ public class FroststeelToolConfigurator implements ToolConfigurator {
         return MobEffectInstanceBuilder.of(effect)
                 .withDuration(duration)
                 .withAmplifier(amplifier)
-                .ambient()
                 .build();
     }
 }

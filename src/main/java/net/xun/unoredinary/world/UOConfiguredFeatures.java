@@ -1,4 +1,4 @@
-package net.xun.unoredinary.registry;
+package net.xun.unoredinary.world;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -11,6 +11,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguratio
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.xun.lib.common.api.util.CommonUtils;
+import net.xun.unoredinary.registry.UOBlocks;
 
 import java.util.List;
 
@@ -22,11 +23,21 @@ public class UOConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_GLACIUM_RARE = createKey("ore_glacium_rare");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_GLACIUM_LARGE = createKey("ore_glacium_large");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SAPPHIRE_SMALL = createKey("ore_sapphire_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SAPPHIRE_MEDIUM = createKey("ore_sapphire_medium");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SAPPHIRE_LARGE = createKey("ore_sapphire_large");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SAPPHIRE_BURIED = createKey("ore_sapphire_buried");
+
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
         RuleTest stoneReplaceable = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceable = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest iceReplaceable = new TagMatchTest(BlockTags.ICE);
+
+        List<OreConfiguration.TargetBlockState> sapphireOres = List.of(
+                OreConfiguration.target(stoneReplaceable, UOBlocks.SAPPHIRE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceable, UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get().defaultBlockState())
+        );
 
         register(context, ORE_CRYIC, Feature.ORE, new OreConfiguration(
                 List.of(
@@ -34,6 +45,11 @@ public class UOConfiguredFeatures {
                         OreConfiguration.target(deepslateReplaceable, UOBlocks.DEEPSLATE_CRYIC_ORE.get().defaultBlockState())
                 ), 7)
         );
+
+        register(context, ORE_SAPPHIRE_SMALL, Feature.ORE, new OreConfiguration(sapphireOres, 3, 0.4F));
+        register(context, ORE_SAPPHIRE_MEDIUM, Feature.ORE, new OreConfiguration(sapphireOres, 6, 0.4F));
+        register(context, ORE_SAPPHIRE_LARGE, Feature.ORE, new OreConfiguration(sapphireOres, 11, 0.6F));
+        register(context, ORE_SAPPHIRE_BURIED, Feature.ORE, new OreConfiguration(sapphireOres, 6, 1.0F));
 
         register(context, ORE_GLACIUM, Feature.SCATTERED_ORE, new OreConfiguration(iceReplaceable, UOBlocks.GLACIUM_ORE.get().defaultBlockState(), 2, 0.3F));
         register(context, ORE_GLACIUM_RARE, Feature.SCATTERED_ORE, new OreConfiguration(iceReplaceable, UOBlocks.PRIMAL_GLACIUM_ORE.get().defaultBlockState(), 2, 0.6F));

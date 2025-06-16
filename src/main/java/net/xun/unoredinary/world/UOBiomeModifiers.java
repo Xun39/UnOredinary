@@ -10,7 +10,6 @@ import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.xun.lib.common.api.util.CommonUtils;
-import net.xun.unoredinary.registry.UOPlacedFeatures;
 
 public class UOBiomeModifiers {
 

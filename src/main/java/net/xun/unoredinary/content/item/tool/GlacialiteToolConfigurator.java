@@ -113,7 +113,7 @@ public class GlacialiteToolConfigurator implements ToolConfigurator {
         Level level = target.level();
         List<Monster> monsters = level.getEntitiesOfClass(
                 Monster.class,
-                BlockPosUtils.createAABBFromCenter(target.blockPosition(), 5, 2, 5)
+                BlockPosUtils.createAABBFromCenter(target.blockPosition(), 4, 2, 4)
         );
 
         for (Monster monster : monsters) {
@@ -155,6 +155,7 @@ public class GlacialiteToolConfigurator implements ToolConfigurator {
                 buildEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, SLOW_DURATION, SLOW_AMPLIFIER),
                 buildEffectInstance(MobEffects.WEAKNESS, WEAKNESS_DURATION_SINGLE, WEAKNESS_AMPLIFIER_SINGLE)
         );
+
         MobEffectUtils.applyEffectsWithStrategy(target, effects, EffectStackingStrategy.UPGRADE_EXISTING);
     }
 
@@ -166,7 +167,6 @@ public class GlacialiteToolConfigurator implements ToolConfigurator {
         return MobEffectInstanceBuilder.of(effect)
                 .withDuration(duration)
                 .withAmplifier(amplifier)
-                .ambient()
                 .build();
     }
 }

@@ -21,7 +21,7 @@ public class UOCreativeModeTabs {
                     .displayItems((parameters, output) ->  {
 
                         output.accept(UOBlocks.CRYIC_ORE);
-                        output.accept(UOBlocks.DEEPSLATE_SAPPHIRE_ORE);
+                        output.accept(UOBlocks.DEEPSLATE_CRYIC_ORE);
 
                         output.accept(UOBlocks.SAPPHIRE_ORE);
                         output.accept(UOBlocks.DEEPSLATE_SAPPHIRE_ORE);
