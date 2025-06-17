@@ -1,10 +1,13 @@
 package net.xun.unoredinary.util;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.xun.lib.common.api.util.CommonUtils;
 
@@ -50,6 +53,15 @@ public class UOTags {
 
         private static TagKey<Item> createCommon(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", name));
+        }
+    }
+
+    public static class Biomes {
+
+        public static final TagKey<Biome> HAS_ICEBERG = create("has_iceberg");
+
+        private static TagKey<Biome> create(String name) {
+            return TagKey.create(Registries.BIOME, CommonUtils.modLoc(name));
         }
     }
 }

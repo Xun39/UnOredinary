@@ -1,4 +1,4 @@
-package net.xun.unoredinary.content.item.tool;
+package net.xun.unoredinary.item.tool;
 
 import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;

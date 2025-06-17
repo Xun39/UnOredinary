@@ -12,7 +12,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xun.unoredinary.UnOredinary;
-import net.xun.unoredinary.content.block.GlaciumBlock;
+import net.xun.unoredinary.block.GlaciumBlock;
 
 import java.util.function.Supplier;
 

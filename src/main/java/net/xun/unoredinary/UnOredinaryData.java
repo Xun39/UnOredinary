@@ -32,30 +32,13 @@ public class UnOredinaryData {
         generator.addProvider(client, new UOItemModels(output, helper));
         generator.addProvider(client, new UOParticles(output, helper));
 
-        generator.addProvider(server, new UOLootTables(output, registries));
-        generator.addProvider(server, new UORecipes(output, registries));
-        generator.addProvider(server, blockTagsProvider);
-        generator.addProvider(server, new UOItemTags(output, registries, blockTagsProvider.contentsGetter(), helper));
-
-        generator.addProvider(server, new UODatapackEntries(output, registries));
-
-        /*
-        BlockTagsProvider blockTagsProvider = new UOBlockTags(output, registries, helper);
-
-        generator.addProvider(client, new UOBlockStates(output, helper));
-        generator.addProvider(client, new UOItemModels(output, helper));
-
         generator.addProvider(server, new UOAdvancements(output, registries, helper));
-
         generator.addProvider(server, new UOLootTables(output, registries));
         generator.addProvider(server, new UORecipes(output, registries));
         generator.addProvider(server, blockTagsProvider);
         generator.addProvider(server, new UOItemTags(output, registries, blockTagsProvider.contentsGetter(), helper));
-        generator.addProvider(server, new UOEntityTypeTags(output, registries, helper));
         generator.addProvider(server, new UOBiomeTags(output, registries, helper));
 
-        generator.addProvider(server, new UOGlobalLootModifiers(output, registries));
         generator.addProvider(server, new UODatapackEntries(output, registries));
-        */
     }
 }

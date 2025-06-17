@@ -1,9 +1,9 @@
-// 1.21.1	2025-06-16T17:31:04.0670934	Registries
+// 1.21.1	2025-06-16T21:44:48.8745221	Registries
 524a92c72ff398c672754abe7e4fe1832264e9bd data/unoredinary/neoforge/biome_modifier/ore_cryic.json
 66bd9aafba73e721f6d3db9b1bdf854dee266200 data/unoredinary/neoforge/biome_modifier/ore_cryic_lower.json
-dfe29822fd12788925fd35eeebd2e864462a22ca data/unoredinary/neoforge/biome_modifier/ore_glacium.json
-d039f6fcfcca35b912161cc44c0d361f9dd1918d data/unoredinary/neoforge/biome_modifier/ore_glacium_large.json
-17fe56a605a5f522e75822c316a37956dc39dde8 data/unoredinary/neoforge/biome_modifier/ore_glacium_rare.json
+6e1cddc3889debe145e90a0579f34b5475f9eba7 data/unoredinary/neoforge/biome_modifier/ore_glacium.json
+ecb660b804832155bee396cc56227bb06dd7d71f data/unoredinary/neoforge/biome_modifier/ore_glacium_large.json
+66dabb1b1e805193f3af1cfdb9d872613880ec1f data/unoredinary/neoforge/biome_modifier/ore_glacium_rare.json
 4943205fedb42c56b69f73a2d0f17d2568199c1e data/unoredinary/neoforge/biome_modifier/ore_sapphire.json
 39f920ac647f00a92a12c130b1f484cd82060bd5 data/unoredinary/neoforge/biome_modifier/ore_sapphire_buried.json
 97609e20afc0a044d5a7f03ad1aa17ea9bab1617 data/unoredinary/neoforge/biome_modifier/ore_sapphire_large.json

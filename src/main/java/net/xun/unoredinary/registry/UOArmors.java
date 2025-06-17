@@ -1,8 +1,8 @@
 package net.xun.unoredinary.registry;
 
 import net.xun.lib.common.api.item.armor.ArmorSet;
-import net.xun.unoredinary.content.item.armor.GlacialiteArmorConfigurator;
-import net.xun.unoredinary.content.item.armor.FroststeelArmorConfigurator;
+import net.xun.unoredinary.item.armor.GlacialiteArmorConfigurator;
+import net.xun.unoredinary.item.armor.FroststeelArmorConfigurator;
 
 import java.util.ArrayList;
 import java.util.List;

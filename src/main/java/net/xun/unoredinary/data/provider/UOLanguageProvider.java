@@ -37,6 +37,11 @@ public abstract class UOLanguageProvider extends LanguageProvider {
         addItem(armorSet.getBoots(), formattedName + " Boots");
     }
 
+    public void addAdvancement(String key, String name, String desc) {
+        add("advancement.unoredinary." + key, name);
+        add("advancement.unoredinary." + key + ".desc", desc);
+    }
+
     public void addTrimMaterial(ResourceKey<TrimMaterial> material, String name) {
         add("trim_material" + ".unoredinary." + material.location().getPath(), name);
     }

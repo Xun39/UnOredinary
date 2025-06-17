@@ -1,4 +1,4 @@
-package net.xun.unoredinary.content.effect;
+package net.xun.unoredinary.effect;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;

@@ -5,7 +5,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xun.unoredinary.UnOredinary;
-import net.xun.unoredinary.content.effect.FrostbittenEffect;
+import net.xun.unoredinary.effect.FrostbittenEffect;
 
 public class UOMobEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, UnOredinary.MOD_ID);

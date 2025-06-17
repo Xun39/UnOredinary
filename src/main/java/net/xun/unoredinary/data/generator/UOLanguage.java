@@ -18,6 +18,19 @@ public class UOLanguage extends UOLanguageProvider {
         add("creative_mode_tab.unoredinary.item", "UnOredinary: Items");
         add("creative_mode_tab.unoredinary.equipment", "UnOredinary: Equipments");
 
+        /* ------------------------------ ADVANCEMENTS ------------------------------ */
+        // Story
+        addAdvancement("mine_cryic", "Frost Foundations", "Mine Cryic Ore in any cold biomes");
+        addAdvancement("forge_froststeel", "Steel of the Tundra", "Forge a Froststeel Ingot");
+        addAdvancement("froststeel_tools", "Frost Walker's Tools", "Craft any Froststeel Tool");
+        addAdvancement("mine_glacium", "Iceberg Treasure", "Acquire some Glacium Shards");
+        addAdvancement("get_glacium_crystal", "Ancient Ice", "Obtain Glacium Crystal");
+        addAdvancement("craft_glacialite", "Glacial Fusion", "Craft a Glacialite Ingot");
+
+        // Adventure
+        addAdvancement("find_iceberg", "Iceberg Explorer", "Discover an iceberg");
+        addAdvancement("freeze_miner", "Deep Freeze Miner", "Mine at least 20 Glacium Ores");
+
         /* ------------------------------ BLOCKS ------------------------------ */
         // Ores
         addBlock(UOBlocks.CRYIC_ORE, "Cryic Ore");

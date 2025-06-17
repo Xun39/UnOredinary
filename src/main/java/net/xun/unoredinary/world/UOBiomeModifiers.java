@@ -11,6 +11,7 @@ import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.registry.UOPlacedFeatures;
+import net.xun.unoredinary.util.UOTags;
 
 public class UOBiomeModifiers {
 
@@ -47,17 +48,17 @@ public class UOBiomeModifiers {
 
         // Glacium Ores
         context.register(ORE_GLACIUM, new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(Tags.Biomes.IS_ICY),
+                biomes.getOrThrow(UOTags.Biomes.HAS_ICEBERG),
                 HolderSet.direct(placedFeatures.getOrThrow(UOPlacedFeatures.ORE_GLACIUM)),
                 GenerationStep.Decoration.UNDERGROUND_ORES)
         );
         context.register(ORE_GLACIUM_RARE, new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(Tags.Biomes.IS_ICY),
+                biomes.getOrThrow(UOTags.Biomes.HAS_ICEBERG),
                 HolderSet.direct(placedFeatures.getOrThrow(UOPlacedFeatures.ORE_GLACIUM_RARE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES)
         );
         context.register(ORE_GLACIUM_LARGE, new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(Tags.Biomes.IS_ICY),
+                biomes.getOrThrow(UOTags.Biomes.HAS_ICEBERG),
                 HolderSet.direct(placedFeatures.getOrThrow(UOPlacedFeatures.ORE_GLACIUM_LARGE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES)
         );

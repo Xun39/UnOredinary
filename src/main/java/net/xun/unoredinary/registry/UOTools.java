@@ -3,8 +3,8 @@ package net.xun.unoredinary.registry;
 import net.xun.lib.common.api.item.tools.GenericAttributeHelper;
 import net.xun.lib.common.api.item.tools.ToolSet;
 import net.xun.lib.common.api.item.tools.ToolType;
-import net.xun.unoredinary.content.item.tool.GlacialiteToolConfigurator;
-import net.xun.unoredinary.content.item.tool.FroststeelToolConfigurator;
+import net.xun.unoredinary.item.tool.GlacialiteToolConfigurator;
+import net.xun.unoredinary.item.tool.FroststeelToolConfigurator;
 
 import java.util.ArrayList;
 import java.util.List;

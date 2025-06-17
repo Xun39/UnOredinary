@@ -1,20 +1,19 @@
-package net.xun.unoredinary.content.item.armor;
+package net.xun.unoredinary.item.armor;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.EquipmentSlotGroup;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -27,11 +26,13 @@ import net.xun.lib.common.api.item.armor.ArmorConfigurator;
 import net.xun.lib.common.api.item.armor.ArmorType;
 import net.xun.lib.common.api.util.ArmorSlotsUtils;
 import net.xun.lib.common.api.util.BlockPosUtils;
+import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.registry.UOArmorMaterials;
+import net.xun.unoredinary.registry.UOParticleTypes;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
-public class FroststeelArmorConfigurator implements ArmorConfigurator {
+public class GlacialiteArmorConfigurator implements ArmorConfigurator {
     @Override
     public ArmorItem createArmor(ArmorType type, Holder<ArmorMaterial> material, int durabilityFactor, Item.Properties props) {
         return new ArmorItem(material, type.getType(), props) {
@@ -41,10 +42,18 @@ public class FroststeelArmorConfigurator implements ArmorConfigurator {
                 if (!(entity instanceof Player player) || !(stack.getItem() instanceof ArmorItem))
                     return;
 
-                if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.FROSTSTEEL)) {
+                if (player.getEffect(MobEffects.MOVEMENT_SLOWDOWN) != null) {
+                    MobEffectInstance effectInstance = player.getEffect(MobEffects.MOVEMENT_SLOWDOWN);
+                    if (effectInstance == null)
+                        return;
+
+                    MobEffectUtils.clearEffect(player, effectInstance);
+                }
+
+                if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.GLACIALITE)) {
                     BlockPos groundPos = player.getBlockPosBelowThatAffectsMyMovement();
 
-                    BlockPosUtils.getDisc(groundPos, 1).forEach(pos -> {
+                    BlockPosUtils.getDisc(groundPos, 7).forEach(pos -> {
                         if (!level.getBlockState(pos).is(Blocks.WATER))
                             return;
 
@@ -62,27 +71,45 @@ public class FroststeelArmorConfigurator implements ArmorConfigurator {
 
     @SubscribeEvent
     public static void onHurt(LivingDamageEvent.Pre event) {
-        if (!(event.getEntity() instanceof Player player))
+        Entity attacker = event.getSource().getDirectEntity();
+        LivingEntity receiver = event.getEntity();
+
+        if (!(receiver instanceof Player player))
             return;
 
-        if (!ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.FROSTSTEEL))
+        if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.GLACIALITE)) {
+            if (event.getSource().is(DamageTypeTags.BURN_FROM_STEPPING)) {
+                event.setNewDamage(0.0F);
+            }
+        }
+
+        if (!(attacker instanceof LivingEntity))
             return;
 
-        if (event.getSource().is(DamageTypeTags.BURN_FROM_STEPPING)) {
-            event.setNewDamage(0.0F);
+        if (ArmorSlotsUtils.hasFullArmorSetOfMaterial(player, UOArmorMaterials.GLACIALITE)) {
+            attacker.hurt(receiver.damageSources().freeze(), event.getOriginalDamage());
+            spawnHurtParticles(player);
         }
     }
 
-    // TODO: Add attribute modifiers
-    /* private static ItemAttributeModifiers createAttributeModifiers() {
-        return ItemAttributeModifiers.builder()
-                .add(
-                        Attributes.BURNING_TIME,
-                        new AttributeModifier(
-                                ResourceLocation.withDefaultNamespace("burning_time"),
-                                -0.4,
-                                AttributeModifier.Operation.ADD_VALUE
-                        ), EquipmentSlotGroup.ARMOR)
-                .build();
-    } */
+    private static void spawnHurtParticles(LivingEntity target) {
+        if (!(target.level() instanceof ServerLevel serverLevel)) return;
+
+        if (target.level().getRandom().nextFloat() < 0.3F) {
+            double centerX = target.getX() + target.level().getRandom().nextFloat();
+            double centerY = target.getY() + target.getBbHeight() / 2.0;
+            double centerZ = target.getZ() + target.level().getRandom().nextFloat();
+
+            double halfWidth = target.getBbWidth() / 2.0;
+            double halfHeight = target.getBbHeight() / 2.0;
+
+            serverLevel.sendParticles(
+                    UOParticleTypes.RIME.get(),
+                    centerX, centerY, centerZ,
+                    20,
+                    halfWidth, halfHeight, halfWidth,
+                    0.02
+            );
+        }
+    }
 }

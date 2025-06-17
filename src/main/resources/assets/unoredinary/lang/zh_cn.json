@@ -5,49 +5,49 @@
   "block.unoredinary.sapphire_ore": "蓝宝石矿石",
   "block.unoredinary.deepslate_sapphire_ore": "深层蓝宝石矿石",
 
-  "block.unoredinary.glacium_ore": "冰魄矿石",
-  "block.unoredinary.primal_glacium_ore": "冰魄元石",
+  "block.unoredinary.glacium_ore": "玄冰矿石",
+  "block.unoredinary.primal_glacium_ore": "玄冰元石",
 
   "block.unoredinary.cryic_block": "寒晶块",
   "block.unoredinary.sapphire_block": "蓝宝石块",
-  "block.unoredinary.glacium_block": "冰魄块",
+  "block.unoredinary.glacium_block": "玄冰块",
   "block.unoredinary.froststeel_block": "霜铁块",
   "block.unoredinary.glacialite_block": "凛钢块",
 
   "effect.unoredinary.frostbitten": "冻伤",
 
-  "item.unoredinary.cryic_powder": "凝霜粉",
+  "item.unoredinary.cryic_powder": "寒晶粉",
 
   "item.unoredinary.sapphire": "蓝宝石",
 
-  "item.unoredinary.glacium_shard": "冰魄碎片",
-  "item.unoredinary.glacium_crystal": "冰魄晶体",
+  "item.unoredinary.glacium_shard": "玄冰碎片",
+  "item.unoredinary.glacium_crystal": "玄冰水晶",
 
-  "item.unoredinary.froststeel_ingot": "霜铁锭",
+  "item.unoredinary.froststeel_ingot": "霜钢锭",
 
-  "item.unoredinary.froststeel_sword": "霜铁剑",
-  "item.unoredinary.froststeel_axe": "霜铁斧",
-  "item.unoredinary.froststeel_pickaxe": "霜铁稿",
-  "item.unoredinary.froststeel_hoe": "霜铁锄",
-  "item.unoredinary.froststeel_shovel": "霜铁锹",
+  "item.unoredinary.froststeel_sword": "霜钢剑",
+  "item.unoredinary.froststeel_axe": "霜钢斧",
+  "item.unoredinary.froststeel_pickaxe": "霜钢稿",
+  "item.unoredinary.froststeel_hoe": "霜钢锄",
+  "item.unoredinary.froststeel_shovel": "霜钢锹",
 
-  "item.unoredinary.froststeel_helmet": "霜铁头盔",
-  "item.unoredinary.froststeel_chestplate": "霜铁胸甲",
-  "item.unoredinary.froststeel_leggings": "霜铁护腿",
-  "item.unoredinary.froststeel_boots": "霜铁靴子",
+  "item.unoredinary.froststeel_helmet": "霜钢头盔",
+  "item.unoredinary.froststeel_chestplate": "霜钢胸甲",
+  "item.unoredinary.froststeel_leggings": "霜钢护腿",
+  "item.unoredinary.froststeel_boots": "霜钢靴子",
 
-  "item.unoredinary.glacialite_ingot": "凛钢锭",
+  "item.unoredinary.glacialite_ingot": "冰川合金锭",
 
-  "item.unoredinary.glacialite_sword": "凛钢剑",
-  "item.unoredinary.glacialite_axe": "凛钢斧",
-  "item.unoredinary.glacialite_pickaxe": "凛钢镐",
-  "item.unoredinary.glacialite_hoe": "凛钢锄",
-  "item.unoredinary.glacialite_shovel": "凛钢锹",
+  "item.unoredinary.glacialite_sword": "冰川合金剑",
+  "item.unoredinary.glacialite_axe": "冰川合金斧",
+  "item.unoredinary.glacialite_pickaxe": "冰川合金镐",
+  "item.unoredinary.glacialite_hoe": "冰川合金锄",
+  "item.unoredinary.glacialite_shovel": "冰川合金锹",
 
-  "item.unoredinary.glacialite_helmet": "凛钢头盔",
-  "item.unoredinary.glacialite_chestplate": "凛钢胸甲",
-  "item.unoredinary.glacialite_leggings": "凛钢护腿",
-  "item.unoredinary.glacialite_boots": "凛钢靴子",
+  "item.unoredinary.glacialite_helmet": "冰川合金头盔",
+  "item.unoredinary.glacialite_chestplate": "冰川合金胸甲",
+  "item.unoredinary.glacialite_leggings": "冰川合金护腿",
+  "item.unoredinary.glacialite_boots": "冰川合金靴子",
 
   "item.unoredinary.sapphire_sword": "蓝宝石剑",
   "item.unoredinary.sapphire_axe": "蓝宝石斧",
@@ -62,15 +62,34 @@
 
   "item.unoredinary.glacialite_upgrade_smithing_template": "锻造模板",
 
-  "upgrade.unoredinary.glacialite_upgrade": "凛钢升级",
+  "upgrade.unoredinary.glacialite_upgrade": "冰川合金升级",
   "item.unoredinary.smithing_template.glacialite_upgrade.applies_to": "霜铁装备",
-  "item.unoredinary.smithing_template.glacialite_upgrade.ingredients": "凛钢锭",
+  "item.unoredinary.smithing_template.glacialite_upgrade.ingredients": "冰川合金锭",
   "item.unoredinary.smithing_template.glacialite_upgrade.base_slot_description": "放入霜铁盔甲、武器或工具",
-  "item.unoredinary.smithing_template.glacialite_upgrade.additions_slot_description": "放入凛钢锭",
+  "item.unoredinary.smithing_template.glacialite_upgrade.additions_slot_description": "放入冰川合金锭",
 
   "creative_mode_tab.unoredinary.block": "玄矿录：方块",
   "creative_mode_tab.unoredinary.item": "玄矿录：物品",
   "creative_mode_tab.unoredinary.equipment": "玄矿录：装备",
+
+
+  "advancement.unoredinary.mine_cryic": "冰霜基石",
+  "advancement.unoredinary.mine_cryic.desc": "在任何寒冷生物群系开采寒晶矿石",
+  "advancement.unoredinary.forge_froststeel": "冻原锻钢",
+  "advancement.unoredinary.forge_froststeel.desc": "锻造一个霜钢锭",
+  "advancement.unoredinary.froststeel_tools": "冰霜行者的工具",
+  "advancement.unoredinary.froststeel_tools.desc": "制作任意霜钢工具",
+  "advancement.unoredinary.mine_glacium": "冰山宝藏",
+  "advancement.unoredinary.mine_glacium.desc": "获得一些玄冰碎片",
+  "advancement.unoredinary.get_glacium_crystal": "远古玄冰",
+  "advancement.unoredinary.get_glacium_crystal.desc": "获得玄冰水晶",
+  "advancement.unoredinary.craft_glacialite": "冰河熔铸",
+  "advancement.unoredinary.craft_glacialite.desc": "制作一个冰川合金锭",
+
+  "advancement.unoredinary.find_iceberg": "冰山寻踪",
+  "advancement.unoredinary.find_iceberg.desc": "找到一个冰山生物群系",
+  "advancement.unoredinary.freeze_miner": "深度冻结矿工",
+  "advancement.unoredinary.freeze_miner.desc": "开采至少20个玄冰矿石",
 
   "trim_material.unoredinary.cryic": "寒晶材料",
   "trim_material.unoredinary.glacium": "冰魄材料",
