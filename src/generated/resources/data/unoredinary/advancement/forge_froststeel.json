@@ -1,0 +1,33 @@
+{
+  "parent": "unoredinary:mine_cryic",
+  "criteria": {
+    "froststeel_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.unoredinary.forge_froststeel.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "unoredinary:froststeel_ingot"
+    },
+    "title": {
+      "translate": "advancement.unoredinary.forge_froststeel"
+    }
+  },
+  "requirements": [
+    [
+      "froststeel_ingot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

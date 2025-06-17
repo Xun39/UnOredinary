@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:story/upgrade_tools",
+  "criteria": {
+    "mine_cryic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:cryic_powder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.unoredinary.mine_cryic.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "unoredinary:cryic_powder"
+    },
+    "title": {
+      "translate": "advancement.unoredinary.mine_cryic"
+    }
+  },
+  "requirements": [
+    [
+      "mine_cryic"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

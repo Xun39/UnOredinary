@@ -1,0 +1,58 @@
+{
+  "parent": "minecraft:adventure/sleep_in_bed",
+  "criteria": {
+    "deep_frozen_ocean": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:deep_frozen_ocean",
+                "can_see_sky": true
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "frozen_ocean": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "minecraft:frozen_ocean",
+                "can_see_sky": true
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.unoredinary.find_iceberg.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "unoredinary:froststeel_boots"
+    },
+    "title": {
+      "translate": "advancement.unoredinary.find_iceberg"
+    }
+  },
+  "requirements": [
+    [
+      "frozen_ocean",
+      "deep_frozen_ocean"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

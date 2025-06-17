@@ -1,0 +1,49 @@
+{
+  "parent": "unoredinary:find_iceberg",
+  "criteria": {
+    "mine_twenty": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "stats": [
+                  {
+                    "type": "minecraft:mined",
+                    "stat": "unoredinary:glacium_ore",
+                    "value": {
+                      "min": 20
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.unoredinary.freeze_miner.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "unoredinary:glacium_ore"
+    },
+    "title": {
+      "translate": "advancement.unoredinary.freeze_miner"
+    }
+  },
+  "requirements": [
+    [
+      "mine_twenty"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

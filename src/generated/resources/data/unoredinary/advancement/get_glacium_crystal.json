@@ -1,0 +1,33 @@
+{
+  "parent": "unoredinary:mine_glacium",
+  "criteria": {
+    "glacium_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:glacium_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.unoredinary.get_glacium_crystal.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "unoredinary:glacium_crystal"
+    },
+    "title": {
+      "translate": "advancement.unoredinary.get_glacium_crystal"
+    }
+  },
+  "requirements": [
+    [
+      "glacium_crystal"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

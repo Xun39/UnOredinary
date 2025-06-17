@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:story/mine_diamond",
+  "criteria": {
+    "glacium_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:glacium_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.unoredinary.mine_glacium.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "unoredinary:glacium_shard"
+    },
+    "title": {
+      "translate": "advancement.unoredinary.mine_glacium"
+    }
+  },
+  "requirements": [
+    [
+      "glacium_shard"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

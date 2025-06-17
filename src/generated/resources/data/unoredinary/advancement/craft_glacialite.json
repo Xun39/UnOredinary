@@ -1,0 +1,33 @@
+{
+  "parent": "unoredinary:mine_glacium",
+  "criteria": {
+    "glacialite_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:glacialite_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.unoredinary.craft_glacialite.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "unoredinary:glacialite_ingot"
+    },
+    "title": {
+      "translate": "advancement.unoredinary.craft_glacialite"
+    }
+  },
+  "requirements": [
+    [
+      "glacialite_ingot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

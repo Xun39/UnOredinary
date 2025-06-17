@@ -1,0 +1,66 @@
+{
+  "parent": "unoredinary:forge_froststeel",
+  "criteria": {
+    "froststeel_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_axe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "froststeel_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "froststeel_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "froststeel_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_shovel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.unoredinary.froststeel_tools.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "unoredinary:froststeel_axe"
+    },
+    "title": {
+      "translate": "advancement.unoredinary.froststeel_tools"
+    }
+  },
+  "requirements": [
+    [
+      "froststeel_axe",
+      "froststeel_pickaxe",
+      "froststeel_hoe",
+      "froststeel_shovel"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
