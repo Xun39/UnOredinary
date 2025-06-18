@@ -1,0 +1,51 @@
+{
+  "type": "unoredinary:frost_dungeon",
+  "biomes": "#c:is_snowy",
+  "max_distance_from_center": 24,
+  "size": 12,
+  "spawn_overrides": {
+    "ambient": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "axolotls": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "creature": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "misc": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "monster": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "underground_water_creature": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "water_ambient": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "water_creature": {
+      "bounding_box": "full",
+      "spawns": []
+    }
+  },
+  "start_height": {
+    "type": "minecraft:trapezoid",
+    "max_inclusive": {
+      "below_top": 256
+    },
+    "min_inclusive": {
+      "above_bottom": 64
+    }
+  },
+  "start_pool": "unoredinary:frost_dungeon/entrances",
+  "step": "underground_structures"
+}

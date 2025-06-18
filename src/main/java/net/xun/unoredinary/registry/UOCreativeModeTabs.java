@@ -35,6 +35,7 @@ public class UOCreativeModeTabs {
                         output.accept(UOBlocks.FROSTSTEEL_BLOCK);
                         output.accept(UOBlocks.GLACIALITE_BLOCK);
 
+                        output.accept(UOItems.FROST_ZOMBIE_HEAD);
                     })
                     .build()
     );
@@ -57,6 +58,7 @@ public class UOCreativeModeTabs {
 
                         output.accept(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE);
 
+                        output.accept(UOItems.FROST_ZOMBIE_SPAWN_EGG);
                     })
                     .build()
     );

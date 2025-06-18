@@ -27,6 +27,10 @@ public class UOConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SAPPHIRE_LARGE = createKey("ore_sapphire_large");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SAPPHIRE_BURIED = createKey("ore_sapphire_buried");
 
+    public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, CommonUtils.modLoc(name));
+    }
+
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
         RuleTest stoneReplaceable = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -53,10 +57,6 @@ public class UOConfiguredFeatures {
         register(context, ORE_GLACIUM, Feature.SCATTERED_ORE, new OreConfiguration(iceReplaceable, UOBlocks.GLACIUM_ORE.get().defaultBlockState(), 2, 0.3F));
         register(context, ORE_GLACIUM_RARE, Feature.SCATTERED_ORE, new OreConfiguration(iceReplaceable, UOBlocks.PRIMAL_GLACIUM_ORE.get().defaultBlockState(), 2, 0.6F));
         register(context, ORE_GLACIUM_LARGE, Feature.SCATTERED_ORE, new OreConfiguration(iceReplaceable, UOBlocks.GLACIUM_ORE.get().defaultBlockState(), 4, 0.3F));
-    }
-
-    public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, CommonUtils.modLoc(name));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context,

@@ -21,6 +21,7 @@ public class UODatapackEntries extends DatapackBuiltinEntriesProvider {
             .add(Registries.PLACED_FEATURE, UOPlacedFeatures::bootstrap)
             .add(Registries.STRUCTURE, UOStructures::bootstrap)
             .add(Registries.STRUCTURE_SET, UOStructureSets::bootstrap)
+            .add(Registries.TEMPLATE_POOL, UOTemplatePools::bootstrap)
             .add(Registries.TRIM_MATERIAL, UOTrimMaterials::bootstrap);
 
     public UODatapackEntries(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

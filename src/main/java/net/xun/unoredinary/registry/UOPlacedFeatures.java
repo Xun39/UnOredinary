@@ -26,6 +26,11 @@ public class UOPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE_LARGE = createKey("ore_sapphire_large");
     public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE_BURIED = createKey("ore_sapphire_buried");
 
+
+    public static ResourceKey<PlacedFeature> createKey(String name) {
+        return ResourceKey.create(Registries.PLACED_FEATURE, CommonUtils.modLoc(name));
+    }
+
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
@@ -61,10 +66,6 @@ public class UOPlacedFeatures {
         register(context, ORE_SAPPHIRE_BURIED, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_SAPPHIRE_MEDIUM),
                 OrePlacementHelper.countPlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80)))
         );
-    }
-
-    public static ResourceKey<PlacedFeature> createKey(String name) {
-        return ResourceKey.create(Registries.PLACED_FEATURE, CommonUtils.modLoc(name));
     }
 
     private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,

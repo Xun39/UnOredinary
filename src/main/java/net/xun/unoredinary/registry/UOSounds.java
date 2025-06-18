@@ -21,6 +21,12 @@ public class UOSounds {
     // Items
     public static final DeferredHolder<SoundEvent, SoundEvent> ARMOR_EQUIP_CRYOSTEEL = register("item.armor.equip_cryosteel");
 
+    // Entities
+    public static final DeferredHolder<SoundEvent, SoundEvent> FROST_ZOMBIE_AMBIENT = register("entity.frost_zombie.ambient");
+    public static final DeferredHolder<SoundEvent, SoundEvent> FROST_ZOMBIE_HURT = register("entity.frost_zombie.hurt");
+    public static final DeferredHolder<SoundEvent, SoundEvent> FROST_ZOMBIE_DEATH = register("entity.frost_zombie.death");
+    public static final DeferredHolder<SoundEvent, SoundEvent> FROST_ZOMBIE_STEP = register("entity.frost_zombie.step");
+
     private static DeferredHolder<SoundEvent, SoundEvent> register(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(CommonUtils.modLoc(name)));
     }

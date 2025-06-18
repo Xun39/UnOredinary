@@ -49,6 +49,9 @@ public class UOLanguage extends UOLanguageProvider {
         addBlock(UOBlocks.FROSTSTEEL_BLOCK, "Block of Froststeel");
         addBlock(UOBlocks.GLACIALITE_BLOCK, "Block of Glacialite");
 
+        /* ------------------------------ ENTITIES ------------------------------ */
+        addEntityAndSpawnEgg(UOEntityTypes.FROST_ZOMBIE, "Frost Zombie");
+
         /* ------------------------------ MOB EFFECTS ------------------------------ */
         addEffect(UOMobEffects.FROSTED_EFFECT, "Frostbitten");
 

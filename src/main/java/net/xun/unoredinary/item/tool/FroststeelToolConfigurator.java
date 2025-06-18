@@ -28,11 +28,11 @@ public class FroststeelToolConfigurator implements ToolConfigurator {
                 return new SwordItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean result = super.hurtEnemy(stack, target, attacker);
-                        if (result && !target.level().isClientSide) {
+                        boolean flag = super.hurtEnemy(stack, target, attacker);
+                        if (flag && !target.level().isClientSide) {
                             handleHitEffect(target, attacker);
                         }
-                        return result;
+                        return flag;
                     }
                 };
             }
@@ -40,11 +40,11 @@ public class FroststeelToolConfigurator implements ToolConfigurator {
                 return new AxeItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean result = super.hurtEnemy(stack, target, attacker);
-                        if (result && !target.level().isClientSide) {
+                        boolean flag = super.hurtEnemy(stack, target, attacker);
+                        if (flag && !target.level().isClientSide) {
                             handleHitEffect(target, attacker);
                         }
-                        return result;
+                        return flag;
                     }
                 };
             }
@@ -52,11 +52,11 @@ public class FroststeelToolConfigurator implements ToolConfigurator {
                 return new PickaxeItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean result = super.hurtEnemy(stack, target, attacker);
-                        if (result && !target.level().isClientSide) {
+                        boolean flag = super.hurtEnemy(stack, target, attacker);
+                        if (flag && !target.level().isClientSide) {
                             handleHitEffect(target, attacker);
                         }
-                        return result;
+                        return flag;
                     }
                 };
             }
@@ -64,11 +64,11 @@ public class FroststeelToolConfigurator implements ToolConfigurator {
                 return new HoeItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean result = super.hurtEnemy(stack, target, attacker);
-                        if (result && !target.level().isClientSide) {
+                        boolean flag = super.hurtEnemy(stack, target, attacker);
+                        if (flag && !target.level().isClientSide) {
                             handleHitEffect(target, attacker);
                         }
-                        return result;
+                        return flag;
                     }
                 };
             }
@@ -76,11 +76,11 @@ public class FroststeelToolConfigurator implements ToolConfigurator {
                 return new ShovelItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean result = super.hurtEnemy(stack, target, attacker);
-                        if (result && !target.level().isClientSide) {
+                        boolean flag = super.hurtEnemy(stack, target, attacker);
+                        if (flag && !target.level().isClientSide) {
                             handleHitEffect(target, attacker);
                         }
-                        return result;
+                        return flag;
                     }
                 };
             }

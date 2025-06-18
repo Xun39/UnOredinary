@@ -38,8 +38,8 @@ public class UOAdvancements extends AdvancementProvider {
     public static class AdvancementGenerator implements AdvancementProvider.AdvancementGenerator {
 
         @Override
-        public void generate(HolderLookup.Provider provider, Consumer<AdvancementHolder> consumer, ExistingFileHelper existingFileHelper) {
-            var biomes = provider.lookup(Registries.BIOME).orElseThrow();
+        public void generate(HolderLookup.Provider registries, Consumer<AdvancementHolder> consumer, ExistingFileHelper existingFileHelper) {
+            var biomes = registries.lookup(Registries.BIOME).orElseThrow();
 
             // Root: Story
             AdvancementHolder mineCryic = Advancement.Builder.advancement()
@@ -161,7 +161,7 @@ public class UOAdvancements extends AdvancementProvider {
                                             PlayerPredicate.Builder.player()
                                                     .addStat(
                                                             Stats.BLOCK_MINED,
-                                                            provider.lookupOrThrow(Registries.BLOCK).getOrThrow(UOBlocks.GLACIUM_ORE.getKey()),
+                                                            registries.lookupOrThrow(Registries.BLOCK).getOrThrow(UOBlocks.GLACIUM_ORE.getKey()),
                                                             MinMaxBounds.Ints.atLeast(20))
                                                     .build())
                                             .build())

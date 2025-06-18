@@ -29,6 +29,7 @@ public class UnOredinary {
         UOBlocks.BLOCKS.register(modEventBus);
         UOSounds.SOUND_EVENTS.register(modEventBus);
         UOMobEffects.MOB_EFFECTS.register(modEventBus);
+        UOEntityTypes.ENTITY_TYPES.register(modEventBus);
         UOParticleTypes.PARTICLE_TYPES.register(modEventBus);
         UOArmorMaterials.ARMOR_MATERIALS.register(modEventBus);
         UOCreativeModeTabs.CREATIVE_MODE_TABS.register(modEventBus);

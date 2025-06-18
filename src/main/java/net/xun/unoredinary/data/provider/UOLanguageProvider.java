@@ -3,8 +3,10 @@ package net.xun.unoredinary.data.provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.xun.lib.common.api.item.armor.ArmorSet;
 import net.xun.lib.common.api.item.tools.ToolSet;
 import net.xun.unoredinary.UnOredinary;
@@ -35,6 +37,11 @@ public abstract class UOLanguageProvider extends LanguageProvider {
         addItem(armorSet.getChestplate(), formattedName + " Chestplate");
         addItem(armorSet.getLeggings(), formattedName + " Leggings");
         addItem(armorSet.getBoots(), formattedName + " Boots");
+    }
+
+    public void addEntityAndSpawnEgg(DeferredHolder<EntityType<?>, ? extends EntityType<?>> entity, String name) {
+        addEntityType(entity, name);
+        add("item.unoredinary." + entity.getKey().location().getPath() + "_spawn_egg", name + " Spawn Egg");
     }
 
     public void addAdvancement(String key, String name, String desc) {

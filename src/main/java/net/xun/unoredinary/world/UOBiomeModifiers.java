@@ -27,6 +27,9 @@ public class UOBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ORE_SAPPHIRE_LARGE = createKey("ore_sapphire_large");
     public static final ResourceKey<BiomeModifier> ORE_SAPPHIRE_BURIED = createKey("ore_sapphire_buried");
 
+    private static ResourceKey<BiomeModifier> createKey(String name) {
+        return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, CommonUtils.modLoc(name));
+    }
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
 
@@ -84,9 +87,5 @@ public class UOBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(UOPlacedFeatures.ORE_SAPPHIRE_BURIED)),
                 GenerationStep.Decoration.UNDERGROUND_ORES)
         );
-    }
-
-    private static ResourceKey<BiomeModifier> createKey(String name) {
-        return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, CommonUtils.modLoc(name));
     }
 }

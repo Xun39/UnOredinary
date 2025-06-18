@@ -12,15 +12,17 @@ import net.xun.lib.common.api.util.CommonUtils;
 
 public class UOStructureSets {
 
-    public static final ResourceKey<StructureSet> FROZEN_VAULT = createKey("frozen_vault");
+    public static final ResourceKey<StructureSet> FROZEN_VAULTS = createKey("frozen_vaults");
+    public static final ResourceKey<StructureSet> FROST_DUNGEONS = createKey("frost_dungeons");
+
+    private static ResourceKey<StructureSet> createKey(String name) {
+        return ResourceKey.create(Registries.STRUCTURE_SET, CommonUtils.modLoc(name));
+    }
 
     public static void bootstrap(BootstrapContext<StructureSet> context) {
         HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
 
-        context.register(FROZEN_VAULT, new StructureSet(structures.getOrThrow(UOStructures.FROZEN_VAULT), new RandomSpreadStructurePlacement(24, 10, RandomSpreadType.LINEAR, 1548653468)));
-    }
-
-    private static ResourceKey<StructureSet> createKey(String name) {
-        return ResourceKey.create(Registries.STRUCTURE_SET, CommonUtils.modLoc(name));
+        context.register(FROZEN_VAULTS, new StructureSet(structures.getOrThrow(UOStructures.FROZEN_VAULT), new RandomSpreadStructurePlacement(24, 10, RandomSpreadType.LINEAR, 1548653468)));
+        context.register(FROST_DUNGEONS, new StructureSet(structures.getOrThrow(UOStructures.FROST_DUNGEON), new RandomSpreadStructurePlacement(24, 12, RandomSpreadType.LINEAR, 986756645)));
     }
 }

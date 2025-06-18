@@ -33,6 +33,9 @@ public class UOBlockLootTables extends UOBlockLootProvider {
         dropSelf(UOBlocks.GLACIUM_BLOCK.get());
         dropSelf(UOBlocks.FROSTSTEEL_BLOCK.get());
         dropSelf(UOBlocks.GLACIALITE_BLOCK.get());
+
+        /* ------------------------------ MISC ------------------------------ */
+        dropSelf(UOBlocks.FROST_ZOMBIE_HEAD.get());
     }
 
     @Override

@@ -60,5 +60,39 @@
       "unoredinary:item/armor/cryosteel/equip_3",
       "unoredinary:item/armor/cryosteel/equip_4"
     ]
+  },
+
+  "entity.frost_zombie.ambient": {
+    "subtitle": "sounds.unoredinary.entity.frost_zombie.ambient",
+    "sounds": [
+      "unoredinary:entity/frost_zombie/idle_1",
+      "unoredinary:entity/frost_zombie/idle_2",
+      "unoredinary:entity/frost_zombie/idle_3"
+    ]
+  },
+  "entity.frost_zombie.hurt": {
+    "subtitle": "sounds.unoredinary.entity.frost_zombie.hurt",
+    "sounds": [
+      "unoredinary:entity/frost_zombie/hurt_1",
+      "unoredinary:entity/frost_zombie/hurt_2",
+      "unoredinary:entity/frost_zombie/hurt_3"
+    ]
+  },
+  "entity.frost_zombie.death": {
+    "subtitle": "sounds.unoredinary.entity.frost_zombie.death",
+    "sounds": [
+      "unoredinary:entity/frost_zombie/death_1",
+      "unoredinary:entity/frost_zombie/death_2"
+    ]
+  },
+  "entity.frost_zombie.step": {
+    "subtitle": "sounds.unoredinary.entity.frost_zombie.step",
+    "sounds": [
+      "unoredinary:entity/frost_zombie/step_1",
+      "unoredinary:entity/frost_zombie/step_2",
+      "unoredinary:entity/frost_zombie/step_3",
+      "unoredinary:entity/frost_zombie/step_4",
+      "unoredinary:entity/frost_zombie/step_5"
+    ]
   }
 }
