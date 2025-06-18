@@ -3,7 +3,40 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/entrance/entrance_staircase_1",
+        "location": "unoredinary:frost_dungeon/staircase/staircase_1",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/staircase/staircase_2",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/staircase/staircase_3",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/staircase/staircase_4",
         "processors": {
           "processors": []
         },
@@ -14,7 +47,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/entrance/entrance_staircase_2",
+        "location": "unoredinary:frost_dungeon/staircase/staircase_5",
         "processors": {
           "processors": []
         },
@@ -25,35 +58,13 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/entrance/entrance_staircase_3",
+        "location": "unoredinary:frost_dungeon/staircase/staircase_6",
         "processors": {
           "processors": []
         },
         "projection": "rigid"
       },
-      "weight": 1
-    },
-    {
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/entrance/entrance_staircase_4",
-        "processors": {
-          "processors": []
-        },
-        "projection": "rigid"
-      },
-      "weight": 1
-    },
-    {
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/entrance/entrance_staircase_5",
-        "processors": {
-          "processors": []
-        },
-        "projection": "rigid"
-      },
-      "weight": 1
+      "weight": 3
     }
   ],
   "fallback": "minecraft:empty"

@@ -14,8 +14,9 @@ public class UOTemplatePools {
 
     // Frost Dungeons
     public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_ENTRANCES = createKey("frost_dungeon/entrances");
-    public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_ENTRANCE_STAIRCASES = createKey("frost_dungeon/entrance_staircases");
-    public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_CENTER = createKey("frost_dungeon/center");
+    public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_STAIRCASES = createKey("frost_dungeon/entrance_staircases");
+    public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_CENTERS = createKey("frost_dungeon/centers");
+    public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_HALLWAYS = createKey("frost_dungeon/hallways");
 
     private static ResourceKey<StructureTemplatePool> createKey(String name) {
         return ResourceKey.create(Registries.TEMPLATE_POOL, CommonUtils.modLoc(name));
@@ -34,22 +35,32 @@ public class UOTemplatePools {
                 StructureTemplatePool.Projection.RIGID)
         );
 
-        context.register(FROST_DUNGEON_ENTRANCE_STAIRCASES, new StructureTemplatePool(
+        context.register(FROST_DUNGEON_STAIRCASES, new StructureTemplatePool(
                 templatePools.getOrThrow(Pools.EMPTY),
                 ImmutableList.of(
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/entrance/entrance_staircase_1"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/entrance/entrance_staircase_2"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/entrance/entrance_staircase_3"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/entrance/entrance_staircase_4"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/entrance/entrance_staircase_5"), 1)
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/staircase/staircase_1"), 2),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/staircase/staircase_2"), 3),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/staircase/staircase_3"), 4),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/staircase/staircase_4"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/staircase/staircase_5"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/staircase/staircase_6"), 3)
                 ),
                 StructureTemplatePool.Projection.RIGID)
         );
 
-        context.register(FROST_DUNGEON_CENTER, new StructureTemplatePool(
+        context.register(FROST_DUNGEON_CENTERS, new StructureTemplatePool(
                 templatePools.getOrThrow(Pools.EMPTY),
                 ImmutableList.of(
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/center/center_1"), 1)
+                ),
+                StructureTemplatePool.Projection.RIGID)
+        );
+
+        context.register(FROST_DUNGEON_HALLWAYS, new StructureTemplatePool(
+                templatePools.getOrThrow(Pools.EMPTY),
+                ImmutableList.of(
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/path_1"), 2),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/treasure_path_1"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
         );

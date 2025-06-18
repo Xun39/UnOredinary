@@ -1,8 +1,8 @@
 {
   "type": "unoredinary:frost_dungeon",
   "biomes": "#c:is_snowy",
-  "max_distance_from_center": 24,
-  "size": 12,
+  "max_distance_from_center": 84,
+  "size": 7,
   "spawn_overrides": {
     "ambient": {
       "bounding_box": "full",
@@ -46,6 +46,6 @@
       "above_bottom": 64
     }
   },
-  "start_pool": "unoredinary:frost_dungeon/entrances",
+  "start_pool": "unoredinary:frost_dungeon/centers",
   "step": "underground_structures"
 }

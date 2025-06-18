@@ -114,11 +114,11 @@ public class FrostDungeonStructure extends Structure {
                         GenerationStep.Decoration.UNDERGROUND_STRUCTURES,
                         TerrainAdjustment.NONE
                 ),
-                context.lookup(Registries.TEMPLATE_POOL).getOrThrow(UOTemplatePools.FROST_DUNGEON_ENTRANCES),
+                context.lookup(Registries.TEMPLATE_POOL).getOrThrow(UOTemplatePools.FROST_DUNGEON_CENTERS),
                 Optional.empty(),
-                12,
+                7,
                 TrapezoidHeight.of(VerticalAnchor.aboveBottom(64), VerticalAnchor.belowTop(256)),
-                24
+                84
                 );
     }
 }
