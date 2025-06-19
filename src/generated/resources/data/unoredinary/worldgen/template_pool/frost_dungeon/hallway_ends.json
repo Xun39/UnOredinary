@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/center/center_1",
+        "location": "unoredinary:frost_dungeon/endings/hallway_path_end",
         "processors": {
           "processors": []
         },
@@ -14,7 +14,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/center/center_down",
+        "location": "unoredinary:frost_dungeon/endings/hallway_path_end_shorter",
         "processors": {
           "processors": []
         },

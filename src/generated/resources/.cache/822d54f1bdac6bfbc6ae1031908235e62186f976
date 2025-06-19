@@ -1,8 +1,8 @@
-// 1.21.1	2025-06-18T22:20:00.1896526	Tags for minecraft:block mod id unoredinary
-28ddeb0f3fc551f08d215605c3e40f6c1fd93db7 data/c/tags/block/ores.json
-ca7069ae4dc8b017fef5c987623a9122835e5998 data/c/tags/block/ores/cryic.json
-4a6b7185ce90c60008076a98e39274ffd319500f data/c/tags/block/ores/glacium.json
-b6f74e779be8c6e516e0494af8b8fd8eba29ee34 data/c/tags/block/ores/sapphire.json
+// 1.21.1	2025-06-19T11:27:50.130066	Tags for minecraft:block mod id unoredinary
+1bd14256dbeed10cbf55596d8e4f1aa3c5d0b476 data/c/tags/block/ores.json
+1ef243d9488f1d884dc2b4d3b5bd110319688e11 data/c/tags/block/ores/cryic.json
+436d078a4667627382453d8413fbd19ad562cd02 data/c/tags/block/ores/glacium.json
+f4f6ac5b6977855bd73664b890f53b08b0062039 data/c/tags/block/ores/sapphire.json
 d38f8f27095252a481917fa57c0fa8b246196058 data/c/tags/block/ores_in_ground/deepslate.json
 d542c18556ab93fa2d7fb4973df79bf120bda433 data/c/tags/block/ores_in_ground/stone.json
 b55d7eb65cd39a77a96c9b1c3915ae6f2281aa0d data/c/tags/block/storage_blocks.json
