@@ -3,7 +3,40 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/hallways/path_1",
+        "location": "unoredinary:frost_dungeon/hallways/hallway_path_1",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/hallways/hallway_path_2",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/hallways/hallway_path_3",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/hallways/treasure_path_1_left",
         "processors": {
           "processors": []
         },
@@ -14,7 +47,18 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/hallways/treasure_path_1",
+        "location": "unoredinary:frost_dungeon/hallways/treasure_path_1_right",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/hallways/treasure_path_1_both",
         "processors": {
           "processors": []
         },
