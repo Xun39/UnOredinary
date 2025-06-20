@@ -16,6 +16,7 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.xun.unoredinary.registry.UOItems;
 import net.xun.unoredinary.world.loot.UOLootTables;
+import org.checkerframework.checker.units.qual.C;
 
 import java.util.function.BiConsumer;
 
@@ -45,7 +46,7 @@ public record UOChestLootTables(HolderLookup.Provider registries) implements Loo
         );
 
         // Frost Dungeons
-        output.accept(UOLootTables.FROST_DUNGEON_CENTER,
+        output.accept(UOLootTables.FROST_DUNGEON_TREASURE,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(3))
@@ -59,6 +60,22 @@ public record UOChestLootTables(HolderLookup.Provider registries) implements Loo
                                 .add(LootItem.lootTableItem(Items.BONE).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))))
                                 .add(LootItem.lootTableItem(Items.BONE_MEAL).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 6.0F))))
                                 .add(LootItem.lootTableItem(Blocks.BONE_BLOCK).setWeight(1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                        )
+        );
+
+        output.accept(UOLootTables.FROST_DUNGEON_INTERSECTION,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(4))
+                                .add(LootItem.lootTableItem(Items.BONE).setWeight(4))
+                                .add(LootItem.lootTableItem(Items.BONE_MEAL).setWeight(2))
+                                .add(LootItem.lootTableItem(Items.ROTTEN_FLESH).setWeight(3))
+                        ).withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(7).apply(EnchantRandomlyFunction.randomEnchantment()))
+                                .add(LootItem.lootTableItem(Items.GOLD_INGOT).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))))
+                                .add(LootItem.lootTableItem(Items.EMERALD).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE).setWeight(1))
                         )
         );
     }

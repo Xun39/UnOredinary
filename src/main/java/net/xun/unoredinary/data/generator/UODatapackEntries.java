@@ -9,6 +9,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.registry.*;
 import net.xun.unoredinary.world.UOBiomeModifiers;
+import net.xun.unoredinary.registry.UOTemplatePools;
 
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;

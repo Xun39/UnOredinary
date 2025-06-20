@@ -11,7 +11,8 @@ public class UOLootTables {
     public static final ResourceKey<LootTable> FROZEN_VAULT = createKey("chests/frozen_vault");
 
     // Frost Dungeon
-    public static final ResourceKey<LootTable> FROST_DUNGEON_CENTER = createKey("chests/frost_dungeon/center");
+    public static final ResourceKey<LootTable> FROST_DUNGEON_TREASURE = createKey("chests/frost_dungeon/treasure");
+    public static final ResourceKey<LootTable> FROST_DUNGEON_INTERSECTION = createKey("chests/frost_dungeon/intersection");
 
     private static ResourceKey<LootTable> createKey(String name) {
         return ResourceKey.create(Registries.LOOT_TABLE, CommonUtils.modLoc(name));
