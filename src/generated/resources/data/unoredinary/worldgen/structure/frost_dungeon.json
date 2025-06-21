@@ -3,7 +3,6 @@
   "biomes": "#unoredinary:has_structure/frost_dungeon",
   "liquid_settings": "ignore_waterlogging",
   "max_distance_from_center": 116,
-  "project_start_to_heightmap": "WORLD_SURFACE_WG",
   "size": 20,
   "spawn_overrides": {
     "ambient": {
@@ -40,9 +39,16 @@
     }
   },
   "start_height": {
-    "absolute": 1
+    "type": "minecraft:uniform",
+    "max_inclusive": {
+      "absolute": -12
+    },
+    "min_inclusive": {
+      "absolute": -36
+    }
   },
-  "start_pool": "unoredinary:frost_dungeon/entrances",
+  "start_pool": "unoredinary:frost_dungeon/start",
   "step": "underground_structures",
+  "terrain_adaptation": "encapsulate",
   "use_expansion_hack": false
 }

@@ -56,18 +56,19 @@ public class UOStructures {
                         context.lookup(Registries.BIOME).getOrThrow(UOTags.Biomes.HAS_STRUCTURE_FROST_DUNGEON),
                         emptySpawnOverrides,
                         GenerationStep.Decoration.UNDERGROUND_STRUCTURES,
-                        TerrainAdjustment.NONE
+                        TerrainAdjustment.ENCAPSULATE
                 ),
-                context.lookup(Registries.TEMPLATE_POOL).getOrThrow(UOTemplatePools.FROST_DUNGEON_ENTRANCES),
+                context.lookup(Registries.TEMPLATE_POOL).getOrThrow(UOTemplatePools.FROST_DUNGEON_START),
                 Optional.empty(),
                 20,
-                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                UniformHeight.of(VerticalAnchor.absolute(-36), VerticalAnchor.absolute(-12)),
                 false,
-                Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+                Optional.empty(),
                 116,
                 List.of(),
                 JigsawStructure.DEFAULT_DIMENSION_PADDING,
                 LiquidSettings.IGNORE_WATERLOGGING)
         );
+        // TODO: Use processors for frost dungeon
     }
 }

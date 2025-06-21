@@ -14,9 +14,9 @@ import net.xun.lib.common.api.util.CommonUtils;
 public class UOTemplatePools {
 
     // Frost Dungeons
-    public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_ENTRANCES = createKey("frost_dungeon/entrances");
-    public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_DESCENDING_CONNECTIONS = createKey("frost_dungeon/descending_connections");
+    public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_START = createKey("frost_dungeon/start");
     public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_CENTERS = createKey("frost_dungeon/centers");
+    public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_DESCENDING_CONNECTIONS = createKey("frost_dungeon/descending_connections");
     public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_HALLWAYS = createKey("frost_dungeon/hallways");
     public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_HALLWAYS_ENDS = createKey("frost_dungeon/hallway_ends");
     public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_INTERSECTIONS = createKey("frost_dungeon/intersections");
@@ -32,22 +32,10 @@ public class UOTemplatePools {
     public static void bootstrap(BootstrapContext<StructureTemplatePool> context) {
         var templatePools = context.lookup(Registries.TEMPLATE_POOL);
 
-        context.register(FROST_DUNGEON_ENTRANCES, new StructureTemplatePool(
+        context.register(FROST_DUNGEON_START, new StructureTemplatePool(
                 templatePools.getOrThrow(Pools.EMPTY),
                 ImmutableList.of(
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/entrance/entrance_1"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/entrance/entrance_2"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/entrance/entrance_3"), 1)
-                ),
-                StructureTemplatePool.Projection.RIGID)
-        );
-
-        context.register(FROST_DUNGEON_DESCENDING_CONNECTIONS, new StructureTemplatePool(
-                templatePools.getOrThrow(Pools.EMPTY),
-                ImmutableList.of(
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/descending_connection/drop_1"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/descending_connection/long_stairs_1"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/descending_connection/long_stairs_2"), 1)
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/center_start"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
         );
@@ -63,7 +51,17 @@ public class UOTemplatePools {
                 StructureTemplatePool.Projection.RIGID)
         );
 
-        Holder.Reference<StructureTemplatePool> register = context.register(FROST_DUNGEON_HALLWAYS, new StructureTemplatePool(
+        context.register(FROST_DUNGEON_DESCENDING_CONNECTIONS, new StructureTemplatePool(
+                templatePools.getOrThrow(Pools.EMPTY),
+                ImmutableList.of(
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/descending_connection/drop_1"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/descending_connection/long_stairs_1"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/descending_connection/long_stairs_2"), 1)
+                ),
+                StructureTemplatePool.Projection.RIGID)
+        );
+
+        context.register(FROST_DUNGEON_HALLWAYS, new StructureTemplatePool(
                 templatePools.getOrThrow(UOTemplatePools.FROST_DUNGEON_HALLWAYS_ENDS),
                 ImmutableList.of(
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/hallway_path_1"), 4),
