@@ -6,34 +6,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:bone",
-          "weight": 4
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:bone_meal",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:rotten_flesh",
-          "weight": 3
-        }
-      ],
-      "rolls": 4.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
           "functions": [
             {
               "function": "minecraft:enchant_randomly"
             }
           ],
           "name": "minecraft:enchanted_book",
-          "weight": 7
+          "weight": 15
         },
         {
           "type": "minecraft:item",
@@ -49,7 +28,7 @@
             }
           ],
           "name": "minecraft:gold_ingot",
-          "weight": 4
+          "weight": 10
         },
         {
           "type": "minecraft:item",
@@ -65,6 +44,27 @@
             }
           ],
           "name": "minecraft:emerald",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 3.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:golden_carrot",
           "weight": 2
         },
         {
@@ -72,7 +72,37 @@
           "name": "unoredinary:glacialite_upgrade_smithing_template"
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 2.0,
+        "min": 1.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone_meal",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rotten_flesh",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:string",
+          "weight": 20
+        }
+      ],
+      "rolls": 4.0
     }
   ],
   "random_sequence": "unoredinary:chests/frost_dungeon/intersection"

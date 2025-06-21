@@ -3,7 +3,7 @@
   "biomes": "#unoredinary:has_structure/frost_dungeon",
   "liquid_settings": "ignore_waterlogging",
   "max_distance_from_center": 116,
-  "size": 20,
+  "size": 15,
   "spawn_overrides": {
     "ambient": {
       "bounding_box": "full",
@@ -44,7 +44,7 @@
       "absolute": -12
     },
     "min_inclusive": {
-      "absolute": -36
+      "absolute": -24
     }
   },
   "start_pool": "unoredinary:frost_dungeon/start",

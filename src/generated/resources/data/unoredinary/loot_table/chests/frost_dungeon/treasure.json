@@ -12,7 +12,17 @@
             }
           ],
           "name": "minecraft:enchanted_book",
-          "weight": 5
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:name_tag",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:saddle",
+          "weight": 10
         },
         {
           "type": "minecraft:item",
@@ -28,24 +38,28 @@
             }
           ],
           "name": "minecraft:gold_ingot",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:blue_ice",
-          "weight": 4
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:packed_ice",
-          "weight": 6
+          "weight": 5
         }
       ],
-      "rolls": 3.0
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 3.0,
+        "min": 2.0
+      }
     },
     {
       "bonus_rolls": 0.0,
       "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:packed_ice",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:blue_ice",
+          "weight": 15
+        },
         {
           "type": "minecraft:item",
           "functions": [
@@ -60,7 +74,7 @@
             }
           ],
           "name": "minecraft:rotten_flesh",
-          "weight": 3
+          "weight": 15
         },
         {
           "type": "minecraft:item",
@@ -76,7 +90,23 @@
             }
           ],
           "name": "minecraft:bone",
-          "weight": 3
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:string",
+          "weight": 15
         },
         {
           "type": "minecraft:item",
@@ -92,7 +122,7 @@
             }
           ],
           "name": "minecraft:bone_meal",
-          "weight": 2
+          "weight": 10
         },
         {
           "type": "minecraft:item",
@@ -107,7 +137,12 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:bone_block"
+          "name": "minecraft:bone_block",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rabbit_foot"
         }
       ],
       "rolls": 4.0

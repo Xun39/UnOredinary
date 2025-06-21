@@ -82,6 +82,6 @@ public class FrostZombieEntity extends Zombie {
 
     @Override
     protected ItemStack getSkull() {
-        return new ItemStack(UOItems.FROST_ZOMBIE_HEAD.get());
+        return ItemStack.EMPTY;
     }
 }

@@ -70,11 +70,11 @@ public class UOTemplatePools {
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/hallway_path_open_left"), 3),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/hallway_path_open_right"), 3),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/hallway_path_open_both"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/treasure_path_left"), 3),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/treasure_path_right"), 3),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/treasure_path_both"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/monster_path_1"), 3),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/monster_path_2"), 3)
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/monster_path_2"), 3),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/treasure_path_left"), 2),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/treasure_path_right"), 2),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/hallways/treasure_path_both"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
         );
@@ -95,12 +95,12 @@ public class UOTemplatePools {
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/intersection/intersection_t"), 3),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/intersection/intersection_drop_1"), 2),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/intersection/intersection_drop_2"), 2),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/intersection/intersection_trapped_1"), 2),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/intersection/intersection_trapped_2"), 2),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/intersection/intersection_trapped_3"), 2),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/intersection/intersection_fake_trap"), 2),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/intersection/intersection_spawner_1"), 2),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/intersection/intersection_spawner_2"), 2)
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/intersection/intersection_spawner_2"), 2),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/intersection/intersection_trapped_1"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/intersection/intersection_trapped_2"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/intersection/intersection_trapped_3"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
         );
@@ -130,7 +130,8 @@ public class UOTemplatePools {
                 ImmutableList.of(
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/building/prison"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/building/warrior_tombs"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/building/baby_zombie"), 1)
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/building/baby_zombie"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/building/chicken"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
         );

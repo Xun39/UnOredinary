@@ -48,8 +48,8 @@ public class UOStructures {
                         context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_ICY),
                         emptySpawnOverrides,
                         GenerationStep.Decoration.UNDERGROUND_STRUCTURES,
-                        TerrainAdjustment.BEARD_THIN
-                ))
+                        TerrainAdjustment.BEARD_THIN)
+                )
         );
         context.register(FROST_DUNGEON, new JigsawStructure(
                 new Structure.StructureSettings(
@@ -60,8 +60,8 @@ public class UOStructures {
                 ),
                 context.lookup(Registries.TEMPLATE_POOL).getOrThrow(UOTemplatePools.FROST_DUNGEON_START),
                 Optional.empty(),
-                20,
-                UniformHeight.of(VerticalAnchor.absolute(-36), VerticalAnchor.absolute(-12)),
+                15,
+                UniformHeight.of(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(-12)),
                 false,
                 Optional.empty(),
                 116,

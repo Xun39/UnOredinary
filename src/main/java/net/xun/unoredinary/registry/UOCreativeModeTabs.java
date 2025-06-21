@@ -34,8 +34,6 @@ public class UOCreativeModeTabs {
                         output.accept(UOBlocks.GLACIUM_BLOCK);
                         output.accept(UOBlocks.FROSTSTEEL_BLOCK);
                         output.accept(UOBlocks.GLACIALITE_BLOCK);
-
-                        output.accept(UOItems.FROST_ZOMBIE_HEAD);
                     })
                     .build()
     );

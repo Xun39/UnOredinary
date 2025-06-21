@@ -7,7 +7,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xun.unoredinary.UnOredinary;
@@ -134,21 +133,6 @@ public class UOBlocks {
                     .requiresCorrectToolForDrops()
                     .strength(5.0F, 6.0F)
                     .sound(SoundType.METAL)
-            )
-    );
-
-    // TODO: Change the instrument to frost zombie
-    public static final DeferredBlock<Block> FROST_ZOMBIE_HEAD = register("frost_zombie_head",
-            () -> new SkullBlock(SkullBlock.Types.ZOMBIE, BlockBehaviour.Properties.of()
-                    .instrument(NoteBlockInstrument.ZOMBIE)
-                    .strength(1.0F)
-                    .pushReaction(PushReaction.DESTROY)
-            )
-    );
-
-    public static final DeferredBlock<Block> FROST_ZOMBIE_WALL_HEAD = register("frost_zombie_wall_head",
-            () -> new WallSkullBlock(SkullBlock.Types.ZOMBIE, BlockBehaviour.Properties.ofFullCopy(UOBlocks.FROST_ZOMBIE_HEAD.get())
-                    .lootFrom(UOBlocks.FROST_ZOMBIE_HEAD)
             )
     );
 
