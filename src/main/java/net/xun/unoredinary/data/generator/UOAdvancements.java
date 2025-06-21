@@ -14,14 +14,13 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.structure.BuiltinStructures;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.xun.lib.common.api.util.CommonUtils;
-import net.xun.unoredinary.registry.UOArmors;
-import net.xun.unoredinary.registry.UOBlocks;
-import net.xun.unoredinary.registry.UOItems;
-import net.xun.unoredinary.registry.UOTools;
+import net.xun.unoredinary.registry.*;
 import net.xun.unoredinary.util.UOTags;
 
 import java.util.List;
@@ -40,6 +39,7 @@ public class UOAdvancements extends AdvancementProvider {
         @Override
         public void generate(HolderLookup.Provider registries, Consumer<AdvancementHolder> consumer, ExistingFileHelper existingFileHelper) {
             var biomes = registries.lookup(Registries.BIOME).orElseThrow();
+            var structures = registries.lookup(Registries.STRUCTURE).orElseThrow();
 
             // Root: Story
             AdvancementHolder mineCryic = Advancement.Builder.advancement()
@@ -169,6 +169,23 @@ public class UOAdvancements extends AdvancementProvider {
                     )
                     .requirements(AdvancementRequirements.Strategy.OR)
                     .save(consumer, "unoredinary:freeze_miner");
+
+            /* AdvancementHolder findFrostDungeon = Advancement.Builder.advancement()
+                    .parent(vanillaAdvancement(adventureLoc("root")))
+                    .display(
+                            Blocks.BLUE_ICE,
+                            Component.translatable("advancement.unoredinary.frost_dungeon"),
+                            Component.translatable("advancement.unoredinary.frost_dungeon.desc"),
+                            null, AdvancementType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("frost_dungeon", PlayerTrigger.TriggerInstance.located(
+                            LocationPredicate.Builder.location()
+                                    .setStructures(HolderSet.direct(structures.getOrThrow(UOStructures.FROST_DUNGEON))))
+                    )
+                    .requirements(AdvancementRequirements.Strategy.OR)
+                    .save(consumer, "unoredinary:frost_dungeon");
+             */
         }
 
         private String storyLoc(String suffix) {

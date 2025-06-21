@@ -30,6 +30,7 @@ public class UOLanguage extends UOLanguageProvider {
         // Adventure
         addAdvancement("find_iceberg", "Iceberg Explorer", "Discover an iceberg");
         addAdvancement("freeze_miner", "Deep Freeze Miner", "Mine at least 20 Glacium Ores");
+        addAdvancement("frost_dungeon", "Beneath the Frozen Veil", "Enter a Frost Dungeon");
 
         /* ------------------------------ BLOCKS ------------------------------ */
         // Ores

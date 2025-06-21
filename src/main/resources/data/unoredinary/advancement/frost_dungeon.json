@@ -1,0 +1,39 @@
+{
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "frost_dungeon": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "unoredinary:frost_dungeon"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.unoredinary.frost_dungeon.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:blue_ice"
+    },
+    "title": {
+      "translate": "advancement.unoredinary.frost_dungeon"
+    }
+  },
+  "requirements": [
+    [
+      "frost_dungeon"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

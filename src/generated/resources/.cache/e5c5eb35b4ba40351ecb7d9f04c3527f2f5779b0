@@ -1,9 +1,10 @@
-// 1.21.1	2025-06-17T11:17:54.0623572	Advancements
+// 1.21.1	2025-06-21T12:30:55.4425567	Advancements
 34ca7c390c2a3717bae7b6859664d86e93fd0ffb data/unoredinary/advancement/craft_glacialite.json
 8487fa7d549870cdbe7c0d5a0184db0537ef3473 data/unoredinary/advancement/find_iceberg.json
 24bebb724679fe0beb2e01f049b16ec0bbae8ead data/unoredinary/advancement/forge_froststeel.json
 29798ecd43f2a12665e74bbedfaa314ccdede8f2 data/unoredinary/advancement/freeze_miner.json
 a380820c95a39bf0414ab01e91b7df5d0ff63d78 data/unoredinary/advancement/froststeel_tools.json
+dfb7ee689188e4cf111e7ad75e92150674083102 data/unoredinary/advancement/frost_dungeon.json
 96b507546e371e4de2abe9cc3ff17afc7e3e0628 data/unoredinary/advancement/get_glacium_crystal.json
 afb8f9d945f2316550e251585cfa87fb23c4a227 data/unoredinary/advancement/mine_cryic.json
 cc24c7b2c02d9beec5a4d9781a591572c283da68 data/unoredinary/advancement/mine_glacium.json

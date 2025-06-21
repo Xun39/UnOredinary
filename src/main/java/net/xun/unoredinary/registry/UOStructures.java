@@ -60,7 +60,7 @@ public class UOStructures {
                 ),
                 context.lookup(Registries.TEMPLATE_POOL).getOrThrow(UOTemplatePools.FROST_DUNGEON_START),
                 Optional.empty(),
-                15,
+                16,
                 UniformHeight.of(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(-12)),
                 false,
                 Optional.empty(),

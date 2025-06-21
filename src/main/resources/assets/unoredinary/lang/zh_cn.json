@@ -16,6 +16,8 @@
 
   "effect.unoredinary.frostbitten": "冻伤",
 
+  "entity.unoredinary.frost_zombie": "霜冻僵尸",
+
   "item.unoredinary.cryic_powder": "寒晶粉",
 
   "item.unoredinary.sapphire": "蓝宝石",
@@ -60,6 +62,8 @@
   "item.unoredinary.sapphire_leggings": "蓝宝石护腿",
   "item.unoredinary.sapphire_boots": "蓝宝石靴子",
 
+  "item.unoredinary.frost_zombie_spawn_egg": "霜冻僵尸刷怪蛋",
+
   "item.unoredinary.glacialite_upgrade_smithing_template": "锻造模板",
 
   "upgrade.unoredinary.glacialite_upgrade": "冰川合金升级",
@@ -90,6 +94,8 @@
   "advancement.unoredinary.find_iceberg.desc": "找到一个冰山生物群系",
   "advancement.unoredinary.freeze_miner": "深度冻结矿工",
   "advancement.unoredinary.freeze_miner.desc": "开采至少20个玄冰矿石",
+  "advancement.unoredinary.frost_dungeon": "冰封面纱之下",
+  "advancement.unoredinary.frost_dungeon.desc": "进入一个冰霜地牢",
 
   "trim_material.unoredinary.cryic": "寒晶材料",
   "trim_material.unoredinary.glacium": "冰魄材料",
