@@ -64,7 +64,7 @@
         },
         "projection": "rigid"
       },
-      "weight": 2
+      "weight": 1
     },
     {
       "element": {
@@ -75,7 +75,7 @@
         },
         "projection": "rigid"
       },
-      "weight": 2
+      "weight": 3
     },
     {
       "element": {
@@ -86,7 +86,7 @@
         },
         "projection": "rigid"
       },
-      "weight": 2
+      "weight": 3
     },
     {
       "element": {
@@ -108,7 +108,18 @@
         },
         "projection": "rigid"
       },
-      "weight": 2
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/hallways/monster_path_2",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 3
     }
   ],
   "fallback": "unoredinary:frost_dungeon/hallway_ends"

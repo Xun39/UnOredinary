@@ -3,29 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/treasure_room/empty_room_1",
-        "processors": {
-          "processors": []
-        },
-        "projection": "rigid"
-      },
-      "weight": 2
-    },
-    {
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/treasure_room/empty_room_2",
-        "processors": {
-          "processors": []
-        },
-        "projection": "rigid"
-      },
-      "weight": 2
-    },
-    {
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/treasure_room/treasure_room_loot",
+        "location": "unoredinary:frost_dungeon/treasure_room/empty_room",
         "processors": {
           "processors": []
         },
@@ -36,13 +14,24 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/treasure_room/treasure_room_loot",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
         "location": "unoredinary:frost_dungeon/treasure_room/treasure_room_gold",
         "processors": {
           "processors": []
         },
         "projection": "rigid"
       },
-      "weight": 1
+      "weight": 2
     },
     {
       "element": {

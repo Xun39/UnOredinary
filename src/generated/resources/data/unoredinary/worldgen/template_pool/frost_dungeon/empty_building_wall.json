@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/spawner_room/spawner_frost_zombie",
+        "location": "unoredinary:frost_dungeon/endings/wall",
         "processors": {
           "processors": []
         },

@@ -53,7 +53,7 @@
         },
         "projection": "rigid"
       },
-      "weight": 1
+      "weight": 2
     },
     {
       "element": {
@@ -64,7 +64,29 @@
         },
         "projection": "rigid"
       },
-      "weight": 1
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/intersection/intersection_trapped_3",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/intersection/intersection_fake_trap",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 2
     },
     {
       "element": {
@@ -75,8 +97,19 @@
         },
         "projection": "rigid"
       },
-      "weight": 1
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/intersection/intersection_spawner_2",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 2
     }
   ],
-  "fallback": "unoredinary:frost_dungeon/spawners"
+  "fallback": "unoredinary:frost_dungeon/monster_rooms"
 }

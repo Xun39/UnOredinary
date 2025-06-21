@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/descending_connection/drop_1",
+        "location": "unoredinary:frost_dungeon/monster_room/spawner_frost_zombie",
         "processors": {
           "processors": []
         },
@@ -14,18 +14,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/descending_connection/long_stairs_1",
-        "processors": {
-          "processors": []
-        },
-        "projection": "rigid"
-      },
-      "weight": 1
-    },
-    {
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/descending_connection/long_stairs_2",
+        "location": "unoredinary:frost_dungeon/monster_room/spawner_stray",
         "processors": {
           "processors": []
         },

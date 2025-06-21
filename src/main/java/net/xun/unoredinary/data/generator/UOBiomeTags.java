@@ -24,5 +24,11 @@ public class UOBiomeTags extends BiomeTagsProvider {
                 Biomes.FROZEN_OCEAN,
                 Biomes.DEEP_FROZEN_OCEAN
         );
+
+        tag(UOTags.Biomes.HAS_STRUCTURE_FROST_DUNGEON).add(
+                Biomes.FROZEN_PEAKS,
+                Biomes.SNOWY_TAIGA,
+                Biomes.SNOWY_PLAINS
+        );
     }
 }

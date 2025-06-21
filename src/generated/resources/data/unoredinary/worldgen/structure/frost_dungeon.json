@@ -1,8 +1,10 @@
 {
-  "type": "unoredinary:frost_dungeon",
-  "biomes": "#c:is_snowy",
-  "max_distance_from_center": 84,
-  "size": 12,
+  "type": "minecraft:jigsaw",
+  "biomes": "#unoredinary:has_structure/frost_dungeon",
+  "liquid_settings": "ignore_waterlogging",
+  "max_distance_from_center": 116,
+  "project_start_to_heightmap": "WORLD_SURFACE_WG",
+  "size": 20,
   "spawn_overrides": {
     "ambient": {
       "bounding_box": "full",
@@ -38,14 +40,9 @@
     }
   },
   "start_height": {
-    "type": "minecraft:trapezoid",
-    "max_inclusive": {
-      "below_top": 256
-    },
-    "min_inclusive": {
-      "above_bottom": 64
-    }
+    "absolute": 1
   },
   "start_pool": "unoredinary:frost_dungeon/entrances",
-  "step": "underground_structures"
+  "step": "underground_structures",
+  "use_expansion_hack": false
 }

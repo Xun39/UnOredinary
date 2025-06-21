@@ -7,8 +7,8 @@ import net.xun.unoredinary.data.provider.UOBlockLootProvider;
 import net.xun.unoredinary.registry.UOBlocks;
 import net.xun.unoredinary.registry.UOItems;
 
-public class UOBlockLootTables extends UOBlockLootProvider {
-    public UOBlockLootTables(HolderLookup.Provider registries) {
+public class UOBlockLoot extends UOBlockLootProvider {
+    public UOBlockLoot(HolderLookup.Provider registries) {
         super(registries);
     }
 

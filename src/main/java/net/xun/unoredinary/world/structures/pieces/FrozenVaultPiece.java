@@ -17,7 +17,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlac
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.registry.UOStructurePieceTypes;
-import net.xun.unoredinary.world.loot.UOLootTables;
+import net.xun.unoredinary.world.loot.UOLootTableKeys;
 
 public class FrozenVaultPiece extends TemplateStructurePiece {
     private static final ResourceLocation STRUCTURE_LOCATION = CommonUtils.modLoc("frozen_vault");
@@ -55,7 +55,7 @@ public class FrozenVaultPiece extends TemplateStructurePiece {
 
             BlockEntity blockEntity = level.getBlockEntity(pos);
             if (blockEntity instanceof ChestBlockEntity chest) {
-                chest.setLootTable(UOLootTables.FROZEN_VAULT, random.nextLong());
+                chest.setLootTable(UOLootTableKeys.FROZEN_VAULT, random.nextLong());
             }
         }
     }

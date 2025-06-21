@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 public class FrozenVaultStructure extends Structure {
     public static final MapCodec<FrozenVaultStructure> CODEC = simpleCodec(FrozenVaultStructure::new);
 
-    protected FrozenVaultStructure(StructureSettings settings) {
+    public FrozenVaultStructure(StructureSettings settings) {
         super(settings);
     }
 
@@ -68,22 +68,5 @@ public class FrozenVaultStructure extends Structure {
     @Override
     public StructureType<?> type() {
         return UOStructureTypes.FROZEN_VAULT.get();
-    }
-
-    public static FrozenVaultStructure create(BootstrapContext<Structure> context) {
-        Map<MobCategory, StructureSpawnOverride> spawnOverrides = new HashMap<>();
-        for (MobCategory category : MobCategory.values()) {
-            spawnOverrides.put(category, new StructureSpawnOverride(
-                    StructureSpawnOverride.BoundingBoxType.STRUCTURE,
-                    WeightedRandomList.create()
-            ));
-        }
-
-        return new FrozenVaultStructure(new StructureSettings(
-                context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_ICY),
-                spawnOverrides,
-                GenerationStep.Decoration.UNDERGROUND_STRUCTURES,
-                TerrainAdjustment.BEARD_THIN)
-        );
     }
 }

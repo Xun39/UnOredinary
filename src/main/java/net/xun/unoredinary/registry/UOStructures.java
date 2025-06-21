@@ -3,10 +3,27 @@ package net.xun.unoredinary.registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.random.WeightedRandomList;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
+import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.StructureSpawnOverride;
+import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
+import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
+import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSettings;
+import net.neoforged.neoforge.common.Tags;
 import net.xun.lib.common.api.util.CommonUtils;
-import net.xun.unoredinary.world.structures.type.FrostDungeonStructure;
+import net.xun.unoredinary.util.UOTags;
 import net.xun.unoredinary.world.structures.type.FrozenVaultStructure;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 public class UOStructures {
 
@@ -18,7 +35,39 @@ public class UOStructures {
     }
 
     public static void bootstrap(BootstrapContext<Structure> context) {
-        context.register(FROZEN_VAULT, FrozenVaultStructure.create(context));
-        context.register(FROST_DUNGEON, FrostDungeonStructure.create(context));
+        Map<MobCategory, StructureSpawnOverride> emptySpawnOverrides = new HashMap<>();
+        for (MobCategory category : MobCategory.values()) {
+            emptySpawnOverrides.put(category, new StructureSpawnOverride(
+                    StructureSpawnOverride.BoundingBoxType.STRUCTURE,
+                    WeightedRandomList.create()
+            ));
+        }
+
+        context.register(FROZEN_VAULT, new FrozenVaultStructure(
+                new Structure.StructureSettings(
+                        context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_ICY),
+                        emptySpawnOverrides,
+                        GenerationStep.Decoration.UNDERGROUND_STRUCTURES,
+                        TerrainAdjustment.BEARD_THIN
+                ))
+        );
+        context.register(FROST_DUNGEON, new JigsawStructure(
+                new Structure.StructureSettings(
+                        context.lookup(Registries.BIOME).getOrThrow(UOTags.Biomes.HAS_STRUCTURE_FROST_DUNGEON),
+                        emptySpawnOverrides,
+                        GenerationStep.Decoration.UNDERGROUND_STRUCTURES,
+                        TerrainAdjustment.NONE
+                ),
+                context.lookup(Registries.TEMPLATE_POOL).getOrThrow(UOTemplatePools.FROST_DUNGEON_ENTRANCES),
+                Optional.empty(),
+                20,
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                false,
+                Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+                116,
+                List.of(),
+                JigsawStructure.DEFAULT_DIMENSION_PADDING,
+                LiquidSettings.IGNORE_WATERLOGGING)
+        );
     }
 }

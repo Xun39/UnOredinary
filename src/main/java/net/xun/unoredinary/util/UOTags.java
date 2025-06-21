@@ -60,6 +60,8 @@ public class UOTags {
 
         public static final TagKey<Biome> HAS_ICEBERG = create("has_iceberg");
 
+        public static final TagKey<Biome> HAS_STRUCTURE_FROST_DUNGEON = create("has_structure/frost_dungeon");
+
         private static TagKey<Biome> create(String name) {
             return TagKey.create(Registries.BIOME, CommonUtils.modLoc(name));
         }

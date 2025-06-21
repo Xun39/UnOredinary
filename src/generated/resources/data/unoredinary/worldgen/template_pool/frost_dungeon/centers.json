@@ -14,7 +14,29 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "unoredinary:frost_dungeon/center/center_down",
+        "location": "unoredinary:frost_dungeon/center/center_2",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/center/center_3",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "unoredinary:frost_dungeon/center/center_4",
         "processors": {
           "processors": []
         },

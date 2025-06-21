@@ -16,8 +16,8 @@ public class UOLootTables extends LootTableProvider {
                 output,
                 Collections.emptySet(),
                 List.of(
-                        new SubProviderEntry(UOBlockLootTables::new, LootContextParamSets.BLOCK),
-                        new SubProviderEntry(UOChestLootTables::new, LootContextParamSets.CHEST)
+                        new SubProviderEntry(UOBlockLoot::new, LootContextParamSets.BLOCK),
+                        new SubProviderEntry(UOChestLoot::new, LootContextParamSets.CHEST)
                 ),
                 registries
         );
