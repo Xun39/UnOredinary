@@ -112,5 +112,21 @@
   "tag.item.c.gems.glacium": "Glacium Gems",
   "tag.item.c.ingots.froststeel": "Froststeel Ingots",
   "tag.item.c.ingots.glacialite": "Glacialite Ingots",
-  "tag.item.c.nuggets.glacium": "Glacium Nuggets (Shards)"
+  "tag.item.c.nuggets.glacium": "Glacium Nuggets (Shards)",
+
+  "unoredinary.configuration.tool_effects": "工具效果",
+  "unoredinary.configuration.tools_froststeel": "霜钢",
+  "unoredinary.configuration.tools_glacialite": "冰川合金",
+
+  "unoredinary.configuration.hit_particles_froststeel": "是否产生攻击粒子",
+  "unoredinary.configuration.hit_particles_glacialite": "是否产生攻击粒子",
+
+  "unoredinary.configuration.armor_effects": "盔甲效果",
+  "unoredinary.configuration.armors_froststeel": "霜钢",
+  "unoredinary.configuration.armors_glacialite": "冰川合金",
+
+  "unoredinary.configuration.enable_frost_walker_froststeel": "开启冰霜行者",
+  "unoredinary.configuration.enable_frost_walker_glacialite": "开启冰霜行者",
+
+  "unoredinary.configuration.hurt_particles_glacialite": "是否产生伤害粒子"
 }

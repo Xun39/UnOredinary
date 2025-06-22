@@ -23,6 +23,7 @@ import net.xun.lib.common.api.item.armor.ArmorType;
 import net.xun.lib.common.api.util.ArmorSlotsUtils;
 import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.unoredinary.UnOredinary;
+import net.xun.unoredinary.config.common.UOCommonConfig;
 import net.xun.unoredinary.registry.UOArmorMaterials;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
@@ -34,6 +35,9 @@ public class FroststeelArmorConfigurator implements ArmorConfigurator {
             public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
 
                 if (!(entity instanceof Player player) || !(stack.getItem() instanceof ArmorItem))
+                    return;
+
+                if (!UOCommonConfig.armorEffectConfig.froststeelConfig.enableFrostWalker.get())
                     return;
 
                 if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.FROSTSTEEL)) {

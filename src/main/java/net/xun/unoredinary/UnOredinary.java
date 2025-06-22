@@ -1,6 +1,8 @@
 package net.xun.unoredinary;
 
 import net.xun.lib.common.api.ModSetup;
+import net.xun.unoredinary.config.client.UOClientConfig;
+import net.xun.unoredinary.config.common.UOCommonConfig;
 import net.xun.unoredinary.registry.*;
 import org.slf4j.Logger;
 
@@ -22,6 +24,7 @@ public class UnOredinary {
     public UnOredinary(IEventBus modEventBus, ModContainer modContainer) {
 
         ModSetup.setModId(MOD_ID);
+        NeoForge.EVENT_BUS.register(this);
 
         UOTools.registerTools();
         UOArmors.registerArmors();
@@ -36,8 +39,8 @@ public class UnOredinary {
         UOStructureTypes.STRUCTURE_TYPES.register(modEventBus);
         UOStructurePieceTypes.STRUCTURE_PIECE_TYPES.register(modEventBus);
 
-        NeoForge.EVENT_BUS.register(this);
-        modContainer.registerConfig(ModConfig.Type.COMMON, UnOredinaryConfig.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, UOCommonConfig.SPEC);
+        modContainer.registerConfig(ModConfig.Type.CLIENT, UOClientConfig.SPEC);
     }
 
     @SubscribeEvent
@@ -45,3 +48,4 @@ public class UnOredinary {
 
     }
 }
+

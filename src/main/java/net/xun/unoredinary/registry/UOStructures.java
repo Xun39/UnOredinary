@@ -17,6 +17,7 @@ import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
 import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSettings;
 import net.neoforged.neoforge.common.Tags;
 import net.xun.lib.common.api.util.CommonUtils;
+import net.xun.unoredinary.config.sever.UOSeverConfig;
 import net.xun.unoredinary.util.UOTags;
 import net.xun.unoredinary.world.structures.type.FrozenVaultStructure;
 

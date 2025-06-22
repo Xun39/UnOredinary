@@ -7,9 +7,9 @@ import net.minecraft.world.entity.monster.Zombie;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.client.model.UOModelLayers;
 import net.xun.unoredinary.client.model.entity.FrostZombieModel;
-import net.xun.unoredinary.entity.FrostZombieEntity;
+import net.xun.unoredinary.entity.FrostZombie;
 
-public class FrostZombieRenderer extends AbstractZombieRenderer<FrostZombieEntity, FrostZombieModel> {
+public class FrostZombieRenderer extends AbstractZombieRenderer<FrostZombie, FrostZombieModel> {
 
     private static final ResourceLocation LOCATION = CommonUtils.modLoc("textures/entity/frost_zombie/frost_zombie.png");
 

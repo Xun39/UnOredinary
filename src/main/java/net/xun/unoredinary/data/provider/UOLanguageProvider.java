@@ -56,4 +56,8 @@ public abstract class UOLanguageProvider extends LanguageProvider {
     public void translateTag(TagKey<?> tag, String name) {
         this.add(String.format("tag.%s.%s.%s", tag.registry().location().getPath(), tag.location().getNamespace(), tag.location().getPath().replace('/', '.')), name);
     }
+
+    public void translateConfig(String key, String name) {
+        add("unoredinary.configuration." + key, name);
+    }
 }

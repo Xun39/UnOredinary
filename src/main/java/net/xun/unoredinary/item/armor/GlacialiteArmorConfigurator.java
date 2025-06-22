@@ -28,6 +28,8 @@ import net.xun.lib.common.api.util.ArmorSlotsUtils;
 import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.unoredinary.UnOredinary;
+import net.xun.unoredinary.config.client.UOClientConfig;
+import net.xun.unoredinary.config.common.UOCommonConfig;
 import net.xun.unoredinary.registry.UOArmorMaterials;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
@@ -49,6 +51,9 @@ public class GlacialiteArmorConfigurator implements ArmorConfigurator {
 
                     MobEffectUtils.clearEffect(player, effectInstance);
                 }
+
+                if (!UOCommonConfig.armorEffectConfig.glacialiteConfig.enableFrostWalker.get())
+                    return;
 
                 if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.GLACIALITE)) {
                     BlockPos groundPos = player.getBlockPosBelowThatAffectsMyMovement();
@@ -94,6 +99,9 @@ public class GlacialiteArmorConfigurator implements ArmorConfigurator {
 
     private static void spawnHurtParticles(LivingEntity target) {
         if (!(target.level() instanceof ServerLevel serverLevel)) return;
+
+        if (!UOClientConfig.armorEffectConfig.glacialiteConfig.doHurtParticlesSpawn.get())
+            return;
 
         if (target.level().getRandom().nextFloat() < 0.3F) {
             double centerX = target.getX() + target.level().getRandom().nextFloat();

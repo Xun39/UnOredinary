@@ -12,20 +12,19 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.xun.unoredinary.registry.UOItems;
 import net.xun.unoredinary.registry.UOMobEffects;
 import net.xun.unoredinary.registry.UOSounds;
 
-public class FrostZombieEntity extends Zombie {
-    public FrostZombieEntity(EntityType<? extends Zombie> entityType, Level level) {
+public class FrostZombie extends Zombie {
+    public FrostZombie(EntityType<? extends Zombie> entityType, Level level) {
         super(entityType, level);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 24.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.22F)
-                .add(Attributes.ATTACK_DAMAGE, 3.25D)
+                .add(Attributes.FOLLOW_RANGE, 40.0)
+                .add(Attributes.MOVEMENT_SPEED, 0.21F)
+                .add(Attributes.ATTACK_DAMAGE, 4.0D)
                 .add(Attributes.ARMOR, 3.0D)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
     }
@@ -75,6 +74,7 @@ public class FrostZombieEntity extends Zombie {
     protected void doUnderWaterConversion() {
         if (!net.neoforged.neoforge.event.EventHooks.canLivingConvert(this, EntityType.DROWNED, (timer) -> this.conversionTime = timer)) return;
         this.convertToZombieType(EntityType.DROWNED);
+
         if (!this.isSilent()) {
             this.level().levelEvent(null, 1041, this.blockPosition(), 0);
         }

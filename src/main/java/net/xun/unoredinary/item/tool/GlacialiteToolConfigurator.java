@@ -16,6 +16,7 @@ import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategy;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
+import net.xun.unoredinary.config.client.UOClientConfig;
 import net.xun.unoredinary.registry.UOMobEffects;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
@@ -133,6 +134,9 @@ public class GlacialiteToolConfigurator implements ToolConfigurator {
 
     private static void spawnFrostParticles(LivingEntity target) {
         if (!(target.level() instanceof ServerLevel serverLevel)) return;
+
+        if (!UOClientConfig.toolEffectConfig.glacialiteConfig.doHitParticlesSpawn.get())
+            return;
 
         double centerX = target.getX();
         double centerY = target.getY() + target.getBbHeight() / 2.0;

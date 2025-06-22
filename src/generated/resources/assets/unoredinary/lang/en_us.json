@@ -87,5 +87,16 @@
   "trim_material.unoredinary.glacialite": "Glacialite Material",
   "trim_material.unoredinary.glacium": "Glacium Material",
   "trim_material.unoredinary.sapphire": "Sapphire Material",
+  "unoredinary.configuration.armor_effects": "Armor Effects",
+  "unoredinary.configuration.armors_froststeel": "Froststeel",
+  "unoredinary.configuration.armors_glacialite": "Glacialite",
+  "unoredinary.configuration.enable_frost_walker_froststeel": "Enable Frost Walker",
+  "unoredinary.configuration.enable_frost_walker_glacialite": "Enable Frost Walker",
+  "unoredinary.configuration.hit_particles_froststeel": "Do hit particles spawn",
+  "unoredinary.configuration.hit_particles_glacialite": "Do hit particles spawn",
+  "unoredinary.configuration.hurt_particles_glacialite": "Do hurt particles spawn",
+  "unoredinary.configuration.tool_effects": "Tool Effects",
+  "unoredinary.configuration.tools_froststeel": "Froststeel",
+  "unoredinary.configuration.tools_glacialite": "Glacialite",
   "upgrade.unoredinary.glacialite_upgrade": "Glacialite Upgrade"
 }

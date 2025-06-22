@@ -103,5 +103,23 @@ public class UOLanguage extends UOLanguageProvider {
         translateTag(UOTags.Items.GEMS_GLACIUM, "Glacium Gems");
         translateTag(UOTags.Items.INGOTS_FROSTSTEEL, "Froststeel Ingots");
         translateTag(UOTags.Items.INGOTS_GLACIALITE, "Glacialite Ingots");
+
+        /* ------------------------------ CONFIGURATIONS ------------------------------ */
+        // Tool Effect Configs
+        translateConfig("tool_effects", "Tool Effects");
+        translateConfig("tools_froststeel", "Froststeel");
+        translateConfig("tools_glacialite", "Glacialite");
+        translateConfig("hit_particles_froststeel", "Do hit particles spawn");
+        translateConfig("hit_particles_glacialite", "Do hit particles spawn");
+
+        // Armor Effect Configs
+        translateConfig("armor_effects", "Armor Effects");
+        translateConfig("armors_froststeel", "Froststeel");
+        translateConfig("armors_glacialite", "Glacialite");
+
+        translateConfig("enable_frost_walker_froststeel", "Enable Frost Walker");
+        translateConfig("enable_frost_walker_glacialite", "Enable Frost Walker");
+
+        translateConfig("hurt_particles_glacialite", "Do hurt particles spawn");
     }
 }

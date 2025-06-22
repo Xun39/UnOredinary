@@ -11,7 +11,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.xun.unoredinary.UnOredinary;
-import net.xun.unoredinary.entity.FrostZombieEntity;
+import net.xun.unoredinary.entity.FrostZombie;
 import net.xun.unoredinary.registry.UOEntityTypes;
 import net.xun.unoredinary.registry.UOItems;
 
@@ -20,7 +20,7 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onEntityAttributesCreated(EntityAttributeCreationEvent event) {
-        event.put(UOEntityTypes.FROST_ZOMBIE.get(), FrostZombieEntity.createAttributes().build());
+        event.put(UOEntityTypes.FROST_ZOMBIE.get(), FrostZombie.createAttributes().build());
     }
 
     @SubscribeEvent
