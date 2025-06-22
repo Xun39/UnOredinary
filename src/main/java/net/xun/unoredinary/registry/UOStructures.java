@@ -6,9 +6,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.WeightedRandomList;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
 import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureSpawnOverride;
@@ -17,7 +15,6 @@ import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
 import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSettings;
 import net.neoforged.neoforge.common.Tags;
 import net.xun.lib.common.api.util.CommonUtils;
-import net.xun.unoredinary.config.sever.UOSeverConfig;
 import net.xun.unoredinary.util.UOTags;
 import net.xun.unoredinary.world.structures.type.FrozenVaultStructure;
 

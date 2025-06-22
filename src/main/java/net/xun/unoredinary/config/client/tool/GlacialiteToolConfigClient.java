@@ -9,7 +9,7 @@ public class GlacialiteToolConfigClient {
         builder.push("tools_glacialite");
 
         doHitParticlesSpawn = builder
-                .comment("Set this off will disable the particles that spawns when hitting an entity with Glacialite Tools")
+                .comment("Disable this setting will disable the particles that spawns when hitting an entity with Glacialite Tools")
                 .define("hit_particles_glacialite", true);
 
         builder.pop();

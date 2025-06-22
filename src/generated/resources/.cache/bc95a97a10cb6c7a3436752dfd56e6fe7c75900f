@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-17T21:29:43.9217924	Item Models: unoredinary
+// 1.21.1	2025-06-22T11:55:07.6119701	Item Models: unoredinary
 15523e940bd324d971fa204348a02be68335f396 assets/unoredinary/models/item/cryic_powder.json
 b358fa4aa481ccb95f7798874378a93ff97121fc assets/unoredinary/models/item/froststeel_axe.json
 c8ba747ad7d7d04b7f11fb60903a74e4a798295e assets/unoredinary/models/item/froststeel_boots.json
@@ -104,6 +104,7 @@ ba205d9f73d06ea1ef26069726ef71325ece8023 assets/unoredinary/models/item/glaciali
 adbe9908cddf847ee9a6aae82cdf78593f50118c assets/unoredinary/models/item/glacialite_upgrade_smithing_template.json
 836f79acee3c8825b830226cef4329c021bdc985 assets/unoredinary/models/item/glacium_crystal.json
 3b854e876472425b94a2a7dd51c5f96286465a4d assets/unoredinary/models/item/glacium_shard.json
+92e3339a79c1b876b2d3b7bd693e7d18a7ca9d33 assets/unoredinary/models/item/luminite_crystal.json
 c9d9e0b221975c248e3f0c6e022cbebf3fcbb7e2 assets/unoredinary/models/item/sapphire.json
 7dfb2d29d71aa2c34e05c7102533102aa12ad167 assets/unoredinary/models/item/sapphire_axe.json
 c8805619f0323dd04087e8f7e4ab4789aecb8552 assets/unoredinary/models/item/sapphire_boots.json

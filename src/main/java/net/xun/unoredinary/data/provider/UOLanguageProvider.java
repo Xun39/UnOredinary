@@ -4,6 +4,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -51,6 +52,12 @@ public abstract class UOLanguageProvider extends LanguageProvider {
 
     public void addTrimMaterial(ResourceKey<TrimMaterial> material, String name) {
         add("trim_material" + ".unoredinary." + material.location().getPath(), name);
+    }
+
+    public void addPotion(DeferredHolder<Potion, Potion> potion, String name) {
+        add("item.minecraft.potion.effect." + potion.getKey().location().getPath(), "Potion of " + name);
+        add("item.minecraft.splash_potion.effect." + potion.getKey().location().getPath(), "Splash Potion of " + name);
+        add("item.minecraft.lingering_potion.effect." + potion.getKey().location().getPath(), "Lingering Potion of " + name);
     }
 
     public void translateTag(TagKey<?> tag, String name) {

@@ -78,6 +78,7 @@ public class UOItemTags extends ItemTagsProvider {
 
         // cTags: Gems
         addToTags(Set.of(Tags.Items.GEMS, UOTags.Items.GEMS_GLACIUM), Set.of(UOItems.GLACIUM_CRYSTAL.get()));
+        addToTags(Set.of(Tags.Items.GEMS, UOTags.Items.GEMS_LUMINITE), Set.of(UOItems.LUMINITE_CRYSTAL.get()));
         addToTags(Set.of(Tags.Items.GEMS, UOTags.Items.GEMS_SAPPHIRE), Set.of(UOItems.SAPPHIRE.get()));
 
         // cTags: Nuggets

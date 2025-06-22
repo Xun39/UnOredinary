@@ -9,7 +9,7 @@ public class GlacialiteArmorConfigCommon {
         builder.push("armors_glacialite");
 
         enableFrostWalker = builder
-                .comment("Set this off will disable the frost walker effect for Glacialite Armors")
+                .comment("Disable this setting will disable the frost walker effect for Glacialite Armors")
                 .define("enable_frost_walker_glacialite", true);
 
         builder.pop();

@@ -36,6 +36,9 @@ public class UOBlockTags extends BlockTagsProvider {
                 UOBlocks.GLACIUM_ORE.get(),
                 UOBlocks.PRIMAL_GLACIUM_ORE.get(),
 
+                UOBlocks.LUMINITE_ORE.get(),
+                UOBlocks.DEEPSLATE_LUMINITE_ORE.get(),
+
                 UOBlocks.CRYIC_BLOCK.get(),
                 UOBlocks.SAPPHIRE_BLOCK.get(),
                 UOBlocks.GLACIUM_BLOCK.get(),
@@ -51,6 +54,9 @@ public class UOBlockTags extends BlockTagsProvider {
         tag(BlockTags.NEEDS_IRON_TOOL).add(
                 UOBlocks.SAPPHIRE_ORE.get(),
                 UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
+
+                UOBlocks.LUMINITE_ORE.get(),
+                UOBlocks.DEEPSLATE_LUMINITE_ORE.get(),
 
                 UOBlocks.SAPPHIRE_BLOCK.get()
         );
@@ -92,15 +98,27 @@ public class UOBlockTags extends BlockTagsProvider {
                 Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_GLACIUM),
                 Set.of(UOBlocks.GLACIUM_ORE.get(), UOBlocks.PRIMAL_GLACIUM_ORE.get()));
 
+        addToTags(
+                Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_LUMINITE),
+                Set.of(UOBlocks.LUMINITE_ORE.get(), UOBlocks.DEEPSLATE_LUMINITE_ORE.get()));
+
         // cTags: Ores in Ground
         addToTags(
                 Set.of(Tags.Blocks.ORES_IN_GROUND_STONE),
-                Set.of(UOBlocks.CRYIC_ORE.get())
+                Set.of(
+                        UOBlocks.CRYIC_ORE.get(),
+                        UOBlocks.LUMINITE_ORE.get(),
+                        UOBlocks.SAPPHIRE_ORE.get()
+                )
         );
 
         addToTags(
                 Set.of(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE),
-                Set.of(UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get())
+                Set.of(
+                        UOBlocks.DEEPSLATE_CRYIC_ORE.get(),
+                        UOBlocks.DEEPSLATE_LUMINITE_ORE.get(),
+                        UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get()
+                )
         );
 
         // cTags: Storage Blocks

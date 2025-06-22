@@ -43,6 +43,9 @@ public class UOLanguage extends UOLanguageProvider {
         addBlock(UOBlocks.GLACIUM_ORE, "Glacium Ore");
         addBlock(UOBlocks.PRIMAL_GLACIUM_ORE, "Primal Glacium Ore");
 
+        addBlock(UOBlocks.LUMINITE_ORE, "Luminite Ore");
+        addBlock(UOBlocks.DEEPSLATE_LUMINITE_ORE, "Deepslate Luminite Ore");
+
         // Storage Blocks
         addBlock(UOBlocks.CRYIC_BLOCK, "Block of Cryic");
         addBlock(UOBlocks.SAPPHIRE_BLOCK, "Block of Sapphire");
@@ -53,8 +56,11 @@ public class UOLanguage extends UOLanguageProvider {
         /* ------------------------------ ENTITIES ------------------------------ */
         addEntityAndSpawnEgg(UOEntityTypes.FROST_ZOMBIE, "Frost Zombie");
 
-        /* ------------------------------ MOB EFFECTS ------------------------------ */
+        /* ------------------------------ MOB EFFECTS and POTIONS ------------------------------ */
         addEffect(UOMobEffects.FROSTED_EFFECT, "Frostbitten");
+        addPotion(UOPotions.FROSTBITTEN, "Frostbitten");
+        addPotion(UOPotions.LONG_FROSTBITTEN, "Frostbitten");
+        addPotion(UOPotions.STRONG_FROSTBITTEN, "Frostbitten");
 
         /* ------------------------------ ITEMS ------------------------------ */
         addItem(UOItems.CRYIC_POWDER, "Cryic Powder");
@@ -63,6 +69,8 @@ public class UOLanguage extends UOLanguageProvider {
 
         addItem(UOItems.GLACIUM_SHARD, "Glacium Shard");
         addItem(UOItems.GLACIUM_CRYSTAL, "Glacium Crystal");
+
+        addItem(UOItems.LUMINITE_CRYSTAL, "Luminite Crystal");
 
         addItem(UOItems.FROSTSTEEL_INGOT, "Froststeel Ingot");
         addItem(UOItems.GLACIALITE_INGOT, "Glacialite Ingot");

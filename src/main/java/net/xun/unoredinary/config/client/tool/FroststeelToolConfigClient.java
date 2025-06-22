@@ -9,7 +9,7 @@ public class FroststeelToolConfigClient {
         builder.push("tools_froststeel");
 
         doHitParticlesSpawn = builder
-                .comment("Set this off will disable the particles that spawns when hitting an entity with Froststeel Tools")
+                .comment("Disable this setting will disable the particles that spawns when hitting an entity with Froststeel Tools")
                 .define("hit_particles_froststeel", true);
 
         builder.pop();

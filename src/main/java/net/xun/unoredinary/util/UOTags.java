@@ -21,6 +21,7 @@ public class UOTags {
         public static final TagKey<Block> ORES_CRYIC = createCommon("ores/cryic");
         public static final TagKey<Block> ORES_SAPPHIRE = createCommon("ores/sapphire");
         public static final TagKey<Block> ORES_GLACIUM = createCommon("ores/glacium");
+        public static final TagKey<Block> ORES_LUMINITE = createCommon("ores/luminite");
 
         public static final TagKey<Block> STORAGE_BLOCKS_CRYIC = createCommon("storage_blocks/cryic");
         public static final TagKey<Block> STORAGE_BLOCKS_SAPPHIRE = createCommon("storage_blocks/sapphire");
@@ -40,6 +41,7 @@ public class UOTags {
     public static class Items {
 
         public static final TagKey<Item> GEMS_GLACIUM = createCommon("gems/glacium");
+        public static final TagKey<Item> GEMS_LUMINITE = createCommon("gems/luminite");
         public static final TagKey<Item> GEMS_SAPPHIRE = createCommon("gems/sapphire");
 
         public static final TagKey<Item> NUGGETS_GLACIUM = createCommon("nuggets/glacium");

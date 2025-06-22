@@ -9,7 +9,7 @@ public class FroststeelArmorConfigCommon {
         builder.push("armors_froststeel");
 
         enableFrostWalker = builder
-                .comment("Set this off will disable the frost walker effect for Froststeel Armors")
+                .comment("Disable this setting will disable the frost walker effect for Froststeel Armors")
                 .define("enable_frost_walker_froststeel", true);
 
         builder.pop();

@@ -1,6 +1,7 @@
-// 1.21.1	2025-06-21T21:16:55.5578604	Tags for minecraft:item mod id unoredinary
-96dfbf812539fb7bf1b030922c9b114bc0e11f23 data/c/tags/item/gems.json
+// 1.21.1	2025-06-22T13:14:36.4995458	Tags for minecraft:item mod id unoredinary
+44ace8acdb309a6712b6f9ba0525f54a61c33333 data/c/tags/item/gems.json
 470f14e69c0ebdf836b83b97df9ee3f2c86dd9e8 data/c/tags/item/gems/glacium.json
+f1183c1c89abadf654127b9d4e4f511a26e722fb data/c/tags/item/gems/luminite.json
 9aff2254db0095b7e92a843fafb95020de489f5f data/c/tags/item/gems/sapphire.json
 b977f8722d623279cba9ca0a09e04097a4e614a7 data/c/tags/item/ingots.json
 260131bb4bec1a134f69abc8d56802d1cee35bb3 data/c/tags/item/ingots/froststeel.json
@@ -19,4 +20,4 @@ db2464f0c0314f14b0a2a26fd06bc5160dfb6492 data/minecraft/tags/item/leg_armor.json
 cfb30ea3c6ff259a1d61ce1fc1bfd66bddc12af8 data/minecraft/tags/item/pickaxes.json
 7b525b1044068f3d891b82c9ca2a867d7497ddb0 data/minecraft/tags/item/shovels.json
 d2cafb3ede7d62053c3b93497082e4e4753ca938 data/minecraft/tags/item/swords.json
-bd5555ba235a14573703c0dca0cb7dac9cbff36c data/minecraft/tags/item/trim_materials.json
+b151af5ffe1363c8ebb3df63c2447b801e5e8c41 data/minecraft/tags/item/trim_materials.json

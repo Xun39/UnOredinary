@@ -27,6 +27,10 @@ public class UOBlockLoot extends UOBlockLootProvider {
         multipleDrops(UOBlocks.GLACIUM_ORE.get(), UOItems.GLACIUM_SHARD, 3.0F, 4.0F);
         dropOtherWithoutSilkTouch(UOBlocks.PRIMAL_GLACIUM_ORE.get(), UOItems.GLACIUM_CRYSTAL);
 
+        // Luminite ores
+        dropOtherWithoutSilkTouch(UOBlocks.LUMINITE_ORE.get(), UOItems.LUMINITE_CRYSTAL);
+        dropOtherWithoutSilkTouch(UOBlocks.DEEPSLATE_LUMINITE_ORE.get(), UOItems.LUMINITE_CRYSTAL);
+
         /* ------------------------------ STORAGE BLOCKS ------------------------------ */
         dropSelf(UOBlocks.CRYIC_BLOCK.get());
         dropSelf(UOBlocks.SAPPHIRE_BLOCK.get());

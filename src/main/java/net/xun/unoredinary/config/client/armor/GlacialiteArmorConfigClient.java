@@ -9,7 +9,7 @@ public class GlacialiteArmorConfigClient {
         builder.push("armors_glacialite");
 
         doHurtParticlesSpawn = builder
-                .comment("Set this off will disable the particles that spawns randomly when an enemy hurt you while you're wearing Glacialite armors")
+                .comment("Disable this setting will disable the particles that spawns randomly when an enemy hurt you while you're wearing Glacialite armors")
                 .define("hurt_particles_glacialite", true);
 
         builder.pop();

@@ -28,7 +28,6 @@ public class UOBlocks {
                             .strength(3.0F, 3.0F)
             )
     );
-
     public static final DeferredBlock<Block> DEEPSLATE_CRYIC_ORE = register("deepslate_cryic_ore",
             () -> new DropExperienceBlock(
                     UniformInt.of(2, 4),
@@ -49,7 +48,6 @@ public class UOBlocks {
                             .strength(3.0F, 3.0F)
             )
     );
-
     public static final DeferredBlock<Block> DEEPSLATE_SAPPHIRE_ORE = register("deepslate_sapphire_ore",
             () -> new DropExperienceBlock(
                     UniformInt.of(3, 8),
@@ -73,7 +71,6 @@ public class UOBlocks {
                     true
             )
     );
-
     public static final DeferredBlock<Block> PRIMAL_GLACIUM_ORE = register("primal_glacium_ore",
             () -> new GlaciumBlock(
                     UniformInt.of(4, 10),
@@ -81,6 +78,28 @@ public class UOBlocks {
                             .mapColor(MapColor.COLOR_LIGHT_BLUE)
                             .strength(20.0F, 1000.0F),
                     true
+            )
+    );
+
+    public static final DeferredBlock<Block> LUMINITE_ORE = register("luminite_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(3, 6),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .lightLevel(state -> 8)
+                            .strength(3.0F, 3.0F)
+                            .emissiveRendering((state, level, pos) -> true)
+            )
+    );
+    public static final DeferredBlock<Block> DEEPSLATE_LUMINITE_ORE = register("deepslate_luminite_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(3, 6),
+                    BlockBehaviour.Properties.ofFullCopy(UOBlocks.LUMINITE_ORE.get())
+                            .mapColor(MapColor.DEEPSLATE)
+                            .strength(4.5F, 3.0F)
+                            .sound(SoundType.DEEPSLATE)
             )
     );
 

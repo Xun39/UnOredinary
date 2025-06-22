@@ -71,6 +71,11 @@ public class GlacialiteArmorConfigurator implements ArmorConfigurator {
                     });
                 }
             }
+
+            @Override
+            public boolean canWalkOnPowderedSnow(ItemStack stack, LivingEntity wearer) {
+                return true;
+            }
         };
     }
 
