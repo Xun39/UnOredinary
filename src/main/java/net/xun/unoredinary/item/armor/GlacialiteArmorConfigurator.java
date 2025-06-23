@@ -40,41 +40,27 @@ public class GlacialiteArmorConfigurator implements ArmorConfigurator {
         return new ArmorItem(material, type.getType(), props) {
             @Override
             public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-
                 if (!(entity instanceof Player player) || !(stack.getItem() instanceof ArmorItem))
                     return;
 
-                if (player.getEffect(MobEffects.MOVEMENT_SLOWDOWN) != null) {
-                    MobEffectInstance effectInstance = player.getEffect(MobEffects.MOVEMENT_SLOWDOWN);
-                    if (effectInstance == null)
-                        return;
-
-                    MobEffectUtils.clearEffect(player, effectInstance);
-                }
-
-                if (!UOCommonConfig.armorEffectConfig.glacialiteConfig.enableFrostWalker.get())
+                if (!UOCommonConfig.armorEffectConfig.glacialiteConfig.enable.get())
                     return;
 
-                if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.GLACIALITE)) {
-                    BlockPos groundPos = player.getBlockPosBelowThatAffectsMyMovement();
+                if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableSlownessImmunity.get()) {
+                    handleSlownessImmunity(player);
+                }
 
-                    BlockPosUtils.getDisc(groundPos, 7).forEach(pos -> {
-                        if (!level.getBlockState(pos).is(Blocks.WATER))
-                            return;
-
-                        BlockPos abovePos = pos.above();
-
-                        if (level.getBlockState(abovePos).isAir() && level.isUnobstructed(Blocks.FROSTED_ICE.defaultBlockState(), pos, CollisionContext.empty())) {
-                            level.setBlock(pos, Blocks.FROSTED_ICE.defaultBlockState(), Block.UPDATE_ALL);
-                            level.gameEvent(player, GameEvent.BLOCK_PLACE, pos);
-                        }
-                    });
+                if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableFrostWalker.get()) {
+                    handleFrostWalkerEffect(player, level);
                 }
             }
 
             @Override
             public boolean canWalkOnPowderedSnow(ItemStack stack, LivingEntity wearer) {
-                return true;
+                if (!UOCommonConfig.armorEffectConfig.glacialiteConfig.enable.get())
+                    return false;
+
+                return UOCommonConfig.armorEffectConfig.glacialiteConfig.canWalkOnPowderSnow.get();
             }
         };
     }
@@ -84,29 +70,80 @@ public class GlacialiteArmorConfigurator implements ArmorConfigurator {
         Entity attacker = event.getSource().getDirectEntity();
         LivingEntity receiver = event.getEntity();
 
+        if (!UOCommonConfig.armorEffectConfig.glacialiteConfig.enable.get())
+            return;
+
+        if (!UOCommonConfig.armorEffectConfig.glacialiteConfig.enableHotFloorDamage.get()) {
+            immuneHotFloorDamage(event, receiver);
+        }
+
+        if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableThornsEffect.get()) {
+            handleThornsEffect(event, attacker, receiver);
+        }
+    }
+
+    private static void handleFrostWalkerEffect(Player player, Level level) {
+        if (!ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.GLACIALITE))
+            return;
+
+        BlockPos groundPos = player.getBlockPosBelowThatAffectsMyMovement();
+
+        BlockPosUtils.getDisc(groundPos, 7).forEach(pos -> {
+            if (!level.getBlockState(pos).is(Blocks.WATER))
+                return;
+
+            BlockPos abovePos = pos.above();
+
+            if (level.getBlockState(abovePos).isAir() && level.isUnobstructed(Blocks.FROSTED_ICE.defaultBlockState(), pos, CollisionContext.empty())) {
+                level.setBlock(pos, Blocks.FROSTED_ICE.defaultBlockState(), Block.UPDATE_ALL);
+                level.gameEvent(player, GameEvent.BLOCK_PLACE, pos);
+            }
+        });
+    }
+
+    private static void handleSlownessImmunity(Player player) {
+        if (!ArmorSlotsUtils.hasFullArmorSetOfMaterial(player, UOArmorMaterials.GLACIALITE))
+            return;
+
+        if (player.getEffect(MobEffects.MOVEMENT_SLOWDOWN) != null) {
+            MobEffectInstance effectInstance = player.getEffect(MobEffects.MOVEMENT_SLOWDOWN);
+            if (effectInstance == null)
+                return;
+
+            MobEffectUtils.clearEffect(player, effectInstance);
+        }
+    }
+
+    private static void immuneHotFloorDamage(LivingDamageEvent.Pre event, LivingEntity living) {
+        if (!(living instanceof Player player))
+            return;
+
+        if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.GLACIALITE))
+            return;
+
+        if (event.getSource().is(DamageTypeTags.BURN_FROM_STEPPING)) {
+            event.setNewDamage(0.0F);
+        }
+    }
+
+    private static void handleThornsEffect(LivingDamageEvent.Pre event, Entity attacker, LivingEntity receiver) {
         if (!(receiver instanceof Player player))
             return;
 
-        if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.GLACIALITE)) {
-            if (event.getSource().is(DamageTypeTags.BURN_FROM_STEPPING)) {
-                event.setNewDamage(0.0F);
-            }
-        }
-
-        if (!(attacker instanceof LivingEntity))
+        if (ArmorSlotsUtils.hasFullArmorSetOfMaterial(player, UOArmorMaterials.GLACIALITE))
             return;
 
-        if (ArmorSlotsUtils.hasFullArmorSetOfMaterial(player, UOArmorMaterials.GLACIALITE)) {
+        if (attacker instanceof LivingEntity) {
             attacker.hurt(receiver.damageSources().freeze(), event.getOriginalDamage());
+        }
+
+        if (UOClientConfig.armorEffectConfig.glacialiteConfig.doHurtParticlesSpawn.get()) {
             spawnHurtParticles(player);
         }
     }
 
     private static void spawnHurtParticles(LivingEntity target) {
         if (!(target.level() instanceof ServerLevel serverLevel)) return;
-
-        if (!UOClientConfig.armorEffectConfig.glacialiteConfig.doHurtParticlesSpawn.get())
-            return;
 
         if (target.level().getRandom().nextFloat() < 0.3F) {
             double centerX = target.getX() + target.level().getRandom().nextFloat();

@@ -3,14 +3,24 @@ package net.xun.unoredinary.config.common.armor;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class FroststeelArmorConfigCommon {
+    public final ModConfigSpec.BooleanValue enable;
     public final ModConfigSpec.BooleanValue enableFrostWalker;
+    public final ModConfigSpec.BooleanValue enableHotFloorDamage;
 
     public FroststeelArmorConfigCommon(final ModConfigSpec.Builder builder) {
-        builder.push("armors_froststeel");
+        builder.push("froststeel");
+
+        enable = builder
+                .comment("Disabling this setting will turn off all armor effects of Froststeel Armors")
+                .define("enable_armor", true);
 
         enableFrostWalker = builder
-                .comment("Disable this setting will disable the frost walker effect for Froststeel Armors")
-                .define("enable_frost_walker_froststeel", true);
+                .comment("Disabling this setting will turn off the frost walker effect while wearing Froststeel Boots")
+                .define("enable_frost_walker", true);
+
+        enableHotFloorDamage = builder
+                .comment("Disabling this setting will enable hot floor damage (e.g. Stepping on Campfires, Magma Blocks, etc.) when wearing Froststeel Boots")
+                .define("enable_hot_floor_damage", false);
 
         builder.pop();
     }

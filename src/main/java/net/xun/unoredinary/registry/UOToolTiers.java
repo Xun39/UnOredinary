@@ -16,6 +16,10 @@ public class UOToolTiers {
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1742, 9.0F, 4.0F, 13, () -> Ingredient.of(UOTags.Items.INGOTS_GLACIALITE)
     );
 
+    public static final Tier LUMINIUM = new SimpleTier(
+            BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1487, 8.5F, 3.0F, 15, () -> Ingredient.of(UOTags.Items.INGOTS_LUMINIUM)
+    );
+
     public static final Tier SAPPHIRE = new SimpleTier(
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1261, 10.0F, 3.0F, 9, () -> Ingredient.of(UOTags.Items.GEMS_SAPPHIRE)
     );

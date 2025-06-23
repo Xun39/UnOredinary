@@ -25,8 +25,6 @@ public class UOItemModels extends UOItemModelProvider {
         basicItem(UOItems.GLACIUM_SHARD.get());
         basicItem(UOItems.GLACIUM_CRYSTAL.get());
 
-        basicItem(UOItems.LUMINITE_CRYSTAL.get());
-
         basicItem(UOItems.FROSTSTEEL_INGOT.get());
         toolSetModels(UOTools.FROSTSTEEL);
         armorSetModels(UOArmors.FROSTSTEEL);
@@ -36,6 +34,12 @@ public class UOItemModels extends UOItemModelProvider {
         armorSetModels(UOArmors.GLACIALITE);
 
         basicItem(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE.get());
+
+        basicItem(UOItems.LUMINITE_CRYSTAL.get());
+
+        basicItem(UOItems.LUMINIUM_INGOT.get());
+        toolSetModels(UOTools.LUMINIUM);
+        armorSetModels(UOArmors.LUMINIUM);
 
         withExistingParent(CommonUtils.getRegistryID(UOItems.FROST_ZOMBIE_SPAWN_EGG.asItem()), mcLoc("item/template_spawn_egg"));
     }

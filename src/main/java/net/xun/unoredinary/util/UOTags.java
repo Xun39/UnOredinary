@@ -28,6 +28,8 @@ public class UOTags {
         public static final TagKey<Block> STORAGE_BLOCKS_GLACIUM = createCommon("storage_blocks/glacium");
         public static final TagKey<Block> STORAGE_BLOCKS_FROSTSTEEL = createCommon("storage_blocks/froststeel");
         public static final TagKey<Block> STORAGE_BLOCKS_GLACIALITE = createCommon("storage_blocks/glacialite");
+        public static final TagKey<Block> STORAGE_BLOCKS_LUMINITE = createCommon("storage_blocks/luminite");
+        public static final TagKey<Block> STORAGE_BLOCKS_LUMINIUM = createCommon("storage_blocks/luminium");
 
         private static TagKey<Block> create(String name) {
             return BlockTags.create(CommonUtils.modLoc(name));
@@ -41,13 +43,14 @@ public class UOTags {
     public static class Items {
 
         public static final TagKey<Item> GEMS_GLACIUM = createCommon("gems/glacium");
-        public static final TagKey<Item> GEMS_LUMINITE = createCommon("gems/luminite");
         public static final TagKey<Item> GEMS_SAPPHIRE = createCommon("gems/sapphire");
+        public static final TagKey<Item> GEMS_LUMINITE = createCommon("gems/luminite");
 
         public static final TagKey<Item> NUGGETS_GLACIUM = createCommon("nuggets/glacium");
 
         public static final TagKey<Item> INGOTS_FROSTSTEEL = createCommon("ingots/froststeel");
         public static final TagKey<Item> INGOTS_GLACIALITE = createCommon("ingots/glacialite");
+        public static final TagKey<Item> INGOTS_LUMINIUM = createCommon("ingots/luminium");
 
         private static TagKey<Item> create(String name) {
             return ItemTags.create(CommonUtils.modLoc(name));

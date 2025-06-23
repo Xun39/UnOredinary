@@ -6,11 +6,11 @@ public class GlacialiteToolConfigClient {
     public final ModConfigSpec.BooleanValue doHitParticlesSpawn;
 
     public GlacialiteToolConfigClient(final ModConfigSpec.Builder builder) {
-        builder.push("tools_glacialite");
+        builder.push("glacialite");
 
         doHitParticlesSpawn = builder
-                .comment("Disable this setting will disable the particles that spawns when hitting an entity with Glacialite Tools")
-                .define("hit_particles_glacialite", true);
+                .comment("Disabling this setting will turn off the particles that spawn when hitting an entity with any Glacialite Tools")
+                .define("hit_particles", true);
 
         builder.pop();
     }

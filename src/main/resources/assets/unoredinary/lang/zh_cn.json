@@ -8,22 +8,36 @@
   "block.unoredinary.glacium_ore": "玄冰矿石",
   "block.unoredinary.primal_glacium_ore": "玄冰元石",
 
+  "block.unoredinary.luminite_ore": "夜明矿石",
+  "block.unoredinary.deepslate_luminite_ore": "深层夜明矿石",
+
   "block.unoredinary.cryic_block": "寒晶块",
   "block.unoredinary.sapphire_block": "蓝宝石块",
   "block.unoredinary.glacium_block": "玄冰块",
+  "block.unoredinary.luminite_block": "夜明块",
   "block.unoredinary.froststeel_block": "霜铁块",
   "block.unoredinary.glacialite_block": "冰川合金块",
+  "block.unoredinary.luminium_block": "辉铜合金块",
 
   "effect.unoredinary.frostbitten": "冻伤",
+  "item.minecraft.potion.effect.frostbitten": "冻伤药水",
+  "item.minecraft.potion.effect.long_frostbitten": "冻伤药水",
+  "item.minecraft.potion.effect.strong_frostbitten": "冻伤药水",
+  "item.minecraft.splash_potion.effect.frostbitten": "冻伤喷溅药水",
+  "item.minecraft.splash_potion.effect.long_frostbitten": "冻伤喷溅药水",
+  "item.minecraft.splash_potion.effect.strong_frostbitten": "冻伤喷溅药水",
+  "item.minecraft.lingering_potion.effect.frostbitten": "冻伤滞留药水",
+  "item.minecraft.lingering_potion.effect.long_frostbitten": "冻伤滞留药水",
+  "item.minecraft.lingering_potion.effect.strong_frostbitten": "冻伤滞留药水",
 
   "entity.unoredinary.frost_zombie": "霜冻僵尸",
 
   "item.unoredinary.cryic_powder": "寒晶粉",
 
-  "item.unoredinary.sapphire": "蓝宝石",
-
   "item.unoredinary.glacium_shard": "玄冰碎片",
   "item.unoredinary.glacium_crystal": "玄冰水晶",
+
+  "item.unoredinary.luminite_crystal": "夜明水晶",
 
   "item.unoredinary.froststeel_ingot": "霜钢锭",
 
@@ -51,6 +65,21 @@
   "item.unoredinary.glacialite_leggings": "冰川合金护腿",
   "item.unoredinary.glacialite_boots": "冰川合金靴子",
 
+  "item.unoredinary.luminium_ingot": "辉铜合金锭",
+
+  "item.unoredinary.luminium_sword": "辉铜合金剑",
+  "item.unoredinary.luminium_axe": "辉铜合金斧",
+  "item.unoredinary.luminium_pickaxe": "辉铜合金镐",
+  "item.unoredinary.luminium_hoe": "辉铜合金锄",
+  "item.unoredinary.luminium_shovel": "辉铜合金锹",
+
+  "item.unoredinary.luminium_helmet": "辉铜合金头盔",
+  "item.unoredinary.luminium_chestplate": "辉铜合金胸甲",
+  "item.unoredinary.luminium_leggings": "辉铜合金护腿",
+  "item.unoredinary.luminium_boots": "辉铜合金靴子",
+
+  "item.unoredinary.sapphire": "蓝宝石",
+
   "item.unoredinary.sapphire_sword": "蓝宝石剑",
   "item.unoredinary.sapphire_axe": "蓝宝石斧",
   "item.unoredinary.sapphire_pickaxe": "蓝宝石镐",
@@ -76,7 +105,6 @@
   "creative_mode_tab.unoredinary.item": "玄矿录：物品",
   "creative_mode_tab.unoredinary.equipment": "玄矿录：装备",
 
-
   "advancement.unoredinary.mine_cryic": "冰霜基石",
   "advancement.unoredinary.mine_cryic.desc": "在任何寒冷生物群系开采寒晶矿石",
   "advancement.unoredinary.forge_froststeel": "冻原锻钢",
@@ -100,33 +128,40 @@
   "trim_material.unoredinary.cryic": "寒晶材料",
   "trim_material.unoredinary.glacium": "冰魄材料",
   "trim_material.unoredinary.froststeel": "霜铁材料",
-  "trim_material.unoredinary.glacialite": "凛钢材料",
+  "trim_material.unoredinary.glacialite": "冰川合金材料",
   "trim_material.unoredinary.sapphire": "蓝宝石材料",
 
   "tag.block.c.ores.cryic": "Cryic Ores",
   "tag.block.c.ores.glacium": "Glacium Ores",
   "tag.block.c.storage_blocks.cryic": "Cryic Storage Blocks",
+  "tag.block.c.storage_blocks.glacium": "Glacium Storage Blocks",
+  "tag.block.c.storage_blocks.luminite": "Luminite Storage Blocks",
   "tag.block.c.storage_blocks.froststeel": "Froststeel Storage Blocks",
   "tag.block.c.storage_blocks.glacialite": "Glacialite Storage Blocks",
-  "tag.block.c.storage_blocks.glacium": "Glacium Storage Blocks",
-  "tag.item.c.gems.glacium": "Glacium Gems",
+  "tag.block.c.storage_blocks.luminium": "Luminium Storage Blocks",
+  "tag.item.c.gems.glacium": "Glacium Crystals",
+  "tag.item.c.gems.luminite": "Luminite Crystals",
   "tag.item.c.ingots.froststeel": "Froststeel Ingots",
   "tag.item.c.ingots.glacialite": "Glacialite Ingots",
+  "tag.item.c.ingots.luminium": "Luminium Ingots",
   "tag.item.c.nuggets.glacium": "Glacium Nuggets (Shards)",
 
-  "unoredinary.configuration.tool_effects": "工具效果",
-  "unoredinary.configuration.tools_froststeel": "霜钢",
-  "unoredinary.configuration.tools_glacialite": "冰川合金",
+  "unoredinary.configuration.froststeel": "霜钢",
+  "unoredinary.configuration.glacialite": "冰川合金",
+  "unoredinary.configuration.luminium": "辉铜合金",
 
-  "unoredinary.configuration.hit_particles_froststeel": "是否产生攻击粒子",
-  "unoredinary.configuration.hit_particles_glacialite": "是否产生攻击粒子",
+  "unoredinary.configuration.tool_effects": "工具效果",
+  "unoredinary.configuration.enable_tool": "启用工具效果",
+
+  "unoredinary.configuration.hit_particles": "是否产生攻击粒子",
 
   "unoredinary.configuration.armor_effects": "盔甲效果",
-  "unoredinary.configuration.armors_froststeel": "霜钢",
-  "unoredinary.configuration.armors_glacialite": "冰川合金",
+  "unoredinary.configuration.enable_armor": "启用盔甲效果",
+  "unoredinary.configuration.enable_frost_walker": "启用冰霜行者",
+  "unoredinary.configuration.enable_slowness_immunity": "启用减速免疫",
+  "unoredinary.configuration.enable_hot_floor_damage": "启用热地板伤害",
+  "unoredinary.configuration.enable_thorns": "启用荆棘效果",
+  "unoredinary.configuration.can_walk_on_powder_snow": "能否在细雪上行走",
 
-  "unoredinary.configuration.enable_frost_walker_froststeel": "开启冰霜行者",
-  "unoredinary.configuration.enable_frost_walker_glacialite": "开启冰霜行者",
-
-  "unoredinary.configuration.hurt_particles_glacialite": "是否产生伤害粒子"
+  "unoredinary.configuration.hurt_particles": "是否产生伤害粒子"
 }

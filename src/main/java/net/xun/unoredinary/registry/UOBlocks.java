@@ -114,7 +114,6 @@ public class UOBlocks {
                             .sound(SoundType.METAL)
             )
     );
-
     public static final DeferredBlock<Block> SAPPHIRE_BLOCK = register("sapphire_block",
             () -> new Block(
                     BlockBehaviour.Properties.of()
@@ -125,7 +124,6 @@ public class UOBlocks {
                             .sound(SoundType.METAL)
             )
     );
-
     public static final DeferredBlock<Block> GLACIUM_BLOCK = register("glacium_block",
             () -> new Block(
                     BlockBehaviour.Properties.ofFullCopy(UOBlocks.PRIMAL_GLACIUM_ORE.get())
@@ -133,7 +131,16 @@ public class UOBlocks {
                             .sound(UOSoundTypes.GLACIUM)
             )
     );
-
+    public static final DeferredBlock<Block> LUMINITE_BLOCK = register("luminite_block",
+            () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_ORANGE)
+                            .instrument(NoteBlockInstrument.BELL)
+                            .requiresCorrectToolForDrops()
+                            .strength(5.0F, 6.0F)
+                            .sound(SoundType.METAL)
+            )
+    );
     public static final DeferredBlock<Block> FROSTSTEEL_BLOCK = register("froststeel_block",
             () -> new Block(
                     BlockBehaviour.Properties.of()
@@ -144,14 +151,24 @@ public class UOBlocks {
                             .sound(SoundType.METAL)
             )
     );
-
     public static final DeferredBlock<Block> GLACIALITE_BLOCK = register("glacialite_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_BLUE)
-                    .instrument(NoteBlockInstrument.HARP)
-                    .requiresCorrectToolForDrops()
-                    .strength(5.0F, 6.0F)
-                    .sound(SoundType.METAL)
+            () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_BLUE)
+                            .instrument(NoteBlockInstrument.HARP)
+                            .requiresCorrectToolForDrops()
+                            .strength(5.0F, 6.0F)
+                            .sound(SoundType.METAL)
+            )
+    );
+    public static final DeferredBlock<Block> LUMINIUM_BLOCK = register("luminium_block",
+            () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_ORANGE)
+                            .instrument(NoteBlockInstrument.FLUTE)
+                            .requiresCorrectToolForDrops()
+                            .strength(5.0F, 6.0F)
+                            .sound(SoundType.METAL)
             )
     );
 

@@ -24,6 +24,8 @@ public class UOItems {
 
     public static final DeferredItem<Item> LUMINITE_CRYSTAL = ITEMS.register("luminite_crystal", () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> LUMINIUM_INGOT = ITEMS.register("luminium_ingot", () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> SAPPHIRE = ITEMS.register("sapphire", () -> new Item(new Item.Properties()));
 
     // Spawn Eggs

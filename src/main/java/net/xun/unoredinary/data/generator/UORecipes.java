@@ -8,6 +8,8 @@ import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.Tags;
+import net.xun.lib.common.api.item.tools.ToolSet;
 import net.xun.unoredinary.data.provider.UORecipeProvider;
 import net.xun.unoredinary.registry.UOArmors;
 import net.xun.unoredinary.registry.UOBlocks;
@@ -119,5 +121,36 @@ public class UORecipes extends UORecipeProvider {
         glacialiteSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getChestplate().get(), UOArmors.GLACIALITE.getChestplate().get());
         glacialiteSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getLeggings().get(), UOArmors.GLACIALITE.getLeggings().get());
         glacialiteSmithing(recipeOutput, RecipeCategory.COMBAT, UOArmors.FROSTSTEEL.getBoots().get(), UOArmors.GLACIALITE.getBoots().get());
+
+        // Luminite-related
+        threeByThreePackerConvertible(
+                recipeOutput,
+                RecipeCategory.BUILDING_BLOCKS,
+                RecipeCategory.MISC,
+                Ingredient.of(UOBlocks.LUMINITE_BLOCK),
+                UOBlocks.LUMINITE_BLOCK,
+                Ingredient.of(UOTags.Items.GEMS_LUMINITE),
+                UOItems.LUMINITE_CRYSTAL
+        );
+
+        // Luminium-related
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, UOItems.LUMINIUM_INGOT)
+                .requires(Ingredient.of(Tags.Items.INGOTS_COPPER), 4)
+                .requires(Ingredient.of(UOTags.Items.GEMS_LUMINITE), 3)
+                .requires(Items.GLOWSTONE_DUST)
+                .unlockedBy(getHasName(UOItems.LUMINITE_CRYSTAL), has(UOItems.LUMINITE_CRYSTAL))
+                .save(recipeOutput);
+        threeByThreePackerConvertible(
+                recipeOutput,
+                RecipeCategory.BUILDING_BLOCKS,
+                RecipeCategory.MISC,
+                Ingredient.of(UOBlocks.LUMINIUM_BLOCK),
+                UOBlocks.LUMINIUM_BLOCK,
+                Ingredient.of(UOTags.Items.INGOTS_LUMINIUM),
+                UOItems.LUMINIUM_INGOT
+        );
+
+        toolsetRecipe(recipeOutput, UOTools.LUMINIUM, Ingredient.of(UOTags.Items.INGOTS_LUMINIUM), UOItems.LUMINIUM_INGOT);
+        armorsetRecipe(recipeOutput, UOArmors.LUMINIUM, Ingredient.of(UOTags.Items.INGOTS_LUMINIUM), UOItems.LUMINIUM_INGOT);
     }
 }

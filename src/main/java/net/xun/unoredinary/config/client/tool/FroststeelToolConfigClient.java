@@ -6,11 +6,11 @@ public class FroststeelToolConfigClient {
     public final ModConfigSpec.BooleanValue doHitParticlesSpawn;
 
     public FroststeelToolConfigClient(final ModConfigSpec.Builder builder) {
-        builder.push("tools_froststeel");
+        builder.push("froststeel");
 
         doHitParticlesSpawn = builder
-                .comment("Disable this setting will disable the particles that spawns when hitting an entity with Froststeel Tools")
-                .define("hit_particles_froststeel", true);
+                .comment("Disabling this setting will turn off the particles that spawn when hitting an entity with any Froststeel Tools")
+                .define("hit_particles", true);
 
         builder.pop();
     }

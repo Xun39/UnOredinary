@@ -58,7 +58,9 @@ public class UOBlockTags extends BlockTagsProvider {
                 UOBlocks.LUMINITE_ORE.get(),
                 UOBlocks.DEEPSLATE_LUMINITE_ORE.get(),
 
-                UOBlocks.SAPPHIRE_BLOCK.get()
+                UOBlocks.SAPPHIRE_BLOCK.get(),
+                UOBlocks.LUMINITE_BLOCK.get(),
+                UOBlocks.LUMINIUM_BLOCK.get()
         );
 
         tag(UOTags.Blocks.NEEDS_FROSTSTEEL_TOOL).add(
@@ -88,19 +90,18 @@ public class UOBlockTags extends BlockTagsProvider {
                 Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_CRYIC),
                 Set.of(UOBlocks.CRYIC_ORE.get(), UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get())
         );
-
         addToTags(
                 Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_SAPPHIRE),
                 Set.of(UOBlocks.SAPPHIRE_ORE.get(), UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get())
         );
-
         addToTags(
                 Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_GLACIUM),
-                Set.of(UOBlocks.GLACIUM_ORE.get(), UOBlocks.PRIMAL_GLACIUM_ORE.get()));
-
+                Set.of(UOBlocks.GLACIUM_ORE.get(), UOBlocks.PRIMAL_GLACIUM_ORE.get())
+        );
         addToTags(
                 Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_LUMINITE),
-                Set.of(UOBlocks.LUMINITE_ORE.get(), UOBlocks.DEEPSLATE_LUMINITE_ORE.get()));
+                Set.of(UOBlocks.LUMINITE_ORE.get(), UOBlocks.DEEPSLATE_LUMINITE_ORE.get())
+        );
 
         // cTags: Ores in Ground
         addToTags(
@@ -111,7 +112,6 @@ public class UOBlockTags extends BlockTagsProvider {
                         UOBlocks.SAPPHIRE_ORE.get()
                 )
         );
-
         addToTags(
                 Set.of(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE),
                 Set.of(
@@ -126,25 +126,29 @@ public class UOBlockTags extends BlockTagsProvider {
                 Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_CRYIC),
                 Set.of(UOBlocks.CRYIC_BLOCK.get())
         );
-
         addToTags(
                 Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_SAPPHIRE),
                 Set.of(UOBlocks.SAPPHIRE_BLOCK.get())
         );
-
         addToTags(
                 Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_GLACIUM),
                 Set.of(UOBlocks.GLACIUM_BLOCK.get())
         );
-
+        addToTags(
+                Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_LUMINITE),
+                Set.of(UOBlocks.LUMINITE_BLOCK.get())
+        );
         addToTags(
                 Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_FROSTSTEEL),
                 Set.of(UOBlocks.FROSTSTEEL_BLOCK.get())
         );
-
         addToTags(
                 Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_GLACIALITE),
                 Set.of(UOBlocks.GLACIALITE_BLOCK.get())
+        );
+        addToTags(
+                Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_LUMINIUM),
+                Set.of(UOBlocks.LUMINIUM_BLOCK.get())
         );
     }
 

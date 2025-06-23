@@ -35,8 +35,10 @@ public class UOBlockLoot extends UOBlockLootProvider {
         dropSelf(UOBlocks.CRYIC_BLOCK.get());
         dropSelf(UOBlocks.SAPPHIRE_BLOCK.get());
         dropSelf(UOBlocks.GLACIUM_BLOCK.get());
+        dropSelf(UOBlocks.LUMINITE_BLOCK.get());
         dropSelf(UOBlocks.FROSTSTEEL_BLOCK.get());
         dropSelf(UOBlocks.GLACIALITE_BLOCK.get());
+        dropSelf(UOBlocks.LUMINIUM_BLOCK.get());
     }
 
     @Override

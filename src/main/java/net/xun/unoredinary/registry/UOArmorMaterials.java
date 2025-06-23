@@ -42,6 +42,16 @@ public class UOArmorMaterials {
             }), 13, 3.0F, 0.1F, () -> Ingredient.of(UOTags.Items.INGOTS_GLACIALITE), UOSounds.ARMOR_EQUIP_CRYOSTEEL
     );
 
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> LUMINIUM = register("luminium",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+                map.put(ArmorItem.Type.BOOTS, 3);
+                map.put(ArmorItem.Type.LEGGINGS, 6);
+                map.put(ArmorItem.Type.CHESTPLATE, 8);
+                map.put(ArmorItem.Type.HELMET, 3);
+                map.put(ArmorItem.Type.BODY, 11);
+            }), 15, 2.5F, 0.0F, () -> Ingredient.of(UOTags.Items.INGOTS_LUMINIUM), SoundEvents.ARMOR_EQUIP_DIAMOND
+    );
+
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> SAPPHIRE = register("sapphire",
             Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                 map.put(ArmorItem.Type.BOOTS, 3);

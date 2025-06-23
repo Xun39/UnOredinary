@@ -3,6 +3,7 @@ package net.xun.unoredinary.registry;
 import net.xun.lib.common.api.item.armor.ArmorSet;
 import net.xun.unoredinary.item.armor.GlacialiteArmorConfigurator;
 import net.xun.unoredinary.item.armor.FroststeelArmorConfigurator;
+import net.xun.unoredinary.item.armor.LuminiumArmorConfigurator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,12 @@ public class UOArmors {
     public static final ArmorSet GLACIALITE = register(new ArmorSet.Builder("glacialite", UOArmorMaterials.GLACIALITE)
             .withConfiguration(new GlacialiteArmorConfigurator())
             .withDurabilityFactor(35)
+            .build()
+    );
+
+    public static final ArmorSet LUMINIUM = register(new ArmorSet.Builder("luminium", UOArmorMaterials.LUMINIUM)
+            .withConfiguration(new LuminiumArmorConfigurator())
+            .withDurabilityFactor(30)
             .build()
     );
 

@@ -50,8 +50,10 @@ public class UOLanguage extends UOLanguageProvider {
         addBlock(UOBlocks.CRYIC_BLOCK, "Block of Cryic");
         addBlock(UOBlocks.SAPPHIRE_BLOCK, "Block of Sapphire");
         addBlock(UOBlocks.GLACIUM_BLOCK, "Block of Glacium");
+        addBlock(UOBlocks.LUMINITE_BLOCK, "Block of Luminite");
         addBlock(UOBlocks.FROSTSTEEL_BLOCK, "Block of Froststeel");
         addBlock(UOBlocks.GLACIALITE_BLOCK, "Block of Glacialite");
+        addBlock(UOBlocks.LUMINIUM_BLOCK, "Block of Luminium");
 
         /* ------------------------------ ENTITIES ------------------------------ */
         addEntityAndSpawnEgg(UOEntityTypes.FROST_ZOMBIE, "Frost Zombie");
@@ -70,19 +72,23 @@ public class UOLanguage extends UOLanguageProvider {
         addItem(UOItems.GLACIUM_SHARD, "Glacium Shard");
         addItem(UOItems.GLACIUM_CRYSTAL, "Glacium Crystal");
 
-        addItem(UOItems.LUMINITE_CRYSTAL, "Luminite Crystal");
-
         addItem(UOItems.FROSTSTEEL_INGOT, "Froststeel Ingot");
         addItem(UOItems.GLACIALITE_INGOT, "Glacialite Ingot");
 
         addItem(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE, "Smithing Template");
 
+        addItem(UOItems.LUMINITE_CRYSTAL, "Luminite Crystal");
+
+        addItem(UOItems.LUMINIUM_INGOT, "Luminium Ingot");
+
         addToolSet(UOTools.FROSTSTEEL);
         addToolSet(UOTools.GLACIALITE);
+        addToolSet(UOTools.LUMINIUM);
         addToolSet(UOTools.SAPPHIRE);
 
         addArmorSet(UOArmors.FROSTSTEEL);
         addArmorSet(UOArmors.GLACIALITE);
+        addArmorSet(UOArmors.LUMINIUM);
         addArmorSet(UOArmors.SAPPHIRE);
 
         /* ------------------------------ TRIM MATERIALS ------------------------------ */
@@ -104,30 +110,40 @@ public class UOLanguage extends UOLanguageProvider {
         translateTag(UOTags.Blocks.ORES_GLACIUM, "Glacium Ores");
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_CRYIC, "Cryic Storage Blocks");
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_GLACIUM, "Glacium Storage Blocks");
+        translateTag(UOTags.Blocks.STORAGE_BLOCKS_LUMINITE, "Luminite Storage Blocks");
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_FROSTSTEEL, "Froststeel Storage Blocks");
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_GLACIALITE, "Glacialite Storage Blocks");
+        translateTag(UOTags.Blocks.STORAGE_BLOCKS_LUMINIUM, "Luminium Storage Blocks");
 
         translateTag(UOTags.Items.NUGGETS_GLACIUM, "Glacium Nuggets (Shards)");
-        translateTag(UOTags.Items.GEMS_GLACIUM, "Glacium Gems");
+        translateTag(UOTags.Items.GEMS_GLACIUM, "Glacium Crystals");
+        translateTag(UOTags.Items.GEMS_LUMINITE, "Luminite Crystals");
         translateTag(UOTags.Items.INGOTS_FROSTSTEEL, "Froststeel Ingots");
         translateTag(UOTags.Items.INGOTS_GLACIALITE, "Glacialite Ingots");
+        translateTag(UOTags.Items.INGOTS_LUMINIUM, "Luminium Ingots");
 
         /* ------------------------------ CONFIGURATIONS ------------------------------ */
+        translateConfig("froststeel", "Froststeel");
+        translateConfig("glacialite", "Glacialite");
+        translateConfig("luminium", "Luminium");
+
         // Tool Effect Configs
         translateConfig("tool_effects", "Tool Effects");
-        translateConfig("tools_froststeel", "Froststeel");
-        translateConfig("tools_glacialite", "Glacialite");
-        translateConfig("hit_particles_froststeel", "Do hit particles spawn");
-        translateConfig("hit_particles_glacialite", "Do hit particles spawn");
+
+        translateConfig("hit_particles", "Do hit particles spawn");
+
+        translateConfig("enable_tool", "Enable Tool Effects");
 
         // Armor Effect Configs
         translateConfig("armor_effects", "Armor Effects");
-        translateConfig("armors_froststeel", "Froststeel");
-        translateConfig("armors_glacialite", "Glacialite");
 
-        translateConfig("enable_frost_walker_froststeel", "Enable Frost Walker");
-        translateConfig("enable_frost_walker_glacialite", "Enable Frost Walker");
+        translateConfig("hurt_particles", "Do hurt particles spawn");
 
-        translateConfig("hurt_particles_glacialite", "Do hurt particles spawn");
+        translateConfig("enable_armor", "Enable Armor Effects");
+        translateConfig("enable_frost_walker", "Enable Frost Walker");
+        translateConfig("enable_slowness_immunity", "Enable Slowness Immunity");
+        translateConfig("enable_hot_floor_damage", "Enable Hot Floor Damage");
+        translateConfig("enable_thorns", "Enable Thorns");
+        translateConfig("can_walk_on_powder_snow", "Can walk on powder snow");
     }
 }

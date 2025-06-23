@@ -5,6 +5,7 @@ import net.xun.lib.common.api.item.tools.ToolSet;
 import net.xun.lib.common.api.item.tools.ToolType;
 import net.xun.unoredinary.item.tool.GlacialiteToolConfigurator;
 import net.xun.unoredinary.item.tool.FroststeelToolConfigurator;
+import net.xun.unoredinary.item.tool.LuminiumToolConfigurator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,14 @@ public class UOTools {
             .withVanillaBalance()
             .withToolStats(ToolType.AXE, 5.0F, 1.0F)
             .withToolStats(ToolType.HOE, -4.0F, 4.0F)
+            .build()
+    );
+
+    public static final ToolSet LUMINIUM = register(new ToolSet.Builder("luminium", UOToolTiers.LUMINIUM, new GenericAttributeHelper())
+            .withConfiguration(new LuminiumToolConfigurator())
+            .withVanillaBalance()
+            .withToolStats(ToolType.AXE, 5.0F, 1.0F)
+            .withToolStats(ToolType.HOE, -3.0F, 4.0F)
             .build()
     );
 

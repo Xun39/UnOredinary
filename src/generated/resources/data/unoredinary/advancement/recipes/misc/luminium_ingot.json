@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_luminite_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:luminite_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unoredinary:luminium_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_luminite_crystal"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unoredinary:luminium_ingot"
+    ]
+  }
+}
