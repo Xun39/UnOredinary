@@ -21,6 +21,9 @@ public class UOPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ORE_GLACIUM_RARE = createKey("ore_glacium_rare");
     public static final ResourceKey<PlacedFeature> ORE_GLACIUM_LARGE = createKey("ore_glacium_large");
 
+    public static final ResourceKey<PlacedFeature> ORE_LUMINITE = createKey("ore_luminite");
+    public static final ResourceKey<PlacedFeature> ORE_LUMINITE_UPPER = createKey("ore_luminite_upper");
+
     public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE = createKey("ore_sapphire");
     public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE_MEDIUM = createKey("ore_sapphire_medium");
     public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE_LARGE = createKey("ore_sapphire_large");
@@ -51,6 +54,14 @@ public class UOPlacedFeatures {
         );
         register(context, ORE_GLACIUM_LARGE, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_GLACIUM_LARGE),
                 OrePlacementHelper.countPlacement(48, HeightRangePlacement.uniform(VerticalAnchor.absolute(32), VerticalAnchor.absolute(360)))
+        );
+
+        // Luminite ores
+        register(context, ORE_LUMINITE, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_LUMINITE),
+                OrePlacementHelper.countPlacement(9, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-48), VerticalAnchor.absolute(36)))
+        );
+        register(context, ORE_LUMINITE_UPPER, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_LUMINITE_UPPER),
+                OrePlacementHelper.countPlacement(12, HeightRangePlacement.uniform(VerticalAnchor.absolute(36), VerticalAnchor.absolute(84)))
         );
 
         // Sapphire ores

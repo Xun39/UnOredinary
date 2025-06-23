@@ -22,6 +22,9 @@ public class UOBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ORE_GLACIUM_RARE = createKey("ore_glacium_rare");
     public static final ResourceKey<BiomeModifier> ORE_GLACIUM_LARGE = createKey("ore_glacium_large");
 
+    public static final ResourceKey<BiomeModifier> ORE_LUMINITE = createKey("ore_luminite");
+    public static final ResourceKey<BiomeModifier> ORE_LUMINITE_UPPER = createKey("ore_luminite_upper");
+
     public static final ResourceKey<BiomeModifier> ORE_SAPPHIRE = createKey("ore_sapphire");
     public static final ResourceKey<BiomeModifier> ORE_SAPPHIRE_MEDIUM = createKey("ore_sapphire_medium");
     public static final ResourceKey<BiomeModifier> ORE_SAPPHIRE_LARGE = createKey("ore_sapphire_large");
@@ -63,6 +66,18 @@ public class UOBiomeModifiers {
         context.register(ORE_GLACIUM_LARGE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(UOTags.Biomes.HAS_ICEBERG),
                 HolderSet.direct(placedFeatures.getOrThrow(UOPlacedFeatures.ORE_GLACIUM_LARGE)),
+                GenerationStep.Decoration.UNDERGROUND_ORES)
+        );
+
+        // Luminite Ores
+        context.register(ORE_LUMINITE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_LUSH),
+                HolderSet.direct(placedFeatures.getOrThrow(UOPlacedFeatures.ORE_LUMINITE)),
+                GenerationStep.Decoration.UNDERGROUND_ORES)
+        );
+        context.register(ORE_LUMINITE_UPPER, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_LUSH),
+                HolderSet.direct(placedFeatures.getOrThrow(UOPlacedFeatures.ORE_LUMINITE_UPPER)),
                 GenerationStep.Decoration.UNDERGROUND_ORES)
         );
 

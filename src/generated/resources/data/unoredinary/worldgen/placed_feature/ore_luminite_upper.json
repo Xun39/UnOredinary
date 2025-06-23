@@ -1,0 +1,27 @@
+{
+  "feature": "unoredinary:ore_luminite_upper",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 12
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": {
+          "absolute": 84
+        },
+        "min_inclusive": {
+          "absolute": 36
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}
