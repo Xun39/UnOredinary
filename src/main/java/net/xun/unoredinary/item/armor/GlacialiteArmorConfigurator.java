@@ -43,15 +43,15 @@ public class GlacialiteArmorConfigurator implements ArmorConfigurator {
                 if (!(entity instanceof Player player) || !(stack.getItem() instanceof ArmorItem))
                     return;
 
-                if (!UOCommonConfig.armorEffectConfig.glacialiteConfig.enable.get())
-                    return;
+                if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enable.get()) {
 
-                if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableSlownessImmunity.get()) {
-                    handleSlownessImmunity(player);
-                }
+                    if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableSlownessImmunity.get()) {
+                        handleSlownessImmunity(player);
+                    }
 
-                if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableFrostWalker.get()) {
-                    handleFrostWalkerEffect(player, level);
+                    if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableFrostWalker.get()) {
+                        handleFrostWalkerEffect(player, level);
+                    }
                 }
             }
 
@@ -70,15 +70,15 @@ public class GlacialiteArmorConfigurator implements ArmorConfigurator {
         Entity attacker = event.getSource().getDirectEntity();
         LivingEntity receiver = event.getEntity();
 
-        if (!UOCommonConfig.armorEffectConfig.glacialiteConfig.enable.get())
-            return;
+        if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enable.get()) {
 
-        if (!UOCommonConfig.armorEffectConfig.glacialiteConfig.enableHotFloorDamage.get()) {
-            immuneHotFloorDamage(event, receiver);
-        }
+            if (!UOCommonConfig.armorEffectConfig.glacialiteConfig.enableHotFloorDamage.get()) {
+               immuneHotFloorDamage(event, receiver);
+            }
 
-        if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableThornsEffect.get()) {
-            handleThornsEffect(event, attacker, receiver);
+            if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableThornsEffect.get()) {
+                 handleThornsEffect(event, attacker, receiver);
+            }
         }
     }
 
@@ -134,7 +134,7 @@ public class GlacialiteArmorConfigurator implements ArmorConfigurator {
             return;
 
         if (attacker instanceof LivingEntity) {
-            attacker.hurt(receiver.damageSources().freeze(), event.getOriginalDamage());
+            attacker.hurt(event.getSource(), event.getOriginalDamage());
         }
 
         if (UOClientConfig.armorEffectConfig.glacialiteConfig.doHurtParticlesSpawn.get()) {

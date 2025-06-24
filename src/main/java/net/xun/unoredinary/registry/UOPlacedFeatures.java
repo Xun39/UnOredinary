@@ -75,7 +75,7 @@ public class UOPlacedFeatures {
                 OrePlacementHelper.rarityPlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80)))
         );
         register(context, ORE_SAPPHIRE_BURIED, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_SAPPHIRE_MEDIUM),
-                OrePlacementHelper.countPlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80)))
+                OrePlacementHelper.countPlacement(4, HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80)))
         );
     }
 

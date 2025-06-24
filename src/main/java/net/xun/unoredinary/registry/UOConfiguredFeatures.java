@@ -59,7 +59,7 @@ public class UOConfiguredFeatures {
 
         register(context, ORE_SAPPHIRE_SMALL, Feature.ORE, new OreConfiguration(sapphireOres, 3, 0.5F));
         register(context, ORE_SAPPHIRE_MEDIUM, Feature.ORE, new OreConfiguration(sapphireOres, 6, 0.6F));
-        register(context, ORE_SAPPHIRE_LARGE, Feature.ORE, new OreConfiguration(sapphireOres, 11, 0.7F));
+        register(context, ORE_SAPPHIRE_LARGE, Feature.ORE, new OreConfiguration(sapphireOres, 10, 0.7F));
         register(context, ORE_SAPPHIRE_BURIED, Feature.ORE, new OreConfiguration(sapphireOres, 6, 1.0F));
 
         register(context, ORE_LUMINITE, Feature.ORE, new OreConfiguration(luminiteOres, 5));

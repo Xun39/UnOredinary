@@ -6,10 +6,12 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import net.xun.lib.common.api.item.tools.ToolConfigurator;
 import net.xun.lib.common.api.item.tools.ToolType;
 import net.xun.lib.common.api.util.BlockPosUtils;
@@ -112,14 +114,19 @@ public class GlacialiteToolConfigurator implements ToolConfigurator {
 
     private static void applyFrostNovaEffect(LivingEntity target) {
         Level level = target.level();
-        List<Monster> monsters = level.getEntitiesOfClass(
-                Monster.class,
-                BlockPosUtils.createAABBFromCenter(target.blockPosition(), 4, 2, 4)
+        AABB aabb = BlockPosUtils.createAABBFromCenter(target.blockPosition(), 4, 2, 4);
+        List<LivingEntity> hostiles = level.getEntitiesOfClass(
+                LivingEntity.class,
+                aabb,
+                entity -> entity instanceof Enemy
         );
 
-        for (Monster monster : monsters) {
-            applyFrostEffects(monster);
-            spawnFrostParticles(monster);
+        for (LivingEntity hostile : hostiles) {
+            applyFrostEffects(hostile);
+
+            if (UOClientConfig.toolEffectConfig.glacialiteConfig.doHitParticlesSpawn.get()) {
+                spawnFrostParticles(hostile);
+            }
         }
     }
 
@@ -134,9 +141,6 @@ public class GlacialiteToolConfigurator implements ToolConfigurator {
 
     private static void spawnFrostParticles(LivingEntity target) {
         if (!(target.level() instanceof ServerLevel serverLevel)) return;
-
-        if (!UOClientConfig.toolEffectConfig.glacialiteConfig.doHitParticlesSpawn.get())
-            return;
 
         double centerX = target.getX();
         double centerY = target.getY() + target.getBbHeight() / 2.0;

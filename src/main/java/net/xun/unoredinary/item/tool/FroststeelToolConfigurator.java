@@ -104,14 +104,14 @@ public class FroststeelToolConfigurator implements ToolConfigurator {
         );
 
         MobEffectUtils.applyEffectsWithStrategy(target, effects, EffectStackingStrategy.FORCE_OVERRIDE);
-        spawnRimeParticles(target);
+
+        if (UOClientConfig.toolEffectConfig.froststeelConfig.doHitParticlesSpawn.get()) {
+            spawnRimeParticles(target);
+        }
     }
 
     private static void spawnRimeParticles(LivingEntity target) {
         if (!(target.level() instanceof ServerLevel serverLevel)) return;
-
-        if (!UOClientConfig.toolEffectConfig.froststeelConfig.doHitParticlesSpawn.get())
-            return;
 
         double centerX = target.getX();
         double centerY = target.getY() + target.getBbHeight() / 2.0;
