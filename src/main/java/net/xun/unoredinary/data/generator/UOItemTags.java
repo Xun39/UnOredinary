@@ -69,8 +69,10 @@ public class UOItemTags extends ItemTagsProvider {
                         UOItems.CRYIC_POWDER.get(),
                         UOItems.SAPPHIRE.get(),
                         UOItems.GLACIUM_CRYSTAL.get(),
+                        UOItems.LUMINITE_CRYSTAL.get(),
                         UOItems.FROSTSTEEL_INGOT.get(),
-                        UOItems.GLACIALITE_INGOT.get()
+                        UOItems.GLACIALITE_INGOT.get(),
+                        UOItems.LUMINIUM_INGOT.get()
                 )
         );
 

@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-23T23:49:31.3754674	Registries
+// 1.21.1	2025-06-25T17:33:38.7469746	Registries
 524a92c72ff398c672754abe7e4fe1832264e9bd data/unoredinary/neoforge/biome_modifier/ore_cryic.json
 66bd9aafba73e721f6d3db9b1bdf854dee266200 data/unoredinary/neoforge/biome_modifier/ore_cryic_lower.json
 6e1cddc3889debe145e90a0579f34b5475f9eba7 data/unoredinary/neoforge/biome_modifier/ore_glacium.json
@@ -10,10 +10,12 @@ b99bf817fbfa97e2c8e080c22e8ca0722164f96f data/unoredinary/neoforge/biome_modifie
 39f920ac647f00a92a12c130b1f484cd82060bd5 data/unoredinary/neoforge/biome_modifier/ore_sapphire_buried.json
 97609e20afc0a044d5a7f03ad1aa17ea9bab1617 data/unoredinary/neoforge/biome_modifier/ore_sapphire_large.json
 ebd29aba7ac187f56c861b574ccf58648038d4dd data/unoredinary/neoforge/biome_modifier/ore_sapphire_medium.json
-23a64d11700fae611e578528a0534285ac3f907e data/unoredinary/trim_material/cryic.json
-204c7dde08a8df419a476506b045a95c948374d5 data/unoredinary/trim_material/froststeel.json
+b1e0a9f227f5bf539baf6657c0446e31eb5cc797 data/unoredinary/trim_material/cryic.json
+fc4aeab06f70ded79c51ebba101121700673a4e6 data/unoredinary/trim_material/froststeel.json
 fbbfa7f4155b1f1eabc77c4b1183719f842774d5 data/unoredinary/trim_material/glacialite.json
 caba7be940a3dace0ebe08b233618c25e4ef6010 data/unoredinary/trim_material/glacium.json
+cb7633de5f4bcff2dc4f232d2d1f4e1197ab845d data/unoredinary/trim_material/luminite.json
+a01dd7ee882ff2ac6e00e6dd36e8d80632ddbc78 data/unoredinary/trim_material/luminium.json
 51eade93d8638da8aaacd04d7e93a3d06139e831 data/unoredinary/trim_material/sapphire.json
 554c65595cd27650766ecb6b3d9a9aada082a354 data/unoredinary/worldgen/configured_feature/ore_cryic.json
 8292a2bf61a16c473408eb3be5adb662e2cf31a1 data/unoredinary/worldgen/configured_feature/ore_glacium.json

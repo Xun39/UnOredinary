@@ -94,8 +94,10 @@ public class UOLanguage extends UOLanguageProvider {
         /* ------------------------------ TRIM MATERIALS ------------------------------ */
         addTrimMaterial(UOTrimMaterials.CRYIC, "Cryic Material");
         addTrimMaterial(UOTrimMaterials.GLACIUM, "Glacium Material");
+        addTrimMaterial(UOTrimMaterials.LUMINITE, "Luminite Material");
         addTrimMaterial(UOTrimMaterials.FROSTSTEEL, "Froststeel Material");
         addTrimMaterial(UOTrimMaterials.GLACIALITE, "Glacialite Material");
+        addTrimMaterial(UOTrimMaterials.LUMINIUM, "Luminium Material");
         addTrimMaterial(UOTrimMaterials.SAPPHIRE, "Sapphire Material");
 
         /* ------------------------------ TOOLTIPS ------------------------------ */

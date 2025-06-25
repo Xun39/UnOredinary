@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-23T23:49:31.3734672	Tags for minecraft:item mod id unoredinary
+// 1.21.1	2025-06-25T17:54:36.8405388	Tags for minecraft:item mod id unoredinary
 44ace8acdb309a6712b6f9ba0525f54a61c33333 data/c/tags/item/gems.json
 470f14e69c0ebdf836b83b97df9ee3f2c86dd9e8 data/c/tags/item/gems/glacium.json
 f1183c1c89abadf654127b9d4e4f511a26e722fb data/c/tags/item/gems/luminite.json
@@ -21,4 +21,4 @@ a0a89ec88f52e563bb3b39f6eba94715a53307a8 data/minecraft/tags/item/chest_armor.js
 cdc89d13a801a0adc2c3412038c2155c37cfd3f3 data/minecraft/tags/item/pickaxes.json
 492dd5c6b6d75718788d8cfdc52b0aad850aea14 data/minecraft/tags/item/shovels.json
 96f259ddad2ac8fa9fe4e0ea5918b5eb0949c368 data/minecraft/tags/item/swords.json
-54f547840bdd5596fc90ca725cff24c4dac42565 data/minecraft/tags/item/trim_materials.json
+7eb05d10486323b10cb3465ba080e13f5dc2606e data/minecraft/tags/item/trim_materials.json

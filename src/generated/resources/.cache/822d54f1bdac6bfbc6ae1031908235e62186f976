@@ -1,11 +1,11 @@
-// 1.21.1	2025-06-23T23:49:31.3714683	Tags for minecraft:block mod id unoredinary
+// 1.21.1	2025-06-25T17:54:36.8385381	Tags for minecraft:block mod id unoredinary
 bfcc9e633b3562938a5fd46ce600339cbcbcbce3 data/c/tags/block/ores.json
 ca7069ae4dc8b017fef5c987623a9122835e5998 data/c/tags/block/ores/cryic.json
 4a6b7185ce90c60008076a98e39274ffd319500f data/c/tags/block/ores/glacium.json
 1b6311da7010deb3c66a650bc357d8e8dae07475 data/c/tags/block/ores/luminite.json
 b6f74e779be8c6e516e0494af8b8fd8eba29ee34 data/c/tags/block/ores/sapphire.json
-7f46c2e1027bc50c02eec3ed49463f25cf451d11 data/c/tags/block/ores_in_ground/deepslate.json
-a2e66e434b80568bc8c47f517efaedd6315f55db data/c/tags/block/ores_in_ground/stone.json
+81251cd97f6ffe7c52b8ad99bd407eaf50fab894 data/c/tags/block/ores_in_ground/deepslate.json
+3f3825039554086898031fe9289348ad076cb36f data/c/tags/block/ores_in_ground/stone.json
 a8a79f5a772e060d435bca46866e7068834484ab data/c/tags/block/storage_blocks.json
 1a6c49e77d940df6c4f0a17be6cefb85e8b92aff data/c/tags/block/storage_blocks/cryic.json
 b110a84371555385af367f9eee22f946450cf9d9 data/c/tags/block/storage_blocks/froststeel.json

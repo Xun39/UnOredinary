@@ -59,8 +59,10 @@
 
         "cryic": "unoredinary:trims/color_palettes/cryic",
         "glacium": "unoredinary:trims/color_palettes/glacium",
+        "luminite": "unoredinary:trims/color_palettes/luminite",
         "froststeel": "unoredinary:trims/color_palettes/froststeel",
         "glacialite": "unoredinary:trims/color_palettes/glacialite",
+        "luminium": "unoredinary:trims/color_palettes/luminium",
         "sapphire": "unoredinary:trims/color_palettes/sapphire"
       }
     }

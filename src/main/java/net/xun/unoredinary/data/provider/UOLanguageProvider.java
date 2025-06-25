@@ -58,6 +58,7 @@ public abstract class UOLanguageProvider extends LanguageProvider {
         add("item.minecraft.potion.effect." + potion.getKey().location().getPath(), "Potion of " + name);
         add("item.minecraft.splash_potion.effect." + potion.getKey().location().getPath(), "Splash Potion of " + name);
         add("item.minecraft.lingering_potion.effect." + potion.getKey().location().getPath(), "Lingering Potion of " + name);
+        add("item.minecraft.tipped_arrow.effect." + potion.getKey().location().getPath(), "Arrow of " + name);
     }
 
     public void translateTag(TagKey<?> tag, String name) {

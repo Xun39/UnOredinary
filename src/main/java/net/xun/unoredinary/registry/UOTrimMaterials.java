@@ -17,8 +17,10 @@ public class UOTrimMaterials {
 
     public static final ResourceKey<TrimMaterial> CRYIC = createKey("cryic");
     public static final ResourceKey<TrimMaterial> GLACIUM = createKey("glacium");
+    public static final ResourceKey<TrimMaterial> LUMINITE = createKey("luminite");
     public static final ResourceKey<TrimMaterial> FROSTSTEEL = createKey("froststeel");
     public static final ResourceKey<TrimMaterial> GLACIALITE = createKey("glacialite");
+    public static final ResourceKey<TrimMaterial> LUMINIUM = createKey("luminium");
     public static final ResourceKey<TrimMaterial> SAPPHIRE = createKey("sapphire");
 
     private static ResourceKey<TrimMaterial> createKey(String name) {
@@ -26,10 +28,12 @@ public class UOTrimMaterials {
     }
 
     public static void bootstrap(BootstrapContext<TrimMaterial> context) {
-        register(context, CRYIC, UOItems.CRYIC_POWDER.get(), Style.EMPTY.withColor(TextColor.parseColor("#a9c4db").getOrThrow()), 0.1F);
+        register(context, CRYIC, UOItems.CRYIC_POWDER.get(), Style.EMPTY.withColor(TextColor.parseColor("#a9c4db").getOrThrow()), 0.2F);
         register(context, GLACIUM, UOItems.GLACIUM_CRYSTAL.get(), Style.EMPTY.withColor(TextColor.parseColor("#017ed8").getOrThrow()), 0.1F);
-        register(context, FROSTSTEEL, UOItems.FROSTSTEEL_INGOT.get(), Style.EMPTY.withColor(TextColor.parseColor("#017ed8").getOrThrow()), 0.1F);
+        register(context, LUMINITE, UOItems.LUMINITE_CRYSTAL.get(), Style.EMPTY.withColor(TextColor.parseColor("#e99829").getOrThrow()), 0.6F);
+        register(context, FROSTSTEEL, UOItems.FROSTSTEEL_INGOT.get(), Style.EMPTY.withColor(TextColor.parseColor("#017ed8").getOrThrow()), 0.2F);
         register(context, GLACIALITE, UOItems.GLACIALITE_INGOT.get(), Style.EMPTY.withColor(TextColor.parseColor("#017ed8").getOrThrow()), 0.8F);
+        register(context, LUMINIUM, UOItems.LUMINIUM_INGOT.get(), Style.EMPTY.withColor(TextColor.parseColor("#f59e26").getOrThrow()), 0.6F);
         register(context, SAPPHIRE, UOItems.SAPPHIRE.get(), Style.EMPTY.withColor(TextColor.parseColor("#017ed8").getOrThrow()), 0.9F);
     }
     private static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> trimKey, Item item, Style style, float itemModelIndex) {
