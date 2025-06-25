@@ -1,0 +1,26 @@
+name: Bug Report
+description: Report a bug
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: And what did you expected?
+    validations:
+      required: true
+
+  - type: input
+    id: mod-version
+    attributes:
+      label: Mod Version
+    validations:
+      required: true
+
+  - type: input
+    id: crash-report
+    attributes:
+      label: Crash Report
+      description: A **[Gist](https://gist.github.com/)** link to the crash report. This can be found in the game files under the `crash-reports` folder, and all the contents of the file should be pasted into the Gist file. If the bug does not result in a crash, ignore this field.
+    validations:
+      required: false
