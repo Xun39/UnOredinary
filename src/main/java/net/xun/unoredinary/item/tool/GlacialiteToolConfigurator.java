@@ -7,7 +7,6 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Enemy;
-import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
@@ -19,6 +18,7 @@ import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategy;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
 import net.xun.unoredinary.config.client.UOClientConfig;
+import net.xun.unoredinary.config.common.UOCommonConfig;
 import net.xun.unoredinary.registry.UOMobEffects;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
@@ -103,10 +103,19 @@ public class GlacialiteToolConfigurator implements ToolConfigurator {
     }
 
     private static void handleHitEffect(LivingEntity target, LivingEntity attacker, boolean applyFrostNova) {
-        if (!(attacker instanceof Player)) return;
+        if (!(attacker instanceof Player))
+            return;
+
+        if (!UOCommonConfig.toolEffectConfig.glacialiteConfig.enable.get())
+            return;
 
         if (applyFrostNova) {
-            applyFrostNovaEffect(target);
+            if (UOCommonConfig.toolEffectConfig.glacialiteConfig.enableFrostNova.get()) {
+                applyFrostNovaEffect(target);
+            } else {
+                applySingleTargetEffects(target);
+            }
+
         } else {
             applySingleTargetEffects(target);
         }
@@ -159,6 +168,9 @@ public class GlacialiteToolConfigurator implements ToolConfigurator {
     }
 
     private static void applySingleTargetEffects(LivingEntity target) {
+        if (!UOCommonConfig.toolEffectConfig.glacialiteConfig.enableNormalEffect.get())
+            return;
+
         List<MobEffectInstance> effects = List.of(
                 buildEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, SLOW_DURATION, SLOW_AMPLIFIER),
                 buildEffectInstance(MobEffects.WEAKNESS, WEAKNESS_DURATION_SINGLE, WEAKNESS_AMPLIFIER_SINGLE)

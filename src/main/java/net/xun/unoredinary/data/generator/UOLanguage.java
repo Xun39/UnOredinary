@@ -135,6 +135,9 @@ public class UOLanguage extends UOLanguageProvider {
         translateConfig("hit_particles", "Do hit particles spawn");
 
         translateConfig("enable_tool", "Enable Tool Effects");
+        translateConfig("enable_normal", "Enable Normal Effect");
+        translateConfig("enable_frost_nova", "Enable Frost Nova");
+        translateConfig("enable_glowing_on_hit", "Enable Glowing Effect On Hit");
 
         // Armor Effect Configs
         translateConfig("armor_effects", "Armor Effects");
@@ -147,5 +150,6 @@ public class UOLanguage extends UOLanguageProvider {
         translateConfig("enable_hot_floor_damage", "Enable Hot Floor Damage");
         translateConfig("enable_thorns", "Enable Thorns");
         translateConfig("can_walk_on_powder_snow", "Can walk on powder snow");
+        translateConfig("enable_night_vision", "Enable Night Vision");
     }
 }

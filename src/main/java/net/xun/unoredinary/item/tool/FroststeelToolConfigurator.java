@@ -14,6 +14,7 @@ import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategy;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
 import net.xun.unoredinary.config.client.UOClientConfig;
+import net.xun.unoredinary.config.common.UOCommonConfig;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
 import java.util.List;
@@ -95,7 +96,12 @@ public class FroststeelToolConfigurator implements ToolConfigurator {
         if (!(attacker instanceof Player))
             return;
 
-        applyHurtEffects(target);
+        if (!UOCommonConfig.toolEffectConfig.froststeelConfig.enable.get())
+            return;
+
+        if (UOCommonConfig.toolEffectConfig.froststeelConfig.enableNormalEffect.get()) {
+            applyHurtEffects(target);
+        }
     }
 
     private static void applyHurtEffects(LivingEntity target) {

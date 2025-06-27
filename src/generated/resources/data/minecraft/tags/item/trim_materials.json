@@ -1,11 +1,11 @@
 {
   "values": [
-    "unoredinary:luminite_crystal",
-    "unoredinary:froststeel_ingot",
-    "unoredinary:sapphire",
     "unoredinary:glacium_crystal",
-    "unoredinary:glacialite_ingot",
     "unoredinary:cryic_powder",
-    "unoredinary:luminium_ingot"
+    "unoredinary:luminium_ingot",
+    "unoredinary:luminite_crystal",
+    "unoredinary:sapphire",
+    "unoredinary:froststeel_ingot",
+    "unoredinary:glacialite_ingot"
   ]
 }

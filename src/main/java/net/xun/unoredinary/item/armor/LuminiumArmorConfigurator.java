@@ -39,6 +39,13 @@ public class LuminiumArmorConfigurator implements ArmorConfigurator {
         if (!(entity instanceof Player player) || !(stack.getItem() instanceof ArmorItem))
             return;
 
+        if (UOCommonConfig.armorEffectConfig.luminiumConfig.enableNightVision.get()) {
+            handleNightVisionEffect(player);
+        }
+    }
+
+    private static void handleNightVisionEffect(Player player) {
+
         if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.HEAD.getIndex(), UOArmorMaterials.LUMINIUM)) {
             MobEffectUtils.applySmartEffects(
                     player,

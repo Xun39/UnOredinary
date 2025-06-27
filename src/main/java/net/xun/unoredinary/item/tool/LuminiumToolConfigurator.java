@@ -23,10 +23,7 @@ public class LuminiumToolConfigurator implements ToolConfigurator {
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
                         boolean flag = super.hurtEnemy(stack, target, attacker);
                         if (flag && !target.level().isClientSide) {
-                            if (!UOCommonConfig.toolEffectConfig.luminiumConfig.enable.get())
-                                return flag;
-
-                            handleHitEffect(target, attacker);
+                           handleHitEffect(target, attacker);
                         }
                         return flag;
                     }
@@ -38,9 +35,6 @@ public class LuminiumToolConfigurator implements ToolConfigurator {
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
                         boolean flag = super.hurtEnemy(stack, target, attacker);
                         if (flag && !target.level().isClientSide) {
-                            if (!UOCommonConfig.toolEffectConfig.luminiumConfig.enable.get())
-                                return flag;
-
                             handleHitEffect(target, attacker);
                         }
                         return flag;
@@ -53,9 +47,6 @@ public class LuminiumToolConfigurator implements ToolConfigurator {
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
                         boolean flag = super.hurtEnemy(stack, target, attacker);
                         if (flag && !target.level().isClientSide) {
-                            if (!UOCommonConfig.toolEffectConfig.luminiumConfig.enable.get())
-                                return flag;
-
                             handleHitEffect(target, attacker);
                         }
                         return flag;
@@ -68,9 +59,6 @@ public class LuminiumToolConfigurator implements ToolConfigurator {
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
                         boolean flag = super.hurtEnemy(stack, target, attacker);
                         if (flag && !target.level().isClientSide) {
-                            if (!UOCommonConfig.toolEffectConfig.luminiumConfig.enable.get())
-                                return flag;
-
                             handleHitEffect(target, attacker);
                         }
                         return flag;
@@ -83,9 +71,6 @@ public class LuminiumToolConfigurator implements ToolConfigurator {
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
                         boolean flag = super.hurtEnemy(stack, target, attacker);
                         if (flag && !target.level().isClientSide) {
-                            if (!UOCommonConfig.toolEffectConfig.luminiumConfig.enable.get())
-                                return flag;
-
                             handleHitEffect(target, attacker);
                         }
                         return flag;
@@ -102,6 +87,15 @@ public class LuminiumToolConfigurator implements ToolConfigurator {
         if (!(attacker instanceof Player))
             return;
 
+        if (!UOCommonConfig.toolEffectConfig.luminiumConfig.enable.get())
+            return;
+
+        if (UOCommonConfig.toolEffectConfig.luminiumConfig.enableGlowingOnHit.get()) {
+            addGlowingEffect(target);
+        }
+    }
+
+    private static void addGlowingEffect(LivingEntity target) {
         MobEffectUtils.applyEffectsWithStrategy(
                 target,
                 List.of(

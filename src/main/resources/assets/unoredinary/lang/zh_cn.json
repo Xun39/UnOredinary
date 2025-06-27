@@ -158,7 +158,11 @@
   "unoredinary.configuration.tool_effects": "工具效果",
   "unoredinary.configuration.enable_tool": "启用工具效果",
 
-  "unoredinary.configuration.hit_particles": "是否产生攻击粒子",
+  "unoredinary.configuration.enable_normal": "启用正常效果",
+  "unoredinary.configuration.enable_frost_nova": "启用霜冻新星",
+  "unoredinary.configuration.enable_glowing_on_hit": "启用击中时发光效果",
+
+  "unoredinary.configuration.hit_particles": "是否产生击中粒子",
 
   "unoredinary.configuration.armor_effects": "盔甲效果",
   "unoredinary.configuration.enable_armor": "启用盔甲效果",
@@ -167,6 +171,7 @@
   "unoredinary.configuration.enable_hot_floor_damage": "启用热地板伤害",
   "unoredinary.configuration.enable_thorns": "启用荆棘效果",
   "unoredinary.configuration.can_walk_on_powder_snow": "能否在细雪上行走",
+  "unoredinary.configuration.enable_night_vision": "启用夜视",
 
   "unoredinary.configuration.hurt_particles": "是否产生伤害粒子"
 }
