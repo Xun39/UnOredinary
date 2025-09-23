@@ -130,7 +130,7 @@ public class GlacialiteArmorConfigurator implements ArmorConfigurator {
         if (!(receiver instanceof Player player))
             return;
 
-        if (ArmorSlotsUtils.hasFullArmorSetOfMaterial(player, UOArmorMaterials.GLACIALITE))
+        if (!ArmorSlotsUtils.hasFullArmorSetOfMaterial(player, UOArmorMaterials.GLACIALITE))
             return;
 
         if (attacker instanceof LivingEntity) {

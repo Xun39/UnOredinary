@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "unoredinary:glacialite_hoe",
+      "required": false
+    }
+  ]
+}

@@ -39,7 +39,7 @@ public class UOArmorMaterials {
                 map.put(ArmorItem.Type.CHESTPLATE, 8);
                 map.put(ArmorItem.Type.HELMET, 3);
                 map.put(ArmorItem.Type.BODY, 11);
-            }), 13, 3.0F, 0.1F, () -> Ingredient.of(UOTags.Items.INGOTS_GLACIALITE), UOSounds.ARMOR_EQUIP_CRYOSTEEL
+            }), 13, 3.0F, 0.1F, () -> Ingredient.of(UOTags.Items.INGOTS_GLACIALITE), UOSounds.ARMOR_EQUIP_GLACIALITE
     );
 
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> LUMINIUM = register("luminium",

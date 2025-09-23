@@ -18,8 +18,14 @@ public class UOSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> GLACIUM_BLOCK_FALL = register("block.glacium.fall");
     public static final DeferredHolder<SoundEvent, SoundEvent> GLACIUM_BLOCK_EVAPORATE = register("block.glacium.evaporate");
 
+    public static final DeferredHolder<SoundEvent, SoundEvent> SUNSTONE_BREAK = register("block.sunstone.break");
+    public static final DeferredHolder<SoundEvent, SoundEvent> SUNSTONE_STEP  = register("block.sunstone.step");
+    public static final DeferredHolder<SoundEvent, SoundEvent> SUNSTONE_PLACE = register("block.sunstone.place");
+    public static final DeferredHolder<SoundEvent, SoundEvent> SUNSTONE_HIT = register("block.sunstone.hit");
+    public static final DeferredHolder<SoundEvent, SoundEvent> SUNSTONE_FALL = register("block.sunstone.fall");
+
     // Items
-    public static final DeferredHolder<SoundEvent, SoundEvent> ARMOR_EQUIP_CRYOSTEEL = register("item.armor.equip_cryosteel");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ARMOR_EQUIP_GLACIALITE = register("item.armor.equip_glacialite");
 
     // Entities
     public static final DeferredHolder<SoundEvent, SoundEvent> FROST_ZOMBIE_AMBIENT = register("entity.frost_zombie.ambient");

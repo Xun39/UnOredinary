@@ -52,13 +52,13 @@
     ]
   },
 
-  "item.armor.equip_cryosteel": {
-    "subtitle": "sounds.unoredinary.item.armor.equip_cryosteel",
+  "item.armor.equip_glacialite": {
+    "subtitle": "sounds.unoredinary.item.armor.equip_glacialite",
     "sounds": [
-      "unoredinary:item/armor/cryosteel/equip_1",
-      "unoredinary:item/armor/cryosteel/equip_2",
-      "unoredinary:item/armor/cryosteel/equip_3",
-      "unoredinary:item/armor/cryosteel/equip_4"
+      "unoredinary:item/armor/glacialite/equip_1",
+      "unoredinary:item/armor/glacialite/equip_2",
+      "unoredinary:item/armor/glacialite/equip_3",
+      "unoredinary:item/armor/glacialite/equip_4"
     ]
   },
 

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "unoredinary:froststeel_hoe",
+      "required": false
+    },
+    {
+      "id": "unoredinary:luminium_hoe",
+      "required": false
+    },
+    {
+      "id": "unoredinary:sapphire_hoe",
+      "required": false
+    }
+  ]
+}
