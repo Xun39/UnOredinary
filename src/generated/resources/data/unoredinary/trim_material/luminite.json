@@ -1,0 +1,9 @@
+{
+  "asset_name": "luminite",
+  "description": {
+    "color": "#E99829",
+    "translate": "trim_material.unoredinary.luminite"
+  },
+  "ingredient": "unoredinary:luminite_crystal",
+  "item_model_index": 0.6
+}
