@@ -1,0 +1,153 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "unoredinary"
+    }
+  ],
+  "type": "placebo:gear_set",
+  "boots": [
+    {
+      "stack": {
+        "components": {
+          "apotheosis:durability_bonus": 0.7,
+          "minecraft:enchantments": {
+            "levels": {
+              "minecraft:protection": 6
+            }
+          }
+        },
+        "count": 1,
+        "id": "unoredinary:glacialite_boots"
+      },
+      "weight": 10
+    }
+  ],
+  "chestplates": [
+    {
+      "stack": {
+        "components": {
+          "apotheosis:durability_bonus": 0.7,
+          "minecraft:enchantments": {
+            "levels": {
+              "minecraft:protection": 6
+            }
+          }
+        },
+        "count": 1,
+        "id": "unoredinary:glacialite_chestplate"
+      },
+      "weight": 10
+    }
+  ],
+  "helmets": [
+    {
+      "stack": {
+        "components": {
+          "apotheosis:durability_bonus": 0.7,
+          "minecraft:enchantments": {
+            "levels": {
+              "minecraft:protection": 6
+            }
+          }
+        },
+        "count": 1,
+        "id": "unoredinary:glacialite_helmet"
+      },
+      "weight": 10
+    }
+  ],
+  "leggings": [
+    {
+      "stack": {
+        "components": {
+          "apotheosis:durability_bonus": 0.7,
+          "minecraft:enchantments": {
+            "levels": {
+              "minecraft:protection": 6
+            }
+          }
+        },
+        "count": 1,
+        "id": "unoredinary:glacialite_leggings"
+      },
+      "weight": 10
+    }
+  ],
+  "mainhands": [
+    {
+      "stack": {
+        "components": {
+          "apotheosis:durability_bonus": 0.8,
+          "minecraft:enchantments": {
+            "levels": {
+              "minecraft:sharpness": 15
+            }
+          }
+        },
+        "count": 1,
+        "id": "unoredinary:glacialite_sword"
+      },
+      "weight": 10
+    },
+    {
+      "stack": {
+        "components": {
+          "apotheosis:durability_bonus": 0.8,
+          "minecraft:enchantments": {
+            "levels": {
+              "minecraft:sharpness": 15
+            }
+          }
+        },
+        "count": 1,
+        "id": "unoredinary:glacialite_axe"
+      },
+      "weight": 10
+    },
+    {
+      "stack": {
+        "components": {
+          "apotheosis:durability_bonus": 0.8,
+          "minecraft:enchantments": {
+            "levels": {
+              "minecraft:fortune": 15
+            }
+          }
+        },
+        "count": 1,
+        "id": "unoredinary:glacialite_pickaxe"
+      },
+      "weight": 10
+    },
+    {
+      "stack": {
+        "components": {
+          "apotheosis:durability_bonus": 0.8,
+          "minecraft:enchantments": {
+            "levels": {
+              "minecraft:fortune": 15
+            }
+          }
+        },
+        "count": 1,
+        "id": "unoredinary:glacialite_shovel"
+      },
+      "weight": 10
+    }
+  ],
+  "offhands": [
+    {
+      "stack": {
+        "count": 1,
+        "id": "minecraft:shield"
+      },
+      "weight": 10
+    }
+  ],
+  "quality": 5.0,
+  "tags": [
+    "pinnacle_melee"
+  ],
+  "weight": 100
+}
