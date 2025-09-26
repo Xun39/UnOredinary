@@ -60,7 +60,7 @@ public class FroststeelArmorConfigurator implements ArmorConfigurator {
     }
 
     private static void handleFrostWalkerEffect(Player player, Level level) {
-        if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.FROSTSTEEL))
+        if (!ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.FROSTSTEEL))
             return;
 
         BlockPos groundPos = player.getBlockPosBelowThatAffectsMyMovement();
@@ -82,7 +82,7 @@ public class FroststeelArmorConfigurator implements ArmorConfigurator {
         if (!(living instanceof Player player))
             return;
 
-        if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.FROSTSTEEL))
+        if (!ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.FROSTSTEEL))
             return;
 
         if (event.getSource().is(DamageTypeTags.BURN_FROM_STEPPING)) {
