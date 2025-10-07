@@ -23,7 +23,7 @@ import java.util.List;
 public class LuminiumArmorConfigurator implements ArmorConfigurator {
     @Override
     public ArmorItem createArmor(ArmorType type, Holder<ArmorMaterial> material, int durabilityFactor, Item.Properties props) {
-        return new ArmorItem(material, type.getType(), props) {
+        return new ArmorItem(material, type.getType(), props.durability(type.getType().getDurability(durabilityFactor))) {
 
             @Override
             public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
