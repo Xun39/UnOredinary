@@ -26,7 +26,7 @@ public class GlacialiteArmorConfigCommon {
                 .define("enable_slowness_immunity", true);
 
         enableHotFloorDamage = builder
-                .comment("Disabling this setting will enable hot floor damage (e.g. Stepping on Campfires, Magma Blocks, etc.) when wearing Glacialite Boots")
+                .comment("Disabling this setting will let you immune to hot floor damage (e.g. Stepping on Campfires, Magma Blocks, etc.) when wearing Glacialite Boots")
                 .define("enable_hot_floor_damage", false);
 
         enableThornsEffect = builder

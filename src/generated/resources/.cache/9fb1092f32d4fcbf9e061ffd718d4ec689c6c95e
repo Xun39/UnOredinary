@@ -1,10 +1,12 @@
-// 1.21.1	2025-06-23T10:32:44.5074171	Recipes
+// 1.21.1	2025-10-12T13:38:30.3324714	Recipes
 a45861c88556cc516b73991a41d63158ec68fd8e data/minecraft/advancement/recipes/building_blocks/blue_ice.json
 5c62f91efe7cc9d56d69b4a28515379142827263 data/minecraft/advancement/recipes/building_blocks/ice.json
 0650c2128af50ff349fb5c39958fc638004eb5da data/minecraft/advancement/recipes/building_blocks/packed_ice.json
+73f4b837a4eac201465efe980fdc2dae966485ef data/minecraft/advancement/recipes/combat/spectral_arrow.json
 441900ca46a690293d4faffcfb40482d7a137315 data/minecraft/recipe/blue_ice.json
 2f2813db47cc305d170ca605f66c68229b68bf96 data/minecraft/recipe/ice.json
 a967fd9657b462388cb78f275a68e96826183613 data/minecraft/recipe/packed_ice.json
+19c7cb7efe5f52d01a2f15dbde26900779b63f37 data/minecraft/recipe/spectral_arrow.json
 f0c39ed8bd89ea584269661b0c01386dd2b64e5b data/unoredinary/advancement/recipes/building_blocks/cryic_block_from_cryic_powder.json
 47ac60c95c68bc47e5b4dd01feb58ba3a4324eb4 data/unoredinary/advancement/recipes/building_blocks/froststeel_block_from_froststeel_ingot.json
 309ec640c3db7dc4c51afdb9352845c7f070137b data/unoredinary/advancement/recipes/building_blocks/glacialite_block_from_glacialite_ingot.json

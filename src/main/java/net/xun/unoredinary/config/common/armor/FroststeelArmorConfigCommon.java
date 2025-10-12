@@ -19,7 +19,7 @@ public class FroststeelArmorConfigCommon {
                 .define("enable_frost_walker", true);
 
         enableHotFloorDamage = builder
-                .comment("Disabling this setting will enable hot floor damage (e.g. Stepping on Campfires, Magma Blocks, etc.) when wearing Froststeel Boots")
+                .comment("Disabling this setting will let you immune to hot floor damage (e.g. Stepping on Campfires, Magma Blocks, etc.) when wearing Froststeel Boots")
                 .define("enable_hot_floor_damage", false);
 
         builder.pop();

@@ -17,10 +17,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.xun.lib.common.api.item.armor.ArmorConfigurator;
 import net.xun.lib.common.api.item.armor.ArmorType;
@@ -37,7 +39,9 @@ import net.xun.unoredinary.registry.UOParticleTypes;
 public class GlacialiteArmorConfigurator implements ArmorConfigurator {
     @Override
     public ArmorItem createArmor(ArmorType type, Holder<ArmorMaterial> material, int durabilityFactor, Item.Properties props) {
+
         return new ArmorItem(material, type.getType(), props.durability(type.getType().getDurability(durabilityFactor))) {
+
             @Override
             public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
                 if (!(entity instanceof Player player) || !(stack.getItem() instanceof ArmorItem))
@@ -65,16 +69,31 @@ public class GlacialiteArmorConfigurator implements ArmorConfigurator {
         };
     }
 
+    // Make the player immune to hot floor damage
+    @SubscribeEvent
+    public static void onInvulnerabilityCheck(EntityInvulnerabilityCheckEvent event) {
+        Entity entity = event.getEntity();
+
+        if (!(entity instanceof LivingEntity living))
+            return;
+
+        if (!(living instanceof Player player))
+            return;
+
+        if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableHotFloorDamage.get())
+            return;
+
+        if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.GLACIALITE)) {
+            event.setInvulnerable(event.getSource().is(DamageTypeTags.BURN_FROM_STEPPING));
+        }
+    }
+
     @SubscribeEvent
     public static void onHurt(LivingDamageEvent.Pre event) {
         Entity attacker = event.getSource().getDirectEntity();
         LivingEntity receiver = event.getEntity();
 
         if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enable.get()) {
-
-            if (!UOCommonConfig.armorEffectConfig.glacialiteConfig.enableHotFloorDamage.get()) {
-               immuneHotFloorDamage(event, receiver);
-            }
 
             if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableThornsEffect.get()) {
                  handleThornsEffect(event, attacker, receiver);
@@ -86,19 +105,45 @@ public class GlacialiteArmorConfigurator implements ArmorConfigurator {
         if (!ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.GLACIALITE))
             return;
 
+        if (level.isClientSide || !player.onGround())
+            return;
+
         BlockPos groundPos = player.getBlockPosBelowThatAffectsMyMovement();
 
-        BlockPosUtils.getDisc(groundPos, 7).forEach(pos -> {
-            if (!level.getBlockState(pos).is(Blocks.WATER))
-                return;
+        int radius = 4;
 
-            BlockPos abovePos = pos.above();
-
-            if (level.getBlockState(abovePos).isAir() && level.isUnobstructed(Blocks.FROSTED_ICE.defaultBlockState(), pos, CollisionContext.empty())) {
-                level.setBlock(pos, Blocks.FROSTED_ICE.defaultBlockState(), Block.UPDATE_ALL);
-                level.gameEvent(player, GameEvent.BLOCK_PLACE, pos);
+        BlockPosUtils.getDisc(groundPos, radius).forEach(pos -> {
+            if (pos.closerToCenterThan(player.position(), radius)) {
+                freezeNearbyBlock(level, pos, player);
             }
+
+            // Old method (deprecated)
+//            if (!level.getBlockState(pos).is(Blocks.WATER))
+//                return;
+//
+//            BlockPos abovePos = pos.above();
+//
+//            if (level.getBlockState(abovePos).isAir() && level.isUnobstructed(Blocks.FROSTED_ICE.defaultBlockState(), pos, CollisionContext.empty())) {
+//                level.setBlock(pos, Blocks.FROSTED_ICE.defaultBlockState(), Block.UPDATE_ALL);
+//                level.gameEvent(player, GameEvent.BLOCK_PLACE, pos);
+//            }
         });
+    }
+
+    private static void freezeNearbyBlock(Level level, BlockPos pos, Player player) {
+        BlockState currentState = level.getBlockState(pos);
+        BlockPos abovePos = pos.above();
+        BlockState aboveState = level.getBlockState(abovePos);
+
+        if (currentState.is(Blocks.WATER) && currentState.getFluidState().isSource()) {
+            if (aboveState.isAir() || aboveState.canBeReplaced()) {
+
+                level.setBlockAndUpdate(pos, Blocks.FROSTED_ICE.defaultBlockState());
+                level.gameEvent(player, GameEvent.BLOCK_PLACE, pos);
+
+                level.scheduleTick(pos, Blocks.FROSTED_ICE, level.getRandom().nextInt(60) + 20);
+            }
+        }
     }
 
     private static void handleSlownessImmunity(Player player) {
@@ -111,18 +156,6 @@ public class GlacialiteArmorConfigurator implements ArmorConfigurator {
                 return;
 
             MobEffectUtils.clearEffect(player, effectInstance);
-        }
-    }
-
-    private static void immuneHotFloorDamage(LivingDamageEvent.Pre event, LivingEntity living) {
-        if (!(living instanceof Player player))
-            return;
-
-        if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.GLACIALITE))
-            return;
-
-        if (event.getSource().is(DamageTypeTags.BURN_FROM_STEPPING)) {
-            event.setNewDamage(0.0F);
         }
     }
 

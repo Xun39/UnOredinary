@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:feather"
+    },
+    "$": {
+      "item": "minecraft:stick"
+    },
+    "^": {
+      "item": "unoredinary:luminite_crystal"
+    }
+  },
+  "pattern": [
+    "^",
+    "$",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:spectral_arrow"
+  }
+}

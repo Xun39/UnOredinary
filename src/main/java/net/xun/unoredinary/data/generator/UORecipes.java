@@ -4,6 +4,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -132,6 +133,16 @@ public class UORecipes extends UORecipeProvider {
                 Ingredient.of(UOTags.Items.GEMS_LUMINITE),
                 UOItems.LUMINITE_CRYSTAL
         );
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, Items.SPECTRAL_ARROW)
+                .define('^', UOItems.LUMINITE_CRYSTAL)
+                .define('$', Items.STICK)
+                .define('#', Items.FEATHER)
+                .pattern("^")
+                .pattern("$")
+                .pattern("#")
+                .unlockedBy(getHasName(UOItems.LUMINITE_CRYSTAL), has(UOItems.LUMINITE_CRYSTAL))
+                .save(recipeOutput);
 
         // Luminium-related
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, UOItems.LUMINIUM_INGOT)

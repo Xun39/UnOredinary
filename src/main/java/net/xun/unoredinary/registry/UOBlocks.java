@@ -67,8 +67,7 @@ public class UOBlocks {
                             .requiresCorrectToolForDrops()
                             .strength(10.0F, 1000.0F)
                             .friction(0.98F)
-                            .sound(UOSoundTypes.GLACIUM),
-                    true
+                            .sound(UOSoundTypes.GLACIUM)
             )
     );
     public static final DeferredBlock<Block> PRIMAL_GLACIUM_ORE = register("primal_glacium_ore",
@@ -76,8 +75,7 @@ public class UOBlocks {
                     UniformInt.of(4, 10),
                     BlockBehaviour.Properties.ofFullCopy(UOBlocks.GLACIUM_ORE.get())
                             .mapColor(MapColor.COLOR_LIGHT_BLUE)
-                            .strength(20.0F, 1000.0F),
-                    true
+                            .strength(20.0F, 1000.0F)
             )
     );
 

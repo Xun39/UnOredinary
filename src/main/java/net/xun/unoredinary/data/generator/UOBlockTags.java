@@ -48,7 +48,7 @@ public class UOBlockTags extends BlockTagsProvider {
 
         tag(BlockTags.NEEDS_STONE_TOOL).add(
                 UOBlocks.CRYIC_ORE.get(),
-                UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get()
+                UOBlocks.DEEPSLATE_CRYIC_ORE.get()
         );
 
         tag(BlockTags.NEEDS_IRON_TOOL).add(
@@ -88,7 +88,7 @@ public class UOBlockTags extends BlockTagsProvider {
         // cTags: Ores
         addToTags(
                 Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_CRYIC),
-                Set.of(UOBlocks.CRYIC_ORE.get(), UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get())
+                Set.of(UOBlocks.CRYIC_ORE.get(), UOBlocks.DEEPSLATE_CRYIC_ORE.get())
         );
         addToTags(
                 Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_SAPPHIRE),
