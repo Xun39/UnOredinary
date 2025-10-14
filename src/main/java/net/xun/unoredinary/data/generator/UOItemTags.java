@@ -78,18 +78,22 @@ public class UOItemTags extends ItemTagsProvider {
 
         /* ------------------------------ COMMON ------------------------------ */
 
+        // cTags: Dusts
+        addToTags(Set.of(Tags.Items.DUSTS, UOTags.Items.DUSTS_CRYIC), Set.of(UOItems.CRYIC_POWDER.get()));
+
         // cTags: Gems
         addToTags(Set.of(Tags.Items.GEMS, UOTags.Items.GEMS_GLACIUM), Set.of(UOItems.GLACIUM_CRYSTAL.get()));
         addToTags(Set.of(Tags.Items.GEMS, UOTags.Items.GEMS_LUMINITE), Set.of(UOItems.LUMINITE_CRYSTAL.get()));
         addToTags(Set.of(Tags.Items.GEMS, UOTags.Items.GEMS_SAPPHIRE), Set.of(UOItems.SAPPHIRE.get()));
 
-        // cTags: Nuggets
-        addToTags(Set.of(Tags.Items.NUGGETS, UOTags.Items.NUGGETS_GLACIUM), Set.of(UOItems.GLACIUM_SHARD.get()));
-
         // cTags: Ingots
         addToTags(Set.of(Tags.Items.INGOTS, UOTags.Items.INGOTS_FROSTSTEEL), Set.of(UOItems.FROSTSTEEL_INGOT.get()));
         addToTags(Set.of(Tags.Items.INGOTS, UOTags.Items.INGOTS_GLACIALITE), Set.of(UOItems.GLACIALITE_INGOT.get()));
         addToTags(Set.of(Tags.Items.INGOTS, UOTags.Items.INGOTS_LUMINIUM), Set.of(UOItems.LUMINIUM_INGOT.get()));
+
+        // cTags: Nuggets
+        addToTags(Set.of(Tags.Items.NUGGETS, UOTags.Items.NUGGETS_FROSTSTEEL), Set.of(UOItems.FROSTSTEEL_NUGGET.get()));
+        addToTags(Set.of(Tags.Items.NUGGETS, UOTags.Items.NUGGETS_LUMINIUM), Set.of(UOItems.LUMINIUM_NUGGET.get()));
     }
 
     private void addToTags(Collection<TagKey<Item>> tags, Collection<Item> entries) {

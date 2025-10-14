@@ -1,4 +1,6 @@
-// 1.21.1	2025-10-12T13:38:30.3314701	Tags for minecraft:item mod id unoredinary
+// 1.21.1	2025-10-14T11:31:03.3982031	Tags for minecraft:item mod id unoredinary
+48dbed316f8da7df8607743115b0091317b0c462 data/c/tags/item/dusts.json
+48dbed316f8da7df8607743115b0091317b0c462 data/c/tags/item/dusts/cryic.json
 44ace8acdb309a6712b6f9ba0525f54a61c33333 data/c/tags/item/gems.json
 470f14e69c0ebdf836b83b97df9ee3f2c86dd9e8 data/c/tags/item/gems/glacium.json
 f1183c1c89abadf654127b9d4e4f511a26e722fb data/c/tags/item/gems/luminite.json
@@ -7,8 +9,9 @@ a30f50942b987e4e0ad637a606978341c4688e4a data/c/tags/item/ingots.json
 260131bb4bec1a134f69abc8d56802d1cee35bb3 data/c/tags/item/ingots/froststeel.json
 97ab7fcad31cc33418808f7bcbd94daf68bd824b data/c/tags/item/ingots/glacialite.json
 f65086a0b5a0a3f299e636301cef7fcea20d23c9 data/c/tags/item/ingots/luminium.json
-308b74efce247f5e5f50d1b9c627152904ddf0f7 data/c/tags/item/nuggets.json
-308b74efce247f5e5f50d1b9c627152904ddf0f7 data/c/tags/item/nuggets/glacium.json
+fbd2afa29f076e13422487cab52bb8a14afa1df2 data/c/tags/item/nuggets.json
+366eeca1f265f247dc059660eaeb65e1045a4382 data/c/tags/item/nuggets/froststeel.json
+9897b5b8f1e3534522ac764e9b46f904510fb7f7 data/c/tags/item/nuggets/luminium.json
 50bc16958ae85c3e7e5e63c6dfe9269ed9324bb7 data/c/tags/item/tools/melee_weapon.json
 cdc89d13a801a0adc2c3412038c2155c37cfd3f3 data/c/tags/item/tools/mining_tool.json
 d6af6de1f4e24f124418de261dfaa1c83590d7fd data/minecraft/tags/item/axes.json
@@ -21,4 +24,4 @@ a0a89ec88f52e563bb3b39f6eba94715a53307a8 data/minecraft/tags/item/chest_armor.js
 cdc89d13a801a0adc2c3412038c2155c37cfd3f3 data/minecraft/tags/item/pickaxes.json
 492dd5c6b6d75718788d8cfdc52b0aad850aea14 data/minecraft/tags/item/shovels.json
 96f259ddad2ac8fa9fe4e0ea5918b5eb0949c368 data/minecraft/tags/item/swords.json
-b1d7ecb96fe2e796bca97344fcc1fbce31656833 data/minecraft/tags/item/trim_materials.json
+f876aa007b044be325bb8b1e31d6f6f4cba5757c data/minecraft/tags/item/trim_materials.json

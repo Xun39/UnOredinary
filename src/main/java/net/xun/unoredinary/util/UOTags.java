@@ -42,15 +42,18 @@ public class UOTags {
 
     public static class Items {
 
+        public static final TagKey<Item> DUSTS_CRYIC = createCommon("dusts/cryic");
+
         public static final TagKey<Item> GEMS_GLACIUM = createCommon("gems/glacium");
         public static final TagKey<Item> GEMS_SAPPHIRE = createCommon("gems/sapphire");
         public static final TagKey<Item> GEMS_LUMINITE = createCommon("gems/luminite");
 
-        public static final TagKey<Item> NUGGETS_GLACIUM = createCommon("nuggets/glacium");
-
         public static final TagKey<Item> INGOTS_FROSTSTEEL = createCommon("ingots/froststeel");
         public static final TagKey<Item> INGOTS_GLACIALITE = createCommon("ingots/glacialite");
         public static final TagKey<Item> INGOTS_LUMINIUM = createCommon("ingots/luminium");
+
+        public static final TagKey<Item> NUGGETS_FROSTSTEEL = createCommon("nuggets/froststeel");
+        public static final TagKey<Item> NUGGETS_LUMINIUM = createCommon("nuggets/luminium");
 
         private static TagKey<Item> create(String name) {
             return ItemTags.create(CommonUtils.modLoc(name));

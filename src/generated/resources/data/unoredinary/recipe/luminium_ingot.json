@@ -24,7 +24,7 @@
       "tag": "c:gems/luminite"
     },
     {
-      "item": "minecraft:glowstone_dust"
+      "tag": "c:dusts/glowstone"
     }
   ],
   "result": {

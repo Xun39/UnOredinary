@@ -26,6 +26,7 @@ public class UOItemModels extends UOItemModelProvider {
         basicItem(UOItems.GLACIUM_CRYSTAL.get());
 
         basicItem(UOItems.FROSTSTEEL_INGOT.get());
+        basicItem(UOItems.FROSTSTEEL_NUGGET.get());
         toolSetModels(UOTools.FROSTSTEEL);
         armorSetModels(UOArmors.FROSTSTEEL);
 
@@ -38,6 +39,7 @@ public class UOItemModels extends UOItemModelProvider {
         basicItem(UOItems.LUMINITE_CRYSTAL.get());
 
         basicItem(UOItems.LUMINIUM_INGOT.get());
+        basicItem(UOItems.LUMINIUM_NUGGET.get());
         toolSetModels(UOTools.LUMINIUM);
         armorSetModels(UOArmors.LUMINIUM);
 

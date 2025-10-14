@@ -9,7 +9,7 @@
       "item": "minecraft:stick"
     },
     "^": {
-      "item": "unoredinary:luminite_crystal"
+      "tag": "c:gems/luminite"
     }
   },
   "pattern": [
@@ -18,7 +18,7 @@
     "#"
   ],
   "result": {
-    "count": 1,
+    "count": 16,
     "id": "minecraft:spectral_arrow"
   }
 }

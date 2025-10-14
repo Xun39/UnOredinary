@@ -1,12 +1,12 @@
 {
   "values": [
-    "unoredinary:deepslate_cryic_ore",
     "unoredinary:cryic_ore",
-    "unoredinary:deepslate_sapphire_ore",
+    "unoredinary:deepslate_cryic_ore",
     "unoredinary:sapphire_ore",
-    "unoredinary:primal_glacium_ore",
+    "unoredinary:deepslate_sapphire_ore",
     "unoredinary:glacium_ore",
-    "unoredinary:deepslate_luminite_ore",
-    "unoredinary:luminite_ore"
+    "unoredinary:primal_glacium_ore",
+    "unoredinary:luminite_ore",
+    "unoredinary:deepslate_luminite_ore"
   ]
 }

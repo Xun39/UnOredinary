@@ -59,9 +59,12 @@ public class UOCreativeModeTabs {
                         output.accept(UOItems.LUMINITE_CRYSTAL);
 
                         output.accept(UOItems.FROSTSTEEL_INGOT);
+                        output.accept(UOItems.FROSTSTEEL_NUGGET);
+
                         output.accept(UOItems.GLACIALITE_INGOT);
 
                         output.accept(UOItems.LUMINIUM_INGOT);
+                        output.accept(UOItems.LUMINIUM_NUGGET);
 
                         output.accept(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE);
 

@@ -3,10 +3,10 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "unoredinary:cryic_powder"
+      "tag": "c:dusts/cryic"
     },
     {
-      "item": "unoredinary:cryic_powder"
+      "tag": "c:dusts/cryic"
     },
     {
       "item": "minecraft:snow_block"

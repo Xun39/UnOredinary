@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-23T08:34:00.7403339	Item Models: unoredinary
+// 1.21.1	2025-10-14T11:19:54.0529646	Item Models: unoredinary
 15523e940bd324d971fa204348a02be68335f396 assets/unoredinary/models/item/cryic_powder.json
 b358fa4aa481ccb95f7798874378a93ff97121fc assets/unoredinary/models/item/froststeel_axe.json
 c8ba747ad7d7d04b7f11fb60903a74e4a798295e assets/unoredinary/models/item/froststeel_boots.json
@@ -47,6 +47,7 @@ cf7d342cffe9e0ce511fc4215bbf4fc96046309f assets/unoredinary/models/item/frostste
 a0011456a7595579248e0122cdfde6e177dc7af7 assets/unoredinary/models/item/froststeel_leggings_netherite_trim.json
 574b8dbb7f34f08cd7d6300d11db144c95585904 assets/unoredinary/models/item/froststeel_leggings_quartz_trim.json
 513cc1ba370af5914de4deb2516c0c30e259c3b8 assets/unoredinary/models/item/froststeel_leggings_redstone_trim.json
+c7cc60520af7c15209c45299ba29bc82d2cf3107 assets/unoredinary/models/item/froststeel_nugget.json
 6a38240a3dd46508a8b707ac4dfacce51198ade5 assets/unoredinary/models/item/froststeel_pickaxe.json
 e537265283dd0831f1595cbb2f6abb3bccc2ece2 assets/unoredinary/models/item/froststeel_shovel.json
 7e5675f50b35294253a4e8b874e3dff3815b3391 assets/unoredinary/models/item/froststeel_sword.json
@@ -152,6 +153,7 @@ d7f58fd07343a8d8252f3254a12fe9c4aed842f0 assets/unoredinary/models/item/luminium
 586c68aaf8282ef4a51b16bdcd356ee6291d1826 assets/unoredinary/models/item/luminium_leggings_netherite_trim.json
 fd801f6787e36d1a0bd6524b58d67a1c122214d9 assets/unoredinary/models/item/luminium_leggings_quartz_trim.json
 4d407376dbcc4a055230c1317bf6d753faf84ff3 assets/unoredinary/models/item/luminium_leggings_redstone_trim.json
+b60881157726f5f44d4bc3d9e0127fde83762209 assets/unoredinary/models/item/luminium_nugget.json
 a0d72f8f22f813ae319ee97da19ce0dc54698427 assets/unoredinary/models/item/luminium_pickaxe.json
 498a64801e86e2ec4de42a2b8dc1897f97216087 assets/unoredinary/models/item/luminium_shovel.json
 bb5dc0a74f344efa080217453c93f9d383f4c1ff assets/unoredinary/models/item/luminium_sword.json

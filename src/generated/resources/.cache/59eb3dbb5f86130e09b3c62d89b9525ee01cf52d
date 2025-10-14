@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-22T20:33:13.9330206	Loot Tables
+// 1.21.1	2025-10-14T11:19:54.0489637	Loot Tables
 f9342a1cafd4aac1c5f6c0f17c81b38d6809531c data/unoredinary/loot_table/blocks/cryic_block.json
 fbc47daa029598d631a65d26a25c08672a2a43e9 data/unoredinary/loot_table/blocks/cryic_ore.json
 2daf7a02c40e4a024bf80b437b41c2d8136e9fb9 data/unoredinary/loot_table/blocks/deepslate_cryic_ore.json
@@ -14,9 +14,9 @@ b69948e6de900ba7df13fb9ee1da160841a02937 data/unoredinary/loot_table/blocks/lumi
 f3454c602ff87ceb5b3340b56f4dc357ba8d2309 data/unoredinary/loot_table/blocks/primal_glacium_ore.json
 c6fc03fa89c17d35932207f47cc88bcc01cb63a1 data/unoredinary/loot_table/blocks/sapphire_block.json
 fa03e3d96fe88712cc37805817ac65b6b867055a data/unoredinary/loot_table/blocks/sapphire_ore.json
-de8eeac3559128ad44fefb2fb4a1148435b422a4 data/unoredinary/loot_table/chests/frost_dungeon/center.json
-ec5dfac0e60a850ca2f84ebc99a117e715966ac7 data/unoredinary/loot_table/chests/frost_dungeon/intersection.json
-1f11c70e47d8788789c3fc9ce8de56534b247c35 data/unoredinary/loot_table/chests/frost_dungeon/monster_room.json
-6a56607bc3ea905b606763630c75febb998cd0e1 data/unoredinary/loot_table/chests/frost_dungeon/treasure.json
+967771539842a15ed44c157c4b5d4af536e3352e data/unoredinary/loot_table/chests/frost_dungeon/center.json
+f9c0d9c77b96a037f652ceedf6b62893a36e7d6e data/unoredinary/loot_table/chests/frost_dungeon/intersection.json
+162e837ef214e98897287a21425523d38d813558 data/unoredinary/loot_table/chests/frost_dungeon/monster_room.json
+7bfd18e22701dfc1598d63f01c0cf4fac1001e61 data/unoredinary/loot_table/chests/frost_dungeon/treasure.json
 5bde4e12c368115671b3881cc4f313f79278ecae data/unoredinary/loot_table/chests/frozen_vault.json
 dadabc39ab72bc2f9db58cfdea3dd57d893db212 data/unoredinary/loot_table/entities/frost_zombie.json

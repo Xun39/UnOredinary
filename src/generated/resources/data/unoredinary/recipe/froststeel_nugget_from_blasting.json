@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "unoredinary:froststeel_sword"
+    },
+    {
+      "item": "unoredinary:froststeel_axe"
+    },
+    {
+      "item": "unoredinary:froststeel_pickaxe"
+    },
+    {
+      "item": "unoredinary:froststeel_hoe"
+    },
+    {
+      "item": "unoredinary:froststeel_shovel"
+    },
+    {
+      "item": "unoredinary:froststeel_helmet"
+    },
+    {
+      "item": "unoredinary:froststeel_chestplate"
+    },
+    {
+      "item": "unoredinary:froststeel_leggings"
+    },
+    {
+      "item": "unoredinary:froststeel_boots"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "unoredinary:froststeel_nugget"
+  }
+}

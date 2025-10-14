@@ -48,17 +48,12 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:prismarine_shard",
-          "weight": 4
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:prismarine_crystals",
-          "weight": 4
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:diamond",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "unoredinary:sapphire",
           "weight": 3
         },
         {
@@ -177,7 +172,7 @@
           "weight": 15
         }
       ],
-      "rolls": 3.0
+      "rolls": 5.0
     }
   ],
   "random_sequence": "unoredinary:chests/frost_dungeon/monster_room"

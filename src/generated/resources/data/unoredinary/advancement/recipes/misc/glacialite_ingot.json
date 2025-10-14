@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "unoredinary:froststeel_ingot"
+            "items": "#c:ingots/froststeel"
           }
         ]
       },

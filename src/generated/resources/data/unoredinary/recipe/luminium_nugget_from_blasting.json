@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "unoredinary:luminium_sword"
+    },
+    {
+      "item": "unoredinary:luminium_axe"
+    },
+    {
+      "item": "unoredinary:luminium_pickaxe"
+    },
+    {
+      "item": "unoredinary:luminium_hoe"
+    },
+    {
+      "item": "unoredinary:luminium_shovel"
+    },
+    {
+      "item": "unoredinary:luminium_helmet"
+    },
+    {
+      "item": "unoredinary:luminium_chestplate"
+    },
+    {
+      "item": "unoredinary:luminium_leggings"
+    },
+    {
+      "item": "unoredinary:luminium_boots"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "unoredinary:luminium_nugget"
+  }
+}

@@ -16,12 +16,17 @@
         },
         {
           "type": "minecraft:item",
+          "name": "unoredinary:sapphire",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:iron_horse_armor",
           "weight": 10
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:golden_horse_armor",
+          "name": "minecraft:diamond_horse_armor",
           "weight": 5
         },
         {
@@ -38,6 +43,11 @@
           "type": "minecraft:item",
           "name": "unoredinary:glacialite_upgrade_smithing_template",
           "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "unoredinary:glacialite_ingot",
+          "weight": 4
         }
       ],
       "rolls": {

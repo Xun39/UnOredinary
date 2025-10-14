@@ -1,0 +1,120 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_froststeel_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_axe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_froststeel_boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_froststeel_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_chestplate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_froststeel_helmet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_helmet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_froststeel_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_froststeel_leggings": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_leggings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_froststeel_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_froststeel_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_shovel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_froststeel_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:froststeel_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unoredinary:froststeel_nugget_from_blasting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_froststeel_sword",
+      "has_froststeel_axe",
+      "has_froststeel_pickaxe",
+      "has_froststeel_hoe",
+      "has_froststeel_shovel",
+      "has_froststeel_helmet",
+      "has_froststeel_chestplate",
+      "has_froststeel_leggings",
+      "has_froststeel_boots"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unoredinary:froststeel_nugget_from_blasting"
+    ]
+  }
+}

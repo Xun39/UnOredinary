@@ -1,0 +1,120 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_luminium_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:luminium_axe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_luminium_boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:luminium_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_luminium_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:luminium_chestplate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_luminium_helmet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:luminium_helmet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_luminium_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:luminium_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_luminium_leggings": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:luminium_leggings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_luminium_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:luminium_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_luminium_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:luminium_shovel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_luminium_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unoredinary:luminium_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unoredinary:luminium_nugget_from_blasting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_luminium_sword",
+      "has_luminium_axe",
+      "has_luminium_pickaxe",
+      "has_luminium_hoe",
+      "has_luminium_shovel",
+      "has_luminium_helmet",
+      "has_luminium_chestplate",
+      "has_luminium_leggings",
+      "has_luminium_boots"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unoredinary:luminium_nugget_from_blasting"
+    ]
+  }
+}

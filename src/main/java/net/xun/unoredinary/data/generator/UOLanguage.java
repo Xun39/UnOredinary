@@ -72,7 +72,9 @@ public class UOLanguage extends UOLanguageProvider {
         addItem(UOItems.GLACIUM_SHARD, "Glacium Shard");
         addItem(UOItems.GLACIUM_CRYSTAL, "Glacium Crystal");
 
+        addItem(UOItems.FROSTSTEEL_NUGGET, "Froststeel Nugget");
         addItem(UOItems.FROSTSTEEL_INGOT, "Froststeel Ingot");
+
         addItem(UOItems.GLACIALITE_INGOT, "Glacialite Ingot");
 
         addItem(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE, "Smithing Template");
@@ -80,6 +82,7 @@ public class UOLanguage extends UOLanguageProvider {
         addItem(UOItems.LUMINITE_CRYSTAL, "Luminite Crystal");
 
         addItem(UOItems.LUMINIUM_INGOT, "Luminium Ingot");
+        addItem(UOItems.LUMINIUM_NUGGET, "Luminium Nugget");
 
         addToolSet(UOTools.FROSTSTEEL);
         addToolSet(UOTools.GLACIALITE);
@@ -117,12 +120,14 @@ public class UOLanguage extends UOLanguageProvider {
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_GLACIALITE, "Glacialite Storage Blocks");
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_LUMINIUM, "Luminium Storage Blocks");
 
-        translateTag(UOTags.Items.NUGGETS_GLACIUM, "Glacium Nuggets (Shards)");
+        translateTag(UOTags.Items.DUSTS_CRYIC, "Cryic Dusts");
         translateTag(UOTags.Items.GEMS_GLACIUM, "Glacium Crystals");
         translateTag(UOTags.Items.GEMS_LUMINITE, "Luminite Crystals");
         translateTag(UOTags.Items.INGOTS_FROSTSTEEL, "Froststeel Ingots");
         translateTag(UOTags.Items.INGOTS_GLACIALITE, "Glacialite Ingots");
         translateTag(UOTags.Items.INGOTS_LUMINIUM, "Luminium Ingots");
+        translateTag(UOTags.Items.NUGGETS_FROSTSTEEL, "Froststeel Nuggets");
+        translateTag(UOTags.Items.NUGGETS_LUMINIUM, "Luminium Nuggets");
 
         /* ------------------------------ CONFIGURATIONS ------------------------------ */
         translateConfig("froststeel", "Froststeel");

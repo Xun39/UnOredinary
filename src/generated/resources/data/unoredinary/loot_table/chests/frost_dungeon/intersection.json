@@ -49,6 +49,11 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:diamond",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "unoredinary:sapphire",
           "weight": 3
         },
         {
@@ -70,6 +75,10 @@
         {
           "type": "minecraft:item",
           "name": "unoredinary:glacialite_upgrade_smithing_template"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "unoredinary:glacialite_ingot"
         }
       ],
       "rolls": {

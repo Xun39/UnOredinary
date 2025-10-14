@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "unoredinary:luminite_crystal"
+            "items": "#c:gems/luminite"
           }
         ]
       },

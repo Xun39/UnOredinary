@@ -5,7 +5,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.xun.lib.common.api.item.armor.ArmorSet;
 import net.xun.lib.common.api.item.tools.ToolSet;
@@ -13,7 +13,9 @@ import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.registry.UOItems;
 import net.xun.unoredinary.util.UOTags;
 
+import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Stream;
 
 public abstract class UORecipeProvider extends RecipeProvider {
     public UORecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
@@ -83,16 +85,6 @@ public abstract class UORecipeProvider extends RecipeProvider {
                 .requires(packed)
                 .unlockedBy(getHasName(packedItem), has(packedItem))
                 .save(recipeOutput, CommonUtils.modLoc(getItemName(unpackedItem) + "_from_" + getItemName(packedItem)));
-    }
-
-    protected static void surroundByEightRecipe(RecipeOutput recipeOutput, RecipeCategory category, Ingredient surrounds, Ingredient center, ItemLike surroundsAsItem, ItemLike result) {
-        ShapedRecipeBuilder.shaped(category, result)
-                .define('#', surrounds).define('*', center)
-                .pattern("###")
-                .pattern("#*#")
-                .pattern("###")
-                .unlockedBy(getHasName(surroundsAsItem), has(surroundsAsItem))
-                .save(recipeOutput);
     }
 
     // Tools
@@ -198,6 +190,54 @@ public abstract class UORecipeProvider extends RecipeProvider {
                 .pattern("# #")
                 .unlockedBy(getHasName(unlockItem), has(unlockItem))
                 .save(recipeOutput);
+    }
+
+    /* ---------------------------------------- COOKING ---------------------------------------- */
+
+    protected void addCombatSetSmelting(RecipeOutput recipeOutput, ToolSet toolSet, ArmorSet armorSet, ItemLike result) {
+        ItemLike[] setItems = Stream.concat(
+                toolSet.getAll().stream().map(item -> (ItemLike) item),
+                armorSet.getAll().stream().map(item -> (ItemLike) item)
+        ).toArray(ItemLike[]::new);
+
+        if (!Objects.equals(toolSet.getName(), armorSet.getName()))
+            return;
+
+        SimpleCookingRecipeBuilder builder = SimpleCookingRecipeBuilder.smelting(
+                Ingredient.of(setItems),
+                RecipeCategory.MISC,
+                result,
+                0.1f,
+                200);
+
+        for (ItemLike item : setItems) {
+            builder.unlockedBy(getHasName(item), has(item));
+        }
+
+        builder.save(recipeOutput, CommonUtils.modLoc(getItemName(result) + "_from_smelting"));
+    }
+
+    protected void addCombatSetBlasting(RecipeOutput recipeOutput, ToolSet toolSet, ArmorSet armorSet, ItemLike result) {
+        ItemLike[] setItems = Stream.concat(
+                toolSet.getAll().stream().map(item -> (ItemLike) item),
+                armorSet.getAll().stream().map(item -> (ItemLike) item)
+        ).toArray(ItemLike[]::new);
+
+        if (!Objects.equals(toolSet.getName(), armorSet.getName()))
+            return;
+
+        SimpleCookingRecipeBuilder builder = SimpleCookingRecipeBuilder.blasting(
+                Ingredient.of(setItems),
+                RecipeCategory.MISC,
+                result,
+                0.1f,
+                200);
+
+        for (ItemLike item : setItems) {
+            builder.unlockedBy(getHasName(item), has(item));
+        }
+
+        builder.save(recipeOutput, CommonUtils.modLoc(getItemName(result) + "_from_blasting"));
     }
 
     /* ---------------------------------------- SMITHING ---------------------------------------- */
