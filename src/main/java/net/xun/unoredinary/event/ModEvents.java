@@ -15,7 +15,7 @@ import net.xun.unoredinary.entity.FrostZombie;
 import net.xun.unoredinary.registry.UOEntityTypes;
 import net.xun.unoredinary.registry.UOItems;
 
-@EventBusSubscriber(modid = UnOredinary.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = UnOredinary.MOD_ID)
 public class ModEvents {
 
     @SubscribeEvent

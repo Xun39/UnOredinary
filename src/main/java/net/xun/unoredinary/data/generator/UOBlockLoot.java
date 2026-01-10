@@ -23,6 +23,9 @@ public class UOBlockLoot extends UOBlockLootProvider {
         dropOtherWithoutSilkTouch(UOBlocks.SAPPHIRE_ORE.get(), UOItems.SAPPHIRE);
         dropOtherWithoutSilkTouch(UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), UOItems.SAPPHIRE);
 
+        // Ruby ores
+        dropOtherWithoutSilkTouch(UOBlocks.NETHER_RUBY_ORE.get(), UOItems.NETHER_RUBY);
+
         // Glacium ores
         multipleDrops(UOBlocks.GLACIUM_ORE.get(), UOItems.GLACIUM_SHARD, 3.0F, 4.0F);
         dropOtherWithoutSilkTouch(UOBlocks.PRIMAL_GLACIUM_ORE.get(), UOItems.GLACIUM_CRYSTAL);
@@ -34,11 +37,15 @@ public class UOBlockLoot extends UOBlockLootProvider {
         /* ------------------------------ STORAGE BLOCKS ------------------------------ */
         dropSelf(UOBlocks.CRYIC_BLOCK.get());
         dropSelf(UOBlocks.SAPPHIRE_BLOCK.get());
+        dropSelf(UOBlocks.RUBY_BLOCK.get());
         dropSelf(UOBlocks.GLACIUM_BLOCK.get());
         dropSelf(UOBlocks.LUMINITE_BLOCK.get());
         dropSelf(UOBlocks.FROSTSTEEL_BLOCK.get());
         dropSelf(UOBlocks.GLACIALITE_BLOCK.get());
         dropSelf(UOBlocks.LUMINIUM_BLOCK.get());
+
+        /* ------------------------------ MISC ------------------------------ */
+        dropSelf(UOBlocks.TRANSENCHANTING_TABLE.get());
     }
 
     @Override

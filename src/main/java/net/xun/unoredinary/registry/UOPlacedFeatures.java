@@ -29,6 +29,8 @@ public class UOPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE_LARGE = createKey("ore_sapphire_large");
     public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE_BURIED = createKey("ore_sapphire_buried");
 
+    public static final ResourceKey<PlacedFeature> ORE_RUBY = createKey("ore_ruby");
+    public static final ResourceKey<PlacedFeature> ORE_RUBY_LARGE = createKey("ore_ruby_large");
 
     public static ResourceKey<PlacedFeature> createKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, CommonUtils.modLoc(name));
@@ -76,6 +78,14 @@ public class UOPlacedFeatures {
         );
         register(context, ORE_SAPPHIRE_BURIED, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_SAPPHIRE_MEDIUM),
                 OrePlacementHelper.countPlacement(4, HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80)))
+        );
+
+        // Ruby ores
+        register(context, ORE_RUBY, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_RUBY),
+                OrePlacementHelper.countPlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(16), VerticalAnchor.absolute(48)))
+        );
+        register(context, ORE_RUBY_LARGE, configuredFeatures.getOrThrow(UOConfiguredFeatures.ORE_RUBY_LARGE),
+                OrePlacementHelper.countPlacement(3, HeightRangePlacement.triangle(VerticalAnchor.absolute(16), VerticalAnchor.absolute(48)))
         );
     }
 

@@ -35,7 +35,7 @@ import net.xun.unoredinary.config.common.UOCommonConfig;
 import net.xun.unoredinary.registry.UOArmorMaterials;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
-@EventBusSubscriber(modid = UnOredinary.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = UnOredinary.MOD_ID)
 public class GlacialiteArmorConfigurator implements ArmorConfigurator {
     @Override
     public ArmorItem createArmor(ArmorType type, Holder<ArmorMaterial> material, int durabilityFactor, Item.Properties props) {

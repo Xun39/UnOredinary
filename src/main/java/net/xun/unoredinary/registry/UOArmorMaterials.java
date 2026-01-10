@@ -62,6 +62,16 @@ public class UOArmorMaterials {
             }), 9, 1.0F, 0.0F, () -> Ingredient.of(UOTags.Items.GEMS_SAPPHIRE), SoundEvents.ARMOR_EQUIP_DIAMOND
     );
 
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> RUBY = register("ruby",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+                map.put(ArmorItem.Type.BOOTS, 3);
+                map.put(ArmorItem.Type.LEGGINGS, 8);
+                map.put(ArmorItem.Type.CHESTPLATE, 6);
+                map.put(ArmorItem.Type.HELMET, 3);
+                map.put(ArmorItem.Type.BODY, 11);
+            }), 11, 1.0F, 0.0F, () -> Ingredient.of(UOTags.Items.GEMS_RUBY), SoundEvents.ARMOR_EQUIP_DIAMOND
+    );
+
     private static DeferredHolder<ArmorMaterial, ArmorMaterial> register(String name,
                                                                          Map<ArmorItem.Type, Integer> defense,
                                                                          int enchantmentValue,

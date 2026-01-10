@@ -68,6 +68,7 @@ public class UOItemTags extends ItemTagsProvider {
                 Set.of(
                         UOItems.CRYIC_POWDER.get(),
                         UOItems.SAPPHIRE.get(),
+                        UOItems.NETHER_RUBY.get(),
                         UOItems.GLACIUM_CRYSTAL.get(),
                         UOItems.LUMINITE_CRYSTAL.get(),
                         UOItems.FROSTSTEEL_INGOT.get(),
@@ -85,6 +86,7 @@ public class UOItemTags extends ItemTagsProvider {
         addToTags(Set.of(Tags.Items.GEMS, UOTags.Items.GEMS_GLACIUM), Set.of(UOItems.GLACIUM_CRYSTAL.get()));
         addToTags(Set.of(Tags.Items.GEMS, UOTags.Items.GEMS_LUMINITE), Set.of(UOItems.LUMINITE_CRYSTAL.get()));
         addToTags(Set.of(Tags.Items.GEMS, UOTags.Items.GEMS_SAPPHIRE), Set.of(UOItems.SAPPHIRE.get()));
+        addToTags(Set.of(Tags.Items.GEMS, UOTags.Items.GEMS_RUBY), Set.of(UOItems.NETHER_RUBY.get()));
 
         // cTags: Ingots
         addToTags(Set.of(Tags.Items.INGOTS, UOTags.Items.INGOTS_FROSTSTEEL), Set.of(UOItems.FROSTSTEEL_INGOT.get()));

@@ -1,25 +1,28 @@
-// 1.21.1	2025-10-14T11:31:03.3962031	Tags for minecraft:block mod id unoredinary
-19672bf21e80fdd2fe7fad5cb17fc587557fe33a data/c/tags/block/ores.json
+// 1.21.1	2026-01-09T22:35:26.7764081	Tags for minecraft:block mod id unoredinary
+9713a958dbed7f6d8a1b6aaa5081eb1dbe0a1803 data/c/tags/block/ores.json
 19a3d8f65d1d921118ef1738b8bb68e7e599626e data/c/tags/block/ores/cryic.json
 436d078a4667627382453d8413fbd19ad562cd02 data/c/tags/block/ores/glacium.json
 443ecbfefce08448f2c38e6235f25205a7ae2953 data/c/tags/block/ores/luminite.json
+9020c894a7756e21fc2496caa2130ce23b16ddb7 data/c/tags/block/ores/ruby.json
 f4f6ac5b6977855bd73664b890f53b08b0062039 data/c/tags/block/ores/sapphire.json
-7f46c2e1027bc50c02eec3ed49463f25cf451d11 data/c/tags/block/ores_in_ground/deepslate.json
-3025e032c495f1357d0c1d7256776e56d1fcfabc data/c/tags/block/ores_in_ground/stone.json
-a8a79f5a772e060d435bca46866e7068834484ab data/c/tags/block/storage_blocks.json
+babbd5a8e75c503cc5b61566ab240e1d725f5566 data/c/tags/block/ores_in_ground/deepslate.json
+523abc40a27a17213ea0363a37b0152cf9ae1d6a data/c/tags/block/ores_in_ground/stone.json
+9020c894a7756e21fc2496caa2130ce23b16ddb7 data/c/tags/block/ore_bearing_ground/netherrack.json
+b1650a793220cac1ca5e2996caa7666d7d84a895 data/c/tags/block/storage_blocks.json
 1a6c49e77d940df6c4f0a17be6cefb85e8b92aff data/c/tags/block/storage_blocks/cryic.json
 b110a84371555385af367f9eee22f946450cf9d9 data/c/tags/block/storage_blocks/froststeel.json
 add348e880d9f4ba9493a1b731fa0e713be3058a data/c/tags/block/storage_blocks/glacialite.json
 f0a2ac4be278e72426e3da6959a1c70f657acf24 data/c/tags/block/storage_blocks/glacium.json
 f1499c0d86004ed23fab9e2c9a9670cde922c782 data/c/tags/block/storage_blocks/luminite.json
 f1ab9b213153794aec6997392dad935bfc3476bc data/c/tags/block/storage_blocks/luminium.json
+d6801c3920962a1525105a3fd5e34c30669af636 data/c/tags/block/storage_blocks/ruby.json
 c1570e89d07ad8cfa31046be624d5bd66c7528c4 data/c/tags/block/storage_blocks/sapphire.json
 bf4c4bddef5b7be5536edcd8e1af2f085fff8366 data/minecraft/tags/block/incorrect_for_gold_tool.json
 bf4c4bddef5b7be5536edcd8e1af2f085fff8366 data/minecraft/tags/block/incorrect_for_iron_tool.json
 bf4c4bddef5b7be5536edcd8e1af2f085fff8366 data/minecraft/tags/block/incorrect_for_stone_tool.json
 bf4c4bddef5b7be5536edcd8e1af2f085fff8366 data/minecraft/tags/block/incorrect_for_wooden_tool.json
-ce0055931eb568d4587f93589170a43e714cbc12 data/minecraft/tags/block/mineable/pickaxe.json
-03ff8dbbf1221d695bf5572fb6cc18813bc2c349 data/minecraft/tags/block/needs_iron_tool.json
+52e47dc240310b7ca5117bf693adab946bf1876d data/minecraft/tags/block/mineable/pickaxe.json
+44d87ffa80398749460b73ca107197784a7c68a5 data/minecraft/tags/block/needs_iron_tool.json
 19a3d8f65d1d921118ef1738b8bb68e7e599626e data/minecraft/tags/block/needs_stone_tool.json
 d72bd49220c13b6128d901542d33297ebf7072bb data/unoredinary/tags/block/incorrect_for_froststeel_tool.json
 1f2a7186be316c9b7eefea7283863cc8203e578f data/unoredinary/tags/block/needs_froststeel_tool.json

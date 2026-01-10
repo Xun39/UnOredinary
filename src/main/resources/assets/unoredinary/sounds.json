@@ -51,6 +51,14 @@
       "unoredinary:block/glacium/evaporate"
     ]
   },
+  "block.transenchantment_table.use": {
+    "subtitle": "sounds.unoredinary.block.transenchantment_table.use",
+    "sounds": [
+      "unoredinary:block/transenchantment_table/transenchant_1",
+      "unoredinary:block/transenchantment_table/transenchant_2",
+      "unoredinary:block/transenchantment_table/transenchant_3"
+    ]
+  },
 
   "item.armor.equip_glacialite": {
     "subtitle": "sounds.unoredinary.item.armor.equip_glacialite",

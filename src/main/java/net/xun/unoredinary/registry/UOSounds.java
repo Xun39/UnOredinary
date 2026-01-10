@@ -24,6 +24,8 @@ public class UOSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> SUNSTONE_HIT = register("block.sunstone.hit");
     public static final DeferredHolder<SoundEvent, SoundEvent> SUNSTONE_FALL = register("block.sunstone.fall");
 
+    public static final DeferredHolder<SoundEvent, SoundEvent> TRANSENCHANTMENT_TABLE_USE = register("block.transenchantment_table.use");
+
     // Items
     public static final DeferredHolder<SoundEvent, SoundEvent> ARMOR_EQUIP_GLACIALITE = register("item.armor.equip_glacialite");
 

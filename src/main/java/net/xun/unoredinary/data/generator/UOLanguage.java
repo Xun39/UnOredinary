@@ -40,6 +40,8 @@ public class UOLanguage extends UOLanguageProvider {
         addBlock(UOBlocks.SAPPHIRE_ORE, "Sapphire Ore");
         addBlock(UOBlocks.DEEPSLATE_SAPPHIRE_ORE, "Deepslate Sapphire Ore");
 
+        addBlock(UOBlocks.NETHER_RUBY_ORE, "Nether Ruby Ore");
+
         addBlock(UOBlocks.GLACIUM_ORE, "Glacium Ore");
         addBlock(UOBlocks.PRIMAL_GLACIUM_ORE, "Primal Glacium Ore");
 
@@ -49,11 +51,18 @@ public class UOLanguage extends UOLanguageProvider {
         // Storage Blocks
         addBlock(UOBlocks.CRYIC_BLOCK, "Block of Cryic");
         addBlock(UOBlocks.SAPPHIRE_BLOCK, "Block of Sapphire");
+        addBlock(UOBlocks.RUBY_BLOCK, "Block of Ruby");
         addBlock(UOBlocks.GLACIUM_BLOCK, "Block of Glacium");
         addBlock(UOBlocks.LUMINITE_BLOCK, "Block of Luminite");
         addBlock(UOBlocks.FROSTSTEEL_BLOCK, "Block of Froststeel");
         addBlock(UOBlocks.GLACIALITE_BLOCK, "Block of Glacialite");
         addBlock(UOBlocks.LUMINIUM_BLOCK, "Block of Luminium");
+
+        // Misc
+        addBlock(UOBlocks.TRANSENCHANTING_TABLE, "Transenchanting Table");
+
+        /* ------------------------------ CONTAINERS ------------------------------ */
+        add("unoredinary.container.transenchanting_table", "Transenchant");
 
         /* ------------------------------ ENTITIES ------------------------------ */
         addEntityAndSpawnEgg(UOEntityTypes.FROST_ZOMBIE, "Frost Zombie");
@@ -68,6 +77,8 @@ public class UOLanguage extends UOLanguageProvider {
         addItem(UOItems.CRYIC_POWDER, "Cryic Powder");
 
         addItem(UOItems.SAPPHIRE, "Sapphire");
+
+        addItem(UOItems.NETHER_RUBY, "Nether Ruby");
 
         addItem(UOItems.GLACIUM_SHARD, "Glacium Shard");
         addItem(UOItems.GLACIUM_CRYSTAL, "Glacium Crystal");
@@ -88,11 +99,13 @@ public class UOLanguage extends UOLanguageProvider {
         addToolSet(UOTools.GLACIALITE);
         addToolSet(UOTools.LUMINIUM);
         addToolSet(UOTools.SAPPHIRE);
+        addToolSet(UOTools.RUBY);
 
         addArmorSet(UOArmors.FROSTSTEEL);
         addArmorSet(UOArmors.GLACIALITE);
         addArmorSet(UOArmors.LUMINIUM);
         addArmorSet(UOArmors.SAPPHIRE);
+        addArmorSet(UOArmors.RUBY);
 
         /* ------------------------------ TRIM MATERIALS ------------------------------ */
         addTrimMaterial(UOTrimMaterials.CRYIC, "Cryic Material");
@@ -102,6 +115,7 @@ public class UOLanguage extends UOLanguageProvider {
         addTrimMaterial(UOTrimMaterials.GLACIALITE, "Glacialite Material");
         addTrimMaterial(UOTrimMaterials.LUMINIUM, "Luminium Material");
         addTrimMaterial(UOTrimMaterials.SAPPHIRE, "Sapphire Material");
+        addTrimMaterial(UOTrimMaterials.RUBY, "Ruby Material");
 
         /* ------------------------------ TOOLTIPS ------------------------------ */
         add("upgrade.unoredinary.glacialite_upgrade", "Glacialite Upgrade");
@@ -110,19 +124,47 @@ public class UOLanguage extends UOLanguageProvider {
         add("item.unoredinary.smithing_template.glacialite_upgrade.base_slot_description", "Add froststeel armor, weapon, or tool");
         add("item.unoredinary.smithing_template.glacialite_upgrade.additions_slot_description", "Add Glacialite Ingot");
 
+        // Transenchanting Table
+        addToolTip("transenchanting_table.enchantments_number", "Enchantments");
+        addToolTip("transenchanting_table.enchantments_count", "%s enchantment(s)");
+
+        addToolTip("transenchanting_table.level_cost", "Level Cost");
+        addToolTip("transenchanting_table.levels", "%s level(s)");
+        addToolTip("transenchanting_table.cost_breakdown", "Cost Breakdown");
+        addToolTip("transenchanting_table.base_cost", "  • Base: %s levels");
+        addToolTip("transenchanting_table.per_enchantment_cost", "  • %s enchantment(s) × %s = %s");
+
+        addToolTip("transenchanting_table.can_transenchant", "Can Transenchant");
+        addToolTip("transenchanting_table.cannot_transenchant", "Cannot Transenchant");
+        addToolTip("transenchanting_table.will_create_book", "Will create an enchanted book");
+        addToolTip("transenchanting_table.will_transfer", "Will transfer enchantments");
+        addToolTip("transenchanting_table.no_translator", "No translator item");
+        addToolTip("transenchanting_table.no_target", "No target item");
+        addToolTip("transenchanting_table.no_enchantments", "No enchantments");
+        addToolTip("transenchanting_table.translator_has_no_enchants", "Translator has no enchantments");
+        addToolTip("transenchanting_table.target_already_enchanted" , "Target is already enchanted");
+        addToolTip("transenchanting_table.incompatible", "Enchantments incompatible with target");
+
         /* ------------------------------ TAGS ------------------------------ */
         translateTag(UOTags.Blocks.ORES_CRYIC, "Cryic Ores");
         translateTag(UOTags.Blocks.ORES_GLACIUM, "Glacium Ores");
+        translateTag(UOTags.Blocks.ORES_LUMINITE, "Luminite Ores");
+        translateTag(UOTags.Blocks.ORES_SAPPHIRE, "Sapphire Ores");
+        translateTag(UOTags.Blocks.ORES_RUBY, "Ruby Ores");
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_CRYIC, "Cryic Storage Blocks");
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_GLACIUM, "Glacium Storage Blocks");
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_LUMINITE, "Luminite Storage Blocks");
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_FROSTSTEEL, "Froststeel Storage Blocks");
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_GLACIALITE, "Glacialite Storage Blocks");
         translateTag(UOTags.Blocks.STORAGE_BLOCKS_LUMINIUM, "Luminium Storage Blocks");
+        translateTag(UOTags.Blocks.STORAGE_BLOCKS_SAPPHIRE, "Sapphire Storage Blocks");
+        translateTag(UOTags.Blocks.STORAGE_BLOCKS_RUBY, "Ruby Storage Blocks");
 
         translateTag(UOTags.Items.DUSTS_CRYIC, "Cryic Dusts");
         translateTag(UOTags.Items.GEMS_GLACIUM, "Glacium Crystals");
         translateTag(UOTags.Items.GEMS_LUMINITE, "Luminite Crystals");
+        translateTag(UOTags.Items.GEMS_SAPPHIRE, "Sapphires");
+        translateTag(UOTags.Items.GEMS_RUBY, "Rubies");
         translateTag(UOTags.Items.INGOTS_FROSTSTEEL, "Froststeel Ingots");
         translateTag(UOTags.Items.INGOTS_GLACIALITE, "Glacialite Ingots");
         translateTag(UOTags.Items.INGOTS_LUMINIUM, "Luminium Ingots");

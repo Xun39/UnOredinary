@@ -13,11 +13,15 @@ public class UOBlockStates extends UOBlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
+        existingBlockWithItem(UOBlocks.TRANSENCHANTING_TABLE);
+
         blockWithItem(UOBlocks.CRYIC_ORE);
         blockWithItem(UOBlocks.DEEPSLATE_CRYIC_ORE);
 
         blockWithItem(UOBlocks.SAPPHIRE_ORE);
         blockWithItem(UOBlocks.DEEPSLATE_SAPPHIRE_ORE);
+
+        blockWithItem(UOBlocks.NETHER_RUBY_ORE);
 
         blockWithItem(UOBlocks.GLACIUM_ORE);
         blockWithItem(UOBlocks.PRIMAL_GLACIUM_ORE);
@@ -27,6 +31,7 @@ public class UOBlockStates extends UOBlockStateProvider {
 
         blockWithItem(UOBlocks.CRYIC_BLOCK);
         blockWithItem(UOBlocks.SAPPHIRE_BLOCK);
+        blockWithItem(UOBlocks.RUBY_BLOCK);
         blockWithItem(UOBlocks.GLACIUM_BLOCK);
         blockWithItem(UOBlocks.LUMINITE_BLOCK);
         blockWithItem(UOBlocks.FROSTSTEEL_BLOCK);

@@ -1,9 +1,10 @@
-// 1.21.1	2025-10-14T11:31:03.3982031	Tags for minecraft:item mod id unoredinary
+// 1.21.1	2026-01-09T22:35:26.7783646	Tags for minecraft:item mod id unoredinary
 48dbed316f8da7df8607743115b0091317b0c462 data/c/tags/item/dusts.json
 48dbed316f8da7df8607743115b0091317b0c462 data/c/tags/item/dusts/cryic.json
-44ace8acdb309a6712b6f9ba0525f54a61c33333 data/c/tags/item/gems.json
+246aaae28cbe30e471668e692a8688b8131ba516 data/c/tags/item/gems.json
 470f14e69c0ebdf836b83b97df9ee3f2c86dd9e8 data/c/tags/item/gems/glacium.json
 f1183c1c89abadf654127b9d4e4f511a26e722fb data/c/tags/item/gems/luminite.json
+856b98837fd2ee2b75064d39460780b60fe0df47 data/c/tags/item/gems/ruby.json
 9aff2254db0095b7e92a843fafb95020de489f5f data/c/tags/item/gems/sapphire.json
 a30f50942b987e4e0ad637a606978341c4688e4a data/c/tags/item/ingots.json
 260131bb4bec1a134f69abc8d56802d1cee35bb3 data/c/tags/item/ingots/froststeel.json
@@ -12,16 +13,16 @@ f65086a0b5a0a3f299e636301cef7fcea20d23c9 data/c/tags/item/ingots/luminium.json
 fbd2afa29f076e13422487cab52bb8a14afa1df2 data/c/tags/item/nuggets.json
 366eeca1f265f247dc059660eaeb65e1045a4382 data/c/tags/item/nuggets/froststeel.json
 9897b5b8f1e3534522ac764e9b46f904510fb7f7 data/c/tags/item/nuggets/luminium.json
-50bc16958ae85c3e7e5e63c6dfe9269ed9324bb7 data/c/tags/item/tools/melee_weapon.json
-cdc89d13a801a0adc2c3412038c2155c37cfd3f3 data/c/tags/item/tools/mining_tool.json
-d6af6de1f4e24f124418de261dfaa1c83590d7fd data/minecraft/tags/item/axes.json
-a0a89ec88f52e563bb3b39f6eba94715a53307a8 data/minecraft/tags/item/chest_armor.json
-3b97431758736259cbf708a8af187f3edf69630c data/minecraft/tags/item/foot_armor.json
+c4d06d85c9dc21cc08a57f5aa1a60052ad12f735 data/c/tags/item/tools/melee_weapon.json
+f04809fca5847308eca14fb426b03f979bc382cf data/c/tags/item/tools/mining_tool.json
+30adaec6ed5add165e0f018160c8b5a88c18f75f data/minecraft/tags/item/axes.json
+24f8715a097c157253361652fa062ae3f7d4d189 data/minecraft/tags/item/chest_armor.json
+8956fa90d17834540d030b5185042a7643371c53 data/minecraft/tags/item/foot_armor.json
 0ee0ae6d473c80a32304adcb4f534b92802683f2 data/minecraft/tags/item/freeze_immune_wearables.json
-3e2b557e9745f1ed2af1576b2e91dbc22d43dbeb data/minecraft/tags/item/head_armor.json
-628ed90d0dbd681f0d78bed02dc266d47f2c77a4 data/minecraft/tags/item/hoes.json
-0176fff6b83bd8313c81f3e2386c5db555baa81f data/minecraft/tags/item/leg_armor.json
-cdc89d13a801a0adc2c3412038c2155c37cfd3f3 data/minecraft/tags/item/pickaxes.json
-492dd5c6b6d75718788d8cfdc52b0aad850aea14 data/minecraft/tags/item/shovels.json
-96f259ddad2ac8fa9fe4e0ea5918b5eb0949c368 data/minecraft/tags/item/swords.json
-f876aa007b044be325bb8b1e31d6f6f4cba5757c data/minecraft/tags/item/trim_materials.json
+ac8314e29a8c53457c1d4d6dc431abf75a496621 data/minecraft/tags/item/head_armor.json
+2e8bb9254bf5a83f0034116d998e3943f0d55352 data/minecraft/tags/item/hoes.json
+21ae110ab1cea3c8911a73b817d5391066b0f1cf data/minecraft/tags/item/leg_armor.json
+f04809fca5847308eca14fb426b03f979bc382cf data/minecraft/tags/item/pickaxes.json
+7e4aee1db834c94bfdb7b5f1826a97d8ab9790c1 data/minecraft/tags/item/shovels.json
+173dd1646b111b87a32b413efcd2069ec43904a5 data/minecraft/tags/item/swords.json
+e14353d53a22174c94edc4764998c5348a9b7710 data/minecraft/tags/item/trim_materials.json

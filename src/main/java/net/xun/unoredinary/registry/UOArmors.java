@@ -34,6 +34,11 @@ public class UOArmors {
             .build()
     );
 
+    public static final ArmorSet RUBY = register(new ArmorSet.Builder("ruby", UOArmorMaterials.RUBY)
+            .withDurabilityFactor(28)
+            .build()
+    );
+
     public static List<ArmorSet> getArmors() {
         return new ArrayList<>(ARMOR_SETS);
     }

@@ -61,6 +61,10 @@ public abstract class UOLanguageProvider extends LanguageProvider {
         add("item.minecraft.tipped_arrow.effect." + potion.getKey().location().getPath(), "Arrow of " + name);
     }
 
+    public void addToolTip(String key, String translation) {
+        this.add("unoredinary.tooltip." + key, translation);
+    }
+
     public void translateTag(TagKey<?> tag, String name) {
         this.add(String.format("tag.%s.%s.%s", tag.registry().location().getPath(), tag.location().getNamespace(), tag.location().getPath().replace('/', '.')), name);
     }

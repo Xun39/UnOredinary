@@ -26,6 +26,8 @@ public class UOCreativeModeTabs {
                         output.accept(UOBlocks.SAPPHIRE_ORE);
                         output.accept(UOBlocks.DEEPSLATE_SAPPHIRE_ORE);
 
+                        output.accept(UOBlocks.NETHER_RUBY_ORE);
+
                         output.accept(UOBlocks.GLACIUM_ORE);
                         output.accept(UOBlocks.PRIMAL_GLACIUM_ORE);
 
@@ -34,11 +36,14 @@ public class UOCreativeModeTabs {
 
                         output.accept(UOBlocks.CRYIC_BLOCK);
                         output.accept(UOBlocks.SAPPHIRE_BLOCK);
+                        output.accept(UOBlocks.RUBY_BLOCK);
                         output.accept(UOBlocks.GLACIUM_BLOCK);
                         output.accept(UOBlocks.LUMINITE_BLOCK);
                         output.accept(UOBlocks.FROSTSTEEL_BLOCK);
                         output.accept(UOBlocks.GLACIALITE_BLOCK);
                         output.accept(UOBlocks.LUMINIUM_BLOCK);
+
+                        output.accept(UOBlocks.TRANSENCHANTING_TABLE);
                     })
                     .build()
     );
@@ -52,6 +57,8 @@ public class UOCreativeModeTabs {
                         output.accept(UOItems.CRYIC_POWDER);
 
                         output.accept(UOItems.SAPPHIRE);
+
+                        output.accept(UOItems.NETHER_RUBY);
 
                         output.accept(UOItems.GLACIUM_SHARD);
                         output.accept(UOItems.GLACIUM_CRYSTAL);

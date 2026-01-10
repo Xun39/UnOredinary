@@ -12,6 +12,10 @@
     {
       "id": "unoredinary:sapphire_hoe",
       "required": false
+    },
+    {
+      "id": "unoredinary:ruby_hoe",
+      "required": false
     }
   ]
 }

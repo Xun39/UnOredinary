@@ -10,12 +10,25 @@ import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xun.unoredinary.UnOredinary;
+import net.xun.unoredinary.block.TransenchantingTableBlock;
 import net.xun.unoredinary.block.GlaciumBlock;
 
 import java.util.function.Supplier;
 
 public class UOBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(UnOredinary.MOD_ID);
+
+    // Entity Blocks
+    public static final DeferredBlock<Block> TRANSENCHANTING_TABLE = register("transenchanting_table",
+            () -> new TransenchantingTableBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_GREEN)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .lightLevel(state -> 7)
+                            .strength(5.0F, 1200.0F)
+            )
+    );
 
     // Ores
     public static final DeferredBlock<Block> CRYIC_ORE = register("cryic_ore",
@@ -55,6 +68,18 @@ public class UOBlocks {
                             .mapColor(MapColor.DEEPSLATE)
                             .strength(4.5F, 3.0F)
                             .sound(SoundType.DEEPSLATE)
+            )
+    );
+
+    public static final DeferredBlock<Block> NETHER_RUBY_ORE = register("nether_ruby_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(3, 7),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.NETHER)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(3.0F, 3.0F)
+                            .sound(SoundType.NETHER_ORE)
             )
     );
 
@@ -116,6 +141,16 @@ public class UOBlocks {
             () -> new Block(
                     BlockBehaviour.Properties.of()
                             .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                            .instrument(NoteBlockInstrument.XYLOPHONE)
+                            .requiresCorrectToolForDrops()
+                            .strength(5.0F, 6.0F)
+                            .sound(SoundType.METAL)
+            )
+    );
+    public static final DeferredBlock<Block> RUBY_BLOCK = register("ruby_block",
+            () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_RED)
                             .instrument(NoteBlockInstrument.XYLOPHONE)
                             .requiresCorrectToolForDrops()
                             .strength(5.0F, 6.0F)

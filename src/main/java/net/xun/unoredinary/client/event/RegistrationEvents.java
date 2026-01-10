@@ -10,17 +10,20 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.xun.unoredinary.UnOredinary;
+import net.xun.unoredinary.client.gui.TransenchantingTableScreen;
 import net.xun.unoredinary.client.model.UOModelLayers;
 import net.xun.unoredinary.client.model.entity.FrostZombieModel;
 import net.xun.unoredinary.client.model.renderer.FrostZombieRenderer;
 import net.xun.unoredinary.client.particle.RimeParticle;
 import net.xun.unoredinary.client.particle.SubzeroFrostParticle;
 import net.xun.unoredinary.registry.UOEntityTypes;
+import net.xun.unoredinary.registry.UOMenuTypes;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
-@EventBusSubscriber(modid = UnOredinary.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = UnOredinary.MOD_ID)
 public class RegistrationEvents {
 
     @SubscribeEvent
@@ -45,5 +48,10 @@ public class RegistrationEvents {
         event.registerLayerDefinition(UOModelLayers.FROST_ZOMBIE_OUTER_LAYER, () -> FrostZombieModel.createBodyLayer(new CubeDeformation(0.25F)));
         event.registerLayerDefinition(UOModelLayers.FROST_ZOMBIE_INNER_ARMOR, () -> innerArmorLayerdefinition);
         event.registerLayerDefinition(UOModelLayers.FROST_ZOMBIE_OUTER_ARMOR, () -> outerArmorLayerdefinition);
+    }
+
+    @SubscribeEvent
+    public static void registerMenuScreens(RegisterMenuScreensEvent event) {
+        event.register(UOMenuTypes.TRANSENCHANTING_TABLE.get(), TransenchantingTableScreen::new);
     }
 }

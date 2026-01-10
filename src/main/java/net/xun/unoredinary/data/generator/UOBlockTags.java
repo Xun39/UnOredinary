@@ -27,11 +27,15 @@ public class UOBlockTags extends BlockTagsProvider {
 
         /* ------------------------------ MINEABLE ------------------------------ */
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+                UOBlocks.TRANSENCHANTING_TABLE.get(),
+
                 UOBlocks.CRYIC_ORE.get(),
                 UOBlocks.DEEPSLATE_CRYIC_ORE.get(),
 
                 UOBlocks.SAPPHIRE_ORE.get(),
                 UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
+
+                UOBlocks.NETHER_RUBY_ORE.get(),
 
                 UOBlocks.GLACIUM_ORE.get(),
                 UOBlocks.PRIMAL_GLACIUM_ORE.get(),
@@ -54,6 +58,8 @@ public class UOBlockTags extends BlockTagsProvider {
         tag(BlockTags.NEEDS_IRON_TOOL).add(
                 UOBlocks.SAPPHIRE_ORE.get(),
                 UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
+
+                UOBlocks.NETHER_RUBY_ORE.get(),
 
                 UOBlocks.LUMINITE_ORE.get(),
                 UOBlocks.DEEPSLATE_LUMINITE_ORE.get(),
@@ -95,6 +101,10 @@ public class UOBlockTags extends BlockTagsProvider {
                 Set.of(UOBlocks.SAPPHIRE_ORE.get(), UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get())
         );
         addToTags(
+                Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_RUBY),
+                Set.of(UOBlocks.NETHER_RUBY_ORE.get())
+        );
+        addToTags(
                 Set.of(Tags.Blocks.ORES, UOTags.Blocks.ORES_GLACIUM),
                 Set.of(UOBlocks.GLACIUM_ORE.get(), UOBlocks.PRIMAL_GLACIUM_ORE.get())
         );
@@ -120,6 +130,11 @@ public class UOBlockTags extends BlockTagsProvider {
                         UOBlocks.DEEPSLATE_SAPPHIRE_ORE.get()
                 )
         );
+        addToTags(Set.of(Tags.Blocks.ORE_BEARING_GROUND_NETHERRACK),
+                Set.of(
+                        UOBlocks.NETHER_RUBY_ORE.get()
+                )
+        );
 
         // cTags: Storage Blocks
         addToTags(
@@ -129,6 +144,10 @@ public class UOBlockTags extends BlockTagsProvider {
         addToTags(
                 Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_SAPPHIRE),
                 Set.of(UOBlocks.SAPPHIRE_BLOCK.get())
+        );
+        addToTags(
+                Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_RUBY),
+                Set.of(UOBlocks.RUBY_BLOCK.get())
         );
         addToTags(
                 Set.of(Tags.Blocks.STORAGE_BLOCKS, UOTags.Blocks.STORAGE_BLOCKS_GLACIUM),

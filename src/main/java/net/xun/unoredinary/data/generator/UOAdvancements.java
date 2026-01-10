@@ -53,7 +53,7 @@ public class UOAdvancements extends AdvancementProvider {
                     )
                     .addCriterion("mine_cryic", InventoryChangeTrigger.TriggerInstance.hasItems(UOItems.CRYIC_POWDER))
                     .requirements(AdvancementRequirements.Strategy.OR)
-                    .save(consumer, "unoredinary:mine_cryic");
+                    .save(consumer, CommonUtils.namespacedID("mine_cryic"));
 
             AdvancementHolder forgeFroststeel = Advancement.Builder.advancement()
                     .parent(mineCryic)
@@ -66,7 +66,7 @@ public class UOAdvancements extends AdvancementProvider {
                     )
                     .addCriterion("froststeel_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(UOItems.FROSTSTEEL_INGOT))
                     .requirements(AdvancementRequirements.Strategy.OR)
-                    .save(consumer, "unoredinary:forge_froststeel");
+                    .save(consumer, CommonUtils.namespacedID("forge_froststeel"));
 
             AdvancementHolder froststeelTools = Advancement.Builder.advancement()
                     .parent(forgeFroststeel)
@@ -82,7 +82,7 @@ public class UOAdvancements extends AdvancementProvider {
                     .addCriterion("froststeel_hoe", InventoryChangeTrigger.TriggerInstance.hasItems(UOTools.FROSTSTEEL.getHoe().get()))
                     .addCriterion("froststeel_shovel", InventoryChangeTrigger.TriggerInstance.hasItems(UOTools.FROSTSTEEL.getShovel().get()))
                     .requirements(AdvancementRequirements.Strategy.OR)
-                    .save(consumer, "unoredinary:froststeel_tools");
+                    .save(consumer, CommonUtils.namespacedID("froststeel_tools"));
 
             AdvancementHolder mineGlacium = Advancement.Builder.advancement()
                     .parent(vanillaAdvancement(storyLoc("mine_diamond")))
@@ -95,7 +95,7 @@ public class UOAdvancements extends AdvancementProvider {
                     )
                     .addCriterion("glacium_shard", InventoryChangeTrigger.TriggerInstance.hasItems(UOItems.GLACIUM_SHARD))
                     .requirements(AdvancementRequirements.Strategy.OR)
-                    .save(consumer, "unoredinary:mine_glacium");
+                    .save(consumer, CommonUtils.namespacedID("mine_glacium"));
 
             AdvancementHolder getGlaciumCrystal = Advancement.Builder.advancement()
                     .parent(mineGlacium)
@@ -108,7 +108,7 @@ public class UOAdvancements extends AdvancementProvider {
                     )
                     .addCriterion("glacium_crystal", InventoryChangeTrigger.TriggerInstance.hasItems(UOItems.GLACIUM_CRYSTAL))
                     .requirements(AdvancementRequirements.Strategy.OR)
-                    .save(consumer, "unoredinary:get_glacium_crystal");
+                    .save(consumer, CommonUtils.namespacedID("get_glacium_crystal"));
 
             AdvancementHolder craftGlacialite = Advancement.Builder.advancement()
                     .parent(mineGlacium)
@@ -121,7 +121,7 @@ public class UOAdvancements extends AdvancementProvider {
                     )
                     .addCriterion("glacialite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(UOItems.GLACIALITE_INGOT))
                     .requirements(AdvancementRequirements.Strategy.OR)
-                    .save(consumer, "unoredinary:craft_glacialite");
+                    .save(consumer, CommonUtils.namespacedID("craft_glacialite"));
 
             // Root: Adventure
             AdvancementHolder findIceberg = Advancement.Builder.advancement()
@@ -144,7 +144,7 @@ public class UOAdvancements extends AdvancementProvider {
                                     .setCanSeeSky(true))
                     )
                     .requirements(AdvancementRequirements.Strategy.OR)
-                    .save(consumer, "unoredinary:find_iceberg");
+                    .save(consumer, CommonUtils.namespacedID("find_iceberg"));
 
             AdvancementHolder freezeMiner = Advancement.Builder.advancement()
                     .parent(findIceberg)
@@ -168,7 +168,7 @@ public class UOAdvancements extends AdvancementProvider {
                             )
                     )
                     .requirements(AdvancementRequirements.Strategy.OR)
-                    .save(consumer, "unoredinary:freeze_miner");
+                    .save(consumer, CommonUtils.namespacedID("freeze_miner"));
 
             /* AdvancementHolder findFrostDungeon = Advancement.Builder.advancement()
                     .parent(vanillaAdvancement(adventureLoc("root")))

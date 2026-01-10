@@ -19,7 +19,7 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 @Mod(UnOredinary.MOD_ID)
 public class UnOredinary {
     public static final String MOD_ID = "unoredinary";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public UnOredinary(IEventBus modEventBus, ModContainer modContainer) {
 
@@ -33,8 +33,10 @@ public class UnOredinary {
         UOPotions.POTIONS.register(modEventBus);
         UOSounds.SOUND_EVENTS.register(modEventBus);
         UOMobEffects.MOB_EFFECTS.register(modEventBus);
+        UOMenuTypes.MENU_TYPES.register(modEventBus);
         UOEntityTypes.ENTITY_TYPES.register(modEventBus);
         UOParticleTypes.PARTICLE_TYPES.register(modEventBus);
+        UOBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modEventBus);
         UOArmorMaterials.ARMOR_MATERIALS.register(modEventBus);
         UOCreativeModeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         UOStructureTypes.STRUCTURE_TYPES.register(modEventBus);

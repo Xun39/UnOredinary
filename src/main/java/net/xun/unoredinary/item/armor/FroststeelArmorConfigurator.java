@@ -29,7 +29,7 @@ import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.config.common.UOCommonConfig;
 import net.xun.unoredinary.registry.UOArmorMaterials;
 
-@EventBusSubscriber(modid = UnOredinary.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = UnOredinary.MOD_ID)
 public class FroststeelArmorConfigurator implements ArmorConfigurator {
     @Override
     public ArmorItem createArmor(ArmorType type, Holder<ArmorMaterial> material, int durabilityFactor, Item.Properties props) {

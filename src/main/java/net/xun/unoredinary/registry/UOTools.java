@@ -42,6 +42,13 @@ public class UOTools {
             .build()
     );
 
+    public static final ToolSet RUBY = register(new ToolSet.Builder("ruby", UOToolTiers.RUBY, new GenericAttributeHelper())
+            .withVanillaBalance()
+            .withToolStats(ToolType.AXE, 5.0F, 1.0F)
+            .withToolStats(ToolType.HOE, -3.0F, 4.0F)
+            .build()
+    );
+
     public static List<ToolSet> getTools() {
         return new ArrayList<>(TOOL_SETS);
     }

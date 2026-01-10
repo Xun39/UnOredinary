@@ -13,7 +13,7 @@ import net.xun.unoredinary.data.generator.*;
 
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(modid = UnOredinary.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = UnOredinary.MOD_ID)
 public class UnOredinaryData {
 
     @SubscribeEvent

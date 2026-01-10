@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:obsidian"
+    },
+    "*": {
+      "tag": "c:gems/ruby"
+    },
+    "^": {
+      "item": "minecraft:ghast_tear"
+    }
+  },
+  "pattern": [
+    " ^ ",
+    "*#*",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "unoredinary:transenchanting_table"
+  }
+}

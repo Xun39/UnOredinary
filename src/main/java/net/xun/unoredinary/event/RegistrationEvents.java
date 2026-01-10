@@ -9,7 +9,7 @@ import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.registry.UOItems;
 import net.xun.unoredinary.registry.UOPotions;
 
-@EventBusSubscriber(modid = UnOredinary.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = UnOredinary.MOD_ID)
 public class RegistrationEvents {
 
     @SubscribeEvent

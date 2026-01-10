@@ -22,6 +22,7 @@ public class UOTrimMaterials {
     public static final ResourceKey<TrimMaterial> GLACIALITE = createKey("glacialite");
     public static final ResourceKey<TrimMaterial> LUMINIUM = createKey("luminium");
     public static final ResourceKey<TrimMaterial> SAPPHIRE = createKey("sapphire");
+    public static final ResourceKey<TrimMaterial> RUBY = createKey("ruby");
 
     private static ResourceKey<TrimMaterial> createKey(String name) {
         return ResourceKey.create(Registries.TRIM_MATERIAL, CommonUtils.modLoc(name));
@@ -35,6 +36,7 @@ public class UOTrimMaterials {
         register(context, GLACIALITE, UOItems.GLACIALITE_INGOT.get(), Style.EMPTY.withColor(TextColor.parseColor("#017ed8").getOrThrow()), 0.8F);
         register(context, LUMINIUM, UOItems.LUMINIUM_INGOT.get(), Style.EMPTY.withColor(TextColor.parseColor("#f59e26").getOrThrow()), 0.6F);
         register(context, SAPPHIRE, UOItems.SAPPHIRE.get(), Style.EMPTY.withColor(TextColor.parseColor("#017ed8").getOrThrow()), 0.9F);
+        register(context, RUBY, UOItems.NETHER_RUBY.get(), Style.EMPTY.withColor(TextColor.parseColor("#ff412b").getOrThrow()), 0.4F);
     }
     private static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> trimKey, Item item, Style style, float itemModelIndex) {
 

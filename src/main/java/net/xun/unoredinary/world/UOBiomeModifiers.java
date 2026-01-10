@@ -30,6 +30,9 @@ public class UOBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ORE_SAPPHIRE_LARGE = createKey("ore_sapphire_large");
     public static final ResourceKey<BiomeModifier> ORE_SAPPHIRE_BURIED = createKey("ore_sapphire_buried");
 
+    public static final ResourceKey<BiomeModifier> ORE_RUBY = createKey("ore_ruby");
+    public static final ResourceKey<BiomeModifier> ORE_RUBY_LARGE = createKey("ore_ruby_large");
+
     private static ResourceKey<BiomeModifier> createKey(String name) {
         return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, CommonUtils.modLoc(name));
     }
@@ -100,6 +103,18 @@ public class UOBiomeModifiers {
         context.register(ORE_SAPPHIRE_BURIED, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(UOPlacedFeatures.ORE_SAPPHIRE_BURIED)),
+                GenerationStep.Decoration.UNDERGROUND_ORES)
+        );
+
+        // Ruby Ores
+        context.register(ORE_RUBY, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_NETHER),
+                HolderSet.direct(placedFeatures.getOrThrow(UOPlacedFeatures.ORE_RUBY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES)
+        );
+        context.register(ORE_RUBY_LARGE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_NETHER),
+                HolderSet.direct(placedFeatures.getOrThrow(UOPlacedFeatures.ORE_RUBY_LARGE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES)
         );
     }

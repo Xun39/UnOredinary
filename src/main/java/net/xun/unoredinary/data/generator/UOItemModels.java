@@ -22,6 +22,10 @@ public class UOItemModels extends UOItemModelProvider {
         toolSetModels(UOTools.SAPPHIRE);
         armorSetModels(UOArmors.SAPPHIRE);
 
+        basicItem(UOItems.NETHER_RUBY.get());
+        toolSetModels(UOTools.RUBY);
+        armorSetModels(UOArmors.RUBY);
+
         basicItem(UOItems.GLACIUM_SHARD.get());
         basicItem(UOItems.GLACIUM_CRYSTAL.get());
 

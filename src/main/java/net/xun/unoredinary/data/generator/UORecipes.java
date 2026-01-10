@@ -8,6 +8,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 import net.xun.lib.common.api.item.tools.ToolSet;
@@ -51,20 +52,6 @@ public class UORecipes extends UORecipeProvider {
                 .requires(Blocks.SNOW_BLOCK, 3)
                 .unlockedBy(getHasName(UOItems.CRYIC_POWDER), has(UOTags.Items.DUSTS_CRYIC))
                 .save(recipeOutput);
-
-        // Sapphire-related
-        threeByThreePackerConvertible(
-                recipeOutput,
-                RecipeCategory.BUILDING_BLOCKS,
-                RecipeCategory.MISC,
-                Ingredient.of(UOBlocks.SAPPHIRE_BLOCK),
-                UOBlocks.SAPPHIRE_BLOCK,
-                Ingredient.of(UOTags.Items.GEMS_SAPPHIRE),
-                UOItems.SAPPHIRE
-        );
-
-        toolsetRecipe(recipeOutput, UOTools.SAPPHIRE, Ingredient.of(UOTags.Items.GEMS_SAPPHIRE), UOItems.SAPPHIRE);
-        armorsetRecipe(recipeOutput, UOArmors.SAPPHIRE, Ingredient.of(UOTags.Items.GEMS_SAPPHIRE), UOItems.SAPPHIRE);
 
         // Glacium-related
         threeByThreePacker(recipeOutput, RecipeCategory.MISC, UOItems.GLACIUM_CRYSTAL, Ingredient.of(UOItems.GLACIUM_SHARD), UOItems.GLACIUM_SHARD);
@@ -198,5 +185,43 @@ public class UORecipes extends UORecipeProvider {
 
         toolsetRecipe(recipeOutput, UOTools.LUMINIUM, Ingredient.of(UOTags.Items.INGOTS_LUMINIUM), UOItems.LUMINIUM_INGOT);
         armorsetRecipe(recipeOutput, UOArmors.LUMINIUM, Ingredient.of(UOTags.Items.INGOTS_LUMINIUM), UOItems.LUMINIUM_INGOT);
+
+        // Sapphire-related
+        threeByThreePackerConvertible(
+                recipeOutput,
+                RecipeCategory.BUILDING_BLOCKS,
+                RecipeCategory.MISC,
+                Ingredient.of(UOBlocks.SAPPHIRE_BLOCK),
+                UOBlocks.SAPPHIRE_BLOCK,
+                Ingredient.of(UOTags.Items.GEMS_SAPPHIRE),
+                UOItems.SAPPHIRE
+        );
+
+        toolsetRecipe(recipeOutput, UOTools.SAPPHIRE, Ingredient.of(UOTags.Items.GEMS_SAPPHIRE), UOItems.SAPPHIRE);
+        armorsetRecipe(recipeOutput, UOArmors.SAPPHIRE, Ingredient.of(UOTags.Items.GEMS_SAPPHIRE), UOItems.SAPPHIRE);
+
+        // Ruby-related
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, UOBlocks.TRANSENCHANTING_TABLE)
+                .define('^', Items.GHAST_TEAR)
+                .define('#', Blocks.OBSIDIAN)
+                .define('*', UOTags.Items.GEMS_RUBY)
+                .pattern(" ^ ")
+                .pattern("*#*")
+                .pattern("###")
+                .unlockedBy(getHasName(UOItems.NETHER_RUBY), has(UOTags.Items.GEMS_RUBY))
+                .save(recipeOutput);
+
+        threeByThreePackerConvertible(
+                recipeOutput,
+                RecipeCategory.BUILDING_BLOCKS,
+                RecipeCategory.MISC,
+                Ingredient.of(UOBlocks.RUBY_BLOCK),
+                UOBlocks.RUBY_BLOCK,
+                Ingredient.of(UOTags.Items.GEMS_RUBY),
+                UOItems.NETHER_RUBY
+        );
+
+        toolsetRecipe(recipeOutput, UOTools.RUBY, Ingredient.of(UOTags.Items.GEMS_RUBY), UOItems.NETHER_RUBY);
+        armorsetRecipe(recipeOutput, UOArmors.RUBY, Ingredient.of(UOTags.Items.GEMS_RUBY), UOItems.NETHER_RUBY);
     }
 }

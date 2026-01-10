@@ -23,4 +23,8 @@ public class UOToolTiers {
     public static final Tier SAPPHIRE = new SimpleTier(
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1261, 10.0F, 3.0F, 9, () -> Ingredient.of(UOTags.Items.GEMS_SAPPHIRE)
     );
+
+    public static final Tier RUBY = new SimpleTier(
+            BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1376, 9.0F, 3.0F, 11, () -> Ingredient.of(UOTags.Items.GEMS_RUBY)
+    );
 }
