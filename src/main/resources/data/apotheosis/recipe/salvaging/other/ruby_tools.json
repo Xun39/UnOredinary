@@ -2,19 +2,19 @@
   "type": "apotheosis:salvaging",
   "input": [
     {
-      "item": "minecraft:ruby_sword"
+      "item": "unoredinary:ruby_sword"
     },
     {
-      "item": "minecraft:ruby_pickaxe"
+      "item": "unoredinary:ruby_pickaxe"
     },
     {
-      "item": "minecraft:ruby_axe"
+      "item": "unoredinary:ruby_axe"
     },
     {
-      "item": "minecraft:ruby_shovel"
+      "item": "unoredinary:ruby_shovel"
     },
     {
-      "item": "minecraft:ruby_hoe"
+      "item": "unoredinary:ruby_hoe"
     }
   ],
   "outputs": [
@@ -23,7 +23,7 @@
       "min_count": 0,
       "stack": {
         "count": 1,
-        "id": "minecraft:ruby_ingot"
+        "id": "unoredinary:ruby_ingot"
       }
     }
   ]

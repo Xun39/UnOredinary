@@ -2,19 +2,19 @@
   "type": "apotheosis:salvaging",
   "input": [
     {
-      "item": "minecraft:froststeel_sword"
+      "item": "unoredinary:froststeel_sword"
     },
     {
-      "item": "minecraft:froststeel_pickaxe"
+      "item": "unoredinary:froststeel_pickaxe"
     },
     {
-      "item": "minecraft:froststeel_axe"
+      "item": "unoredinary:froststeel_axe"
     },
     {
-      "item": "minecraft:froststeel_shovel"
+      "item": "unoredinary:froststeel_shovel"
     },
     {
-      "item": "minecraft:froststeel_hoe"
+      "item": "unoredinary:froststeel_hoe"
     }
   ],
   "outputs": [
@@ -23,7 +23,7 @@
       "min_count": 0,
       "stack": {
         "count": 1,
-        "id": "minecraft:froststeel_ingot"
+        "id": "unoredinary:froststeel_ingot"
       }
     }
   ]

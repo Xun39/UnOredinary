@@ -2,16 +2,16 @@
   "type": "apotheosis:salvaging",
   "input": [
     {
-      "item": "minecraft:ruby_helmet"
+      "item": "unoredinary:ruby_helmet"
     },
     {
-      "item": "minecraft:ruby_chestplate"
+      "item": "unoredinary:ruby_chestplate"
     },
     {
-      "item": "minecraft:ruby_leggings"
+      "item": "unoredinary:ruby_leggings"
     },
     {
-      "item": "minecraft:ruby_boots"
+      "item": "unoredinary:ruby_boots"
     }
   ],
   "outputs": [
@@ -20,7 +20,7 @@
       "min_count": 1,
       "stack": {
         "count": 1,
-        "id": "minecraft:ruby_ingot"
+        "id": "unoredinary:ruby_ingot"
       }
     }
   ]

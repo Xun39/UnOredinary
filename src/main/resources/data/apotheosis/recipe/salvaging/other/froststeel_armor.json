@@ -2,16 +2,16 @@
   "type": "apotheosis:salvaging",
   "input": [
     {
-      "item": "minecraft:froststeel_helmet"
+      "item": "unoredinary:froststeel_helmet"
     },
     {
-      "item": "minecraft:froststeel_chestplate"
+      "item": "unoredinary:froststeel_chestplate"
     },
     {
-      "item": "minecraft:froststeel_leggings"
+      "item": "unoredinary:froststeel_leggings"
     },
     {
-      "item": "minecraft:froststeel_boots"
+      "item": "unoredinary:froststeel_boots"
     }
   ],
   "outputs": [
@@ -20,7 +20,7 @@
       "min_count": 1,
       "stack": {
         "count": 1,
-        "id": "minecraft:froststeel_ingot"
+        "id": "unoredinary:froststeel_ingot"
       }
     }
   ]

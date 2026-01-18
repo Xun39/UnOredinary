@@ -2,19 +2,19 @@
   "type": "apotheosis:salvaging",
   "input": [
     {
-      "item": "minecraft:sapphire_sword"
+      "item": "unoredinary:sapphire_sword"
     },
     {
-      "item": "minecraft:sapphire_pickaxe"
+      "item": "unoredinary:sapphire_pickaxe"
     },
     {
-      "item": "minecraft:sapphire_axe"
+      "item": "unoredinary:sapphire_axe"
     },
     {
-      "item": "minecraft:sapphire_shovel"
+      "item": "unoredinary:sapphire_shovel"
     },
     {
-      "item": "minecraft:sapphire_hoe"
+      "item": "unoredinary:sapphire_hoe"
     }
   ],
   "outputs": [
@@ -23,7 +23,7 @@
       "min_count": 0,
       "stack": {
         "count": 1,
-        "id": "minecraft:sapphire_ingot"
+        "id": "unoredinary:sapphire_ingot"
       }
     }
   ]

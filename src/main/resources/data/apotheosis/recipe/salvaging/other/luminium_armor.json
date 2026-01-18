@@ -2,16 +2,16 @@
   "type": "apotheosis:salvaging",
   "input": [
     {
-      "item": "minecraft:luminium_helmet"
+      "item": "unoredinary:luminium_helmet"
     },
     {
-      "item": "minecraft:luminium_chestplate"
+      "item": "unoredinary:luminium_chestplate"
     },
     {
-      "item": "minecraft:luminium_leggings"
+      "item": "unoredinary:luminium_leggings"
     },
     {
-      "item": "minecraft:luminium_boots"
+      "item": "unoredinary:luminium_boots"
     }
   ],
   "outputs": [
@@ -20,7 +20,7 @@
       "min_count": 1,
       "stack": {
         "count": 1,
-        "id": "minecraft:luminium_ingot"
+        "id": "unoredinary:luminium_ingot"
       }
     }
   ]

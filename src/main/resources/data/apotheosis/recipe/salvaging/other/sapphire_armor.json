@@ -2,16 +2,16 @@
   "type": "apotheosis:salvaging",
   "input": [
     {
-      "item": "minecraft:sapphire_helmet"
+      "item": "unoredinary:sapphire_helmet"
     },
     {
-      "item": "minecraft:sapphire_chestplate"
+      "item": "unoredinary:sapphire_chestplate"
     },
     {
-      "item": "minecraft:sapphire_leggings"
+      "item": "unoredinary:sapphire_leggings"
     },
     {
-      "item": "minecraft:sapphire_boots"
+      "item": "unoredinary:sapphire_boots"
     }
   ],
   "outputs": [
@@ -20,7 +20,7 @@
       "min_count": 1,
       "stack": {
         "count": 1,
-        "id": "minecraft:sapphire_ingot"
+        "id": "unoredinary:sapphire_ingot"
       }
     }
   ]

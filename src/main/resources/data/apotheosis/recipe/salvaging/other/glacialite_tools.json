@@ -2,19 +2,19 @@
   "type": "apotheosis:salvaging",
   "input": [
     {
-      "item": "minecraft:glacialite_sword"
+      "item": "unoredinary:glacialite_sword"
     },
     {
-      "item": "minecraft:glacialite_pickaxe"
+      "item": "unoredinary:glacialite_pickaxe"
     },
     {
-      "item": "minecraft:glacialite_axe"
+      "item": "unoredinary:glacialite_axe"
     },
     {
-      "item": "minecraft:glacialite_shovel"
+      "item": "unoredinary:glacialite_shovel"
     },
     {
-      "item": "minecraft:glacialite_hoe"
+      "item": "unoredinary:glacialite_hoe"
     }
   ],
   "outputs": [
@@ -23,7 +23,7 @@
       "min_count": 0,
       "stack": {
         "count": 1,
-        "id": "minecraft:glacialite_ingot"
+        "id": "unoredinary:glacialite_ingot"
       }
     }
   ]
