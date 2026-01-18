@@ -1,0 +1,30 @@
+{
+  "type": "apotheosis:salvaging",
+  "input": [
+    {
+      "item": "minecraft:luminium_sword"
+    },
+    {
+      "item": "minecraft:luminium_pickaxe"
+    },
+    {
+      "item": "minecraft:luminium_axe"
+    },
+    {
+      "item": "minecraft:luminium_shovel"
+    },
+    {
+      "item": "minecraft:luminium_hoe"
+    }
+  ],
+  "outputs": [
+    {
+      "max_count": 1,
+      "min_count": 0,
+      "stack": {
+        "count": 1,
+        "id": "minecraft:luminium_ingot"
+      }
+    }
+  ]
+}

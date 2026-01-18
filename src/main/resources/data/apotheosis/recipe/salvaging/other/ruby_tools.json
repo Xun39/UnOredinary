@@ -1,0 +1,30 @@
+{
+  "type": "apotheosis:salvaging",
+  "input": [
+    {
+      "item": "minecraft:ruby_sword"
+    },
+    {
+      "item": "minecraft:ruby_pickaxe"
+    },
+    {
+      "item": "minecraft:ruby_axe"
+    },
+    {
+      "item": "minecraft:ruby_shovel"
+    },
+    {
+      "item": "minecraft:ruby_hoe"
+    }
+  ],
+  "outputs": [
+    {
+      "max_count": 1,
+      "min_count": 0,
+      "stack": {
+        "count": 1,
+        "id": "minecraft:ruby_ingot"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "apotheosis:salvaging",
+  "input": [
+    {
+      "item": "minecraft:glacialite_helmet"
+    },
+    {
+      "item": "minecraft:glacialite_chestplate"
+    },
+    {
+      "item": "minecraft:glacialite_leggings"
+    },
+    {
+      "item": "minecraft:glacialite_boots"
+    }
+  ],
+  "outputs": [
+    {
+      "max_count": 3,
+      "min_count": 1,
+      "stack": {
+        "count": 1,
+        "id": "minecraft:glacialite_ingot"
+      }
+    }
+  ]
+}
