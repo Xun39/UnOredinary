@@ -32,6 +32,7 @@ public class UnOredinary {
         UOBlocks.BLOCKS.register(modEventBus);
         UOPotions.POTIONS.register(modEventBus);
         UOSounds.SOUND_EVENTS.register(modEventBus);
+        UOAttributes.ATTRIBUTES.register(modEventBus);
         UOMobEffects.MOB_EFFECTS.register(modEventBus);
         UOMenuTypes.MENU_TYPES.register(modEventBus);
         UOEntityTypes.ENTITY_TYPES.register(modEventBus);

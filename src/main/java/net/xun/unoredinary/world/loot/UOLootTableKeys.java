@@ -12,6 +12,7 @@ public class UOLootTableKeys {
 
     // Frost Dungeon
     public static final ResourceKey<LootTable> FROST_DUNGEON_CENTER = createKey("chests/frost_dungeon/center");
+    public static final ResourceKey<LootTable> FROST_DUNGEON_GRAND_HALL = createKey("chests/frost_dungeon/grand_hall");
     public static final ResourceKey<LootTable> FROST_DUNGEON_INTERSECTION = createKey("chests/frost_dungeon/intersection");
     public static final ResourceKey<LootTable> FROST_DUNGEON_TREASURE = createKey("chests/frost_dungeon/treasure");
     public static final ResourceKey<LootTable> FROST_DUNGEON_MONSTER_ROOM = createKey("chests/frost_dungeon/monster_room");

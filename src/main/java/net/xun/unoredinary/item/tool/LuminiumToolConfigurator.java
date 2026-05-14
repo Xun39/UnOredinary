@@ -4,8 +4,8 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
-import net.xun.lib.common.api.item.tools.ToolConfigurator;
-import net.xun.lib.common.api.item.tools.ToolType;
+import net.xun.armory.api.item.tools.ToolCustomizer;
+import net.xun.armory.api.item.tools.ToolType;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategy;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
@@ -13,7 +13,7 @@ import net.xun.unoredinary.config.common.UOCommonConfig;
 
 import java.util.List;
 
-public class LuminiumToolConfigurator implements ToolConfigurator {
+public class LuminiumToolConfigurator implements ToolCustomizer {
     @Override
     public Item createTool(ToolType type, Tier tier, Item.Properties properties) {
         switch (type) {
@@ -78,7 +78,7 @@ public class LuminiumToolConfigurator implements ToolConfigurator {
                 };
             }
             default -> {
-                return type.create(tier, properties);
+                throw new MatchException(null, null);
             }
         }
     }

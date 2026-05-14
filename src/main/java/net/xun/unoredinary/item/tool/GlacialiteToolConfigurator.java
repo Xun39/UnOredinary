@@ -11,20 +11,21 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
-import net.xun.lib.common.api.item.tools.ToolConfigurator;
-import net.xun.lib.common.api.item.tools.ToolType;
+import net.xun.armory.api.item.tools.ToolCustomizer;
+import net.xun.armory.api.item.tools.ToolType;
 import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategy;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
 import net.xun.unoredinary.config.client.UOClientConfig;
 import net.xun.unoredinary.config.common.UOCommonConfig;
+import net.xun.unoredinary.data.generator.UOParticles;
 import net.xun.unoredinary.registry.UOMobEffects;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
 import java.util.List;
 
-public class GlacialiteToolConfigurator implements ToolConfigurator {
+public class GlacialiteToolConfigurator implements ToolCustomizer {
     private static final int FROSTED_DURATION = 400;
     private static final int WEAKNESS_DURATION_NOVA = 60;
     private static final int WEAKNESS_AMPLIFIER_NOVA = 2;
@@ -32,6 +33,8 @@ public class GlacialiteToolConfigurator implements ToolConfigurator {
     private static final int SLOW_AMPLIFIER = 2;
     private static final int WEAKNESS_DURATION_SINGLE = 40;
     private static final int WEAKNESS_AMPLIFIER_SINGLE = 1;
+
+    private static final float FROST_NOVA_RADIUS = 4.0F;
 
     @Override
     public Item createTool(ToolType type, Tier tier, Item.Properties properties) {
@@ -97,7 +100,7 @@ public class GlacialiteToolConfigurator implements ToolConfigurator {
                 };
             }
             default -> {
-                return type.create(tier, properties);
+                throw new MatchException(null, null);
             }
         }
     }
@@ -123,19 +126,19 @@ public class GlacialiteToolConfigurator implements ToolConfigurator {
 
     private static void applyFrostNovaEffect(LivingEntity target) {
         Level level = target.level();
-        AABB aabb = BlockPosUtils.createAABBFromCenter(target.blockPosition(), 4, 2, 4);
+        AABB aabb = BlockPosUtils.createAABBFromCenter(target.blockPosition(), FROST_NOVA_RADIUS, FROST_NOVA_RADIUS, FROST_NOVA_RADIUS);
         List<LivingEntity> hostiles = level.getEntitiesOfClass(
                 LivingEntity.class,
                 aabb,
                 entity -> entity instanceof Enemy
         );
 
+        if (UOClientConfig.toolEffectConfig.glacialiteConfig.doHitParticlesSpawn.get()) {
+            spawnFrostParticles(target);
+        }
+
         for (LivingEntity hostile : hostiles) {
             applyFrostEffects(hostile);
-
-            if (UOClientConfig.toolEffectConfig.glacialiteConfig.doHitParticlesSpawn.get()) {
-                spawnFrostParticles(hostile);
-            }
         }
     }
 
@@ -145,26 +148,39 @@ public class GlacialiteToolConfigurator implements ToolConfigurator {
                 buildEffectInstance(MobEffects.WEAKNESS, WEAKNESS_DURATION_NOVA, WEAKNESS_AMPLIFIER_NOVA)
         );
 
-        MobEffectUtils.applyEffectsWithStrategy(target, effects, EffectStackingStrategy.FORCE_OVERRIDE);
+        MobEffectUtils.applyEffectsWithStrategy(target, effects, EffectStackingStrategy.UPGRADE_EXISTING);
     }
 
     private static void spawnFrostParticles(LivingEntity target) {
         if (!(target.level() instanceof ServerLevel serverLevel)) return;
 
-        double centerX = target.getX();
-        double centerY = target.getY() + target.getBbHeight() / 2.0;
-        double centerZ = target.getZ();
-
-        double halfWidth = target.getBbWidth() / 2.0;
-        double halfHeight = target.getBbHeight() / 2.0;
+        double x = target.getX();
+        double y = target.getBoundingBox().minY;
+        double z = target.getZ();
 
         serverLevel.sendParticles(
-                UOParticleTypes.SUBZERO_FROST.get(),
-                centerX, centerY, centerZ,
-                24,
-                halfWidth, halfHeight, halfWidth,
-                0.03
+                UOParticleTypes.FROST_NOVA.get(),
+                x, y, z,
+                1,
+                0, 0, 0,
+                FROST_NOVA_RADIUS
         );
+//        if (!(target.level() instanceof ServerLevel serverLevel)) return;
+//
+//        double centerX = target.getX();
+//        double centerY = target.getY() + target.getBbHeight() / 2.0;
+//        double centerZ = target.getZ();
+//
+//        double halfWidth = target.getBbWidth() / 2.0;
+//        double halfHeight = target.getBbHeight() / 2.0;
+//
+//        serverLevel.sendParticles(
+//                UOParticleTypes.SUBZERO_FROST.get(),
+//                centerX, centerY, centerZ,
+//                24,
+//                halfWidth, halfHeight, halfWidth,
+//                0.03
+//        );
     }
 
     private static void applySingleTargetEffects(LivingEntity target) {

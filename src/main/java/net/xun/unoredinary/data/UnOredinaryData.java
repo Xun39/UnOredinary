@@ -38,6 +38,8 @@ public class UnOredinaryData {
         generator.addProvider(server, new UORecipes(output, registries));
         generator.addProvider(server, blockTagsProvider);
         generator.addProvider(server, new UOItemTags(output, registries, blockTagsProvider.contentsGetter(), helper));
+        generator.addProvider(server, new UOEntityTypeTags(output, registries, helper));
+        generator.addProvider(server, new UODamageTypeTags(output, registries, helper));
         generator.addProvider(server, new UOBiomeTags(output, registries, helper));
 
         generator.addProvider(server, new UODatapackEntries(output, registries));

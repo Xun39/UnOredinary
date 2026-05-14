@@ -8,8 +8,8 @@ import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.xun.lib.common.api.item.armor.ArmorSet;
-import net.xun.lib.common.api.item.tools.ToolSet;
+import net.xun.armory.api.item.armor.ArmorSet;
+import net.xun.armory.api.item.tools.ToolSet;
 import net.xun.unoredinary.UnOredinary;
 
 import java.util.Locale;
@@ -20,7 +20,7 @@ public abstract class UOLanguageProvider extends LanguageProvider {
     }
 
     public void addToolSet(ToolSet toolSet) {
-        String baseName = toolSet.getName();
+        String baseName = toolSet.getSetName();
         String formattedName = baseName.substring(0, 1).toUpperCase(Locale.ENGLISH) + baseName.substring(1).toLowerCase(Locale.ENGLISH);
 
         addItem(toolSet.getSword(), formattedName + " Sword");
@@ -31,7 +31,7 @@ public abstract class UOLanguageProvider extends LanguageProvider {
     }
 
     public void addArmorSet(ArmorSet armorSet) {
-        String baseName = armorSet.getName();
+        String baseName = armorSet.getSetName();
         String formattedName = baseName.substring(0, 1).toUpperCase(Locale.ENGLISH) + baseName.substring(1).toLowerCase(Locale.ENGLISH);
 
         addItem(armorSet.getHelmet(), formattedName + " Helmet");
@@ -59,6 +59,10 @@ public abstract class UOLanguageProvider extends LanguageProvider {
         add("item.minecraft.splash_potion.effect." + potion.getKey().location().getPath(), "Splash Potion of " + name);
         add("item.minecraft.lingering_potion.effect." + potion.getKey().location().getPath(), "Lingering Potion of " + name);
         add("item.minecraft.tipped_arrow.effect." + potion.getKey().location().getPath(), "Arrow of " + name);
+    }
+
+    public void addAttribute(String key, String name) {
+        this.add("unoredinary.attribute." + key, name);
     }
 
     public void addToolTip(String key, String translation) {

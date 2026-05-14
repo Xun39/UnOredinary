@@ -12,6 +12,7 @@ public class UOParticleTypes {
 
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> RIME = register("rime", false);
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SUBZERO_FROST = register("subzero_frost", false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> FROST_NOVA = register("frost_nova", false);
 
     private static DeferredHolder<ParticleType<?>, SimpleParticleType> register(String name, boolean overrideLimiter) {
         return PARTICLE_TYPES.register(name, () -> new SimpleParticleType(overrideLimiter));

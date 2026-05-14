@@ -11,8 +11,8 @@ import net.minecraft.world.item.armortrim.TrimMaterials;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.xun.lib.common.api.item.armor.ArmorSet;
-import net.xun.lib.common.api.item.tools.ToolSet;
+import net.xun.armory.api.item.armor.ArmorSet;
+import net.xun.armory.api.item.tools.ToolSet;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.UnOredinary;
 

@@ -1,7 +1,7 @@
 {
-  "variants": {
-    "": {
-      "model": "unoredinary:block/deepslate_sapphire_ore"
+    "variants": {
+        "": {
+            "model": "unoredinary:block/deepslate_sapphire_ore"
+        }
     }
-  }
 }

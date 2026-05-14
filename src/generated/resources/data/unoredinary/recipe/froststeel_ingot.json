@@ -1,28 +1,28 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "tag": "c:dusts/cryic"
-    },
-    {
-      "tag": "c:dusts/cryic"
-    },
-    {
-      "tag": "c:ingots/iron"
-    },
-    {
-      "tag": "c:ingots/iron"
-    },
-    {
-      "tag": "c:ingots/iron"
-    },
-    {
-      "item": "minecraft:packed_ice"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        {
+            "tag": "c:dusts/cryic"
+        },
+        {
+            "tag": "c:dusts/cryic"
+        },
+        {
+            "tag": "c:ingots/iron"
+        },
+        {
+            "tag": "c:ingots/iron"
+        },
+        {
+            "tag": "c:ingots/iron"
+        },
+        {
+            "item": "minecraft:packed_ice"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "id": "unoredinary:froststeel_ingot"
     }
-  ],
-  "result": {
-    "count": 1,
-    "id": "unoredinary:froststeel_ingot"
-  }
 }

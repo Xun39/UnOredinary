@@ -30,6 +30,33 @@ public class UOBlocks {
             )
     );
 
+    // Building Blocks
+    public static final DeferredBlock<Block> POLAR_STONE = register("polar_stone",
+            () -> new Block(
+                    BlockBehaviour.Properties.of().mapColor(MapColor.CLAY).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)
+            )
+    );
+    public static final DeferredBlock<StairBlock> POLAR_STONE_STAIRS = registerStair("polar_stone_stairs", UOBlocks.POLAR_STONE);
+    public static final DeferredBlock<SlabBlock> POLAR_STONE_SLAB = registerSlab("polar_stone_slab", UOBlocks.POLAR_STONE);
+
+    public static final DeferredBlock<Block> POLAR_COBBLESTONE = register("polar_cobblestone",
+            () -> new Block(
+                    BlockBehaviour.Properties.of().mapColor(MapColor.CLAY).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F)
+            )
+    );
+    public static final DeferredBlock<StairBlock> POLAR_COBBLESTONE_STAIRS = registerStair("polar_cobblestone_stairs", UOBlocks.POLAR_COBBLESTONE);
+    public static final DeferredBlock<SlabBlock> POLAR_COBBLESTONE_SLAB = registerSlab("polar_cobblestone_slab", UOBlocks.POLAR_COBBLESTONE);
+    public static final DeferredBlock<WallBlock> POLAR_COBBLESTONE_WALL = registerWall("polar_cobblestone_wall", UOBlocks.POLAR_COBBLESTONE);
+
+    public static final DeferredBlock<Block> POLAR_STONE_BRICKS = register("polar_stone_bricks",
+            () -> new Block(
+                    BlockBehaviour.Properties.of().mapColor(MapColor.CLAY).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)
+            )
+    );
+    public static final DeferredBlock<StairBlock> POLAR_STONE_BRICKS_STAIRS = registerStair("polar_stone_bricks_stairs", UOBlocks.POLAR_STONE_BRICKS);
+    public static final DeferredBlock<SlabBlock> POLAR_STONE_BRICKS_SLAB = registerSlab("polar_stone_bricks_slab", UOBlocks.POLAR_STONE_BRICKS);
+    public static final DeferredBlock<WallBlock> POLAR_STONE_BRICKS_WALL = registerWall("polar_stone_bricks_wall", UOBlocks.POLAR_STONE_BRICKS);
+
     // Ores
     public static final DeferredBlock<Block> CRYIC_ORE = register("cryic_ore",
             () -> new DropExperienceBlock(
@@ -204,6 +231,18 @@ public class UOBlocks {
                             .sound(SoundType.METAL)
             )
     );
+
+    private static DeferredBlock<StairBlock> registerStair(String name, DeferredBlock<Block> baseBlock) {
+        return register(name, () -> new StairBlock(baseBlock.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(baseBlock.get())));
+    }
+
+    private static DeferredBlock<SlabBlock> registerSlab(String name, DeferredBlock<Block> baseBlock) {
+        return register(name, () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(baseBlock.get())));
+    }
+
+    private static DeferredBlock<WallBlock> registerWall(String name, DeferredBlock<Block> baseBlock) {
+        return register(name, () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(baseBlock.get())));
+    }
 
     private static <T extends Block> DeferredBlock<T> register(String name, Supplier<T> supplier) {
         DeferredBlock<T> registered = BLOCKS.register(name, supplier);

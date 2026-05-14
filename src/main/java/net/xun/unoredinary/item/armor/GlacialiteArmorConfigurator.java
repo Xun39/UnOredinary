@@ -15,17 +15,15 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.phys.shapes.CollisionContext;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
-import net.xun.lib.common.api.item.armor.ArmorConfigurator;
-import net.xun.lib.common.api.item.armor.ArmorType;
+import net.xun.armory.api.item.armor.ArmorCustomizer;
+import net.xun.armory.api.item.armor.ArmorType;
 import net.xun.lib.common.api.util.ArmorSlotsUtils;
 import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.lib.common.api.util.MobEffectUtils;
@@ -36,11 +34,11 @@ import net.xun.unoredinary.registry.UOArmorMaterials;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID)
-public class GlacialiteArmorConfigurator implements ArmorConfigurator {
+public class GlacialiteArmorConfigurator implements ArmorCustomizer {
     @Override
-    public ArmorItem createArmor(ArmorType type, Holder<ArmorMaterial> material, int durabilityFactor, Item.Properties props) {
+    public ArmorItem createArmorItem(ArmorType type, Holder<ArmorMaterial> material, int durabilityFactor, Item.Properties props) {
 
-        return new ArmorItem(material, type.getType(), props.durability(type.getType().getDurability(durabilityFactor))) {
+        return new ArmorItem(material, type.getArmorType(), props.durability(type.getArmorType().getDurability(durabilityFactor))) {
 
             @Override
             public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {

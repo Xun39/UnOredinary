@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "unoredinary:block/sapphire_ore"
-  }
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "unoredinary:block/sapphire_ore"
+    }
 }

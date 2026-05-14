@@ -7,8 +7,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
-import net.xun.lib.common.api.item.armor.ArmorSet;
-import net.xun.lib.common.api.item.tools.ToolSet;
+import net.xun.armory.api.item.armor.ArmorSet;
+import net.xun.armory.api.item.tools.ToolSet;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.registry.UOItems;
 import net.xun.unoredinary.util.UOTags;
@@ -200,7 +200,7 @@ public abstract class UORecipeProvider extends RecipeProvider {
                 armorSet.getAll().stream().map(item -> (ItemLike) item)
         ).toArray(ItemLike[]::new);
 
-        if (!Objects.equals(toolSet.getName(), armorSet.getName()))
+        if (!Objects.equals(toolSet.getSetName(), armorSet.getSetName()))
             return;
 
         SimpleCookingRecipeBuilder builder = SimpleCookingRecipeBuilder.smelting(
@@ -223,7 +223,7 @@ public abstract class UORecipeProvider extends RecipeProvider {
                 armorSet.getAll().stream().map(item -> (ItemLike) item)
         ).toArray(ItemLike[]::new);
 
-        if (!Objects.equals(toolSet.getName(), armorSet.getName()))
+        if (!Objects.equals(toolSet.getSetName(), armorSet.getSetName()))
             return;
 
         SimpleCookingRecipeBuilder builder = SimpleCookingRecipeBuilder.blasting(

@@ -17,6 +17,7 @@ import net.xun.unoredinary.client.gui.TransenchantingTableScreen;
 import net.xun.unoredinary.client.model.UOModelLayers;
 import net.xun.unoredinary.client.model.entity.FrostZombieModel;
 import net.xun.unoredinary.client.model.renderer.FrostZombieRenderer;
+import net.xun.unoredinary.client.particle.FrostNovaParticle;
 import net.xun.unoredinary.client.particle.RimeParticle;
 import net.xun.unoredinary.client.particle.SubzeroFrostParticle;
 import net.xun.unoredinary.registry.UOEntityTypes;
@@ -35,6 +36,7 @@ public class RegistrationEvents {
     public static void registerParticleProviders(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(UOParticleTypes.RIME.get(), RimeParticle.Provider::new);
         event.registerSpriteSet(UOParticleTypes.SUBZERO_FROST.get(), SubzeroFrostParticle.Provider::new);
+        event.registerSpriteSet(UOParticleTypes.FROST_NOVA.get(), FrostNovaParticle.Provider::new);
     }
 
     @SubscribeEvent

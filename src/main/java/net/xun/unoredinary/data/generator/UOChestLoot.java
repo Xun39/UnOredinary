@@ -14,6 +14,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.xun.unoredinary.registry.UOBlocks;
 import net.xun.unoredinary.registry.UOItems;
 import net.xun.unoredinary.world.loot.UOLootTableKeys;
 
@@ -48,27 +49,21 @@ public record UOChestLoot(HolderLookup.Provider registries) implements LootTable
         output.accept(UOLootTableKeys.FROST_DUNGEON_CENTER,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .setRolls(UniformGenerator.between(1.0F, 3.0F))
+                                .setRolls(ConstantValue.exactly(3.0F))
                                 .add(LootItem.lootTableItem(Items.SADDLE).setWeight(20))
                                 .add(LootItem.lootTableItem(Items.NAME_TAG).setWeight(15))
                                 .add(LootItem.lootTableItem(UOItems.SAPPHIRE).setWeight(12))
-                                .add(LootItem.lootTableItem(Items.IRON_HORSE_ARMOR).setWeight(10))
-                                .add(LootItem.lootTableItem(Items.DIAMOND_HORSE_ARMOR).setWeight(5))
-                                .add(LootItem.lootTableItem(Items.GOLDEN_APPLE).setWeight(5))
-                                .add(LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE).setWeight(3))
-                                .add(LootItem.lootTableItem(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE).setWeight(8))
-                                .add(LootItem.lootTableItem(UOItems.GLACIALITE_INGOT).setWeight(4))
+                                .add(LootItem.lootTableItem(Items.DIAMOND).setWeight(10))
+                                .add(LootItem.lootTableItem(Items.DIAMOND_HORSE_ARMOR).setWeight(8))
+                                .add(LootItem.lootTableItem(Items.GOLDEN_APPLE).setWeight(8))
+                                .add(LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE).setWeight(5))
+                                .add(LootItem.lootTableItem(UOItems.GLACIUM_SHARD).setWeight(5))
                         ).withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(4.0F))
-                                .add(LootItem.lootTableItem(Items.COD).setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))))
-                                .add(LootItem.lootTableItem(Items.SALMON).setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
-                                .add(LootItem.lootTableItem(Items.ROTTEN_FLESH).setWeight(15).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                                .add(LootItem.lootTableItem(Items.STRING).setWeight(15).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))))
-                                .add(LootItem.lootTableItem(Items.BONE).setWeight(15).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
-                                .add(LootItem.lootTableItem(Items.STRING).setWeight(15).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                                .add(LootItem.lootTableItem(Items.COAL).setWeight(15).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                                .add(LootItem.lootTableItem(Items.IRON_INGOT).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                                .add(LootItem.lootTableItem(Items.GOLD_INGOT).setWeight(5))
+                                .add(LootItem.lootTableItem(UOBlocks.POLAR_COBBLESTONE).setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(8.0F, 16.0F))))
+                                .add(LootItem.lootTableItem(Items.COAL).setWeight(15).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 9.0F))))
+                                .add(LootItem.lootTableItem(UOItems.FROSTSTEEL_NUGGET).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))))
+                                .add(LootItem.lootTableItem(UOItems.FROSTSTEEL_INGOT).setWeight(8))
                                 .add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(5).apply(EnchantRandomlyFunction.randomEnchantment()))
                         )
         );

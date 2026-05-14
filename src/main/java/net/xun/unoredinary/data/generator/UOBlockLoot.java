@@ -46,6 +46,20 @@ public class UOBlockLoot extends UOBlockLootProvider {
 
         /* ------------------------------ MISC ------------------------------ */
         dropSelf(UOBlocks.TRANSENCHANTING_TABLE.get());
+
+        dropSelf(UOBlocks.POLAR_STONE.get());
+        dropSelf(UOBlocks.POLAR_STONE_STAIRS.get());
+        slabDrop(UOBlocks.POLAR_STONE_SLAB.get());
+
+        dropSelf(UOBlocks.POLAR_COBBLESTONE.get());
+        dropSelf(UOBlocks.POLAR_COBBLESTONE_STAIRS.get());
+        slabDrop(UOBlocks.POLAR_COBBLESTONE_SLAB.get());
+        dropSelf(UOBlocks.POLAR_COBBLESTONE_WALL.get());
+
+        dropSelf(UOBlocks.POLAR_STONE_BRICKS.get());
+        dropSelf(UOBlocks.POLAR_STONE_BRICKS_STAIRS.get());
+        slabDrop(UOBlocks.POLAR_STONE_BRICKS_SLAB.get());
+        dropSelf(UOBlocks.POLAR_STONE_BRICKS_WALL.get());
     }
 
     @Override

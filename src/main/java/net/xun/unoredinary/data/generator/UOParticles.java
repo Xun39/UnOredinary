@@ -16,5 +16,6 @@ public class UOParticles extends ParticleDescriptionProvider {
     protected void addDescriptions() {
         spriteSet(UOParticleTypes.RIME.get(), CommonUtils.modLoc("rime"), 8, true);
         spriteSet(UOParticleTypes.SUBZERO_FROST.get(), CommonUtils.modLoc("subzero_frost"), 5, true);
+        spriteSet(UOParticleTypes.FROST_NOVA.get(), CommonUtils.modLoc("frost_nova"), 21, false);
     }
 }

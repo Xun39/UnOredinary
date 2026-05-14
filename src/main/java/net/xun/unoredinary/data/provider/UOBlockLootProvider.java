@@ -32,8 +32,8 @@ public abstract class UOBlockLootProvider extends BlockLootSubProvider {
         super.add(block, (result) -> createDropOther(result, drop));
     }
 
-    public void slabDrop(Supplier<? extends Block> block) {
-        add(block.get(), (result) -> createSlabItemTable(block.get()));
+    public void slabDrop(Block block) {
+        add(block, (result) -> createSlabItemTable(block));
     }
 
     private LootTable.Builder createDropOther(Block block, ItemLike drop) {

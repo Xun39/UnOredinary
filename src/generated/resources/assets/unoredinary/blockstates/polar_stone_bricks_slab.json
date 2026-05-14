@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "unoredinary:block/polar_stone_bricks_slab"
+        },
+        "type=double": {
+            "model": "unoredinary:block/polar_stone_bricks"
+        },
+        "type=top": {
+            "model": "unoredinary:block/polar_stone_bricks_slab_top"
+        }
+    }
+}

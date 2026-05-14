@@ -17,8 +17,10 @@ import net.xun.unoredinary.util.UOTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
 
 public class UOItemTags extends ItemTagsProvider {
     public UOItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTags, @Nullable ExistingFileHelper existingFileHelper) {
@@ -27,7 +29,6 @@ public class UOItemTags extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-
         // Tools
         addToTags(
                 Set.of(ItemTags.SWORDS, Tags.Items.MELEE_WEAPON_TOOLS),
@@ -59,8 +60,8 @@ public class UOItemTags extends ItemTagsProvider {
                 Set.of(ItemTags.FOOT_ARMOR),
                 UOArmors.getArmors().stream().map(armorSet -> (Item) armorSet.getBoots().get()).toList());
 
-        addToTags(Set.of(ItemTags.FREEZE_IMMUNE_WEARABLES), UOArmors.FROSTSTEEL.getAll());
-        addToTags(Set.of(ItemTags.FREEZE_IMMUNE_WEARABLES), UOArmors.GLACIALITE.getAll());
+        addToTags(Set.of(ItemTags.FREEZE_IMMUNE_WEARABLES), new HashSet<>(UOArmors.FROSTSTEEL.getAll()));
+        addToTags(Set.of(ItemTags.FREEZE_IMMUNE_WEARABLES), new HashSet<>(UOArmors.GLACIALITE.getAll()));
 
         // Trim Materials
         addToTags(

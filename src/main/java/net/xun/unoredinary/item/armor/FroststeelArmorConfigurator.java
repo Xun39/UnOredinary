@@ -12,17 +12,14 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.phys.shapes.CollisionContext;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
-import net.xun.lib.common.api.item.armor.ArmorConfigurator;
-import net.xun.lib.common.api.item.armor.ArmorType;
+import net.xun.armory.api.item.armor.ArmorCustomizer;
+import net.xun.armory.api.item.armor.ArmorType;
 import net.xun.lib.common.api.util.ArmorSlotsUtils;
 import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.unoredinary.UnOredinary;
@@ -30,10 +27,10 @@ import net.xun.unoredinary.config.common.UOCommonConfig;
 import net.xun.unoredinary.registry.UOArmorMaterials;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID)
-public class FroststeelArmorConfigurator implements ArmorConfigurator {
+public class FroststeelArmorConfigurator implements ArmorCustomizer {
     @Override
-    public ArmorItem createArmor(ArmorType type, Holder<ArmorMaterial> material, int durabilityFactor, Item.Properties props) {
-        return new ArmorItem(material, type.getType(), props.durability(type.getType().getDurability(durabilityFactor))) {
+    public ArmorItem createArmorItem(ArmorType type, Holder<ArmorMaterial> material, int durabilityFactor, Item.Properties props) {
+        return new ArmorItem(material, type.getArmorType(), props.durability(type.getArmorType().getDurability(durabilityFactor))) {
             @Override
             public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
                 if (!(entity instanceof Player player) || !(stack.getItem() instanceof ArmorItem))

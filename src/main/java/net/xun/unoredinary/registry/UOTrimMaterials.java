@@ -38,8 +38,8 @@ public class UOTrimMaterials {
         register(context, SAPPHIRE, UOItems.SAPPHIRE.get(), Style.EMPTY.withColor(TextColor.parseColor("#017ed8").getOrThrow()), 0.9F);
         register(context, RUBY, UOItems.NETHER_RUBY.get(), Style.EMPTY.withColor(TextColor.parseColor("#ff412b").getOrThrow()), 0.4F);
     }
-    private static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> trimKey, Item item, Style style, float itemModelIndex) {
 
+    private static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> trimKey, Item item, Style style, float itemModelIndex) {
         TrimMaterial trimmaterial = TrimMaterial.create(trimKey.location().getPath(), item, itemModelIndex,
                 Component.translatable(Util.makeDescriptionId("trim_material", trimKey.location())).withStyle(style), Map.of()
         );

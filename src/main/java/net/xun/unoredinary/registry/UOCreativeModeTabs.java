@@ -7,8 +7,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.xun.lib.common.api.item.armor.ArmorSet;
-import net.xun.lib.common.api.item.tools.ToolSet;
+import net.xun.armory.api.item.armor.ArmorSet;
+import net.xun.armory.api.item.tools.ToolSet;
 import net.xun.unoredinary.UnOredinary;
 
 public class UOCreativeModeTabs {
@@ -42,6 +42,20 @@ public class UOCreativeModeTabs {
                         output.accept(UOBlocks.FROSTSTEEL_BLOCK);
                         output.accept(UOBlocks.GLACIALITE_BLOCK);
                         output.accept(UOBlocks.LUMINIUM_BLOCK);
+
+                        output.accept(UOBlocks.POLAR_STONE);
+                        output.accept(UOBlocks.POLAR_STONE_STAIRS);
+                        output.accept(UOBlocks.POLAR_STONE_SLAB);
+
+                        output.accept(UOBlocks.POLAR_COBBLESTONE);
+                        output.accept(UOBlocks.POLAR_COBBLESTONE_STAIRS);
+                        output.accept(UOBlocks.POLAR_COBBLESTONE_SLAB);
+                        output.accept(UOBlocks.POLAR_COBBLESTONE_WALL);
+
+                        output.accept(UOBlocks.POLAR_STONE_BRICKS);
+                        output.accept(UOBlocks.POLAR_STONE_BRICKS_STAIRS);
+                        output.accept(UOBlocks.POLAR_STONE_BRICKS_SLAB);
+                        output.accept(UOBlocks.POLAR_STONE_BRICKS_WALL);
 
                         output.accept(UOBlocks.TRANSENCHANTING_TABLE);
                     })

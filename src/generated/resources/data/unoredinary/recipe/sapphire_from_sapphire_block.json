@@ -1,13 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "unoredinary:sapphire_block"
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        {
+            "item": "unoredinary:sapphire_block"
+        }
+    ],
+    "result": {
+        "count": 9,
+        "id": "unoredinary:sapphire"
     }
-  ],
-  "result": {
-    "count": 9,
-    "id": "unoredinary:sapphire"
-  }
 }

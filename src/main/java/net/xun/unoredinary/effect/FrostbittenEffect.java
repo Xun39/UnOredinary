@@ -24,10 +24,15 @@ public class FrostbittenEffect extends MobEffect {
 
     @Override
     public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
-        livingEntity.setIsInPowderSnow(true);
-        if (amplifier > 0 && livingEntity.canFreeze()) {
-            livingEntity.setTicksFrozen(Math.min(livingEntity.getTicksRequiredToFreeze(), livingEntity.getTicksFrozen() + amplifier));
+        if (!livingEntity.level().isClientSide && livingEntity.canFreeze()) {
+            int required = livingEntity.getTicksRequiredToFreeze();
+            livingEntity.setTicksFrozen(required);
+
+            if (amplifier > 0) {
+                livingEntity.setTicksFrozen(required + (amplifier * 20));
+            }
         }
+
         return true;
     }
 

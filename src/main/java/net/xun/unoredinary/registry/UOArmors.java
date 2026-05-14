@@ -1,6 +1,7 @@
 package net.xun.unoredinary.registry;
 
-import net.xun.lib.common.api.item.armor.ArmorSet;
+import net.xun.armory.api.item.armor.ArmorSet;
+import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.item.armor.GlacialiteArmorConfigurator;
 import net.xun.unoredinary.item.armor.FroststeelArmorConfigurator;
 import net.xun.unoredinary.item.armor.LuminiumArmorConfigurator;
@@ -12,19 +13,19 @@ public class UOArmors {
     private static final List<ArmorSet> ARMOR_SETS = new ArrayList<>();
 
     public static final ArmorSet FROSTSTEEL = register(new ArmorSet.Builder("froststeel", UOArmorMaterials.FROSTSTEEL)
-            .withConfiguration(new FroststeelArmorConfigurator())
+            .withCustomizer(new FroststeelArmorConfigurator())
             .withDurabilityFactor(21)
             .build()
     );
 
     public static final ArmorSet GLACIALITE = register(new ArmorSet.Builder("glacialite", UOArmorMaterials.GLACIALITE)
-            .withConfiguration(new GlacialiteArmorConfigurator())
+            .withCustomizer(new GlacialiteArmorConfigurator())
             .withDurabilityFactor(35)
             .build()
     );
 
     public static final ArmorSet LUMINIUM = register(new ArmorSet.Builder("luminium", UOArmorMaterials.LUMINIUM)
-            .withConfiguration(new LuminiumArmorConfigurator())
+            .withCustomizer(new LuminiumArmorConfigurator())
             .withDurabilityFactor(30)
             .build()
     );
@@ -50,7 +51,7 @@ public class UOArmors {
 
     public static void registerArmors() {
         getArmors().forEach(armorSet -> {
-            armorSet.getItemsForRegistration().forEach((location, armorItemSupplier) -> {
+            armorSet.getPiecesForRegistration(UnOredinary.MOD_ID).forEach((location, armorItemSupplier) -> {
                 UOItems.ITEMS.register(location.getPath(), armorItemSupplier);
             });
         });

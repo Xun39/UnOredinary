@@ -29,6 +29,20 @@ public class UOBlockTags extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 UOBlocks.TRANSENCHANTING_TABLE.get(),
 
+                UOBlocks.POLAR_STONE.get(),
+                UOBlocks.POLAR_STONE_STAIRS.get(),
+                UOBlocks.POLAR_STONE_SLAB.get(),
+
+                UOBlocks.POLAR_COBBLESTONE.get(),
+                UOBlocks.POLAR_COBBLESTONE_STAIRS.get(),
+                UOBlocks.POLAR_COBBLESTONE_SLAB.get(),
+                UOBlocks.POLAR_COBBLESTONE_WALL.get(),
+
+                UOBlocks.POLAR_STONE_BRICKS.get(),
+                UOBlocks.POLAR_STONE_BRICKS_STAIRS.get(),
+                UOBlocks.POLAR_STONE_BRICKS_SLAB.get(),
+                UOBlocks.POLAR_STONE_BRICKS_WALL.get(),
+
                 UOBlocks.CRYIC_ORE.get(),
                 UOBlocks.DEEPSLATE_CRYIC_ORE.get(),
 
@@ -88,6 +102,22 @@ public class UOBlockTags extends BlockTagsProvider {
         tag(BlockTags.INCORRECT_FOR_STONE_TOOL).addTag(UOTags.Blocks.NEEDS_FROSTSTEEL_TOOL);
         tag(BlockTags.INCORRECT_FOR_IRON_TOOL).addTag(UOTags.Blocks.NEEDS_FROSTSTEEL_TOOL);
         tag(BlockTags.INCORRECT_FOR_GOLD_TOOL).addTag(UOTags.Blocks.NEEDS_FROSTSTEEL_TOOL);
+
+        /* ------------------------------ MISC ------------------------------ */
+        tag(BlockTags.STAIRS).add(
+                UOBlocks.POLAR_STONE_STAIRS.get(),
+                UOBlocks.POLAR_COBBLESTONE_STAIRS.get(),
+                UOBlocks.POLAR_STONE_BRICKS_STAIRS.get()
+        );
+        tag(BlockTags.SLABS).add(
+                UOBlocks.POLAR_STONE_SLAB.get(),
+                UOBlocks.POLAR_COBBLESTONE_SLAB.get(),
+                UOBlocks.POLAR_STONE_BRICKS_SLAB.get()
+        );
+        tag(BlockTags.WALLS).add(
+                UOBlocks.POLAR_COBBLESTONE_WALL.get(),
+                UOBlocks.POLAR_STONE_BRICKS_WALL.get()
+        );
 
         /* ------------------------------ COMMON ------------------------------ */
 

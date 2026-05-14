@@ -32,6 +32,9 @@ public class UOLanguage extends UOLanguageProvider {
         addAdvancement("freeze_miner", "Deep Freeze Miner", "Mine at least 20 Glacium Ores");
         addAdvancement("frost_dungeon", "Beneath the Frozen Veil", "Enter a Frost Dungeon");
 
+        /* ------------------------------ ATTRIBUTES ------------------------------ */
+        addAttribute("cold_damage", "Cold Damage");
+
         /* ------------------------------ BLOCKS ------------------------------ */
         // Ores
         addBlock(UOBlocks.CRYIC_ORE, "Cryic Ore");
@@ -60,6 +63,20 @@ public class UOLanguage extends UOLanguageProvider {
 
         // Misc
         addBlock(UOBlocks.TRANSENCHANTING_TABLE, "Transenchanting Table");
+
+        addBlock(UOBlocks.POLAR_STONE, "Polar Stone");
+        addBlock(UOBlocks.POLAR_STONE_STAIRS, "Polar Stone Stairs");
+        addBlock(UOBlocks.POLAR_STONE_SLAB, "Polar Stone Slab");
+
+        addBlock(UOBlocks.POLAR_COBBLESTONE, "Polar Cobblestone");
+        addBlock(UOBlocks.POLAR_COBBLESTONE_STAIRS, "Polar Cobblestone Stairs");
+        addBlock(UOBlocks.POLAR_COBBLESTONE_SLAB, "Polar Cobblestone Slab");
+        addBlock(UOBlocks.POLAR_COBBLESTONE_WALL, "Polar Cobblestone Wall");
+
+        addBlock(UOBlocks.POLAR_STONE_BRICKS, "Polar Stone Bricks");
+        addBlock(UOBlocks.POLAR_STONE_BRICKS_STAIRS, "Polar Stone Bricks Stairs");
+        addBlock(UOBlocks.POLAR_STONE_BRICKS_SLAB, "Polar Stone Bricks Slab");
+        addBlock(UOBlocks.POLAR_STONE_BRICKS_WALL, "Polar Stone Bricks Wall");
 
         /* ------------------------------ CONTAINERS ------------------------------ */
         add("unoredinary.container.transenchanting_table", "Transenchant");

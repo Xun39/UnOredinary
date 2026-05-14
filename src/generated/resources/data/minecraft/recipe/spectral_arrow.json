@@ -1,24 +1,24 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "key": {
-    "#": {
-      "item": "minecraft:feather"
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "#": {
+            "item": "minecraft:feather"
+        },
+        "$": {
+            "item": "minecraft:stick"
+        },
+        "^": {
+            "tag": "c:gems/luminite"
+        }
     },
-    "$": {
-      "item": "minecraft:stick"
-    },
-    "^": {
-      "tag": "c:gems/luminite"
+    "pattern": [
+        "^",
+        "$",
+        "#"
+    ],
+    "result": {
+        "count": 16,
+        "id": "minecraft:spectral_arrow"
     }
-  },
-  "pattern": [
-    "^",
-    "$",
-    "#"
-  ],
-  "result": {
-    "count": 16,
-    "id": "minecraft:spectral_arrow"
-  }
 }

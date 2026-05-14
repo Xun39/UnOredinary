@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "unoredinary:item/froststeel_axe"
-  }
+    "parent": "minecraft:item/handheld",
+    "textures": {
+        "layer0": "unoredinary:item/froststeel_axe"
+    }
 }
