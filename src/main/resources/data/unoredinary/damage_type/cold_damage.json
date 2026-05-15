@@ -1,5 +1,5 @@
 {
   "exhaustion": 0.0,
-  "message_id": "apothic_attributes:cold_damage",
+  "message_id": "unoredinary:cold_damage",
   "scaling": "when_caused_by_living_non_player"
 }

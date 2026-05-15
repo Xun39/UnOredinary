@@ -5,8 +5,10 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xun.unoredinary.UnOredinary;
@@ -56,6 +58,18 @@ public class UOBlocks {
     public static final DeferredBlock<StairBlock> POLAR_STONE_BRICKS_STAIRS = registerStair("polar_stone_bricks_stairs", UOBlocks.POLAR_STONE_BRICKS);
     public static final DeferredBlock<SlabBlock> POLAR_STONE_BRICKS_SLAB = registerSlab("polar_stone_bricks_slab", UOBlocks.POLAR_STONE_BRICKS);
     public static final DeferredBlock<WallBlock> POLAR_STONE_BRICKS_WALL = registerWall("polar_stone_bricks_wall", UOBlocks.POLAR_STONE_BRICKS);
+
+//    public static final DeferredBlock<DoorBlock> ICE_DOOR = register("ice_door",
+//            () -> new DoorBlock(BlockSetType.GOLD,
+//                    BlockBehaviour.Properties.of()
+//                            .mapColor(MapColor.ICE)
+//                            .friction(0.98F)
+//                            .randomTicks()
+//                            .strength(0.5F)
+//                            .noOcclusion()
+//                            .pushReaction(PushReaction.DESTROY)
+//            )
+//    );
 
     // Ores
     public static final DeferredBlock<Block> CRYIC_ORE = register("cryic_ore",

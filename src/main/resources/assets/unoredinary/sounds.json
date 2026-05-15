@@ -70,6 +70,13 @@
     ]
   },
 
+  "effect.frost_nova": {
+    "subtitle": "sounds.unoredinary.effect.frost_nova",
+    "sounds": [
+      "unoredinary:effect/frost_nova"
+    ]
+  },
+
   "entity.frost_zombie.ambient": {
     "subtitle": "sounds.unoredinary.entity.frost_zombie.ambient",
     "sounds": [
@@ -82,8 +89,7 @@
     "subtitle": "sounds.unoredinary.entity.frost_zombie.hurt",
     "sounds": [
       "unoredinary:entity/frost_zombie/hurt_1",
-      "unoredinary:entity/frost_zombie/hurt_2",
-      "unoredinary:entity/frost_zombie/hurt_3"
+      "unoredinary:entity/frost_zombie/hurt_2"
     ]
   },
   "entity.frost_zombie.death": {

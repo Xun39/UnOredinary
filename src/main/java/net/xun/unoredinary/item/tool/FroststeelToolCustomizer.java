@@ -29,11 +29,11 @@ public class FroststeelToolCustomizer implements ToolCustomizer {
                 return new SwordItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean flag = super.hurtEnemy(stack, target, attacker);
-                        if (flag && !target.level().isClientSide) {
-                            handleHitEffect(target, attacker);
-                        }
-                        return flag;
+                        return onHit(
+                                super.hurtEnemy(stack, target, attacker),
+                                target,
+                                attacker
+                        );
                     }
                 };
             }
@@ -41,11 +41,11 @@ public class FroststeelToolCustomizer implements ToolCustomizer {
                 return new AxeItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean flag = super.hurtEnemy(stack, target, attacker);
-                        if (flag && !target.level().isClientSide) {
-                            handleHitEffect(target, attacker);
-                        }
-                        return flag;
+                        return onHit(
+                                super.hurtEnemy(stack, target, attacker),
+                                target,
+                                attacker
+                        );
                     }
                 };
             }
@@ -53,11 +53,11 @@ public class FroststeelToolCustomizer implements ToolCustomizer {
                 return new PickaxeItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean flag = super.hurtEnemy(stack, target, attacker);
-                        if (flag && !target.level().isClientSide) {
-                            handleHitEffect(target, attacker);
-                        }
-                        return flag;
+                        return onHit(
+                                super.hurtEnemy(stack, target, attacker),
+                                target,
+                                attacker
+                        );
                     }
                 };
             }
@@ -65,11 +65,11 @@ public class FroststeelToolCustomizer implements ToolCustomizer {
                 return new HoeItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean flag = super.hurtEnemy(stack, target, attacker);
-                        if (flag && !target.level().isClientSide) {
-                            handleHitEffect(target, attacker);
-                        }
-                        return flag;
+                        return onHit(
+                                super.hurtEnemy(stack, target, attacker),
+                                target,
+                                attacker
+                        );
                     }
                 };
             }
@@ -77,16 +77,24 @@ public class FroststeelToolCustomizer implements ToolCustomizer {
                 return new ShovelItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean flag = super.hurtEnemy(stack, target, attacker);
-                        if (flag && !target.level().isClientSide) {
-                            handleHitEffect(target, attacker);
-                        }
-                        return flag;
+                        return onHit(
+                                super.hurtEnemy(stack, target, attacker),
+                                target,
+                                attacker
+                        );
                     }
                 };
             }
             default -> throw new MatchException(null, null);
         }
+    }
+
+    private static boolean onHit(boolean flag, LivingEntity target, LivingEntity attacker) {
+        if (flag && !target.level().isClientSide) {
+            handleHitEffect(target, attacker);
+        }
+
+        return flag;
     }
 
     private static void handleHitEffect(LivingEntity target, LivingEntity attacker) {
@@ -132,11 +140,7 @@ public class FroststeelToolCustomizer implements ToolCustomizer {
         );
     }
 
-    private static MobEffectInstance buildEffectInstance(
-            Holder<MobEffect> effect,
-            int duration,
-            int amplifier
-    ) {
+    private static MobEffectInstance buildEffectInstance(Holder<MobEffect> effect, int duration, int amplifier) {
         return MobEffectInstanceBuilder.of(effect)
                 .withDuration(duration)
                 .withAmplifier(amplifier)

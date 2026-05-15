@@ -2,6 +2,7 @@ package net.xun.unoredinary.item.tool;
 
 import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -20,6 +21,7 @@ import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
 import net.xun.unoredinary.config.server.UOServerConfig;
 import net.xun.unoredinary.registry.UOMobEffects;
 import net.xun.unoredinary.registry.UOParticleTypes;
+import net.xun.unoredinary.registry.UOSounds;
 
 import java.util.List;
 
@@ -41,11 +43,12 @@ public class GlacialiteToolCustomizer implements ToolCustomizer {
                 return new SwordItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean flag = super.hurtEnemy(stack, target, attacker);
-                        if (flag && !target.level().isClientSide) {
-                            handleHitEffect(target, attacker, true);
-                        }
-                        return flag;
+                        return onHit(
+                                super.hurtEnemy(stack, target, attacker),
+                                target,
+                                attacker,
+                                true
+                        );
                     }
                 };
             }
@@ -53,11 +56,12 @@ public class GlacialiteToolCustomizer implements ToolCustomizer {
                 return new AxeItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean flag = super.hurtEnemy(stack, target, attacker);
-                        if (flag && !target.level().isClientSide) {
-                            handleHitEffect(target, attacker, true);
-                        }
-                        return flag;
+                        return onHit(
+                                super.hurtEnemy(stack, target, attacker),
+                                target,
+                                attacker,
+                                true
+                        );
                     }
                 };
             }
@@ -65,11 +69,12 @@ public class GlacialiteToolCustomizer implements ToolCustomizer {
                 return new PickaxeItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean flag = super.hurtEnemy(stack, target, attacker);
-                        if (flag && !target.level().isClientSide) {
-                            handleHitEffect(target, attacker, false);
-                        }
-                        return flag;
+                        return onHit(
+                                super.hurtEnemy(stack, target, attacker),
+                                target,
+                                attacker,
+                                false
+                        );
                     }
                 };
             }
@@ -77,11 +82,12 @@ public class GlacialiteToolCustomizer implements ToolCustomizer {
                 return new HoeItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean flag = super.hurtEnemy(stack, target, attacker);
-                        if (flag && !target.level().isClientSide) {
-                            handleHitEffect(target, attacker, false);
-                        }
-                        return flag;
+                        return onHit(
+                                super.hurtEnemy(stack, target, attacker),
+                                target,
+                                attacker,
+                                false
+                        );
                     }
                 };
             }
@@ -89,54 +95,75 @@ public class GlacialiteToolCustomizer implements ToolCustomizer {
                 return new ShovelItem(tier, properties) {
                     @Override
                     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        boolean flag = super.hurtEnemy(stack, target, attacker);
-                        if (flag && !target.level().isClientSide) {
-                            handleHitEffect(target, attacker, false);
-                        }
-                        return flag;
+                        return onHit(
+                                super.hurtEnemy(stack, target, attacker),
+                                target,
+                                attacker,
+                                false
+                        );
                     }
                 };
             }
-            default -> {
-                throw new MatchException(null, null);
-            }
+            default -> throw new MatchException(null, null);
         }
     }
 
-    private static void handleHitEffect(LivingEntity target, LivingEntity attacker, boolean applyFrostNova) {
-        if (!(attacker instanceof Player))
-            return;
-
-        if (!UOServerConfig.toolEffectConfig.glacialiteConfig.enable.get())
-            return;
-
-        if (applyFrostNova) {
-            if (UOServerConfig.toolEffectConfig.glacialiteConfig.enableFrostNova.get()) {
-                applyFrostNovaEffect(target);
-            } else {
-                applySingleTargetEffects(target);
-            }
-
-        } else {
-            applySingleTargetEffects(target);
+    private static boolean onHit(boolean flag, LivingEntity target, LivingEntity attacker, boolean frostNova) {
+        if (flag && !target.level().isClientSide) {
+            handleHitEffect(target, attacker, frostNova);
         }
+
+        return flag;
+    }
+
+    private static void handleHitEffect(LivingEntity target, LivingEntity attacker, boolean canNova) {
+        if (!(attacker instanceof Player) || !UOServerConfig.toolEffectConfig.glacialiteConfig.enable.get()) {
+            return;
+        }
+
+        boolean frostNovaEnabled = canNova && UOServerConfig.toolEffectConfig.glacialiteConfig.enableFrostNova.get();
+
+        if (frostNovaEnabled) {
+            applyFrostNovaEffect(target);
+            return;
+        }
+
+        applySingleTargetEffects(target);
     }
 
     private static void applyFrostNovaEffect(LivingEntity target) {
         Level level = target.level();
-        AABB aabb = BlockPosUtils.createAABBFromCenter(target.blockPosition(), FROST_NOVA_RADIUS);
-        List<LivingEntity> hostiles = level.getEntitiesOfClass(
-                LivingEntity.class,
-                aabb,
-                entity -> entity instanceof Enemy
-        );
+        AABB area = BlockPosUtils.createAABBFromCenter(target.blockPosition(), FROST_NOVA_RADIUS);
 
-        if (UOServerConfig.toolEffectConfig.glacialiteConfig.doHitParticlesSpawn.get()) {
+        var config = UOServerConfig.toolEffectConfig.glacialiteConfig;
+
+        if (config.doHitParticlesSpawn.get()) {
             spawnFrostParticles(target);
         }
 
-        for (LivingEntity hostile : hostiles) {
-            applyFrostEffects(hostile);
+        if (config.enableFrostNovaSound.get()) {
+            level.playSound(
+                    null,
+                    target.getX(),
+                    target.getY(),
+                    target.getZ(),
+                    UOSounds.FROST_NOVA.get(),
+                    SoundSource.PLAYERS,
+                    1.0F,
+                    1.0F
+            );
+        }
+
+        boolean affectPassive = config.frostNovaToPassive.get();
+
+        List<LivingEntity> entities = level.getEntitiesOfClass(
+                LivingEntity.class,
+                area,
+                entity -> entity.isAlive() && (affectPassive || entity instanceof Enemy)
+        );
+
+        for (LivingEntity entity : entities) {
+            applyFrostEffects(entity);
         }
     }
 
@@ -177,11 +204,7 @@ public class GlacialiteToolCustomizer implements ToolCustomizer {
         MobEffectUtils.applyEffectsWithStrategy(target, effects, EffectStackingStrategy.UPGRADE_EXISTING);
     }
 
-    private static MobEffectInstance buildEffectInstance(
-            Holder<MobEffect> effect,
-            int duration,
-            int amplifier
-    ) {
+    private static MobEffectInstance buildEffectInstance(Holder<MobEffect> effect, int duration, int amplifier) {
         return MobEffectInstanceBuilder.of(effect)
                 .withDuration(duration)
                 .withAmplifier(amplifier)

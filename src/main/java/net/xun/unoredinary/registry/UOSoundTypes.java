@@ -14,13 +14,13 @@ public class UOSoundTypes {
             UOSounds.GLACIUM_BLOCK_FALL
     );
 
-    public static final DeferredSoundType SUNSTONE = new DeferredSoundType(
-            1F,
-            1F,
-            UOSounds.SUNSTONE_BREAK,
-            UOSounds.SUNSTONE_STEP,
-            UOSounds.SUNSTONE_PLACE,
-            UOSounds.SUNSTONE_HIT,
-            UOSounds.SUNSTONE_FALL
-    );
+//    public static final DeferredSoundType SUNSTONE = new DeferredSoundType(
+//            1F,
+//            1F,
+//            UOSounds.SUNSTONE_BREAK,
+//            UOSounds.SUNSTONE_STEP,
+//            UOSounds.SUNSTONE_PLACE,
+//            UOSounds.SUNSTONE_HIT,
+//            UOSounds.SUNSTONE_FALL
+//    );
 }
