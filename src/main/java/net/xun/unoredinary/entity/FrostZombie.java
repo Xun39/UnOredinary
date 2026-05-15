@@ -10,8 +10,13 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.xun.lib.common.api.util.ArmorSlotsUtils;
+import net.xun.lib.common.api.util.InventoryUtils;
 import net.xun.unoredinary.registry.UOMobEffects;
 import net.xun.unoredinary.registry.UOSounds;
 
@@ -60,7 +65,7 @@ public class FrostZombie extends Zombie {
 
         if (flag && entity instanceof LivingEntity) {
             float f = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
-            ((LivingEntity)entity).addEffect(new MobEffectInstance(UOMobEffects.FROSTED_EFFECT, 80 * (int)f, 1), this);
+            ((LivingEntity)entity).addEffect(new MobEffectInstance(UOMobEffects.FROSTED_EFFECT, 160 * (int)f, 1), this);
         }
         return flag;
     }

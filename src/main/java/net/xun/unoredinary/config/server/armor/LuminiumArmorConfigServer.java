@@ -1,12 +1,12 @@
-package net.xun.unoredinary.config.common.armor;
+package net.xun.unoredinary.config.server.armor;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-public class LuminiumArmorConfigCommon {
+public class LuminiumArmorConfigServer {
     public final ModConfigSpec.BooleanValue enable;
     public final ModConfigSpec.BooleanValue enableNightVision;
 
-    public LuminiumArmorConfigCommon(final ModConfigSpec.Builder builder) {
+    public LuminiumArmorConfigServer(final ModConfigSpec.Builder builder) {
         builder.push("luminium");
 
         enable = builder

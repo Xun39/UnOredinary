@@ -1,19 +1,16 @@
 package net.xun.unoredinary.config.client;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
-import net.xun.unoredinary.config.client.armor.ArmorEffectConfigClient;
-import net.xun.unoredinary.config.client.tool.ToolEffectConfigClient;
+import net.xun.unoredinary.config.client.particle.ParticleConfig;
 
 public class UOClientConfig {
     public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
     public static final ModConfigSpec SPEC;
 
-    public static final ToolEffectConfigClient toolEffectConfig;
-    public static final ArmorEffectConfigClient armorEffectConfig;
+    public static final ParticleConfig particleConfig;
 
     static {
-        toolEffectConfig = new ToolEffectConfigClient(BUILDER);
-        armorEffectConfig = new ArmorEffectConfigClient(BUILDER);
+        particleConfig = new ParticleConfig(BUILDER);
 
         SPEC = BUILDER.build();
     }

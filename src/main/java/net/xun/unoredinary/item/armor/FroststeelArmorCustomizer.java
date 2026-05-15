@@ -23,11 +23,11 @@ import net.xun.armory.api.item.armor.ArmorType;
 import net.xun.lib.common.api.util.ArmorSlotsUtils;
 import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.unoredinary.UnOredinary;
-import net.xun.unoredinary.config.common.UOCommonConfig;
+import net.xun.unoredinary.config.server.UOServerConfig;
 import net.xun.unoredinary.registry.UOArmorMaterials;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID)
-public class FroststeelArmorConfigurator implements ArmorCustomizer {
+public class FroststeelArmorCustomizer implements ArmorCustomizer {
     @Override
     public ArmorItem createArmorItem(ArmorType type, Holder<ArmorMaterial> material, int durabilityFactor, Item.Properties props) {
         return new ArmorItem(material, type.getArmorType(), props.durability(type.getArmorType().getDurability(durabilityFactor))) {
@@ -36,10 +36,10 @@ public class FroststeelArmorConfigurator implements ArmorCustomizer {
                 if (!(entity instanceof Player player) || !(stack.getItem() instanceof ArmorItem))
                     return;
 
-                if (!UOCommonConfig.armorEffectConfig.froststeelConfig.enable.get())
+                if (!UOServerConfig.armorEffectConfig.froststeelConfig.enable.get())
                     return;
 
-                if (UOCommonConfig.armorEffectConfig.froststeelConfig.enableFrostWalker.get()) {
+                if (UOServerConfig.armorEffectConfig.froststeelConfig.enableFrostWalker.get()) {
                     handleFrostWalkerEffect(player, level);
                 }
             }
@@ -57,7 +57,7 @@ public class FroststeelArmorConfigurator implements ArmorCustomizer {
         if (!(living instanceof Player player))
             return;
 
-        if (UOCommonConfig.armorEffectConfig.froststeelConfig.enableHotFloorDamage.get())
+        if (UOServerConfig.armorEffectConfig.froststeelConfig.enableHotFloorDamage.get())
             return;
 
         if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.FROSTSTEEL)) {
@@ -74,23 +74,12 @@ public class FroststeelArmorConfigurator implements ArmorCustomizer {
 
         BlockPos groundPos = player.getBlockPosBelowThatAffectsMyMovement();
 
-        int radius = 2;
+        int radius = UOServerConfig.armorEffectConfig.froststeelConfig.frostWalkerRadius.getAsInt();
 
         BlockPosUtils.getDisc(groundPos, radius).forEach(pos -> {
             if (pos.closerToCenterThan(player.position(), radius)) {
                 freezeNearbyBlock(level, pos, player);
             }
-
-            /* if (!level.getBlockState(pos).is(Blocks.WATER))
-                return;
-
-            BlockPos abovePos = pos.above();
-
-            if (level.getBlockState(abovePos).isAir() && level.isUnobstructed(Blocks.FROSTED_ICE.defaultBlockState(), pos, CollisionContext.empty())) {
-                level.setBlock(pos, Blocks.FROSTED_ICE.defaultBlockState(), Block.UPDATE_ALL);
-                level.gameEvent(player, GameEvent.BLOCK_PLACE, pos);
-            }
-             */
         });
     }
 

@@ -206,7 +206,7 @@ public class UOLanguage extends UOLanguageProvider {
         // Armor Effect Configs
         translateConfig("armor_effects", "Armor Effects");
 
-        translateConfig("hurt_particles", "Do hurt particles spawn");
+        translateConfig("hurt_particles", "Do damage particles spawn");
 
         translateConfig("enable_armor", "Enable Armor Effects");
         translateConfig("enable_frost_walker", "Enable Frost Walker");
@@ -215,5 +215,13 @@ public class UOLanguage extends UOLanguageProvider {
         translateConfig("enable_thorns", "Enable Thorns");
         translateConfig("can_walk_on_powder_snow", "Can walk on powder snow");
         translateConfig("enable_night_vision", "Enable Night Vision");
+
+        translateConfig("frost_walker_rad", "Frost Walker effect's Radius");
+
+        // Particle Configs
+        translateConfig("particle_ops", "Particle Options");
+        translateConfig("frost_nova_par", "Frost Nova");
+
+        translateConfig("emissive", "Emissive Rendering");
     }
 }

@@ -28,13 +28,12 @@ import net.xun.lib.common.api.util.ArmorSlotsUtils;
 import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.unoredinary.UnOredinary;
-import net.xun.unoredinary.config.client.UOClientConfig;
-import net.xun.unoredinary.config.common.UOCommonConfig;
+import net.xun.unoredinary.config.server.UOServerConfig;
 import net.xun.unoredinary.registry.UOArmorMaterials;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID)
-public class GlacialiteArmorConfigurator implements ArmorCustomizer {
+public class GlacialiteArmorCustomizer implements ArmorCustomizer {
     @Override
     public ArmorItem createArmorItem(ArmorType type, Holder<ArmorMaterial> material, int durabilityFactor, Item.Properties props) {
 
@@ -45,13 +44,13 @@ public class GlacialiteArmorConfigurator implements ArmorCustomizer {
                 if (!(entity instanceof Player player) || !(stack.getItem() instanceof ArmorItem))
                     return;
 
-                if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enable.get()) {
+                if (UOServerConfig.armorEffectConfig.glacialiteConfig.enable.get()) {
 
-                    if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableSlownessImmunity.get()) {
+                    if (UOServerConfig.armorEffectConfig.glacialiteConfig.enableSlownessImmunity.get()) {
                         handleSlownessImmunity(player);
                     }
 
-                    if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableFrostWalker.get()) {
+                    if (UOServerConfig.armorEffectConfig.glacialiteConfig.enableFrostWalker.get()) {
                         handleFrostWalkerEffect(player, level);
                     }
                 }
@@ -59,10 +58,10 @@ public class GlacialiteArmorConfigurator implements ArmorCustomizer {
 
             @Override
             public boolean canWalkOnPowderedSnow(ItemStack stack, LivingEntity wearer) {
-                if (!UOCommonConfig.armorEffectConfig.glacialiteConfig.enable.get())
+                if (!UOServerConfig.armorEffectConfig.glacialiteConfig.enable.get())
                     return false;
 
-                return UOCommonConfig.armorEffectConfig.glacialiteConfig.canWalkOnPowderSnow.get();
+                return UOServerConfig.armorEffectConfig.glacialiteConfig.canWalkOnPowderSnow.get();
             }
         };
     }
@@ -78,7 +77,7 @@ public class GlacialiteArmorConfigurator implements ArmorCustomizer {
         if (!(living instanceof Player player))
             return;
 
-        if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableHotFloorDamage.get())
+        if (UOServerConfig.armorEffectConfig.glacialiteConfig.enableHotFloorDamage.get())
             return;
 
         if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.GLACIALITE)) {
@@ -91,9 +90,9 @@ public class GlacialiteArmorConfigurator implements ArmorCustomizer {
         Entity attacker = event.getSource().getDirectEntity();
         LivingEntity receiver = event.getEntity();
 
-        if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enable.get()) {
+        if (UOServerConfig.armorEffectConfig.glacialiteConfig.enable.get()) {
 
-            if (UOCommonConfig.armorEffectConfig.glacialiteConfig.enableThornsEffect.get()) {
+            if (UOServerConfig.armorEffectConfig.glacialiteConfig.enableThornsEffect.get()) {
                  handleThornsEffect(event, attacker, receiver);
             }
         }
@@ -108,23 +107,12 @@ public class GlacialiteArmorConfigurator implements ArmorCustomizer {
 
         BlockPos groundPos = player.getBlockPosBelowThatAffectsMyMovement();
 
-        int radius = 4;
+        int radius = UOServerConfig.armorEffectConfig.glacialiteConfig.frostWalkerRadius.getAsInt();
 
         BlockPosUtils.getDisc(groundPos, radius).forEach(pos -> {
             if (pos.closerToCenterThan(player.position(), radius)) {
                 freezeNearbyBlock(level, pos, player);
             }
-
-            // Old method (deprecated)
-//            if (!level.getBlockState(pos).is(Blocks.WATER))
-//                return;
-//
-//            BlockPos abovePos = pos.above();
-//
-//            if (level.getBlockState(abovePos).isAir() && level.isUnobstructed(Blocks.FROSTED_ICE.defaultBlockState(), pos, CollisionContext.empty())) {
-//                level.setBlock(pos, Blocks.FROSTED_ICE.defaultBlockState(), Block.UPDATE_ALL);
-//                level.gameEvent(player, GameEvent.BLOCK_PLACE, pos);
-//            }
         });
     }
 
@@ -168,7 +156,7 @@ public class GlacialiteArmorConfigurator implements ArmorCustomizer {
             attacker.hurt(event.getSource(), event.getOriginalDamage());
         }
 
-        if (UOClientConfig.armorEffectConfig.glacialiteConfig.doHurtParticlesSpawn.get()) {
+        if (UOServerConfig.armorEffectConfig.glacialiteConfig.doDamageParticlesSpawn.get()) {
             spawnHurtParticles(player);
         }
     }

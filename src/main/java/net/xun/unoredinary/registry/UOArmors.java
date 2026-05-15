@@ -2,9 +2,9 @@ package net.xun.unoredinary.registry;
 
 import net.xun.armory.api.item.armor.ArmorSet;
 import net.xun.unoredinary.UnOredinary;
-import net.xun.unoredinary.item.armor.GlacialiteArmorConfigurator;
-import net.xun.unoredinary.item.armor.FroststeelArmorConfigurator;
-import net.xun.unoredinary.item.armor.LuminiumArmorConfigurator;
+import net.xun.unoredinary.item.armor.GlacialiteArmorCustomizer;
+import net.xun.unoredinary.item.armor.FroststeelArmorCustomizer;
+import net.xun.unoredinary.item.armor.LuminiumArmorCustomizer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,19 +13,19 @@ public class UOArmors {
     private static final List<ArmorSet> ARMOR_SETS = new ArrayList<>();
 
     public static final ArmorSet FROSTSTEEL = register(new ArmorSet.Builder("froststeel", UOArmorMaterials.FROSTSTEEL)
-            .withCustomizer(new FroststeelArmorConfigurator())
+            .withCustomizer(new FroststeelArmorCustomizer())
             .withDurabilityFactor(21)
             .build()
     );
 
     public static final ArmorSet GLACIALITE = register(new ArmorSet.Builder("glacialite", UOArmorMaterials.GLACIALITE)
-            .withCustomizer(new GlacialiteArmorConfigurator())
+            .withCustomizer(new GlacialiteArmorCustomizer())
             .withDurabilityFactor(35)
             .build()
     );
 
     public static final ArmorSet LUMINIUM = register(new ArmorSet.Builder("luminium", UOArmorMaterials.LUMINIUM)
-            .withCustomizer(new LuminiumArmorConfigurator())
+            .withCustomizer(new LuminiumArmorCustomizer())
             .withDurabilityFactor(30)
             .build()
     );

@@ -15,19 +15,19 @@ import net.xun.armory.api.item.armor.ArmorType;
 import net.xun.lib.common.api.util.ArmorSlotsUtils;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
-import net.xun.unoredinary.config.common.UOCommonConfig;
+import net.xun.unoredinary.config.server.UOServerConfig;
 import net.xun.unoredinary.registry.UOArmorMaterials;
 
 import java.util.List;
 
-public class LuminiumArmorConfigurator implements ArmorCustomizer {
+public class LuminiumArmorCustomizer implements ArmorCustomizer {
     @Override
     public ArmorItem createArmorItem(ArmorType type, Holder<ArmorMaterial> material, int durabilityFactor, Item.Properties props) {
         return new ArmorItem(material, type.getArmorType(), props.durability(type.getArmorType().getDurability(durabilityFactor))) {
 
             @Override
             public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-                if (!UOCommonConfig.armorEffectConfig.luminiumConfig.enable.get())
+                if (!UOServerConfig.armorEffectConfig.luminiumConfig.enable.get())
                     return;
 
                 handleArmorEffect(stack, level, entity, slotId, isSelected);
@@ -39,7 +39,7 @@ public class LuminiumArmorConfigurator implements ArmorCustomizer {
         if (!(entity instanceof Player player) || !(stack.getItem() instanceof ArmorItem))
             return;
 
-        if (UOCommonConfig.armorEffectConfig.luminiumConfig.enableNightVision.get()) {
+        if (UOServerConfig.armorEffectConfig.luminiumConfig.enableNightVision.get()) {
             handleNightVisionEffect(player);
         }
     }

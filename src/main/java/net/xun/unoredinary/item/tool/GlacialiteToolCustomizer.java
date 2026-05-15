@@ -17,15 +17,13 @@ import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategy;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
-import net.xun.unoredinary.config.client.UOClientConfig;
-import net.xun.unoredinary.config.common.UOCommonConfig;
-import net.xun.unoredinary.data.generator.UOParticles;
+import net.xun.unoredinary.config.server.UOServerConfig;
 import net.xun.unoredinary.registry.UOMobEffects;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
 import java.util.List;
 
-public class GlacialiteToolConfigurator implements ToolCustomizer {
+public class GlacialiteToolCustomizer implements ToolCustomizer {
     private static final int FROSTED_DURATION = 400;
     private static final int WEAKNESS_DURATION_NOVA = 60;
     private static final int WEAKNESS_AMPLIFIER_NOVA = 2;
@@ -109,11 +107,11 @@ public class GlacialiteToolConfigurator implements ToolCustomizer {
         if (!(attacker instanceof Player))
             return;
 
-        if (!UOCommonConfig.toolEffectConfig.glacialiteConfig.enable.get())
+        if (!UOServerConfig.toolEffectConfig.glacialiteConfig.enable.get())
             return;
 
         if (applyFrostNova) {
-            if (UOCommonConfig.toolEffectConfig.glacialiteConfig.enableFrostNova.get()) {
+            if (UOServerConfig.toolEffectConfig.glacialiteConfig.enableFrostNova.get()) {
                 applyFrostNovaEffect(target);
             } else {
                 applySingleTargetEffects(target);
@@ -126,14 +124,14 @@ public class GlacialiteToolConfigurator implements ToolCustomizer {
 
     private static void applyFrostNovaEffect(LivingEntity target) {
         Level level = target.level();
-        AABB aabb = BlockPosUtils.createAABBFromCenter(target.blockPosition(), FROST_NOVA_RADIUS, FROST_NOVA_RADIUS, FROST_NOVA_RADIUS);
+        AABB aabb = BlockPosUtils.createAABBFromCenter(target.blockPosition(), FROST_NOVA_RADIUS);
         List<LivingEntity> hostiles = level.getEntitiesOfClass(
                 LivingEntity.class,
                 aabb,
                 entity -> entity instanceof Enemy
         );
 
-        if (UOClientConfig.toolEffectConfig.glacialiteConfig.doHitParticlesSpawn.get()) {
+        if (UOServerConfig.toolEffectConfig.glacialiteConfig.doHitParticlesSpawn.get()) {
             spawnFrostParticles(target);
         }
 
@@ -165,26 +163,10 @@ public class GlacialiteToolConfigurator implements ToolCustomizer {
                 0, 0, 0,
                 FROST_NOVA_RADIUS
         );
-//        if (!(target.level() instanceof ServerLevel serverLevel)) return;
-//
-//        double centerX = target.getX();
-//        double centerY = target.getY() + target.getBbHeight() / 2.0;
-//        double centerZ = target.getZ();
-//
-//        double halfWidth = target.getBbWidth() / 2.0;
-//        double halfHeight = target.getBbHeight() / 2.0;
-//
-//        serverLevel.sendParticles(
-//                UOParticleTypes.SUBZERO_FROST.get(),
-//                centerX, centerY, centerZ,
-//                24,
-//                halfWidth, halfHeight, halfWidth,
-//                0.03
-//        );
     }
 
     private static void applySingleTargetEffects(LivingEntity target) {
-        if (!UOCommonConfig.toolEffectConfig.glacialiteConfig.enableNormalEffect.get())
+        if (!UOServerConfig.toolEffectConfig.glacialiteConfig.enableNormalEffect.get())
             return;
 
         List<MobEffectInstance> effects = List.of(

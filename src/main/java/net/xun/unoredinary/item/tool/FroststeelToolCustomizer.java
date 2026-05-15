@@ -13,13 +13,12 @@ import net.xun.armory.api.item.tools.ToolType;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategy;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
-import net.xun.unoredinary.config.client.UOClientConfig;
-import net.xun.unoredinary.config.common.UOCommonConfig;
+import net.xun.unoredinary.config.server.UOServerConfig;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
 import java.util.List;
 
-public class FroststeelToolConfigurator implements ToolCustomizer {
+public class FroststeelToolCustomizer implements ToolCustomizer {
     private static final int SLOW_DURATION = 40;
     private static final int SLOW_AMPLIFIER = 1;
 
@@ -86,9 +85,7 @@ public class FroststeelToolConfigurator implements ToolCustomizer {
                     }
                 };
             }
-            default -> {
-                throw new MatchException(null, null);
-            }
+            default -> throw new MatchException(null, null);
         }
     }
 
@@ -96,10 +93,10 @@ public class FroststeelToolConfigurator implements ToolCustomizer {
         if (!(attacker instanceof Player))
             return;
 
-        if (!UOCommonConfig.toolEffectConfig.froststeelConfig.enable.get())
+        if (!UOServerConfig.toolEffectConfig.froststeelConfig.enable.get())
             return;
 
-        if (UOCommonConfig.toolEffectConfig.froststeelConfig.enableNormalEffect.get()) {
+        if (UOServerConfig.toolEffectConfig.froststeelConfig.enableNormalEffect.get()) {
             applyHurtEffects(target);
         }
     }
@@ -111,7 +108,7 @@ public class FroststeelToolConfigurator implements ToolCustomizer {
 
         MobEffectUtils.applyEffectsWithStrategy(target, effects, EffectStackingStrategy.FORCE_OVERRIDE);
 
-        if (UOClientConfig.toolEffectConfig.froststeelConfig.doHitParticlesSpawn.get()) {
+        if (UOServerConfig.toolEffectConfig.froststeelConfig.doHitParticlesSpawn.get()) {
             spawnRimeParticles(target);
         }
     }

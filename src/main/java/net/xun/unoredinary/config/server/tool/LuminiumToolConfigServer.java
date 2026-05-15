@@ -1,12 +1,12 @@
-package net.xun.unoredinary.config.common.tool;
+package net.xun.unoredinary.config.server.tool;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-public class LuminiumToolConfigCommon {
+public class LuminiumToolConfigServer {
     public final ModConfigSpec.BooleanValue enable;
     public final ModConfigSpec.BooleanValue enableGlowingOnHit;
 
-    public LuminiumToolConfigCommon(final ModConfigSpec.Builder builder) {
+    public LuminiumToolConfigServer(final ModConfigSpec.Builder builder) {
         builder.push("luminium");
 
         enable = builder

@@ -1,8 +1,8 @@
-package net.xun.unoredinary.config.common.armor;
+package net.xun.unoredinary.config.server.armor;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-public class GlacialiteArmorConfigCommon {
+public class GlacialiteArmorConfigServer {
     public final ModConfigSpec.BooleanValue enable;
     public final ModConfigSpec.BooleanValue enableFrostWalker;
     public final ModConfigSpec.BooleanValue enableSlownessImmunity;
@@ -10,7 +10,11 @@ public class GlacialiteArmorConfigCommon {
     public final ModConfigSpec.BooleanValue enableThornsEffect;
     public final ModConfigSpec.BooleanValue canWalkOnPowderSnow;
 
-    public GlacialiteArmorConfigCommon(final ModConfigSpec.Builder builder) {
+    public final ModConfigSpec.IntValue frostWalkerRadius;
+
+    public final ModConfigSpec.BooleanValue doDamageParticlesSpawn;
+
+    public GlacialiteArmorConfigServer(final ModConfigSpec.Builder builder) {
         builder.push("glacialite");
 
         enable = builder
@@ -36,6 +40,14 @@ public class GlacialiteArmorConfigCommon {
         canWalkOnPowderSnow = builder
                 .comment("Disabling this setting will make you unable to walk on powder snow while wearing Glacialite Boots")
                 .define("can_walk_on_powder_snow", true);
+
+        frostWalkerRadius = builder
+                .comment("This setting corresponds to the radius of the frost walker effect you get while wearing Glacialite Boots")
+                .defineInRange("frost_walker_rad", 4, 1, 16);
+
+        doDamageParticlesSpawn = builder
+                .comment("Disabling this setting will turn off the particles that spawn when enemies damage you (if you wear Glacialite Armor)")
+                .define("hurt_particles", true);
 
         builder.pop();
     }

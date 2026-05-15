@@ -127,8 +127,7 @@ configurations {
 
 dependencies {
     implementation "net.xun.lib:xunlib-neoforge:${xunlib_version}"
-
-    implementation files('libs/armories-neoforge-1.21.1-2.0.0.jar')
+    implementation "net.xun.armory:armories-neoforge:${armory_version}"
 
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")

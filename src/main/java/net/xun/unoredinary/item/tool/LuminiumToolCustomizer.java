@@ -9,11 +9,11 @@ import net.xun.armory.api.item.tools.ToolType;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategy;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
-import net.xun.unoredinary.config.common.UOCommonConfig;
+import net.xun.unoredinary.config.server.UOServerConfig;
 
 import java.util.List;
 
-public class LuminiumToolConfigurator implements ToolCustomizer {
+public class LuminiumToolCustomizer implements ToolCustomizer {
     @Override
     public Item createTool(ToolType type, Tier tier, Item.Properties properties) {
         switch (type) {
@@ -87,10 +87,10 @@ public class LuminiumToolConfigurator implements ToolCustomizer {
         if (!(attacker instanceof Player))
             return;
 
-        if (!UOCommonConfig.toolEffectConfig.luminiumConfig.enable.get())
+        if (!UOServerConfig.toolEffectConfig.luminiumConfig.enable.get())
             return;
 
-        if (UOCommonConfig.toolEffectConfig.luminiumConfig.enableGlowingOnHit.get()) {
+        if (UOServerConfig.toolEffectConfig.luminiumConfig.enableGlowingOnHit.get()) {
             addGlowingEffect(target);
         }
     }

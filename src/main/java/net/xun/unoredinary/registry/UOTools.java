@@ -4,9 +4,9 @@ import net.xun.armory.api.item.tools.ToolSet;
 import net.xun.armory.api.item.tools.ToolType;
 import net.xun.armory.impl.item.tools.GenericAttributeHelper;
 import net.xun.unoredinary.UnOredinary;
-import net.xun.unoredinary.item.tool.GlacialiteToolConfigurator;
-import net.xun.unoredinary.item.tool.FroststeelToolConfigurator;
-import net.xun.unoredinary.item.tool.LuminiumToolConfigurator;
+import net.xun.unoredinary.item.tool.GlacialiteToolCustomizer;
+import net.xun.unoredinary.item.tool.FroststeelToolCustomizer;
+import net.xun.unoredinary.item.tool.LuminiumToolCustomizer;
 import net.xun.unoredinary.item.tool.attribute_helper.FrostToolAttributeHelper;
 
 import java.util.ArrayList;
@@ -16,13 +16,13 @@ public class UOTools {
     private static final List<ToolSet> TOOL_SETS = new ArrayList<>();
 
     public static final ToolSet FROSTSTEEL = register(new ToolSet.Builder("froststeel", UOToolTiers.FROSTSTEEL, new FrostToolAttributeHelper())
-            .withCustomizer(new FroststeelToolConfigurator())
+            .withCustomizer(new FroststeelToolCustomizer())
             .withVanillaBalance()
             .build()
     );
 
     public static final ToolSet GLACIALITE = register(new ToolSet.Builder("glacialite", UOToolTiers.GLACIALITE, new FrostToolAttributeHelper())
-            .withCustomizer(new GlacialiteToolConfigurator())
+            .withCustomizer(new GlacialiteToolCustomizer())
             .withVanillaBalance()
             .withToolStats(ToolType.AXE, 5.0F, 1.0F)
             .withToolStats(ToolType.HOE, -4.0F, 4.0F)
@@ -30,7 +30,7 @@ public class UOTools {
     );
 
     public static final ToolSet LUMINIUM = register(new ToolSet.Builder("luminium", UOToolTiers.LUMINIUM, new GenericAttributeHelper())
-            .withCustomizer(new LuminiumToolConfigurator())
+            .withCustomizer(new LuminiumToolCustomizer())
             .withVanillaBalance()
             .withToolStats(ToolType.AXE, 5.0F, 1.0F)
             .withToolStats(ToolType.HOE, -3.0F, 4.0F)
