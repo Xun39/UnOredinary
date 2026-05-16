@@ -1,9 +1,7 @@
 package net.xun.unoredinary.item.tool;
 
-import net.minecraft.core.Holder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.xun.armory.api.item.tools.ToolCustomizer;
 import net.xun.armory.api.item.tools.ToolType;
 
@@ -43,7 +41,7 @@ public abstract class AbstractEffectToolCustomizer implements ToolCustomizer {
         };
     }
 
-    private Item createAxe(Tier tier, Item.Properties properties) {
+    protected Item createAxe(Tier tier, Item.Properties properties) {
         return new AxeItem(tier, properties) {
             @Override
             public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
@@ -57,7 +55,7 @@ public abstract class AbstractEffectToolCustomizer implements ToolCustomizer {
         };
     }
 
-    private Item createPickaxe(Tier tier, Item.Properties properties) {
+    protected Item createPickaxe(Tier tier, Item.Properties properties) {
         return new PickaxeItem(tier, properties) {
             @Override
             public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
@@ -71,7 +69,7 @@ public abstract class AbstractEffectToolCustomizer implements ToolCustomizer {
         };
     }
 
-    private Item createHoe(Tier tier, Item.Properties properties) {
+    protected Item createHoe(Tier tier, Item.Properties properties) {
         return new HoeItem(tier, properties) {
             @Override
             public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
@@ -85,7 +83,7 @@ public abstract class AbstractEffectToolCustomizer implements ToolCustomizer {
         };
     }
 
-    private Item createShovel(Tier tier, Item.Properties properties) {
+    protected Item createShovel(Tier tier, Item.Properties properties) {
         return new ShovelItem(tier, properties) {
             @Override
             public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {

@@ -202,7 +202,7 @@ public class UORecipes extends UORecipeProvider {
 
         // Ruby-related
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, UOBlocks.TRANSENCHANTING_TABLE)
-                .define('^', Items.GHAST_TEAR)
+                .define('^', Items.BOOK)
                 .define('#', Blocks.OBSIDIAN)
                 .define('*', UOTags.Items.GEMS_RUBY)
                 .pattern(" ^ ")

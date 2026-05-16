@@ -1,8 +1,6 @@
 package net.xun.unoredinary.block;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
@@ -62,23 +60,6 @@ public class TransenchantingTableBlock extends Block implements EntityBlock {
         }
 
         super.onRemove(state, level, pos, newState, movedByPiston);
-    }
-
-    @Override
-    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        super.animateTick(state, level, pos, random);
-
-        if (random.nextInt(12) == 0) {
-            level.addParticle(
-                    ParticleTypes.ELECTRIC_SPARK,
-                    pos.getX() + 0.5,
-                    pos.getY() + 1.6,
-                    pos.getZ() + 0.5,
-                    (random.nextDouble() - 0.5) * 0.05,
-                    random.nextDouble() * 0.05,
-                    (random.nextDouble() - 0.5) * 0.05
-            );
-        }
     }
 
     @Override
