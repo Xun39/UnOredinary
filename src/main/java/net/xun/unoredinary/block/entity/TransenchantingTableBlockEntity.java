@@ -10,26 +10,34 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.EnchantingTableBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
+import net.xun.lib.common.api.block.entity.ITickableBlockEntity;
 import net.xun.unoredinary.block.entity.container.TransenchantingTableMenu;
 import net.xun.unoredinary.registry.UOBlockEntityTypes;
 import net.xun.unoredinary.util.TransenchantmentHelper;
 import org.jetbrains.annotations.Nullable;
 
-public class TransenchantingTableBlockEntity extends BlockEntity implements MenuProvider {
-    public static final int TRANSLATOR_SLOT = 0;
-    public static final int TRANSENCHANT_SLOT = 1;
+public class TransenchantingTableBlockEntity extends EnchantingTableBlockEntity implements MenuProvider, ITickableBlockEntity {
+    public static final int TRANSENCHANTOR_SLOT = 0;
+    public static final int TRANSENCHANTING_SLOT = 1;
     public static final int OUTPUT_SLOT = 2;
     public static final int INVENTORY_SIZE = OUTPUT_SLOT + 1;
 
     private final ItemStackHandler inventory;
 
     public TransenchantingTableBlockEntity(BlockPos pos, BlockState blockState) {
-        super(UOBlockEntityTypes.TRANSENCHANTING_TABLE.get(), pos, blockState);
+        super(pos, blockState);
         this.inventory = createHandler();
+    }
+
+    @Override
+    public BlockEntityType<?> getType() {
+        return UOBlockEntityTypes.TRANSENCHANTING_TABLE.get();
     }
 
     @Override
@@ -46,23 +54,23 @@ public class TransenchantingTableBlockEntity extends BlockEntity implements Menu
 
     public boolean canTransenchant() {
         return TransenchantmentHelper.canTransenchant(
-                inventory.getStackInSlot(TRANSLATOR_SLOT),
-                inventory.getStackInSlot(TRANSENCHANT_SLOT)
+                inventory.getStackInSlot(TRANSENCHANTOR_SLOT),
+                inventory.getStackInSlot(TRANSENCHANTING_SLOT)
         );
     }
 
     public ItemStack getPreviewResult() {
         return TransenchantmentHelper.createPreviewResult(
-                inventory.getStackInSlot(TRANSLATOR_SLOT),
-                inventory.getStackInSlot(TRANSENCHANT_SLOT)
+                inventory.getStackInSlot(TRANSENCHANTOR_SLOT),
+                inventory.getStackInSlot(TRANSENCHANTING_SLOT)
         );
     }
 
     public void commitTransenchant(Player player) {
         TransenchantmentHelper.commitFullTransenchant(
                 player,
-                inventory.getStackInSlot(TRANSLATOR_SLOT),
-                inventory.getStackInSlot(TRANSENCHANT_SLOT)
+                inventory.getStackInSlot(TRANSENCHANTOR_SLOT),
+                inventory.getStackInSlot(TRANSENCHANTING_SLOT)
         );
 
         setChanged();
@@ -81,6 +89,11 @@ public class TransenchantingTableBlockEntity extends BlockEntity implements Menu
         }
 
         return drops;
+    }
+
+    @Override
+    public void clientTick(Level level, BlockPos pos, BlockState state) {
+        bookAnimationTick(level, pos, state, this);
     }
 
     @Override

@@ -13,6 +13,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.xun.unoredinary.UnOredinary;
+import net.xun.unoredinary.client.blockentity.renderer.TransenchantTableRenderer;
 import net.xun.unoredinary.client.gui.TransenchantingTableScreen;
 import net.xun.unoredinary.client.model.UOModelLayers;
 import net.xun.unoredinary.client.model.entity.FrostRevenantModel;
@@ -22,6 +23,7 @@ import net.xun.unoredinary.client.model.renderer.FrostZombieRenderer;
 import net.xun.unoredinary.client.particle.FrostNovaParticle;
 import net.xun.unoredinary.client.particle.RimeParticle;
 import net.xun.unoredinary.client.particle.SubzeroFrostParticle;
+import net.xun.unoredinary.registry.UOBlockEntityTypes;
 import net.xun.unoredinary.registry.UOEntityTypes;
 import net.xun.unoredinary.registry.UOMenuTypes;
 import net.xun.unoredinary.registry.UOParticleTypes;
@@ -62,5 +64,10 @@ public class RegistrationEvents {
     @SubscribeEvent
     public static void registerMenuScreens(RegisterMenuScreensEvent event) {
         event.register(UOMenuTypes.TRANSENCHANTING_TABLE.get(), TransenchantingTableScreen::new);
+    }
+
+    @SubscribeEvent
+    public static void registerBlockEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(UOBlockEntityTypes.TRANSENCHANTING_TABLE.get(), TransenchantTableRenderer::new);
     }
 }

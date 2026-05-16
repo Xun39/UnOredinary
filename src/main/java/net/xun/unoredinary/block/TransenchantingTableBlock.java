@@ -12,14 +12,17 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.xun.lib.common.api.block.entity.TickingEntityBlock;
 import net.xun.unoredinary.block.entity.TransenchantingTableBlockEntity;
+import net.xun.unoredinary.registry.UOBlockEntityTypes;
 import org.jetbrains.annotations.Nullable;
 
-public class TransenchantingTableBlock extends Block implements EntityBlock {
+public class TransenchantingTableBlock extends Block implements TickingEntityBlock {
     protected static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
 
     public TransenchantingTableBlock(Properties properties) {
@@ -65,5 +68,10 @@ public class TransenchantingTableBlock extends Block implements EntityBlock {
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new TransenchantingTableBlockEntity(pos, state);
+    }
+
+    @Override
+    public BlockEntityType<?> getAssociatedType() {
+        return UOBlockEntityTypes.TRANSENCHANTING_TABLE.get();
     }
 }
