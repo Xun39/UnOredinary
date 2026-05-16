@@ -1,14 +1,10 @@
 package net.xun.unoredinary.item.tool;
 
-import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
-import net.xun.armory.api.item.tools.ToolCustomizer;
 import net.xun.armory.api.item.tools.ToolType;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategy;
@@ -18,100 +14,23 @@ import net.xun.unoredinary.registry.UOParticleTypes;
 
 import java.util.List;
 
-public class FroststeelToolCustomizer implements ToolCustomizer {
+public class FroststeelToolCustomizer extends AbstractEffectToolCustomizer {
     private static final int SLOW_DURATION = 40;
     private static final int SLOW_AMPLIFIER = 1;
 
     @Override
-    public Item createTool(ToolType type, Tier tier, Item.Properties properties) {
-        switch (type) {
-            case SWORD -> {
-                return new SwordItem(tier, properties) {
-                    @Override
-                    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        return onHit(
-                                super.hurtEnemy(stack, target, attacker),
-                                target,
-                                attacker
-                        );
-                    }
-                };
-            }
-            case AXE -> {
-                return new AxeItem(tier, properties) {
-                    @Override
-                    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        return onHit(
-                                super.hurtEnemy(stack, target, attacker),
-                                target,
-                                attacker
-                        );
-                    }
-                };
-            }
-            case PICKAXE -> {
-                return new PickaxeItem(tier, properties) {
-                    @Override
-                    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        return onHit(
-                                super.hurtEnemy(stack, target, attacker),
-                                target,
-                                attacker
-                        );
-                    }
-                };
-            }
-            case HOE -> {
-                return new HoeItem(tier, properties) {
-                    @Override
-                    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        return onHit(
-                                super.hurtEnemy(stack, target, attacker),
-                                target,
-                                attacker
-                        );
-                    }
-                };
-            }
-            case SHOVEL -> {
-                return new ShovelItem(tier, properties) {
-                    @Override
-                    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        return onHit(
-                                super.hurtEnemy(stack, target, attacker),
-                                target,
-                                attacker
-                        );
-                    }
-                };
-            }
-            default -> throw new MatchException(null, null);
-        }
-    }
-
-    private static boolean onHit(boolean flag, LivingEntity target, LivingEntity attacker) {
-        if (flag && !target.level().isClientSide) {
-            handleHitEffect(target, attacker);
-        }
-
-        return flag;
-    }
-
-    private static void handleHitEffect(LivingEntity target, LivingEntity attacker) {
-        if (!(attacker instanceof Player))
-            return;
-
-        if (!UOServerConfig.toolEffectConfig.froststeelConfig.enable.get())
+    protected void handleHitEffect(ToolType toolType, LivingEntity target, LivingEntity attacker) {
+        if (!(attacker instanceof Player) || !UOServerConfig.toolEffectConfig.froststeelConfig.enable.get())
             return;
 
         if (UOServerConfig.toolEffectConfig.froststeelConfig.enableNormalEffect.get()) {
-            applyHurtEffects(target);
+            applyHitEffects(target);
         }
     }
 
-    private static void applyHurtEffects(LivingEntity target) {
+    private static void applyHitEffects(LivingEntity target) {
         List<MobEffectInstance> effects = List.of(
-                buildEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, SLOW_DURATION, SLOW_AMPLIFIER)
+                buildEffectInstance()
         );
 
         MobEffectUtils.applyEffectsWithStrategy(target, effects, EffectStackingStrategy.FORCE_OVERRIDE);
@@ -140,10 +59,10 @@ public class FroststeelToolCustomizer implements ToolCustomizer {
         );
     }
 
-    private static MobEffectInstance buildEffectInstance(Holder<MobEffect> effect, int duration, int amplifier) {
-        return MobEffectInstanceBuilder.of(effect)
-                .withDuration(duration)
-                .withAmplifier(amplifier)
+    private static MobEffectInstance buildEffectInstance() {
+        return MobEffectInstanceBuilder.of(MobEffects.MOVEMENT_SLOWDOWN)
+                .withDuration(FroststeelToolCustomizer.SLOW_DURATION)
+                .withAmplifier(FroststeelToolCustomizer.SLOW_AMPLIFIER)
                 .build();
     }
 }

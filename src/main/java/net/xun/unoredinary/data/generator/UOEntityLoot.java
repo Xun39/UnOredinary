@@ -43,6 +43,8 @@ public class UOEntityLoot extends EntityLootSubProvider {
                         .when(LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries, 0.025F, 0.01F))
                 )
         );
+
+        add(UOEntityTypes.FROST_REVENANT.get(), LootTable.lootTable());
     }
 
     @Override

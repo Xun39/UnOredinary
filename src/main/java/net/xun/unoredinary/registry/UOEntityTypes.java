@@ -6,6 +6,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xun.unoredinary.UnOredinary;
+import net.xun.unoredinary.entity.FrostRevenant;
 import net.xun.unoredinary.entity.FrostZombie;
 
 public class UOEntityTypes {
@@ -13,5 +14,8 @@ public class UOEntityTypes {
 
     public static final DeferredHolder<EntityType<?>, EntityType<FrostZombie>> FROST_ZOMBIE = ENTITY_TYPES.register("frost_zombie",
             () -> EntityType.Builder.of(FrostZombie::new, MobCategory.MONSTER).sized(0.6F, 2F).build("frost_zombie")
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<FrostRevenant>> FROST_REVENANT = ENTITY_TYPES.register("frost_revenant",
+            () -> EntityType.Builder.of(FrostRevenant::new, MobCategory.MONSTER).sized(0.7F, 2.1F).build("frost_revenant")
     );
 }

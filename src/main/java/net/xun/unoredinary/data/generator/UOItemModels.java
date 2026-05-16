@@ -48,5 +48,6 @@ public class UOItemModels extends UOItemModelProvider {
         armorSetModels(UOArmors.LUMINIUM);
 
         withExistingParent(CommonUtils.getRegistryID(UOItems.FROST_ZOMBIE_SPAWN_EGG.asItem()), mcLoc("item/template_spawn_egg"));
+        withExistingParent(CommonUtils.getRegistryID(UOItems.FROST_REVENANT_SPAWN_EGG.asItem()), mcLoc("item/template_spawn_egg"));
     }
 }

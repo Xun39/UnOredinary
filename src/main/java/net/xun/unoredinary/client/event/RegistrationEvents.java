@@ -15,7 +15,9 @@ import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.client.gui.TransenchantingTableScreen;
 import net.xun.unoredinary.client.model.UOModelLayers;
+import net.xun.unoredinary.client.model.entity.FrostRevenantModel;
 import net.xun.unoredinary.client.model.entity.FrostZombieModel;
+import net.xun.unoredinary.client.model.renderer.FrostRevenantRenderer;
 import net.xun.unoredinary.client.model.renderer.FrostZombieRenderer;
 import net.xun.unoredinary.client.particle.FrostNovaParticle;
 import net.xun.unoredinary.client.particle.RimeParticle;
@@ -30,6 +32,7 @@ public class RegistrationEvents {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(UOEntityTypes.FROST_ZOMBIE.get(), FrostZombieRenderer::new);
+        EntityRenderers.register(UOEntityTypes.FROST_REVENANT.get(), FrostRevenantRenderer::new);
     }
 
     @SubscribeEvent
@@ -50,6 +53,10 @@ public class RegistrationEvents {
         event.registerLayerDefinition(UOModelLayers.FROST_ZOMBIE_OUTER_LAYER, () -> FrostZombieModel.createBodyLayer(new CubeDeformation(0.25F)));
         event.registerLayerDefinition(UOModelLayers.FROST_ZOMBIE_INNER_ARMOR, () -> innerArmorLayerdefinition);
         event.registerLayerDefinition(UOModelLayers.FROST_ZOMBIE_OUTER_ARMOR, () -> outerArmorLayerdefinition);
+
+        event.registerLayerDefinition(UOModelLayers.FROST_REVENANT, () -> FrostRevenantModel.createBodyLayer(CubeDeformation.NONE));
+        event.registerLayerDefinition(UOModelLayers.FROST_REVENANT_INNER_ARMOR, () -> innerArmorLayerdefinition);
+        event.registerLayerDefinition(UOModelLayers.FROST_REVENANT_OUTER_ARMOR, () -> outerArmorLayerdefinition);
     }
 
     @SubscribeEvent

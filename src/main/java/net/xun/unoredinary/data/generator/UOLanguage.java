@@ -83,6 +83,7 @@ public class UOLanguage extends UOLanguageProvider {
 
         /* ------------------------------ ENTITIES ------------------------------ */
         addEntityAndSpawnEgg(UOEntityTypes.FROST_ZOMBIE, "Frost Zombie");
+        addEntityAndSpawnEgg(UOEntityTypes.FROST_REVENANT, "Frost Revenant");
 
         /* ------------------------------ MOB EFFECTS and POTIONS ------------------------------ */
         addEffect(UOMobEffects.FROSTED_EFFECT, "Frostbitten");
@@ -197,26 +198,29 @@ public class UOLanguage extends UOLanguageProvider {
         translateConfig("tool_effects", "Tool Effects");
 
         translateConfig("hit_particles", "Do hit particles spawn");
-
         translateConfig("enable_tool", "Enable Tool Effects");
         translateConfig("enable_normal", "Enable Normal Effect");
+
         translateConfig("enable_frost_nova", "Enable Frost Nova");
+        translateConfig("frost_nova_to_passive", "Apply Frost Nova to passive Mobs");
+        translateConfig("frost_nova_sound", "Enable Frost Nova Sound Effect");
+
         translateConfig("enable_glowing_on_hit", "Enable Glowing Effect On Hit");
 
         // Armor Effect Configs
         translateConfig("armor_effects", "Armor Effects");
 
         translateConfig("hurt_particles", "Do damage particles spawn");
-
         translateConfig("enable_armor", "Enable Armor Effects");
+
         translateConfig("enable_frost_walker", "Enable Frost Walker");
         translateConfig("enable_slowness_immunity", "Enable Slowness Immunity");
         translateConfig("enable_hot_floor_damage", "Enable Hot Floor Damage");
         translateConfig("enable_thorns", "Enable Thorns");
         translateConfig("can_walk_on_powder_snow", "Can walk on powder snow");
-        translateConfig("enable_night_vision", "Enable Night Vision");
-
         translateConfig("frost_walker_rad", "Frost Walker effect's Radius");
+
+        translateConfig("enable_night_vision", "Enable Night Vision");
 
         // Particle Configs
         translateConfig("particle_ops", "Particle Options");

@@ -11,6 +11,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.xun.unoredinary.UnOredinary;
+import net.xun.unoredinary.entity.FrostRevenant;
 import net.xun.unoredinary.entity.FrostZombie;
 import net.xun.unoredinary.registry.UOEntityTypes;
 import net.xun.unoredinary.registry.UOItems;
@@ -21,18 +22,20 @@ public class ModEvents {
     @SubscribeEvent
     public static void onEntityAttributesCreated(EntityAttributeCreationEvent event) {
         event.put(UOEntityTypes.FROST_ZOMBIE.get(), FrostZombie.createAttributes().build());
+        event.put(UOEntityTypes.FROST_REVENANT.get(), FrostRevenant.createAttributes().build());
     }
 
     @SubscribeEvent
     public static void onRegisterSpawnPlacements(RegisterSpawnPlacementsEvent event) {
         event.register(UOEntityTypes.FROST_ZOMBIE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(UOEntityTypes.FROST_REVENANT.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 
     @SubscribeEvent
     public static void buildCreativeModeTab(BuildCreativeModeTabContentsEvent event) {
-
         if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             insertAfter(event, Items.ZOMBIE_SPAWN_EGG, UOItems.FROST_ZOMBIE_SPAWN_EGG);
+            insertAfter(event, UOItems.FROST_ZOMBIE_SPAWN_EGG, UOItems.FROST_REVENANT_SPAWN_EGG);
         }
     }
 

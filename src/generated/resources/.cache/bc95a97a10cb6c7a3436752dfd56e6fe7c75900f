@@ -1,4 +1,4 @@
-// 1.21.1	2026-01-27T17:49:34.094284	Item Models: unoredinary
+// 1.21.1	2026-05-15T20:54:43.1507962	Item Models: unoredinary
 1d9b0eb64cad3335fc3567e31162fa4b68c6007d assets/unoredinary/models/item/cryic_powder.json
 7419870683e42dcbd1e838421493c96c84efe9dd assets/unoredinary/models/item/froststeel_axe.json
 35d52c00e629e4abec75d60e2de9cc80bcc3cea5 assets/unoredinary/models/item/froststeel_boots.json
@@ -51,6 +51,7 @@ dcea4ae0e4ce23d7503b65d45f3de71a63fc5c63 assets/unoredinary/models/item/frostste
 9acd9875cfd62396ce4bc1682721b5f437c95684 assets/unoredinary/models/item/froststeel_pickaxe.json
 122cb1da9494840fbe6c1086cca3c8aa72ed79de assets/unoredinary/models/item/froststeel_shovel.json
 cf8621eea051020918d7002ba177758e9cb0fefc assets/unoredinary/models/item/froststeel_sword.json
+9e673c29d9253c72abbb453311c5e14aee2451ce assets/unoredinary/models/item/frost_revenant_spawn_egg.json
 9e673c29d9253c72abbb453311c5e14aee2451ce assets/unoredinary/models/item/frost_zombie_spawn_egg.json
 ab4dd44cd0787dbb7c810db0828f19e39400962e assets/unoredinary/models/item/glacialite_axe.json
 3fe2f758bbc0abfafb11929fef3ee48b4ee5eca4 assets/unoredinary/models/item/glacialite_boots.json

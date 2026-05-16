@@ -19,7 +19,13 @@ public class UOEntityTypeTags extends EntityTypeTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(EntityTypeTags.ZOMBIES).add(
-                UOEntityTypes.FROST_ZOMBIE.get()
+                UOEntityTypes.FROST_ZOMBIE.get(),
+                UOEntityTypes.FROST_REVENANT.get()
+        );
+
+        tag(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES).add(
+                UOEntityTypes.FROST_ZOMBIE.get(),
+                UOEntityTypes.FROST_REVENANT.get()
         );
     }
 }

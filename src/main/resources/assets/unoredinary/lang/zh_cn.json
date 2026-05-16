@@ -171,6 +171,8 @@
   "unoredinary.configuration.enable_thorns": "启用荆棘效果",
   "unoredinary.configuration.enable_tool": "启用工具效果",
   "unoredinary.configuration.frost_nova_par": "霜冻新星",
+  "unoredinary.configuration.frost_nova_sound": "启用霜冻新星音效",
+  "unoredinary.configuration.frost_nova_to_passive": "将霜冻新星应用在友好生物上",
   "unoredinary.configuration.frost_walker_rad": "冰霜行者效果半径",
   "unoredinary.configuration.froststeel": "霜钢",
   "unoredinary.configuration.glacialite": "冰川合金",

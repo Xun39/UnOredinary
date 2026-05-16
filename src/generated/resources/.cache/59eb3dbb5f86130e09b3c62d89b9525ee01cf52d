@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-13T22:05:14.0244876	Loot Tables
+// 1.21.1	2026-05-15T20:54:43.1477965	Loot Tables
 9210d52df48785389ab6b86240bcf70642b45947 data/unoredinary/loot_table/blocks/cryic_block.json
 fa51d822a3a0957fd17de5ec1377b6fbf3bae5e5 data/unoredinary/loot_table/blocks/cryic_ore.json
 303919f41a287d385543c2bec15165d2490ae6ad data/unoredinary/loot_table/blocks/deepslate_cryic_ore.json
@@ -33,4 +33,5 @@ e0035ffc78245651eb61594bf62570387687ad34 data/unoredinary/loot_table/chests/fros
 14ddb85f9d0ef3ace018229d1928357c5106b8f5 data/unoredinary/loot_table/chests/frost_dungeon/monster_room.json
 99fde0d74e49e30d93682349e1dcbb897f6ddb0a data/unoredinary/loot_table/chests/frost_dungeon/treasure.json
 a72adfb5b6982d71d36f91d43f2d94758fa591ae data/unoredinary/loot_table/chests/frozen_vault.json
+244ff67a50ef6d766c4101a99ca57891d0f3f486 data/unoredinary/loot_table/entities/frost_revenant.json
 739a82e3104429e4f06877b037c12213c1f0d760 data/unoredinary/loot_table/entities/frost_zombie.json

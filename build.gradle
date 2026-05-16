@@ -148,6 +148,9 @@ dependencies {
     runtimeOnly("curse.maven:patchouli-306770:7730942")
 
     runtimeOnly("curse.maven:gateways-to-eternity-417802:6926284")
+
+    runtimeOnly("curse.maven:enchanting-infuser-551151:7844709")
+    runtimeOnly("curse.maven:puzzles-lib-495476:7140307")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

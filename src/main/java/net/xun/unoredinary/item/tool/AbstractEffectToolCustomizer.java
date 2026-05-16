@@ -1,7 +1,9 @@
 package net.xun.unoredinary.item.tool;
 
+import net.minecraft.core.Holder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.xun.armory.api.item.tools.ToolCustomizer;
 import net.xun.armory.api.item.tools.ToolType;
 
@@ -19,7 +21,7 @@ public abstract class AbstractEffectToolCustomizer implements ToolCustomizer {
 
     protected abstract void handleHitEffect(ToolType toolType, LivingEntity target, LivingEntity attacker);
 
-    private boolean onHit(ToolType toolType, boolean flag, LivingEntity target, LivingEntity attacker) {
+    protected boolean onHit(ToolType toolType, boolean flag, LivingEntity target, LivingEntity attacker) {
         if (flag && !target.level().isClientSide) {
             handleHitEffect(toolType, target, attacker);
         }
@@ -27,7 +29,7 @@ public abstract class AbstractEffectToolCustomizer implements ToolCustomizer {
         return flag;
     }
 
-    private Item createSword(Tier tier, Item.Properties properties) {
+    protected Item createSword(Tier tier, Item.Properties properties) {
         return new SwordItem(tier, properties) {
             @Override
             public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {

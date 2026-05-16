@@ -72,17 +72,7 @@ public class FrostZombie extends Zombie {
 
     @Override
     protected boolean convertsInWater() {
-        return true;
-    }
-
-    @Override
-    protected void doUnderWaterConversion() {
-        if (!net.neoforged.neoforge.event.EventHooks.canLivingConvert(this, EntityType.DROWNED, (timer) -> this.conversionTime = timer)) return;
-        this.convertToZombieType(EntityType.DROWNED);
-
-        if (!this.isSilent()) {
-            this.level().levelEvent(null, 1041, this.blockPosition(), 0);
-        }
+        return false;
     }
 
     @Override

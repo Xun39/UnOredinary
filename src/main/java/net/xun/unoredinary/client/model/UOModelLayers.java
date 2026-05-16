@@ -10,6 +10,10 @@ public class UOModelLayers {
     public static final ModelLayerLocation FROST_ZOMBIE_INNER_ARMOR = registerInnerArmor("frost_zombie");
     public static final ModelLayerLocation FROST_ZOMBIE_OUTER_ARMOR = registerOuterArmor("frost_zombie");
 
+    public static final ModelLayerLocation FROST_REVENANT = registerDefault("frost_revenant");
+    public static final ModelLayerLocation FROST_REVENANT_INNER_ARMOR = registerInnerArmor("frost_revenant");
+    public static final ModelLayerLocation FROST_REVENANT_OUTER_ARMOR = registerOuterArmor("frost_revenant");
+
     private static ModelLayerLocation registerDefault(String path) {
         return createLocation(path, "main");
     }

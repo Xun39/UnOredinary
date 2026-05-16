@@ -13,87 +13,11 @@ import net.xun.unoredinary.config.server.UOServerConfig;
 
 import java.util.List;
 
-public class LuminiumToolCustomizer implements ToolCustomizer {
+public class LuminiumToolCustomizer extends AbstractEffectToolCustomizer {
+
     @Override
-    public Item createTool(ToolType type, Tier tier, Item.Properties properties) {
-        switch (type) {
-            case SWORD -> {
-                return new SwordItem(tier, properties) {
-                    @Override
-                    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        return onHit(
-                                super.hurtEnemy(stack, target, attacker),
-                                target,
-                                attacker
-                        );
-                    }
-                };
-            }
-            case AXE -> {
-                return new AxeItem(tier, properties) {
-                    @Override
-                    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        return onHit(
-                                super.hurtEnemy(stack, target, attacker),
-                                target,
-                                attacker
-                        );
-                    }
-                };
-            }
-            case PICKAXE -> {
-                return new PickaxeItem(tier, properties) {
-                    @Override
-                    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        return onHit(
-                                super.hurtEnemy(stack, target, attacker),
-                                target,
-                                attacker
-                        );
-                    }
-                };
-            }
-            case HOE -> {
-                return new HoeItem(tier, properties) {
-                    @Override
-                    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        return onHit(
-                                super.hurtEnemy(stack, target, attacker),
-                                target,
-                                attacker
-                        );
-                    }
-                };
-            }
-            case SHOVEL -> {
-                return new ShovelItem(tier, properties) {
-                    @Override
-                    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                        return onHit(
-                                super.hurtEnemy(stack, target, attacker),
-                                target,
-                                attacker
-                        );
-                    }
-                };
-            }
-            default -> throw new MatchException(null, null);
-        }
-    }
-
-    private static boolean onHit(boolean flag, LivingEntity target, LivingEntity attacker) {
-        if (flag && !target.level().isClientSide) {
-            handleHitEffect(target, attacker);
-        }
-
-        return flag;
-    }
-
-    private static void handleHitEffect(LivingEntity target, LivingEntity attacker) {
-        if (!(attacker instanceof Player))
-            return;
-
-        if (!UOServerConfig.toolEffectConfig.luminiumConfig.enable.get())
+    protected void handleHitEffect(ToolType toolType, LivingEntity target, LivingEntity attacker) {
+        if (!(attacker instanceof Player) || !UOServerConfig.toolEffectConfig.luminiumConfig.enable.get())
             return;
 
         if (UOServerConfig.toolEffectConfig.luminiumConfig.enableGlowingOnHit.get()) {

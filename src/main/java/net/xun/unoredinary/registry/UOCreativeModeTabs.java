@@ -90,6 +90,7 @@ public class UOCreativeModeTabs {
                         output.accept(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE);
 
                         output.accept(UOItems.FROST_ZOMBIE_SPAWN_EGG);
+                        output.accept(UOItems.FROST_REVENANT_SPAWN_EGG);
                     })
                     .build()
     );
