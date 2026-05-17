@@ -1,12 +1,12 @@
-// 1.21.1	2026-05-16T21:01:04.9699002	Tags for minecraft:block mod id unoredinary
-a59ee00b8a0e3dc031775405686231e7e22149e1 data/c/tags/block/ores.json
-b0230f428f1dca994f0647f7eed8bf806970f812 data/c/tags/block/ores/cryic.json
-6a0956de780cacb8f4ef07fe389ef06559a1a645 data/c/tags/block/ores/glacium.json
-6230d26b7bd85b97a863b1248423cc7ef4f9f4c5 data/c/tags/block/ores/luminite.json
+// 1.21.1	2026-05-17T13:07:33.5717198	Tags for minecraft:block mod id unoredinary
+630f266bdfaa93d957d684a21d5e73ef9cabe364 data/c/tags/block/ores.json
+75f0223cc7d05562157e939f1c83cc30d28b5485 data/c/tags/block/ores/cryic.json
+3f7c154ffbfabc653c74c42ed7dd7cb94dfcba3d data/c/tags/block/ores/glacium.json
+00970144d497b5192aeee4e399442790fa97b1d2 data/c/tags/block/ores/luminite.json
 dde4bc347b7cd25bed248d293d3637f4c5cd4b15 data/c/tags/block/ores/ruby.json
-622a720d609406325112bfa50d6436ad6426b895 data/c/tags/block/ores/sapphire.json
-b1c45a9cdb41ee8427306bda6177a7ab3d82b87d data/c/tags/block/ores_in_ground/deepslate.json
-c80245ecb87cd11a685634639f7a10d8e50c0891 data/c/tags/block/ores_in_ground/stone.json
+a7b72bd7d206cfc8027e2150e4272371320080a8 data/c/tags/block/ores/sapphire.json
+aaf39ed2f09e945742f2efdfbf775972858e7d9d data/c/tags/block/ores_in_ground/deepslate.json
+090a9c93a63e3e768338a47a5922cdd4b93e66e1 data/c/tags/block/ores_in_ground/stone.json
 dde4bc347b7cd25bed248d293d3637f4c5cd4b15 data/c/tags/block/ore_bearing_ground/netherrack.json
 655aed7c372c25ac67c63658ab6ef1cf206c9a1e data/c/tags/block/storage_blocks.json
 2907932b5a3d300e8d02eb77895afe769bcf1556 data/c/tags/block/storage_blocks/cryic.json

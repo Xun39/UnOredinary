@@ -3,16 +3,10 @@ package net.xun.unoredinary.data.generator;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.SmeltingRecipe;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
-import net.xun.lib.common.api.item.tools.ToolSet;
-import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.data.provider.UORecipeProvider;
 import net.xun.unoredinary.registry.UOArmors;
 import net.xun.unoredinary.registry.UOBlocks;
@@ -20,9 +14,7 @@ import net.xun.unoredinary.registry.UOItems;
 import net.xun.unoredinary.registry.UOTools;
 import net.xun.unoredinary.util.UOTags;
 
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.stream.Stream;
 
 public class UORecipes extends UORecipeProvider {
     public UORecipes(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

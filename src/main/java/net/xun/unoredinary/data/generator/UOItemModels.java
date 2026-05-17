@@ -1,5 +1,6 @@
 package net.xun.unoredinary.data.generator;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.xun.lib.common.api.util.CommonUtils;
@@ -48,8 +49,8 @@ public class UOItemModels extends UOItemModelProvider {
         toolSetModels(UOTools.LUMINIUM);
         armorSetModels(UOArmors.LUMINIUM);
 
-        withExistingParent(CommonUtils.getRegistryID(UOItems.FROST_ZOMBIE_SPAWN_EGG.asItem()), mcLoc("item/template_spawn_egg"));
-        withExistingParent(CommonUtils.getRegistryID(UOItems.FROST_REVENANT_SPAWN_EGG.asItem()), mcLoc("item/template_spawn_egg"));
+        withExistingParent(BuiltInRegistries.ITEM.getKey(UOItems.FROST_ZOMBIE_SPAWN_EGG.get()).getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(BuiltInRegistries.ITEM.getKey(UOItems.FROST_REVENANT_SPAWN_EGG.get()).getPath(), mcLoc("item/template_spawn_egg"));
 
         // Blocks
         basicItem(UOBlocks.ICE_DOOR.asItem());
