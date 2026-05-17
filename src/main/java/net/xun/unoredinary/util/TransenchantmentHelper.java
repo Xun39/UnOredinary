@@ -85,12 +85,12 @@ public final class TransenchantmentHelper {
         return ItemStack.EMPTY;
     }
 
-    public static void commitFullTransenchant(Player player, ItemStack translator, ItemStack target) {
+    public static void commitFullTransenchant(Player player, ItemStack transenchantor, ItemStack target) {
         if (!player.isCreative()) {
-            player.giveExperienceLevels(-calculateLevelCost(translator));
+            player.giveExperienceLevels(-calculateLevelCost(transenchantor));
         }
 
-        EnchantmentHelper.setEnchantments(translator, ItemEnchantments.EMPTY);
+        EnchantmentHelper.setEnchantments(transenchantor, ItemEnchantments.EMPTY);
 
         if (target.is(Items.BOOK) && player.isCreative()) {
             return;
@@ -107,7 +107,7 @@ public final class TransenchantmentHelper {
     /**
      * Calculates the level cost for transenchanting.
      * Formula:{@code
-     * BASE_COST + (number_of_enchantments * PER_ENCHANTMENT_COST)
+     * BASE_COST + (number_of_enchantments / 2 * PER_ENCHANTMENT_COST)
      * }
      */
     public static int calculateLevelCost(ItemStack stack) {
@@ -121,7 +121,7 @@ public final class TransenchantmentHelper {
             return 0;
         }
 
-        return BASE_COST + (enchantmentCount * PER_ENCHANTMENT_COST);
+        return BASE_COST + (enchantmentCount / 2 * PER_ENCHANTMENT_COST);
     }
 
     public static List<ResourceLocation> getTranslationSlotEmptyIcons() {

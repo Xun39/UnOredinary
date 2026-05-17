@@ -24,9 +24,8 @@ import net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.xun.armory.api.item.armor.ArmorCustomizer;
 import net.xun.armory.api.item.armor.ArmorType;
-import net.xun.lib.common.api.util.ArmorSlotsUtils;
 import net.xun.lib.common.api.util.BlockPosUtils;
-import net.xun.lib.common.api.util.MobEffectUtils;
+import net.xun.lib.common.api.util.EquipmentSlotsUtils;
 import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.config.server.UOServerConfig;
 import net.xun.unoredinary.registry.UOArmorMaterials;
@@ -80,7 +79,7 @@ public class GlacialiteArmorCustomizer implements ArmorCustomizer {
         if (UOServerConfig.armorEffectConfig.glacialiteConfig.enableHotFloorDamage.get())
             return;
 
-        if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.GLACIALITE)) {
+        if (EquipmentSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET, UOArmorMaterials.GLACIALITE)) {
             event.setInvulnerable(event.getSource().is(DamageTypeTags.BURN_FROM_STEPPING));
         }
     }
@@ -99,7 +98,7 @@ public class GlacialiteArmorCustomizer implements ArmorCustomizer {
     }
 
     private static void handleFrostWalkerEffect(Player player, Level level) {
-        if (!ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.GLACIALITE))
+        if (!EquipmentSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET, UOArmorMaterials.GLACIALITE))
             return;
 
         if (level.isClientSide || !player.onGround())
@@ -133,7 +132,7 @@ public class GlacialiteArmorCustomizer implements ArmorCustomizer {
     }
 
     private static void handleSlownessImmunity(Player player) {
-        if (!ArmorSlotsUtils.hasFullArmorSetOfMaterial(player, UOArmorMaterials.GLACIALITE))
+        if (!EquipmentSlotsUtils.hasFullSetOfMaterial(player, UOArmorMaterials.GLACIALITE))
             return;
 
         if (player.getEffect(MobEffects.MOVEMENT_SLOWDOWN) != null) {
@@ -141,7 +140,7 @@ public class GlacialiteArmorCustomizer implements ArmorCustomizer {
             if (effectInstance == null)
                 return;
 
-            MobEffectUtils.clearEffect(player, effectInstance);
+            player.removeEffect(effectInstance.getEffect());
         }
     }
 
@@ -149,7 +148,7 @@ public class GlacialiteArmorCustomizer implements ArmorCustomizer {
         if (!(receiver instanceof Player player))
             return;
 
-        if (!ArmorSlotsUtils.hasFullArmorSetOfMaterial(player, UOArmorMaterials.GLACIALITE))
+        if (!EquipmentSlotsUtils.hasFullSetOfMaterial(player, UOArmorMaterials.GLACIALITE))
             return;
 
         if (attacker instanceof LivingEntity) {

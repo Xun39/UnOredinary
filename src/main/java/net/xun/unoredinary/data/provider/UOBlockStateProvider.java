@@ -1,6 +1,8 @@
 package net.xun.unoredinary.data.provider;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
@@ -42,17 +44,26 @@ public abstract class UOBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(block.get(), inventoryModel);
     }
 
+    protected void doorBlockWithItem(DeferredBlock<DoorBlock> block, String renderType) {
+        doorBlockWithRenderType(
+                block.get(),
+                modLoc("block/" + block.getKey().location().getPath() + "_bottom"),
+                modLoc("block/" + block.getKey().location().getPath() + "_top"),
+                renderType
+        );
+    }
+
     protected void existingBlockWithItem(DeferredBlock<?> block) {
         simpleBlockWithItem(
                 block.get(),
-                models().getExistingFile(CommonUtils.modLoc(block.getKey().location().getPath()))
+                models().getExistingFile(modLoc(block.getKey().location().getPath()))
         );
     }
 
     protected void uncheckedBlockItem(DeferredBlock<?> block) {
         simpleBlockItem(
                 block.get(),
-                new ModelFile.UncheckedModelFile(CommonUtils.modLoc("block/" + block.getKey().location().getPath()))
+                new ModelFile.UncheckedModelFile(modLoc("block/" + block.getKey().location().getPath()))
         );
     }
 }

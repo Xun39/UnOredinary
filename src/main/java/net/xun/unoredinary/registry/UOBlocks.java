@@ -59,6 +59,18 @@ public class UOBlocks {
     public static final DeferredBlock<SlabBlock> POLAR_STONE_BRICKS_SLAB = registerSlab("polar_stone_bricks_slab", UOBlocks.POLAR_STONE_BRICKS);
     public static final DeferredBlock<WallBlock> POLAR_STONE_BRICKS_WALL = registerWall("polar_stone_bricks_wall", UOBlocks.POLAR_STONE_BRICKS);
 
+    public static final DeferredBlock<DoorBlock> ICE_DOOR = register("ice_door",
+            () -> new DoorBlock(
+                    BlockSetType.COPPER,
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.ICE)
+                            .friction(0.98F)
+                            .randomTicks()
+                            .strength(0.5F)
+                            .sound(SoundType.GLASS)
+            )
+    );
+
     // Ores
     public static final DeferredBlock<Block> CRYIC_ORE = register("cryic_ore",
             () -> new DropExperienceBlock(

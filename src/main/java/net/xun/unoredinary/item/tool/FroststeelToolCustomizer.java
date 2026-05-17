@@ -6,7 +6,9 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.xun.armory.api.item.tools.ToolType;
+import net.xun.armory.impl.item.tools.AbstractEffectToolCustomizer;
 import net.xun.lib.common.api.util.MobEffectUtils;
+import net.xun.lib.common.api.world.effect.EffectStackingStrategies;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategy;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
 import net.xun.unoredinary.config.server.UOServerConfig;
@@ -33,7 +35,9 @@ public class FroststeelToolCustomizer extends AbstractEffectToolCustomizer {
                 buildEffectInstance()
         );
 
-        MobEffectUtils.applyEffectsWithStrategy(target, effects, EffectStackingStrategy.FORCE_OVERRIDE);
+        for (MobEffectInstance effect : effects) {
+            MobEffectUtils.applyEffectWithStrategy(target, effect, EffectStackingStrategies.FORCE_OVERRIDE);
+        }
 
         if (UOServerConfig.toolEffectConfig.froststeelConfig.doHitParticlesSpawn.get()) {
             spawnRimeParticles(target);
@@ -61,8 +65,8 @@ public class FroststeelToolCustomizer extends AbstractEffectToolCustomizer {
 
     private static MobEffectInstance buildEffectInstance() {
         return MobEffectInstanceBuilder.of(MobEffects.MOVEMENT_SLOWDOWN)
-                .withDuration(FroststeelToolCustomizer.SLOW_DURATION)
-                .withAmplifier(FroststeelToolCustomizer.SLOW_AMPLIFIER)
+                .duration(FroststeelToolCustomizer.SLOW_DURATION)
+                .amplifier(FroststeelToolCustomizer.SLOW_AMPLIFIER)
                 .build();
     }
 }

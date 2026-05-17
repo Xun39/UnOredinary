@@ -15,8 +15,10 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.xun.armory.api.item.tools.ToolType;
+import net.xun.armory.impl.item.tools.AbstractEffectToolCustomizer;
 import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.lib.common.api.util.MobEffectUtils;
+import net.xun.lib.common.api.world.effect.EffectStackingStrategies;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategy;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
 import net.xun.unoredinary.UnOredinary;
@@ -121,7 +123,9 @@ public class GlacialiteToolCustomizer extends AbstractEffectToolCustomizer {
                 buildEffectInstance(MobEffects.WEAKNESS, WEAKNESS_DURATION_NOVA, WEAKNESS_AMPLIFIER_NOVA)
         );
 
-        MobEffectUtils.applyEffectsWithStrategy(target, effects, EffectStackingStrategy.UPGRADE_EXISTING);
+        for (MobEffectInstance effect : effects) {
+            MobEffectUtils.applyEffectWithStrategy(target, effect, EffectStackingStrategies.UPGRADE_EXISTING);
+        }
     }
 
     private static void spawnFrostParticles(LivingEntity target) {
@@ -149,13 +153,15 @@ public class GlacialiteToolCustomizer extends AbstractEffectToolCustomizer {
                 buildEffectInstance(MobEffects.WEAKNESS, WEAKNESS_DURATION_SINGLE, WEAKNESS_AMPLIFIER_SINGLE)
         );
 
-        MobEffectUtils.applyEffectsWithStrategy(target, effects, EffectStackingStrategy.UPGRADE_EXISTING);
+        for (MobEffectInstance effect : effects) {
+            MobEffectUtils.applyEffectWithStrategy(target, effect, EffectStackingStrategies.UPGRADE_EXISTING);
+        }
     }
 
     private static MobEffectInstance buildEffectInstance(Holder<MobEffect> effect, int duration, int amplifier) {
         return MobEffectInstanceBuilder.of(effect)
-                .withDuration(duration)
-                .withAmplifier(amplifier)
+                .duration(duration)
+                .amplifier(amplifier)
                 .build();
     }
 }

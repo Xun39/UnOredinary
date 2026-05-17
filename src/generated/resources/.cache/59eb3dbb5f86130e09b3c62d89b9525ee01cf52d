@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-15T20:54:43.1477965	Loot Tables
+// 1.21.1	2026-05-16T16:22:22.9526673	Loot Tables
 9210d52df48785389ab6b86240bcf70642b45947 data/unoredinary/loot_table/blocks/cryic_block.json
 fa51d822a3a0957fd17de5ec1377b6fbf3bae5e5 data/unoredinary/loot_table/blocks/cryic_ore.json
 303919f41a287d385543c2bec15165d2490ae6ad data/unoredinary/loot_table/blocks/deepslate_cryic_ore.json
@@ -8,6 +8,7 @@ b22d273ce3a8b34cde2457883270c57ff2f61875 data/unoredinary/loot_table/blocks/deep
 5c25ad805a9836b1f1644119161c5e6ee04e88c9 data/unoredinary/loot_table/blocks/glacialite_block.json
 45c7dfdafd605050f36275c07fdb669699d58cb5 data/unoredinary/loot_table/blocks/glacium_block.json
 d004c114aade57b4700305877d3b87caefcb9bb0 data/unoredinary/loot_table/blocks/glacium_ore.json
+ac07bc2757e7db61dc5a52e449358f4bbe4a6340 data/unoredinary/loot_table/blocks/ice_door.json
 b523d57679ffa44b188fbb14843ed89429e65d99 data/unoredinary/loot_table/blocks/luminite_block.json
 697476b32f48a572e677c53b4e05a2ee647eab1c data/unoredinary/loot_table/blocks/luminite_ore.json
 b99b7cce2005a99c14576f4766b8ad4d39d41413 data/unoredinary/loot_table/blocks/luminium_block.json

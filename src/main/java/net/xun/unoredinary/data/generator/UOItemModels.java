@@ -5,6 +5,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.data.provider.UOItemModelProvider;
 import net.xun.unoredinary.registry.UOArmors;
+import net.xun.unoredinary.registry.UOBlocks;
 import net.xun.unoredinary.registry.UOItems;
 import net.xun.unoredinary.registry.UOTools;
 
@@ -49,5 +50,8 @@ public class UOItemModels extends UOItemModelProvider {
 
         withExistingParent(CommonUtils.getRegistryID(UOItems.FROST_ZOMBIE_SPAWN_EGG.asItem()), mcLoc("item/template_spawn_egg"));
         withExistingParent(CommonUtils.getRegistryID(UOItems.FROST_REVENANT_SPAWN_EGG.asItem()), mcLoc("item/template_spawn_egg"));
+
+        // Blocks
+        basicItem(UOBlocks.ICE_DOOR.asItem());
     }
 }

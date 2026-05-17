@@ -9,7 +9,7 @@
             "tag": "c:gems/ruby"
         },
         "^": {
-            "item": "minecraft:ghast_tear"
+            "item": "minecraft:book"
         }
     },
     "pattern": [

@@ -1,12 +1,12 @@
 {
     "values": [
-        "unoredinary:froststeel_leggings",
-        "unoredinary:froststeel_helmet",
         "unoredinary:froststeel_chestplate",
         "unoredinary:froststeel_boots",
+        "unoredinary:froststeel_helmet",
+        "unoredinary:froststeel_leggings",
         "unoredinary:glacialite_helmet",
-        "unoredinary:glacialite_leggings",
+        "unoredinary:glacialite_boots",
         "unoredinary:glacialite_chestplate",
-        "unoredinary:glacialite_boots"
+        "unoredinary:glacialite_leggings"
     ]
 }

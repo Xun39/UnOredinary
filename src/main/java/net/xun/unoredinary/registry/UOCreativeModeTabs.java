@@ -43,6 +43,8 @@ public class UOCreativeModeTabs {
                         output.accept(UOBlocks.GLACIALITE_BLOCK);
                         output.accept(UOBlocks.LUMINIUM_BLOCK);
 
+                        output.accept(UOBlocks.ICE_DOOR);
+
                         output.accept(UOBlocks.POLAR_STONE);
                         output.accept(UOBlocks.POLAR_STONE_STAIRS);
                         output.accept(UOBlocks.POLAR_STONE_SLAB);

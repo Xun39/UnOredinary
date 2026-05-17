@@ -12,13 +12,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.xun.armory.api.item.armor.ArmorCustomizer;
 import net.xun.armory.api.item.armor.ArmorType;
-import net.xun.lib.common.api.util.ArmorSlotsUtils;
+import net.xun.lib.common.api.util.EquipmentSlotsUtils;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
 import net.xun.unoredinary.config.server.UOServerConfig;
 import net.xun.unoredinary.registry.UOArmorMaterials;
-
-import java.util.List;
 
 public class LuminiumArmorCustomizer implements ArmorCustomizer {
     @Override
@@ -30,12 +28,12 @@ public class LuminiumArmorCustomizer implements ArmorCustomizer {
                 if (!UOServerConfig.armorEffectConfig.luminiumConfig.enable.get())
                     return;
 
-                handleArmorEffect(stack, level, entity, slotId, isSelected);
+                handleArmorEffect(stack, entity);
             }
         };
     }
 
-    private static void handleArmorEffect(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
+    private static void handleArmorEffect(ItemStack stack, Entity entity) {
         if (!(entity instanceof Player player) || !(stack.getItem() instanceof ArmorItem))
             return;
 
@@ -45,16 +43,12 @@ public class LuminiumArmorCustomizer implements ArmorCustomizer {
     }
 
     private static void handleNightVisionEffect(Player player) {
-
-        if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.HEAD.getIndex(), UOArmorMaterials.LUMINIUM)) {
-            MobEffectUtils.applySmartEffects(
+        if (EquipmentSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.HEAD, UOArmorMaterials.LUMINIUM)) {
+            MobEffectUtils.applyEffect(
                     player,
-                    List.of(
-                            MobEffectInstanceBuilder.of(MobEffects.NIGHT_VISION)
-                                    .withDuration(220)
-                                    .ambient()
-                                    .build()
-                    ),
+                    MobEffectInstanceBuilder.of(MobEffects.NIGHT_VISION)
+                            .duration(220)
+                            .build(),
                     200,
                     false
             );

@@ -20,8 +20,8 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent;
 import net.xun.armory.api.item.armor.ArmorCustomizer;
 import net.xun.armory.api.item.armor.ArmorType;
-import net.xun.lib.common.api.util.ArmorSlotsUtils;
 import net.xun.lib.common.api.util.BlockPosUtils;
+import net.xun.lib.common.api.util.EquipmentSlotsUtils;
 import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.config.server.UOServerConfig;
 import net.xun.unoredinary.registry.UOArmorMaterials;
@@ -60,13 +60,13 @@ public class FroststeelArmorCustomizer implements ArmorCustomizer {
         if (UOServerConfig.armorEffectConfig.froststeelConfig.enableHotFloorDamage.get())
             return;
 
-        if (ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.FROSTSTEEL)) {
+        if (EquipmentSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET, UOArmorMaterials.FROSTSTEEL)) {
             event.setInvulnerable(event.getSource().is(DamageTypeTags.BURN_FROM_STEPPING));
         }
     }
 
     private static void handleFrostWalkerEffect(Player player, Level level) {
-        if (!ArmorSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET.getIndex(), UOArmorMaterials.FROSTSTEEL))
+        if (!EquipmentSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET, UOArmorMaterials.FROSTSTEEL))
             return;
 
         if (level.isClientSide || !player.onGround())

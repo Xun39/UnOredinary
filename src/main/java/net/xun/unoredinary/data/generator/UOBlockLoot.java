@@ -60,6 +60,8 @@ public class UOBlockLoot extends UOBlockLootProvider {
         dropSelf(UOBlocks.POLAR_STONE_BRICKS_STAIRS.get());
         slabDrop(UOBlocks.POLAR_STONE_BRICKS_SLAB.get());
         dropSelf(UOBlocks.POLAR_STONE_BRICKS_WALL.get());
+
+        add(UOBlocks.ICE_DOOR.get(), block -> createDoorTable(UOBlocks.ICE_DOOR.get()));
     }
 
     @Override

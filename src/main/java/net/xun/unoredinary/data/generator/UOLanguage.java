@@ -78,6 +78,8 @@ public class UOLanguage extends UOLanguageProvider {
         addBlock(UOBlocks.POLAR_STONE_BRICKS_SLAB, "Polar Stone Bricks Slab");
         addBlock(UOBlocks.POLAR_STONE_BRICKS_WALL, "Polar Stone Bricks Wall");
 
+        addBlock(UOBlocks.ICE_DOOR, "Ice Door");
+
         /* ------------------------------ CONTAINERS ------------------------------ */
         add("unoredinary.container.transenchanting_table", "Transenchant");
 
@@ -150,17 +152,16 @@ public class UOLanguage extends UOLanguageProvider {
         addToolTip("transenchanting_table.levels", "%s level(s)");
         addToolTip("transenchanting_table.cost_breakdown", "Cost Breakdown");
         addToolTip("transenchanting_table.base_cost", "  • Base: %s levels");
-        addToolTip("transenchanting_table.per_enchantment_cost", "  • %s enchantment(s) × %s = %s");
+        addToolTip("transenchanting_table.per_enchantment_cost", "  • %s enchantment(s) ÷ 2 × %s = %s");
 
         addToolTip("transenchanting_table.can_transenchant", "Can Transenchant");
         addToolTip("transenchanting_table.cannot_transenchant", "Cannot Transenchant");
         addToolTip("transenchanting_table.will_create_book", "Will create an enchanted book");
         addToolTip("transenchanting_table.will_transfer", "Will transfer enchantments");
-        addToolTip("transenchanting_table.no_translator", "No translator item");
-        addToolTip("transenchanting_table.no_target", "No target item");
+        addToolTip("transenchanting_table.no_target", "No transenchanting target item");
         addToolTip("transenchanting_table.no_enchantments", "No enchantments");
-        addToolTip("transenchanting_table.translator_has_no_enchants", "Translator has no enchantments");
-        addToolTip("transenchanting_table.target_already_enchanted" , "Target is already enchanted");
+        addToolTip("transenchanting_table.transenchanter_has_no_enchants", "Transenchanter has no enchantments");
+        addToolTip("transenchanting_table.target_already_enchanted" , "Transenchanting target is already enchanted");
         addToolTip("transenchanting_table.incompatible", "Enchantments incompatible with target");
 
         /* ------------------------------ TAGS ------------------------------ */
