@@ -68,10 +68,10 @@ public class UOLanguage extends UOLanguageProvider {
         addBlock(UOBlocks.POLAR_STONE_STAIRS, "Polar Stone Stairs");
         addBlock(UOBlocks.POLAR_STONE_SLAB, "Polar Stone Slab");
 
-        addBlock(UOBlocks.POLAR_COBBLESTONE, "Polar Cobblestone");
-        addBlock(UOBlocks.POLAR_COBBLESTONE_STAIRS, "Polar Cobblestone Stairs");
-        addBlock(UOBlocks.POLAR_COBBLESTONE_SLAB, "Polar Cobblestone Slab");
-        addBlock(UOBlocks.POLAR_COBBLESTONE_WALL, "Polar Cobblestone Wall");
+        addBlock(UOBlocks.COBBLED_POLAR_STONE, "Cobbled Polar Stone");
+        addBlock(UOBlocks.COBBLED_POLAR_STONE_STAIRS, "Cobbled Polar Stone Stairs");
+        addBlock(UOBlocks.COBBLED_POLAR_STONE_SLAB, "Cobbled Polar Stone Slab");
+        addBlock(UOBlocks.COBBLED_POLAR_STONE_WALL, "Cobbled Polar Stone Wall");
 
         addBlock(UOBlocks.POLAR_STONE_BRICKS, "Polar Stone Bricks");
         addBlock(UOBlocks.POLAR_STONE_BRICKS_STAIRS, "Polar Stone Bricks Stairs");
@@ -79,6 +79,8 @@ public class UOLanguage extends UOLanguageProvider {
         addBlock(UOBlocks.POLAR_STONE_BRICKS_WALL, "Polar Stone Bricks Wall");
 
         addBlock(UOBlocks.ICE_DOOR, "Ice Door");
+
+        addBlock(UOBlocks.TRAP_ICE, "Packed Ice");
 
         /* ------------------------------ CONTAINERS ------------------------------ */
         add("unoredinary.container.transenchanting_table", "Transenchant");
@@ -109,6 +111,8 @@ public class UOLanguage extends UOLanguageProvider {
         addItem(UOItems.GLACIALITE_INGOT, "Glacialite Ingot");
 
         addItem(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE, "Smithing Template");
+
+        addItem(UOItems.FROST_KEY, "Frost Key");
 
         addItem(UOItems.LUMINITE_CRYSTAL, "Luminite Crystal");
 

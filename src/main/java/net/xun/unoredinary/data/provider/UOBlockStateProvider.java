@@ -2,10 +2,7 @@ package net.xun.unoredinary.data.provider;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -20,6 +17,10 @@ public abstract class UOBlockStateProvider extends BlockStateProvider {
 
     protected void blockWithItem(DeferredBlock<?> block) {
         simpleBlockWithItem(block.get(), cubeAll(block.get()));
+    }
+
+    protected void blockWithItem(DeferredBlock<?> block, Block textureBlock) {
+        simpleBlockWithItem(block.get(), cubeAll(textureBlock));
     }
 
     protected void stairBlockWithItem(DeferredBlock<StairBlock> block, DeferredBlock<?> textureBlock) {

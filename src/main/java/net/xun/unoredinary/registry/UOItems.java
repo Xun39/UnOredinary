@@ -32,6 +32,9 @@ public class UOItems {
 
     public static final DeferredItem<Item> NETHER_RUBY = ITEMS.register("nether_ruby", () -> new Item(new Item.Properties()));
 
+    // Misc
+    public static final DeferredItem<Item> FROST_KEY = ITEMS.register("frost_key", () -> new Item(new Item.Properties()));
+
     // Spawn Eggs
     public static final DeferredItem<Item> FROST_ZOMBIE_SPAWN_EGG = ITEMS.register("frost_zombie_spawn_egg",
             () -> new DeferredSpawnEggItem(UOEntityTypes.FROST_ZOMBIE, 0x3c586d, 0x649ac7, new Item.Properties())

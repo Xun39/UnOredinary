@@ -49,10 +49,10 @@ public class UOCreativeModeTabs {
                         output.accept(UOBlocks.POLAR_STONE_STAIRS);
                         output.accept(UOBlocks.POLAR_STONE_SLAB);
 
-                        output.accept(UOBlocks.POLAR_COBBLESTONE);
-                        output.accept(UOBlocks.POLAR_COBBLESTONE_STAIRS);
-                        output.accept(UOBlocks.POLAR_COBBLESTONE_SLAB);
-                        output.accept(UOBlocks.POLAR_COBBLESTONE_WALL);
+                        output.accept(UOBlocks.COBBLED_POLAR_STONE);
+                        output.accept(UOBlocks.COBBLED_POLAR_STONE_STAIRS);
+                        output.accept(UOBlocks.COBBLED_POLAR_STONE_SLAB);
+                        output.accept(UOBlocks.COBBLED_POLAR_STONE_WALL);
 
                         output.accept(UOBlocks.POLAR_STONE_BRICKS);
                         output.accept(UOBlocks.POLAR_STONE_BRICKS_STAIRS);
@@ -90,6 +90,8 @@ public class UOCreativeModeTabs {
                         output.accept(UOItems.LUMINIUM_NUGGET);
 
                         output.accept(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE);
+
+                        output.accept(UOItems.FROST_KEY);
 
                         output.accept(UOItems.FROST_ZOMBIE_SPAWN_EGG);
                         output.accept(UOItems.FROST_REVENANT_SPAWN_EGG);

@@ -30,10 +30,10 @@ public class FrostbittenEffect extends MobEffect {
         }
 
         int required = entity.getTicksRequiredToFreeze();
-        entity.setTicksFrozen(required + 100);
+        entity.setTicksFrozen(required);
 
         if (amplifier > 0) {
-            entity.setTicksFrozen(required + (amplifier * 200));
+            entity.setTicksFrozen(required + (amplifier * 40));
         }
 
         return true;

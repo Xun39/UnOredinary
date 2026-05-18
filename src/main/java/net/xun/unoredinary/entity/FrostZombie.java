@@ -12,6 +12,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
 import net.xun.unoredinary.registry.UOMobEffects;
 import net.xun.unoredinary.registry.UOSounds;
 
@@ -60,7 +61,7 @@ public class FrostZombie extends Zombie {
 
         if (flag && entity instanceof LivingEntity) {
             float f = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
-            ((LivingEntity)entity).addEffect(new MobEffectInstance(UOMobEffects.FROSTED_EFFECT, 160 * (int)f, 1), this);
+            ((LivingEntity)entity).addEffect(MobEffectInstanceBuilder.of(UOMobEffects.FROSTED_EFFECT).duration(160 * (int)f).amplifier(1).build(), this);
         }
         return flag;
     }

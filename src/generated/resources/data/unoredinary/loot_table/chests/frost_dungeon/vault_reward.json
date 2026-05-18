@@ -1,0 +1,52 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "entries": [
+                {
+                    "type": "minecraft:loot_table",
+                    "value": "unoredinary:chests/frost_dungeon/vault_reward_rare",
+                    "weight": 8
+                },
+                {
+                    "type": "minecraft:loot_table",
+                    "value": "unoredinary:chests/frost_dungeon/vault_reward_common",
+                    "weight": 2
+                }
+            ],
+            "rolls": 1.0
+        },
+        {
+            "bonus_rolls": 0.0,
+            "entries": [
+                {
+                    "type": "minecraft:loot_table",
+                    "value": "unoredinary:chests/frost_dungeon/vault_reward_common"
+                }
+            ],
+            "rolls": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+            }
+        },
+        {
+            "bonus_rolls": 0.0,
+            "conditions": [
+                {
+                    "chance": 0.5,
+                    "condition": "minecraft:random_chance"
+                }
+            ],
+            "entries": [
+                {
+                    "type": "minecraft:loot_table",
+                    "value": "unoredinary:chests/frost_dungeon/vault_reward_unique"
+                }
+            ],
+            "rolls": 1.0
+        }
+    ],
+    "random_sequence": "unoredinary:chests/frost_dungeon/vault_reward"
+}

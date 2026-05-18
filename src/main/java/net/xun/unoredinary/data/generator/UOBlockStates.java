@@ -1,6 +1,7 @@
 package net.xun.unoredinary.data.generator;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.xun.unoredinary.data.provider.UOBlockStateProvider;
 import net.xun.unoredinary.registry.UOBlocks;
@@ -43,10 +44,10 @@ public class UOBlockStates extends UOBlockStateProvider {
         stairBlockWithItem(UOBlocks.POLAR_STONE_STAIRS, UOBlocks.POLAR_STONE);
         slabBlockWithItem(UOBlocks.POLAR_STONE_SLAB, UOBlocks.POLAR_STONE);
 
-        blockWithItem(UOBlocks.POLAR_COBBLESTONE);
-        stairBlockWithItem(UOBlocks.POLAR_COBBLESTONE_STAIRS, UOBlocks.POLAR_COBBLESTONE);
-        slabBlockWithItem(UOBlocks.POLAR_COBBLESTONE_SLAB, UOBlocks.POLAR_COBBLESTONE);
-        wallBlockWithItem(UOBlocks.POLAR_COBBLESTONE_WALL, UOBlocks.POLAR_COBBLESTONE);
+        blockWithItem(UOBlocks.COBBLED_POLAR_STONE);
+        stairBlockWithItem(UOBlocks.COBBLED_POLAR_STONE_STAIRS, UOBlocks.COBBLED_POLAR_STONE);
+        slabBlockWithItem(UOBlocks.COBBLED_POLAR_STONE_SLAB, UOBlocks.COBBLED_POLAR_STONE);
+        wallBlockWithItem(UOBlocks.COBBLED_POLAR_STONE_WALL, UOBlocks.COBBLED_POLAR_STONE);
 
         blockWithItem(UOBlocks.POLAR_STONE_BRICKS);
         stairBlockWithItem(UOBlocks.POLAR_STONE_BRICKS_STAIRS, UOBlocks.POLAR_STONE_BRICKS);
@@ -54,5 +55,8 @@ public class UOBlockStates extends UOBlockStateProvider {
         wallBlockWithItem(UOBlocks.POLAR_STONE_BRICKS_WALL, UOBlocks.POLAR_STONE_BRICKS);
 
         doorBlockWithItem(UOBlocks.ICE_DOOR, "cutout");
+
+        // Misc
+        blockWithItem(UOBlocks.TRAP_ICE, Blocks.PACKED_ICE);
     }
 }

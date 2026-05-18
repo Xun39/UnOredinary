@@ -33,10 +33,10 @@ public class UOBlockTags extends BlockTagsProvider {
                 UOBlocks.POLAR_STONE_STAIRS.get(),
                 UOBlocks.POLAR_STONE_SLAB.get(),
 
-                UOBlocks.POLAR_COBBLESTONE.get(),
-                UOBlocks.POLAR_COBBLESTONE_STAIRS.get(),
-                UOBlocks.POLAR_COBBLESTONE_SLAB.get(),
-                UOBlocks.POLAR_COBBLESTONE_WALL.get(),
+                UOBlocks.COBBLED_POLAR_STONE.get(),
+                UOBlocks.COBBLED_POLAR_STONE_STAIRS.get(),
+                UOBlocks.COBBLED_POLAR_STONE_SLAB.get(),
+                UOBlocks.COBBLED_POLAR_STONE_WALL.get(),
 
                 UOBlocks.POLAR_STONE_BRICKS.get(),
                 UOBlocks.POLAR_STONE_BRICKS_STAIRS.get(),
@@ -80,7 +80,7 @@ public class UOBlockTags extends BlockTagsProvider {
 
                 UOBlocks.SAPPHIRE_BLOCK.get(),
                 UOBlocks.LUMINITE_BLOCK.get(),
-                UOBlocks.LUMINIUM_BLOCK.get()
+                UOBlocks.FROSTSTEEL_BLOCK.get()
         );
 
         tag(UOTags.Blocks.NEEDS_FROSTSTEEL_TOOL).add(
@@ -88,8 +88,6 @@ public class UOBlockTags extends BlockTagsProvider {
                 UOBlocks.PRIMAL_GLACIUM_ORE.get(),
 
                 UOBlocks.GLACIUM_BLOCK.get(),
-
-                UOBlocks.FROSTSTEEL_BLOCK.get(),
                 UOBlocks.GLACIALITE_BLOCK.get()
         );
 
@@ -106,16 +104,16 @@ public class UOBlockTags extends BlockTagsProvider {
         /* ------------------------------ MISC ------------------------------ */
         tag(BlockTags.STAIRS).add(
                 UOBlocks.POLAR_STONE_STAIRS.get(),
-                UOBlocks.POLAR_COBBLESTONE_STAIRS.get(),
+                UOBlocks.COBBLED_POLAR_STONE_STAIRS.get(),
                 UOBlocks.POLAR_STONE_BRICKS_STAIRS.get()
         );
         tag(BlockTags.SLABS).add(
                 UOBlocks.POLAR_STONE_SLAB.get(),
-                UOBlocks.POLAR_COBBLESTONE_SLAB.get(),
+                UOBlocks.COBBLED_POLAR_STONE_SLAB.get(),
                 UOBlocks.POLAR_STONE_BRICKS_SLAB.get()
         );
         tag(BlockTags.WALLS).add(
-                UOBlocks.POLAR_COBBLESTONE_WALL.get(),
+                UOBlocks.COBBLED_POLAR_STONE_WALL.get(),
                 UOBlocks.POLAR_STONE_BRICKS_WALL.get()
         );
 

@@ -9,13 +9,12 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
+import net.minecraft.world.level.storage.loot.entries.NestedLootTable;
+import net.minecraft.world.level.storage.loot.functions.*;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.xun.unoredinary.registry.UOBlocks;
-import net.xun.unoredinary.registry.UOItems;
+import net.xun.unoredinary.registry.*;
 import net.xun.unoredinary.world.loot.UOLootTableKeys;
 
 import java.util.function.BiConsumer;
@@ -58,13 +57,80 @@ public record UOChestLoot(HolderLookup.Provider registries) implements LootTable
                                 .add(LootItem.lootTableItem(Items.GOLDEN_APPLE).setWeight(8))
                                 .add(LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE).setWeight(5))
                                 .add(LootItem.lootTableItem(UOItems.GLACIUM_SHARD).setWeight(5))
+                                .add(LootItem.lootTableItem(UOItems.FROST_KEY))
                         ).withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(4.0F))
-                                .add(LootItem.lootTableItem(UOBlocks.POLAR_COBBLESTONE).setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(8.0F, 16.0F))))
+                                .add(LootItem.lootTableItem(UOBlocks.COBBLED_POLAR_STONE).setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(8.0F, 16.0F))))
                                 .add(LootItem.lootTableItem(Items.COAL).setWeight(15).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 9.0F))))
                                 .add(LootItem.lootTableItem(UOItems.FROSTSTEEL_NUGGET).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))))
                                 .add(LootItem.lootTableItem(UOItems.FROSTSTEEL_INGOT).setWeight(8))
                                 .add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(5).apply(EnchantRandomlyFunction.randomEnchantment()))
+                        )
+        );
+
+        output.accept(UOLootTableKeys.FROST_DUNGEON_GRAND_HALL,
+                LootTable.lootTable().withPool(LootPool.lootPool()));
+
+        output.accept(UOLootTableKeys.FROST_DUNGEON_VAULT_REWARD,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(NestedLootTable.lootTableReference(UOLootTableKeys.FROST_DUNGEON_VAULT_REWARD_RARE).setWeight(8))
+                                .add(NestedLootTable.lootTableReference(UOLootTableKeys.FROST_DUNGEON_VAULT_REWARD_COMMON).setWeight(2))
+                        ).withPool(LootPool.lootPool()
+                                .setRolls(UniformGenerator.between(1.0F, 3.0F))
+                                .add(NestedLootTable.lootTableReference(UOLootTableKeys.FROST_DUNGEON_VAULT_REWARD_COMMON))
+                        ).withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .when(LootItemRandomChanceCondition.randomChance(0.50F))
+                                .add(NestedLootTable.lootTableReference(UOLootTableKeys.FROST_DUNGEON_VAULT_REWARD_UNIQUE))
+                        )
+        );
+
+        // TODO: change glacium shard to Frost Revenant's drop
+        output.accept(UOLootTableKeys.FROST_DUNGEON_VAULT_REWARD_COMMON,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(UOItems.CRYIC_POWDER).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 12.0F))))
+                                .add(LootItem.lootTableItem(Items.ARROW).setWeight(4)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 12.0F)))
+                                        .apply(SetPotionFunction.setPotion(UOPotions.STRONG_FROSTBITTEN)))
+                                .add(LootItem.lootTableItem(UOItems.FROSTSTEEL_NUGGET).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(9.0F, 18.0F))))
+                                .add(LootItem.lootTableItem(UOItems.GLACIUM_SHARD).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+                                .add(LootItem.lootTableItem(UOItems.FROSTSTEEL_INGOT).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
+                        )
+        );
+
+        output.accept(UOLootTableKeys.FROST_DUNGEON_VAULT_REWARD_RARE,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(UOItems.GLACIUM_SHARD).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))))
+                                .add(LootItem.lootTableItem(Items.SHIELD).setWeight(3).apply(SetItemDamageFunction.setDamage(UniformGenerator.between(0.5F, 1.0F))))
+                                .add(LootItem.lootTableItem(UOTools.FROSTSTEEL.getAxe().get()).setWeight(2)
+                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(registries, UniformGenerator.between(15.0F, 25.0F)))
+                                )
+                                .add(LootItem.lootTableItem(UOArmors.FROSTSTEEL.getHelmet().get()).setWeight(2)
+                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(registries, UniformGenerator.between(15.0F, 25.0F)))
+                                )
+                                .add(LootItem.lootTableItem(Items.GOLDEN_APPLE).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(2).apply(EnchantRandomlyFunction.randomEnchantment()))
+                                .add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(2).apply(EnchantRandomlyFunction.randomEnchantment()))
+                                .add(LootItem.lootTableItem(Items.DIAMOND_CHESTPLATE).apply(EnchantWithLevelsFunction.enchantWithLevels(registries, UniformGenerator.between(15.0F, 30.0F))))
+                                .add(LootItem.lootTableItem(Items.DIAMOND_BOOTS).apply(EnchantWithLevelsFunction.enchantWithLevels(registries, UniformGenerator.between(15.0F, 30.0F))))
+                        )
+        );
+
+        // TODO: add new weight 1 entry with Glacialite Shield
+        output.accept(UOLootTableKeys.FROST_DUNGEON_VAULT_REWARD_UNIQUE,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE).setWeight(4))
+                                .add(LootItem.lootTableItem(UOItems.GLACIUM_CRYSTAL).setWeight(3))
+                                .add(LootItem.lootTableItem(UOItems.GLACIALITE_INGOT).setWeight(2))
+                                .add(LootItem.lootTableItem(UOItems.GLACIALITE_UPGRADE_SMITHING_TEMPLATE).setWeight(2))
                         )
         );
 

@@ -1,4 +1,4 @@
-// 1.21.1	2026-01-27T17:49:34.1042822	Registries
+// 1.21.1	2026-05-18T13:38:28.623897	Registries
 e672d42cbac7c5fd72024fd94ef2f98811380b68 data/unoredinary/neoforge/biome_modifier/ore_cryic.json
 fe526a3864e8dace306db8d1681308f4e4ba44a1 data/unoredinary/neoforge/biome_modifier/ore_cryic_lower.json
 774f0c02b73e4ee9dece14f95ab905fe30b1e3f3 data/unoredinary/neoforge/biome_modifier/ore_glacium.json
@@ -53,6 +53,7 @@ a9d8274f150dc4ae9140009fb4f40a5f17d85a60 data/unoredinary/worldgen/structure_set
 9914490a466bd030ba5c5dcbef1ece07ce53c26c data/unoredinary/worldgen/template_pool/frost_dungeon/7x7_decorations.json
 1a50b10738a221040426452b22d22240c740c631 data/unoredinary/worldgen/template_pool/frost_dungeon/centers.json
 f127d392d177a44625a3bc86dead96de18c64bb3 data/unoredinary/worldgen/template_pool/frost_dungeon/connections.json
+685af98f9ca30c203bc977c198d1b5586229e446 data/unoredinary/worldgen/template_pool/frost_dungeon/ends.json
 8e1e3def026bbcb670ee9d3b7e74b6c3b95c919f data/unoredinary/worldgen/template_pool/frost_dungeon/halls.json
 ceb1ead46fd8944e8fc1d08217e542a6a58a30a2 data/unoredinary/worldgen/template_pool/frost_dungeon/hallways.json
 7b27ead4338fa0df577373bbd7819e04c6ac7f8e data/unoredinary/worldgen/template_pool/frost_dungeon/start.json

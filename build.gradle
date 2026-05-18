@@ -126,9 +126,11 @@ configurations {
 }
 
 dependencies {
+    // My libs
     implementation "net.xun.lib:xunlib-neoforge:${xunlib_version}"
     implementation "net.xun.armory:armories-neoforge:${armory_version}"
 
+    // JEI
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
 
@@ -151,6 +153,12 @@ dependencies {
 
     runtimeOnly("curse.maven:enchanting-infuser-551151:7844709")
     runtimeOnly("curse.maven:puzzles-lib-495476:7140307")
+
+    runtimeOnly("curse.maven:stoneworks-852663:5731747")
+
+    runtimeOnly("curse.maven:selene-499980:8089964")
+    runtimeOnly("curse.maven:every-compat-628539:8017083")
+    runtimeOnly("curse.maven:stone-zone-1154622:7824607")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

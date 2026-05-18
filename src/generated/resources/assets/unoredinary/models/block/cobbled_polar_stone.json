@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:block/cube_all",
     "textures": {
-        "all": "unoredinary:block/polar_cobblestone"
+        "all": "unoredinary:block/cobbled_polar_stone"
     }
 }

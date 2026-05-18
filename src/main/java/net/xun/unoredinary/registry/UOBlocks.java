@@ -8,12 +8,12 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.block.TransenchantingTableBlock;
 import net.xun.unoredinary.block.GlaciumBlock;
+import net.xun.unoredinary.block.TrapIceBlock;
 
 import java.util.function.Supplier;
 
@@ -32,6 +32,9 @@ public class UOBlocks {
             )
     );
 
+    // Misc
+    public static final DeferredBlock<Block> TRAP_ICE = register("trap_ice", () -> new TrapIceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PACKED_ICE).noLootTable()));
+
     // Building Blocks
     public static final DeferredBlock<Block> POLAR_STONE = register("polar_stone",
             () -> new Block(
@@ -41,14 +44,14 @@ public class UOBlocks {
     public static final DeferredBlock<StairBlock> POLAR_STONE_STAIRS = registerStair("polar_stone_stairs", UOBlocks.POLAR_STONE);
     public static final DeferredBlock<SlabBlock> POLAR_STONE_SLAB = registerSlab("polar_stone_slab", UOBlocks.POLAR_STONE);
 
-    public static final DeferredBlock<Block> POLAR_COBBLESTONE = register("polar_cobblestone",
+    public static final DeferredBlock<Block> COBBLED_POLAR_STONE = register("cobbled_polar_stone",
             () -> new Block(
                     BlockBehaviour.Properties.of().mapColor(MapColor.CLAY).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F)
             )
     );
-    public static final DeferredBlock<StairBlock> POLAR_COBBLESTONE_STAIRS = registerStair("polar_cobblestone_stairs", UOBlocks.POLAR_COBBLESTONE);
-    public static final DeferredBlock<SlabBlock> POLAR_COBBLESTONE_SLAB = registerSlab("polar_cobblestone_slab", UOBlocks.POLAR_COBBLESTONE);
-    public static final DeferredBlock<WallBlock> POLAR_COBBLESTONE_WALL = registerWall("polar_cobblestone_wall", UOBlocks.POLAR_COBBLESTONE);
+    public static final DeferredBlock<StairBlock> COBBLED_POLAR_STONE_STAIRS = registerStair("cobbled_polar_stone_stairs", UOBlocks.COBBLED_POLAR_STONE);
+    public static final DeferredBlock<SlabBlock> COBBLED_POLAR_STONE_SLAB = registerSlab("cobbled_polar_stone_slab", UOBlocks.COBBLED_POLAR_STONE);
+    public static final DeferredBlock<WallBlock> COBBLED_POLAR_STONE_WALL = registerWall("cobbled_polar_stone_wall", UOBlocks.COBBLED_POLAR_STONE);
 
     public static final DeferredBlock<Block> POLAR_STONE_BRICKS = register("polar_stone_bricks",
             () -> new Block(

@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:enchanted_golden_apple",
+                    "weight": 4
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "unoredinary:glacium_crystal",
+                    "weight": 3
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "unoredinary:glacialite_ingot",
+                    "weight": 2
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "unoredinary:glacialite_upgrade_smithing_template",
+                    "weight": 2
+                }
+            ],
+            "rolls": 1.0
+        }
+    ],
+    "random_sequence": "unoredinary:chests/frost_dungeon/vault_reward_unique"
+}

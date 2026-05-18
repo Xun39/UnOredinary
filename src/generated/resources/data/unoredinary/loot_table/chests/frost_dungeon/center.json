@@ -43,6 +43,10 @@
                     "type": "minecraft:item",
                     "name": "unoredinary:glacium_shard",
                     "weight": 5
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "unoredinary:frost_key"
                 }
             ],
             "rolls": 3.0
@@ -63,7 +67,7 @@
                             "function": "minecraft:set_count"
                         }
                     ],
-                    "name": "unoredinary:polar_cobblestone",
+                    "name": "unoredinary:cobbled_polar_stone",
                     "weight": 20
                 },
                 {

@@ -3,10 +3,13 @@ package net.xun.unoredinary.data.generator;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
+import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.data.provider.UORecipeProvider;
 import net.xun.unoredinary.registry.UOArmors;
 import net.xun.unoredinary.registry.UOBlocks;
@@ -44,6 +47,19 @@ public class UORecipes extends UORecipeProvider {
                 .requires(Blocks.SNOW_BLOCK, 3)
                 .unlockedBy(getHasName(UOItems.CRYIC_POWDER), has(UOTags.Items.DUSTS_CRYIC))
                 .save(recipeOutput);
+
+        // Building Blocks
+        doorBuilder(UOBlocks.ICE_DOOR, Ingredient.of(Blocks.ICE))
+                .unlockedBy(getHasName(Blocks.ICE), has(Blocks.ICE))
+                .save(recipeOutput, CommonUtils.modLoc("ice_door_from_ice"));
+
+        doorBuilder(UOBlocks.ICE_DOOR, Ingredient.of(Blocks.PACKED_ICE))
+                .unlockedBy(getHasName(Blocks.PACKED_ICE), has(Blocks.PACKED_ICE))
+                .save(recipeOutput, CommonUtils.modLoc("ice_door_from_packed_ice"));
+
+        doorBuilder(UOBlocks.ICE_DOOR, Ingredient.of(Blocks.BLUE_ICE))
+                .unlockedBy(getHasName(Blocks.BLUE_ICE), has(Blocks.BLUE_ICE))
+                .save(recipeOutput, CommonUtils.modLoc("ice_door_from_blue_ice"));
 
         // Glacium-related
         threeByThreePacker(recipeOutput, RecipeCategory.MISC, UOItems.GLACIUM_CRYSTAL, Ingredient.of(UOItems.GLACIUM_SHARD), UOItems.GLACIUM_SHARD);
@@ -90,8 +106,8 @@ public class UORecipes extends UORecipeProvider {
         // Glacialite-related
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, UOItems.GLACIALITE_INGOT)
                 .requires(Ingredient.of(UOTags.Items.INGOTS_FROSTSTEEL), 4)
-                .requires(Ingredient.of(UOTags.Items.GEMS_GLACIUM), 3)
-                .requires(Ingredient.of(UOTags.Items.GEMS_SAPPHIRE))
+                .requires(Ingredient.of(UOTags.Items.GEMS_GLACIUM), 2)
+                .requires(Ingredient.of(UOTags.Items.GEMS_SAPPHIRE), 2)
                 .unlockedBy(getHasName(UOItems.FROSTSTEEL_INGOT), has(UOTags.Items.INGOTS_FROSTSTEEL))
                 .save(recipeOutput);
         threeByThreePackerConvertible(

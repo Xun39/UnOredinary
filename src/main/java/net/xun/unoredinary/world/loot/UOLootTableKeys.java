@@ -17,6 +17,11 @@ public class UOLootTableKeys {
     public static final ResourceKey<LootTable> FROST_DUNGEON_TREASURE = createKey("chests/frost_dungeon/treasure");
     public static final ResourceKey<LootTable> FROST_DUNGEON_MONSTER_ROOM = createKey("chests/frost_dungeon/monster_room");
 
+    public static final ResourceKey<LootTable> FROST_DUNGEON_VAULT_REWARD = createKey("chests/frost_dungeon/vault_reward");
+    public static final ResourceKey<LootTable> FROST_DUNGEON_VAULT_REWARD_COMMON = createKey("chests/frost_dungeon/vault_reward_common");
+    public static final ResourceKey<LootTable> FROST_DUNGEON_VAULT_REWARD_RARE = createKey("chests/frost_dungeon/vault_reward_rare");
+    public static final ResourceKey<LootTable> FROST_DUNGEON_VAULT_REWARD_UNIQUE = createKey("chests/frost_dungeon/vault_reward_unique");
+
     private static ResourceKey<LootTable> createKey(String name) {
         return ResourceKey.create(Registries.LOOT_TABLE, CommonUtils.modLoc(name));
     }

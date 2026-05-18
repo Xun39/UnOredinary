@@ -11,11 +11,11 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "unoredinary:polar_cobblestone"
+                    "name": "unoredinary:cobbled_polar_stone"
                 }
             ],
             "rolls": 1.0
         }
     ],
-    "random_sequence": "unoredinary:blocks/polar_cobblestone"
+    "random_sequence": "unoredinary:blocks/cobbled_polar_stone"
 }
