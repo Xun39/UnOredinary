@@ -15,6 +15,7 @@ import net.xun.unoredinary.entity.FrostRevenant;
 import net.xun.unoredinary.entity.FrostZombie;
 import net.xun.unoredinary.registry.UOEntityTypes;
 import net.xun.unoredinary.registry.UOItems;
+import net.xun.unoredinary.util.CustomTrialStuffs;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID)
 public class ModEvents {
@@ -36,6 +37,11 @@ public class ModEvents {
         if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             insertAfter(event, Items.ZOMBIE_SPAWN_EGG, UOItems.FROST_ZOMBIE_SPAWN_EGG);
             insertAfter(event, UOItems.FROST_ZOMBIE_SPAWN_EGG, UOItems.FROST_REVENANT_SPAWN_EGG);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.OP_BLOCKS) {
+            event.accept(CustomTrialStuffs.createFrostDungeonTrialSpawner(), CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY);
+            event.accept(CustomTrialStuffs.createFrostDungeonVault(), CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY);
         }
     }
 

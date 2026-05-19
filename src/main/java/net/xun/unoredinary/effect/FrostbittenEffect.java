@@ -9,24 +9,25 @@ import net.minecraft.world.entity.player.Player;
 import net.xun.lib.common.api.util.CommonUtils;
 
 public class FrostbittenEffect extends MobEffect {
+
     public FrostbittenEffect() {
         super(MobEffectCategory.HARMFUL, 0x33b2e7);
         this.addAttributeModifier(
                 Attributes.MOVEMENT_SPEED,
                 CommonUtils.modLoc("frostbite_slow"),
-                -0.3D,
+                -0.2D,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
         );
     }
 
     @Override
     public boolean applyEffectTick(LivingEntity entity, int amplifier) {
-        if (entity.level().isClientSide) return false;
+        if (entity.level().isClientSide) return true; // TODO: no early return, because now it's confusing
         if (!entity.canFreeze()) return false;
 
         if (entity.isOnFire()) {
             entity.extinguishFire();
-            return false;
+            return true;
         }
 
         int required = entity.getTicksRequiredToFreeze();

@@ -82,6 +82,10 @@ public class UOLanguage extends UOLanguageProvider {
 
         addBlock(UOBlocks.TRAP_ICE, "Packed Ice");
 
+        // Vanilla block with custom names
+        add("trial_spawner.unoredinary.frost_dungeon", "Frost Trial Spawner");
+        add("vault.unoredinary.frost_dungeon", "Frost Vault");
+
         /* ------------------------------ CONTAINERS ------------------------------ */
         add("unoredinary.container.transenchanting_table", "Transenchant");
 
@@ -94,6 +98,10 @@ public class UOLanguage extends UOLanguageProvider {
         addPotion(UOPotions.FROSTBITTEN, "Frostbitten");
         addPotion(UOPotions.LONG_FROSTBITTEN, "Frostbitten");
         addPotion(UOPotions.STRONG_FROSTBITTEN, "Frostbitten");
+
+        addEffect(UOMobEffects.WARMTH_EFFECT, "Warmth");
+        addPotion(UOPotions.WARMTH, "Warmth");
+        addPotion(UOPotions.LONG_WARMTH, "Warmth");
 
         /* ------------------------------ ITEMS ------------------------------ */
         addItem(UOItems.CRYIC_POWDER, "Cryic Powder");

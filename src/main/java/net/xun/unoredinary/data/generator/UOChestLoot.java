@@ -134,6 +134,30 @@ public record UOChestLoot(HolderLookup.Provider registries) implements LootTable
                         )
         );
 
+        output.accept(UOLootTableKeys.FROST_DUNGEON_SPAWNER_CONSUMABLES,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(Items.BAKED_POTATO).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))))
+                                .add(LootItem.lootTableItem(Items.COOKED_COD).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+                                .add(LootItem.lootTableItem(Items.GOLDEN_CARROT).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(Items.POTION)
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                                        .apply(SetPotionFunction.setPotion(Potions.REGENERATION)))
+                                .add(LootItem.lootTableItem(Items.POTION)
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                                        .apply(SetPotionFunction.setPotion(UOPotions.WARMTH)))
+                        )
+        );
+
+        output.accept(UOLootTableKeys.FROST_DUNGEON_SPAWNER_KEY,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(UOItems.FROST_KEY))
+                        )
+        );
+
         output.accept(UOLootTableKeys.FROST_DUNGEON_INTERSECTION,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()

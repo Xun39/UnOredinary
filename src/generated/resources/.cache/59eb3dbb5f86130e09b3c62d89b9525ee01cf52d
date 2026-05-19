@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-17T21:07:27.807845	Loot Tables
+// 1.21.1	2026-05-18T19:54:27.2461092	Loot Tables
 6236a1e6f4906ac97f028c797627615c20f55350 data/unoredinary/loot_table/blocks/cobbled_polar_stone.json
 ef37d9ad59cf32a977596807c885ec0d1d458528 data/unoredinary/loot_table/blocks/cobbled_polar_stone_slab.json
 cd58448a26d78d328a0a046141338ebe5886bd6d data/unoredinary/loot_table/blocks/cobbled_polar_stone_stairs.json
@@ -41,3 +41,5 @@ be2728de0c14692bda21ffa618778342b71b78ce data/unoredinary/loot_table/chests/fros
 a72adfb5b6982d71d36f91d43f2d94758fa591ae data/unoredinary/loot_table/chests/frozen_vault.json
 244ff67a50ef6d766c4101a99ca57891d0f3f486 data/unoredinary/loot_table/entities/frost_revenant.json
 739a82e3104429e4f06877b037c12213c1f0d760 data/unoredinary/loot_table/entities/frost_zombie.json
+b752f2722ae9066e6474442069edf644ccc80ebc data/unoredinary/loot_table/spawners/consumables.json
+105768bf1c43a4ed7ab0ac315985f7ceea31e47f data/unoredinary/loot_table/spawners/key.json
