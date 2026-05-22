@@ -5,7 +5,7 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public class FroststeelArmorConfigServer {
     public final ModConfigSpec.BooleanValue enable;
     public final ModConfigSpec.BooleanValue enableFrostWalker;
-    public final ModConfigSpec.BooleanValue enableHotFloorDamage;
+    public final ModConfigSpec.BooleanValue immuneToHotFloorDamage;
 
     public final ModConfigSpec.IntValue frostWalkerRadius;
 
@@ -20,9 +20,9 @@ public class FroststeelArmorConfigServer {
                 .comment("Disabling this setting will turn off the frost walker effect while wearing Froststeel Boots")
                 .define("enable_frost_walker", true);
 
-        enableHotFloorDamage = builder
-                .comment("Disabling this setting will let you immune to hot floor damage (e.g. Stepping on Campfires, Magma Blocks, etc.) when wearing Froststeel Boots")
-                .define("enable_hot_floor_damage", false);
+        immuneToHotFloorDamage = builder
+                .comment("Disabling this setting will active hot floor damage (e.g. Stepping on Campfires, Magma Blocks, etc.) when wearing Froststeel Boots")
+                .define("immune_hot_floor_damage", true);
 
         frostWalkerRadius = builder
                 .comment("This setting corresponds to the radius of the frost walker effect you get while wearing Froststeel Boots")

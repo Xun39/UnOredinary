@@ -24,7 +24,7 @@ public class TrapIceBlock extends Block {
         if (!(entity instanceof Player player))
             return;
 
-        if (player.isCreative())
+        if (player.isCreative() || player.isShiftKeyDown())
             return;
 
         Vec3 motion = player.getDeltaMovement();

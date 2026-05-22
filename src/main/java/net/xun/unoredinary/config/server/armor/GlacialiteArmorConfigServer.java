@@ -6,8 +6,8 @@ public class GlacialiteArmorConfigServer {
     public final ModConfigSpec.BooleanValue enable;
     public final ModConfigSpec.BooleanValue enableFrostWalker;
     public final ModConfigSpec.BooleanValue enableSlownessImmunity;
-    public final ModConfigSpec.BooleanValue enableHotFloorDamage;
     public final ModConfigSpec.BooleanValue enableThornsEffect;
+    public final ModConfigSpec.BooleanValue immuneToHotFloorDamage;
     public final ModConfigSpec.BooleanValue canWalkOnPowderSnow;
 
     public final ModConfigSpec.IntValue frostWalkerRadius;
@@ -29,13 +29,13 @@ public class GlacialiteArmorConfigServer {
                 .comment("Disabling this setting will turn off the slowness immunity while wearing full set of Glacialite Armor")
                 .define("enable_slowness_immunity", true);
 
-        enableHotFloorDamage = builder
-                .comment("Disabling this setting will let you immune to hot floor damage (e.g. Stepping on Campfires, Magma Blocks, etc.) when wearing Glacialite Boots")
-                .define("enable_hot_floor_damage", false);
-
         enableThornsEffect = builder
                 .comment("Disabling this setting will turn off the damage you take from enemies attacking you while wearing a full set of Glacialite Armor")
                 .define("enable_thorns", true);
+
+        immuneToHotFloorDamage = builder
+                .comment("Disabling this setting will active hot floor damage (e.g. Stepping on Campfires, Magma Blocks, etc.) when wearing Glacialite Boots")
+                .define("immune_hot_floor_damage", true);
 
         canWalkOnPowderSnow = builder
                 .comment("Disabling this setting will make you unable to walk on powder snow while wearing Glacialite Boots")

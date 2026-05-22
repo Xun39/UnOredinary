@@ -22,19 +22,20 @@ public class FrostbittenEffect extends MobEffect {
 
     @Override
     public boolean applyEffectTick(LivingEntity entity, int amplifier) {
-        if (entity.level().isClientSide) return true; // TODO: no early return, because now it's confusing
-        if (!entity.canFreeze()) return false;
+        if (!entity.level().isClientSide) {
+            if (!entity.canFreeze()) return false;
 
-        if (entity.isOnFire()) {
-            entity.extinguishFire();
-            return true;
-        }
+            if (entity.isOnFire()) {
+                entity.extinguishFire();
+                return false;
+            }
 
-        int required = entity.getTicksRequiredToFreeze();
-        entity.setTicksFrozen(required);
+            int required = entity.getTicksRequiredToFreeze();
+            entity.setTicksFrozen(required);
 
-        if (amplifier > 0) {
-            entity.setTicksFrozen(required + (amplifier * 40));
+            if (amplifier > 0) {
+                entity.setTicksFrozen(required + (amplifier * 40));
+            }
         }
 
         return true;

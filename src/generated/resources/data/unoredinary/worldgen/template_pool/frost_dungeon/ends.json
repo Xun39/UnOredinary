@@ -10,6 +10,28 @@
                 "projection": "rigid"
             },
             "weight": 1
+        },
+        {
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "unoredinary:frost_dungeon/ends/end_2",
+                "processors": {
+                    "processors": []
+                },
+                "projection": "rigid"
+            },
+            "weight": 1
+        },
+        {
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "unoredinary:frost_dungeon/ends/dorm",
+                "processors": {
+                    "processors": []
+                },
+                "projection": "rigid"
+            },
+            "weight": 1
         }
     ],
     "fallback": "minecraft:empty"

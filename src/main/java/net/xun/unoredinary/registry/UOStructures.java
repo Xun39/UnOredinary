@@ -4,9 +4,14 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.WeightedRandomList;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
+import net.minecraft.world.level.levelgen.heightproviders.HeightProvider;
 import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureSpawnOverride;
@@ -33,18 +38,10 @@ public class UOStructures {
     }
 
     public static void bootstrap(BootstrapContext<Structure> context) {
-        Map<MobCategory, StructureSpawnOverride> emptySpawnOverrides = new HashMap<>();
-        for (MobCategory category : MobCategory.values()) {
-            emptySpawnOverrides.put(category, new StructureSpawnOverride(
-                    StructureSpawnOverride.BoundingBoxType.STRUCTURE,
-                    WeightedRandomList.create()
-            ));
-        }
-
         context.register(FROZEN_VAULT, new FrozenVaultStructure(
                 new Structure.StructureSettings(
                         context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_ICY),
-                        emptySpawnOverrides,
+                        new HashMap<>(),
                         GenerationStep.Decoration.UNDERGROUND_STRUCTURES,
                         TerrainAdjustment.BEARD_THIN)
                 )
@@ -52,21 +49,32 @@ public class UOStructures {
         context.register(FROST_DUNGEON, new JigsawStructure(
                 new Structure.StructureSettings(
                         context.lookup(Registries.BIOME).getOrThrow(UOTags.Biomes.HAS_STRUCTURE_FROST_DUNGEON),
-                        emptySpawnOverrides,
+                        Map.of(
+                                MobCategory.MONSTER,
+                                new StructureSpawnOverride(
+                                        StructureSpawnOverride.BoundingBoxType.STRUCTURE,
+                                        WeightedRandomList.create(
+                                                new MobSpawnSettings.SpawnerData(EntityType.ZOMBIE, 60, 1, 3),
+                                                new MobSpawnSettings.SpawnerData(EntityType.SKELETON, 60, 1, 3),
+                                                new MobSpawnSettings.SpawnerData(EntityType.SPIDER, 80, 1, 2),
+                                                new MobSpawnSettings.SpawnerData(EntityType.STRAY, 100, 1, 4),
+                                                new MobSpawnSettings.SpawnerData(UOEntityTypes.FROST_ZOMBIE.get(), 100, 2, 4)
+                                        )
+                                )
+                        ),
                         GenerationStep.Decoration.UNDERGROUND_STRUCTURES,
-                        TerrainAdjustment.ENCAPSULATE
+                        TerrainAdjustment.NONE
                 ),
                 context.lookup(Registries.TEMPLATE_POOL).getOrThrow(UOTemplatePools.FROST_DUNGEON_START),
                 Optional.empty(),
                 10,
-                UniformHeight.of(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(-12)),
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
                 false,
-                Optional.empty(),
+                Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
                 116,
                 List.of(),
                 JigsawStructure.DEFAULT_DIMENSION_PADDING,
                 LiquidSettings.IGNORE_WATERLOGGING)
         );
-        // TODO: Use processors for frost dungeon
     }
 }

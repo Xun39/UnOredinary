@@ -1,6 +1,5 @@
 package net.xun.unoredinary.entity;
 
-import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -53,15 +52,15 @@ public class FrostRevenant extends FrostZombie {
 
         for (LivingEntity entity : entities) {
 
-            if (entity.getType().is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES))
+            if (!entity.canFreeze())
                 continue;
 
-            entity.setTicksFrozen(entity.getTicksFrozen() + 60);
+            entity.setTicksFrozen(Math.max(entity.getTicksFrozen(), entity.getTicksFrozen() + 60));
 
-            entity.hurt(
-                    damageSources().freeze(),
-                    0.5F
-            );
+            if (entity.invulnerableTime > 0)
+                continue;
+
+            entity.hurt(damageSources().freeze(), 0.5F);
         }
     }
 }

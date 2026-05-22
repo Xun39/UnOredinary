@@ -48,17 +48,6 @@ public record UOChestLoot(HolderLookup.Provider registries) implements LootTable
         output.accept(UOLootTableKeys.FROST_DUNGEON_CENTER,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(3.0F))
-                                .add(LootItem.lootTableItem(Items.SADDLE).setWeight(20))
-                                .add(LootItem.lootTableItem(Items.NAME_TAG).setWeight(15))
-                                .add(LootItem.lootTableItem(UOItems.SAPPHIRE).setWeight(12))
-                                .add(LootItem.lootTableItem(Items.DIAMOND).setWeight(10))
-                                .add(LootItem.lootTableItem(Items.DIAMOND_HORSE_ARMOR).setWeight(8))
-                                .add(LootItem.lootTableItem(Items.GOLDEN_APPLE).setWeight(8))
-                                .add(LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE).setWeight(5))
-                                .add(LootItem.lootTableItem(UOItems.GLACIUM_SHARD).setWeight(5))
-                                .add(LootItem.lootTableItem(UOItems.FROST_KEY))
-                        ).withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(4.0F))
                                 .add(LootItem.lootTableItem(UOBlocks.COBBLED_POLAR_STONE).setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(8.0F, 16.0F))))
                                 .add(LootItem.lootTableItem(Items.COAL).setWeight(15).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 9.0F))))
@@ -69,7 +58,20 @@ public record UOChestLoot(HolderLookup.Provider registries) implements LootTable
         );
 
         output.accept(UOLootTableKeys.FROST_DUNGEON_GRAND_HALL,
-                LootTable.lootTable().withPool(LootPool.lootPool()));
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(3.0F))
+                                .add(LootItem.lootTableItem(Items.SADDLE).setWeight(20))
+                                .add(LootItem.lootTableItem(Items.NAME_TAG).setWeight(15))
+                                .add(LootItem.lootTableItem(UOItems.SAPPHIRE).setWeight(12))
+                                .add(LootItem.lootTableItem(Items.DIAMOND).setWeight(10))
+                                .add(LootItem.lootTableItem(Items.DIAMOND_HORSE_ARMOR).setWeight(8))
+                                .add(LootItem.lootTableItem(Items.GOLDEN_APPLE).setWeight(8))
+                                .add(LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE).setWeight(5))
+                                .add(LootItem.lootTableItem(UOItems.GLACIUM_SHARD).setWeight(5))
+                                .add(LootItem.lootTableItem(UOItems.FROST_KEY))
+                        )
+        );
 
         output.accept(UOLootTableKeys.FROST_DUNGEON_VAULT_REWARD,
                 LootTable.lootTable()
@@ -93,7 +95,7 @@ public record UOChestLoot(HolderLookup.Provider registries) implements LootTable
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(UOItems.CRYIC_POWDER).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 12.0F))))
-                                .add(LootItem.lootTableItem(Items.ARROW).setWeight(4)
+                                .add(LootItem.lootTableItem(Items.TIPPED_ARROW).setWeight(4)
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 12.0F)))
                                         .apply(SetPotionFunction.setPotion(UOPotions.STRONG_FROSTBITTEN)))
                                 .add(LootItem.lootTableItem(UOItems.FROSTSTEEL_NUGGET).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(9.0F, 18.0F))))

@@ -37,7 +37,7 @@ public class UOItems {
 
     // Spawn Eggs
     public static final DeferredItem<Item> FROST_ZOMBIE_SPAWN_EGG = ITEMS.register("frost_zombie_spawn_egg",
-            () -> new DeferredSpawnEggItem(UOEntityTypes.FROST_ZOMBIE, 0x3c586d, 0x649ac7, new Item.Properties())
+            () -> new DeferredSpawnEggItem(UOEntityTypes.FROST_ZOMBIE, 0x3c586d, 0x6a869d, new Item.Properties())
     );
     public static final DeferredItem<Item> FROST_REVENANT_SPAWN_EGG = ITEMS.register("frost_revenant_spawn_egg",
             () -> new DeferredSpawnEggItem(UOEntityTypes.FROST_REVENANT, 0x19b3c3, 0x669da5, new Item.Properties())

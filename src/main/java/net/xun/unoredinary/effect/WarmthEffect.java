@@ -20,15 +20,15 @@ public class WarmthEffect extends MobEffect {
 
     @Override
     public boolean applyEffectTick(LivingEntity entity, int amplifier) {
-        if (entity.level().isClientSide) return true;
+        if (!entity.level().isClientSide) {
+            if (entity.hasEffect(UOMobEffects.FROSTED_EFFECT))
+                entity.removeEffect(UOMobEffects.FROSTED_EFFECT);
 
-        if (entity.hasEffect(UOMobEffects.FROSTED_EFFECT))
-            entity.removeEffect(UOMobEffects.FROSTED_EFFECT);
-
-        if (entity.getTicksFrozen() > 0) {
-            entity.setTicksFrozen(0);
-            entity.setIsInPowderSnow(false);
-            return true;
+            if (entity.getTicksFrozen() > 0) {
+                entity.setTicksFrozen(0);
+                entity.setIsInPowderSnow(false);
+                return true;
+            }
         }
 
         return true;
@@ -41,14 +41,14 @@ public class WarmthEffect extends MobEffect {
 
     // Immune to cold damage
     @SubscribeEvent
-    public static void onInvulnerabilityCheck(EntityInvulnerabilityCheckEvent e) {
-        Entity entity = e.getEntity();
+    public static void onInvulnerabilityCheck(EntityInvulnerabilityCheckEvent event) {
+        Entity entity = event.getEntity();
 
         if (!(entity instanceof LivingEntity living))
             return;
 
         if (living.hasEffect(UOMobEffects.WARMTH_EFFECT)) {
-            e.setInvulnerable(e.getSource().is(DamageTypeTags.IS_FREEZING));
+            event.setInvulnerable(event.getSource().is(DamageTypeTags.IS_FREEZING));
         }
     }
 }

@@ -223,12 +223,14 @@ public class UOLanguage extends UOLanguageProvider {
         // Armor Effect Configs
         translateConfig("armor_effects", "Armor Effects");
 
+        translateConfig("only_player", "Affect Players Only");
+
         translateConfig("hurt_particles", "Do damage particles spawn");
         translateConfig("enable_armor", "Enable Armor Effects");
 
         translateConfig("enable_frost_walker", "Enable Frost Walker");
         translateConfig("enable_slowness_immunity", "Enable Slowness Immunity");
-        translateConfig("enable_hot_floor_damage", "Enable Hot Floor Damage");
+        translateConfig("immune_hot_floor_damage", "Immune to Hot Floor Damage");
         translateConfig("enable_thorns", "Enable Thorns");
         translateConfig("can_walk_on_powder_snow", "Can walk on powder snow");
         translateConfig("frost_walker_rad", "Frost Walker effect's Radius");
