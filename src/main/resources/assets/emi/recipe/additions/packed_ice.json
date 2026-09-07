@@ -1,0 +1,6 @@
+{
+  "type": "emi:world_interaction",
+  "left": "fluid:unoredinary:cryic",
+  "right": "fluid:minecraft:water",
+  "output": "item:minecraft:packed_ice"
+}

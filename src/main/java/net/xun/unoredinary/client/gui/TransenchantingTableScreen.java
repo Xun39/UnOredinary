@@ -14,6 +14,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.xun.lib.common.api.client.gui.components.SpriteButton;
 import net.xun.lib.common.api.util.Area;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.block.entity.container.TransenchantingTableMenu;
@@ -26,20 +27,18 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
     private static final ResourceLocation BACKGROUND_TEXTURE = CommonUtils.modLoc("textures/gui/transenchanting_table.png");
 
     // Screen layout
-    private static final Area INFO_AREA = new Area(41, 18, 15, 53);
-    private static final Area MODEL_SLOT_1 = new Area(64, 25, 26, 36);
-    private static final Area MODEL_SLOT_2 = new Area(105, 25, 26, 36);
+    private static final Area INFO_AREA = new Area(114, 16, 17, 59);
+    private static final Area MODEL_SLOT_1 = new Area(20, 18, 26, 36);
+    private static final Area MODEL_SLOT_2 = new Area(62, 18, 26, 36);
 
     // Constant screen values
     private static final int ICON_SIZE = 16;
     private static final int TEXTURE_SIZE = 256;
 
     // Individual textures
-    private static final Area CHECK_MARK = new Area(17, 166, 16, 16);
-    private static final Area CROSS_MARK = new Area(0, 166, 16, 16);
     private static final Area ENCHANTMENTS_NUMBER_ICON = new Area(INFO_AREA.x(), INFO_AREA.y(), ICON_SIZE, ICON_SIZE);
-    private static final Area LEVEL_COST_ICON = new Area(INFO_AREA.x(), INFO_AREA.y() + ICON_SIZE, ICON_SIZE, ICON_SIZE);
-    private static final Area MARK_ICON = new Area(INFO_AREA.x(), INFO_AREA.y() + 2 * ICON_SIZE, ICON_SIZE, ICON_SIZE);
+    private static final Area LEVEL_COST_ICON = new Area(INFO_AREA.x(), INFO_AREA.y() + 36, ICON_SIZE, ICON_SIZE);
+    private static final Area CONFIRM_BTN_AREA = new Area(141, 54, 18, 18);
 
     // 3D Item model constants
     private static final float MODEL_SCALE = 20.0F;
@@ -52,12 +51,39 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
     private int enchantmentCount;
     private int levelCost;
     private boolean canTransenchant;
+    private boolean canAfford;
 
     private Component enchantmentCountText = Component.empty();
     private Component levelCostText = Component.empty();
 
+    private SpriteButton confirmButton;
+
     public TransenchantingTableScreen(TransenchantingTableMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
+        this.imageHeight = 176;
+        this.inventoryLabelY = this.imageHeight - 94;
+    }
+
+    @Override
+    protected void init() {
+        super.init();
+
+        confirmButton = SpriteButton.builder(
+                        BACKGROUND_TEXTURE,
+                        button -> minecraft.gameMode.handleInventoryButtonClick(
+                                menu.containerId,
+                                TransenchantingTableMenu.CONFIRM_BUTTON
+                        )
+                )
+                .bounds(leftPos + CONFIRM_BTN_AREA.x(), topPos + CONFIRM_BTN_AREA.y(), 18, 18)
+                .uv(0, 192)
+                .uvSize(18, 18)
+                .sheetSize(TEXTURE_SIZE, TEXTURE_SIZE)
+                .layout(SpriteButton.StateLayout.HORIZONTAL)
+                .build();
+
+        addRenderableWidget(confirmButton);
+        updateConfirmButton();
     }
 
     @Override
@@ -70,11 +96,20 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
         enchantmentCount = TransenchantmentHelper.getEnchantmentsNumberTotal(transenchanter);
         levelCost = TransenchantmentHelper.calculateLevelCost(transenchanter);
         canTransenchant = TransenchantmentHelper.canTransenchant(transenchanter, target);
+        canAfford = minecraft.player != null && (minecraft.player.isCreative() || minecraft.player.experienceLevel >= levelCost);
 
         enchantmentCountText = Component.literal(Integer.toString(enchantmentCount));
         levelCostText = Component.literal(Integer.toString(levelCost));
 
         this.transenchantIcon.tick(TransenchantmentHelper.getTranslationSlotEmptyIcons());
+
+        updateConfirmButton();
+    }
+
+    private void updateConfirmButton() {
+        if (confirmButton != null) {
+            confirmButton.active = canTransenchant && canAfford;
+        }
     }
 
     @Override
@@ -92,8 +127,7 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
         super.render(guiGraphics, mouseX, mouseY, partialTick);
         this.renderTooltip(guiGraphics, mouseX, mouseY);
-
-        renderInfoAreaTooltips(guiGraphics, mouseX, mouseY);
+        renderUITooltips(guiGraphics, mouseX, mouseY);
     }
 
     private void renderItemInfo(GuiGraphics guiGraphics, float partialTick) {
@@ -105,34 +139,32 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
         }
 
         if (enchantmentCount > 0) {
-            renderInfoIcons(guiGraphics, transenchanterSlotStack, targetSlotStack);
+            renderInfoIcons(guiGraphics);
         }
 
         render3DModels(guiGraphics, transenchanterSlotStack, targetSlotStack, partialTick);
     }
 
-    private void renderInfoIcons(GuiGraphics guiGraphics, ItemStack translator, ItemStack target) {
+    private void renderInfoIcons(GuiGraphics guiGraphics) {
         int screenX = leftPos + INFO_AREA.x();
-        int screenY = topPos + INFO_AREA.y();
 
         // Enchantments number icon
-        guiGraphics.blit(BACKGROUND_TEXTURE, screenX, screenY,
-                49, 166,
+        guiGraphics.blit(BACKGROUND_TEXTURE, screenX, topPos + ENCHANTMENTS_NUMBER_ICON.y(),
+                48, 176,
                 ICON_SIZE, ICON_SIZE, TEXTURE_SIZE, TEXTURE_SIZE);
-        renderText(this.font, guiGraphics, screenX, screenY, enchantmentCountText, ChatFormatting.GREEN.getColor());
+        renderText(this.font, guiGraphics, screenX, topPos + ENCHANTMENTS_NUMBER_ICON.y(), enchantmentCountText, ChatFormatting.GREEN.getColor());
 
         // Level cost icon
-        guiGraphics.blit(BACKGROUND_TEXTURE, screenX, screenY + ICON_SIZE,
-                33, 166,
+        guiGraphics.blit(BACKGROUND_TEXTURE, screenX, topPos + LEVEL_COST_ICON.y(),
+                32, 176,
                 ICON_SIZE, ICON_SIZE, TEXTURE_SIZE, TEXTURE_SIZE);
-        renderText(this.font, guiGraphics, screenX, screenY + ICON_SIZE, levelCostText, ChatFormatting.GREEN.getColor());
+        renderText(this.font, guiGraphics, screenX, topPos + LEVEL_COST_ICON.y(), levelCostText, ChatFormatting.GREEN.getColor());
 
         // Check/cross mark
-        Area markIcon = TransenchantmentHelper.canTransenchant(translator, target) ? CHECK_MARK : CROSS_MARK;
-
-        guiGraphics.blit(BACKGROUND_TEXTURE, screenX, screenY + 2 * ICON_SIZE,
-                markIcon.x(), markIcon.y(),
-                ICON_SIZE, ICON_SIZE, TEXTURE_SIZE, TEXTURE_SIZE);
+//        Area markIcon = TransenchantmentHelper.canTransenchant(translator, target) ? CHECK_MARK : CROSS_MARK;
+//        guiGraphics.blit(BACKGROUND_TEXTURE, screenX, screenY + 2 * ICON_SIZE,
+//                markIcon.x(), markIcon.y(),
+//                ICON_SIZE, ICON_SIZE, TEXTURE_SIZE, TEXTURE_SIZE);
     }
 
     private static void renderText(Font font, GuiGraphics guiGraphics, int posX, int posY, Component component, int color) {
@@ -196,21 +228,11 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
         poseStack.popPose();
     }
 
-    private void renderInfoAreaTooltips(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+    private void renderUITooltips(GuiGraphics guiGraphics, int mouseX, int mouseY) {
         ItemStack transenchanterSlotStack = this.menu.inventory.getStackInSlot(0);
         ItemStack transenchantSlotStack = this.menu.inventory.getStackInSlot(1);
 
         if (transenchanterSlotStack.isEmpty()) {
-            return;
-        }
-
-        // Check the whole area at first
-        if (!INFO_AREA.contains(mouseX, mouseY, leftPos, topPos)) {
-            return;
-        }
-
-        if (enchantmentCount == 0) {
-            renderNoEnchantmentsTooltip(guiGraphics, mouseX, mouseY);
             return;
         }
 
@@ -219,16 +241,15 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
             renderEnchantmentsNumberTooltip(guiGraphics, mouseX, mouseY, transenchanterSlotStack);
         } else if (LEVEL_COST_ICON.contains(mouseX, mouseY, leftPos, topPos)) {
             renderLevelCostTooltip(guiGraphics, mouseX, mouseY, transenchanterSlotStack);
-        } else if (MARK_ICON.contains(mouseX, mouseY, leftPos, topPos)) {
-            renderMarkTooltip(guiGraphics, mouseX, mouseY, transenchanterSlotStack, transenchantSlotStack);
+        }
+
+        if (CONFIRM_BTN_AREA.contains(mouseX, mouseY, leftPos, topPos)) {
+            if (enchantmentCount == 0) renderNoEnchantmentsTooltip(guiGraphics, mouseX, mouseY);
+            renderButtonTooltip(guiGraphics, mouseX, mouseY, transenchanterSlotStack, transenchantSlotStack);
         }
     }
 
     private void renderEnchantmentsNumberTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY, ItemStack translator) {
-        if (translator.isEmpty()) {
-            return;
-        }
-
         List<Component> tooltipLines = new ArrayList<>();
         tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.enchantments_number")
                 .withStyle(ChatFormatting.GOLD));
@@ -238,10 +259,6 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
     }
 
     private void renderLevelCostTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY, ItemStack translator) {
-        if (translator.isEmpty()) {
-            return;
-        }
-
         List<Component> tooltipLines = new ArrayList<>();
         tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.level_cost").withStyle(ChatFormatting.GOLD));
         tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.levels", levelCost).withStyle(ChatFormatting.GRAY));
@@ -256,15 +273,15 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
                         enchantmentCount / 2 * TransenchantmentHelper.PER_ENCHANTMENT_COST)
                 .withStyle(ChatFormatting.GRAY)
         );
+        if (!canAfford) {
+            tooltipLines.add(Component.empty());
+            tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.not_enough_levels").withStyle(ChatFormatting.RED));
+        }
 
         guiGraphics.renderTooltip(this.font, tooltipLines, Optional.empty(), mouseX, mouseY);
     }
 
-    private void renderMarkTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY, ItemStack translator, ItemStack target) {
-        if (translator.isEmpty()) {
-            return;
-        }
-
+    private void renderButtonTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY, ItemStack translator, ItemStack target) {
         List<Component> tooltipLines = new ArrayList<>();
 
         if (canTransenchant) {
@@ -280,6 +297,9 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
         } else {
             tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.cannot_transenchant").withStyle(ChatFormatting.RED));
 
+            if (!canAfford) {
+                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.not_enough_levels").withStyle(ChatFormatting.RED));
+            }
             if (target.isEmpty()) {
                 tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.no_target").withStyle(ChatFormatting.GRAY));
             } else if (target.is(Items.BOOK)) {

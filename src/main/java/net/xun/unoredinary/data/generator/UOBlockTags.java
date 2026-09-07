@@ -116,6 +116,9 @@ public class UOBlockTags extends BlockTagsProvider {
                 UOBlocks.COBBLED_POLAR_STONE_WALL.get(),
                 UOBlocks.POLAR_STONE_BRICKS_WALL.get()
         );
+        tag(BlockTags.DOORS).add(UOBlocks.ICE_DOOR.get());
+        tag(BlockTags.TRAPDOORS).add(UOBlocks.ICE_TRAPDOOR.get());
+        tag(BlockTags.BUTTONS).add(UOBlocks.ICE_BUTTON.get());
 
         /* ------------------------------ COMMON ------------------------------ */
 

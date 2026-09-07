@@ -30,11 +30,13 @@ public class UnOredinary {
         UOArmors.registerArmors();
         UOItems.ITEMS.register(modEventBus);
         UOBlocks.BLOCKS.register(modEventBus);
+        UOFluids.FLUIDS.register(modEventBus);
         UOPotions.POTIONS.register(modEventBus);
         UOSounds.SOUND_EVENTS.register(modEventBus);
         UOAttributes.ATTRIBUTES.register(modEventBus);
         UOMobEffects.MOB_EFFECTS.register(modEventBus);
         UOMenuTypes.MENU_TYPES.register(modEventBus);
+        UOFluidTypes.FLUID_TYPES.register(modEventBus);
         UOEntityTypes.ENTITY_TYPES.register(modEventBus);
         UOParticleTypes.PARTICLE_TYPES.register(modEventBus);
         UOBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modEventBus);

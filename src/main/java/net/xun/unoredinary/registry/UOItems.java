@@ -1,5 +1,6 @@
 package net.xun.unoredinary.registry;
 
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -34,6 +35,9 @@ public class UOItems {
 
     // Misc
     public static final DeferredItem<Item> FROST_KEY = ITEMS.register("frost_key", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CRYIC_BUCKET = ITEMS.register("cryic_bucket",
+            () -> new BucketItem(UOFluids.CRYIC.get(), new Item.Properties().stacksTo(1))
+    );
 
     // Spawn Eggs
     public static final DeferredItem<Item> FROST_ZOMBIE_SPAWN_EGG = ITEMS.register("frost_zombie_spawn_egg",

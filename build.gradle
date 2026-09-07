@@ -30,6 +30,11 @@ repositories {
     }
 
     maven {
+        name = "Sleeping Town"
+        url = "https://repo.sleeping.town/"
+    }
+
+    maven {
         name = "Modrinth"
         url = "https://api.modrinth.com/maven"
     }
@@ -127,12 +132,14 @@ configurations {
 
 dependencies {
     // My libs
-    implementation "net.xun.lib:xunlib-neoforge:${xunlib_version}"
-    implementation "net.xun.armory:armories-neoforge:${armory_version}"
+    implementation "net.xun.lib:xunlib-neoforge-1.21.1:${xunlib_version}"
 
     // JEI
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+
+    compileOnly("dev.emi:emi-neoforge:${emi_version}:api")
+    runtimeOnly("dev.emi:emi-neoforge:${emi_version}")
 
     runtimeOnly("maven.modrinth:rightclickharvest:4.5.3+1.21.1-neoforge")
     runtimeOnly("maven.modrinth:architectury-api:13.0.8+neoforge")
@@ -159,6 +166,8 @@ dependencies {
     runtimeOnly("curse.maven:selene-499980:8089964")
     runtimeOnly("curse.maven:every-compat-628539:8017083")
     runtimeOnly("curse.maven:stone-zone-1154622:7824607")
+
+    runtimeOnly("curse.maven:farmers-delight-398521:8672744")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

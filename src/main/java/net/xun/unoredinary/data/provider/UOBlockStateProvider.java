@@ -1,9 +1,9 @@
 package net.xun.unoredinary.data.provider;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -45,7 +45,7 @@ public abstract class UOBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(block.get(), inventoryModel);
     }
 
-    protected void doorBlockWithItem(DeferredBlock<DoorBlock> block, String renderType) {
+    protected void doorBlock(DeferredBlock<DoorBlock> block, String renderType) {
         doorBlockWithRenderType(
                 block.get(),
                 modLoc("block/" + block.getKey().location().getPath() + "_bottom"),
@@ -54,10 +54,42 @@ public abstract class UOBlockStateProvider extends BlockStateProvider {
         );
     }
 
+    protected void trapdoorBlockWithItem(DeferredBlock<TrapDoorBlock> block, String renderType) {
+        String blockRegistryName = "block/" + block.getKey().location().getPath();
+
+        trapdoorBlockWithRenderType(
+                block.get(),
+                modLoc("block/" + block.getKey().location().getPath()),
+                true,
+                renderType
+        );
+
+        simpleBlockItem(block.get(), new ModelFile.UncheckedModelFile(modLoc(blockRegistryName + "_bottom")));
+    }
+
+    protected void buttonBlockWithItem(DeferredBlock<ButtonBlock> block, Block textureBlock) {
+        buttonBlock(block.get(), blockTexture(textureBlock));
+
+        ModelFile inventoryModel = models()
+                .buttonInventory(
+                        block.getKey().location().getPath() + "_inventory",
+                        blockTexture(textureBlock)
+                );
+
+        simpleBlockItem(block.get(), inventoryModel);
+    }
+
     protected void existingBlockWithItem(DeferredBlock<?> block) {
         simpleBlockWithItem(
                 block.get(),
                 models().getExistingFile(modLoc(block.getKey().location().getPath()))
+        );
+    }
+
+    protected void fluidBlock(DeferredBlock<?> block, String textureName) {
+        simpleBlock(
+                block.get(),
+                models().getBuilder(block.getKey().location().getPath()).texture("particle", CommonUtils.modLoc("fluid/" + textureName))
         );
     }
 

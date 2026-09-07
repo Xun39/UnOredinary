@@ -8,6 +8,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xun.unoredinary.UnOredinary;
@@ -30,6 +31,11 @@ public class UOBlocks {
                             .lightLevel(state -> 7)
                             .strength(5.0F, 1200.0F)
             )
+    );
+
+    // Fluids
+    public static final DeferredBlock<LiquidBlock> CRYIC_FLUID = register("cryic_fluid",
+            () -> new LiquidBlock(UOFluids.CRYIC.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA))
     );
 
     // Misc
@@ -67,10 +73,31 @@ public class UOBlocks {
                     BlockSetType.COPPER,
                     BlockBehaviour.Properties.of()
                             .mapColor(MapColor.ICE)
+                            .instrument(NoteBlockInstrument.CHIME)
                             .friction(0.98F)
-                            .randomTicks()
                             .strength(0.5F)
                             .sound(SoundType.GLASS)
+            )
+    );
+
+    public static final DeferredBlock<TrapDoorBlock> ICE_TRAPDOOR = register("ice_trapdoor",
+            () -> new TrapDoorBlock(
+                    BlockSetType.COPPER,
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.ICE)
+                            .instrument(NoteBlockInstrument.CHIME)
+                            .friction(0.98F)
+                            .strength(0.5F)
+                            .noOcclusion()
+                            .sound(SoundType.GLASS)
+                            .isValidSpawn(Blocks::never)
+            )
+    );
+
+    public static final DeferredBlock<ButtonBlock> ICE_BUTTON = register("ice_button",
+            () -> new ButtonBlock(
+                    BlockSetType.COPPER, 20,
+                    BlockBehaviour.Properties.of().randomTicks().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY).sound(SoundType.GLASS)
             )
     );
 

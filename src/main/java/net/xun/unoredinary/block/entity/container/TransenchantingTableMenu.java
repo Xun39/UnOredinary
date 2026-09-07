@@ -1,5 +1,6 @@
 package net.xun.unoredinary.block.entity.container;
 
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
@@ -7,6 +8,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.DataSlot;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -19,10 +21,12 @@ import net.xun.unoredinary.block.entity.TransenchantingTableBlockEntity;
 import net.xun.unoredinary.registry.UOBlocks;
 import net.xun.unoredinary.registry.UOMenuTypes;
 import net.xun.unoredinary.registry.UOSounds;
+import net.xun.unoredinary.util.TransenchantmentHelper;
 
 import java.util.Objects;
 
 public class TransenchantingTableMenu extends AbstractContainerMenu {
+    public static final int CONFIRM_BUTTON = 0;
     private static final int TRANSLATOR_SLOT = 0;
     private static final int TRANSENCHANT_SLOT = 1;
     private static final int OUTPUT_SLOT = 2;
@@ -47,37 +51,97 @@ public class TransenchantingTableMenu extends AbstractContainerMenu {
 
         addInputSlots();
         addPlayerInventory(playerInventory);
+
+        addDataSlot(new DataSlot() {
+            @Override
+            public int get() {
+                return blockEntity.isOutputReady() ? 1 : 0;
+            }
+
+            @Override
+            public void set(int value) {
+                blockEntity.setOutputReady(value != 0);
+            }
+        });
     }
 
     @Override
     public void broadcastChanges() {
-        super.broadcastChanges();
-
         if (!level.isClientSide) {
             updatePreview();
         }
+
+        super.broadcastChanges();
     }
 
     private void updatePreview() {
-        if (!blockEntity.canTransenchant()) {
-            clearOutputSlot();
+        if (blockEntity.isOutputReady()) {
             return;
         }
 
-        if (!inventory.getStackInSlot(OUTPUT_SLOT).isEmpty()) {
+        if (!blockEntity.canTransenchant()) {
+            if (!inventory.getStackInSlot(OUTPUT_SLOT).isEmpty()) {
+                inventory.setStackInSlot(OUTPUT_SLOT, ItemStack.EMPTY);
+            }
             return;
         }
 
         ItemStack preview = blockEntity.getPreviewResult();
-        if (!ItemStack.matches(preview, inventory.getStackInSlot(OUTPUT_SLOT))) {
+        ItemStack currentOutput = inventory.getStackInSlot(OUTPUT_SLOT);
+
+        if (!ItemStack.matches(currentOutput, preview)) {
             inventory.setStackInSlot(OUTPUT_SLOT, preview);
         }
     }
 
-    private void clearOutputSlot() {
-        if (!inventory.getStackInSlot(OUTPUT_SLOT).isEmpty()) {
-            inventory.setStackInSlot(OUTPUT_SLOT, ItemStack.EMPTY);
+    @Override
+    public boolean clickMenuButton(final Player player, final int id) {
+        if (id != CONFIRM_BUTTON || level.isClientSide) {
+            return false;
         }
+
+        return clickConfirmButton(player);
+    }
+
+    private boolean clickConfirmButton(final Player player) {
+        if (blockEntity.isOutputReady()) {
+            return false;
+        }
+
+        ItemStack translator = inventory.getStackInSlot(TRANSLATOR_SLOT);
+        ItemStack target = inventory.getStackInSlot(TRANSENCHANT_SLOT);
+
+        if (!TransenchantmentHelper.canTransenchant(translator, target)) return false;
+
+        int levelCost = TransenchantmentHelper.calculateLevelCost(translator);
+        if (!player.isCreative() && player.experienceLevel < levelCost) {
+            return false;
+        }
+
+        ItemStack result = TransenchantmentHelper.commitFullTransenchant(
+                player,
+                translator,
+                target
+        );
+
+        if (result.isEmpty()) {
+            return false;
+        }
+
+        inventory.setStackInSlot(OUTPUT_SLOT, result);
+        blockEntity.setOutputReady(true);
+
+        level.playSound(
+                null,
+                blockEntity.getBlockPos(),
+                UOSounds.TRANSENCHANTMENT_TABLE_USE.get(),
+                SoundSource.BLOCKS,
+                1.0F,
+                level.random.nextFloat() * 0.1F + 0.9F
+        );
+
+        broadcastChanges();
+        return true;
     }
 
     @Override
@@ -130,37 +194,47 @@ public class TransenchantingTableMenu extends AbstractContainerMenu {
 
     private void addInputSlots() {
         // Translator
-        addSlot(new SlotItemHandler(inventory, TRANSLATOR_SLOT, 18, 34));
+        addSlot(new SlotItemHandler(inventory, TRANSLATOR_SLOT, 25, 63) {
+            @Override
+            public boolean mayPlace(ItemStack stack) {
+                return TransenchantmentHelper.hasEnchantments(stack) && stack.get(DataComponents.ENCHANTMENTS) != null;
+            }
+
+            @Override
+            public boolean mayPickup(Player player) {
+                return !blockEntity.isOutputReady() && !getItem().isEmpty();
+            }
+        });
 
         // Transenchant target
-        addSlot(new SlotItemHandler(inventory, TRANSENCHANT_SLOT, 143, 48) {
+        addSlot(new SlotItemHandler(inventory, TRANSENCHANT_SLOT, 67, 63) {
             @Override
             public boolean mayPlace(ItemStack stack) {
                 return stack.is(Tags.Items.ENCHANTABLES) || stack.is(Items.BOOK);
             }
+
+            @Override
+            public boolean mayPickup(Player player) {
+                return !blockEntity.isOutputReady() && !getItem().isEmpty();
+            }
         });
 
         // Output
-        addSlot(new SlotItemHandler(inventory, OUTPUT_SLOT, 143, 22) {
+        addSlot(new SlotItemHandler(inventory, OUTPUT_SLOT, 142, 37) {
             @Override
             public boolean mayPlace(ItemStack stack) {
                 return false;
             }
 
             @Override
-            public void onTake(Player player, ItemStack stack) {
-                super.onTake(player, stack);
-                blockEntity.commitTransenchant(player);
-                inventory.setStackInSlot(2, ItemStack.EMPTY);
+            public boolean mayPickup(Player player) {
+                return blockEntity.isOutputReady() && !getItem().isEmpty();
+            }
 
-                level.playSound(
-                        null,
-                        blockEntity.getBlockPos(),
-                        UOSounds.TRANSENCHANTMENT_TABLE_USE.get(),
-                        SoundSource.BLOCKS,
-                        1.0F,
-                        level.random.nextFloat() * 0.1F + 0.9F
-                );
+            @Override
+            public void onTake(Player player, ItemStack stack) {
+                blockEntity.setOutputReady(false);
+                super.onTake(player, stack);
             }
         });
     }
@@ -169,13 +243,13 @@ public class TransenchantingTableMenu extends AbstractContainerMenu {
         // Player Inventory
         for (int row = 0; row < 3; ++row) {
             for (int coloumn = 0; coloumn < 9; ++coloumn) {
-                addSlot(new Slot(playerInventory, coloumn + row * 9 + 9, 8 + coloumn * 18, 84 + row * 18));
+                addSlot(new Slot(playerInventory, coloumn + row * 9 + 9, 8 + coloumn * 18, 94 + row * 18));
             }
         }
 
         // Hotbar
         for (int coloumn = 0; coloumn < 9; ++coloumn) {
-            addSlot(new Slot(playerInventory, coloumn, 8 + coloumn * 18, 142));
+            addSlot(new Slot(playerInventory, coloumn, 8 + coloumn * 18, 152));
         }
     }
 

@@ -12,8 +12,10 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.client.blockentity.renderer.TransenchantTableRenderer;
+import net.xun.unoredinary.client.fluid.CryicFluidTypeClientExtensions;
 import net.xun.unoredinary.client.gui.TransenchantingTableScreen;
 import net.xun.unoredinary.client.model.UOModelLayers;
 import net.xun.unoredinary.client.model.entity.FrostRevenantModel;
@@ -23,10 +25,7 @@ import net.xun.unoredinary.client.model.renderer.FrostZombieRenderer;
 import net.xun.unoredinary.client.particle.FrostNovaParticle;
 import net.xun.unoredinary.client.particle.RimeParticle;
 import net.xun.unoredinary.client.particle.SubzeroFrostParticle;
-import net.xun.unoredinary.registry.UOBlockEntityTypes;
-import net.xun.unoredinary.registry.UOEntityTypes;
-import net.xun.unoredinary.registry.UOMenuTypes;
-import net.xun.unoredinary.registry.UOParticleTypes;
+import net.xun.unoredinary.registry.*;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID)
 public class RegistrationEvents {
@@ -69,5 +68,10 @@ public class RegistrationEvents {
     @SubscribeEvent
     public static void registerBlockEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(UOBlockEntityTypes.TRANSENCHANTING_TABLE.get(), TransenchantTableRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+        event.registerFluidType(new CryicFluidTypeClientExtensions(), UOFluidTypes.CRYIC);
     }
 }

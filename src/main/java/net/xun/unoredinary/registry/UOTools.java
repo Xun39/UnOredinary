@@ -1,53 +1,75 @@
 package net.xun.unoredinary.registry;
 
-import net.xun.armory.api.item.tools.ToolSet;
-import net.xun.armory.api.item.tools.ToolType;
-import net.xun.armory.impl.item.tools.GenericAttributeHelper;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.item.Item;
+import net.xun.lib.common.api.item.tools.ToolSet;
+import net.xun.lib.common.api.item.tools.ToolStats;
+import net.xun.lib.common.api.item.tools.VanillaToolPieces;
+import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.item.tool.GlacialiteToolCustomizer;
 import net.xun.unoredinary.item.tool.FroststeelToolCustomizer;
 import net.xun.unoredinary.item.tool.LuminiumToolCustomizer;
-import net.xun.unoredinary.item.tool.attribute_helper.FrostToolAttributeHelper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 
 public class UOTools {
     private static final List<ToolSet> TOOL_SETS = new ArrayList<>();
 
-    public static final ToolSet FROSTSTEEL = register(new ToolSet.Builder("froststeel", UOToolTiers.FROSTSTEEL, new FrostToolAttributeHelper())
+    public static final ToolSet FROSTSTEEL = register(ToolSet.builder("froststeel", UOToolTiers.FROSTSTEEL)
+            .addPieces(VanillaToolPieces.STANDARD)
+            .globalAdditionalAttributes(builder -> builder.add(
+                    UOAttributes.COLD_DAMAGE,
+                    new AttributeModifier(
+                            CommonUtils.modLoc("cold_damage"),
+                            2.0F,
+                            AttributeModifier.Operation.ADD_VALUE
+                    ), EquipmentSlotGroup.MAINHAND
+            ).build())
             .withCustomizer(new FroststeelToolCustomizer())
-            .withVanillaBalance()
             .build()
     );
 
-    public static final ToolSet GLACIALITE = register(new ToolSet.Builder("glacialite", UOToolTiers.GLACIALITE, new FrostToolAttributeHelper())
+    public static final ToolSet GLACIALITE = register(ToolSet.builder("glacialite", UOToolTiers.GLACIALITE)
+            .addPieces(VanillaToolPieces.STANDARD)
+            .globalAdditionalAttributes(builder -> builder.add(
+                    UOAttributes.COLD_DAMAGE,
+                    new AttributeModifier(
+                            CommonUtils.modLoc("cold_damage"),
+                            2.0F,
+                            AttributeModifier.Operation.ADD_VALUE
+                    ), EquipmentSlotGroup.MAINHAND
+            ).build())
             .withCustomizer(new GlacialiteToolCustomizer())
-            .withVanillaBalance()
-            .withToolStats(ToolType.AXE, 5.0F, 1.0F)
-            .withToolStats(ToolType.HOE, -4.0F, 4.0F)
+            .overrideStats(VanillaToolPieces.AXE, new ToolStats(5.0F, 1.0F))
+            .overrideStats(VanillaToolPieces.HOE, new ToolStats(-4.0F, 4.0F))
             .build()
     );
 
-    public static final ToolSet LUMINIUM = register(new ToolSet.Builder("luminium", UOToolTiers.LUMINIUM, new GenericAttributeHelper())
+    public static final ToolSet LUMINIUM = register(ToolSet.builder("luminium", UOToolTiers.LUMINIUM)
+            .addPieces(VanillaToolPieces.STANDARD)
             .withCustomizer(new LuminiumToolCustomizer())
-            .withVanillaBalance()
-            .withToolStats(ToolType.AXE, 5.0F, 1.0F)
-            .withToolStats(ToolType.HOE, -3.0F, 4.0F)
+            .overrideStats(VanillaToolPieces.AXE, new ToolStats(5.0F, 1.0F))
+            .overrideStats(VanillaToolPieces.HOE, new ToolStats(-3.0F, 4.0F))
             .build()
     );
 
-    public static final ToolSet SAPPHIRE = register(new ToolSet.Builder("sapphire", UOToolTiers.SAPPHIRE, new GenericAttributeHelper())
-            .withVanillaBalance()
-            .withToolStats(ToolType.AXE, 5.0F, 1.0F)
-            .withToolStats(ToolType.HOE, -3.0F, 4.0F)
+    public static final ToolSet SAPPHIRE = register(ToolSet.builder("sapphire", UOToolTiers.SAPPHIRE)
+            .addPieces(VanillaToolPieces.STANDARD)
+            .overrideStats(VanillaToolPieces.AXE, new ToolStats(5.0F, 1.0F))
+            .overrideStats(VanillaToolPieces.HOE, new ToolStats(-3.0F, 4.0F))
             .build()
     );
 
-    public static final ToolSet RUBY = register(new ToolSet.Builder("ruby", UOToolTiers.RUBY, new GenericAttributeHelper())
-            .withVanillaBalance()
-            .withToolStats(ToolType.AXE, 5.0F, 1.0F)
-            .withToolStats(ToolType.HOE, -3.0F, 4.0F)
+    public static final ToolSet RUBY = register(ToolSet.builder("ruby", UOToolTiers.RUBY)
+            .addPieces(VanillaToolPieces.STANDARD)
+            .overrideStats(VanillaToolPieces.AXE, new ToolStats(5.0F, 1.0F))
+            .overrideStats(VanillaToolPieces.HOE, new ToolStats(-3.0F, 4.0F))
             .build()
     );
 
@@ -62,9 +84,13 @@ public class UOTools {
 
     public static void registerTools() {
         getTools().forEach(toolSet -> {
-            toolSet.getPiecesForRegistration(UnOredinary.MOD_ID).forEach((location, supplier) -> {
-                UOItems.ITEMS.register(location.getPath(), supplier);
-            });
+            for (Map.Entry<ResourceLocation, Function<Item.Properties, Item>> entry : toolSet.getPiecesForRegistration(UnOredinary.MOD_ID).entrySet()) {
+                ResourceLocation id = entry.getKey();
+                Function<Item.Properties, Item> factory = entry.getValue();
+
+                var holder = UOItems.ITEMS.register(id.getPath(), () -> factory.apply(new Item.Properties()));
+                toolSet.bind(id.getPath(), holder);
+            }
         });
     }
 }

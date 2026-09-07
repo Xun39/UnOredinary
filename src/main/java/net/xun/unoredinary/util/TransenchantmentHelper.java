@@ -32,6 +32,9 @@ public final class TransenchantmentHelper {
     public static final int BASE_COST = 2; // Base cost for having any enchantments
     public static final int PER_ENCHANTMENT_COST = 1; // Additional cost per enchantment
 
+    private TransenchantmentHelper() {
+    }
+
     public static boolean canTransenchant(ItemStack translator, ItemStack target) {
         if (translator.isEmpty() || target.isEmpty()) return false;
         if (!hasEnchantments(translator) || hasEnchantments(target)) return false;
@@ -60,43 +63,56 @@ public final class TransenchantmentHelper {
     }
 
     public static ItemStack createPreviewResult(ItemStack translator, ItemStack target) {
+        if (!canTransenchant(translator, target)) {
+            return ItemStack.EMPTY;
+        }
+
         ItemEnchantments enchantments = EnchantmentHelper.getEnchantmentsForCrafting(translator);
 
-        if (target.is(Tags.Items.ENCHANTABLES)) {
-            ItemStack resultStack = new ItemStack(target.getItem());
-
-            EnchantmentHelper.setEnchantments(
-                    resultStack,
-                    enchantments
-            );
-
-            return resultStack;
-        } else if (target.is(Items.BOOK)) {
+        if (target.is(Items.BOOK)) {
             ItemStack enchantedBook = new ItemStack(Items.ENCHANTED_BOOK);
 
-            EnchantmentHelper.setEnchantments(
-                    enchantedBook,
-                    enchantments
-            );
-
+            EnchantmentHelper.setEnchantments(enchantedBook, enchantments);
             return enchantedBook;
+        }
+
+        if (target.is(Tags.Items.ENCHANTABLES)) {
+            ItemStack resultStack = target.copy();
+            resultStack.setCount(1);
+
+            EnchantmentHelper.setEnchantments(resultStack, enchantments);
+            return resultStack;
         }
 
         return ItemStack.EMPTY;
     }
 
-    public static void commitFullTransenchant(Player player, ItemStack transenchantor, ItemStack target) {
+    /**
+     * Performs the entire server-side transaction and returns the real output.
+     * Returns {@link ItemStack#EMPTY} when the transaction is invalid.
+     */
+    public static ItemStack commitFullTransenchant(Player player, ItemStack transenchanter, ItemStack target) {
+        if (!canTransenchant(transenchanter, target)) {
+            return ItemStack.EMPTY;
+        }
+
+        int levelCost = calculateLevelCost(transenchanter);
+        if (!player.isCreative() && player.experienceLevel < levelCost) {
+            return ItemStack.EMPTY;
+        }
+
+        ItemStack result = createPreviewResult(transenchanter, target);
+        if (result.isEmpty()) {
+            return ItemStack.EMPTY;
+        }
+
         if (!player.isCreative()) {
-            player.giveExperienceLevels(-calculateLevelCost(transenchantor));
+            player.giveExperienceLevels(-levelCost);
+            target.shrink(1);
         }
 
-        EnchantmentHelper.setEnchantments(transenchantor, ItemEnchantments.EMPTY);
-
-        if (target.is(Items.BOOK) && player.isCreative()) {
-            return;
-        }
-
-        target.shrink(1);
+        EnchantmentHelper.setEnchantments(transenchanter, ItemEnchantments.EMPTY);
+        return result;
     }
 
     public static int getEnchantmentsNumberTotal(ItemStack stack) {

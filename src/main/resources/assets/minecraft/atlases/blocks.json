@@ -2,6 +2,14 @@
   "sources": [
     {
       "type": "minecraft:single",
+      "resource": "unoredinary:fluid/cryic_flow"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "unoredinary:fluid/cryic_still"
+    },
+    {
+      "type": "minecraft:single",
       "resource": "unoredinary:entity/transenchanting_table_book"
     }
   ]

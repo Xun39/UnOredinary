@@ -14,20 +14,20 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
-import net.xun.armory.api.item.tools.ToolType;
-import net.xun.armory.impl.item.tools.AbstractEffectToolCustomizer;
+import net.xun.lib.common.api.item.tools.AbstractHitEffectCustomizer;
+import net.xun.lib.common.api.item.tools.ToolContext;
+import net.xun.lib.common.api.item.tools.ToolPieceType;
+import net.xun.lib.common.api.item.tools.VanillaToolPieces;
 import net.xun.lib.common.api.util.BlockPosUtils;
 import net.xun.lib.common.api.util.MobEffectUtils;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategies;
-import net.xun.lib.common.api.world.effect.EffectStackingStrategy;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
-import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.config.server.UOServerConfig;
 import net.xun.unoredinary.registry.*;
 
 import java.util.List;
 
-public class GlacialiteToolCustomizer extends AbstractEffectToolCustomizer {
+public class GlacialiteToolCustomizer extends AbstractHitEffectCustomizer {
     private static final int FROSTED_DURATION = 400;
     private static final int WEAKNESS_DURATION_NOVA = 60;
     private static final int WEAKNESS_AMPLIFIER_NOVA = 2;
@@ -39,37 +39,42 @@ public class GlacialiteToolCustomizer extends AbstractEffectToolCustomizer {
     private static final float FROST_NOVA_RADIUS = 4.0F;
 
     @Override
-    protected Item createSword(Tier tier, Item.Properties properties) {
-        return new SwordItem(tier, properties) {
-            @Override
-            public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-                return onHit(
-                        ToolType.SWORD,
-                        super.hurtEnemy(stack, target, attacker),
-                        target,
-                        attacker
-                );
-            }
+    public Item create(ToolPieceType piece, ToolContext context, Item.Properties properties) {
+        Item.Properties finalProps = context.applyProperties(piece, properties);
 
-            @Override
-            public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
-                boolean flag = super.supportsEnchantment(stack, enchantment);
+        if (piece == VanillaToolPieces.SWORD) {
+            return new SwordItem(context.tier(), finalProps) {
+//                @Override
+//                public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+//                    return onHit(
+//                            VanillaToolPieces.SWORD,
+//                            target,
+//                            attacker
+//                    );
+//                }
 
-                if (stack.is(UOTools.GLACIALITE.getSword().get()))
-                    return !enchantment.is(Enchantments.FIRE_ASPECT) && flag;
+                @Override
+                public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
+                    boolean flag = super.supportsEnchantment(stack, enchantment);
 
-                return flag;
-            }
-        };
+                    if (stack.is(UOTools.GLACIALITE.getSword().get()))
+                        return !enchantment.is(Enchantments.FIRE_ASPECT) && flag;
+
+                    return flag;
+                }
+            };
+        }
+
+        return super.create(piece, context, properties);
     }
 
     @Override
-    protected void handleHitEffect(ToolType toolType, LivingEntity target, LivingEntity attacker) {
+    protected void onHit(ToolPieceType piece, LivingEntity target, LivingEntity attacker) {
         if (!(attacker instanceof Player) || !UOServerConfig.toolEffectConfig.glacialiteConfig.enable.get()) {
             return;
         }
 
-        boolean canNova = toolType == ToolType.SWORD || toolType == ToolType.AXE;
+        boolean canNova = piece == VanillaToolPieces.SWORD || piece == VanillaToolPieces.AXE;
 
         boolean frostNovaEnabled = canNova && UOServerConfig.toolEffectConfig.glacialiteConfig.enableFrostNova.get();
 

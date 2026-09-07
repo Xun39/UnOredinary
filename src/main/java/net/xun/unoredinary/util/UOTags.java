@@ -9,6 +9,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
 import net.xun.lib.common.api.util.CommonUtils;
 
 public class UOTags {
@@ -64,6 +65,15 @@ public class UOTags {
 
         private static TagKey<Item> createCommon(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", name));
+        }
+    }
+
+    public static class Fluids {
+
+        public static final TagKey<Fluid> CRYIC = createCommon("cryic");
+
+        private static TagKey<Fluid> createCommon(String name) {
+            return TagKey.create(Registries.FLUID, ResourceLocation.fromNamespaceAndPath("c", name));
         }
     }
 

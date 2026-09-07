@@ -3,7 +3,6 @@ package net.xun.unoredinary.data.generator;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.data.provider.UOItemModelProvider;
 import net.xun.unoredinary.registry.UOArmors;
 import net.xun.unoredinary.registry.UOBlocks;
@@ -50,6 +49,8 @@ public class UOItemModels extends UOItemModelProvider {
         armorSetModels(UOArmors.LUMINIUM);
 
         basicItem(UOItems.FROST_KEY.get());
+
+        basicItem(UOItems.CRYIC_BUCKET.get());
 
         withExistingParent(BuiltInRegistries.ITEM.getKey(UOItems.FROST_ZOMBIE_SPAWN_EGG.get()).getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BuiltInRegistries.ITEM.getKey(UOItems.FROST_REVENANT_SPAWN_EGG.get()).getPath(), mcLoc("item/template_spawn_egg"));

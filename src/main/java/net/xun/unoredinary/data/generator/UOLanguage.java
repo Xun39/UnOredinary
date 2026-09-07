@@ -79,8 +79,11 @@ public class UOLanguage extends UOLanguageProvider {
         addBlock(UOBlocks.POLAR_STONE_BRICKS_WALL, "Polar Stone Bricks Wall");
 
         addBlock(UOBlocks.ICE_DOOR, "Ice Door");
+        addBlock(UOBlocks.ICE_TRAPDOOR, "Ice Trapdoor");
+        addBlock(UOBlocks.ICE_BUTTON, "Ice Button");
 
         addBlock(UOBlocks.TRAP_ICE, "Packed Ice");
+        addBlock(UOBlocks.CRYIC_FLUID, "Cryic Fluid");
 
         // Vanilla block with custom names
         add("trial_spawner.unoredinary.frost_dungeon", "Frost Trial Spawner");
@@ -105,6 +108,7 @@ public class UOLanguage extends UOLanguageProvider {
 
         /* ------------------------------ ITEMS ------------------------------ */
         addItem(UOItems.CRYIC_POWDER, "Cryic Powder");
+        addItem(UOItems.CRYIC_BUCKET, "Cryic Bucket");
 
         addItem(UOItems.SAPPHIRE, "Sapphire");
 
@@ -139,6 +143,9 @@ public class UOLanguage extends UOLanguageProvider {
         addArmorSet(UOArmors.SAPPHIRE);
         addArmorSet(UOArmors.RUBY);
 
+        /* ------------------------------ FLUID TYPES ------------------------------ */
+        addFluidType(UOFluidTypes.CRYIC, "Cryic Fluid");
+
         /* ------------------------------ TRIM MATERIALS ------------------------------ */
         addTrimMaterial(UOTrimMaterials.CRYIC, "Cryic Material");
         addTrimMaterial(UOTrimMaterials.GLACIUM, "Glacium Material");
@@ -170,6 +177,7 @@ public class UOLanguage extends UOLanguageProvider {
         addToolTip("transenchanting_table.cannot_transenchant", "Cannot Transenchant");
         addToolTip("transenchanting_table.will_create_book", "Will create an enchanted book");
         addToolTip("transenchanting_table.will_transfer", "Will transfer enchantments");
+        addToolTip("transenchanting_table.not_enough_levels", "Not enough levels");
         addToolTip("transenchanting_table.no_target", "No transenchanting target item");
         addToolTip("transenchanting_table.no_enchantments", "No enchantments");
         addToolTip("transenchanting_table.transenchanter_has_no_enchants", "Transenchanter has no enchantments");

@@ -7,9 +7,10 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.xun.armory.api.item.armor.ArmorSet;
-import net.xun.armory.api.item.tools.ToolSet;
+import net.xun.lib.common.api.item.armor.ArmorSet;
+import net.xun.lib.common.api.item.tools.ToolSet;
 import net.xun.unoredinary.UnOredinary;
 
 import java.util.Locale;
@@ -59,6 +60,10 @@ public abstract class UOLanguageProvider extends LanguageProvider {
         add("item.minecraft.splash_potion.effect." + potion.getKey().location().getPath(), "Splash Potion of " + name);
         add("item.minecraft.lingering_potion.effect." + potion.getKey().location().getPath(), "Lingering Potion of " + name);
         add("item.minecraft.tipped_arrow.effect." + potion.getKey().location().getPath(), "Arrow of " + name);
+    }
+
+    public void addFluidType(DeferredHolder<FluidType, FluidType> fluidType, String name) {
+        add("fluid_type.unoredinary." + fluidType.getKey().location().getPath(), name);
     }
 
     public void addAttribute(String key, String name) {

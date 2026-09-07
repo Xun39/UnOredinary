@@ -12,7 +12,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class UOBiomeTags extends BiomeTagsProvider {
-
     public UOBiomeTags(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper existingFileHelper) {
         super(output, provider, UnOredinary.MOD_ID, existingFileHelper);
     }
@@ -26,9 +25,11 @@ public class UOBiomeTags extends BiomeTagsProvider {
         );
 
         tag(UOTags.Biomes.HAS_STRUCTURE_FROST_DUNGEON).add(
-                Biomes.FROZEN_PEAKS,
                 Biomes.SNOWY_TAIGA,
-                Biomes.SNOWY_PLAINS
+                Biomes.SNOWY_PLAINS,
+                Biomes.SNOWY_BEACH,
+                Biomes.SNOWY_SLOPES,
+                Biomes.ICE_SPIKES
         );
     }
 }

@@ -54,9 +54,12 @@ public class UOBlockStates extends UOBlockStateProvider {
         slabBlockWithItem(UOBlocks.POLAR_STONE_BRICKS_SLAB, UOBlocks.POLAR_STONE_BRICKS);
         wallBlockWithItem(UOBlocks.POLAR_STONE_BRICKS_WALL, UOBlocks.POLAR_STONE_BRICKS);
 
-        doorBlockWithItem(UOBlocks.ICE_DOOR, "cutout");
+        doorBlock(UOBlocks.ICE_DOOR, "cutout");
+        trapdoorBlockWithItem(UOBlocks.ICE_TRAPDOOR, "cutout");
+        buttonBlockWithItem(UOBlocks.ICE_BUTTON, Blocks.PACKED_ICE);
 
         // Misc
         blockWithItem(UOBlocks.TRAP_ICE, Blocks.PACKED_ICE);
+        fluidBlock(UOBlocks.CRYIC_FLUID, "cryic_still");
     }
 }

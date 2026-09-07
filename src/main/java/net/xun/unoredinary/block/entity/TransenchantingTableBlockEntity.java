@@ -23,12 +23,13 @@ import net.xun.unoredinary.util.TransenchantmentHelper;
 import org.jetbrains.annotations.Nullable;
 
 public class TransenchantingTableBlockEntity extends EnchantingTableBlockEntity implements MenuProvider, ITickableBlockEntity {
-    public static final int TRANSENCHANTOR_SLOT = 0;
+    public static final int TRANSENCHANTER_SLOT = 0;
     public static final int TRANSENCHANTING_SLOT = 1;
     public static final int OUTPUT_SLOT = 2;
     public static final int INVENTORY_SIZE = OUTPUT_SLOT + 1;
 
     private final ItemStackHandler inventory;
+    private boolean outputReady;
 
     public TransenchantingTableBlockEntity(BlockPos pos, BlockState blockState) {
         super(pos, blockState);
@@ -44,36 +45,54 @@ public class TransenchantingTableBlockEntity extends EnchantingTableBlockEntity 
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
         tag.put("Inventory", inventory.serializeNBT(registries));
+        tag.putBoolean("OutputReady", outputReady);
     }
 
     @Override
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
         inventory.deserializeNBT(registries, tag.getCompound("Inventory"));
+        outputReady = tag.getBoolean("OutputReady");
     }
 
     public boolean canTransenchant() {
         return TransenchantmentHelper.canTransenchant(
-                inventory.getStackInSlot(TRANSENCHANTOR_SLOT),
+                inventory.getStackInSlot(TRANSENCHANTER_SLOT),
                 inventory.getStackInSlot(TRANSENCHANTING_SLOT)
         );
     }
 
     public ItemStack getPreviewResult() {
         return TransenchantmentHelper.createPreviewResult(
-                inventory.getStackInSlot(TRANSENCHANTOR_SLOT),
+                inventory.getStackInSlot(TRANSENCHANTER_SLOT),
                 inventory.getStackInSlot(TRANSENCHANTING_SLOT)
         );
     }
 
-    public void commitTransenchant(Player player) {
-        TransenchantmentHelper.commitFullTransenchant(
-                player,
-                inventory.getStackInSlot(TRANSENCHANTOR_SLOT),
-                inventory.getStackInSlot(TRANSENCHANTING_SLOT)
-        );
+    /**
+     * Marks the currently generated output as a real, confirmed result.
+     * The actual transaction is performed by the menu on the server.
+     */
+    public void setOutputReady(boolean ready) {
+        if (this.outputReady == ready) {
+            return;
+        }
 
+        this.outputReady = ready;
         setChanged();
+
+        if (level != null && !level.isClientSide) {
+            level.sendBlockUpdated(
+                    getBlockPos(),
+                    getBlockState(),
+                    getBlockState(),
+                    Block.UPDATE_CLIENTS
+            );
+        }
+    }
+
+    public boolean isOutputReady() {
+        return outputReady;
     }
 
     public ItemStackHandler getInventory() {
@@ -82,9 +101,15 @@ public class TransenchantingTableBlockEntity extends EnchantingTableBlockEntity 
 
     public NonNullList<ItemStack> getDrops() {
         NonNullList<ItemStack> drops = NonNullList.create();
+
         for (int i = 0; i < INVENTORY_SIZE; i++) {
-            if (i != OUTPUT_SLOT) {
-                drops.add(inventory.getStackInSlot(i));
+            if (i == OUTPUT_SLOT && !outputReady) {
+                continue;
+            }
+
+            ItemStack stack = inventory.getStackInSlot(i);
+            if (!stack.isEmpty()) {
+                drops.add(stack.copy());
             }
         }
 
@@ -111,6 +136,12 @@ public class TransenchantingTableBlockEntity extends EnchantingTableBlockEntity 
             @Override
             protected void onContentsChanged(int slot) {
                 setChanged();
+
+                if (slot != OUTPUT_SLOT) {
+                    setOutputReady(false);
+                } else if (getStackInSlot(OUTPUT_SLOT).isEmpty()) {
+                    setOutputReady(false);
+                }
 
                 if (level != null) {
                     level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), Block.UPDATE_CLIENTS);

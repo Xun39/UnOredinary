@@ -7,8 +7,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.xun.armory.api.item.armor.ArmorSet;
-import net.xun.armory.api.item.tools.ToolSet;
+import net.xun.lib.common.api.item.armor.ArmorSet;
+import net.xun.lib.common.api.item.tools.ToolSet;
 import net.xun.unoredinary.UnOredinary;
 
 public class UOCreativeModeTabs {
@@ -44,6 +44,8 @@ public class UOCreativeModeTabs {
                         output.accept(UOBlocks.LUMINIUM_BLOCK);
 
                         output.accept(UOBlocks.ICE_DOOR);
+                        output.accept(UOBlocks.ICE_TRAPDOOR);
+                        output.accept(UOBlocks.ICE_BUTTON);
 
                         output.accept(UOBlocks.POLAR_STONE);
                         output.accept(UOBlocks.POLAR_STONE_STAIRS);
@@ -71,6 +73,7 @@ public class UOCreativeModeTabs {
                     .displayItems((parameters, output) ->  {
 
                         output.accept(UOItems.CRYIC_POWDER);
+                        output.accept(UOItems.CRYIC_BUCKET);
 
                         output.accept(UOItems.SAPPHIRE);
 

@@ -4,13 +4,20 @@ import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.xun.unoredinary.UnOredinary;
+import net.xun.unoredinary.registry.UOFluids;
 import net.xun.unoredinary.registry.UOItems;
 import net.xun.unoredinary.registry.UOPotions;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID)
 public class RegistrationEvents {
+
+    @SubscribeEvent
+    public static void onCommonSetup(FMLCommonSetupEvent event) {
+        event.enqueueWork(UOFluids::registerFluidInteractions);
+    }
 
     @SubscribeEvent
     public static void onBrewingRecipesRegister(RegisterBrewingRecipesEvent event) {

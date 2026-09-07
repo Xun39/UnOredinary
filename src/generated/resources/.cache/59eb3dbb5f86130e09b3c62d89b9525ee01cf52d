@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-21T21:35:14.8254221	Loot Tables
+// 1.21.1	2026-09-06T18:02:51.1073159	Loot Tables
 6236a1e6f4906ac97f028c797627615c20f55350 data/unoredinary/loot_table/blocks/cobbled_polar_stone.json
 ef37d9ad59cf32a977596807c885ec0d1d458528 data/unoredinary/loot_table/blocks/cobbled_polar_stone_slab.json
 cd58448a26d78d328a0a046141338ebe5886bd6d data/unoredinary/loot_table/blocks/cobbled_polar_stone_stairs.json
@@ -12,7 +12,9 @@ b22d273ce3a8b34cde2457883270c57ff2f61875 data/unoredinary/loot_table/blocks/deep
 5c25ad805a9836b1f1644119161c5e6ee04e88c9 data/unoredinary/loot_table/blocks/glacialite_block.json
 45c7dfdafd605050f36275c07fdb669699d58cb5 data/unoredinary/loot_table/blocks/glacium_block.json
 d004c114aade57b4700305877d3b87caefcb9bb0 data/unoredinary/loot_table/blocks/glacium_ore.json
+1d7ef0a2fc44a2214c5f859eaea7574b7fe30040 data/unoredinary/loot_table/blocks/ice_button.json
 ac07bc2757e7db61dc5a52e449358f4bbe4a6340 data/unoredinary/loot_table/blocks/ice_door.json
+aa8ccd5984ad756bd64e38a21c904808eaca9569 data/unoredinary/loot_table/blocks/ice_trapdoor.json
 b523d57679ffa44b188fbb14843ed89429e65d99 data/unoredinary/loot_table/blocks/luminite_block.json
 697476b32f48a572e677c53b4e05a2ee647eab1c data/unoredinary/loot_table/blocks/luminite_ore.json
 b99b7cce2005a99c14576f4766b8ad4d39d41413 data/unoredinary/loot_table/blocks/luminium_block.json
