@@ -3,8 +3,14 @@ package net.xun.unoredinary.block.entity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.util.Mth;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -22,9 +28,11 @@ import net.xun.unoredinary.registry.UOBlockEntityTypes;
 import net.xun.unoredinary.util.TransenchantmentHelper;
 import org.jetbrains.annotations.Nullable;
 
+import static net.xun.unoredinary.client.blockentity.renderer.TransenchantTableRenderer.*;
+
 public class TransenchantingTableBlockEntity extends EnchantingTableBlockEntity implements MenuProvider, ITickableBlockEntity {
     public static final int TRANSENCHANTER_SLOT = 0;
-    public static final int TRANSENCHANTING_SLOT = 1;
+    public static final int TARGET_SLOT = 1;
     public static final int OUTPUT_SLOT = 2;
     public static final int INVENTORY_SIZE = OUTPUT_SLOT + 1;
 
@@ -55,17 +63,40 @@ public class TransenchantingTableBlockEntity extends EnchantingTableBlockEntity 
         outputReady = tag.getBoolean("OutputReady");
     }
 
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+        CompoundTag tag = new CompoundTag();
+        saveAdditional(tag, registries);
+        return tag;
+    }
+
+    @Override
+    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
+        loadAdditional(tag, registries);
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public void onDataPacket(Connection connection, ClientboundBlockEntityDataPacket packet, HolderLookup.Provider registries) {
+        handleUpdateTag(packet.getTag(), registries);
+    }
+
     public boolean canTransenchant() {
         return TransenchantmentHelper.canTransenchant(
                 inventory.getStackInSlot(TRANSENCHANTER_SLOT),
-                inventory.getStackInSlot(TRANSENCHANTING_SLOT)
+                inventory.getStackInSlot(TARGET_SLOT)
         );
     }
 
     public ItemStack getPreviewResult() {
         return TransenchantmentHelper.createPreviewResult(
                 inventory.getStackInSlot(TRANSENCHANTER_SLOT),
-                inventory.getStackInSlot(TRANSENCHANTING_SLOT)
+                inventory.getStackInSlot(TARGET_SLOT)
         );
     }
 

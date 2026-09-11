@@ -12,6 +12,7 @@ import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xun.unoredinary.UnOredinary;
+import net.xun.unoredinary.block.CryoplasmCauldronBlock;
 import net.xun.unoredinary.block.TransenchantingTableBlock;
 import net.xun.unoredinary.block.GlaciumBlock;
 import net.xun.unoredinary.block.TrapIceBlock;
@@ -34,12 +35,17 @@ public class UOBlocks {
     );
 
     // Fluids
-    public static final DeferredBlock<LiquidBlock> CRYIC_FLUID = register("cryic_fluid",
-            () -> new LiquidBlock(UOFluids.CRYIC.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA))
+    public static final DeferredBlock<LiquidBlock> CRYOPLASM = register("cryoplasm",
+            () -> new LiquidBlock(UOFluids.CRYOPLASM.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA))
     );
 
     // Misc
-    public static final DeferredBlock<Block> TRAP_ICE = register("trap_ice", () -> new TrapIceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PACKED_ICE).noLootTable()));
+    public static final DeferredBlock<Block> TRAP_ICE = register("trap_ice",
+            () -> new TrapIceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PACKED_ICE).noLootTable())
+    );
+    public static final DeferredBlock<Block> CRYOPLASM_CAULDRON = register("cryoplasm_cauldron",
+            () -> new CryoplasmCauldronBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON).lightLevel(state -> 15))
+    );
 
     // Building Blocks
     public static final DeferredBlock<Block> POLAR_STONE = register("polar_stone",

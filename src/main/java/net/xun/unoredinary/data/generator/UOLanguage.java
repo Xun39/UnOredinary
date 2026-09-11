@@ -63,6 +63,7 @@ public class UOLanguage extends UOLanguageProvider {
 
         // Misc
         addBlock(UOBlocks.TRANSENCHANTING_TABLE, "Transenchanting Table");
+        addBlock(UOBlocks.CRYOPLASM_CAULDRON, "Cryoplasm Cauldron");
 
         addBlock(UOBlocks.POLAR_STONE, "Polar Stone");
         addBlock(UOBlocks.POLAR_STONE_STAIRS, "Polar Stone Stairs");
@@ -83,7 +84,7 @@ public class UOLanguage extends UOLanguageProvider {
         addBlock(UOBlocks.ICE_BUTTON, "Ice Button");
 
         addBlock(UOBlocks.TRAP_ICE, "Packed Ice");
-        addBlock(UOBlocks.CRYIC_FLUID, "Cryic Fluid");
+        addBlock(UOBlocks.CRYOPLASM, "Cryoplasm");
 
         // Vanilla block with custom names
         add("trial_spawner.unoredinary.frost_dungeon", "Frost Trial Spawner");
@@ -108,7 +109,7 @@ public class UOLanguage extends UOLanguageProvider {
 
         /* ------------------------------ ITEMS ------------------------------ */
         addItem(UOItems.CRYIC_POWDER, "Cryic Powder");
-        addItem(UOItems.CRYIC_BUCKET, "Cryic Bucket");
+        addItem(UOItems.CRYOPLASM_BUCKET, "Cryoplasm Bucket");
 
         addItem(UOItems.SAPPHIRE, "Sapphire");
 
@@ -144,7 +145,7 @@ public class UOLanguage extends UOLanguageProvider {
         addArmorSet(UOArmors.RUBY);
 
         /* ------------------------------ FLUID TYPES ------------------------------ */
-        addFluidType(UOFluidTypes.CRYIC, "Cryic Fluid");
+        addFluidType(UOFluidTypes.CRYOPLASM, "Cryoplasm");
 
         /* ------------------------------ TRIM MATERIALS ------------------------------ */
         addTrimMaterial(UOTrimMaterials.CRYIC, "Cryic Material");
@@ -164,25 +165,43 @@ public class UOLanguage extends UOLanguageProvider {
         add("item.unoredinary.smithing_template.glacialite_upgrade.additions_slot_description", "Add Glacialite Ingot");
 
         // Transenchanting Table
-        addToolTip("transenchanting_table.enchantments_number", "Enchantments");
+        addToolTip("transenchanting_table.enchantments_number", "Stored Enchantments");
         addToolTip("transenchanting_table.enchantments_count", "%s enchantment(s)");
+        addToolTip("transenchanting_table.enchantments_description", "These enchantments can be transferred to a compatible item or stored in a book.");
 
-        addToolTip("transenchanting_table.level_cost", "Level Cost");
+        addToolTip("transenchanting_table.level_cost", "Transenchanting Cost");
         addToolTip("transenchanting_table.levels", "%s level(s)");
         addToolTip("transenchanting_table.cost_breakdown", "Cost Breakdown");
-        addToolTip("transenchanting_table.base_cost", "  • Base: %s levels");
-        addToolTip("transenchanting_table.per_enchantment_cost", "  • %s enchantment(s) ÷ 2 × %s = %s");
+        addToolTip("transenchanting_table.base_cost", "  • Base cost: %s levels");
+        addToolTip("transenchanting_table.enchantment_cost", "%s enchantments × %s levels = %s levels");
+        addToolTip("transenchanting_table.total_cost", "Total: %s levels");
 
-        addToolTip("transenchanting_table.can_transenchant", "Can Transenchant");
+        addToolTip("transenchanting_table.transfer_enchantments", "Transfer Enchantment(s)");
+        addToolTip("transenchanting_table.create_book", "Create Enchanted Book");
+        addToolTip("transenchanting_table.move_enchantments", "Move %s enchantments to this item");
+        addToolTip("transenchanting_table.store_enchantments", "Store %s enchantments in this book");
+        addToolTip("transenchanting_table.cost", "Cost: %s levels");
+
+        addToolTip("transenchanting_table.transfer_description", "The stored enchantments will be transferred to the target.");
+        addToolTip("transenchanting_table.target_must_be_unenchanted", "The target item must be unenchanted.");
+        addToolTip("transenchanting_table.target_must_be_compatible", "The target must be compatible with the stored enchantments.");
+
         addToolTip("transenchanting_table.cannot_transenchant", "Cannot Transenchant");
-        addToolTip("transenchanting_table.will_create_book", "Will create an enchanted book");
-        addToolTip("transenchanting_table.will_transfer", "Will transfer enchantments");
-        addToolTip("transenchanting_table.not_enough_levels", "Not enough levels");
-        addToolTip("transenchanting_table.no_target", "No transenchanting target item");
-        addToolTip("transenchanting_table.no_enchantments", "No enchantments");
-        addToolTip("transenchanting_table.transenchanter_has_no_enchants", "Transenchanter has no enchantments");
-        addToolTip("transenchanting_table.target_already_enchanted" , "Transenchanting target is already enchanted");
-        addToolTip("transenchanting_table.incompatible", "Enchantments incompatible with target");
+        addToolTip("transenchanting_table.not_enough_levels", "Not enough experience levels");
+        addToolTip("transenchanting_table.requires_levels", "Requires: %s levels");
+
+        addToolTip("transenchanting_table.no_enchantments", "The transenchanter contains no enchantments");
+        addToolTip("transenchanting_table.no_target", "Place an item or book in the target slot");
+        addToolTip("transenchanting_table.transenchanter_has_no_enchants", "The transenchanter contains no enchantments");
+        addToolTip("transenchanting_table.target_already_enchanted" , "The target already has enchantments");
+        addToolTip("transenchanting_table.incompatible", "This item is incompatible");
+
+        addToolTip("transenchanting_table.afford_description", "You need at least %s experience levels to perform this operation.");
+        addToolTip("transenchanting_table.no_enchantments_description", "The transenchanter must contain at least one enchantment.");
+        addToolTip("transenchanting_table.no_target_description", "Place an unenchanted, compatible item or a book in the target slot.") ;
+        addToolTip("transenchanting_table.already_enchanted_description", "Transenchanting cannot add enchantments to an already enchanted item.") ;
+        addToolTip("transenchanting_table.incompatible_description", "The target item cannot receive the stored enchantments.");
+        addToolTip("transenchanting_table.hold_shift", "Hold Shift for more information");
 
         /* ------------------------------ TAGS ------------------------------ */
         translateTag(UOTags.Blocks.ORES_CRYIC, "Cryic Ores");

@@ -9,8 +9,8 @@ import net.xun.unoredinary.UnOredinary;
 public class UOFluidTypes {
     public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(NeoForgeRegistries.FLUID_TYPES, UnOredinary.MOD_ID);
 
-    public static final DeferredHolder<FluidType, FluidType> CRYIC =
-            FLUID_TYPES.register("cryic", () ->
+    public static final DeferredHolder<FluidType, FluidType> CRYOPLASM =
+            FLUID_TYPES.register("cryoplasm", () ->
                     new FluidType(
                             FluidType.Properties.create()
                                     .density(1500)

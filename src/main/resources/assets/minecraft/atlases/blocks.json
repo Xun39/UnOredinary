@@ -2,11 +2,11 @@
   "sources": [
     {
       "type": "minecraft:single",
-      "resource": "unoredinary:fluid/cryic_flow"
+      "resource": "unoredinary:fluid/cryoplasm_flow"
     },
     {
       "type": "minecraft:single",
-      "resource": "unoredinary:fluid/cryic_still"
+      "resource": "unoredinary:fluid/cryoplasm_still"
     },
     {
       "type": "minecraft:single",

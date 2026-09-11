@@ -1,22 +1,31 @@
 package net.xun.unoredinary.event;
 
+import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.fluids.RegisterCauldronFluidContentEvent;
 import net.xun.unoredinary.UnOredinary;
-import net.xun.unoredinary.registry.UOFluids;
-import net.xun.unoredinary.registry.UOItems;
-import net.xun.unoredinary.registry.UOPotions;
+import net.xun.unoredinary.registry.*;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID)
 public class RegistrationEvents {
+    @SubscribeEvent
+    public static void onRegisterSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+        event.register(UOEntityTypes.FROST_ZOMBIE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(UOEntityTypes.FROST_REVENANT.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+    }
 
     @SubscribeEvent
-    public static void onCommonSetup(FMLCommonSetupEvent event) {
-        event.enqueueWork(UOFluids::registerFluidInteractions);
+    public static void onFluidContentRegister(RegisterCauldronFluidContentEvent event) {
+        event.register(UOBlocks.CRYOPLASM_CAULDRON.get(), UOFluids.CRYOPLASM.get(), FluidType.BUCKET_VOLUME, null);
     }
 
     @SubscribeEvent

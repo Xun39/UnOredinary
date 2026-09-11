@@ -3,7 +3,6 @@ package net.xun.unoredinary.block.entity.container;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -27,8 +26,8 @@ import java.util.Objects;
 
 public class TransenchantingTableMenu extends AbstractContainerMenu {
     public static final int CONFIRM_BUTTON = 0;
-    private static final int TRANSLATOR_SLOT = 0;
-    private static final int TRANSENCHANT_SLOT = 1;
+    private static final int TRANSENCHANTER_SLOT = 0;
+    private static final int TARGET_SLOT = 1;
     private static final int OUTPUT_SLOT = 2;
     private static final int PLAYER_INV_START = 3;
     private static final int PLAYER_INV_END = PLAYER_INV_START + 36;
@@ -108,8 +107,8 @@ public class TransenchantingTableMenu extends AbstractContainerMenu {
             return false;
         }
 
-        ItemStack translator = inventory.getStackInSlot(TRANSLATOR_SLOT);
-        ItemStack target = inventory.getStackInSlot(TRANSENCHANT_SLOT);
+        ItemStack translator = inventory.getStackInSlot(TRANSENCHANTER_SLOT);
+        ItemStack target = inventory.getStackInSlot(TARGET_SLOT);
 
         if (!TransenchantmentHelper.canTransenchant(translator, target)) return false;
 
@@ -165,7 +164,7 @@ public class TransenchantingTableMenu extends AbstractContainerMenu {
         }
 
         if (index >= PLAYER_INV_START && index < PLAYER_INV_END) {
-            if (!this.moveItemStackTo(slotStack, TRANSLATOR_SLOT, OUTPUT_SLOT, false)) {
+            if (!this.moveItemStackTo(slotStack, TRANSENCHANTER_SLOT, OUTPUT_SLOT, false)) {
                 return ItemStack.EMPTY;
             }
         } else if (index < PLAYER_INV_START) {
@@ -193,21 +192,16 @@ public class TransenchantingTableMenu extends AbstractContainerMenu {
     }
 
     private void addInputSlots() {
-        // Translator
-        addSlot(new SlotItemHandler(inventory, TRANSLATOR_SLOT, 25, 63) {
-            @Override
-            public boolean mayPlace(ItemStack stack) {
-                return TransenchantmentHelper.hasEnchantments(stack) && stack.get(DataComponents.ENCHANTMENTS) != null;
-            }
-
+        // Transenchanter
+        addSlot(new SlotItemHandler(inventory, TRANSENCHANTER_SLOT, 25, 63) {
             @Override
             public boolean mayPickup(Player player) {
                 return !blockEntity.isOutputReady() && !getItem().isEmpty();
             }
         });
 
-        // Transenchant target
-        addSlot(new SlotItemHandler(inventory, TRANSENCHANT_SLOT, 67, 63) {
+        // Transenchanting target
+        addSlot(new SlotItemHandler(inventory, TARGET_SLOT, 67, 63) {
             @Override
             public boolean mayPlace(ItemStack stack) {
                 return stack.is(Tags.Items.ENCHANTABLES) || stack.is(Items.BOOK);

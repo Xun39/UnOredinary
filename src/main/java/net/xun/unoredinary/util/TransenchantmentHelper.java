@@ -35,15 +35,15 @@ public final class TransenchantmentHelper {
     private TransenchantmentHelper() {
     }
 
-    public static boolean canTransenchant(ItemStack translator, ItemStack target) {
-        if (translator.isEmpty() || target.isEmpty()) return false;
-        if (!hasEnchantments(translator) || hasEnchantments(target)) return false;
+    public static boolean canTransenchant(ItemStack transenchanter, ItemStack target) {
+        if (transenchanter.isEmpty() || target.isEmpty()) return false;
+        if (!hasEnchantments(transenchanter) || hasEnchantments(target)) return false;
 
         if (target.is(Items.BOOK)) {
-            return !translator.is(Items.ENCHANTED_BOOK);
+            return !transenchanter.is(Items.ENCHANTED_BOOK);
         }
 
-        return target.is(Tags.Items.ENCHANTABLES) && enchantsCompatible(translator, target);
+        return target.is(Tags.Items.ENCHANTABLES) && enchantsCompatible(transenchanter, target);
     }
 
     private static boolean enchantsCompatible(ItemStack stack1, ItemStack stack2) {
@@ -62,12 +62,12 @@ public final class TransenchantmentHelper {
         return !EnchantmentHelper.getEnchantmentsForCrafting(stack).isEmpty();
     }
 
-    public static ItemStack createPreviewResult(ItemStack translator, ItemStack target) {
-        if (!canTransenchant(translator, target)) {
+    public static ItemStack createPreviewResult(ItemStack transenchanter, ItemStack target) {
+        if (!canTransenchant(transenchanter, target)) {
             return ItemStack.EMPTY;
         }
 
-        ItemEnchantments enchantments = EnchantmentHelper.getEnchantmentsForCrafting(translator);
+        ItemEnchantments enchantments = EnchantmentHelper.getEnchantmentsForCrafting(transenchanter);
 
         if (target.is(Items.BOOK)) {
             ItemStack enchantedBook = new ItemStack(Items.ENCHANTED_BOOK);

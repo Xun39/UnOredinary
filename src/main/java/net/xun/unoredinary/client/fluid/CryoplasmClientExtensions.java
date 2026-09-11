@@ -7,15 +7,15 @@ import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtension
 import net.xun.lib.common.api.util.CommonUtils;
 import org.joml.Vector3f;
 
-public class CryicFluidTypeClientExtensions implements IClientFluidTypeExtensions {
+public class CryoplasmClientExtensions implements IClientFluidTypeExtensions {
     @Override
     public ResourceLocation getStillTexture() {
-        return CommonUtils.modLoc("fluid/cryic_still");
+        return CommonUtils.modLoc("fluid/cryoplasm_still");
     }
 
     @Override
     public ResourceLocation getFlowingTexture() {
-        return CommonUtils.modLoc("fluid/cryic_flow");
+        return CommonUtils.modLoc("fluid/cryoplasm_flow");
     }
 
     @Override

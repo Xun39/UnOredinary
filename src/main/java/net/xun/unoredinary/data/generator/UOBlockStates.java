@@ -60,6 +60,7 @@ public class UOBlockStates extends UOBlockStateProvider {
 
         // Misc
         blockWithItem(UOBlocks.TRAP_ICE, Blocks.PACKED_ICE);
-        fluidBlock(UOBlocks.CRYIC_FLUID, "cryic_still");
+        fluidBlock(UOBlocks.CRYOPLASM, "cryoplasm_still");
+        cauldronBlock(UOBlocks.CRYOPLASM_CAULDRON, "cryoplasm_still");
     }
 }

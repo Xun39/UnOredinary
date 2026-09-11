@@ -5,6 +5,7 @@ import com.mojang.math.Axis;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.CyclingSlotBackground;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -131,10 +132,10 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
     }
 
     private void renderItemInfo(GuiGraphics guiGraphics, float partialTick) {
-        ItemStack transenchanterSlotStack = this.menu.inventory.getStackInSlot(0);
-        ItemStack targetSlotStack = this.menu.inventory.getStackInSlot(1);
+        ItemStack transenchanter = this.menu.inventory.getStackInSlot(0);
+        ItemStack target = this.menu.inventory.getStackInSlot(1);
 
-        if (transenchanterSlotStack.isEmpty()) {
+        if (transenchanter.isEmpty()) {
             return;
         }
 
@@ -142,7 +143,7 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
             renderInfoIcons(guiGraphics);
         }
 
-        render3DModels(guiGraphics, transenchanterSlotStack, targetSlotStack, partialTick);
+        render3DModels(guiGraphics, transenchanter, target, partialTick);
     }
 
     private void renderInfoIcons(GuiGraphics guiGraphics) {
@@ -159,12 +160,6 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
                 32, 176,
                 ICON_SIZE, ICON_SIZE, TEXTURE_SIZE, TEXTURE_SIZE);
         renderText(this.font, guiGraphics, screenX, topPos + LEVEL_COST_ICON.y(), levelCostText, ChatFormatting.GREEN.getColor());
-
-        // Check/cross mark
-//        Area markIcon = TransenchantmentHelper.canTransenchant(translator, target) ? CHECK_MARK : CROSS_MARK;
-//        guiGraphics.blit(BACKGROUND_TEXTURE, screenX, screenY + 2 * ICON_SIZE,
-//                markIcon.x(), markIcon.y(),
-//                ICON_SIZE, ICON_SIZE, TEXTURE_SIZE, TEXTURE_SIZE);
     }
 
     private static void renderText(Font font, GuiGraphics guiGraphics, int posX, int posY, Component component, int color) {
@@ -175,7 +170,8 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
                 TEXT_OUTLINE_COLOR,
                 guiGraphics.pose().last().pose(),
                 guiGraphics.bufferSource(),
-                FULL_BRIGHT);
+                FULL_BRIGHT
+        );
     }
 
     private void render3DModels(GuiGraphics guiGraphics, ItemStack transenchanter, ItemStack target, float partialTick) {
@@ -190,7 +186,7 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
 
             guiGraphics.bufferSource().endBatch();
         } finally {
-            Lighting.setupForFlatItems(); // Reset to flat items lighting
+            Lighting.setupForFlatItems();
         }
     }
 
@@ -217,7 +213,7 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
         minecraft.getItemRenderer().renderStatic(
                 stack,
                 ItemDisplayContext.GUI,
-                0xF000F0,
+                FULL_BRIGHT,
                 OverlayTexture.NO_OVERLAY,
                 poseStack,
                 guiGraphics.bufferSource(),
@@ -229,50 +225,69 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
     }
 
     private void renderUITooltips(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-        ItemStack transenchanterSlotStack = this.menu.inventory.getStackInSlot(0);
-        ItemStack transenchantSlotStack = this.menu.inventory.getStackInSlot(1);
+        ItemStack transenchanter = this.menu.inventory.getStackInSlot(0);
+        ItemStack target = menu.inventory.getStackInSlot(1);
 
-        if (transenchanterSlotStack.isEmpty()) {
+        if (transenchanter.isEmpty()) {
             return;
         }
 
-        // Check each icon area for hover
         if (ENCHANTMENTS_NUMBER_ICON.contains(mouseX, mouseY, leftPos, topPos)) {
-            renderEnchantmentsNumberTooltip(guiGraphics, mouseX, mouseY, transenchanterSlotStack);
+            renderEnchantmentsNumberTooltip(guiGraphics, mouseX, mouseY);
         } else if (LEVEL_COST_ICON.contains(mouseX, mouseY, leftPos, topPos)) {
-            renderLevelCostTooltip(guiGraphics, mouseX, mouseY, transenchanterSlotStack);
+            renderLevelCostTooltip(guiGraphics, mouseX, mouseY);
         }
 
         if (CONFIRM_BTN_AREA.contains(mouseX, mouseY, leftPos, topPos)) {
-            if (enchantmentCount == 0) renderNoEnchantmentsTooltip(guiGraphics, mouseX, mouseY);
-            renderButtonTooltip(guiGraphics, mouseX, mouseY, transenchanterSlotStack, transenchantSlotStack);
+            renderButtonTooltip(guiGraphics, mouseX, mouseY, target);
         }
     }
 
-    private void renderEnchantmentsNumberTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY, ItemStack translator) {
+    private void renderEnchantmentsNumberTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY) {
         List<Component> tooltipLines = new ArrayList<>();
         tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.enchantments_number")
                 .withStyle(ChatFormatting.GOLD));
         tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.enchantments_count", enchantmentCount).withStyle(ChatFormatting.GRAY));
 
+        addShiftHint(tooltipLines);
+
+        if (Screen.hasShiftDown()) {
+            tooltipLines.add(Component.empty());
+
+            tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.enchantments_description").withStyle(ChatFormatting.GRAY));
+        }
+
         guiGraphics.renderTooltip(this.font, tooltipLines, Optional.empty(), mouseX, mouseY);
     }
 
-    private void renderLevelCostTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY, ItemStack translator) {
+    private void renderLevelCostTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY) {
         List<Component> tooltipLines = new ArrayList<>();
         tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.level_cost").withStyle(ChatFormatting.GOLD));
         tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.levels", levelCost).withStyle(ChatFormatting.GRAY));
 
-        // Show breakdown of cost calculation
-        tooltipLines.add(Component.empty());
-        tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.cost_breakdown").withStyle(ChatFormatting.DARK_GRAY));
-        tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.base_cost", TransenchantmentHelper.BASE_COST).withStyle(ChatFormatting.GRAY));
-        tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.per_enchantment_cost",
-                        enchantmentCount,
-                        TransenchantmentHelper.PER_ENCHANTMENT_COST,
-                        enchantmentCount / 2 * TransenchantmentHelper.PER_ENCHANTMENT_COST)
-                .withStyle(ChatFormatting.GRAY)
-        );
+        addShiftHint(tooltipLines);
+
+        if (Screen.hasShiftDown()) {
+            tooltipLines.add(Component.empty());
+
+            tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.cost_breakdown").withStyle(ChatFormatting.DARK_GRAY));
+            tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.base_cost", TransenchantmentHelper.BASE_COST)
+                    .withStyle(ChatFormatting.GRAY));
+
+            int enchantmentCost = enchantmentCount / 2 * TransenchantmentHelper.PER_ENCHANTMENT_COST;
+
+            tooltipLines.add(Component.translatable(
+                            "unoredinary.tooltip.transenchanting_table.enchantment_cost",
+                            enchantmentCount,
+                            TransenchantmentHelper.PER_ENCHANTMENT_COST,
+                            enchantmentCost
+                    ).withStyle(ChatFormatting.GRAY)
+            );
+            tooltipLines.add(
+                    Component.translatable("unoredinary.tooltip.transenchanting_table.total_cost", levelCost).withStyle(ChatFormatting.GRAY)
+            );
+        }
+
         if (!canAfford) {
             tooltipLines.add(Component.empty());
             tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.not_enough_levels").withStyle(ChatFormatting.RED));
@@ -281,44 +296,90 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
         guiGraphics.renderTooltip(this.font, tooltipLines, Optional.empty(), mouseX, mouseY);
     }
 
-    private void renderButtonTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY, ItemStack translator, ItemStack target) {
+    private void renderButtonTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY, ItemStack target) {
         List<Component> tooltipLines = new ArrayList<>();
 
-        if (canTransenchant) {
-            tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.can_transenchant").withStyle(ChatFormatting.GREEN));
+        if (canTransenchant && canAfford) {
+            if (target.is(Items.BOOK)) {
+                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.create_book").withStyle(ChatFormatting.GREEN));
+                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.store_enchantments", enchantmentCount).withStyle(ChatFormatting.GRAY)
+                );
+            } else {
+                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.transfer_enchantments").withStyle(ChatFormatting.GREEN));
+                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.move_enchantments", enchantmentCount)
+                        .withStyle(ChatFormatting.GRAY));
+            }
 
-            if (!target.isEmpty()) {
-                if (target.is(Items.BOOK)) {
-                    tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.will_create_book").withStyle(ChatFormatting.GRAY));
-                } else {
-                    tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.will_transfer").withStyle(ChatFormatting.GRAY));
-                }
+            tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.cost", levelCost).withStyle(ChatFormatting.GRAY));
+
+            addShiftHint(tooltipLines);
+
+            if (Screen.hasShiftDown()) {
+                tooltipLines.add(Component.empty());
+
+                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.transfer_description")
+                        .withStyle(ChatFormatting.GRAY));
+                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.target_must_be_unenchanted")
+                        .withStyle(ChatFormatting.DARK_GRAY));
+                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.target_must_be_compatible")
+                        .withStyle(ChatFormatting.DARK_GRAY));
             }
         } else {
             tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.cannot_transenchant").withStyle(ChatFormatting.RED));
 
+            // show the most relevant reason first.
             if (!canAfford) {
-                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.not_enough_levels").withStyle(ChatFormatting.RED));
-            }
-            if (target.isEmpty()) {
+                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.not_enough_levels").withStyle(ChatFormatting.GRAY));
+                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.requires_levels", levelCost).withStyle(ChatFormatting.GRAY));
+
+            } else if (enchantmentCount == 0) {
+                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.no_enchantments").withStyle(ChatFormatting.GRAY));
+            } else if (target.isEmpty()) {
                 tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.no_target").withStyle(ChatFormatting.GRAY));
             } else if (target.is(Items.BOOK)) {
-                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.transenchanter_has_no_enchants").withStyle(ChatFormatting.GRAY));
+                tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.transenchanter_has_no_enchants")
+                        .withStyle(ChatFormatting.GRAY));
             } else if (TransenchantmentHelper.hasEnchantments(target)) {
                 tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.target_already_enchanted").withStyle(ChatFormatting.GRAY));
             } else {
                 tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.incompatible").withStyle(ChatFormatting.GRAY));
+            }
+
+            addShiftHint(tooltipLines);
+
+            if (Screen.hasShiftDown()) {
+                tooltipLines.add(Component.empty());
+
+                if (!canAfford) {
+                    tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.afford_description", levelCost)
+                            .withStyle(ChatFormatting.DARK_GRAY)
+                    );
+                } else if (enchantmentCount == 0) {
+                    tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.no_enchantments_description")
+                            .withStyle(ChatFormatting.DARK_GRAY)
+                    );
+                } else if (target.isEmpty()) {
+                    tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.no_target_description")
+                            .withStyle(ChatFormatting.DARK_GRAY)
+                    );
+                } else if (TransenchantmentHelper.hasEnchantments(target)) {
+                    tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.already_enchanted_description")
+                            .withStyle(ChatFormatting.DARK_GRAY)
+                    );
+                } else {
+                    tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.incompatible_description")
+                            .withStyle(ChatFormatting.DARK_GRAY)
+                    );
+                }
             }
         }
 
         guiGraphics.renderTooltip(this.font, tooltipLines, Optional.empty(), mouseX, mouseY);
     }
 
-    private void renderNoEnchantmentsTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-        List<Component> tooltipLines = new ArrayList<>();
-        tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.cannot_transenchant").withStyle(ChatFormatting.RED));
-        tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.no_enchantments").withStyle(ChatFormatting.GRAY));
+    private static void addShiftHint(List<Component> tooltipLines) {
+        tooltipLines.add(Component.empty());
 
-        guiGraphics.renderTooltip(this.font, tooltipLines, Optional.empty(), mouseX, mouseY);
+        tooltipLines.add(Component.translatable("unoredinary.tooltip.transenchanting_table.hold_shift").withStyle(ChatFormatting.DARK_GRAY));
     }
 }

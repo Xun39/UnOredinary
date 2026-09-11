@@ -50,7 +50,7 @@ public class UOItemModels extends UOItemModelProvider {
 
         basicItem(UOItems.FROST_KEY.get());
 
-        basicItem(UOItems.CRYIC_BUCKET.get());
+        basicItem(UOItems.CRYOPLASM_BUCKET.get());
 
         withExistingParent(BuiltInRegistries.ITEM.getKey(UOItems.FROST_ZOMBIE_SPAWN_EGG.get()).getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(BuiltInRegistries.ITEM.getKey(UOItems.FROST_REVENANT_SPAWN_EGG.get()).getPath(), mcLoc("item/template_spawn_egg"));

@@ -73,7 +73,7 @@ public class UOCreativeModeTabs {
                     .displayItems((parameters, output) ->  {
 
                         output.accept(UOItems.CRYIC_POWDER);
-                        output.accept(UOItems.CRYIC_BUCKET);
+                        output.accept(UOItems.CRYOPLASM_BUCKET);
 
                         output.accept(UOItems.SAPPHIRE);
 

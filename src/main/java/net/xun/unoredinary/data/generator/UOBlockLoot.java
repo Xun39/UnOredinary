@@ -47,6 +47,8 @@ public class UOBlockLoot extends UOBlockLootProvider {
         /* ------------------------------ MISC ------------------------------ */
         dropSelf(UOBlocks.TRANSENCHANTING_TABLE.get());
 
+        dropSelf(UOBlocks.CRYOPLASM_CAULDRON.get());
+
         dropOtherWithoutSilkTouch(UOBlocks.POLAR_STONE.get(), UOBlocks.COBBLED_POLAR_STONE);
         dropSelf(UOBlocks.POLAR_STONE_STAIRS.get());
         slabDrop(UOBlocks.POLAR_STONE_SLAB.get());

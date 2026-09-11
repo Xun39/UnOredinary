@@ -8,17 +8,17 @@ import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xun.unoredinary.UnOredinary;
-import net.xun.unoredinary.fluid.CryicFluid;
+import net.xun.unoredinary.fluid.CryoplasmFluid;
 
 public class UOFluids {
     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(Registries.FLUID, UnOredinary.MOD_ID);
 
-    public static final DeferredHolder<Fluid, CryicFluid> CRYIC = FLUIDS.register("cryic", CryicFluid.Source::new);
-    public static final DeferredHolder<Fluid, CryicFluid> FLOWING_CRYIC = FLUIDS.register("flowing_cryic", CryicFluid.Flowing::new);
+    public static final DeferredHolder<Fluid, CryoplasmFluid> CRYOPLASM = FLUIDS.register("cryoplasm", CryoplasmFluid.Source::new);
+    public static final DeferredHolder<Fluid, CryoplasmFluid> FLOWING_CRYOPLASM = FLUIDS.register("flowing_cryoplasm", CryoplasmFluid.Flowing::new);
 
     public static void registerFluidInteractions() {
         FluidInteractionRegistry.addInteraction(NeoForgeMod.WATER_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
-                CRYIC.get().getFluidType(),
+                CRYOPLASM.get().getFluidType(),
                 fluidState -> {
                     if (fluidState.isSource())
                         return Blocks.BLUE_ICE.defaultBlockState();
@@ -28,7 +28,7 @@ public class UOFluids {
         ));
 
         FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
-                CRYIC.get().getFluidType(),
+                CRYOPLASM.get().getFluidType(),
                 fluidState -> {
                     if (fluidState.isSource())
                         return Blocks.CRYING_OBSIDIAN.defaultBlockState();

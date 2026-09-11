@@ -35,8 +35,8 @@ public class UOItems {
 
     // Misc
     public static final DeferredItem<Item> FROST_KEY = ITEMS.register("frost_key", () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> CRYIC_BUCKET = ITEMS.register("cryic_bucket",
-            () -> new BucketItem(UOFluids.CRYIC.get(), new Item.Properties().stacksTo(1))
+    public static final DeferredItem<Item> CRYOPLASM_BUCKET = ITEMS.register("cryoplasm_bucket",
+            () -> new BucketItem(UOFluids.CRYOPLASM.get(), new Item.Properties().stacksTo(1))
     );
 
     // Spawn Eggs

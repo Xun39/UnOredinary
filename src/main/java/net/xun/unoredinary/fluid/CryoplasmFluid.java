@@ -9,20 +9,20 @@ import net.xun.unoredinary.registry.UOFluidTypes;
 import net.xun.unoredinary.registry.UOFluids;
 import net.xun.unoredinary.registry.UOItems;
 
-public abstract class CryicFluid extends BaseFlowingFluid {
+public abstract class CryoplasmFluid extends BaseFlowingFluid {
     protected static final BaseFlowingFluid.Properties PROPERTIES =
-            new BaseFlowingFluid.Properties(UOFluidTypes.CRYIC, UOFluids.CRYIC, UOFluids.FLOWING_CRYIC)
-                    .block(UOBlocks.CRYIC_FLUID)
-                    .bucket(UOItems.CRYIC_BUCKET)
+            new BaseFlowingFluid.Properties(UOFluidTypes.CRYOPLASM, UOFluids.CRYOPLASM, UOFluids.FLOWING_CRYOPLASM)
+                    .block(UOBlocks.CRYOPLASM)
+                    .bucket(UOItems.CRYOPLASM_BUCKET)
                     .tickRate(15)
                     .slopeFindDistance(4)
                     .levelDecreasePerBlock(1);
 
-    public CryicFluid() {
+    public CryoplasmFluid() {
         super(PROPERTIES);
     }
 
-    public static class Flowing extends CryicFluid {
+    public static class Flowing extends CryoplasmFluid {
         public Flowing() {
             this.registerDefaultState((this.getStateDefinition().any()).setValue(LEVEL, 7));
         }
@@ -33,7 +33,7 @@ public abstract class CryicFluid extends BaseFlowingFluid {
         }
 
         public int getAmount(FluidState state) {
-            return (Integer)state.getValue(LEVEL);
+            return state.getValue(LEVEL);
         }
 
         @Override
@@ -42,7 +42,7 @@ public abstract class CryicFluid extends BaseFlowingFluid {
         }
     }
 
-    public static class Source extends CryicFluid {
+    public static class Source extends CryoplasmFluid {
         public int getAmount(FluidState state) {
             return 8;
         }

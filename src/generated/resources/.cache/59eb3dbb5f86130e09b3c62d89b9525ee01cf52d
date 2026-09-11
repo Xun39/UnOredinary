@@ -1,10 +1,11 @@
-// 1.21.1	2026-09-06T18:02:51.1073159	Loot Tables
+// 1.21.1	2026-09-10T20:23:00.0849641	Loot Tables
 6236a1e6f4906ac97f028c797627615c20f55350 data/unoredinary/loot_table/blocks/cobbled_polar_stone.json
 ef37d9ad59cf32a977596807c885ec0d1d458528 data/unoredinary/loot_table/blocks/cobbled_polar_stone_slab.json
 cd58448a26d78d328a0a046141338ebe5886bd6d data/unoredinary/loot_table/blocks/cobbled_polar_stone_stairs.json
 dc40f04c2b88378ee69e1876417e4199f56b4f06 data/unoredinary/loot_table/blocks/cobbled_polar_stone_wall.json
 9210d52df48785389ab6b86240bcf70642b45947 data/unoredinary/loot_table/blocks/cryic_block.json
 fa51d822a3a0957fd17de5ec1377b6fbf3bae5e5 data/unoredinary/loot_table/blocks/cryic_ore.json
+bba76570644bd8ed3297d6029e115f22d7eb0ee3 data/unoredinary/loot_table/blocks/cryoplasm_cauldron.json
 303919f41a287d385543c2bec15165d2490ae6ad data/unoredinary/loot_table/blocks/deepslate_cryic_ore.json
 2340c69ff93e6079ae6fdd0fcf5222aa47d7577b data/unoredinary/loot_table/blocks/deepslate_luminite_ore.json
 b22d273ce3a8b34cde2457883270c57ff2f61875 data/unoredinary/loot_table/blocks/deepslate_sapphire_ore.json

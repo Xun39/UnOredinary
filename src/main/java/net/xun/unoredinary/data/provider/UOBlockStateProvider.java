@@ -23,6 +23,13 @@ public abstract class UOBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(block.get(), cubeAll(textureBlock));
     }
 
+    protected void existingBlockWithItem(DeferredBlock<?> block) {
+        simpleBlockWithItem(
+                block.get(),
+                models().getExistingFile(modLoc(block.getKey().location().getPath()))
+        );
+    }
+
     protected void stairBlockWithItem(DeferredBlock<StairBlock> block, DeferredBlock<?> textureBlock) {
         stairsBlock(block.get(), blockTexture(textureBlock.get()));
         uncheckedBlockItem(block);
@@ -79,17 +86,23 @@ public abstract class UOBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(block.get(), inventoryModel);
     }
 
-    protected void existingBlockWithItem(DeferredBlock<?> block) {
-        simpleBlockWithItem(
+    protected void cauldronBlock(DeferredBlock<?> block, String contentTextureName) {
+        simpleBlock(
                 block.get(),
-                models().getExistingFile(modLoc(block.getKey().location().getPath()))
+                models().withExistingParent(block.getKey().location().getPath(), mcLoc("block/template_cauldron_full"))
+                        .texture("bottom", mcLoc("block/cauldron_bottom"))
+                        .texture("content", modLoc("fluid/" + contentTextureName))
+                        .texture("inside", mcLoc("block/cauldron_inner"))
+                        .texture("particle", mcLoc("block/cauldron_side"))
+                        .texture("side", mcLoc("block/cauldron_side"))
+                        .texture("top", mcLoc("block/cauldron_top"))
         );
     }
 
     protected void fluidBlock(DeferredBlock<?> block, String textureName) {
         simpleBlock(
                 block.get(),
-                models().getBuilder(block.getKey().location().getPath()).texture("particle", CommonUtils.modLoc("fluid/" + textureName))
+                models().getBuilder(block.getKey().location().getPath()).texture("particle", modLoc("fluid/" + textureName))
         );
     }
 

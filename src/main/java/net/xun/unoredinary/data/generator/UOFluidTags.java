@@ -19,8 +19,8 @@ public class UOFluidTags extends FluidTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(UOTags.Fluids.CRYIC).add(
-                UOFluids.CRYIC.get(),
-                UOFluids.FLOWING_CRYIC.get()
+                UOFluids.CRYOPLASM.get(),
+                UOFluids.FLOWING_CRYOPLASM.get()
         );
     }
 }

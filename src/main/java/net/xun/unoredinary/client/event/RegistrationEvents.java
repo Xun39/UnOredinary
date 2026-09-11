@@ -15,7 +15,7 @@ import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.client.blockentity.renderer.TransenchantTableRenderer;
-import net.xun.unoredinary.client.fluid.CryicFluidTypeClientExtensions;
+import net.xun.unoredinary.client.fluid.CryoplasmClientExtensions;
 import net.xun.unoredinary.client.gui.TransenchantingTableScreen;
 import net.xun.unoredinary.client.model.UOModelLayers;
 import net.xun.unoredinary.client.model.entity.FrostRevenantModel;
@@ -25,6 +25,7 @@ import net.xun.unoredinary.client.model.renderer.FrostZombieRenderer;
 import net.xun.unoredinary.client.particle.FrostNovaParticle;
 import net.xun.unoredinary.client.particle.RimeParticle;
 import net.xun.unoredinary.client.particle.SubzeroFrostParticle;
+import net.xun.unoredinary.client.particle.TransenchantParticle;
 import net.xun.unoredinary.registry.*;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID)
@@ -41,6 +42,7 @@ public class RegistrationEvents {
         event.registerSpriteSet(UOParticleTypes.RIME.get(), RimeParticle.Provider::new);
         event.registerSpriteSet(UOParticleTypes.SUBZERO_FROST.get(), SubzeroFrostParticle.Provider::new);
         event.registerSpriteSet(UOParticleTypes.FROST_NOVA.get(), FrostNovaParticle.Provider::new);
+        event.registerSpriteSet(UOParticleTypes.TRANSENCHANT.get(), TransenchantParticle.Provider::new);
     }
 
     @SubscribeEvent
@@ -72,6 +74,6 @@ public class RegistrationEvents {
 
     @SubscribeEvent
     public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
-        event.registerFluidType(new CryicFluidTypeClientExtensions(), UOFluidTypes.CRYIC);
+        event.registerFluidType(new CryoplasmClientExtensions(), UOFluidTypes.CRYOPLASM);
     }
 }
