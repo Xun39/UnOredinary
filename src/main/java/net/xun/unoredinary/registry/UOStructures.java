@@ -21,6 +21,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSetting
 import net.neoforged.neoforge.common.Tags;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.util.UOTags;
+import net.xun.unoredinary.world.structures.type.FrostDungeonStructure;
 import net.xun.unoredinary.world.structures.type.FrozenVaultStructure;
 
 import java.util.HashMap;
@@ -46,7 +47,7 @@ public class UOStructures {
                         TerrainAdjustment.BEARD_THIN)
                 )
         );
-        context.register(FROST_DUNGEON, new JigsawStructure(
+        context.register(FROST_DUNGEON, new FrostDungeonStructure(
                 new Structure.StructureSettings(
                         context.lookup(Registries.BIOME).getOrThrow(UOTags.Biomes.HAS_STRUCTURE_FROST_DUNGEON),
                         Map.of(
@@ -67,12 +68,10 @@ public class UOStructures {
                 ),
                 context.lookup(Registries.TEMPLATE_POOL).getOrThrow(UOTemplatePools.FROST_DUNGEON_START),
                 Optional.empty(),
-                10,
+                16,
                 ConstantHeight.of(VerticalAnchor.absolute(1)),
-                false,
                 Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
                 116,
-                List.of(),
                 JigsawStructure.DEFAULT_DIMENSION_PADDING,
                 LiquidSettings.IGNORE_WATERLOGGING)
         );

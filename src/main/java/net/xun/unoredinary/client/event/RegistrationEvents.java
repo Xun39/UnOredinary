@@ -15,13 +15,15 @@ import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.xun.unoredinary.UnOredinary;
 import net.xun.unoredinary.client.blockentity.renderer.TransenchantTableRenderer;
+import net.xun.unoredinary.client.entity.model.FrostRevenantModel;
+import net.xun.unoredinary.client.entity.model.FrostShardModel;
+import net.xun.unoredinary.client.entity.renderer.FrostRevenantRenderer;
+import net.xun.unoredinary.client.entity.renderer.FrostShardRenderer;
 import net.xun.unoredinary.client.fluid.CryoplasmClientExtensions;
 import net.xun.unoredinary.client.gui.TransenchantingTableScreen;
-import net.xun.unoredinary.client.model.UOModelLayers;
-import net.xun.unoredinary.client.model.entity.FrostRevenantModel;
-import net.xun.unoredinary.client.model.entity.FrostZombieModel;
-import net.xun.unoredinary.client.model.renderer.FrostRevenantRenderer;
-import net.xun.unoredinary.client.model.renderer.FrostZombieRenderer;
+import net.xun.unoredinary.client.UOModelLayers;
+import net.xun.unoredinary.client.entity.model.FrostZombieModel;
+import net.xun.unoredinary.client.entity.renderer.FrostZombieRenderer;
 import net.xun.unoredinary.client.particle.FrostNovaParticle;
 import net.xun.unoredinary.client.particle.RimeParticle;
 import net.xun.unoredinary.client.particle.SubzeroFrostParticle;
@@ -35,6 +37,7 @@ public class RegistrationEvents {
     public static void onClientSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(UOEntityTypes.FROST_ZOMBIE.get(), FrostZombieRenderer::new);
         EntityRenderers.register(UOEntityTypes.FROST_REVENANT.get(), FrostRevenantRenderer::new);
+        EntityRenderers.register(UOEntityTypes.FROST_SHARD.get(), FrostShardRenderer::new);
     }
 
     @SubscribeEvent
@@ -47,7 +50,6 @@ public class RegistrationEvents {
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-
         LayerDefinition humanoidLayerdefinition = LayerDefinition.create(HumanoidModel.createMesh(CubeDeformation.NONE, 0.0F), 64, 64);
         LayerDefinition outerArmorLayerdefinition = LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32);
         LayerDefinition innerArmorLayerdefinition = LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32);
@@ -57,9 +59,9 @@ public class RegistrationEvents {
         event.registerLayerDefinition(UOModelLayers.FROST_ZOMBIE_INNER_ARMOR, () -> innerArmorLayerdefinition);
         event.registerLayerDefinition(UOModelLayers.FROST_ZOMBIE_OUTER_ARMOR, () -> outerArmorLayerdefinition);
 
-        event.registerLayerDefinition(UOModelLayers.FROST_REVENANT, () -> FrostRevenantModel.createBodyLayer(CubeDeformation.NONE));
-        event.registerLayerDefinition(UOModelLayers.FROST_REVENANT_INNER_ARMOR, () -> innerArmorLayerdefinition);
-        event.registerLayerDefinition(UOModelLayers.FROST_REVENANT_OUTER_ARMOR, () -> outerArmorLayerdefinition);
+        event.registerLayerDefinition(UOModelLayers.FROST_REVENANT, FrostRevenantModel::createBodyLayer);
+
+        event.registerLayerDefinition(UOModelLayers.FROST_SHARD, FrostShardModel::createBodyLayer);
     }
 
     @SubscribeEvent

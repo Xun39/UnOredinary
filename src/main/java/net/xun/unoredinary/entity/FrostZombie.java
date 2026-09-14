@@ -60,11 +60,10 @@ public class FrostZombie extends Zombie {
         boolean flag = super.doHurtTarget(entity);
 
         if (flag && entity instanceof LivingEntity living) {
-            if (!living.canFreeze())
-                return flag;
+            if (!living.canFreeze()) return true;
 
-            float f = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
-            living.addEffect(MobEffectInstanceBuilder.of(UOMobEffects.FROSTED_EFFECT).duration(160 * (int)f).amplifier(1).build(), this);
+            float difficulty = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
+            living.addEffect(MobEffectInstanceBuilder.of(UOMobEffects.FROSTED_EFFECT).duration(160 * (int)difficulty).amplifier(1).build(), this);
         }
 
         return flag;

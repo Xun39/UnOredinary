@@ -1,0 +1,27 @@
+{
+    "elements": [
+        {
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "unoredinary:frost_dungeon/monster_rooms/monster_room_i",
+                "processors": {
+                    "processors": []
+                },
+                "projection": "rigid"
+            },
+            "weight": 1
+        },
+        {
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "unoredinary:frost_dungeon/monster_rooms/monster_room_i_2",
+                "processors": {
+                    "processors": []
+                },
+                "projection": "rigid"
+            },
+            "weight": 1
+        }
+    ],
+    "fallback": "unoredinary:frost_dungeon/7x7_decorations"
+}

@@ -17,6 +17,7 @@ import net.xun.unoredinary.registry.*;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID)
 public class RegistrationEvents {
+    // TODO: custom spawn rules
     @SubscribeEvent
     public static void onRegisterSpawnPlacements(RegisterSpawnPlacementsEvent event) {
         event.register(UOEntityTypes.FROST_ZOMBIE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);

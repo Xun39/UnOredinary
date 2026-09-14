@@ -1,10 +1,9 @@
 {
-    "type": "minecraft:jigsaw",
+    "type": "unoredinary:frost_dungeon",
     "biomes": "#unoredinary:has_structure/frost_dungeon",
-    "liquid_settings": "ignore_waterlogging",
     "max_distance_from_center": 116,
     "project_start_to_heightmap": "WORLD_SURFACE_WG",
-    "size": 10,
+    "size": 16,
     "spawn_overrides": {
         "monster": {
             "bounding_box": "full",
@@ -46,6 +45,5 @@
         "absolute": 1
     },
     "start_pool": "unoredinary:frost_dungeon/start",
-    "step": "underground_structures",
-    "use_expansion_hack": false
+    "step": "underground_structures"
 }

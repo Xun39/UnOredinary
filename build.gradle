@@ -30,11 +30,6 @@ repositories {
     }
 
     maven {
-        name = "Sleeping Town"
-        url = "https://repo.sleeping.town/"
-    }
-
-    maven {
         name = "Modrinth"
         url = "https://api.modrinth.com/maven"
     }
@@ -137,9 +132,6 @@ dependencies {
     // JEI
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
-
-    compileOnly("dev.emi:emi-neoforge:${emi_version}:api")
-    runtimeOnly("dev.emi:emi-neoforge:${emi_version}")
 
     runtimeOnly("maven.modrinth:rightclickharvest:4.5.3+1.21.1-neoforge")
     runtimeOnly("maven.modrinth:architectury-api:13.0.8+neoforge")

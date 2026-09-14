@@ -21,6 +21,10 @@ public class UOTemplatePools {
     public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_MAZES = createKey("frost_dungeon/mazes");
     public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_5x5_DECORATIONS = createKey("frost_dungeon/5x5_decorations");
     public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_7x7_DECORATIONS = createKey("frost_dungeon/7x7_decorations");
+    public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_MONSTER_ROOMS_N = createKey("frost_dungeon/monster_rooms_n");
+    public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_MONSTER_ROOMS_I = createKey("frost_dungeon/monster_rooms_i");
+    public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_MONSTER_ROOMS_L = createKey("frost_dungeon/monster_rooms_l");
+    public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_MONSTER_ROOMS_T = createKey("frost_dungeon/monster_rooms_t");
     public static final ResourceKey<StructureTemplatePool> FROST_DUNGEON_ENDS = createKey("frost_dungeon/ends");
 
     private static ResourceKey<StructureTemplatePool> createKey(String name) {
@@ -42,7 +46,11 @@ public class UOTemplatePools {
                 templatePools.getOrThrow(Pools.EMPTY),
                 ImmutableList.of(
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/connect/grand_hall_connection"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/connect/descending_stairs"), 1)
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/connect/descending_stairs"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/connect/entrance_foundation"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/connect/ascending_ladder"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/connect/main_hall_connection"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/connect/redstone_door"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
         );
@@ -70,7 +78,8 @@ public class UOTemplatePools {
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/lower_hall"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/grand_hall"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/puzzle_hall"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/parkour_hall"), 1)
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/parkour_hall"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/rogue_hall"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
         );
@@ -107,12 +116,49 @@ public class UOTemplatePools {
                 StructureTemplatePool.Projection.RIGID)
         );
 
+        context.register(FROST_DUNGEON_MONSTER_ROOMS_N, new StructureTemplatePool(
+                templatePools.getOrThrow(FROST_DUNGEON_7x7_DECORATIONS),
+                ImmutableList.of(
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_n"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_n_2"), 1)
+                ),
+                StructureTemplatePool.Projection.RIGID)
+        );
+
+        context.register(FROST_DUNGEON_MONSTER_ROOMS_I, new StructureTemplatePool(
+                templatePools.getOrThrow(FROST_DUNGEON_7x7_DECORATIONS),
+                ImmutableList.of(
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_i"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_i_2"), 1)
+                ),
+                StructureTemplatePool.Projection.RIGID)
+        );
+
+        context.register(FROST_DUNGEON_MONSTER_ROOMS_L, new StructureTemplatePool(
+                templatePools.getOrThrow(FROST_DUNGEON_7x7_DECORATIONS),
+                ImmutableList.of(
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_l"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_l_2"), 1)
+                ),
+                StructureTemplatePool.Projection.RIGID)
+        );
+
+        context.register(FROST_DUNGEON_MONSTER_ROOMS_T, new StructureTemplatePool(
+                templatePools.getOrThrow(FROST_DUNGEON_7x7_DECORATIONS),
+                ImmutableList.of(
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_t"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_t_2"), 1)
+                ),
+                StructureTemplatePool.Projection.RIGID)
+        );
+
         context.register(FROST_DUNGEON_ENDS, new StructureTemplatePool(
                 templatePools.getOrThrow(Pools.EMPTY),
                 ImmutableList.of(
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/ends/end_1"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/ends/end_2"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/ends/dorm"), 1)
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/ends/dorm"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/ends/boss_room"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
         );

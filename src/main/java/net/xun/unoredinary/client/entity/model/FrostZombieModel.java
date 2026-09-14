@@ -1,14 +1,14 @@
-package net.xun.unoredinary.client.model.entity;
+package net.xun.unoredinary.client.entity.model;
 
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.ZombieModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.xun.unoredinary.entity.FrostRevenant;
+import net.xun.unoredinary.entity.FrostZombie;
 
-public class FrostRevenantModel extends ZombieModel<FrostRevenant> {
-    public FrostRevenantModel(ModelPart root) {
+public class FrostZombieModel extends ZombieModel<FrostZombie> {
+    public FrostZombieModel(ModelPart root) {
         super(root);
     }
 

@@ -1,12 +1,12 @@
-package net.xun.unoredinary.client.model.renderer;
+package net.xun.unoredinary.client.entity.renderer;
 
 import net.minecraft.client.renderer.entity.AbstractZombieRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.monster.Zombie;
 import net.xun.lib.common.api.util.CommonUtils;
-import net.xun.unoredinary.client.model.UOModelLayers;
-import net.xun.unoredinary.client.model.entity.FrostZombieModel;
+import net.xun.unoredinary.client.UOModelLayers;
+import net.xun.unoredinary.client.entity.model.FrostZombieModel;
 import net.xun.unoredinary.entity.FrostZombie;
 
 public class FrostZombieRenderer extends AbstractZombieRenderer<FrostZombie, FrostZombieModel> {
