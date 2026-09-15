@@ -2,7 +2,6 @@ package net.xun.unoredinary.entity;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -63,7 +62,7 @@ public class FrostZombie extends Zombie {
             if (!living.canFreeze()) return true;
 
             float difficulty = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
-            living.addEffect(MobEffectInstanceBuilder.of(UOMobEffects.FROSTED_EFFECT).duration(160 * (int)difficulty).amplifier(1).build(), this);
+            living.addEffect(MobEffectInstanceBuilder.of(UOMobEffects.FROSTBITE_EFFECT).duration(120 * (int)difficulty).amplifier(1).build(), this);
         }
 
         return flag;

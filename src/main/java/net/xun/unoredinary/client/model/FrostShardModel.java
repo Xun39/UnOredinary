@@ -1,4 +1,4 @@
-package net.xun.unoredinary.client.entity.model;
+package net.xun.unoredinary.client.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -35,10 +35,6 @@ public class FrostShardModel<T extends FrostShard> extends EntityModel<T> {
 
     @Override
     public void setupAnim(FrostShard entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-        float pulse = 1.0F + (float) Math.sin(ageInTicks * 0.4F) * 0.05F;
-        this.root.xScale = pulse;
-        this.root.yScale = pulse;
-        this.root.zScale = pulse;
     }
 
     @Override

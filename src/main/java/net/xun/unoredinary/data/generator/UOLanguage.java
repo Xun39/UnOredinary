@@ -98,10 +98,10 @@ public class UOLanguage extends UOLanguageProvider {
         addEntityAndSpawnEgg(UOEntityTypes.FROST_REVENANT, "Frost Revenant");
 
         /* ------------------------------ MOB EFFECTS and POTIONS ------------------------------ */
-        addEffect(UOMobEffects.FROSTED_EFFECT, "Frostbitten");
-        addPotion(UOPotions.FROSTBITTEN, "Frostbitten");
-        addPotion(UOPotions.LONG_FROSTBITTEN, "Frostbitten");
-        addPotion(UOPotions.STRONG_FROSTBITTEN, "Frostbitten");
+        addEffect(UOMobEffects.FROSTBITE_EFFECT, "Frostbite");
+        addPotion(UOPotions.FROSTBITE, "Frostbite");
+        addPotion(UOPotions.LONG_FROSTBITE, "Frostbite");
+        addPotion(UOPotions.STRONG_FROSTBITE, "Frostbite");
 
         addEffect(UOMobEffects.WARMTH_EFFECT, "Warmth");
         addPotion(UOPotions.WARMTH, "Warmth");

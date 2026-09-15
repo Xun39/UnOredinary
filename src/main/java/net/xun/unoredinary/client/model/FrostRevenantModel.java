@@ -1,14 +1,13 @@
-package net.xun.unoredinary.client.entity.model;
+package net.xun.unoredinary.client.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
-import net.xun.unoredinary.client.entity.animation.FrostRevenantAnimation;
+import net.xun.unoredinary.client.animation.FrostRevenantAnimation;
 import net.xun.unoredinary.entity.FrostRevenant;
 
 public class FrostRevenantModel<T extends FrostRevenant> extends HierarchicalModel<T> {
@@ -70,9 +69,11 @@ public class FrostRevenantModel<T extends FrostRevenant> extends HierarchicalMod
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		this.applyHeadRotation(netHeadYaw, headPitch);
 
-		this.animateWalk(FrostRevenantAnimation.WALK, limbSwing, limbSwingAmount, 2.0F, 2.5F);
-		this.animate(entity.idleAnimationState, FrostRevenantAnimation.IDLE, ageInTicks, 1f);
-		this.animate(entity.attackAnimationState, FrostRevenantAnimation.ATTACK, ageInTicks, 1f);
+		if (!entity.isPhasing())
+			this.animateWalk(FrostRevenantAnimation.WALK, limbSwing, limbSwingAmount, 2.0F, 2.5F);
+
+		this.animate(entity.controller.getState("idle"), FrostRevenantAnimation.IDLE, ageInTicks, 1f);
+		this.animate(entity.controller.getState("attack"), FrostRevenantAnimation.ATTACK, ageInTicks, 1f);
 	}
 
 	private void applyHeadRotation(float headYaw, float headPitch) {

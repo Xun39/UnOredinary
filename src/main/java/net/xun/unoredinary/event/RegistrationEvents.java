@@ -7,7 +7,6 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.fluids.FluidType;
@@ -32,9 +31,9 @@ public class RegistrationEvents {
     @SubscribeEvent
     public static void onBrewingRecipesRegister(RegisterBrewingRecipesEvent event) {
         PotionBrewing.Builder builder = event.getBuilder();
-        builder.addMix(Potions.AWKWARD, UOItems.GLACIUM_SHARD.get(), UOPotions.FROSTBITTEN);
-        builder.addMix(UOPotions.FROSTBITTEN, UOItems.CRYIC_POWDER.get(), UOPotions.LONG_FROSTBITTEN);
-        builder.addMix(Potions.AWKWARD, UOItems.GLACIUM_CRYSTAL.get(), UOPotions.STRONG_FROSTBITTEN);
+        builder.addMix(Potions.AWKWARD, UOItems.GLACIUM_SHARD.get(), UOPotions.FROSTBITE);
+        builder.addMix(UOPotions.FROSTBITE, UOItems.CRYIC_POWDER.get(), UOPotions.LONG_FROSTBITE);
+        builder.addMix(Potions.AWKWARD, UOItems.GLACIUM_CRYSTAL.get(), UOPotions.STRONG_FROSTBITE);
 
         builder.addMix(Potions.AWKWARD, UOItems.LUMINITE_CRYSTAL.get(), Potions.LONG_NIGHT_VISION);
     }

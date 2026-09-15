@@ -124,7 +124,7 @@ public class GlacialiteToolCustomizer extends AbstractHitEffectCustomizer {
 
     private static void applyFrostEffects(LivingEntity target) {
         List<MobEffectInstance> effects = List.of(
-                buildEffectInstance(UOMobEffects.FROSTED_EFFECT, FROSTED_DURATION, 0),
+                buildEffectInstance(UOMobEffects.FROSTBITE_EFFECT, FROSTED_DURATION, 0),
                 buildEffectInstance(MobEffects.WEAKNESS, WEAKNESS_DURATION_NOVA, WEAKNESS_AMPLIFIER_NOVA)
         );
 

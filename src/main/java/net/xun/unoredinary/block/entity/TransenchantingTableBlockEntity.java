@@ -3,14 +3,12 @@ package net.xun.unoredinary.block.entity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.util.Mth;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -27,8 +25,6 @@ import net.xun.unoredinary.block.entity.container.TransenchantingTableMenu;
 import net.xun.unoredinary.registry.UOBlockEntityTypes;
 import net.xun.unoredinary.util.TransenchantmentHelper;
 import org.jetbrains.annotations.Nullable;
-
-import static net.xun.unoredinary.client.blockentity.renderer.TransenchantTableRenderer.*;
 
 public class TransenchantingTableBlockEntity extends EnchantingTableBlockEntity implements MenuProvider, ITickableBlockEntity {
     public static final int TRANSENCHANTER_SLOT = 0;

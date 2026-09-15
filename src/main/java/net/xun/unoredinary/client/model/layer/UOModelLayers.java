@@ -1,4 +1,4 @@
-package net.xun.unoredinary.client;
+package net.xun.unoredinary.client.model.layer;
 
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.xun.lib.common.api.util.CommonUtils;
@@ -13,8 +13,6 @@ public class UOModelLayers {
     public static final ModelLayerLocation FROST_REVENANT = registerDefault("frost_revenant");
 
     public static final ModelLayerLocation FROST_SHARD = registerDefault("frost_shard");
-
-    public static final ModelLayerLocation FFF_ZOMBIE = registerDefault("fff_zombie");
 
     private static ModelLayerLocation registerDefault(String path) {
         return createLocation(path, "main");

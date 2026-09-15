@@ -97,7 +97,7 @@ public record UOChestLoot(HolderLookup.Provider registries) implements LootTable
                                 .add(LootItem.lootTableItem(UOItems.CRYIC_POWDER).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 12.0F))))
                                 .add(LootItem.lootTableItem(Items.TIPPED_ARROW).setWeight(4)
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 12.0F)))
-                                        .apply(SetPotionFunction.setPotion(UOPotions.STRONG_FROSTBITTEN)))
+                                        .apply(SetPotionFunction.setPotion(UOPotions.STRONG_FROSTBITE)))
                                 .add(LootItem.lootTableItem(UOItems.FROSTSTEEL_NUGGET).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(9.0F, 18.0F))))
                                 .add(LootItem.lootTableItem(UOItems.GLACIUM_SHARD).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
                                 .add(LootItem.lootTableItem(UOItems.FROSTSTEEL_INGOT).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))

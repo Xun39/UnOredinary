@@ -1,4 +1,4 @@
-package net.xun.unoredinary.client.entity.model;
+package net.xun.unoredinary.client.model;
 
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.ZombieModel;

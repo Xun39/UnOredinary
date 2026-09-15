@@ -1,12 +1,10 @@
-package net.xun.unoredinary.client.blockentity.renderer;
+package net.xun.unoredinary.client.renderer.blockentity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BookModel;
 import net.minecraft.client.model.geom.ModelLayers;
-import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -16,8 +14,6 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -28,7 +24,6 @@ import net.neoforged.api.distmarker.OnlyIn;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.block.entity.TransenchantingTableBlockEntity;
 import net.xun.unoredinary.registry.UOParticleTypes;
-import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
 @OnlyIn(Dist.CLIENT)

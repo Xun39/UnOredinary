@@ -3,6 +3,7 @@ package net.xun.unoredinary.entity.ai;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.xun.unoredinary.entity.FrostRevenant;
 
@@ -12,15 +13,13 @@ public class FrostRevenantPhaseRetreatGoal extends Goal {
     private static final double TRIGGER_DISTANCE_SQR = 5.0D * 5.0D;
     private static final double SAFE_DISTANCE_SQR = 12.0D * 12.0D;
     private static final double PHASE_SPEED = 0.35D;
-    private static final int MAX_PHASE_TICKS = 60;
+    private static final int MAX_PHASE_TICKS = 40;
     private static final int COOLDOWN_TICKS = 100;
 
     private final FrostRevenant revenant;
     private LivingEntity threat;
     private int phaseTicks;
-    private int losLostTicks;
     private int cooldown;
-
     private Vec3 lastAirPos;
     private boolean hitBlock;
 
@@ -53,17 +52,10 @@ public class FrostRevenantPhaseRetreatGoal extends Goal {
 
     @Override
     public boolean canContinueToUse() {
+        if (this.hitBlock) return false;
         if (this.threat == null || !this.threat.isAlive()) return false;
         if (this.phaseTicks >= MAX_PHASE_TICKS) return false;
-        if (this.revenant.distanceToSqr(this.threat) >= SAFE_DISTANCE_SQR) return false;
-
-        if (this.phaseTicks >= 8) {
-            if (this.revenant.hasLineOfSight(this.threat)) {
-                this.losLostTicks = 0;
-            } else return ++this.losLostTicks < 3;
-        }
-
-        return true;
+        return !(this.revenant.distanceToSqr(this.threat) >= SAFE_DISTANCE_SQR);
     }
 
     @Override
@@ -71,8 +63,17 @@ public class FrostRevenantPhaseRetreatGoal extends Goal {
         this.phaseTicks++;
         this.revenant.getLookControl().setLookAt(this.threat, 30.0F, 30.0F);
 
+        Level level = this.revenant.level();
         BlockPos current = this.revenant.blockPosition();
-        if (!this.revenant.level().getBlockState(current).getCollisionShape(revenant.level(), current).isEmpty()) {
+
+        boolean feetBlocked = !level.getBlockState(current).getCollisionShape(level, current).isEmpty();
+        boolean headBlocked = !level.getBlockState(current.above()).getCollisionShape(level, current.above()).isEmpty();
+
+        if (feetBlocked) {
+            if (!headBlocked) {
+                // Only the feet are inside a block.
+                this.lastAirPos = this.revenant.position().add(0.0D, 1.0D, 0.0D);
+            }
             this.hitBlock = true;
             return;
         }

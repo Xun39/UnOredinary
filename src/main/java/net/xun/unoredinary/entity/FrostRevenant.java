@@ -1,6 +1,5 @@
 package net.xun.unoredinary.entity;
 
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -10,8 +9,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.AnimationState;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -24,39 +21,38 @@ import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
+import net.xun.unoredinary.client.animation.AnimationController;
+import net.xun.unoredinary.client.animation.FrostRevenantAnimation;
 import net.xun.unoredinary.entity.ai.FrostRevenantPhaseRetreatGoal;
+import net.xun.unoredinary.entity.ai.FrostRevenantRangedAttackGoal;
 import net.xun.unoredinary.entity.projectile.FrostShard;
-import net.xun.unoredinary.registry.UOMobEffects;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
 public class FrostRevenant extends Monster implements RangedAttackMob {
     private static final EntityDataAccessor<Boolean> PHASING = SynchedEntityData.defineId(FrostRevenant.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> ATTACKING = SynchedEntityData.defineId(FrostRevenant.class, EntityDataSerializers.BOOLEAN);
-    private static final float SHARD_SPEED = 1.5F;
 
-    public final AnimationState idleAnimationState = new AnimationState();
-    public final AnimationState attackAnimationState = new AnimationState();
-    private int idleAnimationTimeout = 0;
-    private int attackAnimationTimeout = 0;
+    public final AnimationController<FrostRevenant> controller = AnimationController.builder(this)
+            .animation("idle", FrostRevenantAnimation.IDLE)
+            .animation("attack", FrostRevenantAnimation.ATTACK)
+            .build();
 
     public FrostRevenant(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
     }
 
     @Override
-    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+    protected void defineSynchedData(SynchedEntityData.@NotNull Builder builder) {
         super.defineSynchedData(builder);
         builder.define(PHASING, false);
-        builder.define(ATTACKING, false);
     }
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new FrostRevenantPhaseRetreatGoal(this));
-        this.goalSelector.addGoal(2, new RangedAttackGoal(this, 1.0, 40, 12.0F));
+        this.goalSelector.addGoal(2, new FrostRevenantRangedAttackGoal(this, 1.0, 40, 5, 12.0F));
         this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0));
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
@@ -67,17 +63,10 @@ public class FrostRevenant extends Monster implements RangedAttackMob {
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 36.0F)
+                .add(Attributes.ARMOR, 1.0F)
                 .add(Attributes.MOVEMENT_SPEED, 0.23F)
                 .add(Attributes.FOLLOW_RANGE, 35.0D)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.2D);
-    }
-
-    public boolean isAttacking() {
-        return this.entityData.get(ATTACKING);
-    }
-
-    private void setAttacking(boolean value) {
-        this.entityData.set(ATTACKING, value);
     }
 
     public boolean isPhasing() {
@@ -101,36 +90,10 @@ public class FrostRevenant extends Monster implements RangedAttackMob {
         this.noPhysics = false;
         this.setNoGravity(false);
         this.setDeltaMovement(Vec3.ZERO);
-
-        // If we stopped inside a wall, put ourselves back on solid ground.
-        if (!this.snapToGround()) {
-            this.randomTeleport(this.getX(), this.getY(), this.getZ(), true);
-        }
-    }
-
-    private boolean snapToGround() {
-        BlockPos base = this.blockPosition();
-        for (int dy = 0; dy <= 16; dy++) {
-            for (int sign : new int[]{1, -1}) {
-                if (dy == 0 && sign < 0) continue;
-                BlockPos check = base.offset(0, dy * sign, 0);
-                if (this.isSafeStandingSpot(check)) {
-                    this.teleportTo(check.getX() + 0.5D, check.getY(), check.getZ() + 0.5D);
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    private boolean isSafeStandingSpot(BlockPos pos) {
-        return this.level().getBlockState(pos.below()).isSolid()
-                && this.level().getBlockState(pos).isAir()
-                && this.level().getBlockState(pos.above()).isAir();
     }
 
     @Override
-    public boolean hurt(DamageSource source, float amount) {
+    public boolean hurt(@NotNull DamageSource source, float amount) {
         if (this.isPhasing() && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
             return false;
         }
@@ -155,14 +118,12 @@ public class FrostRevenant extends Monster implements RangedAttackMob {
 
     @Override
     public void performRangedAttack(LivingEntity target, float velocity) {
-        this.setAttacking(true);
-        this.attackAnimationTimeout = 15;
-
+        float shardSpeed = 1.5F;
         Vec3 origin = this.getEyePosition();
         Vec3 targetPos = target.getEyePosition();
 
         double distance = Math.sqrt(origin.distanceToSqr(targetPos));
-        double travelTicks = distance / SHARD_SPEED;
+        double travelTicks = distance / shardSpeed;
         Vec3 predicted = targetPos.add(target.getDeltaMovement().scale(travelTicks * 0.6D));
 
         Vec3 direction = predicted.subtract(origin);
@@ -171,7 +132,7 @@ public class FrostRevenant extends Monster implements RangedAttackMob {
         shard.setPos(origin.x, origin.y - 0.1D, origin.z);
 
         float inaccuracy = Mth.clamp(1.5F - velocity, 0.5F, 1.5F);
-        shard.shoot(direction.x, direction.y, direction.z, SHARD_SPEED, inaccuracy);
+        shard.shoot(direction.x, direction.y, direction.z, shardSpeed, inaccuracy);
 
         this.playSound(SoundEvents.GLASS_BREAK, 1.0F, 1.2F / (this.getRandom().nextFloat() * 0.2F + 0.9F));
         this.level().addFreshEntity(shard);
@@ -196,33 +157,18 @@ public class FrostRevenant extends Monster implements RangedAttackMob {
     @Override
     public void tick() {
         super.tick();
-        if (!this.level().isClientSide) {
-            if (this.isAttacking()) {
-                if (this.attackAnimationTimeout > 0) {
-                    --this.attackAnimationTimeout;
-                } else {
-                    this.setAttacking(false);
-                }
-            }
-        } else {
-            setupAnimationStates();
+        if (this.level().isClientSide) {
+            controller.tick("idle");
+            controller.tickOneShot("attack");
         }
     }
 
-    private void setupAnimationStates() {
-        if (this.idleAnimationTimeout <= 0) {
-            this.idleAnimationTimeout = 80;
-            this.idleAnimationState.start(this.tickCount);
+    @Override
+    public void handleEntityEvent(byte id) {
+        if (id == 4) {
+            controller.playOneShot("attack");
         } else {
-            --this.idleAnimationTimeout;
-        }
-
-        if (this.isAttacking()) {
-            if (!this.attackAnimationState.isStarted()) {
-                this.attackAnimationState.start(this.tickCount);
-            }
-        } else {
-            this.attackAnimationState.stop();
+            super.handleEntityEvent(id);
         }
     }
 }

@@ -5,12 +5,11 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.player.Player;
 import net.xun.lib.common.api.util.CommonUtils;
 
-public class FrostbittenEffect extends MobEffect {
+public class FrostbiteEffect extends MobEffect {
 
-    public FrostbittenEffect() {
+    public FrostbiteEffect() {
         super(MobEffectCategory.HARMFUL, 0x33b2e7);
         this.addAttributeModifier(
                 Attributes.MOVEMENT_SPEED,

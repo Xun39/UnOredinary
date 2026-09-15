@@ -1,4 +1,4 @@
-package net.xun.unoredinary.client.entity.renderer;
+package net.xun.unoredinary.client.renderer.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -11,11 +11,10 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
 import net.xun.lib.common.api.util.CommonUtils;
-import net.xun.unoredinary.client.UOModelLayers;
-import net.xun.unoredinary.client.entity.model.FrostShardModel;
+import net.xun.unoredinary.client.model.layer.UOModelLayers;
+import net.xun.unoredinary.client.model.FrostShardModel;
 import net.xun.unoredinary.entity.projectile.FrostShard;
 
 public class FrostShardRenderer extends EntityRenderer<FrostShard> {
@@ -24,16 +23,24 @@ public class FrostShardRenderer extends EntityRenderer<FrostShard> {
     public FrostShardRenderer(EntityRendererProvider.Context context) {
         super(context);
         this.model = new FrostShardModel<>(context.bakeLayer(UOModelLayers.FROST_SHARD));
+        this.shadowRadius = 0.0F;
     }
 
     @Override
     public void render(FrostShard entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
         poseStack.pushPose();
-        float yRot = Mth.lerp(partialTick, entity.yRotO, entity.getYRot());
-        float xRot = Mth.lerp(partialTick, entity.xRotO, entity.getXRot());
 
-        poseStack.mulPose(Axis.YP.rotationDegrees(180.0F - yRot));
-        poseStack.mulPose(Axis.XP.rotationDegrees(180 + xRot));
+        Vec3 velocity = entity.getDeltaMovement();
+
+        if (velocity.lengthSqr() > 1.0E-6) {
+            velocity = velocity.normalize();
+
+            float yaw = (float) Mth.atan2(velocity.x, velocity.z) * Mth.RAD_TO_DEG + 180F;
+            float pitch = (float) Math.asin(Mth.clamp((float) velocity.y, -1.0F, 1.0F)) * Mth.RAD_TO_DEG;
+
+            poseStack.mulPose(Axis.YP.rotationDegrees(yaw));
+            poseStack.mulPose(Axis.XP.rotationDegrees(pitch));
+        }
 
         VertexConsumer consumer = bufferSource.getBuffer(RenderType.entityTranslucent(getTextureLocation(entity)));
         this.model.renderToBuffer(

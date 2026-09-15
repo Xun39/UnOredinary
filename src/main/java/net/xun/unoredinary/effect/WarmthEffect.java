@@ -21,8 +21,8 @@ public class WarmthEffect extends MobEffect {
     @Override
     public boolean applyEffectTick(LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide) {
-            if (entity.hasEffect(UOMobEffects.FROSTED_EFFECT))
-                entity.removeEffect(UOMobEffects.FROSTED_EFFECT);
+            if (entity.hasEffect(UOMobEffects.FROSTBITE_EFFECT))
+                entity.removeEffect(UOMobEffects.FROSTBITE_EFFECT);
 
             if (entity.getTicksFrozen() > 0) {
                 entity.setTicksFrozen(0);
