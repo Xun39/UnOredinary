@@ -17,14 +17,9 @@ public class FrostZombieModel extends ZombieModel<FrostZombie> {
         PartDefinition partdefinition = meshdefinition.getRoot();
 
         partdefinition.addOrReplaceChild(
-                "left_arm",
-                CubeListBuilder.create().texOffs(32, 48).addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, cubeDeformation),
-                PartPose.offset(5.0F, 2.0F, 0.0F)
-        );
-        partdefinition.addOrReplaceChild(
-                "left_leg",
+                "right_leg",
                 CubeListBuilder.create().texOffs(16, 48).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, cubeDeformation),
-                PartPose.offset(1.9F, 12.0F, 0.0F)
+                PartPose.offset(-1.9F, 12.0F, 0.0F)
         );
 
         return LayerDefinition.create(meshdefinition, 64, 64);

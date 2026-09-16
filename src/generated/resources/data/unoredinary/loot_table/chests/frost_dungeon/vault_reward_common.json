@@ -34,7 +34,7 @@
                         },
                         {
                             "function": "minecraft:set_potion",
-                            "id": "unoredinary:strong_frostbitten"
+                            "id": "unoredinary:strong_frostbite"
                         }
                     ],
                     "name": "minecraft:tipped_arrow",

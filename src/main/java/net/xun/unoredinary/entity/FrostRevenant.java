@@ -26,6 +26,7 @@ import net.xun.unoredinary.client.animation.FrostRevenantAnimation;
 import net.xun.unoredinary.entity.ai.FrostRevenantPhaseRetreatGoal;
 import net.xun.unoredinary.entity.ai.FrostRevenantRangedAttackGoal;
 import net.xun.unoredinary.entity.projectile.FrostShard;
+import net.xun.unoredinary.registry.UOSounds;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -62,11 +63,11 @@ public class FrostRevenant extends Monster implements RangedAttackMob {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 36.0F)
-                .add(Attributes.ARMOR, 1.0F)
+                .add(Attributes.MAX_HEALTH, 40.0F)
+                .add(Attributes.ARMOR, 10.0F)
+                .add(Attributes.ARMOR_TOUGHNESS, 1.0F)
                 .add(Attributes.MOVEMENT_SPEED, 0.23F)
-                .add(Attributes.FOLLOW_RANGE, 35.0D)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 0.2D);
+                .add(Attributes.FOLLOW_RANGE, 35.0D);
     }
 
     public boolean isPhasing() {
@@ -141,7 +142,7 @@ public class FrostRevenant extends Monster implements RangedAttackMob {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.STRAY_AMBIENT;
+        return UOSounds.FROST_REVENANT_AMBIENT.get();
     }
 
     @Override

@@ -38,6 +38,8 @@ public class UOSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> FROST_ZOMBIE_DEATH = register("entity.frost_zombie.death");
     public static final DeferredHolder<SoundEvent, SoundEvent> FROST_ZOMBIE_STEP = register("entity.frost_zombie.step");
 
+    public static final DeferredHolder<SoundEvent, SoundEvent> FROST_REVENANT_AMBIENT = register("entity.frost_revenant.ambient");
+
     private static DeferredHolder<SoundEvent, SoundEvent> register(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(CommonUtils.modLoc(name)));
     }

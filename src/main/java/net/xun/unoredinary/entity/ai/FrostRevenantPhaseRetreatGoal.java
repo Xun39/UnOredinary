@@ -1,10 +1,12 @@
 package net.xun.unoredinary.entity.ai;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
 import net.xun.unoredinary.entity.FrostRevenant;
 
 import java.util.EnumSet;
@@ -14,7 +16,7 @@ public class FrostRevenantPhaseRetreatGoal extends Goal {
     private static final double SAFE_DISTANCE_SQR = 12.0D * 12.0D;
     private static final double PHASE_SPEED = 0.35D;
     private static final int MAX_PHASE_TICKS = 40;
-    private static final int COOLDOWN_TICKS = 100;
+    private static final int COOLDOWN_TICKS = 80;
 
     private final FrostRevenant revenant;
     private LivingEntity threat;
@@ -30,6 +32,8 @@ public class FrostRevenantPhaseRetreatGoal extends Goal {
 
     @Override
     public boolean canUse() {
+        if (this.revenant.getHealth() >= this.revenant.getMaxHealth() * 0.6F) return false;
+
         if (this.cooldown > 0) {
             this.cooldown--;
             return false;
@@ -48,6 +52,7 @@ public class FrostRevenantPhaseRetreatGoal extends Goal {
         this.hitBlock = false;
         this.lastAirPos = this.revenant.position();
         this.revenant.beginPhase();
+        this.revenant.heal(6.0F);
     }
 
     @Override

@@ -108,5 +108,13 @@
       "unoredinary:entity/frost_zombie/step_4",
       "unoredinary:entity/frost_zombie/step_5"
     ]
+  },
+  "entity.frost_revenant.ambient": {
+    "subtitle": "sounds.unoredinary.entity.frost_revenant.ambient",
+    "sounds": [
+      "unoredinary:entity/frost_revenant/idle_1",
+      "unoredinary:entity/frost_revenant/idle_2",
+      "unoredinary:entity/frost_revenant/idle_3"
+    ]
   }
 }

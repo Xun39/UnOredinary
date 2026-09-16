@@ -79,7 +79,8 @@ public class UOTemplatePools {
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/grand_hall"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/puzzle_hall"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/parkour_hall"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/rogue_hall"), 1)
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/rogue_hall"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/trial_connect_hall"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
         );

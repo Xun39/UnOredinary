@@ -55,9 +55,6 @@ public class UOStructures {
                                 new StructureSpawnOverride(
                                         StructureSpawnOverride.BoundingBoxType.STRUCTURE,
                                         WeightedRandomList.create(
-                                                new MobSpawnSettings.SpawnerData(EntityType.ZOMBIE, 60, 1, 3),
-                                                new MobSpawnSettings.SpawnerData(EntityType.SKELETON, 60, 1, 3),
-                                                new MobSpawnSettings.SpawnerData(EntityType.SPIDER, 80, 1, 2),
                                                 new MobSpawnSettings.SpawnerData(EntityType.STRAY, 100, 1, 4),
                                                 new MobSpawnSettings.SpawnerData(UOEntityTypes.FROST_ZOMBIE.get(), 100, 2, 4)
                                         )
