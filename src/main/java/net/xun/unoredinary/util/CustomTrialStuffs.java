@@ -2,56 +2,28 @@ package net.xun.unoredinary.util;
 
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomData;
+import net.minecraft.world.level.SpawnData;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.trialspawner.TrialSpawnerConfig;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootTable;
+import net.xun.unoredinary.registry.UOEntityTypes;
 import net.xun.unoredinary.registry.UOItems;
 import net.xun.unoredinary.world.loot.UOLootTableKeys;
 
+import java.util.Optional;
+
 // Just convenient stuffs
 public class CustomTrialStuffs {
-    public static ItemStack createFrostDungeonTrialSpawner() {
-        TrialSpawnerConfig config = new TrialSpawnerConfig(
-                4,
-                6.0F,
-                2.0F,
-                2.0F,
-                1.0F,
-                40,
-                SimpleWeightedRandomList.empty(),
-                SimpleWeightedRandomList.<ResourceKey<LootTable>>builder()
-                        .add(UOLootTableKeys.FROST_DUNGEON_SPAWNER_CONSUMABLES)
-                        .add(UOLootTableKeys.FROST_DUNGEON_SPAWNER_KEY)
-                        .build(),
-                BuiltInLootTables.SPAWNER_TRIAL_ITEMS_TO_DROP_WHEN_OMINOUS
-        );
-
-        CompoundTag configTag =  (CompoundTag) TrialSpawnerConfig.CODEC
-                .encodeStart(NbtOps.INSTANCE, config)
-                .getOrThrow();
-
-        CompoundTag blockEntityTag = new CompoundTag();
-
-        blockEntityTag.putString("id", "minecraft:trial_spawner");
-        blockEntityTag.put("normal_config", configTag);
-        blockEntityTag.put("ominous_config", configTag.copy());
-
-        ItemStack stack = new ItemStack(Blocks.TRIAL_SPAWNER);
-
-        stack.set(DataComponents.BLOCK_ENTITY_DATA, CustomData.of(blockEntityTag));
-        stack.set(DataComponents.CUSTOM_NAME, Component.translatable("trial_spawner.unoredinary.frost_dungeon"));
-
-        return stack;
-    }
-
     public static ItemStack createFrostDungeonVault() {
         CompoundTag configTag = new CompoundTag();
 
@@ -72,5 +44,112 @@ public class CustomTrialStuffs {
         stack.set(DataComponents.CUSTOM_NAME, Component.translatable("vault.unoredinary.frost_dungeon"));
 
         return stack;
+    }
+
+    public static ItemStack createFrostDungeonTrialSpawner(TrialSpawnerConfig config) {
+        CompoundTag configTag =  (CompoundTag) TrialSpawnerConfig.CODEC
+                .encodeStart(NbtOps.INSTANCE, config)
+                .getOrThrow();
+
+        CompoundTag blockEntityTag = new CompoundTag();
+
+        blockEntityTag.putString("id", "minecraft:trial_spawner");
+        blockEntityTag.put("normal_config", configTag);
+        blockEntityTag.put("ominous_config", configTag.copy());
+
+        ItemStack stack = new ItemStack(Blocks.TRIAL_SPAWNER);
+
+        stack.set(DataComponents.BLOCK_ENTITY_DATA, CustomData.of(blockEntityTag));
+        stack.set(DataComponents.CUSTOM_NAME, Component.translatable("trial_spawner.unoredinary.frost_dungeon"));
+
+        return stack;
+    }
+
+    public static ItemStack createFrostRevenantSpawner() {
+        CompoundTag entityTag = new CompoundTag();
+        entityTag.putString("id", EntityType.getKey(UOEntityTypes.FROST_REVENANT.get()).toString());
+
+        return createFrostDungeonTrialSpawner(
+                createConfig(
+                        entityTag,
+                        4,
+                        2,
+                        1,
+                        1,
+                        0.5F,
+                        20
+                )
+        );
+    }
+
+    public static ItemStack createFrostZombieSpawner(boolean isBaby) {
+        CompoundTag entityTag = new CompoundTag();
+        entityTag.putString("id", EntityType.getKey(UOEntityTypes.FROST_ZOMBIE.get()).toString());
+        entityTag.putBoolean("isBaby", isBaby);
+
+        return createFrostDungeonTrialSpawner(
+                createConfig(
+                        entityTag,
+                        4,
+                        6,
+                        isBaby ? 2 : 3,
+                        2,
+                        0.5F,
+                        20
+                )
+        );
+    }
+
+    public static ItemStack createStraySpawner(boolean melee) {
+        CompoundTag entityTag = new CompoundTag();
+        entityTag.putString("id", EntityType.getKey(EntityType.STRAY).toString());
+        if (melee) {
+            ListTag handItems = new ListTag();
+            CompoundTag crossbow = new CompoundTag();
+            crossbow.putString("id", "unoredinary:froststeel_sword");
+            crossbow.putInt("Count", 1);
+
+            handItems.add(crossbow);
+            entityTag.put("handItems", handItems);
+        }
+
+        return createFrostDungeonTrialSpawner(
+                createConfig(
+                        entityTag,
+                        4,
+                        6,
+                        3,
+                        2,
+                        0.5F,
+                        20
+                )
+        );
+    }
+
+    private static TrialSpawnerConfig createConfig(
+            CompoundTag entityTag,
+            int spawnRange,
+            int totalMobs,
+            float simultaneousMobs,
+            float totalMobsAddedPerPlayer,
+            float simultaneousMobsAddedPerPlayer,
+            int ticksBetweenSpawn
+    ) {
+        return new TrialSpawnerConfig(
+                spawnRange,
+                totalMobs,
+                simultaneousMobs,
+                totalMobsAddedPerPlayer,
+                simultaneousMobsAddedPerPlayer,
+                ticksBetweenSpawn,
+                SimpleWeightedRandomList.<SpawnData>builder()
+                        .add(new SpawnData(entityTag, Optional.empty(), Optional.empty()), 1)
+                        .build(),
+                SimpleWeightedRandomList.<ResourceKey<LootTable>>builder()
+                        .add(UOLootTableKeys.FROST_DUNGEON_SPAWNER_CONSUMABLES)
+                        .add(UOLootTableKeys.FROST_DUNGEON_SPAWNER_KEY)
+                        .build(),
+                BuiltInLootTables.SPAWNER_TRIAL_ITEMS_TO_DROP_WHEN_OMINOUS
+        );
     }
 }

@@ -50,7 +50,8 @@ public class UOTemplatePools {
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/connect/entrance_foundation"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/connect/ascending_ladder"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/connect/main_hall_connection"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/connect/redstone_door"), 1)
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/connect/redstone_door"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/connect/boss_connection"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
         );
@@ -80,7 +81,8 @@ public class UOTemplatePools {
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/puzzle_hall"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/parkour_hall"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/rogue_hall"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/trial_connect_hall"), 1)
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/trial_connect_hall"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/trial_connect_hall_2"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
         );

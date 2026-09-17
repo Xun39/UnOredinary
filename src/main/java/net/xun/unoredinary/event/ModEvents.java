@@ -7,6 +7,7 @@ import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.PathPackResources;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.ItemLike;
@@ -51,8 +52,12 @@ public class ModEvents {
         }
 
         if (event.getTabKey() == CreativeModeTabs.OP_BLOCKS) {
-            event.accept(CustomTrialStuffs.createFrostDungeonTrialSpawner(), CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY);
-            event.accept(CustomTrialStuffs.createFrostDungeonVault(), CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY);
+            event.accept(CustomTrialStuffs.createFrostRevenantSpawner(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.accept(CustomTrialStuffs.createFrostZombieSpawner(false), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.accept(CustomTrialStuffs.createFrostZombieSpawner(true), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.accept(CustomTrialStuffs.createStraySpawner(false), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.accept(CustomTrialStuffs.createStraySpawner(true), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.accept(CustomTrialStuffs.createFrostDungeonVault(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }
 

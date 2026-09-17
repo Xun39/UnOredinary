@@ -9,24 +9,6 @@
             "bounding_box": "full",
             "spawns": [
                 {
-                    "type": "minecraft:zombie",
-                    "maxCount": 3,
-                    "minCount": 1,
-                    "weight": 60
-                },
-                {
-                    "type": "minecraft:skeleton",
-                    "maxCount": 3,
-                    "minCount": 1,
-                    "weight": 60
-                },
-                {
-                    "type": "minecraft:spider",
-                    "maxCount": 2,
-                    "minCount": 1,
-                    "weight": 80
-                },
-                {
                     "type": "minecraft:stray",
                     "maxCount": 4,
                     "minCount": 1,
