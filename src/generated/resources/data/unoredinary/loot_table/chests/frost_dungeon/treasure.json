@@ -8,26 +8,6 @@
                     "type": "minecraft:item",
                     "functions": [
                         {
-                            "function": "minecraft:enchant_randomly"
-                        }
-                    ],
-                    "name": "minecraft:enchanted_book",
-                    "weight": 15
-                },
-                {
-                    "type": "minecraft:item",
-                    "name": "minecraft:name_tag",
-                    "weight": 10
-                },
-                {
-                    "type": "minecraft:item",
-                    "name": "minecraft:saddle",
-                    "weight": 10
-                },
-                {
-                    "type": "minecraft:item",
-                    "functions": [
-                        {
                             "add": false,
                             "count": {
                                 "type": "minecraft:uniform",
@@ -38,12 +18,17 @@
                         }
                     ],
                     "name": "minecraft:gold_ingot",
-                    "weight": 5
+                    "weight": 15
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:diamond",
+                    "weight": 10
                 },
                 {
                     "type": "minecraft:item",
                     "name": "unoredinary:sapphire",
-                    "weight": 3
+                    "weight": 5
                 }
             ],
             "rolls": {
@@ -78,7 +63,7 @@
                             "function": "minecraft:set_count"
                         }
                     ],
-                    "name": "minecraft:rotten_flesh",
+                    "name": "unoredinary:frost_flesh",
                     "weight": 15
                 },
                 {
@@ -94,40 +79,8 @@
                             "function": "minecraft:set_count"
                         }
                     ],
-                    "name": "minecraft:bone",
+                    "name": "minecraft:leather",
                     "weight": 15
-                },
-                {
-                    "type": "minecraft:item",
-                    "functions": [
-                        {
-                            "add": false,
-                            "count": {
-                                "type": "minecraft:uniform",
-                                "min": 1.0,
-                                "max": 2.0
-                            },
-                            "function": "minecraft:set_count"
-                        }
-                    ],
-                    "name": "minecraft:string",
-                    "weight": 15
-                },
-                {
-                    "type": "minecraft:item",
-                    "functions": [
-                        {
-                            "add": false,
-                            "count": {
-                                "type": "minecraft:uniform",
-                                "min": 3.0,
-                                "max": 6.0
-                            },
-                            "function": "minecraft:set_count"
-                        }
-                    ],
-                    "name": "minecraft:bone_meal",
-                    "weight": 10
                 },
                 {
                     "type": "minecraft:item",
@@ -143,11 +96,12 @@
                         }
                     ],
                     "name": "minecraft:bone_block",
-                    "weight": 5
+                    "weight": 10
                 },
                 {
                     "type": "minecraft:item",
-                    "name": "minecraft:rabbit_foot"
+                    "name": "minecraft:rabbit_foot",
+                    "weight": 5
                 }
             ],
             "rolls": 4.0

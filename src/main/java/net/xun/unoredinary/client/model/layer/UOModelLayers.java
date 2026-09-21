@@ -11,8 +11,9 @@ public class UOModelLayers {
     public static final ModelLayerLocation FROST_ZOMBIE_OUTER_ARMOR = registerOuterArmor("frost_zombie");
 
     public static final ModelLayerLocation FROST_REVENANT = registerDefault("frost_revenant");
-
     public static final ModelLayerLocation FROST_SHARD = registerDefault("frost_shard");
+
+    public static final ModelLayerLocation FROZEN_CATA = registerDefault("frozen_cata");
 
     private static ModelLayerLocation registerDefault(String path) {
         return createLocation(path, "main");

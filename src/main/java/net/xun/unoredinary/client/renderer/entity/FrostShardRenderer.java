@@ -15,10 +15,10 @@ import net.minecraft.world.phys.Vec3;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.client.model.layer.UOModelLayers;
 import net.xun.unoredinary.client.model.FrostShardModel;
-import net.xun.unoredinary.entity.projectile.FrostShard;
+import net.xun.unoredinary.entity.projectile.FrostShardEntity;
 
-public class FrostShardRenderer extends EntityRenderer<FrostShard> {
-    private final FrostShardModel<FrostShard> model;
+public class FrostShardRenderer extends EntityRenderer<FrostShardEntity> {
+    private final FrostShardModel<FrostShardEntity> model;
 
     public FrostShardRenderer(EntityRendererProvider.Context context) {
         super(context);
@@ -27,7 +27,7 @@ public class FrostShardRenderer extends EntityRenderer<FrostShard> {
     }
 
     @Override
-    public void render(FrostShard entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+    public void render(FrostShardEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
         poseStack.pushPose();
 
         Vec3 velocity = entity.getDeltaMovement();
@@ -55,7 +55,7 @@ public class FrostShardRenderer extends EntityRenderer<FrostShard> {
     }
 
     @Override
-    public ResourceLocation getTextureLocation(FrostShard entity) {
+    public ResourceLocation getTextureLocation(FrostShardEntity entity) {
         return CommonUtils.modLoc("textures/entity/frost_shard.png");
     }
 }

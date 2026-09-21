@@ -1,16 +1,19 @@
 package net.xun.unoredinary.event;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.packs.PackLocationInfo;
 import net.minecraft.server.packs.PackSelectionConfig;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.PathPackResources;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.vault.VaultBlockEntity;
+import net.minecraft.world.level.block.entity.vault.VaultServerData;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -18,9 +21,11 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.level.ChunkEvent;
 import net.xun.unoredinary.UnOredinary;
-import net.xun.unoredinary.entity.FrostRevenant;
-import net.xun.unoredinary.entity.FrostZombie;
+import net.xun.unoredinary.entity.FrostRevenantEntity;
+import net.xun.unoredinary.entity.FrostZombieEntity;
+import net.xun.unoredinary.entity.FrozenCataEntity;
 import net.xun.unoredinary.registry.UOEntityTypes;
 import net.xun.unoredinary.registry.UOFluids;
 import net.xun.unoredinary.registry.UOItems;
@@ -40,8 +45,9 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onEntityAttributesCreated(EntityAttributeCreationEvent event) {
-        event.put(UOEntityTypes.FROST_ZOMBIE.get(), FrostZombie.createAttributes().build());
-        event.put(UOEntityTypes.FROST_REVENANT.get(), FrostRevenant.createAttributes().build());
+        event.put(UOEntityTypes.FROST_ZOMBIE.get(), FrostZombieEntity.createAttributes().build());
+        event.put(UOEntityTypes.FROST_REVENANT.get(), FrostRevenantEntity.createAttributes().build());
+        event.put(UOEntityTypes.FROZEN_CATA.get(), FrozenCataEntity.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -97,4 +103,35 @@ public class ModEvents {
             }
         }
     }
+
+//    @SubscribeEvent
+//    public static void onChunkLoad(ChunkEvent.Load event) {
+//        if (!event.isNewChunk()) return;
+//        if (!(event.getLevel() instanceof ServerLevel level)) return;
+//
+//        ChunkPos chunkPos = event.getChunk().getPos();
+//
+//        //level.getServer().execute(() -> resetFrostDungeonVaults(level, chunkPos));
+//    }
+//
+//    private static void resetFrostDungeonVaults(ServerLevel level, ChunkPos chunkPos) {
+//        var chunk = level.getChunk(chunkPos.x, chunkPos.z);
+//
+//        for (BlockEntity blockEntity : chunk.getBlockEntities().values()) {
+//            if (!(blockEntity instanceof VaultBlockEntity vault)) continue;
+//            if (!isFrostDungeonVault(vault)) continue;
+//
+//            resetVault(vault);
+//        }
+//    }
+//
+//    private static boolean isFrostDungeonVault(VaultBlockEntity vault) {
+//        return vault.getConfig().keyItem().is(UOItems.FROST_KEY.get());
+//    }
+//
+//    private static void resetVault(VaultBlockEntity vault) {
+//        VaultServerData serverData = vault.getServerData();
+//        if (serverData != null) serverData.pauseStateUpdatingUntil(0L);
+//        vault.setChanged();
+//    }
 }

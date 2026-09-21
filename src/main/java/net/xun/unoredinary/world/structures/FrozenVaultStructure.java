@@ -1,27 +1,16 @@
-package net.xun.unoredinary.world.structures.type;
+package net.xun.unoredinary.world.structures;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.util.random.WeightedRandomList;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.ChunkPos;
-import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.structure.*;
-import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilder;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
-import net.neoforged.neoforge.common.Tags;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.registry.UOStructureTypes;
 import net.xun.unoredinary.world.structures.pieces.FrozenVaultPiece;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class FrozenVaultStructure extends Structure {
     public static final MapCodec<FrozenVaultStructure> CODEC = simpleCodec(FrozenVaultStructure::new);

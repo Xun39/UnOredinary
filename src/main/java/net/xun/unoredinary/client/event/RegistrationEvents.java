@@ -14,6 +14,7 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.xun.unoredinary.UnOredinary;
+import net.xun.unoredinary.client.model.FrozenCataModel;
 import net.xun.unoredinary.client.renderer.blockentity.TransenchantTableRenderer;
 import net.xun.unoredinary.client.model.FrostRevenantModel;
 import net.xun.unoredinary.client.model.FrostShardModel;
@@ -28,6 +29,7 @@ import net.xun.unoredinary.client.particle.FrostNovaParticle;
 import net.xun.unoredinary.client.particle.RimeParticle;
 import net.xun.unoredinary.client.particle.SubzeroFrostParticle;
 import net.xun.unoredinary.client.particle.TransenchantParticle;
+import net.xun.unoredinary.client.renderer.entity.FrozenCataRenderer;
 import net.xun.unoredinary.registry.*;
 
 @EventBusSubscriber(modid = UnOredinary.MOD_ID)
@@ -38,6 +40,7 @@ public class RegistrationEvents {
         EntityRenderers.register(UOEntityTypes.FROST_ZOMBIE.get(), FrostZombieRenderer::new);
         EntityRenderers.register(UOEntityTypes.FROST_REVENANT.get(), FrostRevenantRenderer::new);
         EntityRenderers.register(UOEntityTypes.FROST_SHARD.get(), FrostShardRenderer::new);
+        EntityRenderers.register(UOEntityTypes.FROZEN_CATA.get(), FrozenCataRenderer::new);
     }
 
     @SubscribeEvent
@@ -60,8 +63,9 @@ public class RegistrationEvents {
         event.registerLayerDefinition(UOModelLayers.FROST_ZOMBIE_OUTER_ARMOR, () -> outerArmorLayerdefinition);
 
         event.registerLayerDefinition(UOModelLayers.FROST_REVENANT, FrostRevenantModel::createBodyLayer);
-
         event.registerLayerDefinition(UOModelLayers.FROST_SHARD, FrostShardModel::createBodyLayer);
+
+        event.registerLayerDefinition(UOModelLayers.FROZEN_CATA, FrozenCataModel::createBodyLayer);
     }
 
     @SubscribeEvent

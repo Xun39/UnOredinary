@@ -6,9 +6,9 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.xun.unoredinary.entity.projectile.FrostShard;
+import net.xun.unoredinary.entity.projectile.FrostShardEntity;
 
-public class FrostShardModel<T extends FrostShard> extends EntityModel<T> {
+public class FrostShardModel<T extends FrostShardEntity> extends EntityModel<T> {
     private final ModelPart root;
 
     public FrostShardModel(ModelPart root) {
@@ -34,7 +34,7 @@ public class FrostShardModel<T extends FrostShard> extends EntityModel<T> {
     }
 
     @Override
-    public void setupAnim(FrostShard entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(FrostShardEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
     }
 
     @Override

@@ -1,13 +1,11 @@
 package net.xun.unoredinary.entity.ai;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
-import net.xun.unoredinary.entity.FrostRevenant;
+import net.xun.unoredinary.entity.FrostRevenantEntity;
 
 import java.util.EnumSet;
 
@@ -18,14 +16,14 @@ public class FrostRevenantPhaseRetreatGoal extends Goal {
     private static final int MAX_PHASE_TICKS = 40;
     private static final int COOLDOWN_TICKS = 80;
 
-    private final FrostRevenant revenant;
+    private final FrostRevenantEntity revenant;
     private LivingEntity threat;
     private int phaseTicks;
     private int cooldown;
     private Vec3 lastAirPos;
     private boolean hitBlock;
 
-    public FrostRevenantPhaseRetreatGoal(FrostRevenant revenant) {
+    public FrostRevenantPhaseRetreatGoal(FrostRevenantEntity revenant) {
         this.revenant = revenant;
         this.setFlags(EnumSet.of(Flag.MOVE, Flag.JUMP, Flag.TARGET, Flag.LOOK));
     }

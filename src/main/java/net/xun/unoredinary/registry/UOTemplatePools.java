@@ -81,7 +81,7 @@ public class UOTemplatePools {
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/puzzle_hall"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/parkour_hall"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/rogue_hall"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/trial_connect_hall"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/trial_connect_hall_1"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/halls/trial_connect_hall_2"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
@@ -90,9 +90,7 @@ public class UOTemplatePools {
         context.register(FROST_DUNGEON_MAZES, new StructureTemplatePool(
                 templatePools.getOrThrow(Pools.EMPTY),
                 ImmutableList.of(
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/mazes/ice_maze_1"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/mazes/ice_maze_2"), 1),
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/mazes/ice_maze_3"), 1)
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/mazes/ice_maze_1"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
         );
@@ -122,7 +120,7 @@ public class UOTemplatePools {
         context.register(FROST_DUNGEON_MONSTER_ROOMS_N, new StructureTemplatePool(
                 templatePools.getOrThrow(FROST_DUNGEON_7x7_DECORATIONS),
                 ImmutableList.of(
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_n"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_n_1"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_n_2"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
@@ -131,7 +129,7 @@ public class UOTemplatePools {
         context.register(FROST_DUNGEON_MONSTER_ROOMS_I, new StructureTemplatePool(
                 templatePools.getOrThrow(FROST_DUNGEON_7x7_DECORATIONS),
                 ImmutableList.of(
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_i"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_i_1"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_i_2"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
@@ -140,7 +138,7 @@ public class UOTemplatePools {
         context.register(FROST_DUNGEON_MONSTER_ROOMS_L, new StructureTemplatePool(
                 templatePools.getOrThrow(FROST_DUNGEON_7x7_DECORATIONS),
                 ImmutableList.of(
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_l"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_l_1"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_l_2"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)
@@ -149,7 +147,7 @@ public class UOTemplatePools {
         context.register(FROST_DUNGEON_MONSTER_ROOMS_T, new StructureTemplatePool(
                 templatePools.getOrThrow(FROST_DUNGEON_7x7_DECORATIONS),
                 ImmutableList.of(
-                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_t"), 1),
+                        Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_t_1"), 1),
                         Pair.of(StructurePoolElement.single("unoredinary:frost_dungeon/monster_rooms/monster_room_t_2"), 1)
                 ),
                 StructureTemplatePool.Projection.RIGID)

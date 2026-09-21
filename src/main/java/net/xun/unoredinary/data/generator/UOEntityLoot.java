@@ -45,6 +45,7 @@ public class UOEntityLoot extends EntityLootSubProvider {
         );
 
         add(UOEntityTypes.FROST_REVENANT.get(), LootTable.lootTable());
+        add(UOEntityTypes.FROZEN_CATA.get(), LootTable.lootTable());
     }
 
     @Override

@@ -9,23 +9,23 @@ import net.minecraft.resources.ResourceLocation;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.client.model.layer.UOModelLayers;
 import net.xun.unoredinary.client.model.FrostRevenantModel;
-import net.xun.unoredinary.entity.FrostRevenant;
+import net.xun.unoredinary.entity.FrostRevenantEntity;
 import org.jetbrains.annotations.Nullable;
 
-public class FrostRevenantRenderer extends MobRenderer<FrostRevenant, FrostRevenantModel<FrostRevenant>> {
+public class FrostRevenantRenderer extends MobRenderer<FrostRevenantEntity, FrostRevenantModel<FrostRevenantEntity>> {
     public FrostRevenantRenderer(EntityRendererProvider.Context context) {
         super(context, new FrostRevenantModel<>(context.bakeLayer(UOModelLayers.FROST_REVENANT)), 0.6F);
     }
 
     @Override
-    public ResourceLocation getTextureLocation(FrostRevenant entity) {
+    public ResourceLocation getTextureLocation(FrostRevenantEntity entity) {
         return entity.isPhasing()
                 ? CommonUtils.modLoc("textures/entity/frost_revenant/frost_revenant_phasing.png")
                 : CommonUtils.modLoc("textures/entity/frost_revenant/frost_revenant.png");
     }
 
     @Override
-    protected @Nullable RenderType getRenderType(FrostRevenant livingEntity, boolean bodyVisible, boolean translucent, boolean glowing) {
+    protected @Nullable RenderType getRenderType(FrostRevenantEntity livingEntity, boolean bodyVisible, boolean translucent, boolean glowing) {
         ResourceLocation texture = this.getTextureLocation(livingEntity);
         if (livingEntity.isPhasing()) {
             return RenderType.entityTranslucent(texture);
@@ -35,7 +35,7 @@ public class FrostRevenantRenderer extends MobRenderer<FrostRevenant, FrostReven
     }
 
     @Override
-    public void render(FrostRevenant entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
+    public void render(FrostRevenantEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
         super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
     }
 }

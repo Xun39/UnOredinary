@@ -11,8 +11,6 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
-import net.minecraft.world.level.levelgen.heightproviders.HeightProvider;
-import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureSpawnOverride;
 import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
@@ -20,12 +18,12 @@ import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
 import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSettings;
 import net.neoforged.neoforge.common.Tags;
 import net.xun.lib.common.api.util.CommonUtils;
+import net.xun.lib.common.api.world.structures.TerrainAwareJigsawStructure;
 import net.xun.unoredinary.util.UOTags;
-import net.xun.unoredinary.world.structures.type.FrostDungeonStructure;
-import net.xun.unoredinary.world.structures.type.FrozenVaultStructure;
+import net.xun.unoredinary.world.structures.FrostDungeonStructure;
+import net.xun.unoredinary.world.structures.FrozenVaultStructure;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -40,11 +38,11 @@ public class UOStructures {
 
     public static void bootstrap(BootstrapContext<Structure> context) {
         context.register(FROZEN_VAULT, new FrozenVaultStructure(
-                new Structure.StructureSettings(
-                        context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_ICY),
-                        new HashMap<>(),
-                        GenerationStep.Decoration.UNDERGROUND_STRUCTURES,
-                        TerrainAdjustment.BEARD_THIN)
+                        new Structure.StructureSettings(
+                                context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_ICY),
+                                new HashMap<>(),
+                                GenerationStep.Decoration.UNDERGROUND_STRUCTURES,
+                                TerrainAdjustment.BEARD_THIN)
                 )
         );
         context.register(FROST_DUNGEON, new FrostDungeonStructure(
@@ -67,10 +65,13 @@ public class UOStructures {
                 Optional.empty(),
                 16,
                 ConstantHeight.of(VerticalAnchor.absolute(1)),
-                Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+                false,
                 116,
                 JigsawStructure.DEFAULT_DIMENSION_PADDING,
-                LiquidSettings.IGNORE_WATERLOGGING)
+                LiquidSettings.IGNORE_WATERLOGGING,
+                new TerrainAwareJigsawStructure.TerrainPlacement(
+                        0, 11, 0, 11, 2, 1, 3, Heightmap.Types.WORLD_SURFACE_WG
+                ))
         );
     }
 }

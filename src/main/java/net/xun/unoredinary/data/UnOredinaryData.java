@@ -18,7 +18,6 @@ public class UnOredinaryData {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
-
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> registries = event.getLookupProvider();

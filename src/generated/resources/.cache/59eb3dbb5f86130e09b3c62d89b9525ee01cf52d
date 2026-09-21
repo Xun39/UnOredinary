@@ -1,4 +1,4 @@
-// 1.21.1	2026-09-15T23:21:32.5545231	Loot Tables
+// 1.21.1	2026-09-20T21:59:31.3156627	Loot Tables
 6236a1e6f4906ac97f028c797627615c20f55350 data/unoredinary/loot_table/blocks/cobbled_polar_stone.json
 ef37d9ad59cf32a977596807c885ec0d1d458528 data/unoredinary/loot_table/blocks/cobbled_polar_stone_slab.json
 cd58448a26d78d328a0a046141338ebe5886bd6d data/unoredinary/loot_table/blocks/cobbled_polar_stone_stairs.json
@@ -33,10 +33,10 @@ dffff426995356c2c6a1e5f18b9ce6140dd15cfa data/unoredinary/loot_table/blocks/prim
 b7bcf932654f2915ecdcf3deebd28193147be0b8 data/unoredinary/loot_table/blocks/sapphire_ore.json
 5f1c987bd94585b0f890e2c9028a42f0405564bb data/unoredinary/loot_table/blocks/transenchanting_table.json
 4c07493ab4f857f8cc0bea7d30009755cb55f1a7 data/unoredinary/loot_table/chests/frost_dungeon/center.json
-e18907823e8cd94be399775a54ed839c1ef02679 data/unoredinary/loot_table/chests/frost_dungeon/grand_hall.json
+8d8fc23efc4c6b87b4b0f21516c4057dd6c4b21d data/unoredinary/loot_table/chests/frost_dungeon/grand_hall.json
 8720c2d71a3e34dc2e9cb6bb4707971c000006f9 data/unoredinary/loot_table/chests/frost_dungeon/intersection.json
-14ddb85f9d0ef3ace018229d1928357c5106b8f5 data/unoredinary/loot_table/chests/frost_dungeon/monster_room.json
-99fde0d74e49e30d93682349e1dcbb897f6ddb0a data/unoredinary/loot_table/chests/frost_dungeon/treasure.json
+200d17615093d8e8002dc893614f0b323285a3e9 data/unoredinary/loot_table/chests/frost_dungeon/monster_room.json
+f5f94c79548101f3185dbad85b065a12cc762316 data/unoredinary/loot_table/chests/frost_dungeon/treasure.json
 1d421a452b968a21917a9ea47c80ff243a0361d7 data/unoredinary/loot_table/chests/frost_dungeon/vault_reward.json
 071bcf6f181fcb9b5b554977eaf5831f65b56007 data/unoredinary/loot_table/chests/frost_dungeon/vault_reward_common.json
 9f5d71e5b673bffc49b8769398e1a5fca25f60be data/unoredinary/loot_table/chests/frost_dungeon/vault_reward_rare.json
@@ -44,5 +44,6 @@ be2728de0c14692bda21ffa618778342b71b78ce data/unoredinary/loot_table/chests/fros
 a72adfb5b6982d71d36f91d43f2d94758fa591ae data/unoredinary/loot_table/chests/frozen_vault.json
 244ff67a50ef6d766c4101a99ca57891d0f3f486 data/unoredinary/loot_table/entities/frost_revenant.json
 739a82e3104429e4f06877b037c12213c1f0d760 data/unoredinary/loot_table/entities/frost_zombie.json
+392cb97c1ad925e948b9d9427aa93e027835b3a3 data/unoredinary/loot_table/entities/frozen_cata.json
 b752f2722ae9066e6474442069edf644ccc80ebc data/unoredinary/loot_table/spawners/consumables.json
 105768bf1c43a4ed7ab0ac315985f7ceea31e47f data/unoredinary/loot_table/spawners/key.json

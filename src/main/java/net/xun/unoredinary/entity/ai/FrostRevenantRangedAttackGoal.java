@@ -2,12 +2,12 @@ package net.xun.unoredinary.entity.ai;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.xun.unoredinary.entity.FrostRevenant;
+import net.xun.unoredinary.entity.FrostRevenantEntity;
 
 import java.util.EnumSet;
 
 public class FrostRevenantRangedAttackGoal extends Goal {
-    private final FrostRevenant mob;
+    private final FrostRevenantEntity mob;
     private final double speedModifier;
     private final int attackInterval;
     private final int warmupTicks;
@@ -17,7 +17,7 @@ public class FrostRevenantRangedAttackGoal extends Goal {
     private int warmupTimer = -1;
     private int seeTime;
 
-    public FrostRevenantRangedAttackGoal(FrostRevenant mob, double speedModifier, int attackInterval, int warmupTicks, float attackRadius) {
+    public FrostRevenantRangedAttackGoal(FrostRevenantEntity mob, double speedModifier, int attackInterval, int warmupTicks, float attackRadius) {
         this.mob = mob;
         this.speedModifier = speedModifier;
         this.attackInterval = attackInterval;

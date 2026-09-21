@@ -1,8 +1,9 @@
 {
     "type": "unoredinary:frost_dungeon",
     "biomes": "#unoredinary:has_structure/frost_dungeon",
+    "dimension_padding": 0,
+    "liquid_settings": "ignore_waterlogging",
     "max_distance_from_center": 116,
-    "project_start_to_heightmap": "WORLD_SURFACE_WG",
     "size": 16,
     "spawn_overrides": {
         "monster": {
@@ -27,5 +28,16 @@
         "absolute": 1
     },
     "start_pool": "unoredinary:frost_dungeon/start",
-    "step": "underground_structures"
+    "step": "underground_structures",
+    "terrain_placement": {
+        "heightmap": "WORLD_SURFACE_WG",
+        "max_variance": 2,
+        "max_x": 11,
+        "max_z": 11,
+        "min_x": 0,
+        "min_z": 0,
+        "sample_step": 1,
+        "vertical_offset": 3
+    },
+    "use_expansion_hack": false
 }

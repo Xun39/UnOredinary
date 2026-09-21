@@ -8,9 +8,9 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 import net.xun.unoredinary.client.animation.FrostRevenantAnimation;
-import net.xun.unoredinary.entity.FrostRevenant;
+import net.xun.unoredinary.entity.FrostRevenantEntity;
 
-public class FrostRevenantModel<T extends FrostRevenant> extends HierarchicalModel<T> {
+public class FrostRevenantModel<T extends FrostRevenantEntity> extends HierarchicalModel<T> {
 	private final ModelPart root;
 	private final ModelPart head;
 	private final ModelPart body;

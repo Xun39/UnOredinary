@@ -19,7 +19,6 @@ import net.xun.lib.common.api.util.CommonUtils;
 import java.util.Optional;
 
 public class UOStructureSets {
-
     public static final ResourceKey<StructureSet> FROZEN_VAULTS = createKey("frozen_vaults");
     public static final ResourceKey<StructureSet> FROST_DUNGEONS = createKey("frost_dungeons");
 

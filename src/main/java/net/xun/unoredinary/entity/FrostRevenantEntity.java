@@ -25,21 +25,21 @@ import net.xun.unoredinary.client.animation.AnimationController;
 import net.xun.unoredinary.client.animation.FrostRevenantAnimation;
 import net.xun.unoredinary.entity.ai.FrostRevenantPhaseRetreatGoal;
 import net.xun.unoredinary.entity.ai.FrostRevenantRangedAttackGoal;
-import net.xun.unoredinary.entity.projectile.FrostShard;
+import net.xun.unoredinary.entity.projectile.FrostShardEntity;
 import net.xun.unoredinary.registry.UOSounds;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class FrostRevenant extends Monster implements RangedAttackMob {
-    private static final EntityDataAccessor<Boolean> PHASING = SynchedEntityData.defineId(FrostRevenant.class, EntityDataSerializers.BOOLEAN);
+public class FrostRevenantEntity extends Monster implements RangedAttackMob {
+    private static final EntityDataAccessor<Boolean> PHASING = SynchedEntityData.defineId(FrostRevenantEntity.class, EntityDataSerializers.BOOLEAN);
 
-    public final AnimationController<FrostRevenant> controller = AnimationController.builder(this)
+    public final AnimationController<FrostRevenantEntity> controller = AnimationController.builder(this)
             .animation("idle", FrostRevenantAnimation.IDLE)
             .animation("attack", FrostRevenantAnimation.ATTACK)
             .build();
 
-    public FrostRevenant(EntityType<? extends Monster> entityType, Level level) {
+    public FrostRevenantEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
     }
 
@@ -129,7 +129,7 @@ public class FrostRevenant extends Monster implements RangedAttackMob {
 
         Vec3 direction = predicted.subtract(origin);
 
-        FrostShard shard = new FrostShard(this, direction.normalize(), this.level());
+        FrostShardEntity shard = new FrostShardEntity(this, direction.normalize(), this.level());
         shard.setPos(origin.x, origin.y - 0.1D, origin.z);
 
         float inaccuracy = Mth.clamp(1.5F - velocity, 0.5F, 1.5F);
@@ -158,16 +158,13 @@ public class FrostRevenant extends Monster implements RangedAttackMob {
     @Override
     public void tick() {
         super.tick();
-        if (this.level().isClientSide) {
-            controller.tick("idle");
-            controller.tickOneShot("attack");
-        }
+        controller.tick();
     }
 
     @Override
     public void handleEntityEvent(byte id) {
         if (id == 4) {
-            controller.playOneShot("attack");
+            controller.playAnimation("attack");
         } else {
             super.handleEntityEvent(id);
         }

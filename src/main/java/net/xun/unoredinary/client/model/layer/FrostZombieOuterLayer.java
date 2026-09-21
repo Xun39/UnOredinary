@@ -8,21 +8,21 @@ import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.client.model.FrostZombieModel;
-import net.xun.unoredinary.entity.FrostZombie;
+import net.xun.unoredinary.entity.FrostZombieEntity;
 
-public class FrostZombieOuterLayer extends RenderLayer<FrostZombie, FrostZombieModel> {
+public class FrostZombieOuterLayer extends RenderLayer<FrostZombieEntity, FrostZombieModel> {
 
     private static final ResourceLocation FROST_ZOMBIE_OUTER_LAYER_LOCATION = CommonUtils.modLoc("textures/entity/frost_zombie/frost_zombie_outer_layer.png");
 
     private final FrostZombieModel model;
 
-    public FrostZombieOuterLayer(RenderLayerParent<FrostZombie, FrostZombieModel> renderer, EntityModelSet modelSet) {
+    public FrostZombieOuterLayer(RenderLayerParent<FrostZombieEntity, FrostZombieModel> renderer, EntityModelSet modelSet) {
         super(renderer);
         this.model = new FrostZombieModel(modelSet.bakeLayer(UOModelLayers.FROST_ZOMBIE_OUTER_LAYER));
     }
 
     @Override
-    public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, FrostZombie livingEntity, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, FrostZombieEntity livingEntity, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch) {
         coloredCutoutModelCopyLayerRender(
                 this.getParentModel(),
                 this.model,

@@ -15,8 +15,8 @@ import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
 import net.xun.unoredinary.registry.UOMobEffects;
 import net.xun.unoredinary.registry.UOSounds;
 
-public class FrostZombie extends Zombie {
-    public FrostZombie(EntityType<? extends Zombie> entityType, Level level) {
+public class FrostZombieEntity extends Zombie {
+    public FrostZombieEntity(EntityType<? extends Zombie> entityType, Level level) {
         super(entityType, level);
     }
 

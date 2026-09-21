@@ -69,7 +69,7 @@
         {
             "element": {
                 "element_type": "minecraft:single_pool_element",
-                "location": "unoredinary:frost_dungeon/halls/trial_connect_hall",
+                "location": "unoredinary:frost_dungeon/halls/trial_connect_hall_1",
                 "processors": {
                     "processors": []
                 },

@@ -16,12 +16,12 @@ import net.xun.unoredinary.registry.UOMobEffects;
 import net.xun.unoredinary.registry.UOParticleTypes;
 import org.jetbrains.annotations.Nullable;
 
-public class FrostShard extends AbstractHurtingProjectile {
-    public FrostShard(EntityType<? extends AbstractHurtingProjectile> entityType, Level level) {
+public class FrostShardEntity extends AbstractHurtingProjectile {
+    public FrostShardEntity(EntityType<? extends AbstractHurtingProjectile> entityType, Level level) {
         super(entityType, level);
     }
 
-    public FrostShard(LivingEntity owner, Vec3 movement, Level level) {
+    public FrostShardEntity(LivingEntity owner, Vec3 movement, Level level) {
         super(UOEntityTypes.FROST_SHARD.get(), owner, movement, level);
     }
 

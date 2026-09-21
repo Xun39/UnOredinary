@@ -8,9 +8,9 @@ import net.xun.lib.common.api.util.CommonUtils;
 import net.xun.unoredinary.client.model.layer.UOModelLayers;
 import net.xun.unoredinary.client.model.FrostZombieModel;
 import net.xun.unoredinary.client.model.layer.FrostZombieOuterLayer;
-import net.xun.unoredinary.entity.FrostZombie;
+import net.xun.unoredinary.entity.FrostZombieEntity;
 
-public class FrostZombieRenderer extends AbstractZombieRenderer<FrostZombie, FrostZombieModel> {
+public class FrostZombieRenderer extends AbstractZombieRenderer<FrostZombieEntity, FrostZombieModel> {
 
     private static final ResourceLocation LOCATION = CommonUtils.modLoc("textures/entity/frost_zombie/frost_zombie.png");
 

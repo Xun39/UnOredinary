@@ -3,7 +3,7 @@
         {
             "element": {
                 "element_type": "minecraft:single_pool_element",
-                "location": "unoredinary:frost_dungeon/monster_rooms/monster_room_t",
+                "location": "unoredinary:frost_dungeon/monster_rooms/monster_room_t_1",
                 "processors": {
                     "processors": []
                 },
