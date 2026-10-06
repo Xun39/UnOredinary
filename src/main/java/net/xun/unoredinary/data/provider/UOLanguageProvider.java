@@ -11,6 +11,7 @@ import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.xun.lib.common.api.item.armor.ArmorSet;
 import net.xun.lib.common.api.item.tools.ToolSet;
+import net.xun.lib.common.api.util.TranslationUtil;
 import net.xun.unoredinary.UnOredinary;
 
 import java.util.Locale;
@@ -76,6 +77,15 @@ public abstract class UOLanguageProvider extends LanguageProvider {
 
     public void translateTag(TagKey<?> tag, String name) {
         this.add(String.format("tag.%s.%s.%s", tag.registry().location().getPath(), tag.location().getNamespace(), tag.location().getPath().replace('/', '.')), name);
+    }
+
+    public void translateConfigCategory(String categoryName, String configType, String translation) {
+        add(TranslationUtil.translationKey("config", "unoredinary", configType, "category", categoryName), translation);
+    }
+
+    public void translateConfigOption(String optionPath, String optionTranslation, String optionDescription) {
+        add(TranslationUtil.translationKey("config", "unoredinary", "option", optionPath), optionTranslation);
+        add(TranslationUtil.translationKey("config", "unoredinary", "option", optionPath, "description"), optionDescription);
     }
 
     public void translateConfig(String key, String name) {

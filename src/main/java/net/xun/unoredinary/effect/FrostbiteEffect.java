@@ -6,6 +6,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.xun.lib.common.api.util.CommonUtils;
+import net.xun.lib.common.api.util.ResourceUtil;
 
 public class FrostbiteEffect extends MobEffect {
 
@@ -13,7 +14,7 @@ public class FrostbiteEffect extends MobEffect {
         super(MobEffectCategory.HARMFUL, 0x33b2e7);
         this.addAttributeModifier(
                 Attributes.MOVEMENT_SPEED,
-                CommonUtils.modLoc("frostbite_slow"),
+                ResourceUtil.modLoc("frostbite_slow"),
                 -0.2D,
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
         );

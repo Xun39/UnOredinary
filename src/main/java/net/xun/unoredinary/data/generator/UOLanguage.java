@@ -230,44 +230,163 @@ public class UOLanguage extends UOLanguageProvider {
         translateTag(UOTags.Items.NUGGETS_LUMINIUM, "Luminium Nuggets");
 
         /* ------------------------------ CONFIGURATIONS ------------------------------ */
-        translateConfig("froststeel", "Froststeel");
-        translateConfig("glacialite", "Glacialite");
-        translateConfig("luminium", "Luminium");
+        translateConfigCategory("armor_effect", "server", "Armor Effects");
+        translateConfigCategory("tool_effect", "server", "Tool Effects");
 
-        // Tool Effect Configs
-        translateConfig("tool_effects", "Tool Effects");
+        // Armor Effects — Luminium
+        translateConfigOption(
+                "armorEffect.luminium.enable",
+                "Enable",
+                "Disabling this setting will turn off all armor effects of Luminium Armor."
+        );
 
-        translateConfig("hit_particles", "Do hit particles spawn");
-        translateConfig("enable_tool", "Enable Tool Effects");
-        translateConfig("enable_normal", "Enable Normal Effect");
+        translateConfigOption(
+                "armorEffect.luminium.enableNightVision",
+                "Night Vision",
+                "Enables the Night Vision effect provided by Luminium Armor."
+        );
 
-        translateConfig("enable_frost_nova", "Enable Frost Nova");
-        translateConfig("frost_nova_to_passive", "Apply Frost Nova to passive Mobs");
-        translateConfig("frost_nova_sound", "Enable Frost Nova Sound Effect");
+        // Armor Effects — Froststeel
+        translateConfigOption(
+                "armorEffect.froststeel.enable",
+                "Enable",
+                "Disabling this setting will turn off all armor effects of Froststeel Armor."
+        );
 
-        translateConfig("enable_glowing_on_hit", "Enable Glowing Effect On Hit");
+        translateConfigOption(
+                "armorEffect.froststeel.enableFrostWalker",
+                "Frost Walker",
+                "Enables the Frost Walker effect provided by Froststeel Armor."
+        );
 
-        // Armor Effect Configs
-        translateConfig("armor_effects", "Armor Effects");
+        translateConfigOption(
+                "armorEffect.froststeel.immuneToHotFloor",
+                "Hot Floor Immunity",
+                "Makes Froststeel Armor immune to damage from hot floors."
+        );
 
-        translateConfig("only_player", "Affect Players Only");
+        translateConfigOption(
+                "armorEffect.froststeel.frostWalkerRadius",
+                "Frost Walker Radius",
+                "Sets the radius of the Frost Walker effect for Froststeel Armor."
+        );
 
-        translateConfig("hurt_particles", "Do damage particles spawn");
-        translateConfig("enable_armor", "Enable Armor Effects");
+        // Armor Effects — Glacialite
+        translateConfigOption(
+                "armorEffect.glacialite.enable",
+                "Enable",
+                "Disabling this setting will turn off all armor effects of Glacialite Armor."
+        );
 
-        translateConfig("enable_frost_walker", "Enable Frost Walker");
-        translateConfig("enable_slowness_immunity", "Enable Slowness Immunity");
-        translateConfig("immune_hot_floor_damage", "Immune to Hot Floor Damage");
-        translateConfig("enable_thorns", "Enable Thorns");
-        translateConfig("can_walk_on_powder_snow", "Can walk on powder snow");
-        translateConfig("frost_walker_rad", "Frost Walker effect's Radius");
+        translateConfigOption(
+                "armorEffect.glacialite.enableFrostWalker",
+                "Frost Walker",
+                "Enables the Frost Walker effect provided by Glacialite Armor."
+        );
 
-        translateConfig("enable_night_vision", "Enable Night Vision");
+        translateConfigOption(
+                "armorEffect.glacialite.immuneToSlowness",
+                "Slowness Immunity",
+                "Makes Glacialite Armor immune to Slowness."
+        );
 
-        // Particle Configs
-        translateConfig("particle_ops", "Particle Options");
-        translateConfig("frost_nova_par", "Frost Nova");
+        translateConfigOption(
+                "armorEffect.glacialite.thorns",
+                "Thorns",
+                "Enables the Thorns effect provided by Glacialite Armor."
+        );
 
-        translateConfig("emissive", "Emissive Rendering");
+        translateConfigOption(
+                "armorEffect.glacialite.immuneToHotFloor",
+                "Hot Floor Immunity",
+                "Makes Glacialite Armor immune to damage from hot floors."
+        );
+
+        translateConfigOption(
+                "armorEffect.glacialite.walkOnPowderSnow",
+                "Walk on Powder Snow",
+                "Allows Glacialite Armor to walk on powder snow without sinking."
+        );
+
+        translateConfigOption(
+                "armorEffect.glacialite.frostWalkerRadius",
+                "Frost Walker Radius",
+                "Sets the radius of the Frost Walker effect for Glacialite Armor."
+        );
+
+        translateConfigOption(
+                "armorEffect.glacialite.damageParticle",
+                "Damage Particles",
+                "Enables damage particles for Glacialite Armor."
+        );
+
+        // Tool Effects — Luminium
+        translateConfigOption(
+                "toolEffect.luminium.enable",
+                "Enable",
+                "Disabling this setting will turn off all tool effects of Luminium Tools."
+        );
+
+        translateConfigOption(
+                "toolEffect.luminium.enableGlowingOnHit",
+                "Glowing on Hit",
+                "Enables the Glowing effect when hitting an enemy with Luminium Tools."
+        );
+
+        // Tool Effects — Froststeel
+        translateConfigOption(
+                "toolEffect.froststeel.enable",
+                "Enable",
+                "Disabling this setting will turn off all tool effects of Froststeel Tools."
+        );
+
+        translateConfigOption(
+                "toolEffect.froststeel.enableNormalEffect",
+                "Normal Effect",
+                "Enables the normal Froststeel tool effect."
+        );
+
+        translateConfigOption(
+                "toolEffect.froststeel.doHitParticlesSpawn",
+                "Hit Particles",
+                "Enables hit particles when attacking an enemy with Froststeel Tools."
+        );
+
+        // Tool Effects — Glacialite
+        translateConfigOption(
+                "toolEffect.glacialite.enable",
+                "Enable",
+                "Disabling this setting will turn off all tool effects of Glacialite Tools."
+        );
+
+        translateConfigOption(
+                "toolEffect.glacialite.enableNormalEffect",
+                "Normal Effect",
+                "Enables the normal Glacialite tool effect."
+        );
+
+        translateConfigOption(
+                "toolEffect.glacialite.enableFrostNova",
+                "Frost Nova",
+                "Enables Frost Nova for Glacialite Tools."
+        );
+
+        translateConfigOption(
+                "toolEffect.glacialite.frostNovaToPassive",
+                "Passive Frost Nova",
+                "Changes Frost Nova from an active effect to a passive effect."
+        );
+
+        translateConfigOption(
+                "toolEffect.glacialite.enableFrostNovaSound",
+                "Frost Nova Sound",
+                "Enables the sound effect played when Frost Nova activates."
+        );
+
+        translateConfigOption(
+                "toolEffect.glacialite.doHitParticlesSpawn",
+                "Hit Particles",
+                "Enables hit particles when attacking an enemy with Glacialite Tools."
+        );
     }
 }

@@ -10,7 +10,7 @@ import net.minecraft.world.level.Level;
 import net.xun.lib.common.api.item.armor.ArmorContext;
 import net.xun.lib.common.api.item.armor.ArmorCustomizer;
 import net.xun.lib.common.api.item.armor.ArmorPieceType;
-import net.xun.unoredinary.config.server.UOServerConfig;
+import net.xun.unoredinary.config.UOConfigServer;
 
 public abstract class AbstractEffectArmorCustomizer implements ArmorCustomizer {
 
@@ -31,7 +31,7 @@ public abstract class AbstractEffectArmorCustomizer implements ArmorCustomizer {
                 if (!shouldApplyArmorEffect())
                     return;
 
-                boolean playersOnly = UOServerConfig.armorEffectConfig.onlyPlayer.get();
+                boolean playersOnly = UOConfigServer.armorEffect.onlyPlayer;
 
                 if (playersOnly && !(living instanceof Player))
                     return;

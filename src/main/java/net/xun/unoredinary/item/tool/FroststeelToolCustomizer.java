@@ -7,10 +7,10 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.xun.lib.common.api.item.tools.AbstractHitEffectCustomizer;
 import net.xun.lib.common.api.item.tools.ToolPieceType;
-import net.xun.lib.common.api.util.MobEffectUtils;
+import net.xun.lib.common.api.util.MobEffectUtil;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategies;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
-import net.xun.unoredinary.config.server.UOServerConfig;
+import net.xun.unoredinary.config.UOConfigServer;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
 import java.util.List;
@@ -21,10 +21,10 @@ public class FroststeelToolCustomizer extends AbstractHitEffectCustomizer {
 
     @Override
     protected void onHit(ToolPieceType piece, LivingEntity target, LivingEntity attacker) {
-        if (!(attacker instanceof Player) || !UOServerConfig.toolEffectConfig.froststeelConfig.enable.get())
+        if (!(attacker instanceof Player) || !UOConfigServer.toolEffect.froststeel.enable)
             return;
 
-        if (UOServerConfig.toolEffectConfig.froststeelConfig.enableNormalEffect.get()) {
+        if (UOConfigServer.toolEffect.froststeel.enableNormalEffect) {
             applyHitEffects(target);
         }
     }
@@ -35,10 +35,10 @@ public class FroststeelToolCustomizer extends AbstractHitEffectCustomizer {
         );
 
         for (MobEffectInstance effect : effects) {
-            MobEffectUtils.applyEffectWithStrategy(target, effect, EffectStackingStrategies.FORCE_OVERRIDE);
+            MobEffectUtil.applyEffectWithStrategy(target, effect, EffectStackingStrategies.FORCE_OVERRIDE);
         }
 
-        if (UOServerConfig.toolEffectConfig.froststeelConfig.doHitParticlesSpawn.get()) {
+        if (UOConfigServer.toolEffect.froststeel.doHitParticlesSpawn) {
             spawnRimeParticles(target);
         }
     }

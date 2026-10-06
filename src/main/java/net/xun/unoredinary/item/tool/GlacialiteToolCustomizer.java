@@ -18,12 +18,13 @@ import net.xun.lib.common.api.item.tools.AbstractHitEffectCustomizer;
 import net.xun.lib.common.api.item.tools.ToolContext;
 import net.xun.lib.common.api.item.tools.ToolPieceType;
 import net.xun.lib.common.api.item.tools.VanillaToolPieces;
-import net.xun.lib.common.api.util.BlockPosUtils;
-import net.xun.lib.common.api.util.MobEffectUtils;
+import net.xun.lib.common.api.util.BlockPosUtil;
+import net.xun.lib.common.api.util.MobEffectUtil;
 import net.xun.lib.common.api.world.effect.EffectStackingStrategies;
 import net.xun.lib.common.api.world.effect.MobEffectInstanceBuilder;
-import net.xun.unoredinary.config.server.UOServerConfig;
+import net.xun.unoredinary.config.UOConfigServer;
 import net.xun.unoredinary.registry.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -44,17 +45,8 @@ public class GlacialiteToolCustomizer extends AbstractHitEffectCustomizer {
 
         if (piece == VanillaToolPieces.SWORD) {
             return new SwordItem(context.tier(), finalProps) {
-//                @Override
-//                public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-//                    return onHit(
-//                            VanillaToolPieces.SWORD,
-//                            target,
-//                            attacker
-//                    );
-//                }
-
                 @Override
-                public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
+                public boolean supportsEnchantment(@NotNull ItemStack stack, @NotNull Holder<Enchantment> enchantment) {
                     boolean flag = super.supportsEnchantment(stack, enchantment);
 
                     if (stack.is(UOTools.GLACIALITE.getSword().get()))
@@ -70,13 +62,13 @@ public class GlacialiteToolCustomizer extends AbstractHitEffectCustomizer {
 
     @Override
     protected void onHit(ToolPieceType piece, LivingEntity target, LivingEntity attacker) {
-        if (!(attacker instanceof Player) || !UOServerConfig.toolEffectConfig.glacialiteConfig.enable.get()) {
+        if (!(attacker instanceof Player) || !UOConfigServer.toolEffect.glacialite.enable) {
             return;
         }
 
         boolean canNova = piece == VanillaToolPieces.SWORD || piece == VanillaToolPieces.AXE;
 
-        boolean frostNovaEnabled = canNova && UOServerConfig.toolEffectConfig.glacialiteConfig.enableFrostNova.get();
+        boolean frostNovaEnabled = canNova && UOConfigServer.toolEffect.glacialite.enableFrostNova;
 
         if (frostNovaEnabled) {
             applyFrostNovaEffect(target);
@@ -88,15 +80,15 @@ public class GlacialiteToolCustomizer extends AbstractHitEffectCustomizer {
 
     private static void applyFrostNovaEffect(LivingEntity target) {
         Level level = target.level();
-        AABB area = BlockPosUtils.createAABBFromCenter(target.blockPosition(), FROST_NOVA_RADIUS);
+        AABB area = BlockPosUtil.createAABBFromCenter(target.blockPosition(), FROST_NOVA_RADIUS);
 
-        var config = UOServerConfig.toolEffectConfig.glacialiteConfig;
+        var config = UOConfigServer.toolEffect.glacialite;
 
-        if (config.doHitParticlesSpawn.get()) {
+        if (config.doHitParticlesSpawn) {
             spawnFrostParticles(target);
         }
 
-        if (config.enableFrostNovaSound.get()) {
+        if (config.enableFrostNovaSound) {
             level.playSound(
                     null,
                     target.getX(),
@@ -109,7 +101,7 @@ public class GlacialiteToolCustomizer extends AbstractHitEffectCustomizer {
             );
         }
 
-        boolean affectPassive = config.frostNovaToPassive.get();
+        boolean affectPassive = config.frostNovaToPassive;
 
         List<LivingEntity> entities = level.getEntitiesOfClass(
                 LivingEntity.class,
@@ -129,7 +121,7 @@ public class GlacialiteToolCustomizer extends AbstractHitEffectCustomizer {
         );
 
         for (MobEffectInstance effect : effects) {
-            MobEffectUtils.applyEffectWithStrategy(target, effect, EffectStackingStrategies.UPGRADE_EXISTING);
+            MobEffectUtil.applyEffectWithStrategy(target, effect, EffectStackingStrategies.UPGRADE_EXISTING);
         }
     }
 
@@ -150,7 +142,7 @@ public class GlacialiteToolCustomizer extends AbstractHitEffectCustomizer {
     }
 
     private static void applySingleTargetEffects(LivingEntity target) {
-        if (!UOServerConfig.toolEffectConfig.glacialiteConfig.enableNormalEffect.get())
+        if (!UOConfigServer.toolEffect.glacialite.enableNormalEffect)
             return;
 
         List<MobEffectInstance> effects = List.of(
@@ -159,7 +151,7 @@ public class GlacialiteToolCustomizer extends AbstractHitEffectCustomizer {
         );
 
         for (MobEffectInstance effect : effects) {
-            MobEffectUtils.applyEffectWithStrategy(target, effect, EffectStackingStrategies.UPGRADE_EXISTING);
+            MobEffectUtil.applyEffectWithStrategy(target, effect, EffectStackingStrategies.UPGRADE_EXISTING);
         }
     }
 

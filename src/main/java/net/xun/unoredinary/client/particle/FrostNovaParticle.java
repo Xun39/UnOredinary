@@ -9,7 +9,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import net.xun.unoredinary.config.client.UOClientConfig;
+import net.xun.unoredinary.config.UOConfigClient;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
@@ -73,7 +73,7 @@ public class FrostNovaParticle extends TextureSheetParticle {
 
     @Override
     protected int getLightColor(float partialTick) {
-        return UOClientConfig.particleConfig.frostNovaConfig.emissive.get() ? 15728880 : super.getLightColor(partialTick);
+        return UOConfigClient.particle.frostNova.emissive ? 15728880 : super.getLightColor(partialTick);
     }
 
     @Override

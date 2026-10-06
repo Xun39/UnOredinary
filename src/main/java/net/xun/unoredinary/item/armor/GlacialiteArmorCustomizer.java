@@ -18,10 +18,10 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
-import net.xun.lib.common.api.util.BlockPosUtils;
-import net.xun.lib.common.api.util.EquipmentSlotsUtils;
+import net.xun.lib.common.api.util.BlockPosUtil;
+import net.xun.lib.common.api.util.EquipmentSlotsUtil;
 import net.xun.unoredinary.UnOredinary;
-import net.xun.unoredinary.config.server.UOServerConfig;
+import net.xun.unoredinary.config.UOConfigServer;
 import net.xun.unoredinary.registry.UOArmorMaterials;
 import net.xun.unoredinary.registry.UOParticleTypes;
 
@@ -29,21 +29,21 @@ import net.xun.unoredinary.registry.UOParticleTypes;
 public class GlacialiteArmorCustomizer extends AbstractEffectArmorCustomizer {
     @Override
     protected void armorEffectTick(Level level, LivingEntity entity, ArmorItem item) {
-        if (UOServerConfig.armorEffectConfig.glacialiteConfig.enableSlownessImmunity.get())
+        if (UOConfigServer.armorEffect.glacialite.immuneToSlowness)
             handleSlownessImmunity(entity);
 
-        if (UOServerConfig.armorEffectConfig.glacialiteConfig.enableFrostWalker.get())
+        if (UOConfigServer.armorEffect.glacialite.enableFrostWalker)
             handleFrostWalkerEffect(entity, level);
     }
 
     @Override
     protected boolean shouldApplyArmorEffect() {
-        return UOServerConfig.armorEffectConfig.glacialiteConfig.enable.get();
+        return UOConfigServer.armorEffect.glacialite.enable;
     }
 
     @Override
     protected boolean canWalkOnPowderedSnow() {
-        return UOServerConfig.armorEffectConfig.glacialiteConfig.canWalkOnPowderSnow.get();
+        return UOConfigServer.armorEffect.glacialite.walkOnPowderSnow;
     }
 
     @SubscribeEvent
@@ -56,16 +56,16 @@ public class GlacialiteArmorCustomizer extends AbstractEffectArmorCustomizer {
         if (!(living instanceof Player player))
             return;
 
-        if (!UOServerConfig.armorEffectConfig.glacialiteConfig.immuneToHotFloorDamage.get())
+        if (!UOConfigServer.armorEffect.glacialite.immuneToHotFloor)
             return;
 
-        if (EquipmentSlotsUtils.isArmorMaterialInSlot(player, EquipmentSlot.FEET, UOArmorMaterials.GLACIALITE)) {
+        if (EquipmentSlotsUtil.isArmorMaterialInSlot(player, EquipmentSlot.FEET, UOArmorMaterials.GLACIALITE)) {
             event.setInvulnerable(event.getSource().is(DamageTypeTags.BURN_FROM_STEPPING));
         }
     }
 
     private static void handleFrostWalkerEffect(LivingEntity entity, Level level) {
-        if (!EquipmentSlotsUtils.isArmorMaterialInSlot(entity, EquipmentSlot.FEET, UOArmorMaterials.GLACIALITE))
+        if (!EquipmentSlotsUtil.isArmorMaterialInSlot(entity, EquipmentSlot.FEET, UOArmorMaterials.GLACIALITE))
             return;
 
         if (level.isClientSide || !entity.onGround())
@@ -73,9 +73,9 @@ public class GlacialiteArmorCustomizer extends AbstractEffectArmorCustomizer {
 
         BlockPos groundPos = entity.getBlockPosBelowThatAffectsMyMovement();
 
-        int radius = UOServerConfig.armorEffectConfig.glacialiteConfig.frostWalkerRadius.getAsInt();
+        int radius = UOConfigServer.armorEffect.glacialite.frostWalkerRadius;
 
-        BlockPosUtils.getDisc(groundPos, radius).forEach(pos -> {
+        BlockPosUtil.getDisc(groundPos, radius).forEach(pos -> {
             if (pos.closerToCenterThan(entity.position(), radius)) {
                 freezeNearbyBlock(level, pos, entity);
             }
@@ -99,7 +99,7 @@ public class GlacialiteArmorCustomizer extends AbstractEffectArmorCustomizer {
     }
 
     private static void handleSlownessImmunity(LivingEntity entity) {
-        if (!EquipmentSlotsUtils.hasFullSetOfMaterial(entity, UOArmorMaterials.GLACIALITE))
+        if (!EquipmentSlotsUtil.hasFullSetOfMaterial(entity, UOArmorMaterials.GLACIALITE))
             return;
 
         if (entity.getEffect(MobEffects.MOVEMENT_SLOWDOWN) != null) {
@@ -116,26 +116,26 @@ public class GlacialiteArmorCustomizer extends AbstractEffectArmorCustomizer {
         Entity attacker = event.getSource().getDirectEntity();
         LivingEntity receiver = event.getEntity();
 
-        if (UOServerConfig.armorEffectConfig.glacialiteConfig.enable.get()) {
+        if (UOConfigServer.armorEffect.glacialite.enable) {
 
-            if (UOServerConfig.armorEffectConfig.glacialiteConfig.enableThornsEffect.get()) {
+            if (UOConfigServer.armorEffect.glacialite.thorns) {
                 handleThornsEffect(event, attacker, receiver);
             }
         }
     }
 
     private static void handleThornsEffect(LivingDamageEvent.Pre event, Entity attacker, LivingEntity receiver) {
-        if (UOServerConfig.armorEffectConfig.onlyPlayer.get() && !(receiver instanceof Player))
+        if (UOConfigServer.armorEffect.onlyPlayer && !(receiver instanceof Player))
             return;
 
-        if (!EquipmentSlotsUtils.hasFullSetOfMaterial(receiver, UOArmorMaterials.GLACIALITE))
+        if (!EquipmentSlotsUtil.hasFullSetOfMaterial(receiver, UOArmorMaterials.GLACIALITE))
             return;
 
         if (attacker instanceof LivingEntity) {
             attacker.hurt(event.getSource(), event.getOriginalDamage());
         }
 
-        if (UOServerConfig.armorEffectConfig.glacialiteConfig.doDamageParticlesSpawn.get()) {
+        if (UOConfigServer.armorEffect.glacialite.damageParticle) {
             spawnHurtParticles(receiver);
         }
     }

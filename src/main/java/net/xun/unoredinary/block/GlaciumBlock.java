@@ -3,7 +3,6 @@ package net.xun.unoredinary.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.Level;
@@ -11,8 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.xun.lib.common.api.util.BlockPosUtils;
-import net.xun.unoredinary.registry.UOSounds;
+import net.xun.lib.common.api.util.BlockPosUtil;
 
 public class GlaciumBlock extends DropExperienceBlock {
     public GlaciumBlock(IntProvider xpRange, Properties properties) {
@@ -23,7 +21,7 @@ public class GlaciumBlock extends DropExperienceBlock {
     protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         int affectedRadius = 2;
 
-        BlockPosUtils.getDisc(pos, affectedRadius).forEach(adjacentPos -> {
+        BlockPosUtil.getDisc(pos, affectedRadius).forEach(adjacentPos -> {
             if (!level.getBlockState(adjacentPos).is(Blocks.WATER))
                 return;
 

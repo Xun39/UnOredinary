@@ -1,8 +1,10 @@
 package net.xun.unoredinary;
 
 import net.xun.lib.common.api.ModSetup;
-import net.xun.unoredinary.config.client.UOClientConfig;
-import net.xun.unoredinary.config.server.UOServerConfig;
+import net.xun.lib.common.api.config.ConfigDirectoryMode;
+import net.xun.lib.common.api.config.XunConfigManager;
+import net.xun.unoredinary.config.UOConfigClient;
+import net.xun.unoredinary.config.UOConfigServer;
 import net.xun.unoredinary.registry.*;
 import org.slf4j.Logger;
 
@@ -12,7 +14,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
@@ -45,8 +46,9 @@ public class UnOredinary {
         UOStructureTypes.STRUCTURE_TYPES.register(modEventBus);
         UOStructurePieceTypes.STRUCTURE_PIECE_TYPES.register(modEventBus);
 
-        modContainer.registerConfig(ModConfig.Type.SERVER, UOServerConfig.SPEC);
-        modContainer.registerConfig(ModConfig.Type.CLIENT, UOClientConfig.SPEC);
+        XunConfigManager.setDirectoryMode(ConfigDirectoryMode.MOD_DIRECTORY);
+        XunConfigManager.registerConfig(UOConfigServer.class);
+        XunConfigManager.registerConfig(UOConfigClient.class);
     }
 
     @SubscribeEvent

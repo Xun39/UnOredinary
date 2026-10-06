@@ -17,15 +17,16 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.xun.lib.common.api.client.gui.components.SpriteButton;
 import net.xun.lib.common.api.util.Area;
-import net.xun.lib.common.api.util.CommonUtils;
+import net.xun.lib.common.api.util.ResourceUtil;
 import net.xun.unoredinary.block.entity.container.TransenchantingTableMenu;
 import net.xun.unoredinary.util.TransenchantmentHelper;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.List;
 
 public class TransenchantingTableScreen extends AbstractContainerScreen<TransenchantingTableMenu> {
-    private static final ResourceLocation BACKGROUND_TEXTURE = CommonUtils.modLoc("textures/gui/transenchanting_table.png");
+    private static final ResourceLocation BACKGROUND_TEXTURE = ResourceUtil.modLoc("textures/gui/transenchanting_table.png");
 
     // Screen layout
     private static final Area INFO_AREA = new Area(114, 16, 17, 59);
@@ -125,10 +126,10 @@ public class TransenchantingTableScreen extends AbstractContainerScreen<Transenc
     }
 
     @Override
-    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
-        super.render(guiGraphics, mouseX, mouseY, partialTick);
-        this.renderTooltip(guiGraphics, mouseX, mouseY);
-        renderUITooltips(guiGraphics, mouseX, mouseY);
+    public void render(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+        super.render(graphics, mouseX, mouseY, partialTick);
+        this.renderTooltip(graphics, mouseX, mouseY);
+        renderUITooltips(graphics, mouseX, mouseY);
     }
 
     private void renderItemInfo(GuiGraphics guiGraphics, float partialTick) {
